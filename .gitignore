@@ -1,0 +1,30 @@
+# 环境变量与密钥
+.env
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.pytest_cache/
+
+# 虚拟环境
+venv/
+.venv/
+
+# 数据与持久化目录（保留目录，忽略内容）
+data/raw/*.csv
+data/raw/*.json
+data/raw/*.txt
+chroma_db/*
+memory/*
+docs/*.docx
+docs/*.pdf
+
+# 生成报告
+*.pdf
+*.docx
+
+# IDE
+.vscode/
+.idea/
