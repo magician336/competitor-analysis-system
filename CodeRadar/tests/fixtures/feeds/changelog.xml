@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Copilot Changelog</title>
+    <link>https://example.test/changelog</link>
+    <description>Product updates</description>
+    <item>
+      <guid>copilot-agent-2026-07-01</guid>
+      <title>Copilot coding agent update</title>
+      <link>https://example.test/changelog/copilot-agent</link>
+      <pubDate>Wed, 01 Jul 2026 08:30:00 GMT</pubDate>
+      <description><![CDATA[<p>The coding agent can now edit multiple files.</p>]]></description>
+    </item>
+  </channel>
+</rss>

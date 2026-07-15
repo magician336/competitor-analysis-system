@@ -1,0 +1,13 @@
+[
+  {
+    "id": 901,
+    "tag_name": "v1.2.0",
+    "name": "Agent 1.2",
+    "html_url": "https://github.com/example/copilot/releases/tag/v1.2.0",
+    "body": "Adds repository context and improves IDE integration.",
+    "author": {"login": "release-bot"},
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-07-01T08:30:00Z"
+  }
+]

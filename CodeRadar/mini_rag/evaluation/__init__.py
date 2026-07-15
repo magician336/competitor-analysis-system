@@ -1,0 +1,61 @@
+"""Offline evaluation for Mini-RAG retrieval and evidence services."""
+
+from .ablation import (
+    ABLATION_SPECS,
+    SIX_ABLATIONS,
+    AblationRunner,
+    AblationSpec,
+    ablation_metric_table,
+    run_six_ablations,
+)
+from .evaluator import (
+    Evaluator,
+    RetrievalEvaluator,
+    load_evaluation_cases,
+    validate_evaluation_cases,
+)
+from .metrics import (
+    citation_accuracy,
+    conflict_detection_metrics,
+    dcg_at_k,
+    filter_accuracy,
+    latency_metrics,
+    mean_reciprocal_rank,
+    metadata_filter_accuracy,
+    mrr,
+    ndcg,
+    ndcg_at_k,
+    old_version_false_recall_rate,
+    percentile,
+    precision_at_k,
+    recall_at_k,
+    reciprocal_rank,
+)
+
+__all__ = [
+    "ABLATION_SPECS",
+    "SIX_ABLATIONS",
+    "AblationRunner",
+    "AblationSpec",
+    "Evaluator",
+    "RetrievalEvaluator",
+    "ablation_metric_table",
+    "citation_accuracy",
+    "conflict_detection_metrics",
+    "dcg_at_k",
+    "filter_accuracy",
+    "latency_metrics",
+    "load_evaluation_cases",
+    "validate_evaluation_cases",
+    "mean_reciprocal_rank",
+    "metadata_filter_accuracy",
+    "mrr",
+    "ndcg",
+    "ndcg_at_k",
+    "old_version_false_recall_rate",
+    "percentile",
+    "precision_at_k",
+    "recall_at_k",
+    "reciprocal_rank",
+    "run_six_ablations",
+]

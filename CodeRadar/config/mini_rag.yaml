@@ -1,0 +1,56 @@
+version: 1
+
+data:
+  documents_path: data/cleaned/documents.jsonl
+  evaluation_path: data/samples/测试数据集.csv
+  trace_path: data/runtime/retrieval_traces.jsonl
+
+chunking:
+  target_characters: 1200
+  maximum_characters: 1800
+  overlap_characters: 160
+  minimum_characters: 80
+
+embedding:
+  provider: hash
+  model: BAAI/bge-m3
+  dimension: 1024
+  normalize: true
+  batch_size: 16
+  cache_dir: .cache/models
+
+elasticsearch:
+  url: http://localhost:9200
+  index_prefix: coderadar_chunks
+  read_alias: coderadar_chunks_current
+  request_timeout_seconds: 30
+  verify_certs: false
+  number_of_shards: 1
+  number_of_replicas: 0
+
+retrieval:
+  bm25_candidates: 20
+  dense_candidates: 20
+  fused_candidates: 30
+  rerank_candidates: 20
+  default_top_k: 8
+  maximum_top_k: 50
+  rrf_k: 60
+
+reranker:
+  provider: lexical
+  model: BAAI/bge-reranker-v2-m3
+  batch_size: 8
+  strict: false
+
+ranking:
+  semantic_weight: 0.70
+  temporal_weight: 0.12
+  version_weight: 0.08
+  evidence_weight: 0.10
+  temporal_half_life_days: 180
+
+service:
+  trace_retention: 1000
+  fail_on_missing_index: true
+  current_only_for_current_intent: true

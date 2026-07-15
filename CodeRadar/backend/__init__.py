@@ -1,0 +1,2 @@
+"""CodeRadar HTTP application package."""
+

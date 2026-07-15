@@ -1,0 +1,144 @@
+version: 1
+
+defaults:
+  request_timeout_seconds: 15
+  requests_per_second_per_domain: 1.0
+  max_retries: 3
+  since_days: 90
+  max_issues: 100
+  max_comments: 20
+  minimum_visible_text_chars: 200
+
+competitors:
+  - id: cursor
+    name: Cursor
+    aliases: [Cursor AI]
+    sources:
+      official:
+        enabled: true
+        evidence_level: A
+        urls:
+          - https://cursor.com/
+      changelog:
+        enabled: true
+        evidence_level: A
+        urls:
+          - https://cursor.com/changelog
+      pricing:
+        enabled: true
+        evidence_level: A
+        urls:
+          - https://cursor.com/pricing
+      github:
+        enabled: false
+        evidence_level: B
+        repositories: []
+        note: cursor/cursor does not publish product releases or accept issues.
+
+  - id: github_copilot
+    name: GitHub Copilot
+    aliases: [Copilot, GitHub Copilot Chat]
+    sources:
+      official:
+        enabled: true
+        evidence_level: A
+        urls:
+          - https://github.com/features/copilot
+      changelog:
+        enabled: true
+        evidence_level: A
+        urls:
+          - https://github.blog/changelog/label/copilot/
+      pricing:
+        enabled: true
+        evidence_level: A
+        urls:
+          - https://github.com/features/copilot/plans
+      github:
+        enabled: true
+        evidence_level: B
+        repositories:
+          - microsoft/vscode-copilot-chat
+
+  - id: trae
+    name: Trae
+    aliases: [TRAE, TRAE IDE]
+    sources:
+      official:
+        enabled: true
+        evidence_level: A
+        urls:
+          - https://www.trae.ai/
+      changelog:
+        enabled: true
+        evidence_level: A
+        urls:
+          - https://www.trae.ai/changelog
+      pricing:
+        enabled: true
+        evidence_level: A
+        urls:
+          - https://www.trae.ai/pricing
+      github:
+        enabled: true
+        evidence_level: B
+        repositories:
+          - Trae-AI/TRAE
+
+  - id: tongyi_lingma
+    name: 通义灵码
+    aliases: [Lingma, Qoder CN, 智能编码助手通义灵码]
+    sources:
+      official:
+        enabled: true
+        evidence_level: A
+        urls:
+          - https://lingma.aliyun.com/
+      changelog:
+        enabled: true
+        evidence_level: A
+        # Aliyun exposes a server-rendered directory whose child links carry
+        # their dates on the target pages rather than on this index page.
+        undated_entry_selector: ".aliyun-docs-content .markdown-body .directory a[href]"
+        undated_entry_path_prefixes:
+          - /zh/lingma/
+        undated_entry_text_pattern: "更新日志|日志（存档）|产品公告"
+        undated_detail_root_selector: ".aliyun-docs-content .markdown-body"
+        urls:
+          - https://help.aliyun.com/zh/lingma/product-overview/dynamics-and-announcements/
+      pricing:
+        enabled: true
+        evidence_level: A
+        urls:
+          - https://help.aliyun.com/zh/lingma/product-overview/billing-description
+      github:
+        enabled: false
+        evidence_level: B
+        repositories: []
+        note: No official public product issue repository is available.
+
+  - id: codegeex
+    name: CodeGeeX
+    aliases: [CodeGeeX4, CodeGeeX AI Coding Assistant]
+    sources:
+      official:
+        enabled: true
+        evidence_level: A
+        urls:
+          - https://www.codegeex.cn/
+      changelog:
+        enabled: false
+        evidence_level: A
+        urls: []
+        note: Product updates are collected from GitHub releases.
+      pricing:
+        enabled: false
+        evidence_level: A
+        urls: []
+        note: The public product site presents the assistant as free and has no standalone pricing page.
+      github:
+        enabled: true
+        evidence_level: B
+        repositories:
+          - zai-org/CodeGeeX
+          - zai-org/CodeGeeX4

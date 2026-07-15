@@ -1,0 +1,10 @@
+# Mini-RAG API runtime (CPU baseline)
+python-dotenv==1.0.1
+pydantic==2.10.6
+PyYAML==6.0.2
+python-dateutil==2.9.0.post0
+requests==2.32.3
+beautifulsoup4==4.12.3
+elasticsearch==9.4.1
+fastapi==0.139.0
+uvicorn==0.51.0

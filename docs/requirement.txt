@@ -1,0 +1,33 @@
+# CodeRadar 运行依赖
+# Python 3.11.9
+
+# 配置与数据模型
+python-dotenv==1.0.1
+pydantic==2.10.6
+jsonschema==4.23.0
+PyYAML==6.0.2
+python-dateutil==2.9.0.post0
+
+# 数据采集与解析
+requests==2.32.3
+feedparser==6.0.11
+beautifulsoup4==4.12.3
+
+# 数据处理
+pandas==2.2.3
+numpy==1.26.4
+
+# Mini-RAG、检索与服务接口
+elasticsearch==9.4.1
+fastapi==0.139.0
+uvicorn==0.51.0
+httpx2==2.5.0
+
+# 本地 Embedding 与 Cross-Encoder Reranker
+# 模型权重在首次使用时按配置下载，不进入版本库。
+sentence-transformers==5.6.0
+
+# 测试
+pytest==8.3.5
+pytest-cov==6.0.0
+responses==0.25.7

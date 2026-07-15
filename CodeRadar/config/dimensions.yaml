@@ -1,0 +1,130 @@
+version: 1
+review_threshold: 0.55
+
+dimensions:
+  code_intelligence:
+    code: D1
+    name: 代码智能与生成质量
+    keywords:
+      - code completion
+      - completion
+      - code generation
+      - generate code
+      - bug fix
+      - refactor
+      - unit test
+      - 代码补全
+      - 代码生成
+      - 代码审查
+      - 修复
+      - 重构
+      - 单元测试
+
+  agent_context:
+    code: D2
+    name: 项目级上下文与 Agent 自主性
+    keywords:
+      - agent
+      - agent mode
+      - codebase
+      - repository
+      - workspace
+      - multi-file
+      - context
+      - terminal
+      - 智能体
+      - 工程检索
+      - 项目上下文
+      - 多文件
+      - 终端
+      - 自主执行
+
+  ide_ecosystem:
+    code: D3
+    name: IDE、工具链与开发生态
+    keywords:
+      - vscode
+      - visual studio code
+      - jetbrains
+      - ide
+      - extension
+      - plugin
+      - git
+      - mcp
+      - 插件
+      - 扩展
+      - 工具链
+      - 开发生态
+
+  model_extensibility:
+    code: D4
+    name: 模型接入与扩展能力
+    keywords:
+      - model
+      - byok
+      - api key
+      - custom model
+      - claude
+      - gpt
+      - gemini
+      - qwen
+      - 模型
+      - 自定义模型
+      - 模型切换
+
+  performance_cost:
+    code: D5
+    name: 性能、稳定性与成本效率
+    keywords:
+      - latency
+      - performance
+      - stability
+      - outage
+      - pricing
+      - price
+      - billing
+      - quota
+      - credit
+      - 性能
+      - 稳定性
+      - 价格
+      - 计费
+      - 额度
+      - 故障
+
+  security_compliance:
+    code: D6
+    name: 安全、隐私与企业合规
+    keywords:
+      - security
+      - privacy
+      - compliance
+      - permission
+      - audit
+      - sandbox
+      - vulnerability
+      - 安全
+      - 隐私
+      - 合规
+      - 权限
+      - 审计
+      - 沙箱
+
+  education_fit:
+    code: D7
+    name: 用户体验与教育场景适配
+    keywords:
+      - student
+      - education
+      - learning
+      - beginner
+      - tutorial
+      - explanation
+      - user experience
+      - 学生
+      - 教育
+      - 学习
+      - 初学者
+      - 教程
+      - 讲解
+      - 用户体验
