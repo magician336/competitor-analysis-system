@@ -1,9 +1,0 @@
-name: competitor-intel
-channels:
-  - defaults
-  - conda-forge
-dependencies:
-  - python=3.12
-  - pip
-  - pip:
-      - -r requirements.txt
