@@ -20,8 +20,8 @@ services:
 
   api:
     build:
-      context: ..
-      dockerfile: CodeRadar/Dockerfile
+      context: .
+      dockerfile: Dockerfile
       args:
         INSTALL_ML: ${MINIRAG_INSTALL_ML:-false}
     environment:

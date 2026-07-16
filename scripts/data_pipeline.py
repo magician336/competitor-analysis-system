@@ -297,11 +297,11 @@ def run_doctor() -> int:
     else:
         checks.append(("OK", "运行依赖", "可导入"))
 
-    requirement_path = PROJECT_ROOT.parent / "docs" / "requirement.txt"
+    requirement_path = PROJECT_ROOT / "docs" / "requirement.txt"
     if requirement_path.is_file() and (PROJECT_ROOT / "requirements.txt").is_file():
         checks.append(("OK", "依赖清单", str(requirement_path)))
     else:
-        errors.append("缺少 docs/requirement.txt 或 CodeRadar/requirements.txt")
+        errors.append("缺少 docs/requirement.txt 或根目录 requirements.txt")
 
     try:
         competitor_config = _load_yaml(COMPETITOR_CONFIG)

@@ -1,1 +1,1 @@
--r ../docs/requirement.txt
+-r docs/requirement.txt

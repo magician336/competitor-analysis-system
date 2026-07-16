@@ -24,18 +24,18 @@ CodeRadar/
 
 ## 环境安装
 
-项目使用 Python 3.11.9，虚拟环境固定放在 `CodeRadar\.venv`。在 PowerShell 中运行：
+项目使用 Python 3.11.9，虚拟环境固定放在仓库根目录的 `.venv`。克隆仓库后，在 PowerShell 中进入仓库根目录并运行：
 
 ```powershell
-Set-Location D:\26Spring\project\CodeRadar
+Set-Location D:\path\to\competitor-analysis-system
 
 & 'D:\Python 3.11.9\python.exe' -m venv .venv
 & .\.venv\Scripts\python.exe -m pip install --upgrade pip
-& .\.venv\Scripts\python.exe -m pip install -r ..\docs\requirement.txt
+& .\.venv\Scripts\python.exe -m pip install -r .\docs\requirement.txt
 & .\.venv\Scripts\python.exe -m pip check
 ```
 
-`docs\requirement.txt` 是唯一依赖清单，`CodeRadar\requirements.txt` 只引用该文件。
+`docs\requirement.txt` 是唯一依赖清单，仓库根目录的 `requirements.txt` 只引用该文件。
 
 本地 Sentence Transformers 模型权重在第一次启用对应 Provider 时下载到配置的缓存目录。默认 `hash` Provider 提供确定性离线向量，用于测试、接口联调和无模型网络环境；正式检索评测使用配置的中英双语 Embedding 模型和 Cross-Encoder Reranker（交叉编码器重排序器）。
 
@@ -234,7 +234,7 @@ Compose 默认构建 `hash + lexical` CPU 基线镜像。容器内启用 Sentenc
 六组消融实验中的 D—F 使用真实 Cross-Encoder。`config/mini_rag.formal.yaml` 配置 BGE-M3 Embedding 与多语言 MiniLM Cross-Encoder；索引端和查询端使用相同的 BGE-M3 向量空间。首次运行会下载模型权重：
 
 ```powershell
-$env:HF_HOME = 'D:\26Spring\project\CodeRadar\.cache\huggingface'
+$env:HF_HOME = Join-Path (Get-Location) '.cache\huggingface'
 
 docker compose stop api
 .\.venv\Scripts\python.exe -m scripts.build_index `
