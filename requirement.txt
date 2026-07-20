@@ -18,6 +18,9 @@ pandas==2.2.3
 numpy==1.26.4
 
 # Mini-RAG、检索与服务接口
+langchain>=1.3,<1.4
+langchain-core>=1.4.9,<2.0
+langchain-deepseek>=1.1,<1.2
 elasticsearch==9.4.1
 fastapi==0.139.0
 uvicorn==0.51.0

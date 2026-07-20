@@ -1,0 +1,57 @@
+{
+  "generated_at": "2026-07-20T07:15:20.246251+00:00",
+  "generator": "scripts.prepare_evaluation_set",
+  "human_review_status": "pending",
+  "label_origin": "AI-assisted candidate labels",
+  "case_count": 40,
+  "document_count": 867,
+  "chunk_count": 2633,
+  "documents_path": "C:\\Users\\lenovo\\Desktop\\Projects\\competitor-analysis-system\\data\\cleaned\\documents.jsonl",
+  "documents_sha256": "sha256:7582e18cead048d504a2c79b19e6bb541081f4e8d1cde970aba7471ef11a51b6",
+  "dataset_path": "C:\\Users\\lenovo\\Desktop\\Projects\\competitor-analysis-system\\data\\samples\\测试数据集.csv",
+  "dataset_sha256": "sha256:e07bb417fcd7f50d53498f924eeb1366ca73eaf9e7cbc88e30db4ec7b165763e",
+  "review_path": "C:\\Users\\lenovo\\Desktop\\Projects\\competitor-analysis-system\\data\\samples\\评测集人工复核.csv",
+  "chunking": {
+    "target_characters": 1200,
+    "maximum_characters": 1800,
+    "overlap_characters": 160,
+    "minimum_characters": 80
+  },
+  "distributions": {
+    "competitors": {
+      "Cursor": 8,
+      "GitHub Copilot": 12,
+      "Trae": 7,
+      "CodeGeeX": 7,
+      "通义灵码": 6
+    },
+    "sources": {
+      "official_page": 8,
+      "pricing": 6,
+      "official_changelog": 14,
+      "github_release": 1,
+      "github_issue": 11
+    },
+    "events": {
+      "unclassified": 8,
+      "pricing_change": 6,
+      "product_release": 15,
+      "risk_experience": 11
+    },
+    "dimensions": {
+      "agent_context": 10,
+      "performance_cost": 8,
+      "security_compliance": 5,
+      "education_fit": 3,
+      "model_extensibility": 2,
+      "ide_ecosystem": 6,
+      "unfiltered": 4,
+      "code_intelligence": 2
+    }
+  },
+  "limitations": [
+    "Human relevance review is pending.",
+    "The corpus contains no historical document versions.",
+    "Conflict and historical-version quality require separate real samples."
+  ]
+}

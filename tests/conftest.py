@@ -17,6 +17,13 @@ def pytest_configure(config) -> None:
     )
 
 
+@pytest.fixture(autouse=True)
+def disable_live_agent_llm(monkeypatch) -> None:
+    """Unit tests never inherit a developer's real model key or LLM mode."""
+
+    monkeypatch.setenv("CODERADAR_AGENT_MODE", "rules")
+
+
 @pytest.fixture
 def fixtures_dir() -> Path:
     return FIXTURES_DIR

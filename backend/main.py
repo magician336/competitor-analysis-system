@@ -6,6 +6,8 @@ from collections.abc import Awaitable, Callable
 
 from fastapi import Depends, FastAPI, Request, Response, status
 
+from backend.routers.agents import router as agents_router
+from backend.routers.benchmarks import router as benchmarks_router
 from backend.routers.rag import IndexStatusResponse, router as rag_router
 from backend.services.rag_service import get_rag_service
 from mini_rag.api import MiniRAGService
@@ -14,8 +16,8 @@ from mini_rag.api import MiniRAGService
 def create_app() -> FastAPI:
     app = FastAPI(
         title="CodeRadar API",
-        version="0.2.0",
-        description="Hybrid retrieval and traceable Mini-RAG evidence service.",
+        version="0.3.0",
+        description="Traceable Mini-RAG plus evidence-backed LCEL Agent service.",
     )
 
     @app.middleware("http")
@@ -46,6 +48,8 @@ def create_app() -> FastAPI:
         return result
 
     app.include_router(rag_router)
+    app.include_router(agents_router)
+    app.include_router(benchmarks_router)
     return app
 
 

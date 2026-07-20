@@ -1,0 +1,33 @@
+version: week3-evidence-v2
+
+# A first snapshot has no historical absolute baseline. Evidence therefore
+# starts from a neutral 50 and applies signed event impact. Missing dimensions
+# are marked insufficient_evidence and receive no synthetic baseline.
+neutral_baseline: 50.0
+direction_points_per_magnitude: 4.0
+evidence_share: 0.60
+benchmark_share: 0.40
+
+evidence_level_weights:
+  A: 1.00
+  B: 0.82
+  C: 0.62
+  D: 0.36
+
+freshness:
+  - max_days: 30
+    weight: 1.00
+  - max_days: 90
+    weight: 0.85
+  - max_days: 180
+    weight: 0.65
+  - max_days: null
+    weight: 0.45
+
+benchmark:
+  task_success_weight: 0.55
+  test_pass_weight: 0.30
+  compile_success_weight: 0.15
+  harmful_action_penalty: 30.0
+  manual_intervention_penalty_per_edit: 2.0
+  max_manual_intervention_penalty: 16.0

@@ -1,0 +1,32 @@
+{
+  "analysis_mode": "rules",
+  "artifact_version": "week3-baseline-v1",
+  "benchmark_run_count": 3,
+  "benchmark_task_count": 16,
+  "competitor_count": 5,
+  "competitors": [
+    "Cursor",
+    "GitHub Copilot",
+    "Trae",
+    "通义灵码",
+    "CodeGeeX"
+  ],
+  "files": {
+    "briefings": "briefings/",
+    "cards": "intelligence_cards.json",
+    "snapshots": "capability_snapshots.json",
+    "workflows": "workflow_summary.json"
+  },
+  "generated_at": "2026-07-20T07:12:32.966217+00:00",
+  "intelligence_card_count": 15,
+  "mini_rag": {
+    "embedding_compatible": true,
+    "embedding_dimension": 1024,
+    "embedding_model": "hash-embedding/coderadar-v1",
+    "index": "coderadar_chunks_current",
+    "indexed_chunks": 2633,
+    "physical_index": "coderadar_chunks_v20260720015431565746"
+  },
+  "scoring_version": "week3-evidence-v2",
+  "snapshot_count": 5
+}

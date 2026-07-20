@@ -1,0 +1,91 @@
+[
+  {
+    "branches": {
+      "price": "success",
+      "product": "success",
+      "risk": "success"
+    },
+    "card_count": 3,
+    "competitor": "Cursor",
+    "evidence_count": 16,
+    "snapshot_coverage": 1.0,
+    "snapshot_id": "snap_577df5428d846e512e02",
+    "snapshot_score": 70.22,
+    "status": "success",
+    "warnings": [
+      "risk: no RAG evidence matched the Agent request"
+    ],
+    "workflow_id": "workflow_6cda0313e707d62f5001957f"
+  },
+  {
+    "branches": {
+      "price": "success",
+      "product": "success",
+      "risk": "success"
+    },
+    "card_count": 3,
+    "competitor": "GitHub Copilot",
+    "evidence_count": 24,
+    "snapshot_coverage": 1.0,
+    "snapshot_id": "snap_7be61749e5e58a66fcf0",
+    "snapshot_score": 60.42,
+    "status": "success",
+    "warnings": [],
+    "workflow_id": "workflow_7bdeb2eae500df4941011cff"
+  },
+  {
+    "branches": {
+      "price": "success",
+      "product": "success",
+      "risk": "success"
+    },
+    "card_count": 3,
+    "competitor": "Trae",
+    "evidence_count": 15,
+    "snapshot_coverage": 0.82,
+    "snapshot_id": "snap_c51f8758379c88697d71",
+    "snapshot_score": 23.02,
+    "status": "success",
+    "warnings": [
+      "product: no RAG evidence matched the Agent request"
+    ],
+    "workflow_id": "workflow_0384c0f6313dd96eda9275d1"
+  },
+  {
+    "branches": {
+      "price": "success",
+      "product": "success",
+      "risk": "success"
+    },
+    "card_count": 3,
+    "competitor": "通义灵码",
+    "evidence_count": 16,
+    "snapshot_coverage": 1.0,
+    "snapshot_id": "snap_d94949adbd87cbe51e90",
+    "snapshot_score": 67.14,
+    "status": "success",
+    "warnings": [
+      "risk: no RAG evidence matched the Agent request"
+    ],
+    "workflow_id": "workflow_b2ce2de2c1f1d91623514474"
+  },
+  {
+    "branches": {
+      "price": "success",
+      "product": "success",
+      "risk": "success"
+    },
+    "card_count": 3,
+    "competitor": "CodeGeeX",
+    "evidence_count": 8,
+    "snapshot_coverage": 0.78,
+    "snapshot_id": "snap_df175c05bb6216eae0dd",
+    "snapshot_score": 17.16,
+    "status": "success",
+    "warnings": [
+      "price: no RAG evidence matched the Agent request",
+      "product: no RAG evidence matched the Agent request"
+    ],
+    "workflow_id": "workflow_f24a4bff584569c496bc4480"
+  }
+]
