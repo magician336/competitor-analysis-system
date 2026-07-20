@@ -15,6 +15,7 @@ from .document import DimensionTag
 
 
 _IDENTIFIER_PATTERN = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._:-]{2,127}$")
+_SHA256_PATTERN = re.compile(r"^[0-9a-f]{64}$")
 _DEFAULT_FAIRNESS_CONSTRAINTS = [
     "所有参评产品使用相同任务说明、起始文件和验收标准",
     "记录产品版本、模型、运行时间、交互轮次和人工干预",
@@ -210,6 +211,12 @@ class BenchmarkRun(BaseModel):
     run_id: str = ""
     competitor: str = Field(min_length=1, max_length=120)
     task_id: str = Field(min_length=1, max_length=128)
+    task_revision: str = Field(min_length=1, max_length=64)
+    task_fingerprint: str
+    validator_sha256: str
+    protocol_sha256: str
+    starter_sha256: str
+    candidate_sha256: str
     product_version: str | None = Field(default=None, min_length=1, max_length=120)
     model: str | None = Field(default=None, min_length=1, max_length=120)
     task_success: bool = Field(default=False, strict=True)
@@ -238,6 +245,35 @@ class BenchmarkRun(BaseModel):
     def validate_task_id(cls, value: str) -> str:
         if not _IDENTIFIER_PATTERN.fullmatch(value):
             raise ValueError("task_id must be a portable identifier")
+        return value
+
+    @field_validator("task_revision", mode="after")
+    @classmethod
+    def reject_blank_task_revision(cls, value: str) -> str:
+        if not value.strip():
+            raise ValueError("task_revision must not be blank")
+        return value
+
+    @field_validator("task_fingerprint", mode="after")
+    @classmethod
+    def validate_task_fingerprint(cls, value: str) -> str:
+        if not re.fullmatch(r"sha256:[0-9a-f]{64}", value):
+            raise ValueError(
+                "task_fingerprint must use sha256:<64 lowercase hex>"
+            )
+        return value
+
+    @field_validator(
+        "validator_sha256",
+        "protocol_sha256",
+        "starter_sha256",
+        "candidate_sha256",
+        mode="after",
+    )
+    @classmethod
+    def validate_content_sha256(cls, value: str) -> str:
+        if not _SHA256_PATTERN.fullmatch(value):
+            raise ValueError("content hashes must use 64 lowercase hex characters")
         return value
 
     @field_validator("competitor", mode="after")
@@ -275,6 +311,12 @@ class BenchmarkRun(BaseModel):
                 "run",
                 self.competitor,
                 self.task_id,
+                self.task_revision,
+                self.task_fingerprint,
+                self.validator_sha256,
+                self.protocol_sha256,
+                self.starter_sha256,
+                self.candidate_sha256,
                 self.product_version,
                 self.model,
                 self.run_at,

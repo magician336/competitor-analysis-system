@@ -120,7 +120,9 @@ class CapabilitySnapshot(BaseModel):
     snapshot_id: str = ""
     competitor: str = Field(min_length=1)
     snapshot_date: date = Field(default_factory=date.today)
-    product_version: str | None = None
+    # A snapshot must always state its version scope.  ``unknown`` is explicit
+    # provenance, whereas JSON null was ambiguous during hand-off.
+    product_version: str = Field(default="unknown", min_length=1, max_length=128)
     scoring_version: str = Field(default="week3-evidence-v2", min_length=1)
     window_start: datetime | None = None
     window_end: datetime | None = None
@@ -136,7 +138,15 @@ class CapabilitySnapshot(BaseModel):
     previous_snapshot_id: str | None = None
     deltas: dict[DimensionTag, int] = Field(default_factory=dict)
 
-    @field_validator("competitor", "scoring_version")
+    @field_validator("product_version", mode="before")
+    @classmethod
+    def normalize_product_version(cls, value: Any) -> str:
+        if value is None:
+            return "unknown"
+        normalized = str(value).strip()
+        return normalized or "unknown"
+
+    @field_validator("competitor", "scoring_version", "product_version")
     @classmethod
     def strip_required_text(cls, value: str) -> str:
         stripped = value.strip()

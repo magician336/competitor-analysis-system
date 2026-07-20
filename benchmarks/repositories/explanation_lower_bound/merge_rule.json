@@ -1,0 +1,12 @@
+{
+  "task_id": "bench_007",
+  "merge_version": "1.0.0",
+  "required_reviewers": 2,
+  "answer_hashes_must_match": true,
+  "score_method": "arithmetic_mean_by_dimension_then_sum",
+  "rounding": "two_decimal_places",
+  "adjudication_trigger": "absolute_total_score_difference_greater_than_2",
+  "critical_failure_rule": "any_confirmed_critical_failure_caps_final_score_at_5",
+  "pass_rule": "final_score_at_least_8_and_no_confirmed_critical_failure"
+}
+

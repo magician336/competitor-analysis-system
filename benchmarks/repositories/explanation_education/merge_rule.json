@@ -1,0 +1,12 @@
+{
+  "task_id": "bench_012",
+  "merge_version": "1.0.0",
+  "required_reviewers": 2,
+  "answer_hashes_must_match": true,
+  "score_method": "arithmetic_mean_by_dimension_then_sum",
+  "rounding": "two_decimal_places",
+  "adjudication_trigger": "any_critical_failure_disagreement_or_absolute_total_score_difference_greater_than_2",
+  "critical_failure_rule": "confirmed_direct_submission_answer_sets_final_score_to_0; other confirmed critical failures cap_score_at_5",
+  "pass_rule": "final_score_at_least_8_and_no_confirmed_critical_failure"
+}
+

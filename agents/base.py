@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Any
 
 from mini_rag.evidence import CitationValidator
-from mini_rag.models import RAGQuery, RAGResponse
+from mini_rag.models import Conflict, RAGQuery, RAGResponse
 from schemas.document import DimensionTag, EventType, EvidenceLevel
 from schemas.intelligence_card import (
     AgentAnalysisRequest,
@@ -219,52 +219,74 @@ class EvidenceBackedAgent:
                 + "; ".join(validation.errors)
             )
 
-        dimensions = self._dimension_tags(request, references)
-        confidence = self._confidence(references)
-        breakdown = self._priority_breakdown(references, dimensions, confidence)
-        card = self._build_card(
-            request,
-            references,
-            dimensions,
-            confidence,
-            breakdown,
-            rag_query_id=response.query_id,
-        )
         warnings = [*response.retrieval_trace.warnings, *validation.warnings]
-        warnings.extend(self._conflict_messages(response))
+        warnings.extend(self._conflict_messages(validation.conflicts))
+        clusters = self._event_clusters(references)
+        if len(clusters) > request.max_cards:
+            warnings.append(
+                "event card limit applied: retained "
+                f"{request.max_cards} of {len(clusters)} evidence events"
+            )
+        selected_clusters = clusters[: request.max_cards] or [[]]
+        cards: list[IntelligenceCard] = []
 
-        if self.llm_client is not None and references:
-            try:
-                draft = self.llm_client.draft_card(
-                    prompt_text=self.prompt_text,
-                    agent_kind=self.config.kind.value,
-                    competitor=request.competitor,
-                    question=payload["query"].question,
-                    evidence=references,
-                    callbacks=[callback],
+        for event_references in selected_clusters:
+            dimensions = self._dimension_tags(request, event_references)
+            confidence = self._confidence(event_references)
+            breakdown = self._priority_breakdown(
+                event_references,
+                dimensions,
+                confidence,
+            )
+            card = self._build_card(
+                request,
+                event_references,
+                dimensions,
+                confidence,
+                breakdown,
+                rag_query_id=response.query_id,
+            )
+
+            if self.llm_client is not None and event_references:
+                try:
+                    draft = self.llm_client.draft_card(
+                        prompt_text=self.prompt_text,
+                        agent_kind=self.config.kind.value,
+                        competitor=request.competitor,
+                        question=payload["query"].question,
+                        evidence=event_references,
+                        callbacks=[callback],
+                    )
+                    card = self._apply_llm_draft(card, draft)
+                except Exception as exc:
+                    warnings.append(
+                        "LLM structured-output fallback to deterministic rules for "
+                        f"event {card.card_id}: {type(exc).__name__}: {exc}"
+                    )
+
+            event_chunk_ids = {item.chunk_id for item in event_references}
+            event_conflicts = self._conflict_messages(
+                validation.conflicts,
+                allowed_chunk_ids=event_chunk_ids,
+            )
+            if event_conflicts:
+                card = IntelligenceCard.model_validate(
+                    {
+                        **card.model_dump(mode="python"),
+                        "conflict_notes": list(
+                            dict.fromkeys([*card.conflict_notes, *event_conflicts])
+                        ),
+                        "review_required": True,
+                    }
                 )
-                card = self._apply_llm_draft(card, draft)
-            except Exception as exc:
-                warnings.append(
-                    "LLM structured-output fallback to deterministic rules: "
-                    f"{type(exc).__name__}: {exc}"
-                )
+            cards.append(card)
+
         if not references:
             warnings.append("no RAG evidence matched the Agent request")
-        if response.conflicts:
-            card = IntelligenceCard.model_validate(
-                {
-                    **card.model_dump(mode="python"),
-                    "conflict_notes": list(
-                        dict.fromkeys([*card.conflict_notes, *self._conflict_messages(response)])
-                    ),
-                    "review_required": True,
-                }
-            )
         return AgentRunResult(
             request=request,
             rag_query_id=response.query_id,
-            cards=[card],
+            cards=cards,
             warnings=warnings,
         )
 
@@ -344,6 +366,24 @@ class EvidenceBackedAgent:
         if not values and references:
             values = list(self.config.dimension_focus)
         return list(dict.fromkeys(values))
+
+    @staticmethod
+    def _event_clusters(
+        references: list[EvidenceReference],
+    ) -> list[list[EvidenceReference]]:
+        """Group ranked chunks into stable document-version events.
+
+        A document version is the strongest event identity available in the
+        Mini-RAG evidence contract.  A regular insertion-ordered dict preserves
+        the rank of the first chunk for each event while merging later chunks
+        from that same source version.
+        """
+
+        clusters: dict[tuple[str, str], list[EvidenceReference]] = {}
+        for reference in references:
+            key = (reference.document_id, reference.version_id)
+            clusters.setdefault(key, []).append(reference)
+        return list(clusters.values())
 
     def _confidence(self, references: list[EvidenceReference]) -> float:
         if not references:
@@ -497,9 +537,17 @@ class EvidenceBackedAgent:
         )
 
     @staticmethod
-    def _conflict_messages(response: RAGResponse) -> list[str]:
+    def _conflict_messages(
+        conflicts: list[Conflict],
+        *,
+        allowed_chunk_ids: set[str] | None = None,
+    ) -> list[str]:
         messages: list[str] = []
-        for conflict in response.conflicts:
+        for conflict in conflicts:
+            if allowed_chunk_ids is not None and not (
+                set(conflict.chunk_ids) & allowed_chunk_ids
+            ):
+                continue
             values = " | ".join(conflict.values)
             chunks = ", ".join(conflict.chunk_ids)
             messages.append(

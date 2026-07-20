@@ -221,6 +221,7 @@ class AgentAnalysisRequest(BaseModel):
     end_time: datetime | None = None
     current_only: bool = True
     top_k: int = Field(default=8, ge=1, le=30)
+    max_cards: int = Field(default=5, ge=1, le=20)
     correlation_id: str | None = Field(default=None, min_length=1, max_length=128)
 
     @field_validator("competitor")
@@ -320,6 +321,34 @@ class IntelligenceCard(BaseModel):
             self.evidence = list(by_id.values())
             evidence_ids = set(by_id)
 
+        card_competitor = self.competitor.strip().casefold()
+        mismatched_competitors = sorted(
+            {
+                item.competitor
+                for item in self.evidence
+                if item.competitor.strip().casefold() != card_competitor
+            },
+            key=str.casefold,
+        )
+        if mismatched_competitors:
+            raise ValueError(
+                "evidence competitor must match card competitor: "
+                + ", ".join(mismatched_competitors)
+            )
+
+        mismatched_events = sorted(
+            {
+                item.event_type.value
+                for item in self.evidence
+                if item.event_type is not None and item.event_type != self.event_type
+            }
+        )
+        if mismatched_events:
+            raise ValueError(
+                "evidence event_type must match card event_type: "
+                + ", ".join(mismatched_events)
+            )
+
         for finding in self.findings:
             unknown = set(finding.evidence_chunk_ids) - evidence_ids
             if unknown:
@@ -336,6 +365,11 @@ class IntelligenceCard(BaseModel):
                 raise ValueError(
                     "capability impact references unknown evidence chunk(s): "
                     + ", ".join(sorted(unknown))
+                )
+            if evidence_ids and not impact.evidence_chunk_ids:
+                raise ValueError(
+                    "every capability impact on an evidenced card must cite at "
+                    "least one retrieved chunk"
                 )
 
         if self.impact_details:

@@ -83,8 +83,8 @@ class LLMSettings(BaseModel):
     mode: Literal["rules", "llm", "hybrid"] = "rules"
     provider: Literal["deepseek"] = "deepseek"
     api_key: str = ""
-    base_url: str = "https://api.deepseek.com"
-    model: str = "deepseek-chat"
+    base_url: str = Field(default="https://api.deepseek.com", min_length=1)
+    model: str = Field(default="deepseek-chat", min_length=1)
     timeout_seconds: float = Field(default=45.0, gt=0.0, le=300.0)
     max_tokens: int = Field(default=1600, ge=128, le=8192)
     max_retries: int = Field(default=2, ge=0, le=5)
@@ -188,8 +188,13 @@ class LangChainLLMClient:
     @classmethod
     def from_env(cls) -> "LangChainLLMClient | None":
         settings = LLMSettings.from_env()
-        if settings.mode == "rules" or not settings.api_key:
+        if settings.mode == "rules":
             return None
+        if not settings.api_key:
+            raise ValueError(
+                "DEEPSEEK_API_KEY is required when CODERADAR_AGENT_MODE is "
+                f"{settings.mode!r}; use mode='rules' for an offline run"
+            )
         return cls(settings=settings)
 
     def draft_card(

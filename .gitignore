@@ -9,6 +9,7 @@ __pycache__/
 .coverage
 htmlcov/
 .cache/
+.benchmark-build/
 
 # Runtime output
 logs/

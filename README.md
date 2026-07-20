@@ -21,7 +21,7 @@ CodeRadar 是面向 AI 编程助手竞品的证据驱动分析系统。项目围
 |---|---|---|
 | 第一周：范围与模型 | 五个竞品配置；E1—E3 事件体系；D1—D7 能力体系；来源等级、数据模型与评分配置 | `config/`、`schemas/`、`docs/` |
 | 第二周：数据与 RAG | 官网、Changelog、Pricing、GitHub 采集；正文清洗、去重、历史版本；规则标注；Elasticsearch 上的 BM25 + Dense Retrieval + RRF + 重排；元数据过滤、引用校验、冲突识别、检索轨迹与评测 | `crawler/`、`processing/`、`mini_rag/`、`scripts/` |
-| 第三周：Agent 与对标 | 四类 Prompt；Pydantic 严格输出；Price/Product/Risk/Dimension Agent；并行 Multi-Agent；情报卡片；证据与基准共同驱动的能力快照；16 项基准任务与手工结果导入；Markdown 简报 | `prompts/`、`agents/`、`schemas/`、`benchmarks/` |
+| 第三周：Agent 与对标 | 四类核心 Prompt；Pydantic 严格输出；Price/Product/Risk/Dimension Agent；并行 Multi-Agent；事件级情报卡片；证据与基准共同驱动的能力快照；D1—D7 跨产品矩阵；16 个可执行冻结任务、统一验证器与手工结果导入；Trace、Markdown 简报和一键验收 | `prompts/`、`agents/`、`schemas/`、`benchmarks/`、`artifacts/week3/` |
 
 事件标签为 E1 `pricing_change`、E2 `product_release`、E3 `risk_experience`。七类能力标签为：
 
@@ -55,9 +55,9 @@ CodeRadar 是面向 AI 编程助手竞品的证据驱动分析系统。项目围
 | `PriceAgent` | 价格、套餐、额度、教育优惠和商业化变化 | 仅接受 E1 事件，重点分析 D4/D5/D6/D7 |
 | `ProductAgent` | 产品发布、功能升级、Agent 与工程能力变化 | 仅接受 E2 事件，覆盖产品能力和生态影响 |
 | `RiskAgent` | Issue、体验、稳定性、安全与合规风险 | 仅接受 E3 事件；风险证据对能力分采用负向影响 |
-| `DimensionTaggingAgent` | E1—E3 与 D1—D7 混合标签 | 规则判断与独立模型判断分开保留，支持共识/并集策略，分歧强制复核 |
-| `CompareAgent` | 生成能力快照和历史差值 | LCEL 管线；按证据等级、时效、置信度及基准结果计算，去重 Chunk 和 Run |
-| `BenchmarkAgent` | 加载任务、导入手工运行、竞品汇总 | 严格任务协议、逐行错误隔离、幂等去重、原子写入 CSV |
+| `DimensionTaggingAgent` | E1—E3 与 D1—D7 混合标签 | 规则与模型判断分别保留，支持共识/并集策略、分歧复核，并提供单条/JSONL CLI |
+| `CompareAgent` | 生成能力快照、跨产品矩阵和历史趋势 | 双 LCEL 管线；证据/基准评分、D1—D7 N/A 单元、覆盖率门槛、增长/差距/行业标配推断均保留规则依据 |
+| `BenchmarkAgent` | 加载任务、审计资产、导入手工运行、竞品汇总 | 冻结协议、任务指纹、逐行错误隔离、幂等去重、原子 CSV 与 shell-free 验证器 |
 | `BriefingAgent` | 汇总卡片和快照 | LCEL 生成可审阅 Markdown，保留证据链接和人工复核项 |
 | `MultiAgentOrchestrator` | 并行调度与结果汇合 | Price/Product/Risk 并行，随后可选 Compare、Benchmark 与 Briefing 阶段 |
 
@@ -68,6 +68,8 @@ CodeRadar 是面向 AI 编程助手竞品的证据驱动分析系统。项目围
 关键约束包括：
 
 - 每条发现和能力影响必须引用卡片证据内已存在的 `chunk_id`；
+- 情报卡按 `document_id + version_id` 聚合为事件级卡片，不同文档/版本不会被揉成一张；单分支默认最多输出 5 张；
+- 证据中的竞品和事件类型必须与卡片一致，跨竞品、跨事件引用会被 Schema 拒绝；
 - 无证据结果会降低置信度和优先级，标记 `review_required`，不会伪装成确定结论；
 - 优先级固定按事件影响 35%、紧急程度 25%、证据置信度 20%、产品相关性 20% 计算；
 - 威胁等级与预警等级分离，卡片 ID 由规范化内容稳定生成；
@@ -77,21 +79,25 @@ CodeRadar 是面向 AI 编程助手竞品的证据驱动分析系统。项目围
 
 ### 16 项基准任务
 
-`benchmarks/tasks/tasks.jsonl` 固定提供 16 项任务，覆盖 8 类场景，每类 2 项：函数补全、编译修复、测试修复、多文件修改、重构、代码解释、测试生成和安全审查。
+`benchmarks/tasks/tasks.jsonl` 固定提供 16 项任务，覆盖 8 类场景，每类 2 项：函数补全、编译修复、测试修复、多文件修改、重构、代码解释、测试生成和安全审查。每项都已有真实 starter、`TASK.md`、`validator.json` 和自包含检查；解释任务另含冻结量表与双人盲评模板，测试生成任务包含固定 mutation set。
 
-每个任务记录成功标准、验证方式、公平性约束、任务修订号、协议版本和 SHA-256 指纹。手工运行记录包括产品/模型版本、成功状态、编译与测试结果、交互轮次、延迟、人工干预、成本、危险操作和带时区的运行时间。详细执行协议见 `benchmarks/tasks/README.md`。
+统一入口 `python -m benchmarks.validators.run_task` 使用参数数组和 `shell=False`，可审计全部资产或运行单项候选仓库。冻结验证器、检查、量表、mutation 与支持资产受 SHA-256 保护；候选进程使用最小化环境和一次性用户/临时目录。16 个原始 starter 已在 CodeRadar 环境验证为“因目标缺陷失败”，不存在语法、导入或测试收集错误。
+
+这些措施保护实验协议完整性，但**不是操作系统级安全沙箱**，也不能阻断候选代码访问网络或工作区外文件。不可信候选必须在一次性、最小权限、禁网或受控网络的容器/虚拟机中运行；第四周不得把本地 Runner 直接暴露为可提交任意代码的公共 API。
+
+每个任务记录成功标准、验证方式、公平性约束、任务修订号、协议版本和 SHA-256 指纹。Runner 同时输出验证器、完整协议、原始 starter 和候选目录摘要。正式运行写入空白起步的 `manual_runs.csv`；三条格式演示单独放在 `sample_runs.csv`，不得用于正式排名。每条正式 Run 必须带完整来源字段，以及产品/模型版本、成功状态、编译与测试结果、交互轮次、延迟、人工干预、成本、危险操作和带时区的运行时间。
 
 ## 目录结构
 
 ```text
 competitor-analysis-system/
 ├── agents/                 # 第三周 LCEL Agent、回调、LLM 适配和编排器
-├── artifacts/week3/        # 五家竞品首版卡片、能力快照、工作流摘要与简报
+├── artifacts/week3/        # 五家基线、Trace、验收报告及 CodeMate 对标矩阵
 ├── benchmarks/
 │   ├── tasks/              # 16 项固定任务及执行协议
 │   ├── results/            # 手工运行 CSV
-│   ├── repositories/       # 基准起始仓库预留位置
-│   └── validators/         # 自动验证器预留位置
+│   ├── repositories/       # 16 个冻结 starter、检查、量表和 mutation set
+│   └── validators/         # 资产审计与 shell-free 统一执行器
 ├── backend/                # FastAPI 薄适配：RAG、Agent、Benchmark 路由
 ├── config/                 # 竞品、维度、Mini-RAG 和能力评分配置
 ├── crawler/                # 官网、更新日志、价格与 GitHub 采集器
@@ -106,7 +112,7 @@ competitor-analysis-system/
 ├── processing/             # 清洗、规范化、规则标注、去重和版本管理
 ├── prompts/                # Price/Product/Risk/Dimension/Benchmark/Briefing Prompt
 ├── schemas/                # 严格 Pydantic 数据契约
-├── scripts/                # 数据、索引、评测与环境检查入口
+├── scripts/                # 数据/索引/评测，以及标签、基线、矩阵和交付验收入口
 ├── tests/                  # 离线单元、集成和显式网络测试
 ├── rag_query.py            # Mini-RAG 命令行查询入口
 └── requirement.txt         # Python 3.11 依赖清单
@@ -163,7 +169,7 @@ CODERADAR_AGENT_MODE=rules
 CODERADAR_LLM_PROVIDER=deepseek
 DEEPSEEK_API_KEY=
 DEEPSEEK_BASE_URL=https://api.deepseek.com
-DEEPSEEK_MODEL=deepseek-v4-pro
+DEEPSEEK_MODEL=deepseek-chat
 CODERADAR_LLM_TIMEOUT_SECONDS=45
 CODERADAR_LLM_MAX_TOKENS=1600
 CODERADAR_LLM_MAX_RETRIES=2
@@ -175,7 +181,7 @@ CODERADAR_LLM_MAX_RETRIES=2
 | `hybrid` | 是 | 推荐的在线模式；模型润色并补充结构化判断，非法输出或失败时回退规则 |
 | `llm` | 是 | 当前同样保留 RAG 白名单、确定性评分和完整校验，最终卡片记录为受保护的混合分析，而不是无约束纯模型输出 |
 
-未配置 `DEEPSEEK_API_KEY` 时，即使选择在线模式也不会构造远程模型客户端。模型端默认应使用支持结构化输出的 `deepseek-v4-pro`。不要把 Token、完整 Prompt 或原始敏感内容写入日志；当前 Callback 只记录执行元数据。
+未配置 `DEEPSEEK_API_KEY` 时只能使用 `rules`；若显式选择 `llm` 或 `hybrid`，程序会立即报错，避免把离线回退误记为在线分析。模型端默认使用支持当前结构化输出链路的 `deepseek-chat`。不要把 Token、完整 Prompt 或原始敏感内容写入日志；当前 Callback 只记录执行元数据。
 
 GitHub 匿名采集可以运行，但配置只读 `GITHUB_TOKEN` 能提高公开 API 请求限额：
 
@@ -293,25 +299,70 @@ print(result.briefing or "no briefing")
 
 ```powershell
 $env:CODERADAR_AGENT_MODE = 'rules'
-python -m scripts.generate_week3_baseline --mode rules --top-k 8
+python -m scripts.generate_week3_baseline `
+  --mode rules --top-k 8 --as-of 2026-07-20 --window-days 90
 ```
 
 命令会先校验 Mini-RAG 索引与 Embedding 是否兼容，再从真实检索证据生成 `artifacts/week3/`：
 
-- `manifest.json`：生成模式、评分版本、物理索引、Embedding、任务/运行数量；
+- `manifest.json`：生成/有效模式、90 天窗口、输入哈希、评分版本、物理索引、卡片质量和文件清单；
 - `intelligence_cards.json`：Price/Product/Risk 的严格结构化情报卡片；
 - `capability_snapshots.json`：五家竞品的 D1—D7 首版能力快照；
 - `workflow_summary.json`：分支状态、证据量、覆盖率和降级警告；
+- `trace_summaries.json`：15 个专业分支的脱敏 LCEL/RAG 执行摘要；
 - `briefings/*.md`：五份可人工复核的竞争态势简报。
 
-仓库当前基线使用可复现的 `rules` 模式，包含 5 家竞品、15 张卡片、5 份快照和 5 份简报。某个专业分支未检索到证据时仍会返回低置信复核卡，但不会伪造证据；对应工作流摘要会保留警告。需要在线模型措辞时可改用 `hybrid`，但正式对比前应固定模型版本并重新完成人工复核。
+仓库当前冻结基线使用可复现的 `rules` 模式，包含 5 家竞品、35 张事件级卡片（26 张证据支持、9 张降级复核）、5 份快照、15 条 Trace 和 5 份简报。某个专业分支未检索到证据时仍会返回低置信复核卡，但不会伪造证据。
+
+生成 CodeMate Campus 对标矩阵：
+
+```powershell
+python -m scripts.generate_week3_comparison
+```
+
+结果位于 `artifacts/week3/comparison/`。当前没有正式 CodeMate Campus 实测快照，因此生成器只创建 0 覆盖、全部 N/A 的证据不足基线，不填造分数，并在 `comparison_provenance.json` 中写明 `official_ranking_ready=false`。第四周录入真实 CodeMate 快照后可用同一命令重算正式差距。
+
+最后执行一键验收：
+
+```powershell
+python -m scripts.verify_week3_delivery
+# 只有显式需要并已配置密钥时才执行一个最小在线结构化探针：
+python -m scripts.verify_week3_delivery --live-llm `
+  --output artifacts/week3/live_llm_report.json
+```
+
+当前 `acceptance_report.json` 为 CodeRadar/Python 3.11.9 下 5/5 通过、0 警告；单独的在线报告为 6/6 通过，且不保存密钥或完整 Prompt。
+
+### 运行能力标签 CLI
+
+```powershell
+python -m scripts.tag_dimensions single `
+  --mode rules --source-type changelog `
+  --title 'Agent update' --content '新增项目级 Agent 与终端工具'
+
+python -m scripts.tag_dimensions batch `
+  --mode rules --input input.jsonl --output tagged.jsonl
+```
+
+批处理只有在所有行均校验成功后才原子替换输出；任一错误都会保留原文件并报告行号。
+
+### 审计与运行 Benchmark
+
+```powershell
+python -m benchmarks.validators.run_task --audit
+python -m benchmarks.validators.run_task --task-id bench_001
+python -m benchmarks.validators.run_task `
+  --task-id bench_001 --candidate C:\path\to\candidate
+```
+
+第二条命令运行故意有缺陷的 starter，预期返回非零；修复后的候选仓库才应通过。输出中的 `task_fingerprint`、`validator_sha256`、`protocol_sha256`、`starter_sha256` 和 `candidate_sha256` 必须原样写入正式 Run。正式比较前必须确保每个产品使用相同任务指纹、协议、starter、交互轮次和验证环境。
 
 ## 手工基准结果导入
 
 CSV 表头必须为：
 
 ```text
-run_id,competitor,task_id,product_version,model,task_success,compile_success,test_pass_rate,edit_rounds,latency_ms,manual_intervention,estimated_cost,harmful_action,notes,run_at
+run_id,competitor,task_id,task_revision,task_fingerprint,validator_sha256,protocol_sha256,starter_sha256,candidate_sha256,product_version,model,task_success,compile_success,test_pass_rate,edit_rounds,latency_ms,manual_intervention,estimated_cost,harmful_action,notes,run_at
 ```
 
 将待导入文件放在 `benchmarks/results/`，然后直接使用 Agent：
@@ -340,7 +391,7 @@ Invoke-RestMethod `
   -Body $body
 ```
 
-导入逐行校验：错误行被隔离，未知 `task_id` 被拒绝，重复 `run_id` 幂等跳过；成功结果通过同目录临时文件原子更新 `benchmarks/results/manual_runs.csv`。
+导入逐行校验：错误行被隔离，未知 `task_id`、旧表头、缺失来源字段、过期任务指纹或与当前资产审计不一致的协议/starter 哈希都会被拒绝，重复 `run_id` 幂等跳过；比较阶段会再次拒绝跨协议混排。成功结果通过同目录临时文件原子更新 `benchmarks/results/manual_runs.csv`。
 
 ## 当前 API（第三周薄适配）
 
@@ -388,7 +439,7 @@ python -m pytest tests -k week3 -q
 Remove-Item Env:CODERADAR_AGENT_MODE -ErrorAction SilentlyContinue
 ```
 
-第三周测试覆盖真实 LangChain Runnable/StructuredTool、结构化输出重试与非法引用回退、无证据降级、冲突记录、Dimension 规则/模型合并、16 项 Benchmark 协议与幂等导入、Compare 评分、Briefing 证据链接，以及 Multi-Agent 并行、故障隔离、缓存和工作流稳定性。
+第三周测试覆盖真实 LangChain Runnable/StructuredTool/ChatDeepSeek、结构化输出重试与非法引用回退、事件级拆卡、跨字段引用约束、无证据降级、冲突记录、Dimension CLI、16 项可执行 Benchmark、D1—D7 跨产品矩阵与趋势、基线/Trace 制品、一键验收，以及 Multi-Agent 并行、故障隔离、缓存和工作流稳定性。当前结果为 `99 passed`；全项目离线回归为 `308 passed, 1 deselected`。
 
 显式网络测试默认不会运行。需要自行检查公开网络时：
 
@@ -408,9 +459,9 @@ Remove-Item Env:CODERADAR_RUN_NETWORK_TESTS
 - 身份认证、权限、速率限制、审计日志脱敏和生产密钥托管；
 - LLM Token/成本统计、预算熔断、线上观测告警与回放工具；
 - 完整 Docker 镜像、环境编排、健康策略和部署文档；
-- 浏览器端到端测试、真实模型契约测试、压力测试和发布验收。
+- 浏览器端到端测试、大规模真实模型质量评估、压力测试和发布验收。
 
-第四周应在不改写第三周 Pydantic 契约和证据守卫的前提下，优先完成持久化、异步执行、API 收口、前端展示、可观测性、E2E 与部署。详细验收证据和接续建议见 `docs/第三周验收与第四周开发接续说明.md`。
+第四周应在不改写第三周 Pydantic 契约和证据守卫的前提下，优先完成持久化、异步执行、API 收口、前端展示、可观测性、E2E 与部署。完整资产清单、复现命令、非 Git 数据交付要求和接续建议见 `docs/交付.md`。
 
 ## 安全与可复现约定
 

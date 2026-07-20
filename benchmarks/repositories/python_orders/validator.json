@@ -1,0 +1,14 @@
+{
+  "task_id": "bench_011",
+  "version": "1.1.0",
+  "timeout_seconds": 30,
+  "protected_paths": [
+    "TASK.md",
+    "validator.json",
+    "checks.py",
+    "orders/__init__.py",
+    "orders/models.py",
+    "orders/repository.py"
+  ],
+  "command": ["{python}", "-B", "-I", "-X", "utf8", "{pytest_harness}", "--expected-tests", "7", "--pytest-config", "{pytest_config}", "--noconftest", "checks.py"]
+}
