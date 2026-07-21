@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 
+import pytest
+
 from agents.compare_agent import CompareAgent
 from schemas.benchmark import BenchmarkRun, BenchmarkTask
 from schemas.capability_snapshot import CapabilityScoreStatus
@@ -146,6 +148,12 @@ def test_benchmark_data_contributes_and_previous_snapshot_produces_delta() -> No
         run_id="run_weak",
         competitor="Cursor",
         task_id=task.task_id,
+        task_revision=task.task_revision,
+        task_fingerprint=task.task_fingerprint,
+        validator_sha256="1" * 64,
+        protocol_sha256="2" * 64,
+        starter_sha256="3" * 64,
+        candidate_sha256="4" * 64,
         task_success=False,
         compile_success=False,
         test_pass_rate=0.2,
@@ -156,6 +164,12 @@ def test_benchmark_data_contributes_and_previous_snapshot_produces_delta() -> No
         run_id="run_strong",
         competitor="Cursor",
         task_id=task.task_id,
+        task_revision=task.task_revision,
+        task_fingerprint=task.task_fingerprint,
+        validator_sha256="1" * 64,
+        protocol_sha256="2" * 64,
+        starter_sha256="3" * 64,
+        candidate_sha256="5" * 64,
         task_success=True,
         compile_success=True,
         test_pass_rate=1.0,
@@ -187,3 +201,44 @@ def test_benchmark_data_contributes_and_previous_snapshot_produces_delta() -> No
     assert detail.delta is not None and detail.delta > 0
     assert current.previous_snapshot_id == previous.snapshot_id
 
+
+def test_snapshot_rejects_mixed_benchmark_protocols_for_the_same_task() -> None:
+    task = BenchmarkTask(
+        task_id="bench_protocol_mix",
+        name="Protocol consistency fixture",
+        task_type="completion",
+        language="Python",
+        prompt="Complete the deterministic function.",
+        expected_behavior="All fixed assertions pass.",
+        primary_dimensions=[DimensionTag.CODE_INTELLIGENCE],
+    )
+    common = {
+        "competitor": "Cursor",
+        "task_id": task.task_id,
+        "task_revision": task.task_revision,
+        "task_fingerprint": task.task_fingerprint,
+        "validator_sha256": "1" * 64,
+        "starter_sha256": "3" * 64,
+        "task_success": True,
+        "test_pass_rate": 1.0,
+    }
+    first = BenchmarkRun(
+        run_id="run_protocol_one",
+        protocol_sha256="2" * 64,
+        candidate_sha256="4" * 64,
+        **common,
+    )
+    second = BenchmarkRun(
+        run_id="run_protocol_two",
+        protocol_sha256="9" * 64,
+        candidate_sha256="5" * 64,
+        **common,
+    )
+
+    with pytest.raises(ValueError, match="mixes validator/protocol/starter"):
+        CompareAgent().build_snapshot(
+            "Cursor",
+            [],
+            benchmark_tasks=[task],
+            benchmark_runs=[first, second],
+        )

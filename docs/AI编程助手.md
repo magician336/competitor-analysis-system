@@ -944,6 +944,12 @@ GET  /api/reports/{id}/download
 | id | int | 主键 |
 | competitor_id | int | 竞品 ID |
 | task_id | int | 任务 ID |
+| task_revision | varchar | 任务修订版本 |
+| task_fingerprint | varchar | 任务元数据 SHA-256 指纹 |
+| validator_sha256 | varchar | 冻结验证器摘要 |
+| protocol_sha256 | varchar | 完整验证协议摘要 |
+| starter_sha256 | varchar | 原始起始目录摘要 |
+| candidate_sha256 | varchar | 候选目录摘要 |
 | product_version | varchar | 产品版本 |
 | task_success | bool | 是否完成 |
 | test_pass_rate | float | 测试通过率 |
@@ -1041,6 +1047,8 @@ GET  /api/reports/{id}/download
 - `agents/compare_agent.py`
 - `schemas/intelligence_card.py`
 - `benchmarks/tasks/`
+
+第三周实际完成情况与 Agent/LangChain 设计说明见：[`第三周完成内容.md`](./第三周完成内容.md)；面向第四周的完整资产、运行与开发前置见：[`交付.md`](./交付.md)。
 
 ### 14.4 第四周：API、前端、测试与部署
 

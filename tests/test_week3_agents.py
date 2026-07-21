@@ -75,11 +75,14 @@ def test_agent_api_uses_service_dependency_override() -> None:
     assert snapshot.json()["scores"]["performance_cost"] > 20
 
 
-def test_benchmark_tasks_and_sample_runs_load() -> None:
-    agent = BenchmarkAgent()
-    tasks = agent.load_tasks()
-    rows = agent.compare()
+def test_benchmark_tasks_and_samples_are_explicitly_separated() -> None:
+    formal_agent = BenchmarkAgent()
+    sample_agent = BenchmarkAgent(results_path="benchmarks/results/sample_runs.csv")
+    tasks = formal_agent.load_tasks()
+    formal_rows = formal_agent.compare()
+    sample_rows = sample_agent.compare()
 
     assert len(tasks) == 16
     assert {task.task_id for task in tasks} >= {"bench_001", "bench_016"}
-    assert any(row.competitor == "Cursor" for row in rows)
+    assert formal_rows == []
+    assert any(row.competitor == "Cursor" for row in sample_rows)

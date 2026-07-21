@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import csv
+import hashlib
 from collections import Counter
 from datetime import datetime, timezone
+from functools import lru_cache
 
 import pytest
 from pydantic import ValidationError
@@ -15,11 +17,34 @@ from schemas.benchmark import BenchmarkRun, BenchmarkTask, BenchmarkTaskType
 RUN_AT = "2026-07-20T08:00:00Z"
 
 
+@lru_cache(maxsize=None)
+def _current_provenance(task_id: str) -> dict[str, str]:
+    agent = BenchmarkAgent()
+    tasks = {task.task_id: task for task in agent.load_tasks()}
+    report = agent.audit_assets()
+    records = {record.task_id: record for record in report.records}
+    selected_id = task_id if task_id in tasks else "bench_001"
+    task = tasks[selected_id]
+    record = records[selected_id]
+    return {
+        "task_revision": task.task_revision,
+        "task_fingerprint": task.task_fingerprint,
+        "validator_sha256": record.validator_sha256,
+        "protocol_sha256": record.protocol_sha256,
+        "starter_sha256": record.starter_sha256,
+    }
+
+
 def _run_row(**overrides: object) -> dict[str, object]:
+    task_id = str(overrides.get("task_id", "bench_001"))
+    run_id = str(overrides.get("run_id", "run_test_001"))
+    provenance = _current_provenance(task_id)
     row: dict[str, object] = {
-        "run_id": "run_test_001",
+        "run_id": run_id,
         "competitor": "Cursor",
-        "task_id": "bench_001",
+        "task_id": task_id,
+        **provenance,
+        "candidate_sha256": hashlib.sha256(run_id.encode("utf-8")).hexdigest(),
         "product_version": "2026.07",
         "model": "test-model",
         "task_success": True,
@@ -50,7 +75,7 @@ def test_catalog_has_sixteen_reproducible_balanced_tasks() -> None:
         assert task.success_criteria
         assert task.validation_method.strip()
         assert len(task.fairness_constraints) >= 2
-        assert task.protocol_version == "week3-manual-v1"
+        assert task.protocol_version == "week3-frozen-v2"
         assert task.task_fingerprint.startswith("sha256:")
 
 
@@ -90,6 +115,36 @@ def test_run_schema_rejects_invalid_identifiers_blank_text_and_naive_time(
 ) -> None:
     with pytest.raises(ValidationError):
         BenchmarkRun.model_validate(payload)
+
+
+@pytest.mark.parametrize(
+    "field,value",
+    [
+        ("task_revision", ""),
+        ("task_fingerprint", "sha256:" + "A" * 64),
+        ("validator_sha256", "0" * 63),
+        ("protocol_sha256", "G" * 64),
+        ("starter_sha256", "sha256:" + "0" * 64),
+        ("candidate_sha256", ""),
+    ],
+)
+def test_run_schema_requires_strict_reproducibility_metadata(field, value) -> None:
+    payload = _run_row()
+    payload[field] = value
+
+    with pytest.raises(ValidationError):
+        BenchmarkRun.model_validate(payload)
+
+
+def test_auto_run_id_includes_candidate_and_protocol_provenance() -> None:
+    first_payload = _run_row(run_id="")
+    second_payload = dict(first_payload)
+    second_payload["candidate_sha256"] = "f" * 64
+
+    first = BenchmarkRun.model_validate(first_payload)
+    second = BenchmarkRun.model_validate(second_payload)
+
+    assert first.run_id != second.run_id
 
 
 def test_import_isolates_row_errors_unknown_tasks_and_batch_duplicates() -> None:
@@ -133,6 +188,49 @@ def test_csv_import_isolates_invalid_rows(tmp_path) -> None:
     assert "unknown task_id" in summary.errors[0]
 
 
+def test_sample_csv_uses_current_audited_contract_and_real_starter_hashes() -> None:
+    summary = BenchmarkAgent().import_csv(
+        "benchmarks/results/sample_runs.csv",
+    )
+
+    assert summary.imported_count == 3
+    assert summary.errors == []
+    assert all(
+        run.candidate_sha256 == run.starter_sha256 for run in summary.runs
+    )
+
+
+def test_empty_legacy_csv_header_is_rejected_with_migration_guidance(tmp_path) -> None:
+    results_path = tmp_path / "legacy.csv"
+    results_path.write_text(
+        "run_id,competitor,task_id,product_version,model,task_success,"
+        "compile_success,test_pass_rate,edit_rounds,latency_ms,"
+        "manual_intervention,estimated_cost,harmful_action,notes,run_at\n",
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ValueError, match="Legacy CSV files are rejected"):
+        BenchmarkAgent(results_path=results_path).load_runs()
+
+
+@pytest.mark.parametrize(
+    "field,bad_value",
+    [
+        ("task_revision", "0.0.0"),
+        ("task_fingerprint", "sha256:" + "0" * 64),
+        ("validator_sha256", "0" * 64),
+        ("protocol_sha256", "0" * 64),
+        ("starter_sha256", "0" * 64),
+    ],
+)
+def test_import_rejects_results_from_noncurrent_contract(field, bad_value) -> None:
+    summary = BenchmarkAgent().import_runs([_run_row(**{field: bad_value})])
+
+    assert summary.imported_count == 0
+    assert summary.skipped_count == 1
+    assert field in summary.errors[0]
+
+
 def test_atomic_persistence_is_idempotent(tmp_path) -> None:
     results_path = tmp_path / "manual_runs.csv"
     agent = BenchmarkAgent(results_path=results_path)
@@ -148,6 +246,21 @@ def test_atomic_persistence_is_idempotent(tmp_path) -> None:
     assert replay.duplicate_count == 1
     persisted = agent.load_runs()
     assert [run.run_id for run in persisted] == ["run_test_001"]
+
+
+def test_persistence_rejects_reused_run_id_with_different_candidate(tmp_path) -> None:
+    results_path = tmp_path / "manual_runs.csv"
+    agent = BenchmarkAgent(results_path=results_path)
+    agent.import_runs([_run_row()], persist=True)
+
+    conflicting = _run_row(candidate_sha256="f" * 64)
+    summary = agent.import_runs([conflicting], persist=True)
+
+    assert summary.imported_count == 0
+    assert summary.skipped_count == 1
+    assert summary.duplicate_count == 1
+    assert "conflicting run_id" in summary.errors[0]
+    assert agent.load_runs()[0].candidate_sha256 != "f" * 64
 
 
 def test_atomic_persistence_preserves_original_on_replace_failure(
@@ -213,3 +326,24 @@ def test_compare_reports_full_metrics_and_deduplicates_run_ids() -> None:
     assert row.harmful_action_count == 1
     assert row.harmful_action_rate == pytest.approx(0.5)
     assert row.safe_run_rate == pytest.approx(0.5)
+
+
+def test_compare_rechecks_direct_runs_against_current_protocol() -> None:
+    valid = BenchmarkRun.model_validate(_run_row())
+    stale = valid.model_copy(
+        update={
+            "run_id": "run_stale_protocol",
+            "protocol_sha256": "0" * 64,
+        }
+    )
+
+    with pytest.raises(ValueError, match="protocol_sha256"):
+        BenchmarkAgent().compare([valid, stale])
+
+
+def test_compare_rejects_conflicting_duplicate_run_identity() -> None:
+    valid = BenchmarkRun.model_validate(_run_row())
+    conflicting = valid.model_copy(update={"notes": "different payload"})
+
+    with pytest.raises(ValueError, match="conflicting duplicate run_id"):
+        BenchmarkAgent().compare([valid, conflicting])
