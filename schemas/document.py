@@ -25,8 +25,15 @@ class SourceType(str, Enum):
     OFFICIAL_PAGE = "official_page"
     OFFICIAL_CHANGELOG = "official_changelog"
     PRICING = "pricing"
+    PRODUCT_DOCS = "product_docs"
+    STATUS_PAGE = "status_page"
     GITHUB_RELEASE = "github_release"
     GITHUB_ISSUE = "github_issue"
+    PLUGIN_MARKETPLACE = "plugin_marketplace"
+    COMMUNITY = "community"
+    REVIEW = "review"
+    SECURITY_PRIVACY = "security_privacy"
+    BENCHMARK = "benchmark"
     RSS = "rss"
 
 
@@ -93,10 +100,27 @@ _SOURCE_ALIASES: dict[str, SourceType] = {
     "official_changelog": SourceType.OFFICIAL_CHANGELOG,
     "rss_changelog": SourceType.OFFICIAL_CHANGELOG,
     "pricing": SourceType.PRICING,
+    "product_docs": SourceType.PRODUCT_DOCS,
+    "docs": SourceType.PRODUCT_DOCS,
+    "documentation": SourceType.PRODUCT_DOCS,
+    "status_page": SourceType.STATUS_PAGE,
+    "status": SourceType.STATUS_PAGE,
     "github_release": SourceType.GITHUB_RELEASE,
     "release": SourceType.GITHUB_RELEASE,
     "github_issue": SourceType.GITHUB_ISSUE,
     "issue": SourceType.GITHUB_ISSUE,
+    "plugin_marketplace": SourceType.PLUGIN_MARKETPLACE,
+    "marketplace": SourceType.PLUGIN_MARKETPLACE,
+    "community": SourceType.COMMUNITY,
+    "forum": SourceType.COMMUNITY,
+    "review": SourceType.REVIEW,
+    "reviews": SourceType.REVIEW,
+    "security_privacy": SourceType.SECURITY_PRIVACY,
+    "security": SourceType.SECURITY_PRIVACY,
+    "privacy": SourceType.SECURITY_PRIVACY,
+    "trust_center": SourceType.SECURITY_PRIVACY,
+    "benchmark": SourceType.BENCHMARK,
+    "benchmarks": SourceType.BENCHMARK,
     "rss": SourceType.RSS,
 }
 

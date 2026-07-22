@@ -138,3 +138,16 @@ class PageCollector(BaseCollector):
                 )
             )
         return result
+
+
+class ConfiguredPageCollector(PageCollector):
+    """Collect a configured static page under its explicit source category."""
+
+    def __init__(
+        self,
+        client: HttpClient,
+        writer: RawWriter,
+        source_type: SourceType | str,
+    ) -> None:
+        super().__init__(client, writer)
+        self.source_type = SourceType.parse(source_type)

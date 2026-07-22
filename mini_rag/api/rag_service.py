@@ -131,7 +131,6 @@ class MiniRAGService:
         overall_started = perf_counter()
         stage_latency: dict[str, float] = {}
         filters = request.filters()
-
         use_bm25 = self._ablation_flag(ablation, "use_bm25")
         use_dense = self._ablation_flag(ablation, "use_dense")
         use_rrf = self._ablation_flag(ablation, "use_rrf")

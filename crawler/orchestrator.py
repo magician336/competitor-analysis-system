@@ -11,6 +11,7 @@ from typing import Any, Iterable, Mapping, Sequence
 
 import yaml
 
+from .base import ConfiguredPageCollector
 from .crawl_changelog import ChangelogCollector
 from .crawl_github import GitHubCollector
 from .crawl_official import OfficialCollector
@@ -28,6 +29,20 @@ from .storage import RawWriter
 
 LOGGER = logging.getLogger(__name__)
 _TASK_SOURCES = {
+    SourceType.OFFICIAL,
+    SourceType.CHANGELOG,
+    SourceType.PRICING,
+    SourceType.PRODUCT_DOCS,
+    SourceType.STATUS_PAGE,
+    SourceType.GITHUB,
+    SourceType.PLUGIN_MARKETPLACE,
+    SourceType.COMMUNITY,
+    SourceType.REVIEW,
+    SourceType.SECURITY_PRIVACY,
+    SourceType.BENCHMARK,
+}
+
+_GENERIC_PAGE_SOURCES = _TASK_SOURCES - {
     SourceType.OFFICIAL,
     SourceType.CHANGELOG,
     SourceType.PRICING,
@@ -309,6 +324,14 @@ class CrawlOrchestrator:
             SourceType.GITHUB: GitHubCollector(
                 self.client, writer, token=self.github_token
             ),
+            **{
+                source_type: ConfiguredPageCollector(
+                    self.client,
+                    writer,
+                    source_type,
+                )
+                for source_type in _GENERIC_PAGE_SOURCES
+            },
         }
         minimum_visible = int(
             self.defaults.get("minimum_visible_text_chars", 80)

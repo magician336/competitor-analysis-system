@@ -1,0 +1,14 @@
+{
+  "valid": true,
+  "case_count": 40,
+  "checked_chunk_count": 42,
+  "errors": [],
+  "dataset": "D:\\26Spring\\project\\CodeRadar\\data\\samples\\测试数据集.csv",
+  "dataset_sha256": "sha256:e07bb417fcd7f50d53498f924eeb1366ca73eaf9e7cbc88e30db4ec7b165763e",
+  "human_review_status": "pending",
+  "index_alias": "coderadar_chunks_current",
+  "physical_index": "coderadar_chunks_v20260714055403776264",
+  "indexed_chunk_count": 2372,
+  "index_embedding_model": "hash-embedding/coderadar-v1",
+  "index_embedding_dimension": 1024
+}

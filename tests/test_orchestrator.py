@@ -46,6 +46,40 @@ def test_collector_task_parses_aliases_and_common_yaml_shapes() -> None:
     assert task.metadata == {"evidence_level": "A"}
     assert github.repositories == ("microsoft/vscode-copilot-chat",)
 
+    assert SourceType.parse("docs") is SourceType.PRODUCT_DOCS
+    assert SourceType.parse("status") is SourceType.STATUS_PAGE
+    assert SourceType.parse("marketplace") is SourceType.PLUGIN_MARKETPLACE
+    assert SourceType.parse("forum") is SourceType.COMMUNITY
+    assert SourceType.parse("privacy") is SourceType.SECURITY_PRIVACY
+    assert SourceType.parse("benchmarks") is SourceType.BENCHMARK
+
+
+def test_real_configuration_declares_all_source_categories() -> None:
+    import yaml
+
+    config = yaml.safe_load(
+        (PROJECT_ROOT / "config" / "competitors.yaml").read_text(encoding="utf-8")
+    )
+    expected = {
+        "official",
+        "changelog",
+        "pricing",
+        "product_docs",
+        "status_page",
+        "github",
+        "plugin_marketplace",
+        "community",
+        "review",
+        "security_privacy",
+        "benchmark",
+    }
+
+    for competitor in config["competitors"]:
+        assert set(competitor["sources"]) == expected
+        for source in competitor["sources"].values():
+            assert source["evidence_level"] in {"A", "B", "C", "D"}
+            assert isinstance(source["enabled"], bool)
+
 
 def test_real_configuration_builds_only_enabled_selected_tasks(tmp_path) -> None:
     orchestrator = CrawlOrchestrator.from_yaml(
@@ -256,6 +290,51 @@ def test_orchestrator_continues_after_one_source_timeout(tmp_path, fixture_text)
     assert summary.results[1].success_count == 1
     meta_files = list((tmp_path / "data" / "raw").rglob("*.meta.json"))
     assert len(meta_files) == 2
+
+
+@responses.activate
+def test_generic_page_source_is_persisted_under_its_own_category(
+    tmp_path,
+    fixture_text,
+) -> None:
+    config = {
+        "defaults": {
+            "max_retries": 0,
+            "requests_per_second_per_domain": 0,
+            "minimum_visible_text_chars": 40,
+        },
+        "competitors": [
+            {
+                "id": "cursor",
+                "sources": {
+                    "product_docs": {
+                        "enabled": True,
+                        "evidence_level": "A",
+                        "urls": ["https://example.test/docs"],
+                    }
+                },
+            }
+        ],
+    }
+    responses.add(
+        responses.GET,
+        "https://example.test/docs",
+        status=200,
+        body=fixture_text("pages/official.html"),
+        content_type="text/html",
+    )
+    orchestrator = CrawlOrchestrator(
+        config,
+        tmp_path / "data",
+        client=_offline_client(),
+    )
+
+    summary = orchestrator.run(crawl_run_id="run-docs")
+
+    assert summary.exit_code == 0
+    assert summary.results[0].source_type is SourceType.PRODUCT_DOCS
+    assert summary.results[0].records[0].source_type is SourceType.PRODUCT_DOCS
+    assert len(list((tmp_path / "data" / "raw" / "cursor" / "product_docs").rglob("*.html"))) == 1
 
 
 @responses.activate

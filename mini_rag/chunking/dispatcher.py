@@ -20,8 +20,18 @@ _SOURCE_ALIASES = {
     "official": SourceType.OFFICIAL_PAGE,
     "changelog": SourceType.OFFICIAL_CHANGELOG,
     "pricing": SourceType.PRICING,
+    "docs": SourceType.PRODUCT_DOCS,
+    "documentation": SourceType.PRODUCT_DOCS,
+    "status": SourceType.STATUS_PAGE,
     "release": SourceType.GITHUB_RELEASE,
     "issue": SourceType.GITHUB_ISSUE,
+    "marketplace": SourceType.PLUGIN_MARKETPLACE,
+    "forum": SourceType.COMMUNITY,
+    "reviews": SourceType.REVIEW,
+    "security": SourceType.SECURITY_PRIVACY,
+    "privacy": SourceType.SECURITY_PRIVACY,
+    "trust_center": SourceType.SECURITY_PRIVACY,
+    "benchmarks": SourceType.BENCHMARK,
 }
 
 
@@ -34,8 +44,15 @@ class ChunkingDispatcher:
             SourceType.OFFICIAL_PAGE: OfficialPageChunker(self.config),
             SourceType.OFFICIAL_CHANGELOG: ChangelogChunker(self.config),
             SourceType.PRICING: PricingChunker(self.config),
+            SourceType.PRODUCT_DOCS: OfficialPageChunker(self.config),
+            SourceType.STATUS_PAGE: OfficialPageChunker(self.config),
             SourceType.GITHUB_RELEASE: GitHubChunker(self.config),
             SourceType.GITHUB_ISSUE: GitHubChunker(self.config),
+            SourceType.PLUGIN_MARKETPLACE: OfficialPageChunker(self.config),
+            SourceType.COMMUNITY: OfficialPageChunker(self.config),
+            SourceType.REVIEW: OfficialPageChunker(self.config),
+            SourceType.SECURITY_PRIVACY: OfficialPageChunker(self.config),
+            SourceType.BENCHMARK: OfficialPageChunker(self.config),
             SourceType.RSS: ChangelogChunker(self.config),
         }
 

@@ -29,6 +29,19 @@ REQUIRED_COMPETITORS = {
     "codegeex",
 }
 REQUIRED_DIMENSION_CODES = {f"D{number}" for number in range(1, 8)}
+REQUIRED_SOURCE_TYPES = (
+    "official",
+    "changelog",
+    "pricing",
+    "product_docs",
+    "status_page",
+    "github",
+    "plugin_marketplace",
+    "community",
+    "review",
+    "security_privacy",
+    "benchmark",
+)
 LOG_LEVELS = ("DEBUG", "INFO", "WARNING", "ERROR")
 
 
@@ -87,8 +100,9 @@ def _add_crawl_arguments(parser: argparse.ArgumentParser) -> None:
         "--sources",
         default="all",
         help=(
-            "逗号分隔的来源：official,changelog,pricing,github,"
-            "github_release,github_issue，或 all"
+            "逗号分隔的来源：official,changelog,pricing,product_docs,"
+            "status_page,github,github_release,github_issue,plugin_marketplace,"
+            "community,review,security_privacy,benchmark，或 all"
         ),
     )
     parser.add_argument(
@@ -195,7 +209,7 @@ def _doctor_competitors(config: Mapping[str, Any]) -> tuple[list[str], list[str]
         if not isinstance(sources, Mapping):
             errors.append(f"{competitor_id} 缺少 sources 对象")
             continue
-        for source_name in ("official", "changelog", "pricing", "github"):
+        for source_name in REQUIRED_SOURCE_TYPES:
             source = sources.get(source_name)
             if not isinstance(source, Mapping):
                 errors.append(f"{competitor_id}.{source_name} 缺少配置")
@@ -203,7 +217,16 @@ def _doctor_competitors(config: Mapping[str, Any]) -> tuple[list[str], list[str]
             enabled = source.get("enabled")
             if not isinstance(enabled, bool):
                 errors.append(f"{competitor_id}.{source_name}.enabled 必须是布尔值")
+            evidence_level = str(source.get("evidence_level", "")).strip().upper()
+            if evidence_level not in {"A", "B", "C", "D"}:
+                errors.append(
+                    f"{competitor_id}.{source_name}.evidence_level 必须是 A、B、C 或 D"
+                )
             if not enabled:
+                if not str(source.get("note", "")).strip():
+                    warnings.append(
+                        f"{competitor_id}.{source_name} 已禁用但未说明原因"
+                    )
                 continue
             if source_name == "github":
                 repositories = source.get("repositories")
@@ -297,11 +320,11 @@ def run_doctor() -> int:
     else:
         checks.append(("OK", "运行依赖", "可导入"))
 
-    requirement_path = PROJECT_ROOT / "docs" / "requirement.txt"
+    requirement_path = PROJECT_ROOT.parent / "docs" / "requirement.txt"
     if requirement_path.is_file() and (PROJECT_ROOT / "requirements.txt").is_file():
         checks.append(("OK", "依赖清单", str(requirement_path)))
     else:
-        errors.append("缺少 docs/requirement.txt 或根目录 requirements.txt")
+        errors.append("缺少 docs/requirement.txt 或 CodeRadar/requirements.txt")
 
     try:
         competitor_config = _load_yaml(COMPETITOR_CONFIG)

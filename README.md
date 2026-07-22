@@ -24,18 +24,18 @@ CodeRadar/
 
 ## 环境安装
 
-项目使用 Python 3.11.9，虚拟环境固定放在仓库根目录的 `.venv`。克隆仓库后，在 PowerShell 中进入仓库根目录并运行：
+项目使用 Python 3.11.9，虚拟环境固定放在 `CodeRadar\.venv`。在 PowerShell 中运行：
 
 ```powershell
-Set-Location D:\path\to\competitor-analysis-system
+Set-Location D:\26Spring\project\CodeRadar
 
 & 'D:\Python 3.11.9\python.exe' -m venv .venv
 & .\.venv\Scripts\python.exe -m pip install --upgrade pip
-& .\.venv\Scripts\python.exe -m pip install -r .\docs\requirement.txt
+& .\.venv\Scripts\python.exe -m pip install -r ..\docs\requirement.txt
 & .\.venv\Scripts\python.exe -m pip check
 ```
 
-`docs\requirement.txt` 是唯一依赖清单，仓库根目录的 `requirements.txt` 只引用该文件。
+`docs\requirement.txt` 是唯一依赖清单，`CodeRadar\requirements.txt` 只引用该文件。
 
 本地 Sentence Transformers 模型权重在第一次启用对应 Provider 时下载到配置的缓存目录。默认 `hash` Provider 提供确定性离线向量，用于测试、接口联调和无模型网络环境；正式检索评测使用配置的中英双语 Embedding 模型和 Cross-Encoder Reranker（交叉编码器重排序器）。
 
@@ -66,6 +66,24 @@ GITHUB_TOKEN=你的本地令牌
 
 该命令检查 Python 版本、依赖文件、五个竞品配置、D1—D7 标签配置、数据目录和 GitHub Token 状态，不发送网络请求。
 
+每个竞品均显式配置 11 类来源。启用项必须提供 HTTPS 地址或 GitHub 仓库；禁用项保留原因说明，`doctor` 会检查类型、证据等级和目标地址。表中 GitHub 任务会分别生成 GitHub Release 和 GitHub Issue 结构化来源。
+
+| 来源类型 | Cursor | GitHub Copilot | Trae | 通义灵码 | CodeGeeX |
+| --- | :---: | :---: | :---: | :---: | :---: |
+| 官网与博客 `official` | ✓ | ✓ | ✓ | ✓ | ✓ |
+| 更新日志 `changelog` | ✓ | ✓ | ✓ | ✓ | — |
+| 定价页面 `pricing` | ✓ | ✓ | ✓ | ✓ | — |
+| 产品文档 `product_docs` | ✓ | ✓ | ✓ | ✓ | ✓ |
+| 状态页 `status_page` | ✓ | ✓ | — | — | — |
+| GitHub `github` | — | ✓ | ✓ | — | ✓ |
+| 插件市场 `plugin_marketplace` | — | ✓ | ✓ | ✓ | ✓ |
+| 社区平台 `community` | ✓ | ✓ | — | — | — |
+| 视频与测评 `review` | — | — | — | — | — |
+| 安全与隐私 `security_privacy` | ✓ | ✓ | ✓ | ✓ | — |
+| 基准测试 `benchmark` | ✓ | ✓ | ✓ | — | ✓ |
+
+第三方视频、测评和社区地址需要先建立人工确认的 URL 允许列表，因此未验证的入口保持禁用。将可靠地址写入 `config/competitors.yaml` 的 `urls`，再把 `enabled` 改为 `true`，无需新增采集代码。
+
 ## 开始爬取
 
 先查看 Cursor 和 GitHub Copilot 将执行的来源，不发送请求：
@@ -76,6 +94,32 @@ GITHUB_TOKEN=你的本地令牌
   --since-days 90 `
   --dry-run
 ```
+
+只查看新增来源任务，不发送请求：
+
+```powershell
+.\.venv\Scripts\python.exe -m scripts.data_pipeline crawl `
+  --competitors all `
+  --sources product_docs,status_page,plugin_marketplace,community,review,security_privacy,benchmark `
+  --since-days 365 `
+  --dry-run
+```
+
+现有 `data/raw` 已包含官网、更新日志、定价和 GitHub 数据时，只采集新增来源并重建结构化结果：
+
+```powershell
+.\.venv\Scripts\python.exe -m scripts.data_pipeline crawl `
+  --competitors all `
+  --sources product_docs,status_page,plugin_marketplace,community,review,security_privacy,benchmark `
+  --since-days 365 `
+  --force `
+  --log-level INFO
+
+.\.venv\Scripts\python.exe -m scripts.data_pipeline process --rebuild
+.\.venv\Scripts\python.exe -m scripts.audit_documents
+```
+
+`--force` 使本轮对全部启用的新增 URL 发出完整请求。`process --rebuild` 会同时读取已有原始响应和新增原始响应，生成一个一致的 `documents.jsonl`。
 
 执行试爬：
 
@@ -111,7 +155,7 @@ GITHUB_TOKEN=你的本地令牌
 
 常用范围控制参数：
 
-- `--sources official,changelog,pricing,github_release,github_issue`：选择来源类型。
+- `--sources`：选择 `official`、`changelog`、`pricing`、`product_docs`、`status_page`、`github`、`github_release`、`github_issue`、`plugin_marketplace`、`community`、`review`、`security_privacy` 或 `benchmark`；多个类型使用逗号分隔。
 - `--max-issues 100`：设置每个仓库最多采集的 Issue 数量。
 - `--max-comments 20`：设置每条 Issue 最多采集的评论数量。
 - `--dry-run`：只校验并输出任务清单。
@@ -234,7 +278,7 @@ Compose 默认构建 `hash + lexical` CPU 基线镜像。容器内启用 Sentenc
 六组消融实验中的 D—F 使用真实 Cross-Encoder。`config/mini_rag.formal.yaml` 配置 BGE-M3 Embedding 与多语言 MiniLM Cross-Encoder；索引端和查询端使用相同的 BGE-M3 向量空间。首次运行会下载模型权重：
 
 ```powershell
-$env:HF_HOME = Join-Path (Get-Location) '.cache\huggingface'
+$env:HF_HOME = 'D:\26Spring\project\CodeRadar\.cache\huggingface'
 
 docker compose stop api
 .\.venv\Scripts\python.exe -m scripts.build_index `
