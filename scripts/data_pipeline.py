@@ -320,6 +320,24 @@ def run_doctor() -> int:
     else:
         checks.append(("OK", "运行依赖", "可导入"))
 
+    try:
+        from playwright.sync_api import sync_playwright
+
+        with sync_playwright() as playwright:
+            chromium_path = Path(playwright.chromium.executable_path)
+        if chromium_path.is_file():
+            checks.append(("OK", "Chromium", str(chromium_path)))
+        else:
+            warnings.append(
+                "缺少 Playwright Chromium；动态官网会保留 needs_browser。"
+                "运行 python -m playwright install chromium"
+            )
+    except Exception:
+        warnings.append(
+            "未安装 Playwright；动态官网会保留 needs_browser。"
+            "请从 docs/requirement.txt 重建环境"
+        )
+
     requirement_path = PROJECT_ROOT.parent / "docs" / "requirement.txt"
     if requirement_path.is_file() and (PROJECT_ROOT / "requirements.txt").is_file():
         checks.append(("OK", "依赖清单", str(requirement_path)))

@@ -32,10 +32,11 @@ competitors:
       product_docs:
         enabled: true
         evidence_level: A
+        embedded_content: cursor_next_rsc
         urls:
           - https://cursor.com/docs
-          - https://docs.cursor.com/models
-          - https://docs.cursor.com/en/agent/overview
+          - https://cursor.com/docs/models-and-pricing
+          - https://cursor.com/docs/agent/overview
       status_page:
         enabled: true
         evidence_level: A
@@ -143,11 +144,19 @@ competitors:
       official:
         enabled: true
         evidence_level: A
+        browser_fallback:
+          enabled: true
+          wait_selector: "#root"
+          minimum_text_characters: 500
+          timeout_seconds: 30
+          settle_milliseconds: 1500
         urls:
           - https://www.trae.ai/
       changelog:
         enabled: true
         evidence_level: A
+        empty_result_markers:
+          - No update record yet.
         urls:
           - https://www.trae.ai/changelog
       pricing:
@@ -158,8 +167,9 @@ competitors:
       product_docs:
         enabled: true
         evidence_level: A
+        embedded_content: trae_router_document
         urls:
-          - https://docs.trae.ai/
+          - https://docs.trae.ai/ide/what-is-trae?_lang=en
       status_page:
         enabled: false
         evidence_level: A
@@ -168,8 +178,11 @@ competitors:
       github:
         enabled: true
         evidence_level: B
+        collect_releases: false
+        collect_issues: true
         repositories:
           - Trae-AI/TRAE
+        note: The official repository currently publishes Issues but no GitHub Releases.
       plugin_marketplace:
         enabled: true
         evidence_level: B
@@ -191,6 +204,30 @@ competitors:
         urls:
           - https://www.trae.ai/privacy-policy
           - https://www.trae.ai/terms-of-service
+        request_overrides:
+          "https://www.trae.ai/privacy-policy":
+            url: https://ug-normal.trae.ai/cloudide/api/v3/trae/terms/get
+            method: POST
+            params:
+              Language: EN
+              TermsType: user_privacy
+            json:
+              language: EN
+              termsType: user_privacy
+          "https://www.trae.ai/terms-of-service":
+            url: https://ug-normal.trae.ai/cloudide/api/v3/trae/terms/get
+            method: POST
+            params:
+              Language: EN
+              TermsType: service_terms
+            json:
+              language: EN
+              termsType: service_terms
+        json_document:
+          result_path: Result
+          title_field: Title
+          content_fields: [Content]
+          publish_time_field: SubTitle
       benchmark:
         enabled: true
         evidence_level: B
@@ -273,6 +310,12 @@ competitors:
       official:
         enabled: true
         evidence_level: A
+        browser_fallback:
+          enabled: true
+          wait_selector: "#root"
+          minimum_text_characters: 500
+          timeout_seconds: 30
+          settle_milliseconds: 1500
         urls:
           - https://www.codegeex.cn/
       changelog:
@@ -298,15 +341,27 @@ competitors:
       github:
         enabled: true
         evidence_level: B
+        collect_releases: false
+        collect_issues: true
         repositories:
           - zai-org/CodeGeeX
           - zai-org/CodeGeeX4
+        note: The official repositories currently publish Issues but no GitHub Releases.
       plugin_marketplace:
         enabled: true
         evidence_level: B
         urls:
           - https://marketplace.visualstudio.com/items?itemName=aminer.codegeex
           - https://plugins.jetbrains.com/plugin/20587-codegeex-ai-coding-assistant
+        request_overrides:
+          "https://plugins.jetbrains.com/plugin/20587-codegeex-ai-coding-assistant":
+            url: https://plugins.jetbrains.com/api/plugins/20587
+            method: GET
+        json_document:
+          title_field: name
+          content_fields: [description, preview, pricingModel]
+          publish_time_field: cdate
+          author_field: vendor.publicName
       community:
         enabled: false
         evidence_level: C

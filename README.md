@@ -32,6 +32,7 @@ Set-Location D:\26Spring\project\CodeRadar
 & 'D:\Python 3.11.9\python.exe' -m venv .venv
 & .\.venv\Scripts\python.exe -m pip install --upgrade pip
 & .\.venv\Scripts\python.exe -m pip install -r ..\docs\requirement.txt
+& .\.venv\Scripts\python.exe -m playwright install chromium
 & .\.venv\Scripts\python.exe -m pip check
 ```
 
@@ -163,7 +164,7 @@ GITHUB_TOKEN=你的本地令牌
 - `--rebuild`：`process` 或 `all` 从全部原始响应重建清洗结果。
 - `--log-level DEBUG|INFO|WARNING|ERROR`：设置日志级别。
 
-采集器遵守 `robots.txt`，按域名限速，并使用 15 秒超时和最多 3 次指数退避。HTML Changelog 列表会提取带日期的同源条目链接，按照 `--since-days` 过滤，跟随下一页并抓取详情；每个任务默认最多访问 20 个列表页和 200 个详情条目。对于日期位于子页面正文的目录型 Changelog，配置通过层叠样式表选择器（Cascading Style Sheets Selector，CSS Selector）、同源约束、路径前缀和标题模式限定目录链接。采集器校验重定向后的最终地址，读取子页面正文中的显式日期标题或表格日期；处理器按日期段拆分文档，并只保留 `--since-days` 窗口内的条目。目录返回 HTTP 304 时会无条件刷新一次目录正文，以继续检查独立更新的子页面。列表页、无可靠日期边界和超出日期范围的候选响应继续保留用于审计。无法从静态超文本标记语言（HyperText Markup Language，HTML）提取有效入口时，记录 `needs_browser` 和解析提示。单个来源失败会记录错误并继续执行其他来源。
+采集器遵守 `robots.txt`，按域名限速，并使用 15 秒超时和最多 3 次指数退避。HTML Changelog 列表会提取带日期的同源条目链接，按照 `--since-days` 过滤，跟随下一页并抓取详情；每个任务默认最多访问 20 个列表页和 200 个详情条目。对于日期位于子页面正文的目录型 Changelog，配置通过层叠样式表选择器（Cascading Style Sheets Selector，CSS Selector）、同源约束、路径前缀和标题模式限定目录链接。采集器校验重定向后的最终地址，读取子页面正文中的显式日期标题或表格日期；处理器按日期段拆分文档，并只保留 `--since-days` 窗口内的条目。目录返回 HTTP 304 时会无条件刷新一次目录正文，以继续检查独立更新的子页面。列表页、无可靠日期边界和超出日期范围的候选响应继续保留用于审计。配置了 `browser_fallback` 的 JavaScript 动态官网在静态正文不足时使用 Playwright 和无头 Chromium 获取渲染后的 HTML；其他页面保持同步 `requests` 采集。浏览器失败时保留静态响应、`needs_browser` 和失败原因，单个来源失败不会中断其他来源。配置了 `empty_result_markers` 的 Changelog 页面在匹配官方空状态提示时记录合法空结果，不生成虚构更新。
 
 ## 数据输出
 

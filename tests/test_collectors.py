@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 import requests
 import responses
 
+from crawler.browser_renderer import BrowserRenderError, RenderedPage
 from crawler.crawl_changelog import ChangelogCollector
 from crawler.crawl_github import GitHubCollector
 from crawler.crawl_official import OfficialCollector
@@ -30,6 +31,31 @@ def _client() -> HttpClient:
 
 def _payload(writer: RawWriter, record) -> bytes:
     return (writer.raw_root / record.payload_path).read_bytes()
+
+
+class _FakeBrowserRenderer:
+    def __init__(self, html: str) -> None:
+        self.html = html
+        self.calls: list[tuple[str, dict[str, object]]] = []
+
+    def render(self, url: str, **kwargs) -> RenderedPage:
+        self.calls.append((url, kwargs))
+        return RenderedPage(
+            html=self.html,
+            final_url=url,
+            http_status=200,
+        )
+
+    def close(self) -> None:
+        return None
+
+
+class _FailingBrowserRenderer:
+    def render(self, url: str, **kwargs) -> RenderedPage:
+        raise BrowserRenderError("browser fixture failed")
+
+    def close(self) -> None:
+        return None
 
 
 @responses.activate
@@ -102,6 +128,94 @@ def test_empty_html_is_preserved_and_marked_for_browser(tmp_path, fixture_text) 
     [record] = result.records
     assert record.needs_browser is True
     assert record.source_metadata["visible_text_length"] < 80
+
+
+@responses.activate
+def test_configured_browser_fallback_persists_rendered_html(tmp_path) -> None:
+    url = "https://example.test/dynamic-home"
+    responses.add(
+        responses.GET,
+        url,
+        status=200,
+        body="<html><body><div id='root'></div></body></html>",
+        content_type="text/html",
+    )
+    rendered_html = """
+    <html><body><div id="root"><main>
+      <h1>Rendered product homepage</h1>
+      <p>This browser-rendered product description contains enough stable
+      text to pass the configured acquisition threshold and be processed.</p>
+    </main></div></body></html>
+    """
+    renderer = _FakeBrowserRenderer(rendered_html)
+    writer = RawWriter(tmp_path / "raw", "run-browser")
+    collector = OfficialCollector(
+        _client(),
+        writer,
+        browser_renderer=renderer,
+    )
+
+    result = collector.collect(
+        CollectorTask(
+            "Trae",
+            "official",
+            urls=(url,),
+            metadata={
+                "browser_fallback": {
+                    "enabled": True,
+                    "wait_selector": "#root",
+                    "minimum_text_characters": 100,
+                    "timeout_seconds": 20,
+                    "settle_milliseconds": 500,
+                }
+            },
+        )
+    )
+
+    [record] = result.records
+    assert record.needs_browser is False
+    assert record.source_metadata["browser_rendered"] is True
+    assert record.source_metadata["browser_static_visible_text_length"] == 0
+    assert record.source_metadata["browser_rendered_visible_text_length"] > 80
+    assert b"Rendered product homepage" in _payload(writer, record)
+    assert renderer.calls[0][0] == url
+    assert renderer.calls[0][1]["wait_selector"] == "#root"
+
+
+@responses.activate
+def test_browser_fallback_failure_preserves_static_response(tmp_path) -> None:
+    url = "https://example.test/dynamic-home"
+    static_html = "<html><body><div id='root'></div></body></html>"
+    responses.add(
+        responses.GET,
+        url,
+        status=200,
+        body=static_html,
+        content_type="text/html",
+    )
+    writer = RawWriter(tmp_path / "raw", "run-browser-failure")
+    collector = OfficialCollector(
+        _client(),
+        writer,
+        browser_renderer=_FailingBrowserRenderer(),
+    )
+
+    result = collector.collect(
+        CollectorTask(
+            "CodeGeeX",
+            "official",
+            urls=(url,),
+            metadata={"browser_fallback": {"enabled": True}},
+        )
+    )
+
+    [record] = result.records
+    assert result.failure_count == 0
+    assert record.needs_browser is True
+    assert record.source_metadata["browser_fallback_error"] == (
+        "browser fixture failed"
+    )
+    assert _payload(writer, record) == static_html.encode()
 
 
 @responses.activate

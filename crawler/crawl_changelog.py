@@ -997,9 +997,34 @@ class ChangelogCollector(PageCollector):
                     if not entries and not undated_entries
                     else None
                 )
+                configured_empty_markers = task.metadata.get(
+                    "empty_result_markers",
+                    [],
+                )
+                if isinstance(configured_empty_markers, str):
+                    configured_empty_markers = [configured_empty_markers]
+                page_text = soup.get_text(" ", strip=True).casefold()
+                matched_empty_marker = next(
+                    (
+                        str(marker)
+                        for marker in configured_empty_markers
+                        if str(marker).strip()
+                        and str(marker).strip().casefold() in page_text
+                    ),
+                    None,
+                )
+                empty_result_valid = bool(
+                    not entries
+                    and not undated_entries
+                    and matched_empty_marker
+                )
                 needs_browser = (
                     visible_length < self.minimum_visible_characters
-                    or (not entries and not undated_entries)
+                    or (
+                        not entries
+                        and not undated_entries
+                        and not empty_result_valid
+                    )
                 )
                 undated_status_counts: dict[str, int] = {}
                 attempted_undated = 0
@@ -1039,8 +1064,10 @@ class ChangelogCollector(PageCollector):
                     "next_url": next_url,
                     "max_entries": max_entries,
                     "directory_refresh_after_304": refreshed_after_304,
+                    "empty_result_valid": empty_result_valid,
+                    "empty_result_marker": matched_empty_marker,
                 }
-                if parse_warning:
+                if parse_warning and not empty_result_valid:
                     index_metadata["parse_warning"] = parse_warning
                 if rejected_next_url:
                     index_metadata["rejected_cross_origin_next_url"] = rejected_next_url

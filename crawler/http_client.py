@@ -188,7 +188,9 @@ class HttpClient:
             connect=self.config.retries,
             read=self.config.retries,
             status=self.config.retries,
-            allowed_methods=frozenset({"GET", "HEAD"}),
+            # The crawler only uses POST for explicitly configured, read-only
+            # source APIs (for example, a terms-document lookup endpoint).
+            allowed_methods=frozenset({"GET", "HEAD", "POST"}),
             status_forcelist=frozenset({429, 500, 502, 503, 504}),
             backoff_factor=self.config.backoff_factor,
             respect_retry_after_header=True,
@@ -269,6 +271,34 @@ class HttpClient:
         if response.status_code == 200:
             self.condition_store.update(request_url, response.headers)
         return response
+
+    def post(
+        self,
+        url: str,
+        *,
+        params: Mapping[str, Any] | None = None,
+        json_body: Any = None,
+        data: Mapping[str, Any] | None = None,
+        headers: Mapping[str, str] | None = None,
+        timeout: float | None = None,
+        check_robots: bool = True,
+    ) -> requests.Response:
+        """POST to a configured read-only acquisition endpoint."""
+
+        request_url = self._prepared_url(url, params)
+        if check_robots and not self.can_fetch(request_url):
+            raise RobotsDeniedError(f"robots.txt disallows {request_url}")
+
+        self.rate_limiter.wait(request_url)
+        return self.session.post(
+            url,
+            params=params,
+            json=json_body,
+            data=data,
+            headers=dict(headers or {}),
+            timeout=timeout or self.config.timeout_seconds,
+            allow_redirects=True,
+        )
 
     def close(self) -> None:
         self.session.close()

@@ -26,6 +26,19 @@ def test_competitor_configuration_contains_the_five_planned_products() -> None:
     assert competitors["codegeex"]["sources"]["pricing"]["enabled"] is False
     assert "Lingma" in competitors["tongyi_lingma"]["aliases"]
     assert "Qoder CN" in competitors["tongyi_lingma"]["aliases"]
+    assert competitors["trae"]["sources"]["official"]["browser_fallback"][
+        "enabled"
+    ] is True
+    assert competitors["codegeex"]["sources"]["official"]["browser_fallback"][
+        "enabled"
+    ] is True
+    assert competitors["trae"]["sources"]["changelog"][
+        "empty_result_markers"
+    ] == ["No update record yet."]
+    assert competitors["trae"]["sources"]["github"]["collect_releases"] is False
+    assert competitors["codegeex"]["sources"]["github"][
+        "collect_releases"
+    ] is False
 
 
 def test_every_enabled_web_source_has_an_https_url() -> None:

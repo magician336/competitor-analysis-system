@@ -114,6 +114,112 @@ def test_extract_html_honors_declared_non_utf8_charset() -> None:
     assert "\ufffd" not in item.content
 
 
+def test_extract_cursor_next_rsc_document_from_embedded_payload() -> None:
+    record = _raw_record(
+        "product_docs",
+        content_type="text/html; charset=utf-8",
+        path="cursor/product_docs/run/agent.html",
+    )
+    record.source_metadata = {"embedded_content": "cursor_next_rsc"}
+    rsc = (
+        '1:["$","main",null,{"children":"Cursor Agent"}]\n'
+        '2:["$","p",null,{"children":"Agent searches the codebase, edits files, '
+        'and runs terminal commands."}]'
+    )
+    html = (
+        "<html><head><meta property='og:title' content='Overview | Cursor Docs'>"
+        "</head><body><main></main>"
+        f"<script>self.__next_f.push([1,{json.dumps(rsc)}])</script>"
+        "</body></html>"
+    )
+
+    [item] = extract_items(record, html)
+
+    assert item.title == "Overview | Cursor Docs"
+    assert "Cursor Agent" in item.content
+    assert "runs terminal commands" in item.content
+    assert item.source_metadata["embedded_content_extraction"] == "cursor_next_rsc"
+
+
+def test_extract_trae_router_document_from_embedded_payload() -> None:
+    record = _raw_record(
+        "product_docs",
+        content_type="text/html; charset=utf-8",
+        path="trae/product_docs/run/overview.html",
+    )
+    record.source_metadata = {"embedded_content": "trae_router_document"}
+    router_data = {
+        "loaderData": {
+            "layout": {
+                "docDetail": {
+                    "_id": "doc-1",
+                    "version_id": "version-2",
+                    "title": "What is TRAE IDE?",
+                    "publish_at": "2026-07-01T08:30:00Z",
+                    "content": {
+                        "children": [
+                            {
+                                "props": {
+                                    "value": {
+                                        "ops": [
+                                            {"insert": "TRAE is an AI coding editor.\\n"},
+                                            {"insert": "It supports agent workflows.\\n"},
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                }
+            }
+        }
+    }
+    html = (
+        "<html><body><main></main><script>"
+        f"window._ROUTER_DATA = {json.dumps(router_data)}"
+        "</script></body></html>"
+    )
+
+    [item] = extract_items(record, html)
+
+    assert item.title == "What is TRAE IDE?"
+    assert item.content.startswith("# What is TRAE IDE?")
+    assert "agent workflows" in item.content
+    assert item.publish_time == datetime(2026, 7, 1, 8, 30, tzinfo=timezone.utc)
+    assert item.source_metadata["publisher_document_id"] == "doc-1"
+
+
+def test_extract_configured_json_document_uses_public_canonical_url() -> None:
+    record = _raw_record(
+        "security_privacy",
+        content_type="application/json",
+        path="trae/security_privacy/run/privacy.json",
+    )
+    record.source_metadata = {
+        "json_document": {
+            "result_path": "Result",
+            "title_field": "Title",
+            "content_fields": ["Content"],
+            "publish_time_field": "SubTitle",
+        }
+    }
+    payload = {
+        "Result": {
+            "Title": "TRAE Privacy Policy",
+            "SubTitle": "June 30, 2026",
+            "Content": "# Introduction\n\nThis policy explains data processing.",
+        }
+    }
+
+    [item] = extract_items(record, payload)
+
+    assert item.title == "TRAE Privacy Policy"
+    assert "data processing" in item.content
+    assert item.url == "https://example.test/source"
+    assert item.publish_time == datetime(2026, 6, 30, tzinfo=timezone.utc)
+    assert item.source_metadata["structured_json_extraction"] is True
+
+
 def test_clean_html_falls_back_when_empty_main_precedes_streamed_content() -> None:
     cleaned = clean_html(
         """
