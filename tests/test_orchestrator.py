@@ -46,6 +46,40 @@ def test_collector_task_parses_aliases_and_common_yaml_shapes() -> None:
     assert task.metadata == {"evidence_level": "A"}
     assert github.repositories == ("microsoft/vscode-copilot-chat",)
 
+    assert SourceType.parse("docs") is SourceType.PRODUCT_DOCS
+    assert SourceType.parse("status") is SourceType.STATUS_PAGE
+    assert SourceType.parse("marketplace") is SourceType.PLUGIN_MARKETPLACE
+    assert SourceType.parse("forum") is SourceType.COMMUNITY
+    assert SourceType.parse("privacy") is SourceType.SECURITY_PRIVACY
+    assert SourceType.parse("benchmarks") is SourceType.BENCHMARK
+
+
+def test_real_configuration_declares_all_source_categories() -> None:
+    import yaml
+
+    config = yaml.safe_load(
+        (PROJECT_ROOT / "config" / "competitors.yaml").read_text(encoding="utf-8")
+    )
+    expected = {
+        "official",
+        "changelog",
+        "pricing",
+        "product_docs",
+        "status_page",
+        "github",
+        "plugin_marketplace",
+        "community",
+        "review",
+        "security_privacy",
+        "benchmark",
+    }
+
+    for competitor in config["competitors"]:
+        assert set(competitor["sources"]) == expected
+        for source in competitor["sources"].values():
+            assert source["evidence_level"] in {"A", "B", "C", "D"}
+            assert isinstance(source["enabled"], bool)
+
 
 def test_real_configuration_builds_only_enabled_selected_tasks(tmp_path) -> None:
     orchestrator = CrawlOrchestrator.from_yaml(
@@ -76,6 +110,37 @@ def test_real_configuration_builds_only_enabled_selected_tasks(tmp_path) -> None
     assert github_task.max_issues == 12
     assert github_task.max_comments == 3
     assert github_task.force is True
+
+
+def test_broad_github_selection_preserves_configured_subtype_switches(
+    tmp_path,
+) -> None:
+    config = {
+        "competitors": [
+            {
+                "id": "trae",
+                "sources": {
+                    "github": {
+                        "enabled": True,
+                        "repositories": ["Trae-AI/TRAE"],
+                        "collect_releases": False,
+                        "collect_issues": True,
+                    }
+                },
+            }
+        ]
+    }
+    orchestrator = CrawlOrchestrator(
+        config,
+        tmp_path / "data",
+        client=_offline_client(),
+    )
+
+    [task], errors = orchestrator.build_tasks(sources="github")
+
+    assert errors == []
+    assert task.metadata["collect_releases"] is False
+    assert task.metadata["collect_issues"] is True
 
 
 def test_tongyi_changelog_task_keeps_bounded_undated_directory_rules(tmp_path) -> None:
@@ -256,6 +321,148 @@ def test_orchestrator_continues_after_one_source_timeout(tmp_path, fixture_text)
     assert summary.results[1].success_count == 1
     meta_files = list((tmp_path / "data" / "raw").rglob("*.meta.json"))
     assert len(meta_files) == 2
+
+
+@responses.activate
+def test_generic_page_source_is_persisted_under_its_own_category(
+    tmp_path,
+    fixture_text,
+) -> None:
+    config = {
+        "defaults": {
+            "max_retries": 0,
+            "requests_per_second_per_domain": 0,
+            "minimum_visible_text_chars": 40,
+        },
+        "competitors": [
+            {
+                "id": "cursor",
+                "sources": {
+                    "product_docs": {
+                        "enabled": True,
+                        "evidence_level": "A",
+                        "urls": ["https://example.test/docs"],
+                    }
+                },
+            }
+        ],
+    }
+    responses.add(
+        responses.GET,
+        "https://example.test/docs",
+        status=200,
+        body=fixture_text("pages/official.html"),
+        content_type="text/html",
+    )
+    orchestrator = CrawlOrchestrator(
+        config,
+        tmp_path / "data",
+        client=_offline_client(),
+    )
+
+    summary = orchestrator.run(crawl_run_id="run-docs")
+
+    assert summary.exit_code == 0
+    assert summary.results[0].source_type is SourceType.PRODUCT_DOCS
+    assert summary.results[0].records[0].source_type is SourceType.PRODUCT_DOCS
+    assert len(list((tmp_path / "data" / "raw" / "cursor" / "product_docs").rglob("*.html"))) == 1
+
+
+@responses.activate
+def test_generic_page_source_can_use_structured_endpoint_and_public_url(
+    tmp_path,
+) -> None:
+    public_url = "https://example.test/privacy"
+    api_url = "https://api.example.test/terms"
+    config = {
+        "defaults": {
+            "max_retries": 0,
+            "requests_per_second_per_domain": 0,
+        },
+        "competitors": [
+            {
+                "id": "trae",
+                "sources": {
+                    "security_privacy": {
+                        "enabled": True,
+                        "urls": [public_url],
+                        "request_overrides": {
+                            public_url: {
+                                "url": api_url,
+                                "method": "POST",
+                                "params": {"Language": "EN"},
+                                "json": {"termsType": "privacy"},
+                            }
+                        },
+                    }
+                },
+            }
+        ],
+    }
+    responses.add(
+        responses.POST,
+        f"{api_url}?Language=EN",
+        status=200,
+        json={"Result": {"Title": "Privacy", "Content": "Policy body"}},
+    )
+    orchestrator = CrawlOrchestrator(
+        config,
+        tmp_path / "data",
+        client=_offline_client(),
+    )
+
+    summary = orchestrator.run(crawl_run_id="run-api")
+
+    [record] = summary.results[0].records
+    assert summary.exit_code == 0
+    assert record.requested_url == public_url
+    assert record.canonical_url == public_url
+    assert record.final_url == f"{api_url}?Language=EN"
+    assert record.content_type == "application/json"
+    assert record.source_metadata["acquisition_method"] == "POST"
+    assert record.source_metadata["acquisition_url"] == api_url
+
+
+@responses.activate
+def test_supported_embedded_payload_does_not_require_browser(tmp_path) -> None:
+    url = "https://example.test/docs"
+    config = {
+        "defaults": {
+            "max_retries": 0,
+            "requests_per_second_per_domain": 0,
+            "minimum_visible_text_chars": 200,
+        },
+        "competitors": [
+            {
+                "id": "cursor",
+                "sources": {
+                    "product_docs": {
+                        "enabled": True,
+                        "embedded_content": "cursor_next_rsc",
+                        "urls": [url],
+                    }
+                },
+            }
+        ],
+    }
+    responses.add(
+        responses.GET,
+        url,
+        status=200,
+        body="<html><script>self.__next_f.push([1,\"payload\"])</script></html>",
+        content_type="text/html",
+    )
+    orchestrator = CrawlOrchestrator(
+        config,
+        tmp_path / "data",
+        client=_offline_client(),
+    )
+
+    summary = orchestrator.run(crawl_run_id="run-embedded")
+
+    [record] = summary.results[0].records
+    assert record.needs_browser is False
+    assert record.source_metadata["embedded_content_supported"] is True
 
 
 @responses.activate

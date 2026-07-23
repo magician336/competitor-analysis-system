@@ -1,0 +1,1276 @@
+[
+  {
+    "branch": "price",
+    "card_ids": [
+      "card_770e850115da66739641"
+    ],
+    "duration_ms": 181.0433999999077,
+    "error": null,
+    "rag_query_id": "qry_f7fc95e6a74c461aa90944d1578de182",
+    "status": "success",
+    "trace": {
+      "agent_kind": "price",
+      "duration_ms": 180.875,
+      "events": [
+        {
+          "at": "2026-07-21T08:46:32.214211+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.214211+00:00",
+          "event": "start",
+          "stage": "price_prepare"
+        },
+        {
+          "at": "2026-07-21T08:46:32.214211+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.214211+00:00",
+          "event": "start",
+          "stage": "price_rag_tool"
+        },
+        {
+          "at": "2026-07-21T08:46:32.214211+00:00",
+          "event": "start",
+          "stage": "retrieve_price_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.214211+00:00",
+          "event": "start",
+          "stage": "retrieve_price_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.397627+00:00",
+          "event": "end",
+          "stage": "retrieve_price_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.397627+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.397627+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.397627+00:00",
+          "event": "start",
+          "stage": "price_guard_and_structure"
+        },
+        {
+          "at": "2026-07-21T08:46:32.398630+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.398630+00:00",
+          "event": "end",
+          "stage": "chain"
+        }
+      ],
+      "fallback_used": false,
+      "llm_used": false,
+      "model_name": null,
+      "trace_id": "trace_2bda763b4c50417ebdd700d662f7659d"
+    },
+    "warnings": [
+      "no RAG evidence matched the Agent request"
+    ],
+    "workflow_id": "workflow_9c94c11bb99776cdb6cb3e1b"
+  },
+  {
+    "branch": "product",
+    "card_ids": [
+      "card_d66fc5ed3849e7b2292c",
+      "card_9890b400d9398d547eca",
+      "card_93556130fc937fef7132",
+      "card_bf4941b9a6ab55d301f4",
+      "card_c80f35a1585e08893081"
+    ],
+    "duration_ms": 180.24549999972805,
+    "error": null,
+    "rag_query_id": "qry_569d61c610a54d1b81c1f2d48c04aa70",
+    "status": "success",
+    "trace": {
+      "agent_kind": "product",
+      "duration_ms": 179.935,
+      "events": [
+        {
+          "at": "2026-07-21T08:46:32.220565+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.220565+00:00",
+          "event": "start",
+          "stage": "product_prepare"
+        },
+        {
+          "at": "2026-07-21T08:46:32.220565+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.220565+00:00",
+          "event": "start",
+          "stage": "product_rag_tool"
+        },
+        {
+          "at": "2026-07-21T08:46:32.220565+00:00",
+          "event": "start",
+          "stage": "retrieve_product_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.220565+00:00",
+          "event": "start",
+          "stage": "retrieve_product_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.399528+00:00",
+          "event": "end",
+          "stage": "retrieve_product_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.400044+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.400044+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.400044+00:00",
+          "event": "start",
+          "stage": "product_guard_and_structure"
+        },
+        {
+          "at": "2026-07-21T08:46:32.401116+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.401116+00:00",
+          "event": "end",
+          "stage": "chain"
+        }
+      ],
+      "fallback_used": false,
+      "llm_used": false,
+      "model_name": null,
+      "trace_id": "trace_ef39166dfa0944619e41549944a1c5f7"
+    },
+    "warnings": [
+      "event card limit applied: retained 5 of 7 evidence events"
+    ],
+    "workflow_id": "workflow_9c94c11bb99776cdb6cb3e1b"
+  },
+  {
+    "branch": "risk",
+    "card_ids": [
+      "card_0a882a682d88a0f3e9a8"
+    ],
+    "duration_ms": 195.32609999805572,
+    "error": null,
+    "rag_query_id": "qry_f35afeb896b44ea0b68d2dc5f63a9f90",
+    "status": "success",
+    "trace": {
+      "agent_kind": "risk",
+      "duration_ms": 195.212,
+      "events": [
+        {
+          "at": "2026-07-21T08:46:32.220565+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.220565+00:00",
+          "event": "start",
+          "stage": "risk_prepare"
+        },
+        {
+          "at": "2026-07-21T08:46:32.223117+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.223117+00:00",
+          "event": "start",
+          "stage": "risk_rag_tool"
+        },
+        {
+          "at": "2026-07-21T08:46:32.223117+00:00",
+          "event": "start",
+          "stage": "retrieve_risk_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.223117+00:00",
+          "event": "start",
+          "stage": "retrieve_risk_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.416977+00:00",
+          "event": "end",
+          "stage": "retrieve_risk_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.416977+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.416977+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.416977+00:00",
+          "event": "start",
+          "stage": "risk_guard_and_structure"
+        },
+        {
+          "at": "2026-07-21T08:46:32.416977+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.416977+00:00",
+          "event": "end",
+          "stage": "chain"
+        }
+      ],
+      "fallback_used": false,
+      "llm_used": false,
+      "model_name": null,
+      "trace_id": "trace_4ca22d5165b74507957b9f1206a6c964"
+    },
+    "warnings": [
+      "no RAG evidence matched the Agent request"
+    ],
+    "workflow_id": "workflow_9c94c11bb99776cdb6cb3e1b"
+  },
+  {
+    "branch": "price",
+    "card_ids": [
+      "card_7edf6c57f7390efa8d45"
+    ],
+    "duration_ms": 99.96420000243234,
+    "error": null,
+    "rag_query_id": "qry_70cc96d7257c403bb2cd8ae94605ba74",
+    "status": "success",
+    "trace": {
+      "agent_kind": "price",
+      "duration_ms": 99.82,
+      "events": [
+        {
+          "at": "2026-07-21T08:46:32.420965+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.420965+00:00",
+          "event": "start",
+          "stage": "price_prepare"
+        },
+        {
+          "at": "2026-07-21T08:46:32.420965+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.420965+00:00",
+          "event": "start",
+          "stage": "price_rag_tool"
+        },
+        {
+          "at": "2026-07-21T08:46:32.420965+00:00",
+          "event": "start",
+          "stage": "retrieve_price_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.420965+00:00",
+          "event": "start",
+          "stage": "retrieve_price_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.522107+00:00",
+          "event": "end",
+          "stage": "retrieve_price_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.522107+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.522107+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.522107+00:00",
+          "event": "start",
+          "stage": "price_guard_and_structure"
+        },
+        {
+          "at": "2026-07-21T08:46:32.522623+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.522623+00:00",
+          "event": "end",
+          "stage": "chain"
+        }
+      ],
+      "fallback_used": false,
+      "llm_used": false,
+      "model_name": null,
+      "trace_id": "trace_d9278dc591fe40d2baaa36e21ef9bdac"
+    },
+    "warnings": [
+      "no RAG evidence matched the Agent request"
+    ],
+    "workflow_id": "workflow_b3d49db94af8d898db965bb9"
+  },
+  {
+    "branch": "product",
+    "card_ids": [
+      "card_e554f4cf5e630a85507e",
+      "card_dd43b0b49fe7a4a44796",
+      "card_e606f50a239bc4525cda"
+    ],
+    "duration_ms": 105.66689999905066,
+    "error": null,
+    "rag_query_id": "qry_df28b3ee28d94748becc38fdd640a82a",
+    "status": "success",
+    "trace": {
+      "agent_kind": "product",
+      "duration_ms": 105.438,
+      "events": [
+        {
+          "at": "2026-07-21T08:46:32.420965+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.420965+00:00",
+          "event": "start",
+          "stage": "product_prepare"
+        },
+        {
+          "at": "2026-07-21T08:46:32.420965+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.420965+00:00",
+          "event": "start",
+          "stage": "product_rag_tool"
+        },
+        {
+          "at": "2026-07-21T08:46:32.420965+00:00",
+          "event": "start",
+          "stage": "retrieve_product_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.420965+00:00",
+          "event": "start",
+          "stage": "retrieve_product_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.525101+00:00",
+          "event": "end",
+          "stage": "retrieve_product_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.525101+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.525101+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.525101+00:00",
+          "event": "start",
+          "stage": "product_guard_and_structure"
+        },
+        {
+          "at": "2026-07-21T08:46:32.525101+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.525101+00:00",
+          "event": "end",
+          "stage": "chain"
+        }
+      ],
+      "fallback_used": false,
+      "llm_used": false,
+      "model_name": null,
+      "trace_id": "trace_517cb7bab1514a87a7276124b4e4fc3f"
+    },
+    "warnings": [],
+    "workflow_id": "workflow_b3d49db94af8d898db965bb9"
+  },
+  {
+    "branch": "risk",
+    "card_ids": [
+      "card_dd6408f2b2ab82fc6a4d",
+      "card_c3f7251adb85d79a3cb8",
+      "card_4b845938dbd6e6559d43",
+      "card_a1ea614de0a69c9e6245",
+      "card_734901bbb9c8a2ca7488"
+    ],
+    "duration_ms": 101.09729999749106,
+    "error": null,
+    "rag_query_id": "qry_5553b43166a949db824300329a256344",
+    "status": "success",
+    "trace": {
+      "agent_kind": "risk",
+      "duration_ms": 100.809,
+      "events": [
+        {
+          "at": "2026-07-21T08:46:32.426972+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.426972+00:00",
+          "event": "start",
+          "stage": "risk_prepare"
+        },
+        {
+          "at": "2026-07-21T08:46:32.426972+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.426972+00:00",
+          "event": "start",
+          "stage": "risk_rag_tool"
+        },
+        {
+          "at": "2026-07-21T08:46:32.426972+00:00",
+          "event": "start",
+          "stage": "retrieve_risk_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.427477+00:00",
+          "event": "start",
+          "stage": "retrieve_risk_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.525101+00:00",
+          "event": "end",
+          "stage": "retrieve_risk_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.525101+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.525101+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.525101+00:00",
+          "event": "start",
+          "stage": "risk_guard_and_structure"
+        },
+        {
+          "at": "2026-07-21T08:46:32.525101+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.525101+00:00",
+          "event": "end",
+          "stage": "chain"
+        }
+      ],
+      "fallback_used": false,
+      "llm_used": false,
+      "model_name": null,
+      "trace_id": "trace_af64d708defc47c69784eff1662d9177"
+    },
+    "warnings": [],
+    "workflow_id": "workflow_b3d49db94af8d898db965bb9"
+  },
+  {
+    "branch": "price",
+    "card_ids": [
+      "card_98b5e1d0b7fd3586d063"
+    ],
+    "duration_ms": 34.68790000260924,
+    "error": null,
+    "rag_query_id": "qry_cf5fa89acd9b48b8858bd5eb746e76f5",
+    "status": "success",
+    "trace": {
+      "agent_kind": "price",
+      "duration_ms": 34.549,
+      "events": [
+        {
+          "at": "2026-07-21T08:46:32.532065+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.532065+00:00",
+          "event": "start",
+          "stage": "price_prepare"
+        },
+        {
+          "at": "2026-07-21T08:46:32.532065+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.532065+00:00",
+          "event": "start",
+          "stage": "price_rag_tool"
+        },
+        {
+          "at": "2026-07-21T08:46:32.532065+00:00",
+          "event": "start",
+          "stage": "retrieve_price_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.532065+00:00",
+          "event": "start",
+          "stage": "retrieve_price_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.567397+00:00",
+          "event": "end",
+          "stage": "retrieve_price_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.567397+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.567397+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.567397+00:00",
+          "event": "start",
+          "stage": "price_guard_and_structure"
+        },
+        {
+          "at": "2026-07-21T08:46:32.567397+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.567397+00:00",
+          "event": "end",
+          "stage": "chain"
+        }
+      ],
+      "fallback_used": false,
+      "llm_used": false,
+      "model_name": null,
+      "trace_id": "trace_230babf66f2d4fb5a878870872d64037"
+    },
+    "warnings": [
+      "no RAG evidence matched the Agent request"
+    ],
+    "workflow_id": "workflow_2b42314f0476c35a2196351d"
+  },
+  {
+    "branch": "product",
+    "card_ids": [
+      "card_a2cba48bc231ebaa97a4"
+    ],
+    "duration_ms": 43.01760000089416,
+    "error": null,
+    "rag_query_id": "qry_5ba7bf27a3504092b060a76708ee18bd",
+    "status": "success",
+    "trace": {
+      "agent_kind": "product",
+      "duration_ms": 42.898,
+      "events": [
+        {
+          "at": "2026-07-21T08:46:32.532065+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.532065+00:00",
+          "event": "start",
+          "stage": "product_prepare"
+        },
+        {
+          "at": "2026-07-21T08:46:32.532065+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.532065+00:00",
+          "event": "start",
+          "stage": "product_rag_tool"
+        },
+        {
+          "at": "2026-07-21T08:46:32.532065+00:00",
+          "event": "start",
+          "stage": "retrieve_product_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.532065+00:00",
+          "event": "start",
+          "stage": "retrieve_product_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.577881+00:00",
+          "event": "end",
+          "stage": "retrieve_product_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.577881+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.577881+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.577881+00:00",
+          "event": "start",
+          "stage": "product_guard_and_structure"
+        },
+        {
+          "at": "2026-07-21T08:46:32.577881+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.577881+00:00",
+          "event": "end",
+          "stage": "chain"
+        }
+      ],
+      "fallback_used": false,
+      "llm_used": false,
+      "model_name": null,
+      "trace_id": "trace_cb7045911c0140988aceb38504c72586"
+    },
+    "warnings": [
+      "no RAG evidence matched the Agent request"
+    ],
+    "workflow_id": "workflow_2b42314f0476c35a2196351d"
+  },
+  {
+    "branch": "risk",
+    "card_ids": [
+      "card_e8318b2001ad64a3ba07",
+      "card_34488a04bb9cdb932b0f",
+      "card_177cac9b743d7cbd7a97",
+      "card_9012bb1c8b72666c18e9",
+      "card_32a016695fc550ece824"
+    ],
+    "duration_ms": 89.18000000267057,
+    "error": null,
+    "rag_query_id": "qry_10c0b83f373143928f026b909aa5d08f",
+    "status": "success",
+    "trace": {
+      "agent_kind": "risk",
+      "duration_ms": 88.9,
+      "events": [
+        {
+          "at": "2026-07-21T08:46:32.537982+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.537982+00:00",
+          "event": "start",
+          "stage": "risk_prepare"
+        },
+        {
+          "at": "2026-07-21T08:46:32.537982+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.537982+00:00",
+          "event": "start",
+          "stage": "risk_rag_tool"
+        },
+        {
+          "at": "2026-07-21T08:46:32.537982+00:00",
+          "event": "start",
+          "stage": "retrieve_risk_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.537982+00:00",
+          "event": "start",
+          "stage": "retrieve_risk_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.624390+00:00",
+          "event": "end",
+          "stage": "retrieve_risk_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.624390+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.624390+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.624390+00:00",
+          "event": "start",
+          "stage": "risk_guard_and_structure"
+        },
+        {
+          "at": "2026-07-21T08:46:32.624390+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.624390+00:00",
+          "event": "end",
+          "stage": "chain"
+        }
+      ],
+      "fallback_used": false,
+      "llm_used": false,
+      "model_name": null,
+      "trace_id": "trace_13603ecd81b343aa99e273d16688a78c"
+    },
+    "warnings": [
+      "event card limit applied: retained 5 of 6 evidence events"
+    ],
+    "workflow_id": "workflow_2b42314f0476c35a2196351d"
+  },
+  {
+    "branch": "price",
+    "card_ids": [
+      "card_4735bcad4cf02f7c80b3"
+    ],
+    "duration_ms": 92.63629999986733,
+    "error": null,
+    "rag_query_id": "qry_32abb2581380454da5f0b130232f6621",
+    "status": "success",
+    "trace": {
+      "agent_kind": "price",
+      "duration_ms": 92.513,
+      "events": [
+        {
+          "at": "2026-07-21T08:46:32.629780+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.629780+00:00",
+          "event": "start",
+          "stage": "price_prepare"
+        },
+        {
+          "at": "2026-07-21T08:46:32.629780+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.629780+00:00",
+          "event": "start",
+          "stage": "price_rag_tool"
+        },
+        {
+          "at": "2026-07-21T08:46:32.629780+00:00",
+          "event": "start",
+          "stage": "retrieve_price_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.629780+00:00",
+          "event": "start",
+          "stage": "retrieve_price_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.721866+00:00",
+          "event": "end",
+          "stage": "retrieve_price_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.721866+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.721866+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.722551+00:00",
+          "event": "start",
+          "stage": "price_guard_and_structure"
+        },
+        {
+          "at": "2026-07-21T08:46:32.722551+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.722551+00:00",
+          "event": "end",
+          "stage": "chain"
+        }
+      ],
+      "fallback_used": false,
+      "llm_used": false,
+      "model_name": null,
+      "trace_id": "trace_71bccb416c494ec4b1ca953d388ef953"
+    },
+    "warnings": [
+      "no RAG evidence matched the Agent request"
+    ],
+    "workflow_id": "workflow_84eca5f7db0334804a0e19f4"
+  },
+  {
+    "branch": "product",
+    "card_ids": [
+      "card_542aab2e16667e63fc6f",
+      "card_fb2ae469f9ad5ee3a884",
+      "card_4abd1d61c91aaa672d74",
+      "card_18e481b3ff18278b91a2",
+      "card_6cef6e35990001e4eede"
+    ],
+    "duration_ms": 95.54760000173701,
+    "error": null,
+    "rag_query_id": "qry_7268c0125bde4a6bb35556dcf56e7ba8",
+    "status": "success",
+    "trace": {
+      "agent_kind": "product",
+      "duration_ms": 95.283,
+      "events": [
+        {
+          "at": "2026-07-21T08:46:32.629780+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.629780+00:00",
+          "event": "start",
+          "stage": "product_prepare"
+        },
+        {
+          "at": "2026-07-21T08:46:32.629780+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.629780+00:00",
+          "event": "start",
+          "stage": "product_rag_tool"
+        },
+        {
+          "at": "2026-07-21T08:46:32.629780+00:00",
+          "event": "start",
+          "stage": "retrieve_product_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.629780+00:00",
+          "event": "start",
+          "stage": "retrieve_product_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.724873+00:00",
+          "event": "end",
+          "stage": "retrieve_product_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.724873+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.724873+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.724873+00:00",
+          "event": "start",
+          "stage": "product_guard_and_structure"
+        },
+        {
+          "at": "2026-07-21T08:46:32.724873+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.724873+00:00",
+          "event": "end",
+          "stage": "chain"
+        }
+      ],
+      "fallback_used": false,
+      "llm_used": false,
+      "model_name": null,
+      "trace_id": "trace_ff3e1bc345064364a4e5d6a2d19c1f81"
+    },
+    "warnings": [
+      "event card limit applied: retained 5 of 8 evidence events"
+    ],
+    "workflow_id": "workflow_84eca5f7db0334804a0e19f4"
+  },
+  {
+    "branch": "risk",
+    "card_ids": [
+      "card_9feb4c444d672f2461d5"
+    ],
+    "duration_ms": 89.63300000323215,
+    "error": null,
+    "rag_query_id": "qry_b61a4256ea924a7aa372b6ff7bc30b9a",
+    "status": "success",
+    "trace": {
+      "agent_kind": "risk",
+      "duration_ms": 89.546,
+      "events": [
+        {
+          "at": "2026-07-21T08:46:32.634021+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.634021+00:00",
+          "event": "start",
+          "stage": "risk_prepare"
+        },
+        {
+          "at": "2026-07-21T08:46:32.634021+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.634021+00:00",
+          "event": "start",
+          "stage": "risk_rag_tool"
+        },
+        {
+          "at": "2026-07-21T08:46:32.634021+00:00",
+          "event": "start",
+          "stage": "retrieve_risk_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.634021+00:00",
+          "event": "start",
+          "stage": "retrieve_risk_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.723216+00:00",
+          "event": "end",
+          "stage": "retrieve_risk_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.723216+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.723216+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.723216+00:00",
+          "event": "start",
+          "stage": "risk_guard_and_structure"
+        },
+        {
+          "at": "2026-07-21T08:46:32.723216+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.723216+00:00",
+          "event": "end",
+          "stage": "chain"
+        }
+      ],
+      "fallback_used": false,
+      "llm_used": false,
+      "model_name": null,
+      "trace_id": "trace_5df50056d4554309bb23c91cc3c2f906"
+    },
+    "warnings": [
+      "no RAG evidence matched the Agent request"
+    ],
+    "workflow_id": "workflow_84eca5f7db0334804a0e19f4"
+  },
+  {
+    "branch": "price",
+    "card_ids": [
+      "card_b6f9304509ca4fcdfba2"
+    ],
+    "duration_ms": 39.57509999963804,
+    "error": null,
+    "rag_query_id": "qry_c56b1e0773044afb907fe96bb5c50b66",
+    "status": "success",
+    "trace": {
+      "agent_kind": "price",
+      "duration_ms": 39.446,
+      "events": [
+        {
+          "at": "2026-07-21T08:46:32.728998+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.728998+00:00",
+          "event": "start",
+          "stage": "price_prepare"
+        },
+        {
+          "at": "2026-07-21T08:46:32.728998+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.728998+00:00",
+          "event": "start",
+          "stage": "price_rag_tool"
+        },
+        {
+          "at": "2026-07-21T08:46:32.728998+00:00",
+          "event": "start",
+          "stage": "retrieve_price_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.728998+00:00",
+          "event": "start",
+          "stage": "retrieve_price_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.767710+00:00",
+          "event": "end",
+          "stage": "retrieve_price_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.769271+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.769271+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.769271+00:00",
+          "event": "start",
+          "stage": "price_guard_and_structure"
+        },
+        {
+          "at": "2026-07-21T08:46:32.769271+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.769271+00:00",
+          "event": "end",
+          "stage": "chain"
+        }
+      ],
+      "fallback_used": false,
+      "llm_used": false,
+      "model_name": null,
+      "trace_id": "trace_d11da95cb7e24740bbb9c07f6bde82fe"
+    },
+    "warnings": [
+      "no RAG evidence matched the Agent request"
+    ],
+    "workflow_id": "workflow_257d86970d4a6b113c155aba"
+  },
+  {
+    "branch": "product",
+    "card_ids": [
+      "card_f0a5f885cdd5ae35353d"
+    ],
+    "duration_ms": 38.173599998117425,
+    "error": null,
+    "rag_query_id": "qry_e4790c24e4de4cb193067cc3c1d91070",
+    "status": "success",
+    "trace": {
+      "agent_kind": "product",
+      "duration_ms": 38.054,
+      "events": [
+        {
+          "at": "2026-07-21T08:46:32.728998+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.728998+00:00",
+          "event": "start",
+          "stage": "product_prepare"
+        },
+        {
+          "at": "2026-07-21T08:46:32.728998+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.728998+00:00",
+          "event": "start",
+          "stage": "product_rag_tool"
+        },
+        {
+          "at": "2026-07-21T08:46:32.728998+00:00",
+          "event": "start",
+          "stage": "retrieve_product_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.728998+00:00",
+          "event": "start",
+          "stage": "retrieve_product_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.769774+00:00",
+          "event": "end",
+          "stage": "retrieve_product_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.769774+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.769774+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.769774+00:00",
+          "event": "start",
+          "stage": "product_guard_and_structure"
+        },
+        {
+          "at": "2026-07-21T08:46:32.770367+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.770367+00:00",
+          "event": "end",
+          "stage": "chain"
+        }
+      ],
+      "fallback_used": false,
+      "llm_used": false,
+      "model_name": null,
+      "trace_id": "trace_9c7de77519c54a67859ba2191528db3b"
+    },
+    "warnings": [
+      "no RAG evidence matched the Agent request"
+    ],
+    "workflow_id": "workflow_257d86970d4a6b113c155aba"
+  },
+  {
+    "branch": "risk",
+    "card_ids": [
+      "card_bac80c725659bb65cf79",
+      "card_d3603602c5f093c45a42",
+      "card_347d192aeaae344bf75a"
+    ],
+    "duration_ms": 40.49459999805549,
+    "error": null,
+    "rag_query_id": "qry_92bba2a73242474a998fa0406a947b04",
+    "status": "success",
+    "trace": {
+      "agent_kind": "risk",
+      "duration_ms": 40.261,
+      "events": [
+        {
+          "at": "2026-07-21T08:46:32.734286+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.734286+00:00",
+          "event": "start",
+          "stage": "risk_prepare"
+        },
+        {
+          "at": "2026-07-21T08:46:32.734286+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.734286+00:00",
+          "event": "start",
+          "stage": "risk_rag_tool"
+        },
+        {
+          "at": "2026-07-21T08:46:32.734286+00:00",
+          "event": "start",
+          "stage": "retrieve_risk_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.734789+00:00",
+          "event": "start",
+          "stage": "retrieve_risk_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.772727+00:00",
+          "event": "end",
+          "stage": "retrieve_risk_evidence"
+        },
+        {
+          "at": "2026-07-21T08:46:32.772727+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.772727+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.772727+00:00",
+          "event": "start",
+          "stage": "risk_guard_and_structure"
+        },
+        {
+          "at": "2026-07-21T08:46:32.774241+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-21T08:46:32.774241+00:00",
+          "event": "end",
+          "stage": "chain"
+        }
+      ],
+      "fallback_used": false,
+      "llm_used": false,
+      "model_name": null,
+      "trace_id": "trace_389554009cd54ee98c4bf0599669184d"
+    },
+    "warnings": [],
+    "workflow_id": "workflow_257d86970d4a6b113c155aba"
+  }
+]

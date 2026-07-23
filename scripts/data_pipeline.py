@@ -29,6 +29,19 @@ REQUIRED_COMPETITORS = {
     "codegeex",
 }
 REQUIRED_DIMENSION_CODES = {f"D{number}" for number in range(1, 8)}
+REQUIRED_SOURCE_TYPES = (
+    "official",
+    "changelog",
+    "pricing",
+    "product_docs",
+    "status_page",
+    "github",
+    "plugin_marketplace",
+    "community",
+    "review",
+    "security_privacy",
+    "benchmark",
+)
 LOG_LEVELS = ("DEBUG", "INFO", "WARNING", "ERROR")
 
 
@@ -87,8 +100,9 @@ def _add_crawl_arguments(parser: argparse.ArgumentParser) -> None:
         "--sources",
         default="all",
         help=(
-            "逗号分隔的来源：official,changelog,pricing,github,"
-            "github_release,github_issue，或 all"
+            "逗号分隔的来源：official,changelog,pricing,product_docs,"
+            "status_page,github,github_release,github_issue,plugin_marketplace,"
+            "community,review,security_privacy,benchmark，或 all"
         ),
     )
     parser.add_argument(
@@ -195,7 +209,7 @@ def _doctor_competitors(config: Mapping[str, Any]) -> tuple[list[str], list[str]
         if not isinstance(sources, Mapping):
             errors.append(f"{competitor_id} 缺少 sources 对象")
             continue
-        for source_name in ("official", "changelog", "pricing", "github"):
+        for source_name in REQUIRED_SOURCE_TYPES:
             source = sources.get(source_name)
             if not isinstance(source, Mapping):
                 errors.append(f"{competitor_id}.{source_name} 缺少配置")
@@ -203,7 +217,16 @@ def _doctor_competitors(config: Mapping[str, Any]) -> tuple[list[str], list[str]
             enabled = source.get("enabled")
             if not isinstance(enabled, bool):
                 errors.append(f"{competitor_id}.{source_name}.enabled 必须是布尔值")
+            evidence_level = str(source.get("evidence_level", "")).strip().upper()
+            if evidence_level not in {"A", "B", "C", "D"}:
+                errors.append(
+                    f"{competitor_id}.{source_name}.evidence_level 必须是 A、B、C 或 D"
+                )
             if not enabled:
+                if not str(source.get("note", "")).strip():
+                    warnings.append(
+                        f"{competitor_id}.{source_name} 已禁用但未说明原因"
+                    )
                 continue
             if source_name == "github":
                 repositories = source.get("repositories")
@@ -256,6 +279,45 @@ def _doctor_dimensions(config: Mapping[str, Any]) -> tuple[list[str], list[str]]
     return errors, warnings
 
 
+def _doctor_runtime_environment() -> tuple[bool, str]:
+    """Recognise the supported project venv and the CodeRadar Conda env."""
+
+    expected_venv = (PROJECT_ROOT / ".venv").resolve()
+    active_prefix = Path(sys.prefix).resolve()
+    if active_prefix == expected_venv:
+        return True, f"项目 .venv ({expected_venv})"
+
+    conda_default_env = os.getenv("CONDA_DEFAULT_ENV", "").strip()
+    conda_prefix_value = os.getenv("CONDA_PREFIX", "").strip()
+    conda_prefix = Path(conda_prefix_value).resolve() if conda_prefix_value else None
+    coderadar_name = "coderadar"
+    conda_detected = (
+        conda_default_env.casefold() == coderadar_name
+        or (conda_prefix is not None and conda_prefix.name.casefold() == coderadar_name)
+        or active_prefix.name.casefold() == coderadar_name
+    )
+    if conda_detected:
+        detected_prefix = conda_prefix or active_prefix
+        return True, f"Conda CodeRadar ({detected_prefix})"
+
+    return (
+        False,
+        "未检测到受支持的运行环境；请激活 Conda CodeRadar "
+        f"或项目 .venv（当前 sys.prefix={active_prefix}）",
+    )
+
+
+def _doctor_requirement_path() -> Path | None:
+    """Return the current dependency manifest, accepting legacy locations."""
+
+    candidates = (
+        PROJECT_ROOT / "requirement.txt",
+        PROJECT_ROOT / "requirements.txt",
+        PROJECT_ROOT.parent / "docs" / "requirement.txt",
+    )
+    return next((path for path in candidates if path.is_file()), None)
+
+
 def run_doctor() -> int:
     checks: list[tuple[str, str, str]] = []
     errors: list[str] = []
@@ -270,12 +332,11 @@ def run_doctor() -> int:
             "Python 版本应为 3.11.9，当前为 " + ".".join(map(str, actual_python))
         )
 
-    expected_venv = (PROJECT_ROOT / ".venv").resolve()
-    active_prefix = Path(sys.prefix).resolve()
-    if active_prefix == expected_venv:
-        checks.append(("OK", "虚拟环境", str(expected_venv)))
+    environment_ok, environment_detail = _doctor_runtime_environment()
+    if environment_ok:
+        checks.append(("OK", "运行环境", environment_detail))
     else:
-        errors.append(f"命令未使用项目虚拟环境：{expected_venv}")
+        errors.append(environment_detail)
 
     dependencies = {
         "requests": "requests",
@@ -285,6 +346,9 @@ def run_doctor() -> int:
         "pandas": "pandas",
         "PyYAML": "yaml",
         "python-dateutil": "dateutil",
+        "LangChain": "langchain",
+        "LangChain Core": "langchain_core",
+        "LangChain DeepSeek": "langchain_deepseek",
     }
     missing_dependencies: list[str] = []
     for display_name, module_name in dependencies.items():
@@ -297,11 +361,32 @@ def run_doctor() -> int:
     else:
         checks.append(("OK", "运行依赖", "可导入"))
 
-    requirement_path = PROJECT_ROOT.parent / "docs" / "requirement.txt"
-    if requirement_path.is_file() and (PROJECT_ROOT / "requirements.txt").is_file():
+    try:
+        from playwright.sync_api import sync_playwright
+
+        with sync_playwright() as playwright:
+            chromium_path = Path(playwright.chromium.executable_path)
+        if chromium_path.is_file():
+            checks.append(("OK", "Chromium", str(chromium_path)))
+        else:
+            warnings.append(
+                "缺少 Playwright Chromium；动态官网会保留 needs_browser。"
+                "运行 python -m playwright install chromium"
+            )
+    except Exception:
+        warnings.append(
+            "未安装 Playwright；动态官网会保留 needs_browser。"
+            "请从 docs/requirement.txt 重建环境"
+        )
+
+    requirement_path = _doctor_requirement_path()
+    if requirement_path is not None:
         checks.append(("OK", "依赖清单", str(requirement_path)))
     else:
-        errors.append("缺少 docs/requirement.txt 或 CodeRadar/requirements.txt")
+        errors.append(
+            "缺少依赖清单：项目根目录 requirement.txt "
+            "（兼容旧 requirements.txt 或 ../docs/requirement.txt）"
+        )
 
     try:
         competitor_config = _load_yaml(COMPETITOR_CONFIG)

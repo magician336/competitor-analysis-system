@@ -1,0 +1,20 @@
+{
+  "benchmark_run_ids": [],
+  "competitor": "CodeMate Campus",
+  "confidence": {},
+  "coverage_ratio": 0.0,
+  "deltas": {},
+  "details": [],
+  "evidence_count": {},
+  "input_card_ids": [],
+  "overall_confidence": 0.0,
+  "previous_snapshot_id": null,
+  "product_version": "unknown",
+  "scores": {},
+  "scoring_version": "week3-evidence-v2",
+  "snapshot_date": "2026-07-20",
+  "snapshot_id": "snap_364fea7f15916e0be879",
+  "total_score": 0.0,
+  "window_end": "2026-07-20T23:59:59.999999Z",
+  "window_start": "2026-04-21T23:59:59.999999Z"
+}

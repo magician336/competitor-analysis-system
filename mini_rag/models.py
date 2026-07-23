@@ -38,8 +38,18 @@ _SOURCE_ALIASES: dict[str, SourceType] = {
     "official": SourceType.OFFICIAL_PAGE,
     "changelog": SourceType.OFFICIAL_CHANGELOG,
     "pricing": SourceType.PRICING,
+    "docs": SourceType.PRODUCT_DOCS,
+    "documentation": SourceType.PRODUCT_DOCS,
+    "status": SourceType.STATUS_PAGE,
     "release": SourceType.GITHUB_RELEASE,
     "issue": SourceType.GITHUB_ISSUE,
+    "marketplace": SourceType.PLUGIN_MARKETPLACE,
+    "forum": SourceType.COMMUNITY,
+    "reviews": SourceType.REVIEW,
+    "security": SourceType.SECURITY_PRIVACY,
+    "privacy": SourceType.SECURITY_PRIVACY,
+    "trust_center": SourceType.SECURITY_PRIVACY,
+    "benchmarks": SourceType.BENCHMARK,
 }
 
 _COMPETITOR_ALIASES: dict[str, str] = {

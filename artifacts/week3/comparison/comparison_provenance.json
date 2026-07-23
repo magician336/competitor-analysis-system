@@ -1,0 +1,52 @@
+{
+  "analysis_window": {
+    "end_time": "2026-07-20T23:59:59.999999+00:00",
+    "start_time": "2026-04-21T23:59:59.999999+00:00"
+  },
+  "artifact_version": "week3-comparison-v1",
+  "baseline_coverage_ratio": 0.0,
+  "baseline_product": "CodeMate Campus",
+  "baseline_scored_dimension_count": 0,
+  "baseline_snapshot_id": "snap_364fea7f15916e0be879",
+  "baseline_source": "synthesized_insufficient_evidence",
+  "comparison_engine": "CompareAgent.compare_snapshots",
+  "current_snapshot_ids": {
+    "CodeGeeX": "snap_daff2b08c5201bc50cb3",
+    "CodeMate Campus": "snap_364fea7f15916e0be879",
+    "Cursor": "snap_654a3cadc326fde28c59",
+    "GitHub Copilot": "snap_ed5d5e312d5f07def6b4",
+    "Trae": "snap_0ee24ef1d0e0aa56ae2f",
+    "通义灵码": "snap_c3662393158c6db99887"
+  },
+  "external_products": [
+    "CodeGeeX",
+    "Cursor",
+    "GitHub Copilot",
+    "Trae",
+    "通义灵码"
+  ],
+  "files": [
+    "comparison_matrix.json",
+    "codemate_baseline_snapshot.json",
+    "comparison_provenance.json"
+  ],
+  "generated_at": "2026-07-23T14:19:53.447393+00:00",
+  "inputs": {
+    "baseline_snapshot": null,
+    "capability_snapshots": {
+      "path": "D:\\code_warehouse\\Curriculum\\InternshipTraining\\Proj\\competitor-analysis-system\\artifacts\\week3\\capability_snapshots.json",
+      "sha256": "sha256:3608959fb7e0232ed3bfaf0fb630826473b77cdc74552fa90929adae557cd684"
+    },
+    "previous_snapshots": null
+  },
+  "minimum_rank_coverage": 0.8,
+  "network_used": false,
+  "official_ranking_ready": false,
+  "previous_snapshot_ids": {},
+  "scoring_version": "week3-evidence-v2",
+  "snapshot_date": "2026-07-20",
+  "warnings": [
+    "CodeMate Campus snapshot was absent; a zero-coverage, insufficient-evidence baseline was created without synthetic scores.",
+    "Official cross-product ranking is disabled until the baseline reaches minimum_rank_coverage=0.80."
+  ]
+}

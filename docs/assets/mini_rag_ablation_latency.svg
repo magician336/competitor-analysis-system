@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="540" viewBox="0 0 1120 540" role="img" aria-label="A–F 稳态 P95 延迟">
+<style>
+.title{font:700 25px 'Segoe UI','Microsoft YaHei',sans-serif;fill:#10233f}
+.subtitle{font:14px 'Segoe UI','Microsoft YaHei',sans-serif;fill:#5b6b82}
+.label{font:600 14px 'Segoe UI','Microsoft YaHei',sans-serif;fill:#243b5a}
+.tick{font:12px 'Segoe UI','Microsoft YaHei',sans-serif;fill:#687891}
+.value{font:600 12px 'Segoe UI','Microsoft YaHei',sans-serif;fill:#243b5a}
+.note{font:12px 'Segoe UI','Microsoft YaHei',sans-serif;fill:#687891}
+</style>
+<rect width="1120" height="540" rx="18" fill="#f7f9fc"/>
+<text x="42" y="44" class="title">A–F 稳态 P95 延迟</text>
+<text x="42" y="70" class="subtitle">每组预热 1 次；柱为 3 次均值，误差线为样本标准差</text>
+<line x1="115.0" y1="115" x2="115.0" y2="478" stroke="#dce3ed"/>
+<text x="115.0" y="501" text-anchor="middle" class="tick">0</text>
+<line x1="301.0" y1="115" x2="301.0" y2="478" stroke="#dce3ed"/>
+<text x="301.0" y="501" text-anchor="middle" class="tick">1380</text>
+<line x1="487.0" y1="115" x2="487.0" y2="478" stroke="#dce3ed"/>
+<text x="487.0" y="501" text-anchor="middle" class="tick">2760</text>
+<line x1="673.0" y1="115" x2="673.0" y2="478" stroke="#dce3ed"/>
+<text x="673.0" y="501" text-anchor="middle" class="tick">4140</text>
+<line x1="859.0" y1="115" x2="859.0" y2="478" stroke="#dce3ed"/>
+<text x="859.0" y="501" text-anchor="middle" class="tick">5520</text>
+<line x1="1045.0" y1="115" x2="1045.0" y2="478" stroke="#dce3ed"/>
+<text x="1045.0" y="501" text-anchor="middle" class="tick">6900</text>
+<text x="77" y="150.0" text-anchor="middle" class="label">A</text>
+<rect x="115" y="128.0" width="9.5" height="34" rx="7" fill="#6f52ed" opacity="0.9"/>
+<line x1="121.0" y1="145.0" x2="127.9" y2="145.0" stroke="#182842" stroke-width="2"/>
+<line x1="121.0" y1="139.0" x2="121.0" y2="151.0" stroke="#182842" stroke-width="2"/>
+<line x1="127.9" y1="139.0" x2="127.9" y2="151.0" stroke="#182842" stroke-width="2"/>
+<text x="136.9" y="150.0" class="value">70.2 ms</text>
+<text x="77" y="210.5" text-anchor="middle" class="label">B</text>
+<rect x="115" y="188.5" width="79.4" height="34" rx="7" fill="#6f52ed" opacity="0.9"/>
+<line x1="174.5" y1="205.5" x2="214.2" y2="205.5" stroke="#182842" stroke-width="2"/>
+<line x1="174.5" y1="199.5" x2="174.5" y2="211.5" stroke="#182842" stroke-width="2"/>
+<line x1="214.2" y1="199.5" x2="214.2" y2="211.5" stroke="#182842" stroke-width="2"/>
+<text x="223.2" y="210.5" class="value">588.9 ms</text>
+<text x="77" y="271.0" text-anchor="middle" class="label">C</text>
+<rect x="115" y="249.0" width="79.2" height="34" rx="7" fill="#6f52ed" opacity="0.9"/>
+<line x1="165.5" y1="266.0" x2="223.0" y2="266.0" stroke="#182842" stroke-width="2"/>
+<line x1="165.5" y1="260.0" x2="165.5" y2="272.0" stroke="#182842" stroke-width="2"/>
+<line x1="223.0" y1="260.0" x2="223.0" y2="272.0" stroke="#182842" stroke-width="2"/>
+<text x="232.0" y="271.0" class="value">588.0 ms</text>
+<text x="77" y="331.5" text-anchor="middle" class="label">D</text>
+<rect x="115" y="309.5" width="604.3" height="34" rx="7" fill="#6f52ed" opacity="0.9"/>
+<line x1="615.4" y1="326.5" x2="823.2" y2="326.5" stroke="#182842" stroke-width="2"/>
+<line x1="615.4" y1="320.5" x2="615.4" y2="332.5" stroke="#182842" stroke-width="2"/>
+<line x1="823.2" y1="320.5" x2="823.2" y2="332.5" stroke="#182842" stroke-width="2"/>
+<text x="832.2" y="331.5" class="value">4483.4 ms</text>
+<text x="77" y="392.0" text-anchor="middle" class="label">E</text>
+<rect x="115" y="370.0" width="678.3" height="34" rx="7" fill="#6f52ed" opacity="0.9"/>
+<line x1="664.0" y1="387.0" x2="922.5" y2="387.0" stroke="#182842" stroke-width="2"/>
+<line x1="664.0" y1="381.0" x2="664.0" y2="393.0" stroke="#182842" stroke-width="2"/>
+<line x1="922.5" y1="381.0" x2="922.5" y2="393.0" stroke="#182842" stroke-width="2"/>
+<text x="931.5" y="392.0" class="value">5032.5 ms</text>
+<text x="77" y="452.5" text-anchor="middle" class="label">F</text>
+<rect x="115" y="430.5" width="649.1" height="34" rx="7" fill="#6f52ed" opacity="0.9"/>
+<line x1="650.3" y1="447.5" x2="877.8" y2="447.5" stroke="#182842" stroke-width="2"/>
+<line x1="650.3" y1="441.5" x2="650.3" y2="453.5" stroke="#182842" stroke-width="2"/>
+<line x1="877.8" y1="441.5" x2="877.8" y2="453.5" stroke="#182842" stroke-width="2"/>
+<text x="886.8" y="452.5" class="value">4815.9 ms</text>
+<text x="42" y="518" class="note">数值越低表示响应越快；延迟比较使用同一设备、索引、模型缓存和候选窗口。</text>
+</svg>

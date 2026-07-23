@@ -228,6 +228,42 @@ def test_unparseable_html_index_is_preserved_for_browser_audit(
 
 
 @responses.activate
+def test_configured_empty_changelog_is_a_valid_zero_result(tmp_path) -> None:
+    url = "https://example.test/changelog"
+    responses.add(
+        responses.GET,
+        url,
+        status=200,
+        body="""
+        <html><body><main>
+          <h1>Changelog</h1>
+          <p>Updates, changes, and improvements are published here.</p>
+          <p>No update record yet.</p>
+        </main></body></html>
+        """,
+        content_type="text/html",
+    )
+    writer = RawWriter(tmp_path / "raw", "run-empty-changelog")
+
+    result = ChangelogCollector(_client(), writer).collect(
+        CollectorTask(
+            "Trae",
+            "changelog",
+            urls=(url,),
+            metadata={"empty_result_markers": ["No update record yet."]},
+        )
+    )
+
+    [record] = result.records
+    assert result.failure_count == 0
+    assert record.needs_browser is False
+    assert record.source_metadata["empty_result_valid"] is True
+    assert record.source_metadata["empty_result_marker"] == "No update record yet."
+    assert "parse_warning" not in record.source_metadata
+    assert record.source_metadata["record_role"] == "changelog_index"
+
+
+@responses.activate
 def test_configured_undated_directory_links_use_target_page_dates(
     tmp_path,
     fixture_text,

@@ -57,8 +57,15 @@ _EVIDENCE_BY_SOURCE: dict[SourceType, EvidenceLevel] = {
     SourceType.OFFICIAL_PAGE: EvidenceLevel.A,
     SourceType.OFFICIAL_CHANGELOG: EvidenceLevel.A,
     SourceType.PRICING: EvidenceLevel.A,
+    SourceType.PRODUCT_DOCS: EvidenceLevel.A,
+    SourceType.STATUS_PAGE: EvidenceLevel.A,
     SourceType.GITHUB_RELEASE: EvidenceLevel.B,
     SourceType.GITHUB_ISSUE: EvidenceLevel.C,
+    SourceType.PLUGIN_MARKETPLACE: EvidenceLevel.B,
+    SourceType.COMMUNITY: EvidenceLevel.C,
+    SourceType.REVIEW: EvidenceLevel.C,
+    SourceType.SECURITY_PRIVACY: EvidenceLevel.A,
+    SourceType.BENCHMARK: EvidenceLevel.B,
     SourceType.RSS: EvidenceLevel.B,
 }
 

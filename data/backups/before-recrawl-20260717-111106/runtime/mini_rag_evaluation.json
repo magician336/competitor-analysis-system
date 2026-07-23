@@ -1,0 +1,1142 @@
+{
+  "evaluation_id": "eval_c925d762d05a71f22de41257",
+  "metrics": {
+    "citation_accuracy": 0.95,
+    "metadata_filter_accuracy": 1.0,
+    "mrr": 0.8475694444444445,
+    "ndcg@10": 0.867944898947225,
+    "old_version_false_recall_rate": 0.0,
+    "recall@10": 0.95,
+    "recall@5": 0.9,
+    "mean_latency_ms": 1005.970632500248,
+    "p50_latency_ms": 788.1330999953207,
+    "p95_latency_ms": 1274.487615005273,
+    "max_latency_ms": 10424.079299998994,
+    "query_success_rate": 1.0
+  },
+  "case_count": 40,
+  "latencies_ms": [
+    10424.079299998994,
+    391.1097999953199,
+    361.0949000067194,
+    509.4688000026508,
+    324.7512000016286,
+    936.6955999939819,
+    527.2009000036633,
+    470.27100000559585,
+    761.864299995068,
+    1271.017800005211,
+    635.5516999974498,
+    921.265900004073,
+    814.4018999955733,
+    715.6656000006478,
+    932.3996000020998,
+    1019.6960000030231,
+    992.067599996517,
+    1018.0762999953004,
+    541.6022999997949,
+    260.8994000038365,
+    118.21600000257604,
+    299.52420000336133,
+    288.65390000282787,
+    1027.5394999989658,
+    1089.2542000001413,
+    1116.8689000041923,
+    1062.9172999979346,
+    1144.754599998123,
+    1065.2273000014247,
+    1131.0491999975056,
+    1112.3783000002732,
+    1092.5033999956213,
+    647.7331999994931,
+    1130.7740000047488,
+    539.5085999989533,
+    498.11529999715276,
+    505.12890000391053,
+    559.4750999953249,
+    639.6093999937875,
+    1340.4141000064556
+  ],
+  "details": [
+    {
+      "case_id": "cursor_official_agent",
+      "retrieved_chunk_ids": [
+        "chunk_f6ba9547b6d24c1bc480481b",
+        "chunk_5b38604f1c248e7f16cc66b9",
+        "chunk_b4180b2e9105f36f75d4ec67",
+        "chunk_81198d3143ec6a7bbbda3ca2",
+        "chunk_ab09dc021fb218a929abba46",
+        "chunk_c403fc62187fcbc9f9e82944",
+        "chunk_9e65cc2d01863295948d4df7",
+        "chunk_4802de73490d945a523368e7",
+        "chunk_1dcdb78c1b9939e434fea5d9",
+        "chunk_b63fca87d17f4847f74ecfc4"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 10424.079299998994,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "cursor_teams_price",
+      "retrieved_chunk_ids": [
+        "chunk_c5fedceb650f56c40866e98a",
+        "chunk_0154296f2861aad72be603b8",
+        "chunk_63700f2d4d8b0d72ca4d19e3",
+        "chunk_1e0c884afb69d6ab8c9d48e5",
+        "chunk_288c0749e90adadf0470801b",
+        "chunk_015a8ae26215d7d8e26816d3",
+        "chunk_6d0f1f09e5b88e473fc985a9",
+        "chunk_77bb3a8ed29e9c7806a2b10d",
+        "chunk_a6b48c2613a1f817450c316d",
+        "chunk_c2e2b9b277bb7b3fafb4ed28"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 391.1097999953199,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "cursor_enterprise_controls",
+      "retrieved_chunk_ids": [
+        "chunk_63700f2d4d8b0d72ca4d19e3",
+        "chunk_0154296f2861aad72be603b8",
+        "chunk_c5fedceb650f56c40866e98a",
+        "chunk_015a8ae26215d7d8e26816d3",
+        "chunk_1e0c884afb69d6ab8c9d48e5",
+        "chunk_77bb3a8ed29e9c7806a2b10d",
+        "chunk_288c0749e90adadf0470801b",
+        "chunk_a6b48c2613a1f817450c316d",
+        "chunk_6d0f1f09e5b88e473fc985a9",
+        "chunk_c2e2b9b277bb7b3fafb4ed28"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 361.0949000067194,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "cursor_side_chats_311",
+      "retrieved_chunk_ids": [
+        "chunk_fa6c659cb1b68ffc73e2b44d",
+        "chunk_47a01c72de87b9ca9accd718",
+        "chunk_f6aa1e2fc0fc64f6d8633ee6",
+        "chunk_fe97c057721ae9e1388b1f0e",
+        "chunk_61c65ab11845c039a67d96c6",
+        "chunk_81b02a75ffa17eb680ef8fcd"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 509.4688000026508,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "cursor_automations_38",
+      "retrieved_chunk_ids": [
+        "chunk_e40c8ab9aeaa43db310fee96",
+        "chunk_44201142d36cffcccb5626f7",
+        "chunk_ba24ea3712a1426b2315e94a",
+        "chunk_91949d47b76d6144aa6536ff",
+        "chunk_89b906eb2c37613bcb388288",
+        "chunk_17d1e72d3fb363e750ad1082"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 324.7512000016286,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "cursor_bugbot_metrics",
+      "retrieved_chunk_ids": [
+        "chunk_d9965875d54373f9630cea00",
+        "chunk_60939fb613aa367ea1a57acf",
+        "chunk_c102cb35490fac8062c1cc23",
+        "chunk_2681656bad46e94c186f8118",
+        "chunk_305b0ec36cb9c2e1f1634a7d",
+        "chunk_9f7d074fe02cf8a766716b08",
+        "chunk_0449f8f46ca51d3521d7d58c",
+        "chunk_4e9584e8b2363909b5c1ef64",
+        "chunk_31a8d1030b7e05a3b9e82618",
+        "chunk_f45f1a9f44d4041376c54970"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 936.6955999939819,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "cursor_cloud_subagent_37",
+      "retrieved_chunk_ids": [
+        "chunk_7aa60f3448cc416bf9c29ffe",
+        "chunk_95e2856270bfa510adc4bdf2",
+        "chunk_389f687fffeb8055e694db7b",
+        "chunk_e6f562692fdcdc588cea3f18",
+        "chunk_60f4492a8026abe68d585b84",
+        "chunk_213d3467079e67a5995ed6a8",
+        "chunk_865c9f4590d51bf1e45bae25",
+        "chunk_5b5434c7f0ed123bf0764ac8",
+        "chunk_00a06c66b59e969030137fb1",
+        "chunk_06afaa0b8de4dc986a057db3"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 0.5,
+        "ndcg@10": 0.6309297535714575,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 527.2009000036633,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "cursor_canvas_design_37",
+      "retrieved_chunk_ids": [
+        "chunk_00a06c66b59e969030137fb1",
+        "chunk_5b5434c7f0ed123bf0764ac8",
+        "chunk_213d3467079e67a5995ed6a8",
+        "chunk_06afaa0b8de4dc986a057db3",
+        "chunk_60f4492a8026abe68d585b84",
+        "chunk_865c9f4590d51bf1e45bae25",
+        "chunk_b624857e589f5d125e6fce53",
+        "chunk_7aa60f3448cc416bf9c29ffe",
+        "chunk_e6f562692fdcdc588cea3f18",
+        "chunk_95e2856270bfa510adc4bdf2"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 470.27100000559585,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "copilot_official_workflow",
+      "retrieved_chunk_ids": [
+        "chunk_fba32cf66b8734e83ef83b58",
+        "chunk_67b89835e8e1f9348f317b8d",
+        "chunk_4b632fee7d37e3c74cdefb90",
+        "chunk_8372de4f080e6f37720d7a5c",
+        "chunk_0f3ca01dd8ec2840e1ca964a",
+        "chunk_4a3f5ac40ce7c35ceeef6baf",
+        "chunk_e382f6a9ba75d8472a968e58",
+        "chunk_f5c2daff08002d1f59fb0cfc",
+        "chunk_07f5149873cd3e5cc3ebfeea",
+        "chunk_d3dae02400b860a9bee5c433"
+      ],
+      "metrics": {
+        "recall@5": 0.0,
+        "recall@10": 1.0,
+        "mrr": 0.1111111111111111,
+        "ndcg@10": 0.3010299956639812,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 761.864299995068,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "copilot_ai_credit_value",
+      "retrieved_chunk_ids": [
+        "chunk_b11afbb3413e708162be063e",
+        "chunk_5c3b3d51e0f3201cab72bcb7",
+        "chunk_f5224619a4ea5f08a90ece49",
+        "chunk_8073de01e35184d980b4ef00",
+        "chunk_71ecea7547af6e9ec82453da",
+        "chunk_58071a4b0878c72db6bb0d5d",
+        "chunk_b5420e4550c5e8e816aa1854",
+        "chunk_559a2f8e0a7da35043740944",
+        "chunk_1f0f8238a2ed80eab30ac539",
+        "chunk_1ac510ec2404d625b8fb5bb2"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 1271.017800005211,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "copilot_repository_overview",
+      "retrieved_chunk_ids": [
+        "chunk_b579df4bd0f80e1c1b37a241",
+        "chunk_db50a97eb9c6345ec3e90662",
+        "chunk_f1596ff65188c2395b259cdd",
+        "chunk_c3bec5daaa3df7403601af3e",
+        "chunk_1becaa3afd7c27e2a9c33940",
+        "chunk_6f395a728471f06aaf0eb11b",
+        "chunk_baadc65a8a941a830d327434",
+        "chunk_4568e9317991639a6f042d31",
+        "chunk_ffcaf6e3827e696bc37d8150",
+        "chunk_3c5aca17cecc41ff2079921a"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 635.5516999974498,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "copilot_otel_management",
+      "retrieved_chunk_ids": [
+        "chunk_b3086ff73645a8fd820f8500",
+        "chunk_dbd13c24767953afeb00faf5",
+        "chunk_754d1bb0691ffcca4681d51a",
+        "chunk_f8489767d5e57757f7f361d9",
+        "chunk_fd87bbf1a710594a1efbc17e",
+        "chunk_12ab56ae784fdb88568fb93a",
+        "chunk_4d9c34ce8ee5ae8991efc89d",
+        "chunk_6b5d72bc720b6186ddb1c471",
+        "chunk_5b6b38b81916d4c3e7dcb286",
+        "chunk_f455490fba5b660972719a31"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 921.265900004073,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "copilot_codex_jetbrains",
+      "retrieved_chunk_ids": [
+        "chunk_55becf7e95a39d2ca8c8a8bd",
+        "chunk_e81d76d3d568ba9e68f4cf74",
+        "chunk_436241fcce0a72c74e896f2e",
+        "chunk_888689d411f3283e57a8cab6",
+        "chunk_fb106513abe7875966224671",
+        "chunk_bab3f8fb69f4abc61c2c7bdd",
+        "chunk_5dd96f1d8c76e05915b8eecb",
+        "chunk_51599f3bec194fd98989d44c",
+        "chunk_25bb126ffb3f883c865f364c",
+        "chunk_a7c9a9b8ebc67238ac540507"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 0.5,
+        "ndcg@10": 0.6309297535714575,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 814.4018999955733,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "copilot_app_all_plans",
+      "retrieved_chunk_ids": [
+        "chunk_97c7e774099a61a34bf833e6",
+        "chunk_436241fcce0a72c74e896f2e",
+        "chunk_55becf7e95a39d2ca8c8a8bd",
+        "chunk_fb106513abe7875966224671",
+        "chunk_f1d13c549e0e3f2ccd27bf45",
+        "chunk_e81d76d3d568ba9e68f4cf74",
+        "chunk_401279b0b6e095ba2fa930e0",
+        "chunk_bab3f8fb69f4abc61c2c7bdd",
+        "chunk_888689d411f3283e57a8cab6",
+        "chunk_9552bfc0fc6ca2e5cdc1fa4d"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 715.6656000006478,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "copilot_mdm_settings",
+      "retrieved_chunk_ids": [
+        "chunk_4d9c34ce8ee5ae8991efc89d",
+        "chunk_269be812d1557332902664f4",
+        "chunk_ed21ad753d49d08ed64b902a",
+        "chunk_b3086ff73645a8fd820f8500",
+        "chunk_911aae75f983398e98ec8584",
+        "chunk_754d1bb0691ffcca4681d51a",
+        "chunk_12ab56ae784fdb88568fb93a",
+        "chunk_dbd13c24767953afeb00faf5",
+        "chunk_6b5d72bc720b6186ddb1c471",
+        "chunk_f8489767d5e57757f7f361d9"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 932.3996000020998,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "copilot_usage_metrics",
+      "retrieved_chunk_ids": [
+        "chunk_f5551c7afe6caab4be1f688c",
+        "chunk_e4a461871921f343f42077ee",
+        "chunk_6c4ecdf43aa4448d7f572b81",
+        "chunk_f3ec6b3e2ccf8ba5137e8ba3",
+        "chunk_0139542dd6e0737a5e9c1c8e",
+        "chunk_fd87bbf1a710594a1efbc17e",
+        "chunk_f8489767d5e57757f7f361d9",
+        "chunk_41933d0ae22323b2911e3d05",
+        "chunk_5dd96f1d8c76e05915b8eecb",
+        "chunk_1397ef64ad86fd6fd8540ae5"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 0.9197207891481876,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 1019.6960000030231,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "copilot_actions_token",
+      "retrieved_chunk_ids": [
+        "chunk_1350d337921848b2615aaad9",
+        "chunk_7ff725b84212e1249fa4c2ab",
+        "chunk_4d9c34ce8ee5ae8991efc89d",
+        "chunk_b435db76b84e55ad1abdf7fe",
+        "chunk_8936625dea595f8a42f2fae3",
+        "chunk_269be812d1557332902664f4",
+        "chunk_59341066c63ac05411584b37",
+        "chunk_b3086ff73645a8fd820f8500",
+        "chunk_6c8e68bf285a78d21392db6d",
+        "chunk_ed21ad753d49d08ed64b902a"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 992.067599996517,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "copilot_credit_pool",
+      "retrieved_chunk_ids": [
+        "chunk_ff3b762c737b86cc57cee0bc",
+        "chunk_7af12c18f3989f25025fb7fa",
+        "chunk_41933d0ae22323b2911e3d05",
+        "chunk_b435db76b84e55ad1abdf7fe",
+        "chunk_e4a461871921f343f42077ee",
+        "chunk_6b01af5652fc2b2862299a9b",
+        "chunk_6c4ecdf43aa4448d7f572b81",
+        "chunk_14805f1a3ea05da07d995e61",
+        "chunk_f3ec6b3e2ccf8ba5137e8ba3",
+        "chunk_f5551c7afe6caab4be1f688c"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 1018.0762999953004,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "copilot_vscode_1123_browser",
+      "retrieved_chunk_ids": [
+        "chunk_ae294dd151797994bb5a07cb",
+        "chunk_8936625dea595f8a42f2fae3",
+        "chunk_2df0f517d6c93943a624f28f",
+        "chunk_ffce6e70876fa62843650d3a",
+        "chunk_de6cd84b4c7bcf146bb12893",
+        "chunk_10f1a78fd9caf514ed7af4df",
+        "chunk_092b045f26ea3c852f0f6b19",
+        "chunk_830f572e310ec9ac0aafb81f",
+        "chunk_3f5e65601acb3674f87a4098"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 541.6022999997949,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "copilot_release_agent_files",
+      "retrieved_chunk_ids": [
+        "chunk_f084cc417c20ad82189d4083",
+        "chunk_9b91a785befcd8fe026b0ca7"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 260.8994000038365,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "trae_official_products",
+      "retrieved_chunk_ids": [
+        "chunk_bf7282be775ae75bc00e6a3c"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 118.21600000257604,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "trae_pro_plus_price",
+      "retrieved_chunk_ids": [
+        "chunk_e0dbd06911f3b6a48f421310",
+        "chunk_fe4b54c6cb73350ffdf1087d",
+        "chunk_bc1dbcfbe691764d432796df",
+        "chunk_cb22826c921d6aba3dd05b6b",
+        "chunk_6de14d37a77f2cc45b8c4b2c",
+        "chunk_0c52f1f9f8b68b64b55de96e",
+        "chunk_2196301b98423a6a87836a1f"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 299.52420000336133,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "trae_ultra_price",
+      "retrieved_chunk_ids": [
+        "chunk_6de14d37a77f2cc45b8c4b2c",
+        "chunk_bc1dbcfbe691764d432796df",
+        "chunk_cb22826c921d6aba3dd05b6b",
+        "chunk_fe4b54c6cb73350ffdf1087d",
+        "chunk_e0dbd06911f3b6a48f421310",
+        "chunk_0c52f1f9f8b68b64b55de96e",
+        "chunk_2196301b98423a6a87836a1f"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 288.65390000282787,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "trae_code_folding",
+      "retrieved_chunk_ids": [
+        "chunk_25a3ba76906cd76395c87ceb",
+        "chunk_07128dd089dd2818a7a5276a",
+        "chunk_3bac09ba1eb7cad105a3b6d5",
+        "chunk_d51f12208894df25fb50a04f",
+        "chunk_6ec7e22b6528d5c450bd30ba",
+        "chunk_bfcc1429c333e2fe55c0a110",
+        "chunk_65e0eeff4aaf50cd6f32d2e9",
+        "chunk_af57a0d02a4b7e4cdea8cb2e",
+        "chunk_6d5de625cff0d5fc05560e85",
+        "chunk_ebdc2513f9d62f07af482f13"
+      ],
+      "metrics": {
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "mrr": 0.0,
+        "ndcg@10": 0.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 0.0
+      },
+      "latency_ms": 1027.5394999989658,
+      "citation_valid": false,
+      "errors": []
+    },
+    {
+      "case_id": "trae_mcp_response",
+      "retrieved_chunk_ids": [
+        "chunk_3b9d87a65f65bbecde3533be",
+        "chunk_e05033d0843904a5f5431c8b",
+        "chunk_e8fb45c9f6dd6239ebe732e1",
+        "chunk_25a3ba76906cd76395c87ceb",
+        "chunk_88277a53400470ebaf59ba47",
+        "chunk_1f5f3757bea0b49429eec481",
+        "chunk_63b31d01bcf2e535d95b7e31",
+        "chunk_110ec48f7af2259f0627ce13",
+        "chunk_ffbf60d3444baccefcb4b506",
+        "chunk_fbf31d41ec1c582ef9326d07"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 0.3333333333333333,
+        "ndcg@10": 0.5,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 1089.2542000001413,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "trae_codex_sidebar",
+      "retrieved_chunk_ids": [
+        "chunk_a7698b751e6b239ed13577d6",
+        "chunk_4c44a58d93748a122938592e",
+        "chunk_38e94da125da96d6b3754a00",
+        "chunk_25a3ba76906cd76395c87ceb",
+        "chunk_a70635834493635c473627e2",
+        "chunk_b80bd3e3580558cedcfbd2a1",
+        "chunk_95b7099c92129a5b6b12659e",
+        "chunk_7f8bfb678c426795d3517038",
+        "chunk_8e3f4c5a657c65672cb6c78a",
+        "chunk_6038ba636b5598bc03fb112d"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 1116.8689000041923,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "trae_sandbox_permission",
+      "retrieved_chunk_ids": [
+        "chunk_8ad5660f5d64fe1ae249ef0d",
+        "chunk_71b2b517663f352ead87e943",
+        "chunk_ab0d02b91f1d3a6110dd0b3c",
+        "chunk_25a3ba76906cd76395c87ceb",
+        "chunk_ee0b5f7d3eb9d6eb1d41b96d",
+        "chunk_9e3ad27d2a5c77512cfba054",
+        "chunk_ea7b7ad561d459298b8febad",
+        "chunk_3d949a3c5f1a2debc64c8760",
+        "chunk_c8bf41486173d1fb22e7c22c",
+        "chunk_2f02ed60de8135fcfcc64a7a"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 0.3333333333333333,
+        "ndcg@10": 0.5,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 1062.9172999979346,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "codegeex_vscode_activation",
+      "retrieved_chunk_ids": [
+        "chunk_b2550a53185d7b05c7325edc",
+        "chunk_455a8a519d6ec4d34389a178",
+        "chunk_73b6ef7ee38f2e376911a1c9",
+        "chunk_a0c2c2179bd2dfd67f7293a5",
+        "chunk_093148c3a7e73873205dbd60",
+        "chunk_b34643b559bde71d9c2dbe9a",
+        "chunk_b368133523580638d06d5ae0",
+        "chunk_50ea1db04ab42cc20f2f6f65",
+        "chunk_a3ac6c38b4df36efb08c32e5",
+        "chunk_868763e28ee1b4ce57b96761"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 1144.754599998123,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "codegeex_sequential_mcp",
+      "retrieved_chunk_ids": [
+        "chunk_f30c1bde475cd6d280f385a9",
+        "chunk_ba01c1fcb8d4dff1981dc5f5",
+        "chunk_4c14e710432ce65b208e2b14",
+        "chunk_0c583c3237634bd3b15f893b",
+        "chunk_9d4c97878155ffe9b21c8630",
+        "chunk_3b41a23d4c21222df2a2d4fa",
+        "chunk_9a1c52c62e9969bdced15d23",
+        "chunk_56cbf7395d7f9bbbd7a16bed",
+        "chunk_1597369492533aedfaa3d2c3",
+        "chunk_4cffa642660a6c6f1c063181"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 1065.2273000014247,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "codegeex_path_escape",
+      "retrieved_chunk_ids": [
+        "chunk_0d085a67b2f3c0fd952ecf4b",
+        "chunk_ba01c1fcb8d4dff1981dc5f5",
+        "chunk_56cbf7395d7f9bbbd7a16bed",
+        "chunk_455a8a519d6ec4d34389a178",
+        "chunk_b4e71eaedd35ed785c4420c3",
+        "chunk_b34643b559bde71d9c2dbe9a",
+        "chunk_ba417bec9b00909b34b07866",
+        "chunk_b6bb3e2a04005ccea7430b1b",
+        "chunk_181c1e5b1c5ddf7d58f43bae",
+        "chunk_3b41a23d4c21222df2a2d4fa"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 1131.0491999975056,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "codegeex_commit_message",
+      "retrieved_chunk_ids": [
+        "chunk_91f9d727a2b5840f72e14b38",
+        "chunk_6caa72a1f85f08accbaa1886",
+        "chunk_b4717a2f1df4397556988779",
+        "chunk_b4e71eaedd35ed785c4420c3",
+        "chunk_fa7150a1f040950ebdb146c7",
+        "chunk_ff4540c516250f686271fe47",
+        "chunk_b6bb3e2a04005ccea7430b1b",
+        "chunk_93d2f31698564bf66c582387",
+        "chunk_bdb7b03c64ec16cf92f69cae",
+        "chunk_dfeda04efa9e0016b46f8915"
+      ],
+      "metrics": {
+        "recall@5": 0.0,
+        "recall@10": 1.0,
+        "mrr": 0.125,
+        "ndcg@10": 0.31546487678572877,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 1112.3783000002732,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "codegeex_rider_2026",
+      "retrieved_chunk_ids": [
+        "chunk_455a8a519d6ec4d34389a178",
+        "chunk_a59ad3007d24f097e3b790d6",
+        "chunk_b4717a2f1df4397556988779",
+        "chunk_dfeda04efa9e0016b46f8915",
+        "chunk_ed18a39da7f09df41bfe9d5c",
+        "chunk_b368133523580638d06d5ae0",
+        "chunk_a6f6af7544fdcaf09a21c0e8",
+        "chunk_b6bb3e2a04005ccea7430b1b",
+        "chunk_9a7b99b2e9d6c40037e968fd",
+        "chunk_bdde4eee45e4e126ec8c0cfd"
+      ],
+      "metrics": {
+        "recall@5": 0.0,
+        "recall@10": 0.0,
+        "mrr": 0.0,
+        "ndcg@10": 0.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 0.0
+      },
+      "latency_ms": 1092.5033999956213,
+      "citation_valid": false,
+      "errors": []
+    },
+    {
+      "case_id": "codegeex_image_upload",
+      "retrieved_chunk_ids": [
+        "chunk_b4717a2f1df4397556988779",
+        "chunk_ff4540c516250f686271fe47",
+        "chunk_ed18a39da7f09df41bfe9d5c",
+        "chunk_32e47e76339c80f11afb9a47",
+        "chunk_b772acae857397a601b8116a",
+        "chunk_c5e9e7b5112a3ff98d7a53ed"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 647.7331999994931,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "codegeex_wsl_path",
+      "retrieved_chunk_ids": [
+        "chunk_72bd5d74dcafe4c7259d1b7c",
+        "chunk_33f9f5c9be2a5c3a97b508f4",
+        "chunk_ed18a39da7f09df41bfe9d5c",
+        "chunk_7111dbb3c4d6f1b2c4d6235b",
+        "chunk_b34643b559bde71d9c2dbe9a",
+        "chunk_20e1b3d970e9ba2051b42f9f",
+        "chunk_73b6ef7ee38f2e376911a1c9",
+        "chunk_a0c2c2179bd2dfd67f7293a5",
+        "chunk_b4717a2f1df4397556988779",
+        "chunk_b6bb3e2a04005ccea7430b1b"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 1130.7740000047488,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "lingma_agent_planning",
+      "retrieved_chunk_ids": [
+        "chunk_9046a8c9c9f4e64e70c9fad4",
+        "chunk_5b0c6fcf296b36be598e5c61",
+        "chunk_32e1b46745e9038a32567f04",
+        "chunk_031954a96e8749a5acae14c8",
+        "chunk_ea679da20754efea5138e399",
+        "chunk_c73b7b449f2dd6316601add0",
+        "chunk_7656e8e3bbaf456b05bb6694",
+        "chunk_121aeaf0caaeb6153f2b5408",
+        "chunk_e0d2a4eb60bac579db502af9",
+        "chunk_b9a344004dc82958170a52da"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 539.5085999989533,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "lingma_terminal_commands",
+      "retrieved_chunk_ids": [
+        "chunk_5b0c6fcf296b36be598e5c61",
+        "chunk_9046a8c9c9f4e64e70c9fad4",
+        "chunk_ea679da20754efea5138e399",
+        "chunk_e0d2a4eb60bac579db502af9",
+        "chunk_031954a96e8749a5acae14c8",
+        "chunk_c73b7b449f2dd6316601add0",
+        "chunk_7656e8e3bbaf456b05bb6694",
+        "chunk_32e1b46745e9038a32567f04",
+        "chunk_121aeaf0caaeb6153f2b5408",
+        "chunk_b9a344004dc82958170a52da"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 498.11529999715276,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "lingma_project_awareness",
+      "retrieved_chunk_ids": [
+        "chunk_32e1b46745e9038a32567f04",
+        "chunk_9046a8c9c9f4e64e70c9fad4",
+        "chunk_121aeaf0caaeb6153f2b5408",
+        "chunk_e0d2a4eb60bac579db502af9",
+        "chunk_ea679da20754efea5138e399",
+        "chunk_031954a96e8749a5acae14c8",
+        "chunk_7656e8e3bbaf456b05bb6694",
+        "chunk_5b0c6fcf296b36be598e5c61",
+        "chunk_c73b7b449f2dd6316601add0",
+        "chunk_e973fda99262bc6304090435"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 505.12890000391053,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "lingma_inline_generation",
+      "retrieved_chunk_ids": [
+        "chunk_ea679da20754efea5138e399",
+        "chunk_c73b7b449f2dd6316601add0",
+        "chunk_32e1b46745e9038a32567f04",
+        "chunk_9046a8c9c9f4e64e70c9fad4",
+        "chunk_e0d2a4eb60bac579db502af9",
+        "chunk_7656e8e3bbaf456b05bb6694",
+        "chunk_121aeaf0caaeb6153f2b5408",
+        "chunk_5b0c6fcf296b36be598e5c61",
+        "chunk_b9a344004dc82958170a52da",
+        "chunk_031954a96e8749a5acae14c8"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 559.4750999953249,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "lingma_qa_sources",
+      "retrieved_chunk_ids": [
+        "chunk_e973fda99262bc6304090435",
+        "chunk_ea679da20754efea5138e399",
+        "chunk_9046a8c9c9f4e64e70c9fad4",
+        "chunk_7656e8e3bbaf456b05bb6694",
+        "chunk_e0d2a4eb60bac579db502af9",
+        "chunk_32e1b46745e9038a32567f04",
+        "chunk_5b0c6fcf296b36be598e5c61",
+        "chunk_b9a344004dc82958170a52da",
+        "chunk_c73b7b449f2dd6316601add0",
+        "chunk_031954a96e8749a5acae14c8"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 1.0,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 639.6093999937875,
+      "citation_valid": true,
+      "errors": []
+    },
+    {
+      "case_id": "lingma_teams_price",
+      "retrieved_chunk_ids": [
+        "chunk_7a21f927acf5a7865f0c0b86",
+        "chunk_b1927d9e8e2e8993f45a216d",
+        "chunk_ab214c112f0f0b084d1dd4f3",
+        "chunk_9327b0b2dfbbb0e3a31abfc9",
+        "chunk_e6a004ef38184f7df782a7ba",
+        "chunk_42abc8d4e3d58668ff2d3cb9",
+        "chunk_8dcdc0594627719b511cc93e",
+        "chunk_23726f78f4693ced51e60319",
+        "chunk_84323d227d93cb592abc318b",
+        "chunk_f5418e4b76b6d2103095a489"
+      ],
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "ndcg@10": 0.9197207891481876,
+        "metadata_filter_accuracy": 1.0,
+        "old_version_false_recall_rate": 0.0,
+        "citation_accuracy": 1.0
+      },
+      "latency_ms": 1340.4141000064556,
+      "citation_valid": true,
+      "errors": []
+    }
+  ],
+  "config": {
+    "top_ks": [
+      5,
+      10
+    ],
+    "ndcg_k": 10,
+    "query_top_k": 10,
+    "index_alias": "coderadar_chunks_current",
+    "index_version": "coderadar_chunks_v20260714043518409034",
+    "embedding_model": "sentence-transformers/BAAI/bge-m3",
+    "embedding_dimension": 1024,
+    "bm25_candidates": 20,
+    "dense_candidates": 20,
+    "fused_candidates": 30,
+    "rerank_candidates": 20,
+    "rrf_k": 60,
+    "reranker_provider": "cross_encoder",
+    "reranker_model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+    "ranking_weights": {
+      "semantic_weight": 0.7,
+      "temporal_weight": 0.12,
+      "version_weight": 0.08,
+      "evidence_weight": 0.1,
+      "temporal_half_life_days": 180
+    },
+    "actual_reranker_backend": "cross_encoder",
+    "reranker_error": null,
+    "dataset_path": "D:\\26Spring\\project\\CodeRadar\\data\\samples\\测试数据集.csv",
+    "dataset_sha256": "sha256:e07bb417fcd7f50d53498f924eeb1366ca73eaf9e7cbc88e30db4ec7b165763e",
+    "human_review_status": "pending",
+    "label_origin": "AI-assisted candidate labels",
+    "config_path": "D:\\26Spring\\project\\CodeRadar\\config\\mini_rag.formal.yaml",
+    "config_sha256": "sha256:a31260ba912fccceebe76c1249638fd02984ee4aad8330f037311aa81371c2d9"
+  },
+  "started_at": "2026-07-14T05:33:49.087530Z",
+  "completed_at": "2026-07-14T05:34:29.402492Z"
+}

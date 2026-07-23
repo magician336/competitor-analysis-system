@@ -200,7 +200,13 @@ class RuleLabeler:
             return EventType.PRICING_CHANGE
         if source in {SourceType.OFFICIAL_CHANGELOG, SourceType.GITHUB_RELEASE, SourceType.RSS}:
             return EventType.PRODUCT_RELEASE
-        if source == SourceType.GITHUB_ISSUE:
+        if source in {
+            SourceType.GITHUB_ISSUE,
+            SourceType.STATUS_PAGE,
+            SourceType.PLUGIN_MARKETPLACE,
+            SourceType.COMMUNITY,
+            SourceType.REVIEW,
+        }:
             return EventType.RISK_EXPERIENCE
         return None
 

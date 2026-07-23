@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="650" viewBox="0 0 1120 650" role="img" aria-label="A–F 检索质量对比">
+<style>
+.title{font:700 25px 'Segoe UI','Microsoft YaHei',sans-serif;fill:#10233f}
+.subtitle{font:14px 'Segoe UI','Microsoft YaHei',sans-serif;fill:#5b6b82}
+.label{font:600 14px 'Segoe UI','Microsoft YaHei',sans-serif;fill:#243b5a}
+.tick{font:12px 'Segoe UI','Microsoft YaHei',sans-serif;fill:#687891}
+.value{font:600 12px 'Segoe UI','Microsoft YaHei',sans-serif;fill:#243b5a}
+.note{font:12px 'Segoe UI','Microsoft YaHei',sans-serif;fill:#687891}
+</style>
+<rect width="1120" height="650" rx="18" fill="#f7f9fc"/>
+<text x="42" y="44" class="title">A–F 检索质量对比</text>
+<text x="42" y="70" class="subtitle">3 次重复实验的均值；候选评测集状态：pending</text>
+<line x1="105.0" y1="120" x2="105.0" y2="596" stroke="#dce3ed"/>
+<text x="105.0" y="618" text-anchor="middle" class="tick">0.0</text>
+<line x1="297.0" y1="120" x2="297.0" y2="596" stroke="#dce3ed"/>
+<text x="297.0" y="618" text-anchor="middle" class="tick">0.2</text>
+<line x1="489.0" y1="120" x2="489.0" y2="596" stroke="#dce3ed"/>
+<text x="489.0" y="618" text-anchor="middle" class="tick">0.4</text>
+<line x1="681.0" y1="120" x2="681.0" y2="596" stroke="#dce3ed"/>
+<text x="681.0" y="618" text-anchor="middle" class="tick">0.6</text>
+<line x1="873.0" y1="120" x2="873.0" y2="596" stroke="#dce3ed"/>
+<text x="873.0" y="618" text-anchor="middle" class="tick">0.8</text>
+<line x1="1065.0" y1="120" x2="1065.0" y2="596" stroke="#dce3ed"/>
+<text x="1065.0" y="618" text-anchor="middle" class="tick">1.0</text>
+<rect x="690" y="42" width="14" height="14" rx="3" fill="#1463ff"/>
+<text x="711" y="54" class="tick">Recall@10</text>
+<rect x="820" y="42" width="14" height="14" rx="3" fill="#00a6a6"/>
+<text x="841" y="54" class="tick">MRR</text>
+<rect x="950" y="42" width="14" height="14" rx="3" fill="#f59e0b"/>
+<text x="971" y="54" class="tick">nDCG@10</text>
+<text x="72" y="164.7" text-anchor="middle" class="label">A</text>
+<rect x="105" y="130.7" width="679.5" height="17" rx="4" fill="#1463ff" opacity="0.9"/>
+<text x="791.5" y="143.7" class="value">0.708</text>
+<rect x="105" y="152.7" width="836.8" height="17" rx="4" fill="#00a6a6" opacity="0.9"/>
+<text x="948.8" y="165.7" class="value">0.872</text>
+<rect x="105" y="174.7" width="671.3" height="17" rx="4" fill="#f59e0b" opacity="0.9"/>
+<text x="783.3" y="187.7" class="value">0.699</text>
+<text x="72" y="244.0" text-anchor="middle" class="label">B</text>
+<rect x="105" y="210.0" width="726.7" height="17" rx="4" fill="#1463ff" opacity="0.9"/>
+<text x="838.7" y="223.0" class="value">0.757</text>
+<rect x="105" y="232.0" width="908.8" height="17" rx="4" fill="#00a6a6" opacity="0.9"/>
+<text x="1020.8" y="245.0" class="value">0.947</text>
+<rect x="105" y="254.0" width="820.0" height="17" rx="4" fill="#f59e0b" opacity="0.9"/>
+<text x="932.0" y="267.0" class="value">0.854</text>
+<text x="72" y="323.3" text-anchor="middle" class="label">C</text>
+<rect x="105" y="289.3" width="757.9" height="17" rx="4" fill="#1463ff" opacity="0.9"/>
+<text x="869.9" y="302.3" class="value">0.789</text>
+<rect x="105" y="311.3" width="912.0" height="17" rx="4" fill="#00a6a6" opacity="0.9"/>
+<text x="1024.0" y="324.3" class="value">0.950</text>
+<rect x="105" y="333.3" width="819.5" height="17" rx="4" fill="#f59e0b" opacity="0.9"/>
+<text x="931.5" y="346.3" class="value">0.854</text>
+<text x="72" y="402.7" text-anchor="middle" class="label">D</text>
+<rect x="105" y="368.7" width="794.8" height="17" rx="4" fill="#1463ff" opacity="0.9"/>
+<text x="906.8" y="381.7" class="value">0.828</text>
+<rect x="105" y="390.7" width="960.0" height="17" rx="4" fill="#00a6a6" opacity="0.9"/>
+<text x="1031.0" y="403.7" class="value">1.000</text>
+<rect x="105" y="412.7" width="899.9" height="17" rx="4" fill="#f59e0b" opacity="0.9"/>
+<text x="1011.9" y="425.7" class="value">0.937</text>
+<text x="72" y="482.0" text-anchor="middle" class="label">E</text>
+<rect x="105" y="448.0" width="793.4" height="17" rx="4" fill="#1463ff" opacity="0.9"/>
+<text x="905.4" y="461.0" class="value">0.826</text>
+<rect x="105" y="470.0" width="960.0" height="17" rx="4" fill="#00a6a6" opacity="0.9"/>
+<text x="1031.0" y="483.0" class="value">1.000</text>
+<rect x="105" y="492.0" width="901.0" height="17" rx="4" fill="#f59e0b" opacity="0.9"/>
+<text x="1013.0" y="505.0" class="value">0.939</text>
+<text x="72" y="561.3" text-anchor="middle" class="label">F</text>
+<rect x="105" y="527.3" width="793.4" height="17" rx="4" fill="#1463ff" opacity="0.9"/>
+<text x="905.4" y="540.3" class="value">0.826</text>
+<rect x="105" y="549.3" width="960.0" height="17" rx="4" fill="#00a6a6" opacity="0.9"/>
+<text x="1031.0" y="562.3" class="value">1.000</text>
+<rect x="105" y="571.3" width="901.0" height="17" rx="4" fill="#f59e0b" opacity="0.9"/>
+<text x="1013.0" y="584.3" class="value">0.939</text>
+<text x="42" y="628" class="note">数值越高表示检索质量越好；质量指标只适用于当前候选标签，人工复核完成后需重算。</text>
+</svg>

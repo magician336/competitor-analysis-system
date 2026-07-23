@@ -8,7 +8,7 @@ from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from html import unescape
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any, Iterable, Mapping
 from urllib.parse import urljoin, urlparse
 from xml.etree import ElementTree
 
@@ -637,6 +637,145 @@ def _decode_html(payload: bytes, content_type: str) -> str:
     return payload.decode("utf-8-sig", errors="replace")
 
 
+_NEXT_RSC_PUSH_PATTERN = re.compile(
+    r"self\.__next_f\.push\(\[1,(?P<payload>.*)\]\)",
+    flags=re.DOTALL,
+)
+_NEXT_RSC_CHILD_PATTERN = re.compile(
+    r'"children":"(?P<text>(?:\\.|[^"\\])*)"'
+)
+_NEXT_RSC_IGNORED_TEXT = {
+    "404: this page could not be found.",
+    "this page could not be found.",
+    "this page was not found",
+    "return home",
+    "report an issue",
+}
+
+
+def _cursor_next_rsc_content(html: str, title: str) -> str:
+    """Extract reader-facing strings from Cursor's Next.js RSC payload."""
+
+    soup = BeautifulSoup(html or "", "html.parser")
+    lines: list[str] = []
+    for script in soup.find_all("script"):
+        script_text = script.string or script.get_text() or ""
+        if "self.__next_f.push([1," not in script_text:
+            continue
+        match = _NEXT_RSC_PUSH_PATTERN.fullmatch(script_text.strip())
+        if match is None:
+            continue
+        try:
+            decoded = json.loads(match.group("payload"))
+        except (json.JSONDecodeError, TypeError):
+            continue
+        if not isinstance(decoded, str):
+            continue
+        for child_match in _NEXT_RSC_CHILD_PATTERN.finditer(decoded):
+            try:
+                value = json.loads(f'"{child_match.group("text")}"')
+            except json.JSONDecodeError:
+                continue
+            text = normalize_text(value, preserve_lines=False)
+            folded = text.casefold()
+            if (
+                not text
+                or text.startswith("$")
+                or folded in _NEXT_RSC_IGNORED_TEXT
+                or (
+                    len(text) > 180
+                    and any(
+                        token in text
+                        for token in (
+                            "document.",
+                            "window.",
+                            "function(",
+                            "getElementsByTagName",
+                        )
+                    )
+                )
+            ):
+                continue
+            lines.append(text)
+    content = _deduplicate_lines("\n\n".join(lines))
+    if title and content and not content.casefold().startswith(title.casefold()):
+        content = f"# {title}\n\n{content}"
+    return content
+
+
+def _trae_router_document(html: str, base_url: str) -> CleanedItem | None:
+    """Extract the current document from TRAE Docs' embedded router state."""
+
+    marker = "window._ROUTER_DATA = "
+    soup = BeautifulSoup(html or "", "html.parser")
+    router_data: dict[str, Any] | None = None
+    for script in soup.find_all("script"):
+        script_text = script.string or script.get_text() or ""
+        if marker not in script_text:
+            continue
+        raw = script_text.split(marker, 1)[1].strip().rstrip(";")
+        try:
+            parsed = json.loads(raw)
+        except json.JSONDecodeError:
+            continue
+        if isinstance(parsed, dict):
+            router_data = parsed
+            break
+    if router_data is None:
+        return None
+
+    loader_data = router_data.get("loaderData")
+    if not isinstance(loader_data, dict):
+        return None
+    layout = loader_data.get("layout")
+    if not isinstance(layout, dict):
+        layout = loader_data.get("$")
+    if not isinstance(layout, dict):
+        return None
+    detail = layout.get("docDetail")
+    if not isinstance(detail, dict):
+        return None
+
+    inserts: list[str] = []
+
+    def collect(value: Any) -> None:
+        if isinstance(value, dict):
+            insert = value.get("insert")
+            if isinstance(insert, str):
+                inserts.append(insert)
+            for child in value.values():
+                collect(child)
+        elif isinstance(value, list):
+            for child in value:
+                collect(child)
+
+    collect(detail.get("content"))
+    body = normalize_text("".join(inserts))
+    title = normalize_text(
+        detail.get("title") or "TRAE Documentation",
+        preserve_lines=False,
+    )
+    if not body:
+        return None
+    content = f"# {title}\n\n{body}" if title else body
+    raw_version, product_version = extract_version(title, body[:1_000])
+    return CleanedItem(
+        title=title,
+        content=content,
+        url=normalize_url(base_url),
+        publish_time=normalize_datetime(
+            detail.get("publish_at") or detail.get("updated_at")
+        ),
+        raw_version=raw_version,
+        product_version=product_version,
+        source_metadata={
+            "embedded_content_extraction": "trae_router_document",
+            "publisher_document_id": detail.get("_id"),
+            "publisher_version_id": detail.get("version_id"),
+        },
+    )
+
+
 def _html_version(
     soup: BeautifulSoup,
     title: str,
@@ -658,6 +797,8 @@ def _html_metadata(
     html: str,
     base_url: str,
     source_type: SourceType,
+    *,
+    embedded_mode: str | None = None,
 ) -> CleanedItem:
     soup = _prepare_soup(html)
 
@@ -729,6 +870,12 @@ def _html_metadata(
         raw_version, product_version = _html_version(soup, title, content)
     else:
         raw_version, product_version = extract_version(title)
+    source_metadata: dict[str, Any] = {}
+    if embedded_mode == "cursor_next_rsc" and len(content) < 80:
+        embedded_content = _cursor_next_rsc_content(html, title)
+        if embedded_content:
+            content = embedded_content
+            source_metadata["embedded_content_extraction"] = embedded_mode
     return CleanedItem(
         title=title,
         content=content,
@@ -737,6 +884,7 @@ def _html_metadata(
         author=author,
         raw_version=raw_version,
         product_version=product_version,
+        source_metadata=source_metadata,
     )
 
 
@@ -1095,6 +1243,83 @@ def _changelog_json_item(record: RawRecord, envelope: dict[str, Any]) -> Cleaned
     )
 
 
+def _json_path(value: Any, path: str | None) -> Any:
+    current = value
+    if not path:
+        return current
+    for part in str(path).split("."):
+        if not isinstance(current, dict) or part not in current:
+            return None
+        current = current[part]
+    return current
+
+
+def _configured_json_document_item(
+    record: RawRecord,
+    value: Any,
+    configuration: Mapping[str, Any],
+) -> CleanedItem | None:
+    """Build one document from a configured publisher JSON response."""
+
+    document = _json_path(value, str(configuration.get("result_path") or ""))
+    if not isinstance(document, dict):
+        return None
+
+    title_value = _json_path(
+        document,
+        str(configuration.get("title_field") or "title"),
+    )
+    title = normalize_text(
+        title_value or "Untitled JSON document",
+        preserve_lines=False,
+    )
+    raw_fields = configuration.get("content_fields", ["content"])
+    if isinstance(raw_fields, str):
+        raw_fields = [raw_fields]
+    content_parts: list[str] = []
+    if isinstance(raw_fields, list):
+        for field_name in raw_fields:
+            raw_part = _json_path(document, str(field_name))
+            if raw_part is None:
+                continue
+            if isinstance(raw_part, (dict, list)):
+                cleaned = clean_json(raw_part)
+            else:
+                text = str(raw_part)
+                cleaned = clean_html(text) if "<" in text and ">" in text else normalize_text(text)
+            if cleaned:
+                content_parts.append(cleaned)
+    content = _deduplicate_lines("\n\n".join(content_parts))
+    if not content:
+        return None
+
+    publish_time = normalize_datetime(
+        _json_path(
+            document,
+            str(configuration.get("publish_time_field") or ""),
+        )
+    )
+    author_value = _json_path(
+        document,
+        str(configuration.get("author_field") or ""),
+    )
+    raw_version, product_version = extract_version(title, content[:1_000])
+    return CleanedItem(
+        title=title,
+        content=content,
+        url=normalize_url(record.canonical_url or record.requested_url),
+        publish_time=publish_time or record.published_at,
+        author=(
+            normalize_text(author_value, preserve_lines=False)
+            if author_value
+            else None
+        ),
+        raw_version=raw_version,
+        product_version=product_version,
+        source_metadata={"structured_json_extraction": True},
+    )
+
+
 def extract_items(record: RawRecord, payload: str | bytes | dict[str, Any] | list[Any]) -> list[CleanedItem]:
     """Extract logical documents according to source and content type."""
 
@@ -1112,6 +1337,14 @@ def extract_items(record: RawRecord, payload: str | bytes | dict[str, Any] | lis
         if record.source_type in {SourceType.GITHUB_RELEASE, SourceType.GITHUB_ISSUE}:
             values = value if isinstance(value, list) else [value]
             return [_github_item(record, item) for item in values]
+        json_document = record.source_metadata.get("json_document")
+        if isinstance(json_document, Mapping):
+            configured = _configured_json_document_item(
+                record,
+                value,
+                json_document,
+            )
+            return [configured] if configured is not None else []
         values = value if isinstance(value, list) else [value]
         items: list[CleanedItem] = []
         for index, item in enumerate(values):
@@ -1151,11 +1384,20 @@ def extract_items(record: RawRecord, payload: str | bytes | dict[str, Any] | lis
         == "configured_undated_directory"
     ):
         return _configured_directory_changelog_items(record, html)
+    embedded_mode = str(record.source_metadata.get("embedded_content") or "")
+    if embedded_mode == "trae_router_document":
+        embedded_item = _trae_router_document(
+            html,
+            record.canonical_url or record.requested_url,
+        )
+        if embedded_item is not None:
+            return [embedded_item]
     return [
         _html_metadata(
             html,
             record.canonical_url or record.requested_url,
             record.source_type,
+            embedded_mode=embedded_mode or None,
         )
     ]
 

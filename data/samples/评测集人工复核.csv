@@ -1,0 +1,503 @@
+﻿case_id,question,chunk_id,document_id,competitor,source_type,title,product_version,event_type,dimension_tags,expected_quote,content,suggested_grade,human_grade,question_valid,quote_valid,additional_relevance_grades,reviewer,reviewed_at,notes
+cursor_official_agent,Cursor 官网如何描述把开发任务交给 Agent 的工作方式？,chunk_d1d022baeee8bff260979a33,doc_07d098f2fee2ef0054ba2e6f,Cursor,official_page,Cursor: AI coding agent,,,"[""code_intelligence"", ""agent_context"", ""ide_ecosystem"", ""model_extensibility""]",handing off tasks to Cursor,"### Agents turn ideas into code
+
+Accelerate development by handing off tasks to Cursor, while you focus on making decisions.
+
+Learn about agentic development →
+
+This element contains an interactive demo for sighted users. It's a demonstration of Cursor's IDE showing AI-powered coding assistance features. The interface is displayed over a subtle, solid brand background.",3,3,是,是,,magician336,26.07.21,
+cursor_teams_price,Cursor Teams 套餐的月费和团队管理能力是什么？,chunk_b8a186455fb9e3ae9aa6e1f5,doc_d6324537d99947983b9e08a2,Cursor,pricing,Cursor · Pricing,,pricing_change,"[""code_intelligence"", ""agent_context"", ""ide_ecosystem"", ""model_extensibility"", ""performance_cost"", ""security_compliance""]",$32 / user / mo.,"### Teams
+
+For teams that ship together
+
+$32 / user / mo.
+
+StandardPremium
+
+Everything on Individual, plus:
+
+- ✓ Centralized team billing and administration
+- ✓ Team marketplace for internal rules, skills, and plugins
+- ✓ Agentic code reviews with Bugbot
+- ✓ Cloud agents and automations with shared team context
+- ✓ Usage analytics to understand team behavior
+- ✓ Team-wide privacy mode
+- ✓ SAML/OIDC SSO
+
+Get Teams",3,3,是,是,,magician336,26.07.21,
+cursor_enterprise_controls,Cursor Enterprise 套餐提供哪些访问控制和审计能力？,chunk_1bc9dc5c34aa7d1e853f6705,doc_d6324537d99947983b9e08a2,Cursor,pricing,Cursor · Pricing,,pricing_change,"[""code_intelligence"", ""agent_context"", ""ide_ecosystem"", ""model_extensibility"", ""performance_cost"", ""security_compliance""]",SCIM seat management,"### Enterprise
+
+For scaled organizations
+
+Custom
+
+Everything on Teams, plus:
+
+- ✓ Pooled usage
+- ✓ Invoice/PO billing
+- ✓ SCIM seat management
+- ✓ Repository, model, and MCP access controls
+- ✓ Auto-run, browser, and network controls
+- ✓ Audit logs and service accounts
+- ✓ AI code tracking API
+- ✓ Priority support and account management
+
+Contact sales",3,3,是,是,,magician336,26.07.21,
+cursor_side_chats_311,Cursor 3.11 的 side chat 如何避免打断主 Agent 会话？,chunk_fa6c659cb1b68ffc73e2b44d,doc_6f62235dc9bf9ac07ad070ad,Cursor,official_changelog,Side Chats and Conversation Search,3.11.0,product_release,"[""code_intelligence"", ""agent_context"", ""performance_cost""]",without interrupting your main agent conversation,"## Side chats
+
+Open a side chat to ask questions, explore ideas, and investigate tangents without interrupting your main agent conversation. Use /side, /btw, or the plus button at the top of the chat panel to create a new side chat that has context from the main chat.
+
+Each side chat is a durable, full agent conversation that you can follow up on, revisit later, and at-mention to pull context back into the main thread.
+
+By default, side chats focus on reading, searching, and answering. Use them to ask clarification questions, research alternatives without committing to a pivot, and sanity-check a decision while the main agent continues running.",3,3,是,是,,magician336,26.07.21,
+cursor_automations_38,Cursor 3.8 Automations 新增了哪些触发器和计算机操作能力？,chunk_e40c8ab9aeaa43db310fee96,doc_3414937efa7cf1a0f93303c3,Cursor,official_changelog,Improvements to Cursor Automations,3.8.0,product_release,"[""agent_context"", ""ide_ecosystem""]","new triggers for GitHub and Slack, and support for computer use","# Improvements to Cursor Automations
+
+Cursor Automations save you time by automating repetitive tasks with always-on agents. This release introduces the /automate skill, new triggers for GitHub and Slack, and support for computer use.",3,3,是,是,,magician336,26.07.21,
+cursor_bugbot_metrics,Cursor Bugbot 的评审速度、成本和缺陷发现数量发生了什么变化？,chunk_d9965875d54373f9630cea00,doc_2531d48c0f74c6f92d2beb40,Cursor,official_changelog,"Bugbot is now over 3x faster, 22% cheaper, and finds 10% more bugs",,product_release,"[""agent_context"", ""model_extensibility"", ""performance_cost"", ""security_compliance""]",average review time for Bugbot is now ~90 seconds,"# Bugbot is now over 3x faster, 22% cheaper, and finds 10% more bugs
+
+The average review time for Bugbot is now ~90 seconds, down from ~5 minutes. Bugbot also finds 10% more bugs per review on average — 0.62, up from 0.56 — and costs ~22% less per run.
+
+These performance gains are made possible by progress we've made training Composer 2.5, which now powers Bugbot. Bugbot respects model block lists, and speed and performance can vary depending on your configuration.",3,3,是,是,,magician336,26.07.21,
+cursor_cloud_subagent_37,Cursor 3.7 的 /in-cloud 子 Agent 如何隔离长时间任务？,chunk_95e2856270bfa510adc4bdf2,doc_d3b64d654b269e190c496d5d,Cursor,official_changelog,Cloud Environment Setup and Cloud Subagents in Agents Window,3.7.0,product_release,"[""agent_context""]",runs on its own VM and branch,"## Cloud subagents with /in-cloud
+
+Use /in-cloud to spin up a cloud subagent in its own VM to work on the next task you submit. It runs on its own VM and branch, so your local workspace stays clean and responsive.
+
+This is especially useful for isolating long-running or parallel work like fixing CI, investigating an issue, or exploring a codebase while you keep working locally.
+
+You can also ask a cloud subagent to babysit a PR by clicking on the quick-action pill or using /babysit. The cloud agent will iterate remotely to prepare your PR for merge without tying up the local session.
+
+The cloud subagent can run in the background without interrupting the parent agent, which can continue to run locally or in the cloud.",3,3,是,是,,magician336,26.07.21,
+cursor_canvas_design_37,Cursor 3.7 的 Canvas Design Mode 如何让用户指导界面修改？,chunk_00a06c66b59e969030137fb1,doc_9c353db2fb5777ead1e688e2,Cursor,official_changelog,Canvas Design Mode and Context Usage Report,3.7.0,product_release,"[""agent_context""]",Select and annotate UI elements directly,"## Design Mode in canvases
+
+Design Mode is now available in canvases.
+
+Select and annotate UI elements directly in a canvas to guide Cursor's edits, just as you would in the browser. Instead of describing the change in text, you can point to it, provide feedback, and iterate more quickly.",3,3,是,是,,magician336,26.07.21,
+copilot_official_workflow,GitHub Copilot 可以在哪些开发工作界面使用 Agent？,chunk_07f5149873cd3e5cc3ebfeea,doc_1baa5840c6e49fc1628e6718,GitHub Copilot,official_page,GitHub Copilot · Your AI pair programmer,,,"[""code_intelligence"", ""agent_context"", ""ide_ecosystem"", ""model_extensibility"", ""performance_cost"", ""security_compliance"", ""education_fit""]","GitHub, your IDE, the CLI, project tools, chat apps","### Stay in your flow
+
+Copilot works where you do—in GitHub, your IDE, the CLI, project tools, chat apps, and custom MCP servers.
+
+Workflow",3,3,是,是,,magician336,26.07.21,
+copilot_ai_credit_value,GitHub AI Credits 的美元换算关系是什么？,chunk_b11afbb3413e708162be063e,doc_bbd908337adaf9b334e47cb8,GitHub Copilot,pricing,GitHub Copilot · Plans & pricing,,pricing_change,"[""code_intelligence"", ""agent_context"", ""ide_ecosystem"", ""model_extensibility"", ""performance_cost"", ""security_compliance"", ""education_fit""]",1 AI credit = $0.01 USD,"#### What are GitHub AI Credits?
+
+GitHub AI Credits are how you pay for AI usage in GitHub Copilot. Every plan includes a monthly allowance: 1 AI credit = $0.01 USD.
+
+You use credits when you chat with Copilot, work with agents, or use Copilot CLI, Spaces, and Spark. Code completions and next edit suggestions don't use credits. They remain unlimited with every paid plan.
+
+How many credits an interaction uses depends on the model you choose and the complexity of the task. A quick question to a lightweight model costs a fraction of a credit. A longer agent session on a frontier model across many files costs more.",3,3,是,是,,magician336,26.07.21,
+copilot_repository_overview,第一次浏览仓库时，Copilot repository overview 会汇总哪些信息？,chunk_b579df4bd0f80e1c1b37a241,doc_eea02ac10901a1f4cc47242b,GitHub Copilot,official_changelog,Ask Copilot for a repository overview,,product_release,"[""agent_context""]","summary of the repository’s purpose, the technologies it uses, and its contribution guidelines","# Ask Copilot for a repository overview
+
+You can now ask GitHub Copilot for a high-level overview of any repository you’re exploring for the first time. When you visit the home page of a repository you haven’t contributed to before on github.com, Copilot offers to generate an overview for you.
+
+Select Give me a high-level overview, and Copilot Chat gathers context from the repository and returns a summary of the repository’s purpose, the technologies it uses, and its contribution guidelines.
+
+If a repository doesn’t already have a README, Copilot can generate one for you so you can get up to speed on what the repository does and which technologies it uses.
+
+You can access this anytime by selecting the Copilot icon in the github.com navigation bar or by asking Copilot Chat to generate a repository overview.
+
+This feature is available to all GitHub Copilot plans.",3,3,是,是,,magician336,26.07.21,
+copilot_otel_management,企业如何集中配置 Copilot 的 OpenTelemetry 导出端点和内容采集策略？,chunk_b3086ff73645a8fd820f8500,doc_455c7267a0060322d58ef981,GitHub Copilot,official_changelog,Enterprise-managed OpenTelemetry export for VS Code and CLI,,product_release,"[""agent_context"", ""ide_ecosystem"", ""security_compliance""]",mandate where GitHub Copilot sends OpenTelemetry,"# Enterprise-managed OpenTelemetry export for VS Code and CLI
+
+Organizations can now mandate where GitHub Copilot sends OpenTelemetry (OTel) data, so telemetry flows to an approved collector without each developer setting OTEL_* environment variables. The configuration is delivered through the telemetry block in enterprise-managed settings and applies to both the Copilot Chat extension in VS Code and the agent host process that powers Copilot CLI.
+
+Administrators can control:
+
+- The OTLP export endpoint and transport protocol (otlp-http or otlp-grpc).
+- The OTel service name and resource attributes.
+- Exporter headers, such as an authentication token for the collector.
+- Whether prompt, response, and tool content is captured, and whether developers can change that.
+
+A managed value always wins, taking precedence over environment variables and user settings. Deliver these settings through any of the supported channels: native MDM (Windows Registry or macOS managed preferences), server-managed settings resolved from the signed-in GitHub account, or a file-based managed-settings.json.
+
+For security, managed exporter headers are applied only to the Copilot Chat extension’s OTLP exporter and are never passed through environment variables, so a value such as an authentication token can’t leak into the tool subprocesses that the agent host spawns.
+
+This builds on enterprise managed settings and joins the growing set of Copilot governance controls available across VS Code and Copilot CLI.
+
+To learn more, see Configure telemetry export with OpenTelemetry and Monitor agent usage with OpenTelemetry.
+
+Join the discussion within GitHub Community.",3,3,是,是,,magician336,26.07.21,
+copilot_codex_jetbrains,JetBrains IDE 中的 GitHub Copilot 如何启用 Codex Agent Provider？,chunk_e81d76d3d568ba9e68f4cf74,doc_06b1173779ee9384b2cfe433,GitHub Copilot,official_changelog,Codex as agent provider and agentic enhancements in JetBrains IDEs,,product_release,"[""code_intelligence"", ""agent_context"", ""ide_ecosystem"", ""model_extensibility"", ""performance_cost"", ""security_compliance"", ""education_fit""]",install the Codex CLI on your machine,"### Codex as agent provider in public preview
+
+Codex is now available as an agent provider in public preview, giving you more flexibility to pick the agent that best fits your task. And you can do this without leaving your JetBrains IDE.
+
+To use it, first install the Codex CLI on your machine. Then go to Settings > Tools > GitHub Copilot > Chat, enable Codex and set the Codex CLI path. Once configured, select Codex from the agent picker in the Copilot Chat panel to start a session.
+
+> If you are a Copilot Business or Copilot Enterprise subscriber, an administrator will have to enable the editor preview features policy before you can use this feature.",3,3,是,是,,magician336,26.07.21,
+copilot_app_all_plans,GitHub Copilot 桌面应用支持哪些套餐和自带模型密钥方式？,chunk_97c7e774099a61a34bf833e6,doc_12a5baf9cf7d832a93e22563,GitHub Copilot,official_changelog,GitHub Copilot app available to all,,product_release,"[""agent_context"", ""model_extensibility"", ""education_fit""]",Bring your own key (BYOK),"# GitHub Copilot app available to all
+
+The GitHub Copilot app is now available on every Copilot plan. Sign in with your GitHub account to start agent-driven development from your desktop. Available on macOS, Windows, and Linux platforms.
+
+With this release:
+
+- Every Copilot plan is supported: This includes users on Copilot Free and GitHub Education. Sign in with your GitHub account and start your first session in a couple of clicks.
+- You can still build without a Copilot plan: Bring your own key (BYOK) to run sessions against your own model provider, no Copilot subscription needed.
+
+Ready to try it? Download the GitHub Copilot app to start your first session.
+
+Want to learn more? Check out our docs about getting started with the GitHub Copilot app.
+
+To access the GitHub Copilot app on a Copilot Business or Enterprise plan, your organization or enterprise admin must have the Copilot CLI enabled in the policy settings.",3,3,是,是,,magician336,26.07.21,
+copilot_mdm_settings,企业管理员可以通过哪些 MDM 或配置工具下发 Copilot 设置？,chunk_4d9c34ce8ee5ae8991efc89d,doc_c662dac54bf90b0dd481cf15,GitHub Copilot,official_changelog,Deploy managed Copilot settings via MDM in VS Code and CLI,,product_release,"[""agent_context"", ""model_extensibility"", ""security_compliance""]","Microsoft Intune, Jamf, or Group Policy","# Deploy managed Copilot settings via MDM in VS Code and CLI
+
+Enterprise administrators can now deliver managed GitHub Copilot settings directly to devices through native mobile device management (MDM) and file-based configuration, in addition to the existing server-managed channel. This is generally available for GitHub Copilot CLI and VS Code.
+
+Device-level deployment lets you enforce Copilot governance using the same tools you already use to manage endpoints. You can push settings through Microsoft Intune, Jamf, or Group Policy, or deploy a configuration file with Chef, Puppet, or Ansible. Because settings are read from the device, they apply consistently across VS Code and Copilot CLI, regardless of how a developer signs in.",3,3,是,是,,magician336,26.07.21,
+copilot_usage_metrics,Copilot usage metrics 对 CLI 代码行和 IDE 识别做了哪些修正？,chunk_f5551c7afe6caab4be1f688c,doc_6bb44d2c936c945ac444520d,GitHub Copilot,official_changelog,Improved accuracy and coverage in Copilot usage metrics reports,,product_release,"[""code_intelligence"", ""ide_ecosystem"", ""performance_cost""]",CLI now reports suggested lines of code,"# Improved accuracy and coverage in Copilot usage metrics reports
+
+We’ve made three improvements to the Copilot usage metrics API that make its reports more complete and accurate: GitHub Copilot CLI now reports suggested lines of code, users seen only through server-side telemetry now have their IDE identified, and AI credit consumption is now attributed more completely.",3,3,是,是,,magician336,26.07.21,
+copilot_usage_metrics,Copilot usage metrics 对 CLI 代码行和 IDE 识别做了哪些修正？,chunk_6c4ecdf43aa4448d7f572b81,doc_6bb44d2c936c945ac444520d,GitHub Copilot,official_changelog,Improved accuracy and coverage in Copilot usage metrics reports,,product_release,"[""code_intelligence"", ""ide_ecosystem"", ""performance_cost""]",CLI now reports suggested lines of code,"### What’s new
+
+- GitHub Copilot CLI now reports suggested lines of code. CLI activity now contributes to the loc_suggested_to_add_sum and loc_suggested_to_delete_sum fields, which previously always reported 0 for the CLI. Code generation counts are also more accurate on newer CLI versions, where suggested and accepted edits are de-duplicated so the same edit isn’t counted twice.
+- IDE identified for more users. Users who were previously visible only through server-side telemetry now have their IDE and plugin versions surfaced in totals_by_ide, so totals_by_ide reflects more of your Copilot users.
+- AI credits attributed more accurately. We fixed two issues that caused some users to show 0.0 AI credits despite real usage. First, AI credit consumption not associated with an organization was being dropped. It’s now attributed to the correct organization or enterprise. Second, users seen only through server-side telemetry were not being matched to their billing data. Their consumption is now included. Thanks to these updates, ai_credits_used totals more completely reflect actual consumption.",3,2,是,是,,magician336,26.07.21,
+copilot_actions_token,在 GitHub Actions 中运行 Copilot CLI 时如何避免保存长期 PAT？,chunk_1350d337921848b2615aaad9,doc_8eb19d5863c870145749e869,GitHub Copilot,official_changelog,Copilot CLI no longer needs a personal access token in GitHub Actions,,product_release,"[""agent_context"", ""performance_cost"", ""security_compliance""]",using the built-in GITHUB_TOKEN,"# Copilot CLI no longer needs a personal access token in GitHub Actions
+
+You can now run GitHub Copilot CLI in GitHub Actions using the built-in GITHUB_TOKEN.
+
+This means that you no longer need to create and store a personal access token (PAT), eliminating the operational and security risks of managing long-lived PATs for automations at scale.
+
+When you run Copilot CLI with the Actions token in an organization-owned repository, AI credits consumed by the CLI are billed directly to the organization.",3,3,是,是,,magician336,26.07.21,
+copilot_credit_pool,Copilot cost center 的 AI credit pool 如何限制共享额度消耗？,chunk_ff3b762c737b86cc57cee0bc,doc_9b65f0e741c50b217696c1ee,GitHub Copilot,official_changelog,Cost centers now support AI credit pools,,product_release,"[""performance_cost""]",cap how much of your enterprise’s monthly included AI credits,"# Cost centers now support AI credit pools
+
+You can now cap how much of your enterprise’s monthly included AI credits a cost center can use. This is available through the REST API today. Management in the cost center settings UI is coming soon.
+
+Editor’s note (July 1, 2026): Clarified that this currently only applies to the REST API.
+
+Your Copilot licenses come with monthly included AI credits that pool together across your enterprise. This included usage pool is exhausted before any additional usage is spent. Without a control in place, one cost center can spend credits during that phase that another cost center’s licenses paid for. An AI credit pool stops a cost center from using more included AI credits than its own assigned Copilot Business and Copilot Enterprise licenses fund, so each group stays within what it paid for and your chargeback boundaries hold.
+
+An AI credit pool is separate from a cost center budget. The cap governs the included usage pool of AI credits, limiting how much of the shared pool a cost center can draw. A cost center budget governs the metered phase, capping charges after the pool is exhausted. You can use both on the same cost center.
+
+You toggle the",3,3,是,是,,magician336,26.07.21,
+copilot_vscode_1123_browser,GitHub Copilot 在 VS Code 1.123 系列中增加了哪些集成浏览器能力？,chunk_ae294dd151797994bb5a07cb,doc_80f39385c29b604bae424e75,GitHub Copilot,official_changelog,"GitHub Copilot in Visual Studio Code, June 2026 releases",1.123.0,product_release,"[""code_intelligence"", ""agent_context"", ""ide_ecosystem"", ""model_extensibility"", ""performance_cost"", ""security_compliance""]","agents to navigate pages, inspect content, capture screenshots","## Integrated browser updates
+
+The integrated browser brings more of your web workflow into VS Code, including search, screenshots, remote browsing, and agent-driven validation.
+
+- Agentic browser tools are now generally available: This is enabled by default, allowing agents to navigate pages, inspect content, capture screenshots, and validate web apps directly in VS Code. For more information, see our changelog for the general availability release of agentic browser tools.
+- Improved browsing experience: The integrated browser now has favorites, history, and web search, as well as permissions for camera, location, microphone, and more.
+- New ways to give web page context to the agent: You now have options for adding a screenshot or area screenshot to chat.
+- Browse from remote workspaces: When the integrated browser is opened in a remote workspace, HTTP(S) web traffic can now be proxied through the remote connection. This feature is in public preview.",3,3,是,是,,magician336,26.07.21,
+copilot_release_agent_files,Copilot Chat 0.43 的工作区指令发现修复覆盖哪些文件？,chunk_f084cc417c20ad82189d4083,doc_d1cf692c573d5f591fd4be38,GitHub Copilot,github_release,v0.43.2026040601,0.43.2026040601,product_release,"[""agent_context"", ""ide_ecosystem"", ""model_extensibility""]",discover AGENTS.md and CLAUDE.md at workspace roots,"## Changes:
+
+* #4989: fix: discover AGENTS.md and CLAUDE.md at workspace roots
+* #4974: fix: emit agent instructions in CopilotCLI customization provider
+* #4988: Fix: only send tool_choice when tools are present in summarization
+* #4985: nes: fix: use speculativeRequestDelay for cached speculative results
+* #4904: nes: patch: fix: don't yield malformed edits on fetch fail/cancellation
+* #4930: Update dependencies and improve session initialization in Copilot CLI
+* #4967: make sure we only flush the confirmed tool call
+* #4981: Fix background summarization fallback gaps and improve summarization budget
+* #4791: add prommptC for vsc models and refine hash set with model family nam...
+* #4973: Bump electron from 39.8.4 to 39.8.5
+
+<b>See More</b>
+
+* #4968: chatSessions: add backward compat guards for hooks and plugins APIs
+* #4964: chatSessionsProvider: add groupKeys and badges for instructions in CLI customization provider
+* #4966: Remove `forceExtendedThinking` experiment config
+* #4962: feat: wire plugins through CopilotCLI customization provider
+* #4950: Add explicit session type context for skills
+* #4958: Update Anthropic SDK packages (@anthropic-ai/sdk 0.81.0→0.82.0, @anthropic-ai/claude-agent-sdk 0.2.81→0.2.91)
+
+This list of changes was [auto generated](https://dev.azure.com/monacotools/Monaco/_build/results?buildId=427882&view=logs).
+
+Release state: prerelease",3,3,是,是,,magician336,26.07.21,
+trae_official_products,TRAE 官网提供哪两个主要产品入口？,chunk_bf7282be775ae75bc00e6a3c,doc_842463a7603d24fd1c84ffb6,Trae,official_page,TRAE - Collaborate with Intelligence,,,"[""ide_ecosystem""]",TRAE Work: Your Professional AI Work Assistant,"Ship Faster with
+
+TRAE
+
+TRAE Work: Your Professional AI Work Assistant
+
+TRAE IDE: Your 10x AI Coding Engineer
+
+Download TRAE Work
+
+Download TRAE IDE
+
+TRAE Work Web",3,3,是,是,,magician336,26.07.21,
+trae_pro_plus_price,TRAE Pro+ 的月费、用量倍率和并发云任务数是多少？,chunk_e0dbd06911f3b6a48f421310,doc_5445f3d105e50d526a266b97,Trae,pricing,Pricing | TRAE - Collaborate with Intelligence,,pricing_change,"[""ide_ecosystem"", ""model_extensibility"", ""performance_cost""]",3.5x more usage than Pro,"## Pro+
+
+$30
+
+per month, billed monthly
+
+Everything in Pro, plus:
+
+- 3.5x more usage than Pro
+- Up to 15 concurrent cloud tasks in TRAE Work (Web/Desktop)
+
+Upgrade plan",3,3,是,是,,magician336,26.07.21,
+trae_ultra_price,TRAE Ultra 的月费、用量倍率和模型权益是什么？,chunk_6de14d37a77f2cc45b8c4b2c,doc_5445f3d105e50d526a266b97,Trae,pricing,Pricing | TRAE - Collaborate with Intelligence,,pricing_change,"[""ide_ecosystem"", ""model_extensibility"", ""performance_cost""]",20x more usage than Pro,"## Ultra
+
+$100
+
+per month, billed monthly
+
+Everything in Pro, plus:
+
+- 20x more usage than Pro
+- Model early access
+- Up to 20 concurrent cloud tasks in TRAE Work (Web/Desktop)
+
+Upgrade plan
+
+Most payment methods supported for upgrade",3,3,是,是,,magician336,26.07.21,
+trae_code_folding,TRAE 用户为什么请求关闭聊天代码块自动折叠？,chunk_7bbb78d4667d4de6b6e18c92,doc_0c71c303c48520b51191f60f,Trae,github_issue,[Feature Request] Add option to disable code block folding in chat,,risk_experience,[],requires extra clicks for every code block,"[Feature Request] Add option to disable code block folding in chat
+
+Version 1.7.0 added auto-collapsing code blocks in AI responses. This significantly reduces usability as it requires extra clicks for every code block. Please add a toggle in settings to disable this behavior.
+
+Issue state: open",3,3,是,是,,magician336,26.07.21,
+trae_mcp_response,TRAE 的 run_mcp 工具为何会造成重复解析和额外往返？,chunk_e8fb45c9f6dd6239ebe732e1,doc_9ab726e6393860731425d275,Trae,github_issue,Feature Request: Improve MCP Tool Response Handling,,risk_experience,"[""agent_context"", ""ide_ecosystem"", ""model_extensibility"", ""performance_cost""]",requiring double parsing,"Feature Request: Improve MCP Tool Response Handling
+
+# Feature Request: Improve MCP Tool Response Handling
+
+## Summary
+
+The `run_mcp` tool returns raw MCP protocol responses as unparsed strings, and persists large responses to temp files. This forces the AI agent to manually read, strip prefixes, and double-parse JSON — adding unnecessary round-trips and friction for every MCP call.
+
+## Current Behavior
+
+1. Agent calls `run_mcp` with server name, tool name, and args
+2. For small responses: raw string is returned inline (still unparsed)
+3. For large responses (~20KB+): output is saved to a temp file, agent must `Read` the file manually
+4. The MCP protocol wraps content in `[{type: ""text"", text: ""JSON_STRING""}]` — the `text` field is itself a JSON string, requiring double parsing
+5. Agent must: read file → strip `""The MCP server responded with: ""` prefix → parse outer JSON → parse inner `text` field as JSON
+
+## Expected Behavior
+
+1. `run_mcp` should auto-parse the MCP content array (`[{type, text}]`)
+2. Extract the `text` content and parse it as JSON
+3. Return structured JSON directly to the agent's context
+4. Do not persist responses to temp files unless they truly exceed context",3,3,是,是,,magician336,26.07.21,
+trae_codex_sidebar,TRAE 与 Codex Sidebar 集成时报告了哪些命令和布局问题？,chunk_a7698b751e6b239ed13577d6,doc_a91cc2a565df06aded104073,Trae,github_issue,Codex Sidebar partially incompatible with TRAE (Explorer/Folders cannot be moved and Open Codex Sidebar fails),,risk_experience,"[""agent_context"", ""ide_ecosystem""]",command 'chatgpt.openSidebar' not found,"Codex Sidebar partially incompatible with TRAE (Explorer/Folders cannot be moved and Open Codex Sidebar fails)
+
+Title: Codex Sidebar partially incompatible with TRAE (Explorer/Folders cannot be moved and Open Codex Sidebar fails)
+
+### Environment
+
+* TRAE: 1.107.1
+* Codex Extension (openai.chatgpt): 26.601.20914
+* Linux Mint 22.3 Cinnamon
+* x64
+
+### Description
+
+The Codex extension works correctly when using:
+
+* Codex: New Codex Agent
+* Codex: New Thread in Codex Sidebar
+
+However, there are layout and sidebar compatibility issues when using Codex inside TRAE.
+
+### Issues Found
+
+#### 1. Open Codex Sidebar error
+
+Running:
+
+```text
+Codex: Open Codex Sidebar
+```
+
+produces:
+
+```text
+command 'chatgpt.openSidebar' not found
+```
+
+The Codex extension is installed, updated and operational. The problem appears to be related to sidebar integration.
+
+#### 2. Explorer/Folders cannot be moved
+
+TRAE provides the command:
+
+```text
+View: Move View
+```
+
+However, native views such as:
+
+* Explorer
+* Folders
+* Open Editors
+
+do not appear in the list of movable views.
+
+Only extension-provided views are listed.
+
+Because of this, it is not possible to separate:
+
+```text
+Left Sidebar:
+- Codex
+
+Right Sidebar:",3,3,是,是,,magician336,26.07.21,
+trae_sandbox_permission,TRAE 沙箱权限设计为什么会阻断自动化任务？,chunk_ab0d02b91f1d3a6110dd0b3c,doc_2fbd983a9eebd2fc9e77d04f,Trae,github_issue,"沙箱没有权限,没法自动化任务",,risk_experience,"[""security_compliance""]",生成的脚本都在沙箱里运行,"沙箱没有权限,没法自动化任务
+
+生成的脚本都在沙箱里运行,没有提权操作,不提示用户提高权限,每次都默认失败,根本没法用于大任务,只能一问一答。
+
+Issue state: open",3,3,是,是,,magician336,26.07.21,
+codegeex_vscode_activation,CodeGeeX 的 VS Code 扩展激活失败时报告了什么状态码？,chunk_b2550a53185d7b05c7325edc,doc_7287b6b1dfbdb42cb75be360,CodeGeeX,github_issue,vscode激活报错,,risk_experience,"[""ide_ecosystem""]",status code 502,"vscode激活报错
+
+运行时状态
+激活
+Activated by * event: 13ms
+未捕获的错误(1)
+Request failed with status code 502
+
+[Image: Image]
+
+Issue state: open",3,3,是,是,,magician336,26.07.21,
+codegeex_sequential_mcp,CodeGeeX 中 sequential-thinking MCP 服务为何属于启动成功但调用失败？,chunk_f30c1bde475cd6d280f385a9,doc_0aaf91aa9a3d0ab095f066d8,CodeGeeX,github_issue,"## 问题描述 sequential-thinking MCP 服务器无法正常调用工具,尽管服务器本身可以正常启动。",,risk_experience,"[""ide_ecosystem""]",服务器可以正常启动,"## 问题描述 sequential-thinking MCP 服务器无法正常调用工具,尽管服务器本身可以正常启动。
+
+## 复现步骤
+1. 配置 sequential-thinking MCP 服务器
+2. 服务器可以正常启动,显示:""Sequential Thinking MCP Server running on stdio""
+3. 尝试调用工具失败
+
+## 测试结果
+- ✅ 服务器可以正常启动
+- ❌ 工具调用失败
+- ✅ 其他 MCP 服务器(memory, everything 等)可以正常工作
+
+## 环境信息
+- 包名:@modelcontextprotocol/server-sequential-thinking
+- 版本:0.6.2
+
+Issue state: open",3,3,是,是,,magician336,26.07.21,
+codegeex_path_escape,CodeGeeX 如何错误处理文件路径中的换行和制表转义组合？,chunk_0d085a67b2f3c0fd952ecf4b,doc_4d0602486c2cb7d8f9c0780a,CodeGeeX,github_issue,文件路径错误应用转义符号,,risk_experience,[],路径中包含`\n`或`\t`,"文件路径错误应用转义符号
+
+当路径中包含`\n`或`\t`等拥有转义符号的含义的字符组合时,会被错误转换,从而找不到文件或目录。
+
+[Image: Image]
+
+Issue state: open",3,3,是,是,,magician336,26.07.21,
+codegeex_commit_message,CodeGeeX 用户如何评价生成提交消息功能的可用性？,chunk_93d2f31698564bf66c582387,doc_f7112ada8b8a2bb261ab3e2c,CodeGeeX,github_issue,"生成提交消息的成功率太低了,不可用",,risk_experience,[],完全不可用的状态,"Comment by dszhhj at 2026-05-11T11:22:11Z
+
+现在已经是完全不可用的状态了",3,3,是,是,,magician336,26.07.21,
+codegeex_rider_2026,CodeGeeX 用户提出了哪个 Rider 版本的兼容需求？,chunk_f6c15d46b68f51a5cf358c14,doc_6fc7138f0dd4db1848553df9,CodeGeeX,github_issue,能不能支持一下rider2026,,risk_experience,[],rider2026,"能不能支持一下rider2026
+
+Issue state: open",3,3,是,是,,magician336,26.07.21,
+codegeex_image_upload,CodeGeeX VS Code 扩展的图片上传提案包含哪些交互方式？,chunk_b4717a2f1df4397556988779,doc_956c8704456c0529de1e7ea0,CodeGeeX,github_issue,请求在VS Code扩展中添加图片上传功能,,risk_experience,"[""code_intelligence"", ""ide_ecosystem"", ""education_fit""]",支持直接粘贴图片到聊天输入框,"请求在VS Code扩展中添加图片上传功能
+
+您好,
+
+我希望能为CodeGeeX的VS Code扩展添加图片上传功能。这个功能对开发者非常有帮助,具体需求如下:
+
+功能需求:
+
+在聊天界面添加图片上传按钮(类似回形针图标)
+支持直接粘贴图片到聊天输入框
+支持常见图片格式(JPG、PNG、GIF、WebP等)
+使用场景:
+
+设计稿转代码:上传UI设计稿截图,让AI根据图片生成前端代码
+问题诊断:上传错误截图或界面问题,让AI帮助分析和解决
+代码审查:上传代码界面截图,让AI提供改进建议
+沟通更直观:通过图片描述问题,比纯文字更清晰高效
+预期价值:
+
+大幅提升开发效率
+减少沟通成本
+提升用户体验
+增强CodeGeeX的竞争力
+
+Issue state: open",3,3,是,是,,magician336,26.07.21,
+codegeex_wsl_path,CodeGeeX 在 VS Code 的 WSL 场景中为何找不到正确路径？,chunk_72bd5d74dcafe4c7259d1b7c,doc_e16dc8410cf146e7ead53b03,CodeGeeX,github_issue,"BUg BUG在idea中,wsl插件正常运行,但是!!!!!!!!!!在 vsconde中异常!!!!!!求修复",,risk_experience,"[""code_intelligence"", ""ide_ecosystem""]",vscode没有把//wsl 路径带上,"BUg BUG在idea中,wsl插件正常运行,但是!!!!!!!!!!在 vsconde中异常!!!!!!求修复
+
+[Image: Image]
+
+原因是vscode没有把//wsl 路径带上
+
+Issue state: open",3,3,是,是,,magician336,26.07.21,
+lingma_agent_planning,通义灵码编程智能体如何拆解并执行编码任务？,chunk_9046a8c9c9f4e64e70c9fad4,doc_38266a07333b62a6e453a5f7,通义灵码,official_page,通义灵码_你的智能编码助手-阿里云,,,"[""code_intelligence"", ""agent_context"", ""ide_ecosystem"", ""model_extensibility"", ""security_compliance""]",具备自主规划、自动感知、工具使用等能力,"## 面向研发任务 协同编程 更高效
+
+借助最新的大模型、人工智能技术,开发者与通义灵码可以共同围绕研发任务进行协同编程,完成一个编码任务
+
+编程智能体
+
+- 编程智能模式具备自主规划、自动感知、工具使用等能力,可以根据开发者的编码诉求,自主地完成任务拆解,并使用工程检索、文件编辑、终端等工具,端到端地帮助开发者完成编码任务。
+-
+
+- 1
+- 2",3,3,是,是,,magician336,26.07.21,
+lingma_terminal_commands,通义灵码智能体怎样完成终端命令执行？,chunk_5b0c6fcf296b36be598e5c61,doc_38266a07333b62a6e453a5f7,通义灵码,official_page,通义灵码_你的智能编码助手-阿里云,,,"[""code_intelligence"", ""agent_context"", ""ide_ecosystem"", ""model_extensibility"", ""security_compliance""]",自动完成命令编写并运行终端,"### 终端命令执行
+
+智能体在执行编码任务时,可以自主决策需要执行的命令,自动完成命令编写并运行终端,大幅提升编码任务的执行效率。",3,3,是,是,,magician336,26.07.21,
+lingma_project_awareness,通义灵码工程自动感知会识别哪些项目上下文？,chunk_32e1b46745e9038a32567f04,doc_38266a07333b62a6e453a5f7,通义灵码,official_page,通义灵码_你的智能编码助手-阿里云,,,"[""code_intelligence"", ""agent_context"", ""ide_ecosystem"", ""model_extensibility"", ""security_compliance""]",自动感知工程框架、技术栈,"### 工程自动感知
+
+根据开发者的任务描述,自动感知工程框架、技术栈、所需代码文件、错误信息等,无需手动添加工程上下文。",3,3,是,是,,magician336,26.07.21,
+lingma_inline_generation,通义灵码行间代码生成使用哪些上下文并生成什么粒度的代码？,chunk_ea679da20754efea5138e399,doc_38266a07333b62a6e453a5f7,通义灵码,official_page,通义灵码_你的智能编码助手-阿里云,,,"[""code_intelligence"", ""agent_context"", ""ide_ecosystem"", ""model_extensibility"", ""security_compliance""]",为你生成行级/函数级代码,"## 实时伴随的 编码助手 更懂你
+
+行间实时续写、行间建议预测、研发智能问答、报错排查等,为你带来高效、流畅的智能编码体验
+
+行间代码生成
+
+支持根据当前代码文件及跨文件的上下文,为你生成行级/函数级代码,沉浸式编码心流,秒级生成速度,让你更专注在技术设计,高质高效地完成编码工作。",3,3,是,是,,magician336,26.07.21,
+lingma_qa_sources,通义灵码研发智能问答基于哪些文档和知识来源？,chunk_e973fda99262bc6304090435,doc_38266a07333b62a6e453a5f7,通义灵码,official_page,通义灵码_你的智能编码助手-阿里云,,,"[""code_intelligence"", ""agent_context"", ""ide_ecosystem"", ""model_extensibility"", ""security_compliance""]",基于海量研发文档、产品文档,"### 研发智能问答
+
+基于海量研发文档、产品文档、通用研发知识、阿里云的云服务文档等进行训练,为你答疑解惑,助你轻松解决研发问题。",3,3,是,是,,magician336,26.07.21,
+lingma_teams_price,Qoder CN 原灵码企业标准版的单价和 Credits 额度是多少？,chunk_609c5acdc208d72d3396a0cf,doc_5856a56ed8b6b8054a6f497f,通义灵码,pricing,计费说明,,pricing_change,"[""code_intelligence"", ""agent_context"", ""ide_ecosystem"", ""model_extensibility"", ""performance_cost"", ""security_compliance""]",99 元 / 席位·月,"## Qoder CN(全家桶)
+
+自 2026 年 6 月 20 日起,Qoder CN(全家桶)个人版订阅一份即可在 Qoder CN Desktop、JetBrains 插件、QoderWork CN、Qoder CLI CN、Qoder CN Mobile 全系列产品间通用,Credits 跨产品共享。企业版(Teams / Enterprise VPC)当前覆盖 QoderWork CN 与 Qoder CLI CN,IDE / JetBrains 即将支持。
+
+说明
+
+- 个人体验版、个人 Pro/Pro+:已覆盖 Qoder CN Desktop、JetBrains 插件、QoderWork CN、Qoder CLI CN、Qoder CN Mobile。VSC 插件停止演进。
+- 企业 Teams 与 Enterprise VPC:当前仅覆盖 QoderWork CN、Qoder CLI CN;Qoder CN IDE、JetBrains 插件即将新增支持,敬请期待。
+
+| | | | | | |
+| --- | --- | --- | --- | --- | --- |
+| 订阅版本类型 | 个人体验版 | 个人专业版(Pro) | 个人高级版(Pro+) | 企业标准版(Teams) | 企业 VPC 版 |
+| 单价 | 免费 | 59 元 / 月 | 169 /月 | 99 元 / 席位·月 | 199 元 / 席位·月 |
+| Credits 额度 | 有限的体验额度,含为期 2 周的试用及 300 Credits | 2,000 Credits / 月 | 6,000 Credits / 月 | 3,000 Credits / 席位·月 | 3,000 Credits / 席位·月 |
+| 计费模式 | / | 预付费订阅 | 预付费订阅 | 包年包月 | 包年包月 |
+| 起购数量 | / | / | / | 1 席位起 | 50 席位起 |
+| 包含功能 | 适用范围:Qoder CN IDE、JetBrains 插件、QoderWork CN、Qoder CLI CN、Qoder CN Mobile - 有限的体验额度 - 为期 2 周的 Pro 试用及 300 Credits - 有限次数的补全 | 适用范围:Qoder CN Desktop、JetBrains 插件、QoderWork CN、Qoder CLI CN、Qoder CN Mobile(全产品通用) Qoder CN - 更多的对话与智能体请求数 - Quest 模式和 Repo Wiki 功能 - 专家团 - 更多有限次数的补全 QoderWork CN - 浏览器自动化、定时任务、IM 频道等 - 写作 · 幻灯片 · 设计 三大工作台 - 解锁全部专业技能 & 专家套件 | 包含专业版全部功能 | 适用范围:QoderWork CN、Qoder CLI CN(IDE / JetBrains 即将支持) - 3,000 Credits 每席位·月 - 集中计费 - 管理员控制台 - 支持 SSO | 适用范围:QoderWork CN、Qoder CLI CN(IDE / JetBrains 即将支持) - 包含 Teams 全部能力 - 授权管理、组织个性化等管理相关能力 - 支持用户账号集成、统一授权管理、知识引擎、AI 度量 - 提供 VPC 部署模式 |
+| 购买链接 | 领取 Credits | 订阅 Qoder CN(全家桶)专业版 | 订阅 Qoder CN(全家桶)高级版 | 订阅 QoderWork/CLI/Mobile | 敬请期待 |",3,3,是,是,,magician336,26.07.21,
+lingma_teams_price,Qoder CN 原灵码企业标准版的单价和 Credits 额度是多少？,chunk_16a8217138632425df4cfcb7,doc_5856a56ed8b6b8054a6f497f,通义灵码,pricing,计费说明,,pricing_change,"[""code_intelligence"", ""agent_context"", ""ide_ecosystem"", ""model_extensibility"", ""performance_cost"", ""security_compliance""]",99 元 / 席位·月,"## Qoder CN(原灵码)
+
+适用于 Qoder CN(IDE、JetBrains、VS Code)单产品的企业订阅(Teams / VPC),即原通义灵码企业版。个人社区版和个人 Pro 已统一收敛至「Qoder CN(全家桶)」,请前往全家桶页签查看。 自 2026 年 5 月 20 日 23:00:00(北京时间)起对新购合同生效。
+
+| | | |
+| --- | --- | --- |
+| 订阅版本类型 | 企业标准版 | 企业专属版 |
+| 单价 | 99 元 / 席位·月 | 199 元 / 席位·月 |
+| Credits 额度 | 3,000 Credits / 席位·月 | 3,000 Credits / 席位·月 |
+| 计费模式 | 包年包月 | 包年包月 |
+| 起购数量 | 1 席位起 | 50 席位起 |
+| 包含功能 | 代码生成<br>- Pro 版全部能力<br>- 基于企业代码库的生成增强<br>智能会话<br>- Pro 版全部能力<br>- 企业知识库问答<br>- 组织代码库生成增强<br>企业管理<br>- 授权管理<br>- 统计报表<br>- 审计日志<br>- 知识管理<br>- 自定义扩展管理<br>限制<br>- 知识管理容量:文件存储 500MB;向量数据库 2GB | 代码生成<br>- Teams 版全部能力<br>智能会话<br>- Teams 版全部能力<br>- 用户账号集成、统一授权管理<br>企业管理<br>- Teams 全部企业管理能力<br>- 专属 VPC 部署<br>- 多组织管理<br>- IP 白名单管理<br>- 专有网络访问 |
+| 购买链接 | 购买Qoder CN(灵码)企业标准版 | 敬请期待 |
+
+关于 Credits 的详细使用规则,请参见Credits。",3,3,是,是,,magician336,26.07.21,
+lingma_teams_price,Qoder CN 原灵码企业标准版的单价和 Credits 额度是多少？,chunk_ab214c112f0f0b084d1dd4f3,doc_718761b281eaa91de36c7030,通义灵码,pricing,计费说明,,pricing_change,"[""code_intelligence"", ""agent_context"", ""ide_ecosystem"", ""model_extensibility"", ""performance_cost"", ""security_compliance""]",99 元 / 席位·月,"## Qoder CN(全家桶)
+
+自 2026 年 6 月 20 日起,Qoder CN(全家桶)个人版订阅一份即可在 Qoder CN Desktop、JetBrains 插件、QoderWork CN、Qoder CLI CN、Qoder CN Mobile 全系列产品间通用,Credits 跨产品共享。企业版(Teams / Enterprise VPC)当前覆盖 QoderWork CN 与 Qoder CLI CN,IDE / JetBrains 即将支持。
+
+说明
+
+- 个人体验版、个人 Pro/Pro+:已覆盖 Qoder CN Desktop、JetBrains 插件、QoderWork CN、Qoder CLI CN、Qoder CN Mobile。VSC 插件停止演进。
+- 企业 Teams 与 Enterprise VPC:当前仅覆盖 QoderWork CN、Qoder CLI CN;Qoder CN IDE、JetBrains 插件即将新增支持,敬请期待。
+
+| | | | | | |
+| --- | --- | --- | --- | --- | --- |
+| 订阅版本类型 | 个人体验版 | 个人专业版(Pro) | 个人高级版(Pro+) | 企业标准版(Teams) | 企业 VPC 版 |
+| 单价 | 免费 | 59 元 / 月 | 169 /月 | 99 元 / 席位·月 | 199 元 / 席位·月 |
+| Credits 额度 | 有限的体验额度,含为期 2 周的试用及 300 Credits | 2,000 Credits / 月 | 6,000 Credits / 月 | 3,000 Credits / 席位·月 | 3,000 Credits / 席位·月 |
+| 计费模式 | / | 预付费订阅 | 预付费订阅 | 包年包月 | 包年包月 |
+| 起购数量 | / | / | / | 1 席位起 | 50 席位起 |
+| 包含功能 | 适用范围:Qoder CN IDE、JetBrains 插件、QoderWork CN、Qoder CLI CN、Qoder CN Mobile - 有限的体验额度 - 为期 2 周的 Pro 试用及 300 Credits - 有限次数的补全 | 适用范围:Qoder CN Desktop、JetBrains 插件、QoderWork CN、Qoder CLI CN、Qoder CN Mobile(全产品通用) Qoder CN - 更多的对话与智能体请求数 - Quest 模式和 Repo Wiki 功能 - 专家团 - 更多有限次数的补全 QoderWork CN - 浏览器自动化、定时任务、IM 频道等 - 写作 · 幻灯片 · 设计 三大工作台 - 解锁全部专业技能 & 专家套件 | 包含专业版全部功能 | 适用范围:QoderWork CN、Qoder CLI CN(IDE / JetBrains 即将支持) - 3,000 Credits 每席位·月 - 集中计费 - 管理员控制台 - 支持 SSO | 适用范围:QoderWork CN、Qoder CLI CN(IDE / JetBrains 即将支持) - 包含 Teams 全部能力 - 授权管理、组织个性化等管理相关能力 - 支持用户账号集成、统一授权管理、知识引擎、AI 度量 - 提供 VPC 部署模式 |
+| 购买链接 | 领取 Credits | 订阅 Qoder CN(全家桶)专业版 | 订阅 Qoder CN(全家桶)高级版 | 订阅 QoderWork/CLI/Mobile | 敬请期待 |",3,3,是,是,,magician336,26.07.21,
+lingma_teams_price,Qoder CN 原灵码企业标准版的单价和 Credits 额度是多少？,chunk_7a21f927acf5a7865f0c0b86,doc_718761b281eaa91de36c7030,通义灵码,pricing,计费说明,,pricing_change,"[""code_intelligence"", ""agent_context"", ""ide_ecosystem"", ""model_extensibility"", ""performance_cost"", ""security_compliance""]",99 元 / 席位·月,"## Qoder CN(原灵码)
+
+适用于 Qoder CN(IDE、JetBrains、VS Code)单产品的企业订阅(Teams / VPC),即原通义灵码企业版。个人社区版和个人 Pro 已统一收敛至「Qoder CN(全家桶)」,请前往全家桶页签查看。 自 2026 年 5 月 20 日 23:00:00(北京时间)起对新购合同生效。
+
+| | | |
+| --- | --- | --- |
+| 订阅版本类型 | 企业标准版 | 企业专属版 |
+| 单价 | 99 元 / 席位·月 | 199 元 / 席位·月 |
+| Credits 额度 | 3,000 Credits / 席位·月 | 3,000 Credits / 席位·月 |
+| 计费模式 | 包年包月 | 包年包月 |
+| 起购数量 | 1 席位起 | 50 席位起 |
+| 包含功能 | 代码生成<br>- Pro 版全部能力<br>- 基于企业代码库的生成增强<br>智能会话<br>- Pro 版全部能力<br>- 企业知识库问答<br>- 组织代码库生成增强<br>企业管理<br>- 授权管理<br>- 统计报表<br>- 审计日志<br>- 知识管理<br>- 自定义扩展管理<br>限制<br>- 知识管理容量:文件存储 500MB;向量数据库 2GB | 代码生成<br>- Teams 版全部能力<br>智能会话<br>- Teams 版全部能力<br>- 用户账号集成、统一授权管理<br>企业管理<br>- Teams 全部企业管理能力<br>- 专属 VPC 部署<br>- 多组织管理<br>- IP 白名单管理<br>- 专有网络访问 |
+| 购买链接 | 购买Qoder CN(灵码)企业标准版 | 敬请期待 |
+
+关于 Credits 的详细使用规则,请参见Credits。",3,3,是,是,,magician336,26.07.21,

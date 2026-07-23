@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-07-21T05:38:26.782433+00:00",
+  "generator": "scripts.prepare_evaluation_set",
+  "human_review_status": "complete",
+  "label_origin": "human-reviewed gold labels",
+  "case_count": 40,
+  "document_count": 566,
+  "chunk_count": 2052,
+  "documents_path": "D:\\code_warehouse\\Curriculum\\InternshipTraining\\Proj\\competitor-analysis-system\\data\\cleaned\\documents.jsonl",
+  "documents_sha256": "sha256:92b1cb46737c496e59c9cb1ce09f9664c18879f0a794db0d23c95f2ae88f93d1",
+  "dataset_path": "D:\\code_warehouse\\Curriculum\\InternshipTraining\\Proj\\competitor-analysis-system\\data\\samples\\测试数据集.csv",
+  "dataset_sha256": "sha256:4887e334e0ee88243cf619f1dae05c854d752a7d1582f67eddc630ecc4491873",
+  "review_path": "D:\\code_warehouse\\Curriculum\\InternshipTraining\\Proj\\competitor-analysis-system\\data\\samples\\评测集人工复核.csv",
+  "chunking": {
+    "target_characters": 1200,
+    "maximum_characters": 1800,
+    "overlap_characters": 160,
+    "minimum_characters": 80
+  },
+  "distributions": {
+    "competitors": {
+      "Cursor": 8,
+      "GitHub Copilot": 12,
+      "Trae": 7,
+      "CodeGeeX": 7,
+      "通义灵码": 6
+    },
+    "sources": {
+      "official_page": 8,
+      "pricing": 6,
+      "official_changelog": 14,
+      "github_release": 1,
+      "github_issue": 11
+    },
+    "events": {
+      "unclassified": 8,
+      "pricing_change": 6,
+      "product_release": 15,
+      "risk_experience": 11
+    },
+    "dimensions": {
+      "agent_context": 10,
+      "performance_cost": 8,
+      "security_compliance": 5,
+      "education_fit": 3,
+      "model_extensibility": 2,
+      "ide_ecosystem": 6,
+      "unfiltered": 4,
+      "code_intelligence": 2
+    }
+  },
+  "limitations": [
+    "Human relevance review is pending.",
+    "The corpus contains no historical document versions.",
+    "Conflict and historical-version quality require separate real samples."
+  ],
+  "reviewers": [
+    "magician336"
+  ],
+  "review_completed_at": "26.07.21",
+  "finalized_at": "2026-07-21T06:12:30.981661+00:00"
+}

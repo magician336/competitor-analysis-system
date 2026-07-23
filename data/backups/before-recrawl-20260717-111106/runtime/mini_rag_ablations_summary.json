@@ -1,0 +1,485 @@
+{
+  "generated_at": "2026-07-14T06:23:38.154203+00:00",
+  "run_count": 3,
+  "source_files": [
+    "D:\\26Spring\\project\\CodeRadar\\data\\runtime\\mini_rag_ablations.run1.json",
+    "D:\\26Spring\\project\\CodeRadar\\data\\runtime\\mini_rag_ablations.run2.json",
+    "D:\\26Spring\\project\\CodeRadar\\data\\runtime\\mini_rag_ablations.run3.json"
+  ],
+  "invariants": {
+    "case_count": 40,
+    "dataset_sha256": "sha256:e07bb417fcd7f50d53498f924eeb1366ca73eaf9e7cbc88e30db4ec7b165763e",
+    "human_review_status": "pending",
+    "label_origin": "AI-assisted candidate labels",
+    "config_sha256": "sha256:a31260ba912fccceebe76c1249638fd02984ee4aad8330f037311aa81371c2d9",
+    "index_version": "coderadar_chunks_v20260714043518409034",
+    "embedding_model": "sentence-transformers/BAAI/bge-m3",
+    "embedding_dimension": 1024,
+    "reranker_model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+    "actual_reranker_backend": "cross_encoder",
+    "effective_candidate_windows": {
+      "bm25": 20,
+      "dense": 20,
+      "fused": 30,
+      "rerank": 20
+    },
+    "rrf_k": 60,
+    "ranking_weights": {
+      "semantic_weight": 0.7,
+      "temporal_weight": 0.12,
+      "version_weight": 0.08,
+      "evidence_weight": 0.1,
+      "temporal_half_life_days": 180
+    },
+    "top_ks": [
+      5,
+      10
+    ],
+    "query_top_k": 10,
+    "ndcg_k": 10,
+    "latency_scope": "steady_state_after_group_warmup",
+    "warmup_queries_per_group": 1,
+    "ablation_flags": {
+      "A": {
+        "use_bm25": true,
+        "use_dense": false,
+        "use_rrf": false,
+        "use_reranker": false,
+        "use_temporal_version": false,
+        "use_evidence_ranking": false
+      },
+      "B": {
+        "use_bm25": false,
+        "use_dense": true,
+        "use_rrf": false,
+        "use_reranker": false,
+        "use_temporal_version": false,
+        "use_evidence_ranking": false
+      },
+      "C": {
+        "use_bm25": true,
+        "use_dense": true,
+        "use_rrf": true,
+        "use_reranker": false,
+        "use_temporal_version": false,
+        "use_evidence_ranking": false
+      },
+      "D": {
+        "use_bm25": true,
+        "use_dense": true,
+        "use_rrf": true,
+        "use_reranker": true,
+        "use_temporal_version": false,
+        "use_evidence_ranking": false
+      },
+      "E": {
+        "use_bm25": true,
+        "use_dense": true,
+        "use_rrf": true,
+        "use_reranker": true,
+        "use_temporal_version": true,
+        "use_evidence_ranking": false
+      },
+      "F": {
+        "use_bm25": true,
+        "use_dense": true,
+        "use_rrf": true,
+        "use_reranker": true,
+        "use_temporal_version": true,
+        "use_evidence_ranking": true
+      }
+    }
+  },
+  "groups": {
+    "A": {
+      "description": "BM25 only",
+      "metrics": {
+        "recall@5": {
+          "mean": 0.7375000000000002,
+          "stddev": 0.0,
+          "min": 0.7375,
+          "max": 0.7375
+        },
+        "recall@10": {
+          "mean": 0.85,
+          "stddev": 0.0,
+          "min": 0.85,
+          "max": 0.85
+        },
+        "mrr": {
+          "mean": 0.5385714285714286,
+          "stddev": 0.0,
+          "min": 0.5385714285714286,
+          "max": 0.5385714285714286
+        },
+        "ndcg@10": {
+          "mean": 0.6139905010260078,
+          "stddev": 0.0,
+          "min": 0.6139905010260078,
+          "max": 0.6139905010260078
+        },
+        "citation_accuracy": {
+          "mean": 0.85,
+          "stddev": 0.0,
+          "min": 0.85,
+          "max": 0.85
+        },
+        "metadata_filter_accuracy": {
+          "mean": 1.0,
+          "stddev": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "old_version_false_recall_rate": {
+          "mean": 0.0,
+          "stddev": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "mean_latency_ms": {
+          "mean": 72.25951750006061,
+          "stddev": 73.67522201724073,
+          "min": 28.267567500006407,
+          "max": 157.31553999994503
+        },
+        "p95_latency_ms": {
+          "mean": 202.94887500022006,
+          "stddev": 267.5921296693923,
+          "min": 41.92218000098358,
+          "max": 511.8442499981027
+        },
+        "query_success_rate": {
+          "mean": 1.0,
+          "stddev": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        }
+      }
+    },
+    "B": {
+      "description": "Dense Vector only",
+      "metrics": {
+        "recall@5": {
+          "mean": 0.9125,
+          "stddev": 0.0,
+          "min": 0.9125,
+          "max": 0.9125
+        },
+        "recall@10": {
+          "mean": 0.9499999999999998,
+          "stddev": 0.0,
+          "min": 0.95,
+          "max": 0.95
+        },
+        "mrr": {
+          "mean": 0.8510416666666666,
+          "stddev": 0.0,
+          "min": 0.8510416666666666,
+          "max": 0.8510416666666666
+        },
+        "ndcg@10": {
+          "mean": 0.8742076598313403,
+          "stddev": 0.0,
+          "min": 0.8742076598313402,
+          "max": 0.8742076598313402
+        },
+        "citation_accuracy": {
+          "mean": 0.9499999999999998,
+          "stddev": 0.0,
+          "min": 0.95,
+          "max": 0.95
+        },
+        "metadata_filter_accuracy": {
+          "mean": 1.0,
+          "stddev": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "old_version_false_recall_rate": {
+          "mean": 0.0,
+          "stddev": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "mean_latency_ms": {
+          "mean": 123.41496749983587,
+          "stddev": 7.1848249448172465,
+          "min": 115.92476999885548,
+          "max": 130.24947000103566
+        },
+        "p95_latency_ms": {
+          "mean": 173.94146499706628,
+          "stddev": 34.42129074552341,
+          "min": 134.27345499585496,
+          "max": 195.9346349973201
+        },
+        "query_success_rate": {
+          "mean": 1.0,
+          "stddev": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        }
+      }
+    },
+    "C": {
+      "description": "BM25 + Dense Vector + RRF",
+      "metrics": {
+        "recall@5": {
+          "mean": 0.9,
+          "stddev": 0.0,
+          "min": 0.9,
+          "max": 0.9
+        },
+        "recall@10": {
+          "mean": 0.975,
+          "stddev": 0.0,
+          "min": 0.975,
+          "max": 0.975
+        },
+        "mrr": {
+          "mean": 0.8225595238095238,
+          "stddev": 0.0,
+          "min": 0.8225595238095238,
+          "max": 0.8225595238095238
+        },
+        "ndcg@10": {
+          "mean": 0.8589310749950206,
+          "stddev": 0.0,
+          "min": 0.8589310749950207,
+          "max": 0.8589310749950207
+        },
+        "citation_accuracy": {
+          "mean": 0.975,
+          "stddev": 0.0,
+          "min": 0.975,
+          "max": 0.975
+        },
+        "metadata_filter_accuracy": {
+          "mean": 1.0,
+          "stddev": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "old_version_false_recall_rate": {
+          "mean": 0.0,
+          "stddev": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "mean_latency_ms": {
+          "mean": 139.0361883329509,
+          "stddev": 10.5970154967847,
+          "min": 130.33562249893293,
+          "max": 150.83777000018017
+        },
+        "p95_latency_ms": {
+          "mean": 181.7537766673922,
+          "stddev": 35.96364470003128,
+          "min": 153.16290499977185,
+          "max": 222.13187500092306
+        },
+        "query_success_rate": {
+          "mean": 1.0,
+          "stddev": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        }
+      }
+    },
+    "D": {
+      "description": "C + Cross-Encoder Reranker",
+      "metrics": {
+        "recall@5": {
+          "mean": 0.9,
+          "stddev": 0.0,
+          "min": 0.9,
+          "max": 0.9
+        },
+        "recall@10": {
+          "mean": 0.9499999999999998,
+          "stddev": 0.0,
+          "min": 0.95,
+          "max": 0.95
+        },
+        "mrr": {
+          "mean": 0.8469444444444445,
+          "stddev": 0.0,
+          "min": 0.8469444444444445,
+          "max": 0.8469444444444445
+        },
+        "ndcg@10": {
+          "mean": 0.8672848976855289,
+          "stddev": 0.0,
+          "min": 0.867284897685529,
+          "max": 0.867284897685529
+        },
+        "citation_accuracy": {
+          "mean": 0.9499999999999998,
+          "stddev": 0.0,
+          "min": 0.95,
+          "max": 0.95
+        },
+        "metadata_filter_accuracy": {
+          "mean": 1.0,
+          "stddev": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "old_version_false_recall_rate": {
+          "mean": 0.0,
+          "stddev": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "mean_latency_ms": {
+          "mean": 844.9554583331216,
+          "stddev": 35.71057185921515,
+          "min": 804.3664125001669,
+          "max": 871.5461674992184
+        },
+        "p95_latency_ms": {
+          "mean": 1344.3786216656008,
+          "stddev": 68.49974734320463,
+          "min": 1273.0644300045242,
+          "max": 1409.665599994696
+        },
+        "query_success_rate": {
+          "mean": 1.0,
+          "stddev": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        }
+      }
+    },
+    "E": {
+      "description": "D + temporal and version ranking",
+      "metrics": {
+        "recall@5": {
+          "mean": 0.9,
+          "stddev": 0.0,
+          "min": 0.9,
+          "max": 0.9
+        },
+        "recall@10": {
+          "mean": 0.9499999999999998,
+          "stddev": 0.0,
+          "min": 0.95,
+          "max": 0.95
+        },
+        "mrr": {
+          "mean": 0.8475694444444445,
+          "stddev": 0.0,
+          "min": 0.8475694444444445,
+          "max": 0.8475694444444445
+        },
+        "ndcg@10": {
+          "mean": 0.867944898947225,
+          "stddev": 0.0,
+          "min": 0.867944898947225,
+          "max": 0.867944898947225
+        },
+        "citation_accuracy": {
+          "mean": 0.9499999999999998,
+          "stddev": 0.0,
+          "min": 0.95,
+          "max": 0.95
+        },
+        "metadata_filter_accuracy": {
+          "mean": 1.0,
+          "stddev": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "old_version_false_recall_rate": {
+          "mean": 0.0,
+          "stddev": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "mean_latency_ms": {
+          "mean": 855.074089166313,
+          "stddev": 18.020730937885094,
+          "min": 835.634989999744,
+          "max": 871.2230874996749
+        },
+        "p95_latency_ms": {
+          "mean": 1341.7154016687464,
+          "stddev": 54.174746360203784,
+          "min": 1309.6800900031665,
+          "max": 1404.2648450027627
+        },
+        "query_success_rate": {
+          "mean": 1.0,
+          "stddev": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        }
+      }
+    },
+    "F": {
+      "description": "E + evidence-level ranking",
+      "metrics": {
+        "recall@5": {
+          "mean": 0.9,
+          "stddev": 0.0,
+          "min": 0.9,
+          "max": 0.9
+        },
+        "recall@10": {
+          "mean": 0.9499999999999998,
+          "stddev": 0.0,
+          "min": 0.95,
+          "max": 0.95
+        },
+        "mrr": {
+          "mean": 0.8475694444444445,
+          "stddev": 0.0,
+          "min": 0.8475694444444445,
+          "max": 0.8475694444444445
+        },
+        "ndcg@10": {
+          "mean": 0.867944898947225,
+          "stddev": 0.0,
+          "min": 0.867944898947225,
+          "max": 0.867944898947225
+        },
+        "citation_accuracy": {
+          "mean": 0.9499999999999998,
+          "stddev": 0.0,
+          "min": 0.95,
+          "max": 0.95
+        },
+        "metadata_filter_accuracy": {
+          "mean": 1.0,
+          "stddev": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "old_version_false_recall_rate": {
+          "mean": 0.0,
+          "stddev": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "mean_latency_ms": {
+          "mean": 869.3177975001769,
+          "stddev": 12.891508580745647,
+          "min": 856.2539499995182,
+          "max": 882.0297625001331
+        },
+        "p95_latency_ms": {
+          "mean": 1346.604738333432,
+          "stddev": 45.00082771444535,
+          "min": 1299.9135950016348,
+          "max": 1389.699419998578
+        },
+        "query_success_rate": {
+          "mean": 1.0,
+          "stddev": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        }
+      }
+    }
+  }
+}

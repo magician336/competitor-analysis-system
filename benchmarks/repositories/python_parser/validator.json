@@ -1,0 +1,16 @@
+{
+  "task_id": "bench_008",
+  "version": "1.1.0",
+  "timeout_seconds": 120,
+  "expected_starter_status": "fail",
+  "protected_paths": [
+    "TASK.md",
+    "validator.json",
+    "validate.py",
+    "parser.py",
+    "validator_assets/__init__.py",
+    "validator_assets/mutants.py",
+    "validator_assets/run_suite.py"
+  ],
+  "command": ["{python}", "-B", "-s", "-X", "utf8", "validate.py"]
+}

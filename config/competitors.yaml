@@ -29,11 +29,50 @@ competitors:
         evidence_level: A
         urls:
           - https://cursor.com/pricing
+      product_docs:
+        enabled: true
+        evidence_level: A
+        embedded_content: cursor_next_rsc
+        urls:
+          - https://cursor.com/docs
+          - https://cursor.com/docs/models-and-pricing
+          - https://cursor.com/docs/agent/overview
+      status_page:
+        enabled: true
+        evidence_level: A
+        urls:
+          - https://status.cursor.com/history
       github:
         enabled: false
         evidence_level: B
         repositories: []
         note: cursor/cursor does not publish product releases or accept issues.
+      plugin_marketplace:
+        enabled: false
+        evidence_level: B
+        urls: []
+        note: Cursor is distributed as a standalone editor and has no verified first-party VS Code or JetBrains listing.
+      community:
+        enabled: true
+        evidence_level: C
+        urls:
+          - https://forum.cursor.com/
+      review:
+        enabled: false
+        evidence_level: C
+        urls: []
+        note: Third-party video and review URLs require a curated allowlist before collection.
+      security_privacy:
+        enabled: true
+        evidence_level: A
+        urls:
+          - https://cursor.com/security
+          - https://cursor.com/privacy
+      benchmark:
+        enabled: true
+        evidence_level: B
+        urls:
+          - https://cursor.com/blog/composer-2-technical-report
 
   - id: github_copilot
     name: GitHub Copilot
@@ -54,11 +93,49 @@ competitors:
         evidence_level: A
         urls:
           - https://github.com/features/copilot/plans
+      product_docs:
+        enabled: true
+        evidence_level: A
+        urls:
+          - https://docs.github.com/en/copilot
+          - https://docs.github.com/en/copilot/get-started
+          - https://docs.github.com/en/copilot/reference
+      status_page:
+        enabled: true
+        evidence_level: A
+        urls:
+          - https://www.githubstatus.com/history
       github:
         enabled: true
         evidence_level: B
         repositories:
           - microsoft/vscode-copilot-chat
+      plugin_marketplace:
+        enabled: true
+        evidence_level: B
+        urls:
+          - https://marketplace.visualstudio.com/items?itemName=GitHub.copilot
+      community:
+        enabled: true
+        evidence_level: C
+        urls:
+          - https://github.com/orgs/community/discussions/categories/copilot
+      review:
+        enabled: false
+        evidence_level: C
+        urls: []
+        note: Third-party video and review URLs require a curated allowlist before collection.
+      security_privacy:
+        enabled: true
+        evidence_level: A
+        urls:
+          - https://github.com/trust-center
+          - https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement
+      benchmark:
+        enabled: true
+        evidence_level: B
+        urls:
+          - https://github.blog/news-insights/research/does-github-copilot-improve-code-quality-heres-what-the-data-says/
 
   - id: trae
     name: Trae
@@ -67,11 +144,19 @@ competitors:
       official:
         enabled: true
         evidence_level: A
+        browser_fallback:
+          enabled: true
+          wait_selector: "#root"
+          minimum_text_characters: 500
+          timeout_seconds: 30
+          settle_milliseconds: 1500
         urls:
           - https://www.trae.ai/
       changelog:
         enabled: true
         evidence_level: A
+        empty_result_markers:
+          - No update record yet.
         urls:
           - https://www.trae.ai/changelog
       pricing:
@@ -79,11 +164,75 @@ competitors:
         evidence_level: A
         urls:
           - https://www.trae.ai/pricing
+      product_docs:
+        enabled: true
+        evidence_level: A
+        embedded_content: trae_router_document
+        urls:
+          - https://docs.trae.ai/ide/what-is-trae?_lang=en
+      status_page:
+        enabled: false
+        evidence_level: A
+        urls: []
+        note: No verified public TRAE service-status page is available.
       github:
         enabled: true
         evidence_level: B
+        collect_releases: false
+        collect_issues: true
         repositories:
           - Trae-AI/TRAE
+        note: The official repository currently publishes Issues but no GitHub Releases.
+      plugin_marketplace:
+        enabled: true
+        evidence_level: B
+        urls:
+          - https://marketplace.visualstudio.com/items?itemName=MarsCode.marscode-extension
+      community:
+        enabled: false
+        evidence_level: C
+        urls: []
+        note: TRAE community links point to interactive Discord channels; GitHub Issues provide the machine-readable feedback source.
+      review:
+        enabled: false
+        evidence_level: C
+        urls: []
+        note: Third-party video and review URLs require a curated allowlist before collection.
+      security_privacy:
+        enabled: true
+        evidence_level: A
+        urls:
+          - https://www.trae.ai/privacy-policy
+          - https://www.trae.ai/terms-of-service
+        request_overrides:
+          "https://www.trae.ai/privacy-policy":
+            url: https://ug-normal.trae.ai/cloudide/api/v3/trae/terms/get
+            method: POST
+            params:
+              Language: EN
+              TermsType: user_privacy
+            json:
+              language: EN
+              termsType: user_privacy
+          "https://www.trae.ai/terms-of-service":
+            url: https://ug-normal.trae.ai/cloudide/api/v3/trae/terms/get
+            method: POST
+            params:
+              Language: EN
+              TermsType: service_terms
+            json:
+              language: EN
+              termsType: service_terms
+        json_document:
+          result_path: Result
+          title_field: Title
+          content_fields: [Content]
+          publish_time_field: SubTitle
+      benchmark:
+        enabled: true
+        evidence_level: B
+        urls:
+          - https://www.trae.ai/blog/product_update_0528
 
   - id: tongyi_lingma
     name: 通义灵码
@@ -111,11 +260,48 @@ competitors:
         evidence_level: A
         urls:
           - https://help.aliyun.com/zh/lingma/product-overview/billing-description
+      product_docs:
+        enabled: true
+        evidence_level: A
+        urls:
+          - https://help.aliyun.com/zh/lingma/
+          - https://help.aliyun.com/zh/lingma/user-guide/overview-of-chat
+          - https://help.aliyun.com/zh/lingma/user-guide/enterprise-knowledge-base-q-a/
+      status_page:
+        enabled: false
+        evidence_level: A
+        urls: []
+        note: No verified product-specific public service-status page is available for 通义灵码.
       github:
         enabled: false
         evidence_level: B
         repositories: []
         note: No official public product issue repository is available.
+      plugin_marketplace:
+        enabled: true
+        evidence_level: B
+        urls:
+          - https://marketplace.visualstudio.com/items?itemName=Alibaba-Cloud.tongyi-lingma
+      community:
+        enabled: false
+        evidence_level: C
+        urls: []
+        note: Product feedback is handled through DingTalk and in-product forms without a stable public listing page.
+      review:
+        enabled: false
+        evidence_level: C
+        urls: []
+        note: Third-party video and review URLs require a curated allowlist before collection.
+      security_privacy:
+        enabled: true
+        evidence_level: A
+        urls:
+          - https://help.aliyun.com/zh/lingma/service-agreement-and-privacy-policy
+      benchmark:
+        enabled: false
+        evidence_level: B
+        urls: []
+        note: No verified product-specific public benchmark report is available.
 
   - id: codegeex
     name: CodeGeeX
@@ -124,6 +310,12 @@ competitors:
       official:
         enabled: true
         evidence_level: A
+        browser_fallback:
+          enabled: true
+          wait_selector: "#root"
+          minimum_text_characters: 500
+          timeout_seconds: 30
+          settle_milliseconds: 1500
         urls:
           - https://www.codegeex.cn/
       changelog:
@@ -136,9 +328,57 @@ competitors:
         evidence_level: A
         urls: []
         note: The public product site presents the assistant as free and has no standalone pricing page.
+      product_docs:
+        enabled: true
+        evidence_level: A
+        urls:
+          - https://v4-enterprise.codegeex.cn/docs/guide/user_manual.html
+      status_page:
+        enabled: false
+        evidence_level: A
+        urls: []
+        note: No verified public CodeGeeX service-status page is available.
       github:
         enabled: true
         evidence_level: B
+        collect_releases: false
+        collect_issues: true
         repositories:
           - zai-org/CodeGeeX
           - zai-org/CodeGeeX4
+        note: The official repositories currently publish Issues but no GitHub Releases.
+      plugin_marketplace:
+        enabled: true
+        evidence_level: B
+        urls:
+          - https://marketplace.visualstudio.com/items?itemName=aminer.codegeex
+          - https://plugins.jetbrains.com/plugin/20587-codegeex-ai-coding-assistant
+        request_overrides:
+          "https://plugins.jetbrains.com/plugin/20587-codegeex-ai-coding-assistant":
+            url: https://plugins.jetbrains.com/api/plugins/20587
+            method: GET
+        json_document:
+          title_field: name
+          content_fields: [description, preview, pricingModel]
+          publish_time_field: cdate
+          author_field: vendor.publicName
+      community:
+        enabled: false
+        evidence_level: C
+        urls: []
+        note: Public user feedback is collected from the configured GitHub repositories.
+      review:
+        enabled: false
+        evidence_level: C
+        urls: []
+        note: Third-party video and review URLs require a curated allowlist before collection.
+      security_privacy:
+        enabled: false
+        evidence_level: A
+        urls: []
+        note: No verified product-specific public security or privacy page is available.
+      benchmark:
+        enabled: true
+        evidence_level: B
+        urls:
+          - https://github.com/zai-org/CodeGeeX

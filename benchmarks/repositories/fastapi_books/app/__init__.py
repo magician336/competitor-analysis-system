@@ -1,0 +1,1 @@
+"""FastAPI books benchmark package."""

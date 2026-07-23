@@ -1,0 +1,94 @@
+{
+  "analysis_mode": "rules",
+  "analysis_window": {
+    "as_of": "2026-07-20T23:59:59.999999+00:00",
+    "end_time": "2026-07-20T23:59:59.999999+00:00",
+    "start_time": "2026-04-21T23:59:59.999999+00:00",
+    "window_days": 90
+  },
+  "artifact_version": "week3-baseline-v2",
+  "benchmark_run_count": 0,
+  "benchmark_task_count": 16,
+  "competitor_count": 5,
+  "competitors": [
+    "Cursor",
+    "GitHub Copilot",
+    "Trae",
+    "通义灵码",
+    "CodeGeeX"
+  ],
+  "degraded_card_count": 9,
+  "effective_analysis_mode_counts": {
+    "price": {
+      "hybrid": 0,
+      "llm": 0,
+      "rules": 5
+    },
+    "product": {
+      "hybrid": 0,
+      "llm": 0,
+      "rules": 15
+    },
+    "risk": {
+      "hybrid": 0,
+      "llm": 0,
+      "rules": 15
+    }
+  },
+  "evidence_backed_card_count": 26,
+  "files": {
+    "all": [
+      "manifest.json",
+      "intelligence_cards.json",
+      "capability_snapshots.json",
+      "workflow_summary.json",
+      "trace_summaries.json",
+      "briefings/cursor.md",
+      "briefings/github_copilot.md",
+      "briefings/trae.md",
+      "briefings/tongyi_lingma.md",
+      "briefings/codegeex.md"
+    ],
+    "briefing_files": [
+      "briefings/cursor.md",
+      "briefings/github_copilot.md",
+      "briefings/trae.md",
+      "briefings/tongyi_lingma.md",
+      "briefings/codegeex.md"
+    ],
+    "briefings": "briefings/",
+    "cards": "intelligence_cards.json",
+    "snapshots": "capability_snapshots.json",
+    "traces": "trace_summaries.json",
+    "workflows": "workflow_summary.json"
+  },
+  "generated_at": "2026-07-21T08:46:32.777249+00:00",
+  "input_sha256": {
+    "cleaned_data": {
+      "path": "data/cleaned/documents.jsonl",
+      "sha256": "sha256:92b1cb46737c496e59c9cb1ce09f9664c18879f0a794db0d23c95f2ae88f93d1"
+    },
+    "scoring": {
+      "path": "config/scoring.yaml",
+      "sha256": "sha256:6d19e785f0ec14d31a632913897b49ce666c9c3ba8ab8cba06a7d400d22b4f78"
+    },
+    "tasks": {
+      "path": "benchmarks/tasks/tasks.jsonl",
+      "sha256": "sha256:d87c1e56011995c0e110dc8e0a4f1ba73312027b00962c10657a536acfd20aaf"
+    }
+  },
+  "intelligence_card_count": 35,
+  "mini_rag": {
+    "embedding_compatible": true,
+    "embedding_dimension": 1024,
+    "embedding_model": "hash-embedding/coderadar-v1",
+    "index": "coderadar_chunks_current",
+    "indexed_chunks": 2052,
+    "physical_index": "coderadar_chunks_v20260721084613520361"
+  },
+  "requested_analysis_mode": "rules",
+  "scoring_version": "week3-evidence-v2",
+  "snapshot_count": 5,
+  "top_k": 8,
+  "trace_count": 15
+}

@@ -25,9 +25,16 @@ class SourceType(str, Enum):
     OFFICIAL = "official"
     CHANGELOG = "changelog"
     PRICING = "pricing"
+    PRODUCT_DOCS = "product_docs"
+    STATUS_PAGE = "status_page"
     GITHUB = "github"
     GITHUB_RELEASE = "github_release"
     GITHUB_ISSUE = "github_issue"
+    PLUGIN_MARKETPLACE = "plugin_marketplace"
+    COMMUNITY = "community"
+    REVIEW = "review"
+    SECURITY_PRIVACY = "security_privacy"
+    BENCHMARK = "benchmark"
 
     @classmethod
     def parse(cls, value: "SourceType | str") -> "SourceType":
@@ -37,10 +44,22 @@ class SourceType(str, Enum):
         aliases = {
             "website": cls.OFFICIAL,
             "homepage": cls.OFFICIAL,
+            "docs": cls.PRODUCT_DOCS,
+            "documentation": cls.PRODUCT_DOCS,
+            "status": cls.STATUS_PAGE,
             "release": cls.GITHUB_RELEASE,
             "releases": cls.GITHUB_RELEASE,
             "issue": cls.GITHUB_ISSUE,
             "issues": cls.GITHUB_ISSUE,
+            "marketplace": cls.PLUGIN_MARKETPLACE,
+            "plugin": cls.PLUGIN_MARKETPLACE,
+            "forum": cls.COMMUNITY,
+            "reviews": cls.REVIEW,
+            "video_review": cls.REVIEW,
+            "security": cls.SECURITY_PRIVACY,
+            "privacy": cls.SECURITY_PRIVACY,
+            "trust_center": cls.SECURITY_PRIVACY,
+            "benchmarks": cls.BENCHMARK,
         }
         if normalized in aliases:
             return aliases[normalized]
