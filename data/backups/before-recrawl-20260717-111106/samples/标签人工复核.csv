@@ -1,0 +1,517 @@
+﻿document_id,competitor,source_type,title,event_type,current_dimension_tags,label_confidence,label_reasons,content_excerpt,url,raw_path,human_event_type,human_dimension_tags,review_decision,reviewer,reviewed_at,notes
+doc_001516c2a8004ee7b354c949,CodeGeeX,github_issue,tp,risk_experience,[],0.35,"[""source:github_issue->risk_experience""]","tp
+
+[API - TP2.pdf](https://github.com/user-attachments/files/24015739/API.-.TP2.pdf)
+
+Issue state: open",https://github.com/zai-org/CodeGeeX/issues/277,data/raw/codegeex/github_issue/20260713T162601Z_fda2c425/bf07c2d4f22a44e15b3dafd2.json,,,,,,
+doc_023c0447193015c54ed7f9d5,GitHub Copilot,github_release,v0.41.2026031903,product_release,[],0.35,"[""source:github_release->product_release""]","v0.41.2026031903
+
+Release state: prerelease",https://github.com/microsoft/vscode-copilot-chat/releases/tag/v0.41.2026031903,data/raw/github_copilot/github_release/20260713T162601Z_fda2c425/13758b1724f6506715c51341.json,,,,,,
+doc_affd7b6a2deaf980c40afa80,GitHub Copilot,official_changelog,Assigning GitHub Copilot to an issue now adds you as an assignee,product_release,[],0.35,"[""source:official_changelog->product_release""]","Back to changelog
+
+Improvement
+
+December 18, 2025 • 1 minute read
+
+# Assigning GitHub Copilot to an issue now adds you as an assignee
+
+When you assign an issue to Copilot, you’ll now automatically be added as an assignee yourself. This makes it easier to track your work using filters like assignee:@me and understand who is working on an issue.
+
+## Share your feedback
+
+Join the community discussion to share your feedback or learn more in our documentation on assigning issues to Copilot.",https://github.blog/changelog/2025-12-18-assigning-github-copilot-to-an-issue-now-adds-you-as-an-assignee,data/raw/github_copilot/changelog/20260713T162601Z_fda2c425/333fba78666693e58712f95d.html,,,,,,
+doc_0c71c303c48520b51191f60f,Trae,github_issue,[Feature Request] Add option to disable code block folding in chat,risk_experience,[],0.35,"[""source:github_issue->risk_experience""]","[Feature Request] Add option to disable code block folding in chat
+
+Version 1.7.0 added auto-collapsing code blocks in AI responses. This significantly reduces usability as it requires extra clicks for every code block. Please add a toggle in settings to disable this behavior.
+
+Issue state: open",https://github.com/Trae-AI/TRAE/issues/2553,data/raw/trae/github_issue/20260713T162601Z_fda2c425/90bd324ad8a651a3cf375f4f.json,,,,,,
+doc_842463a7603d24fd1c84ffb6,Trae,official_page,TRAE - Collaborate with Intelligence,,"[""ide_ecosystem""]",0.6,"[""ide_ecosystem:keywords=ide"", ""source:needs_browser""]","Ship Faster with
+
+TRAE
+
+TRAE Work: Your Professional AI Work Assistant
+
+TRAE IDE: Your 10x AI Coding Engineer
+
+Download TRAE Work
+
+Download TRAE IDE
+
+TRAE Work Web",https://www.trae.ai/,data/raw/trae/official/20260713T162601Z_fda2c425/6ec682a55d4dbf30d9fc6414.html,,,,,,
+doc_25dc2937eec1e94e3d00822c,通义灵码,official_changelog,QoderWork CN 更新日志 — 0.5.4(2026-05-28),product_release,[],0.35,"[""source:official_changelog->product_release""]","# QoderWork CN 更新日志
+
+## 0.5.4(2026-05-28)
+
+#### 日常优化
+
+优化了若干影响日常使用的体验问题。",https://help.aliyun.com/zh/lingma/qoderwork-cn-update-log,data/raw/tongyi_lingma/changelog/20260715T091634Z_26502fc3/88efcb974b26163902565f2d.html,,,,,,
+doc_02d89c2f610eb980065607c9,CodeGeeX,github_issue,boost,risk_experience,[],0.35,"[""source:github_issue->risk_experience""]","boost
+
+gh repo clone zai-org/CodeGeeX4
+
+Issue state: open",https://github.com/zai-org/CodeGeeX4/issues/134,data/raw/codegeex/github_issue/20260713T162601Z_fda2c425/37216a1fc844cc6d873f24d3.json,,,,,,
+doc_06dea2f9a82953b498c8c835,GitHub Copilot,github_release,v0.32.2025091102,product_release,[],0.35,"[""source:github_release->product_release""]","v0.32.2025091102
+
+Release state: prerelease",https://github.com/microsoft/vscode-copilot-chat/releases/tag/v0.32.2025091102,data/raw/github_copilot/github_release/20260713T162601Z_fda2c425/3fcd12c3ec2135f22a5d4c25.json,,,,,,
+doc_0f290043335e51b67a808153,Trae,github_issue,Linux版本什么时候上线,risk_experience,[],0.35,"[""source:github_issue->risk_experience""]","Linux版本什么时候上线
+
+Issue state: closed
+
+Comment by Undead34 at 2025-08-20T19:00:56Z
+
++1
+
+Comment by Builder247 at 2025-08-25T00:56:10Z
+
+Yes
+
+Comment by sswybd at 2025-09-05T07:33:20Z
+
++1
+
+Comment by abnerxc at 2025-10-10T07:54:12Z
+
++1
+
+Comment by mochenya at 2026-02-17T08:02:10Z
+
++1",https://github.com/Trae-AI/TRAE/issues/1390,data/raw/trae/github_issue/20260713T162601Z_fda2c425/48bcda82fdb3de70079f0ca7.json,,,,,,
+doc_26fe9f728524b85c262fd21d,通义灵码,official_changelog,QoderWork CN 更新日志 — 0.5.8(2026-06-04),product_release,[],0.35,"[""source:official_changelog->product_release""]","# QoderWork CN 更新日志
+
+## 0.5.8(2026-06-04)
+
+#### 日常优化
+
+优化了若干影响日常使用的体验问题。",https://help.aliyun.com/zh/lingma/qoderwork-cn-update-log,data/raw/tongyi_lingma/changelog/20260715T091634Z_26502fc3/88efcb974b26163902565f2d.html,,,,,,
+doc_03b7232a7650beeaff992ca1,CodeGeeX,github_issue,"How can I fix the ""An unknown error occurred, please try again later"" error?",risk_experience,[],0.35,"[""source:github_issue->risk_experience""]","How can I fix the ""An unknown error occurred, please try again later"" error?
+
+[Image: Image]
+
+Issue state: open
+
+Comment by ddfgghhgftygfdfghgrfrewwwdfg at 2026-01-21T06:16:52Z
+
+my problem is the same with you
+
+Comment by DcDos at 2026-01-23T16:30:00Z
+
+I have the same issue...
+
+Comment by Bungles17x at 2026-03-03T15:30:35Z
+
+i have the same issue
+
+Comment by shams-sy at 2026-06-15T20:26:31Z
+
+i have the same issue",https://github.com/zai-org/CodeGeeX4/issues/153,data/raw/codegeex/github_issue/20260713T162601Z_fda2c425/5514099bfec1eb790b665fea.json,,,,,,
+doc_0eaf1284a53f5732f224130c,GitHub Copilot,github_release,v0.34.2025120502,product_release,[],0.35,"[""source:github_release->product_release""]","v0.34.2025120502
+
+Release state: prerelease",https://github.com/microsoft/vscode-copilot-chat/releases/tag/v0.34.2025120502,data/raw/github_copilot/github_release/20260713T162601Z_fda2c425/a54205f2f4d7c4055faa2458.json,,,,,,
+doc_2c3454a1c3cb3efc3942d59d,Trae,github_issue,"Gemini3一直回复中文,系统提示词根本没用。",risk_experience,[],0.35,"[""source:github_issue->risk_experience""]","Gemini3一直回复中文,系统提示词根本没用。
+
+[Image: Image]
+
+Issue state: closed
+
+Comment by Jessica-ppp at 2025-12-01T10:44:59Z
+
+目前这块确实无法干预到,我反馈一下, 看看怎么优化下
+
+> [Image: Image]",https://github.com/Trae-AI/TRAE/issues/1841,data/raw/trae/github_issue/20260713T162601Z_fda2c425/b431edce68f88aca400f919d.json,,,,,,
+doc_2eb599e5b440a011f9be393e,通义灵码,official_changelog,Qoder CN CLI 更新日志 — 2026年02月02日 v0.1.26,product_release,[],0.35,"[""source:official_changelog->product_release""]","# Qoder CN CLI 更新日志
+
+## 2026年02月02日 v0.1.26
+
+#### 配置加载优化
+
+- 优化技能、命令等资源的加载顺序",https://help.aliyun.com/zh/lingma/qoder-cn-cli,data/raw/tongyi_lingma/changelog/20260715T091634Z_26502fc3/eab483d26e41e5584e9b23c7.html,,,,,,
+doc_05a481ef3a52e8096e6d8e27,CodeGeeX,github_issue,هلا,risk_experience,[],0.35,"[""source:github_issue->risk_experience""]","هلا
+
+Issue state: open",https://github.com/zai-org/CodeGeeX/issues/294,data/raw/codegeex/github_issue/20260713T162601Z_fda2c425/7a64c6f06e3fbe4159923fb8.json,,,,,,
+doc_0f1c7d374eba8d1c121226a9,GitHub Copilot,github_release,v0.31.2025082701,product_release,[],0.35,"[""source:github_release->product_release""]","v0.31.2025082701
+
+Release state: prerelease",https://github.com/microsoft/vscode-copilot-chat/releases/tag/v0.31.2025082701,data/raw/github_copilot/github_release/20260713T162601Z_fda2c425/1a1af877ae75e828a9590571.json,,,,,,
+doc_36e371da85097dcd820a9cb2,Trae,github_issue,broken flaps,risk_experience,[],0.35,"[""source:github_issue->risk_experience""]","broken flaps
+
+[Image: Image]
+
+Issue state: open",https://github.com/Trae-AI/TRAE/issues/2538,data/raw/trae/github_issue/20260713T162601Z_fda2c425/fc1bc4fa457e8b8c44a44c63.json,,,,,,
+doc_5801d411213344576a32ef26,通义灵码,official_changelog,Qoder CN 更新日志 — v2.6.3 (2026-07-01),product_release,[],0.35,"[""source:official_changelog->product_release""]","# Qoder CN 更新日志
+
+### v2.6.3 (2026-07-01)
+
+##### 体验优化
+
+- 优化多模态对话下图片的识别效果。",https://help.aliyun.com/zh/lingma/qoder-cn-update-log,data/raw/tongyi_lingma/changelog/20260715T091634Z_26502fc3/70f3f1c5169dadb7d8fb4220.html,,,,,,
+doc_1165254a43df4f1419eb8f96,CodeGeeX,github_issue,关闭代理也登陆不上去,risk_experience,[],0.35,"[""source:github_issue->risk_experience""]","关闭代理也登陆不上去
+
+在ubuntu24.04上,关闭代理无法登陆
+
+Issue state: open",https://github.com/zai-org/CodeGeeX4/issues/142,data/raw/codegeex/github_issue/20260713T162601Z_fda2c425/6cfad71b81d7436aedf19cb8.json,,,,,,
+doc_0fbadd6860de1ca89d682bde,GitHub Copilot,github_release,v0.34.2025111803,product_release,[],0.35,"[""source:github_release->product_release""]","v0.34.2025111803
+
+## Changes:
+
+* #2050: Fix cursor prediction telemetry
+* #2049: Implement BYOI
+* #2047: Better error message for ChatML Fetcher errors
+* #2042: change toolcall UI to not show an error
+* #2041: canDelegate for CC
+* #2040: clean up:
+* #2039: Fix issue with cancellations in Copilot CLI
+* #2037: Copy ripgrep files for copilot CLI
+* #2038: Avoid fetching Copilot CLI session for new chat sessions
+* #2035: Copilot CLI test to ensure we account for all binaries used by sdk
+
+This list of changes was [auto generated](https://dev.azure.com/monacotools/Monaco/_build/results?buildId=375975&view=logs).
+
+Release state: prerelease",https://github.com/microsoft/vscode-copilot-chat/releases/tag/v0.34.2025111803,data/raw/github_copilot/github_release/20260713T162601Z_fda2c425/f9e55c5b6d4296b1cfbcbb49.json,,,,,,
+doc_3b9eaa81d26ce7b5680a034a,Trae,github_issue,ARM64 Support,risk_experience,[],0.35,"[""source:github_issue->risk_experience""]","ARM64 Support
+
+**Is your feature request related to a problem? Please describe.**
+Trae not installable to ARM64 Windows PC
+
+**Describe the solution you'd like**
+Add support for ARM64
+
+Issue state: closed
+
+Comment by Snazzie at 2025-04-04T09:21:40Z
+
+Surly there isnt any blockers for compiling for arm. Cursor can.
+
+Comment by nicatmanafov1907 at 2025-04-04T10:03:49Z
+
+yeah, for now we have only Cursor available. Waiting Trae
+
+Comment by Trae-AI-Admin at 2025-04-10T14:34:54Z
+
+Thank you for feedback
+
+Comment by nicatmanafov1907 at 2025-05-04T14:51:56Z
+
+Hello. Why it is on close stage?
+
+Comment by Fliros at 2025-05-15T15:49:04Z
+
+So I suppose that no ARM64 Support in the nearest future is planned
+
+Comment by alpha-1024 at 2025-06-18T13:34:36Z
+
+what'should we do to kill this question
+
+Comment by ivanmercado9 at 2025-08-27T03:38:39Z
+
+Still no plans for ARM ?
+
+Comment by fgpaz at 2025-09-02T18:10:20Z
+
+any plans for arm64 support?
+
+Comment by LennyDevX at 2025-10-01T15:45:55Z
+
+any plans for arm64 support?
+
+Comment by aiplaypen0 at 2025-12-03T03:36:26Z
+
+arm64 support?
+
+Comment by dennisrongo at 2026-01-20T21:38:47Z
+
+I'm also looking for arm64 support as I'm using parallel.
+
+Comment by edgardjn",https://github.com/Trae-AI/TRAE/issues/461,data/raw/trae/github_issue/20260713T162601Z_fda2c425/93736d0e02a496b11c061b5f.json,,,,,,
+doc_5df640dbcbcc4c8d6c50aadf,通义灵码,official_changelog,Qoder CN CLI 更新日志 — 2026年06月25日 v1.0.30,product_release,[],0.35,"[""source:official_changelog->product_release""]","# Qoder CN CLI 更新日志
+
+## 2026年06月25日 v1.0.30
+
+#### 网络代理优化
+
+- 优化网络代理机制,当前支持 HTTP_PROXY、HTTPS_PROXY 及 SOCKS5 代理生效",https://help.aliyun.com/zh/lingma/qoder-cn-cli,data/raw/tongyi_lingma/changelog/20260715T091634Z_26502fc3/eab483d26e41e5584e9b23c7.html,,,,,,
+doc_1b6f8aa6d61027543dc6fe12,CodeGeeX,github_issue,关于humaneval-x pass为0的问题,risk_experience,[],0.35,"[""source:github_issue->risk_experience""]","关于humaneval-x pass为0的问题
+
+查看很多task的result为“ failed : 'noneType' object has no attribute 'returncode' ”
+
+Issue state: open
+
+Comment by nullxjx at 2024-06-12T08:26:08Z
+
+试试取消注释这行代码
+[Image: image]
+
+Comment by 395324663 at 2024-07-10T10:02:34Z
+
+同样的问题,取消了注释也没能解决
+
+Comment by 395324663 at 2024-07-10T10:13:19Z
+
+请问楼主解决了吗
+
+Comment by w-Jessamine at 2025-07-14T05:08:33Z
+
+同样的问题,也取消了注释,有人解决了吗,我是单独写了一个执行文件,运行统计它生产的results文件里执行不报错的个数🤔不知道为什么不能直接用这个脚本得到结果",https://github.com/zai-org/CodeGeeX/issues/252,data/raw/codegeex/github_issue/20260713T162601Z_fda2c425/017bad97c25cf72b57d28c56.json,,,,,,
+doc_109e631a89121396ac69f019,GitHub Copilot,github_release,v0.41.2,product_release,[],0.35,"[""source:github_release->product_release""]","v0.41.2
+
+## Changes:
+
+* #4733: PromptsServiceImpl: avoid using openTextDocument to not trigger validation
+* #4723: nes: patch-based: fix: set correct edit window for cached items (#4702)
+* #4702: nes: patch-based: fix: set correct edit window for cached items
+* #4684: nes: fix: do not include URI if targetDocument == activeDocument (#4652)
+* #4652: nes: fix: do not include URI if targetDocument == activeDocument
+
+This list of changes was [auto generated](https://dev.azure.com/monacotools/Monaco/_build/results?buildId=424472&view=logs).",https://github.com/microsoft/vscode-copilot-chat/releases/tag/v0.41.2,data/raw/github_copilot/github_release/20260713T162601Z_fda2c425/7af114e9a3be78fad0980cfe.json,,,,,,
+doc_47003b52474fbd38d20d66e5,Trae,github_issue,占用了C盘Roaming太多的空间,risk_experience,[],0.35,"[""source:github_issue->risk_experience""]","占用了C盘Roaming太多的空间
+
+**问题场景**
+我只是用了一段时间trae打开并分析了几个项目,AppData的Romaing的Trae目录就已经占用了13G将近14G的存储空间
+
+**建议 / 优化方式**
+您希望如何优化,或任意建议
+
+**图片 / 其他材料**
+(如需)可附截图
+
+Issue state: closed
+
+Comment by Trae-AI-Admin at 2025-04-10T13:51:53Z
+
+感谢反馈
+
+Comment by TownTowner at 2025-05-20T06:39:17Z
+
+Roaming\Trae CN\User\globalStorage\.ckg\storage\u_096b9679fe927c4455022083d8c956d1b83979ad888231e5cdefdd5bf85e8458\*.db
+
+这里的.db文件是什么?可以删吗?
+
+Comment by AllenMa97 at 2026-07-09T01:08:14Z
+
+所以到底怎么解决",https://github.com/Trae-AI/TRAE/issues/386,data/raw/trae/github_issue/20260713T162601Z_fda2c425/2c9ef419ac27a18c75a70c54.json,,,,,,
+doc_bd200da269f7c210c009d7d5,通义灵码,official_changelog,Qoder CN 更新日志 — v0.3.1 (2026-02-26),product_release,[],0.35,"[""source:official_changelog->product_release""]","# Qoder CN 更新日志
+
+### v0.3.1 (2026-02-26)
+
+##### 体验优化
+
+- 优化智能问答(Ask)模式下未启用工具时的处理逻辑",https://help.aliyun.com/zh/lingma/qoder-cn-update-log,data/raw/tongyi_lingma/changelog/20260715T091634Z_26502fc3/70f3f1c5169dadb7d8fb4220.html,,,,,,
+doc_49aab8798d40135007c054f4,CodeGeeX,github_issue,"代码 tab 补全 后,会误删现有功能的代码",risk_experience,[],0.35,"[""source:github_issue->risk_experience""]","代码 tab 补全 后,会误删现有功能的代码
+
+Issue state: open",https://github.com/zai-org/CodeGeeX4/issues/126,data/raw/codegeex/github_issue/20260713T162601Z_fda2c425/95c1765f5faef466e6892f62.json,,,,,,
+doc_18364c6cae4c3b8fd05e1c85,GitHub Copilot,github_release,v0.37.0,product_release,[],0.35,"[""source:github_release->product_release""]",v0.37.0,https://github.com/microsoft/vscode-copilot-chat/releases/tag/v0.37.0,data/raw/github_copilot/github_release/20260713T162601Z_fda2c425/fd5c29e38b53b3732ff38f4f.json,,,,,,
+doc_4ebf7fd12a9f34e6a550bfa0,Trae,github_issue,Trae are sometimes started displaying blank screen,risk_experience,[],0.35,"[""source:github_issue->risk_experience""]","Trae are sometimes started displaying blank screen
+
+![Image](https://github.com/user-attachments/assets/88f66284-d300-4f8c-a90c-dbd1e87a11ab)
+
+well, i'm a peasant with an intel i3, though the laptop has nvidia as its second display gpu.
+please test with slow hardware to replicate.
+
+Issue state: closed
+
+Comment by krembuk at 2025-04-20T07:30:12Z
+
+more info: i need to close and start again trae to make it run normally.
+
+Comment by krembuk at 2025-04-28T14:36:14Z
+
+fixed on the current version. thanks!
+
+Comment by Th0rGarden at 2026-01-14T15:11:29Z
+
+Lol I just downloaded Trae for the very first time, and got a blank screen. No, restarting it does not help at all.
+
+[Image: Image]
+
+Comment by ctkqiang at 2026-05-18T08:24:48Z
+
+[Image: Image]
+
+or white screen",https://github.com/Trae-AI/TRAE/issues/898,data/raw/trae/github_issue/20260713T162601Z_fda2c425/b89b3531ee30bd07fae782aa.json,,,,,,
+doc_e4e44de10758682331cde99f,通义灵码,official_changelog,QoderWake CN 更新日志 — 0.0.22(2026-06-16),product_release,[],0.35,"[""source:official_changelog->product_release""]","# QoderWake CN 更新日志
+
+## 0.0.22(2026-06-16)
+
+#### 更新提醒优化
+
+- 体验优化
+- 更新提醒 当更新版本已下载并准备就绪时,界面右下角会出现可关闭的更新提醒,你可以选择立即更新、关闭或稍后处理;关闭后提醒会保持隐藏,直到有更新的版本准备就绪。",https://help.aliyun.com/zh/lingma/product-overview/qoderwake-cn-update-log,data/raw/tongyi_lingma/changelog/20260715T091634Z_26502fc3/a7b2207358829ae13774f74f.html,,,,,,
+doc_4d0602486c2cb7d8f9c0780a,CodeGeeX,github_issue,文件路径错误应用转义符号,risk_experience,[],0.35,"[""source:github_issue->risk_experience""]","文件路径错误应用转义符号
+
+当路径中包含`\n`或`\t`等拥有转义符号的含义的字符组合时,会被错误转换,从而找不到文件或目录。
+
+[Image: Image]
+
+Issue state: open",https://github.com/zai-org/CodeGeeX4/issues/160,data/raw/codegeex/github_issue/20260713T162601Z_fda2c425/e23c7ae1ae56c4f77cb1123b.json,,,,,,
+doc_1aab2577c2208878ccb2ac47,GitHub Copilot,github_release,v0.42.3,product_release,[],0.35,"[""source:github_release->product_release""]","v0.42.3
+
+## Changes:
+
+### Bugs:
+
+* #4913: Revert: Remove transcript line count from compaction summary
+
+### Others:
+
+* #4922: bump v0.42.3
+* #4811: Add transcript line count to compaction summary
+
+This list of changes was [auto generated](https://dev.azure.com/monacotools/Monaco/_build/results?buildId=426948&view=logs).",https://github.com/microsoft/vscode-copilot-chat/releases/tag/v0.42.3,data/raw/github_copilot/github_release/20260713T162601Z_fda2c425/3d840e24f4153f02291d8923.json,,,,,,
+doc_6d805d1a165c1eb96d0b9dbd,Trae,github_issue,"一直显示命令运行中,不清楚什么原因",risk_experience,[],0.35,"[""source:github_issue->risk_experience""]","一直显示命令运行中,不清楚什么原因
+
+**基础信息**
+🚨 快速获取方式:左键左上角 TRAE 图标,选择""About Trae"",复制粘贴全部信息👇
+- Version:
+- VS Code Version:
+- Commit:
+- Date:
+- Electron:
+- Node.js:
+- V8:
+- OS:
+- Build Version:
+- Machine Id:
+
+**Bug描述**
+
+**截图 / 录屏**
+
+**复现**
+第一步:
+第二步:
+第三步:
+
+windows系统
+一直显示命令运行中
+
+![Image](https://github.com/user-attachments/assets/dfff23e1-8ac8-4e0c-be7a-ecae50d266f8)
+实际是一个很简单的命令,通过后台能正常执行 。有没有日志能排查下原因
+
+Issue state: closed
+
+Comment by Wangbull at 2025-08-28T06:14:18Z
+
+解决了吗?这个问题很久了,非常影响使用。
+
+Comment by jusway at 2025-09-08T03:47:27Z
+
+[Image: Image]
+
+Comment by Wangbull at 2025-09-09T03:11:40Z
+
+> [Image: Image]
+
+我也是
+
+Comment by qazgp at 2025-10-02T04:49:23Z
+
+我的也是一直卡住
+
+Comment by aiboqiao6 at 2026-07-05T16:35:14Z
+
+我的也是",https://github.com/Trae-AI/TRAE/issues/362,data/raw/trae/github_issue/20260713T162601Z_fda2c425/3435814716f8c51146b4b3eb.json,,,,,,
+doc_e78e2d419be32a46abe3b157,通义灵码,official_changelog,Qoder CN CLI 更新日志 — 2026年06月26日 v1.0.31,product_release,[],0.35,"[""source:official_changelog->product_release""]","# Qoder CN CLI 更新日志
+
+## 2026年06月26日 v1.0.31
+
+#### 动态工作流与记忆功能增强
+
+- 支持动态工作流特性
+- 增加对 .qoder/rules/**.md 的支持。
+- 增加用户级别 Memory,并优化 Plan 模式下 Memory 体验
+- 提升 Headless 模式启动速度",https://help.aliyun.com/zh/lingma/qoder-cn-cli,data/raw/tongyi_lingma/changelog/20260715T091634Z_26502fc3/eab483d26e41e5584e9b23c7.html,,,,,,
+doc_679c423086d6e742303ba5db,CodeGeeX,github_issue,shahidul,risk_experience,[],0.35,"[""source:github_issue->risk_experience""]","shahidul
+
+Issue state: open",https://github.com/zai-org/CodeGeeX4/issues/144,data/raw/codegeex/github_issue/20260713T162601Z_fda2c425/ecdf78f9091608f1c732166e.json,,,,,,
+doc_1ac8a1632fcbfede2edc6531,GitHub Copilot,github_release,v0.36.2026010701,product_release,[],0.35,"[""source:github_release->product_release""]","v0.36.2026010701
+
+Release state: prerelease",https://github.com/microsoft/vscode-copilot-chat/releases/tag/v0.36.2026010701,data/raw/github_copilot/github_release/20260713T162601Z_fda2c425/c7024ce9b85395673e9816b5.json,,,,,,
+doc_84fc01277c7635c75405030f,Trae,github_issue,"无法登录,Network connection failed. Please check your network settings and retry after ensuring a normal connection.",risk_experience,[],0.35,"[""source:github_issue->risk_experience""]","无法登录,Network connection failed. Please check your network settings and retry after ensuring a normal connection.
+
+版本: 1.0.1
+VS Code 版本: 1.95.3
+提交: 3d8ec0bb9ea606869a2d41ea08ce2f51aeaa2298
+日期: 2025-01-23 09:59:49.656
+Electron: 32.2.1
+Node.js: 20.18.0
+V8: 12.8.374.38-electron.0
+OS: Darwin arm64 24.0.0
+构建版本: 1.0.5760
+设备ID: dec6b28cf272e86465164b81ff9c59c817324df55b740f8e420a5348bd679719
+Login Failed
+Network connection failed. Please check your network settings and retry after ensuring a normal connection.
+无法登录,
+
+[Image: Image]
+
+Issue state: closed
+
+Comment by ruan-cat at 2025-02-17T05:04:31Z
+
+同样的问题。
+
+Comment by ErfanShm at 2025-02-17T06:47:35Z
+
+同样的问题。
+
+Comment by leochenliu at 2025-02-17T07:24:44Z
+
+有什么walkaround的方案?
+
+Comment by albort11 at 2025-02-17T22:03:57Z
+
+同样的问题
+
+Comment by d0uub at 2025-02-18T02:56:08Z
+
+同样的问题
+
+Comment by Reeryhom at 2025-02-18T11:34:23Z
+
+same Login Failed
+
+Comment by JavanScript at 2025-02-18T15:32:37Z
+
+same
+
+Comment by mornone at 2025-02-18T16:22:09Z
+
++1
+
+Comment by Anthemty at 2025-02-19T06:34:56Z
+
+How should we solve this problem?
+
+Comment by mehrovich at 2025-02-24T07:12:20Z
+
+Same Problem
+
+Comment by xunlongdingxue at 2025-02-28T04:43:37Z
+
+只能说一模一样啊, 我开着代理! 尽",https://github.com/Trae-AI/TRAE/issues/93,data/raw/trae/github_issue/20260713T162601Z_fda2c425/f380bc5d6a4ff592ea7f98ad.json,,,,,,
+doc_6ecef263e02ad8fe28a54a98,CodeGeeX,github_issue,Sigap 08,risk_experience,[],0.35,"[""source:github_issue->risk_experience""]","Sigap 08
+
+buatkan koding lmslife time berbasi google site dengan interfcae yang menerik, informatif, dan dan mudah diakses,
+disajikan data:
+A. Perencanaan
+1. Kesepakatan kelas:https://docs.google.com/spreadsheets/d/11ybAnCBJ9DBrpSsxHrBbMjXEnEjn2cUqdrJN1iV-BD8/edit?usp=drive_link
+2. RenCcana Pembelajaran : Perencanaan :https://docs.google.com/spreadsheets/d/1aN0GkkIxuf7dGEZbicFBgNRoz-V_ZD5NlwriBfJ0oKo/edit?usp=drive_link
+logo:https://drive.google.com/file/d/1eGbOEej5sOb5i51DkAIy_Yp00cD9IysM/view?usp=drive_link
+
+Issue state: open",https://github.com/zai-org/CodeGeeX/issues/300,data/raw/codegeex/github_issue/20260713T162601Z_fda2c425/5c2f296720f34794806f101e.json,,,,,,
+doc_1b6dd1a7cbae39df4f2d8405,GitHub Copilot,github_release,v0.40.2026031302,product_release,[],0.35,"[""source:github_release->product_release""]","v0.40.2026031302
+
+## Changes:
+
+* #4397: Sessions - always show ""Create Pull Request"" and ""Create Draft Pull Request"" actions
+* #4395: Resubmit #4381
+* #4394: Split image viewing out of read file
+* #4393: Ensure steering while processing the first CLI prompt works as expected
+* #4389: Update handling of errors in external ingest
+
+This list of changes was [auto generated](https://dev.azure.com/monacotools/Monaco/_build/results?buildId=419426&view=logs).
+
+Release state: prerelease",https://github.com/microsoft/vscode-copilot-chat/releases/tag/v0.40.2026031302,data/raw/github_copilot/github_release/20260713T162601Z_fda2c425/e879e7f6eb4d2256b01c7df5.json,,,,,,
+doc_88c8c59296837d267cc2a756,Trae,github_issue,卡卡卡卡,risk_experience,[],0.35,"[""source:github_issue->risk_experience""]","卡卡卡卡
+
+卡到爆炸 怎么如此难用!!!!!!
+
+Issue state: open",https://github.com/Trae-AI/TRAE/issues/2545,data/raw/trae/github_issue/20260713T162601Z_fda2c425/9bdc599078dda3bc2fc0e5ee.json,,,,,,

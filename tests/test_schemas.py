@@ -51,6 +51,30 @@ def test_raw_record_id_is_stable_for_same_source_response() -> None:
     assert first.raw_record_id == second.raw_record_id
 
 
+@pytest.mark.parametrize(
+    ("alias", "expected"),
+    [
+        ("docs", SourceType.PRODUCT_DOCS),
+        ("status", SourceType.STATUS_PAGE),
+        ("marketplace", SourceType.PLUGIN_MARKETPLACE),
+        ("forum", SourceType.COMMUNITY),
+        ("reviews", SourceType.REVIEW),
+        ("privacy", SourceType.SECURITY_PRIVACY),
+        ("benchmarks", SourceType.BENCHMARK),
+    ],
+)
+def test_extended_source_aliases_are_canonical(alias, expected) -> None:
+    record = RawRecord(
+        crawl_run_id="run-source",
+        competitor="Cursor",
+        source_type=alias,
+        requested_url="https://example.test/source",
+        fetched_at="2026-07-22T00:00:00Z",
+    )
+
+    assert record.source_type is expected
+
+
 def test_structured_document_generates_traceable_stable_identity() -> None:
     fields = {
         "raw_record_id": "raw_123",

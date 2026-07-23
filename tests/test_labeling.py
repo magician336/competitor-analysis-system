@@ -19,6 +19,13 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
         (SourceType.GITHUB_RELEASE, EventType.PRODUCT_RELEASE),
         (SourceType.RSS, EventType.PRODUCT_RELEASE),
         (SourceType.GITHUB_ISSUE, EventType.RISK_EXPERIENCE),
+        (SourceType.STATUS_PAGE, EventType.RISK_EXPERIENCE),
+        (SourceType.PLUGIN_MARKETPLACE, EventType.RISK_EXPERIENCE),
+        (SourceType.COMMUNITY, EventType.RISK_EXPERIENCE),
+        (SourceType.REVIEW, EventType.RISK_EXPERIENCE),
+        (SourceType.PRODUCT_DOCS, None),
+        (SourceType.SECURITY_PRIVACY, None),
+        (SourceType.BENCHMARK, None),
         (SourceType.OFFICIAL_PAGE, None),
     ],
 )

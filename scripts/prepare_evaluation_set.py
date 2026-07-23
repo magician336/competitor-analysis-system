@@ -59,6 +59,12 @@ SEEDS: tuple[Seed, ...] = (
     Seed("copilot_credit_pool", "Copilot cost center 的 AI credit pool 如何限制共享额度消耗？", "GitHub Copilot", "official_changelog", "cap how much of your enterprise’s monthly included AI credits", title_contains="Cost centers now support AI credit pools", dimension="performance_cost"),
     Seed("copilot_vscode_1123_browser", "GitHub Copilot 在 VS Code 1.123 系列中增加了哪些集成浏览器能力？", "GitHub Copilot", "official_changelog", "agents to navigate pages, inspect content, capture screenshots", title_contains="Visual Studio Code, June 2026", dimension="ide_ecosystem", use_version_filter=True),
     Seed("copilot_release_agent_files", "Copilot Chat 0.43 的工作区指令发现修复覆盖哪些文件？", "GitHub Copilot", "github_release", "discover AGENTS.md and CLAUDE.md at workspace roots", title_contains="v0.43.2026040601", dimension="agent_context", use_version_filter=True),
+    Seed("copilot_release_response_time", "Copilot Chat 0.38 的低积极度设置如何缩短响应时间？", "GitHub Copilot", "github_release", "Minimize response time for low aggressiveness settings", title_contains="v0.38.2026022702", dimension="agent_context", use_version_filter=True),
+    Seed("copilot_release_plan_agent_fields", "Copilot Chat 0.37 为 Plan agent 配置增加了哪些字段？", "GitHub Copilot", "github_release", "Add infer and agents fields to Plan agent config", title_contains="v0.37.2026012901", dimension="agent_context", use_version_filter=True),
+    Seed("copilot_release_manual_compaction", "Copilot Chat 0.38 对会话压缩增加了什么能力？", "GitHub Copilot", "github_release", "Support manual compaction", title_contains="v0.38.2026021105", dimension="agent_context", use_version_filter=True),
+    Seed("copilot_issue_sandbox_cwd", "Copilot Chat 沙箱为什么会破坏相对路径和 Git 命令？", "GitHub Copilot", "github_issue", "agent's working directory is a temporary directory", title_contains="sandbox sets CWD to temp directory", dimension="security_compliance"),
+    Seed("copilot_issue_sandbox_settings", "Copilot Chat 沙箱设置文件为什么可能导致权限提升？", "GitHub Copilot", "github_issue", "A sandboxed process can read and overwrite this file", title_contains="settings file is writable", dimension="security_compliance"),
+    Seed("copilot_issue_custom_models", "Copilot Chat 用户提出了怎样的自定义模型接入需求？", "GitHub Copilot", "github_issue", "Add support for custom AI models via API keys", title_contains="custom AI models via API keys", dimension="model_extensibility"),
 
     Seed("trae_official_products", "TRAE 官网提供哪两个主要产品入口？", "Trae", "official_page", "TRAE Work: Your Professional AI Work Assistant", dimension="ide_ecosystem"),
     Seed("trae_pro_plus_price", "TRAE Pro+ 的月费、用量倍率和并发云任务数是多少？", "Trae", "pricing", "3.5x more usage than Pro", title_contains="Pricing | TRAE", dimension="performance_cost"),
@@ -82,6 +88,10 @@ SEEDS: tuple[Seed, ...] = (
     Seed("lingma_inline_generation", "通义灵码行间代码生成使用哪些上下文并生成什么粒度的代码？", "通义灵码", "official_page", "为你生成行级/函数级代码", dimension="code_intelligence"),
     Seed("lingma_qa_sources", "通义灵码研发智能问答基于哪些文档和知识来源？", "通义灵码", "official_page", "基于海量研发文档、产品文档", dimension="code_intelligence"),
     Seed("lingma_teams_price", "Qoder CN 原灵码企业标准版的单价和 Credits 额度是多少？", "通义灵码", "pricing", "99 元 / 席位·月", dimension="performance_cost"),
+    Seed("lingma_changelog_side_question", "Qoder CN CLI 的侧边提问如何减少对主对话的打断？", "通义灵码", "official_changelog", "在不中断主对话的情况下快速提问", title_contains="v0.2.13", dimension="agent_context", use_version_filter=True),
+    Seed("lingma_changelog_unified_credits", "Qoder CN 全产品统一 Credits 后，余额和有效期如何处理？", "通义灵码", "official_changelog", "Credits 资源池统一", title_contains="v3.2.0", dimension="performance_cost", use_version_filter=True),
+    Seed("lingma_changelog_mcp_elicitation", "Qoder CN CLI 的 MCP Elicitation 支持什么远程交互？", "通义灵码", "official_changelog", "MCP 服务器现可在远程请求中向用户发起输入提示", title_contains="v0.2.16", dimension="ide_ecosystem", use_version_filter=True),
+    Seed("lingma_changelog_permissions_proxy", "Qoder CN CLI 1.0.17 在权限和网络访问方面增加了什么能力？", "通义灵码", "official_changelog", "新增 SOCKS5 代理支持", title_contains="v1.0.17", dimension="security_compliance", use_version_filter=True),
 )
 
 
@@ -97,6 +107,39 @@ CSV_FIELDS = (
     "expected_version",
     "expected_evidence_quote",
     "query_filters",
+)
+
+
+AI_REVIEW_FIELDS = (
+    "ai_grade",
+    "ai_confidence",
+    "ai_question_valid",
+    "ai_quote_valid",
+    "ai_additional_relevance_grades",
+    "ai_rationale",
+    "ai_model",
+    "ai_reviewed_at",
+    "ai_review_run_id",
+)
+
+
+HUMAN_REVIEW_FIELDS = (
+    "human_grade",
+    "question_valid",
+    "quote_valid",
+    "additional_relevance_grades",
+    "reviewer",
+    "reviewed_at",
+)
+
+
+REVIEW_FIELDS = (
+    "case_id", "question", "chunk_id", "document_id", "competitor",
+    "source_type", "title", "product_version", "event_type",
+    "dimension_tags", "expected_quote", "content", "suggested_grade",
+    *AI_REVIEW_FIELDS,
+    *HUMAN_REVIEW_FIELDS,
+    "notes",
 )
 
 
@@ -188,16 +231,9 @@ def _write_cases(path: Path, cases: Sequence[EvaluationCase]) -> None:
 
 
 def _write_review(path: Path, rows: Sequence[tuple[Seed, Sequence[Chunk]]]) -> None:
-    fields = (
-        "case_id", "question", "chunk_id", "document_id", "competitor",
-        "source_type", "title", "product_version", "event_type",
-        "dimension_tags", "expected_quote", "content", "suggested_grade",
-        "human_grade", "question_valid", "quote_valid", "additional_relevance_grades",
-        "reviewer", "reviewed_at", "notes",
-    )
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8-sig", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer = csv.DictWriter(handle, fieldnames=REVIEW_FIELDS)
         writer.writeheader()
         for seed, chunks in rows:
             for chunk in chunks:
@@ -218,6 +254,7 @@ def _write_review(path: Path, rows: Sequence[tuple[Seed, Sequence[Chunk]]]) -> N
                     "expected_quote": seed.needle,
                     "content": chunk.content,
                     "suggested_grade": 3,
+                    **{field_name: "" for field_name in AI_REVIEW_FIELDS},
                     "human_grade": "",
                     "question_valid": "",
                     "quote_valid": "",
@@ -247,6 +284,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     manifest_path = Path(args.manifest_output).resolve() if args.manifest_output else DEFAULT_MANIFEST_PATH
     documents = DocumentLoader(documents_path).load()
     chunks = ChunkingDispatcher(settings.chunking).chunk_documents(documents)
+    current_document_count = sum(document.is_current for document in documents)
+    historical_document_count = len(documents) - current_document_count
     resolved = [(seed, _resolve_seed(seed, chunks)) for seed in SEEDS]
     cases = [_case(seed, chunks) for seed, chunks in resolved]
     validate_evaluation_cases(cases)
@@ -269,9 +308,12 @@ def main(argv: Sequence[str] | None = None) -> int:
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "generator": "scripts.prepare_evaluation_set",
         "human_review_status": "pending",
+        "ai_review_status": "pending",
         "label_origin": "AI-assisted candidate labels",
         "case_count": len(cases),
         "document_count": len(documents),
+        "current_document_count": current_document_count,
+        "historical_document_count": historical_document_count,
         "chunk_count": len(chunks),
         "documents_path": str(documents_path),
         "documents_sha256": _sha256(documents_path),
@@ -282,8 +324,11 @@ def main(argv: Sequence[str] | None = None) -> int:
         "distributions": distributions,
         "limitations": [
             "Human relevance review is pending.",
-            "The corpus contains no historical document versions.",
-            "Conflict and historical-version quality require separate real samples.",
+            (
+                f"The corpus contains {historical_document_count} historical document versions; "
+                "historical-version relevance still requires explicit review cases."
+            ),
+            "Conflict quality requires manually confirmed conflicting fact samples.",
         ],
     }
     manifest_path.parent.mkdir(parents=True, exist_ok=True)

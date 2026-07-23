@@ -191,7 +191,27 @@ GITHUB_TOKEN=你的只读令牌
 
 ## 数据与 Mini-RAG
 
-查看采集计划，不发送请求：
+每个竞品均显式配置 11 类来源。启用项必须提供 HTTPS 地址或 GitHub 仓库；禁用项保留原因说明，`doctor` 会检查类型、证据等级和目标地址。表中 GitHub 任务会分别生成 GitHub Release 和 GitHub Issue 结构化来源。
+
+| 来源类型 | Cursor | GitHub Copilot | Trae | 通义灵码 | CodeGeeX |
+| --- | :---: | :---: | :---: | :---: | :---: |
+| 官网与博客 `official` | ✓ | ✓ | ✓ | ✓ | ✓ |
+| 更新日志 `changelog` | ✓ | ✓ | ✓ | ✓ | — |
+| 定价页面 `pricing` | ✓ | ✓ | ✓ | ✓ | — |
+| 产品文档 `product_docs` | ✓ | ✓ | ✓ | ✓ | ✓ |
+| 状态页 `status_page` | ✓ | ✓ | — | — | — |
+| GitHub `github` | — | ✓ | ✓ | — | ✓ |
+| 插件市场 `plugin_marketplace` | — | ✓ | ✓ | ✓ | ✓ |
+| 社区平台 `community` | ✓ | ✓ | — | — | — |
+| 视频与测评 `review` | — | — | — | — | — |
+| 安全与隐私 `security_privacy` | ✓ | ✓ | ✓ | ✓ | — |
+| 基准测试 `benchmark` | ✓ | ✓ | ✓ | — | ✓ |
+
+第三方视频、测评和社区地址需要先建立人工确认的 URL 允许列表，因此未验证的入口保持禁用。将可靠地址写入 `config/competitors.yaml` 的 `urls`，再把 `enabled` 改为 `true`，无需新增采集代码。
+
+## 开始爬取
+
+先查看 Cursor 和 GitHub Copilot 将执行的来源，不发送请求：
 
 ```powershell
 python -m scripts.data_pipeline crawl `
@@ -199,6 +219,32 @@ python -m scripts.data_pipeline crawl `
   --since-days 90 `
   --dry-run
 ```
+
+只查看新增来源任务，不发送请求：
+
+```powershell
+python -m scripts.data_pipeline crawl `
+  --competitors all `
+  --sources product_docs,status_page,plugin_marketplace,community,review,security_privacy,benchmark `
+  --since-days 365 `
+  --dry-run
+```
+
+现有 `data/raw` 已包含官网、更新日志、定价和 GitHub 数据时，只采集新增来源并重建结构化结果：
+
+```powershell
+python -m scripts.data_pipeline crawl `
+  --competitors all `
+  --sources product_docs,status_page,plugin_marketplace,community,review,security_privacy,benchmark `
+  --since-days 365 `
+  --force `
+  --log-level INFO
+
+python -m scripts.data_pipeline process --rebuild
+python -m scripts.audit_documents
+```
+
+`--force` 使本轮对全部启用的新增 URL 发出完整请求。`process --rebuild` 会同时读取已有原始响应和新增原始响应，生成一个一致的 `documents.jsonl`。
 
 执行采集和结构化处理：
 
@@ -214,6 +260,54 @@ python -m scripts.data_pipeline process --rebuild
 ```
 
 原始数据位于 `data/raw/<competitor>/<source_type>/<crawl_run_id>/`，结构化文档位于 `data/cleaned/documents.jsonl`。处理器执行 URL/Unicode/空白规范化、SHA-256 去重、稳定 `document_id` 与版本化 `version_id` 管理，并写入事件、能力和证据等级。
+
+```powershell
+python -m scripts.data_pipeline process --rebuild
+```
+
+`--rebuild` 会原子替换 `data/cleaned/documents.jsonl`，不会把规则修正记录为竞品内容的新历史版本。该命令只读取本地 `data/raw`，不发送网络请求。
+
+采集并处理全部五个竞品：
+
+```powershell
+python -m scripts.data_pipeline all `
+  --competitors all `
+  --since-days 90
+```
+
+常用范围控制参数：
+
+- `--sources`：选择 `official`、`changelog`、`pricing`、`product_docs`、`status_page`、`github`、`github_release`、`github_issue`、`plugin_marketplace`、`community`、`review`、`security_privacy` 或 `benchmark`；多个类型使用逗号分隔。
+- `--max-issues 100`：设置每个仓库最多采集的 Issue 数量。
+- `--max-comments 20`：设置每条 Issue 最多采集的评论数量。
+- `--dry-run`：只校验并输出任务清单。
+- `--force`：忽略 ETag 和 Last-Modified 条件缓存，重新请求来源。
+- `--rebuild`：`process` 或 `all` 从全部原始响应重建清洗结果。
+- `--log-level DEBUG|INFO|WARNING|ERROR`：设置日志级别。
+
+采集器遵守 `robots.txt`，按域名限速，并使用 15 秒超时和最多 3 次指数退避。HTML Changelog 列表会提取带日期的同源条目链接，按照 `--since-days` 过滤，跟随下一页并抓取详情；每个任务默认最多访问 20 个列表页和 200 个详情条目。对于日期位于子页面正文的目录型 Changelog，配置通过层叠样式表选择器（Cascading Style Sheets Selector，CSS Selector）、同源约束、路径前缀和标题模式限定目录链接。采集器校验重定向后的最终地址，读取子页面正文中的显式日期标题或表格日期；处理器按日期段拆分文档，并只保留 `--since-days` 窗口内的条目。目录返回 HTTP 304 时会无条件刷新一次目录正文，以继续检查独立更新的子页面。列表页、无可靠日期边界和超出日期范围的候选响应继续保留用于审计。配置了 `browser_fallback` 的 JavaScript 动态官网在静态正文不足时使用 Playwright 和无头 Chromium 获取渲染后的 HTML；其他页面保持同步 `requests` 采集。浏览器失败时保留静态响应、`needs_browser` 和失败原因，单个来源失败不会中断其他来源。配置了 `empty_result_markers` 的 Changelog 页面在匹配官方空状态提示时记录合法空结果，不生成虚构更新。
+
+## 数据输出
+
+每次采集创建唯一的 `crawl_run_id`，原始响应与元数据保存为：
+
+```text
+data/raw/<competitor>/<source_type>/<crawl_run_id>/
+├── <raw_record_id>.html|json|xml
+└── <raw_record_id>.meta.json
+```
+
+清洗结果保存为：
+
+```text
+data/cleaned/documents.jsonl
+```
+
+结构化处理会规范化统一资源定位符（Uniform Resource Locator，URL）、Unicode 和空白，计算 SHA-256 内容哈希，并按照“竞品、来源类型、规范 URL、内容哈希”去重。`document_id` 标识稳定来源实体，`version_id` 标识内容版本。内容变化会关闭当前版本的有效区间并保留历史版本。
+
+来源类型写入 E1—E3 事件标签，正文按 `config/dimensions.yaml` 的关键词写入 D1—D7 多标签结果，同时保存置信度、命中原因和人工复核标记。
+
+## Mini-RAG 索引
 
 Mini-RAG 需要可用的 Elasticsearch。仓库中的 Compose 配置可用于本地启动 Elasticsearch，但它只是开发基础设施，不代表第四周容器化部署已经交付：
 

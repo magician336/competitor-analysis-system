@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from xml.etree import ElementTree
 
 import pytest
 
@@ -103,6 +104,42 @@ def test_aggregate_and_svg_rendering(tmp_path) -> None:
     assert summary["groups"]["A"]["metrics"]["p95_latency_ms"]["mean"] == 21.0
     assert "A–F 检索质量对比" in quality.read_text(encoding="utf-8")
     assert "A–F 稳态 P95 延迟" in latency.read_text(encoding="utf-8")
+
+
+def test_latency_svg_reserves_space_after_longest_error_bar(tmp_path) -> None:
+    first = tmp_path / "first.json"
+    second = tmp_path / "second.json"
+    _run(first)
+    _run(second)
+    summary = aggregate([first, second])
+    summary["groups"]["F"]["metrics"]["p95_latency_ms"] = {
+        "mean": 5000.0,
+        "stddev": 1000.0,
+        "min": 4000.0,
+        "max": 6000.0,
+    }
+
+    latency = tmp_path / "latency.svg"
+    render_latency_svg(summary, latency)
+    root = ElementTree.fromstring(latency.read_text(encoding="utf-8"))
+    namespace = {"svg": "http://www.w3.org/2000/svg"}
+    error_bars = [
+        element
+        for element in root.findall("svg:line", namespace)
+        if element.attrib.get("stroke") == "#182842"
+        and element.attrib.get("y1") == element.attrib.get("y2")
+    ]
+    value_labels = [
+        element
+        for element in root.findall("svg:text", namespace)
+        if (element.text or "").endswith(" ms")
+    ]
+
+    assert len(error_bars) == len(value_labels) == 6
+    assert all(
+        float(error_bar.attrib["x2"]) < float(label.attrib["x"])
+        for error_bar, label in zip(error_bars, value_labels, strict=True)
+    )
 
 
 def test_aggregate_rejects_incompatible_runs(tmp_path) -> None:

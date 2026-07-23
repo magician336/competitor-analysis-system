@@ -11,6 +11,8 @@ from typing import Any, Iterable, Mapping, Sequence
 
 import yaml
 
+from .base import ConfiguredPageCollector
+from .browser_renderer import PlaywrightBrowserRenderer
 from .crawl_changelog import ChangelogCollector
 from .crawl_github import GitHubCollector
 from .crawl_official import OfficialCollector
@@ -28,6 +30,20 @@ from .storage import RawWriter
 
 LOGGER = logging.getLogger(__name__)
 _TASK_SOURCES = {
+    SourceType.OFFICIAL,
+    SourceType.CHANGELOG,
+    SourceType.PRICING,
+    SourceType.PRODUCT_DOCS,
+    SourceType.STATUS_PAGE,
+    SourceType.GITHUB,
+    SourceType.PLUGIN_MARKETPLACE,
+    SourceType.COMMUNITY,
+    SourceType.REVIEW,
+    SourceType.SECURITY_PRIVACY,
+    SourceType.BENCHMARK,
+}
+
+_GENERIC_PAGE_SOURCES = _TASK_SOURCES - {
     SourceType.OFFICIAL,
     SourceType.CHANGELOG,
     SourceType.PRICING,
@@ -99,6 +115,7 @@ class CrawlOrchestrator:
                 ),
             )
         self.client = client
+        self.browser_renderer = PlaywrightBrowserRenderer()
 
     @classmethod
     def from_yaml(
@@ -237,12 +254,20 @@ class CrawlOrchestrator:
                 metadata = dict(task.metadata)
                 if source_type is SourceType.GITHUB and github_selection:
                     collect_all_github = SourceType.GITHUB.value in github_selection
-                    metadata["collect_releases"] = collect_all_github or (
-                        SourceType.GITHUB_RELEASE.value in github_selection
-                    )
-                    metadata["collect_issues"] = collect_all_github or (
-                        SourceType.GITHUB_ISSUE.value in github_selection
-                    )
+                    if collect_all_github:
+                        metadata["collect_releases"] = bool(
+                            metadata.get("collect_releases", True)
+                        )
+                        metadata["collect_issues"] = bool(
+                            metadata.get("collect_issues", True)
+                        )
+                    else:
+                        metadata["collect_releases"] = (
+                            SourceType.GITHUB_RELEASE.value in github_selection
+                        )
+                        metadata["collect_issues"] = (
+                            SourceType.GITHUB_ISSUE.value in github_selection
+                        )
                 metadata.update(
                     {
                         "competitor_name": item.get("name", competitor_id),
@@ -303,12 +328,29 @@ class CrawlOrchestrator:
 
         writer = RawWriter(self.raw_root, run_id)
         collectors = {
-            SourceType.OFFICIAL: OfficialCollector(self.client, writer),
+            SourceType.OFFICIAL: OfficialCollector(
+                self.client,
+                writer,
+                browser_renderer=self.browser_renderer,
+            ),
             SourceType.CHANGELOG: ChangelogCollector(self.client, writer),
-            SourceType.PRICING: PricingCollector(self.client, writer),
+            SourceType.PRICING: PricingCollector(
+                self.client,
+                writer,
+                browser_renderer=self.browser_renderer,
+            ),
             SourceType.GITHUB: GitHubCollector(
                 self.client, writer, token=self.github_token
             ),
+            **{
+                source_type: ConfiguredPageCollector(
+                    self.client,
+                    writer,
+                    source_type,
+                    browser_renderer=self.browser_renderer,
+                )
+                for source_type in _GENERIC_PAGE_SOURCES
+            },
         }
         minimum_visible = int(
             self.defaults.get("minimum_visible_text_chars", 80)
@@ -335,6 +377,7 @@ class CrawlOrchestrator:
         return summary
 
     def close(self) -> None:
+        self.browser_renderer.close()
         self.client.close()
 
     def __enter__(self) -> "CrawlOrchestrator":

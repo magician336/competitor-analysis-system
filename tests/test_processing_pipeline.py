@@ -3,6 +3,8 @@ from __future__ import annotations
 import json
 from datetime import datetime, timezone
 
+import pytest
+
 from crawler.storage import RawWriter
 from processing.pipeline import ProcessingPipeline, process_raw_records
 from schemas.document import (
@@ -55,6 +57,49 @@ def test_raw_html_to_documents_jsonl_end_to_end(tmp_path, fixture_text) -> None:
     assert document.index_status is IndexStatus.PENDING
     assert document.source_metadata["crawl_run_id"] == "run-001"
     assert document.source_metadata["payload_hash"].startswith("sha256:")
+
+
+@pytest.mark.parametrize(
+    ("raw_source", "document_source", "evidence", "event"),
+    [
+        ("product_docs", SourceType.PRODUCT_DOCS, EvidenceLevel.A, None),
+        ("status_page", SourceType.STATUS_PAGE, EvidenceLevel.A, EventType.RISK_EXPERIENCE),
+        ("plugin_marketplace", SourceType.PLUGIN_MARKETPLACE, EvidenceLevel.B, EventType.RISK_EXPERIENCE),
+        ("community", SourceType.COMMUNITY, EvidenceLevel.C, EventType.RISK_EXPERIENCE),
+        ("review", SourceType.REVIEW, EvidenceLevel.C, EventType.RISK_EXPERIENCE),
+        ("security_privacy", SourceType.SECURITY_PRIVACY, EvidenceLevel.A, None),
+        ("benchmark", SourceType.BENCHMARK, EvidenceLevel.B, None),
+    ],
+)
+def test_extended_page_sources_survive_processing_with_source_policy(
+    tmp_path,
+    raw_source,
+    document_source,
+    evidence,
+    event,
+) -> None:
+    raw_root = tmp_path / "data" / "raw"
+    record = RawWriter(raw_root, "run-sources").write_bytes(
+        competitor="cursor",
+        source_type=raw_source,
+        requested_url=f"https://example.test/{raw_source}",
+        canonical_url=f"https://example.test/{raw_source}",
+        payload=(
+            "<html><head><title>Source evidence</title></head><body><main>"
+            "<h1>Source evidence</h1><p>The coding agent supports repository context "
+            "and IDE integration for software teams.</p></main></body></html>"
+        ).encode(),
+        content_type="text/html",
+    )
+
+    result = ProcessingPipeline(project_root=tmp_path).process(
+        [_meta_path(raw_root, record.raw_record_id)]
+    )
+
+    [document] = _version_rows(result.output_path)
+    assert document.source_type is document_source
+    assert document.evidence_level is evidence
+    assert document.event_type is event
 
 
 def test_pipeline_uses_configured_name_evidence_and_dimension_rules(

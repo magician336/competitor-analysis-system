@@ -255,7 +255,14 @@ def render_latency_svg(summary: dict[str, Any], path: Path) -> None:
     plot_height = height - top - bottom
     values = [summary["groups"][group]["metrics"]["p95_latency_ms"] for group in GROUPS]
     maximum = max(item["mean"] + item["stddev"] for item in values)
-    axis_max = max(10.0, math.ceil(maximum / 100.0) * 100.0)
+    # Reserve horizontal space after the longest error bar for its value label.
+    # Without this padding, a clipped error bar can run through the label when
+    # the largest mean + standard deviation is also the axis maximum.
+    label_padding = max(100.0, maximum * 0.14)
+    axis_max = max(
+        10.0,
+        math.ceil((maximum + label_padding) / 100.0) * 100.0,
+    )
     lines = _svg_header(
         width,
         height,

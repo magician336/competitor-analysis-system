@@ -132,6 +132,27 @@ def test_http_client_surfaces_timeout_after_retry_budget() -> None:
 
 
 @responses.activate
+def test_post_sends_configured_read_only_json_request() -> None:
+    url = "https://api.example.test/terms"
+    client = _client()
+
+    def callback(request):
+        assert request.params == {"Language": "EN"}
+        assert json.loads(request.body) == {"termsType": "privacy"}
+        return 200, {"Content-Type": "application/json"}, '{"Result":{"ok":true}}'
+
+    responses.add_callback(responses.POST, url, callback=callback)
+
+    response = client.post(
+        url,
+        params={"Language": "EN"},
+        json_body={"termsType": "privacy"},
+    )
+
+    assert response.json()["Result"]["ok"] is True
+
+
+@responses.activate
 def test_robots_txt_denial_prevents_page_request() -> None:
     url = "https://example.test/private/data"
     client = _client(respect_robots_txt=True)
