@@ -22,6 +22,7 @@ from schemas.intelligence_card import (
 )
 from schemas.orchestration import MultiAgentAnalysisRequest, MultiAgentAnalysisResult
 
+from ..repositories import AnalysisRepository, get_analysis_repository
 from .rag_service import get_rag_service
 
 
@@ -45,6 +46,7 @@ class AgentService:
         briefing_agent: Any | None = None,
         benchmark_agent: Any | None = None,
         orchestrator: Any | None = None,
+        repository: AnalysisRepository | None = None,
     ) -> None:
         self.price_agent = (
             price_agent if price_agent is not None else PriceAgent(rag_service)
@@ -76,21 +78,19 @@ class AgentService:
                 benchmark_agent=self.benchmark_agent,
             )
         )
-        self._cards: dict[str, IntelligenceCard] = {}
-        self._snapshots: dict[str, CapabilitySnapshot] = {}
-        self._lock = threading.RLock()
+        self.repository = repository or get_analysis_repository()
         # Snapshot builds are serialized so two concurrent requests cannot both
         # select the same historical predecessor and fork the delta chain.
         self._snapshot_build_lock = threading.RLock()
 
     def analyze_price(self, request: AgentAnalysisRequest) -> AgentRunResult:
-        return self._store_result(self.price_agent.run(request))
+        return self._persist_agent_result(self.price_agent.run(request))
 
     def analyze_product(self, request: AgentAnalysisRequest) -> AgentRunResult:
-        return self._store_result(self.product_agent.run(request))
+        return self._persist_agent_result(self.product_agent.run(request))
 
     def analyze_risk(self, request: AgentAnalysisRequest) -> AgentRunResult:
-        return self._store_result(self.risk_agent.run(request))
+        return self._persist_agent_result(self.risk_agent.run(request))
 
     def analyze_all(
         self,
@@ -104,30 +104,15 @@ class AgentService:
             if isinstance(raw_result, MultiAgentAnalysisResult)
             else MultiAgentAnalysisResult.model_validate(raw_result)
         )
-        with self._snapshot_build_lock, self._lock:
-            self._store_cards_locked(result.cards)
-            if result.snapshot is not None:
-                # A cache replay or idempotent workflow must not erase a locally
-                # enriched snapshot that already carries historical deltas.
-                self._snapshots.setdefault(
-                    result.snapshot.snapshot_id,
-                    result.snapshot,
-                )
+        with self._snapshot_build_lock:
+            self.repository.save_workflow_result(result)
         return result
 
     def list_cards(self, competitor: str | None = None) -> list[IntelligenceCard]:
-        with self._lock:
-            cards = list(self._cards.values())
-        if competitor:
-            target = competitor.strip().casefold()
-            cards = [
-                card for card in cards if card.competitor.strip().casefold() == target
-            ]
-        return sorted(cards, key=lambda item: item.created_at, reverse=True)
+        return self.repository.list_cards(competitor)
 
     def get_card(self, card_id: str) -> IntelligenceCard | None:
-        with self._lock:
-            return self._cards.get(card_id)
+        return self.repository.get_card(card_id)
 
     def build_snapshot(
         self,
@@ -142,23 +127,7 @@ class AgentService:
         return snapshot
 
     def list_snapshots(self, competitor: str | None = None) -> list[CapabilitySnapshot]:
-        with self._lock:
-            indexed = list(enumerate(self._snapshots.values()))
-        if competitor:
-            target = competitor.strip().casefold()
-            indexed = [
-                (position, snapshot)
-                for position, snapshot in indexed
-                if snapshot.competitor.strip().casefold() == target
-            ]
-        return [
-            snapshot
-            for _, snapshot in sorted(
-                indexed,
-                key=lambda item: (item[1].snapshot_date, item[0]),
-                reverse=True,
-            )
-        ]
+        return self.repository.list_snapshots(competitor)
 
     def generate_briefing(
         self,
@@ -169,61 +138,57 @@ class AgentService:
         snapshot, previous_snapshot, cards = self._build_snapshot_with_history(
             competitor,
             product_version=product_version,
+            persist=False,
+        )
+        markdown = self.briefing_agent.generate(
+            competitor,
+            cards,
+            snapshot,
+            previous_snapshot=previous_snapshot,
+        )
+        stored_snapshot, _ = self.repository.save_snapshot_and_briefing(
+            snapshot=snapshot,
+            competitor=competitor,
+            markdown=markdown,
+            payload={
+                "competitor": competitor,
+                "snapshot_id": snapshot.snapshot_id,
+                "card_ids": [card.card_id for card in cards],
+            },
         )
         return {
             "competitor": competitor,
-            "markdown": self.briefing_agent.generate(
-                competitor,
-                cards,
-                snapshot,
-                previous_snapshot=previous_snapshot,
-            ),
+            "markdown": markdown,
             "cards": cards,
-            "snapshot": snapshot,
+            "snapshot": stored_snapshot,
         }
 
-    def _store_result(self, result: AgentRunResult) -> AgentRunResult:
-        with self._lock:
-            self._store_cards_locked(result.cards)
+    def _persist_agent_result(self, raw_result: AgentRunResult) -> AgentRunResult:
+        result = AgentRunResult.model_validate(raw_result)
+        self.repository.save_agent_result(result)
         return result
-
-    def _store_cards_locked(self, cards: list[IntelligenceCard]) -> None:
-        for card in cards:
-            self._cards[card.card_id] = card
 
     def _build_snapshot_with_history(
         self,
         competitor: str,
         *,
         product_version: str | None,
+        persist: bool = True,
     ) -> tuple[
         CapabilitySnapshot,
         CapabilitySnapshot | None,
         list[IntelligenceCard],
     ]:
-        benchmark_tasks = list(self.benchmark_agent.load_tasks())
-        target = competitor.strip().casefold()
-        benchmark_runs = [
-            run
-            for run in self.benchmark_agent.load_runs()
-            if run.competitor.strip().casefold() == target
-        ]
-
         with self._snapshot_build_lock:
-            with self._lock:
-                cards = [
-                    card
-                    for card in self._cards.values()
-                    if card.competitor.strip().casefold() == target
-                ]
-                previous_snapshot = self._latest_snapshot_locked(competitor)
+            cards = self.repository.list_cards(competitor)
+            previous_snapshot = self.repository.latest_snapshot(competitor)
 
             raw_snapshot = self.compare_agent.build_snapshot(
                 competitor,
                 cards,
                 product_version=product_version,
-                benchmark_tasks=benchmark_tasks,
-                benchmark_runs=benchmark_runs,
+                benchmark_tasks=[],
+                benchmark_runs=[],
                 previous_snapshot=previous_snapshot,
             )
             snapshot = (
@@ -232,34 +197,23 @@ class AgentService:
                 else CapabilitySnapshot.model_validate(raw_snapshot)
             )
 
-            with self._lock:
-                existing = self._snapshots.get(snapshot.snapshot_id)
-                if existing is not None:
-                    predecessor = (
-                        self._snapshots.get(existing.previous_snapshot_id)
-                        if existing.previous_snapshot_id
-                        else None
-                    )
-                    return existing, predecessor, cards
-                self._snapshots[snapshot.snapshot_id] = snapshot
-            return snapshot, previous_snapshot, cards
+            if not persist:
+                return snapshot, previous_snapshot, cards
 
-    def _latest_snapshot_locked(
-        self,
-        competitor: str,
-    ) -> CapabilitySnapshot | None:
-        target = competitor.strip().casefold()
-        matches = [
-            (position, snapshot)
-            for position, snapshot in enumerate(self._snapshots.values())
-            if snapshot.competitor.strip().casefold() == target
-        ]
-        if not matches:
-            return None
-        return max(
-            matches,
-            key=lambda item: (item[1].snapshot_date, item[0]),
-        )[1]
+            stored = self.repository.save_snapshot(snapshot, preserve_existing=True)
+            if stored.snapshot_id != snapshot.snapshot_id:
+                raise RuntimeError("stored snapshot identity changed unexpectedly")
+            predecessor = (
+                self.repository.get_snapshot(stored.previous_snapshot_id)
+                if stored.previous_snapshot_id
+                else (
+                    previous_snapshot
+                    if previous_snapshot is not None
+                    and previous_snapshot.snapshot_id != stored.snapshot_id
+                    else None
+                )
+            )
+            return stored, predecessor, cards
 
 
 _lock = threading.RLock()

@@ -2,8 +2,12 @@
 .github/
 .venv/
 .env
+.env.local
+.vscode/
 __pycache__/
+**/__pycache__
 *.py[cod]
+**/*.pyc
 .pytest_cache/
 .coverage
 htmlcov/
@@ -13,3 +17,6 @@ data/raw/
 data/cleaned/
 data/runtime/
 data/snapshots/
+artifacts/week3/comparison
+frontend/node_modules
+frontend/dist

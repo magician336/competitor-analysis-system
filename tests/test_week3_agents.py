@@ -60,9 +60,9 @@ def test_compare_agent_builds_snapshot_from_cards() -> None:
     assert snapshot.evidence_count[DimensionTag.PERFORMANCE_COST] == 1
 
 
-def test_agent_api_uses_service_dependency_override() -> None:
+def test_agent_api_uses_service_dependency_override(analysis_repository) -> None:
     app = create_app()
-    service = AgentService(FakeRAGService())
+    service = AgentService(FakeRAGService(), repository=analysis_repository)
     app.dependency_overrides[get_agent_service] = lambda: service
     client = TestClient(app)
 

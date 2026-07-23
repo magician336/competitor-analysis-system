@@ -20,7 +20,12 @@ from schemas import (
 )
 from schemas.capability_snapshot import CapabilitySnapshot
 from schemas.document import EventType
-from schemas.intelligence_card import AgentKind, IntelligenceCard
+from schemas.intelligence_card import (
+    AgentAnalysisRequest,
+    AgentKind,
+    AgentRunResult,
+    IntelligenceCard,
+)
 
 
 class NoopSpecialist:
@@ -146,7 +151,9 @@ def test_public_packages_export_week_three_agents_and_contracts() -> None:
     assert TagMergeStrategy.UNION.value == "union"
 
 
-def test_service_constructs_orchestrator_with_shared_agent_instances() -> None:
+def test_service_constructs_orchestrator_with_shared_agent_instances(
+    analysis_repository,
+) -> None:
     price, product, risk = _service_dependencies()
     compare = RecordingCompare()
     briefing = RecordingBriefing()
@@ -158,6 +165,7 @@ def test_service_constructs_orchestrator_with_shared_agent_instances() -> None:
         compare_agent=compare,
         briefing_agent=briefing,
         benchmark_agent=benchmark,
+        repository=analysis_repository,
     )
 
     assert service.orchestrator._agents[SpecialistBranch.PRICE] is price
@@ -168,7 +176,9 @@ def test_service_constructs_orchestrator_with_shared_agent_instances() -> None:
     assert service.orchestrator.benchmark_agent is benchmark
 
 
-def test_analyze_all_retains_orchestrated_cards_and_snapshot() -> None:
+def test_analyze_all_retains_orchestrated_cards_and_snapshot(
+    analysis_repository,
+) -> None:
     request = MultiAgentAnalysisRequest(
         competitor="Cursor",
         include_briefing=False,
@@ -197,17 +207,20 @@ def test_analyze_all_retains_orchestrated_cards_and_snapshot() -> None:
         briefing_agent=RecordingBriefing(),
         benchmark_agent=FakeBenchmark(),
         orchestrator=orchestrator,
+        repository=analysis_repository,
     )
 
     returned = service.analyze_all(request)
 
     assert returned is result
     assert orchestrator.calls == [request]
-    assert service.get_card(card.card_id) is card
+    assert service.get_card(card.card_id) == card
     assert service.list_snapshots("cursor") == [snapshot]
 
 
-def test_snapshot_uses_benchmarks_and_briefing_receives_true_predecessor() -> None:
+def test_snapshot_ignores_benchmarks_and_briefing_receives_true_predecessor(
+    analysis_repository,
+) -> None:
     price, product, risk = _service_dependencies()
     compare = RecordingCompare()
     briefing = RecordingBriefing()
@@ -220,21 +233,25 @@ def test_snapshot_uses_benchmarks_and_briefing_receives_true_predecessor() -> No
         briefing_agent=briefing,
         benchmark_agent=benchmark,
         orchestrator=object(),
+        repository=analysis_repository,
     )
-    service._store_result(
-        type("Result", (), {"cards": [_card("CURSOR")]})()
+    service.repository.save_agent_result(
+        AgentRunResult(
+            request=AgentAnalysisRequest(competitor="CURSOR"),
+            cards=[_card("CURSOR")],
+        )
     )
 
     first = service.build_snapshot("Cursor", product_version="1.0")
     briefing_result = service.generate_briefing("cursor", product_version="1.1")
     second = briefing_result["snapshot"]
 
-    assert compare.calls[0]["benchmark_tasks"] == benchmark.tasks
-    assert len(compare.calls[0]["benchmark_runs"]) == 1
+    assert compare.calls[0]["benchmark_tasks"] == []
+    assert compare.calls[0]["benchmark_runs"] == []
     assert compare.calls[0]["previous_snapshot"] is None
-    assert compare.calls[1]["previous_snapshot"] is first
+    assert compare.calls[1]["previous_snapshot"] == first
     assert second.previous_snapshot_id == first.snapshot_id
-    assert briefing.calls[0]["snapshot"] is second
-    assert briefing.calls[0]["previous_snapshot"] is first
-    assert briefing.calls[0]["previous_snapshot"] is not second
+    assert briefing.calls[0]["snapshot"] == second
+    assert briefing.calls[0]["previous_snapshot"] == first
+    assert briefing.calls[0]["previous_snapshot"] != second
     assert briefing_result["markdown"] == "# service briefing"

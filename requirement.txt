@@ -26,6 +26,10 @@ fastapi==0.139.0
 uvicorn==0.51.0
 httpx2==2.5.0
 
+# 第四周持久化与迁移
+SQLAlchemy>=2.0,<2.1
+alembic>=1.14,<2.0
+
 # 本地 Embedding 与 Cross-Encoder Reranker
 # 模型权重在首次使用时按配置下载，不进入版本库。
 sentence-transformers==5.6.0

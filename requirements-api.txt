@@ -11,3 +11,5 @@ langchain-deepseek>=1.1,<1.2
 elasticsearch==9.4.1
 fastapi==0.139.0
 uvicorn==0.51.0
+SQLAlchemy>=2.0,<2.1
+alembic>=1.14,<2.0

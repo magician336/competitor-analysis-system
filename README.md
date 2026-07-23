@@ -2,7 +2,7 @@
 
 CodeRadar 是面向 AI 编程助手竞品的证据驱动分析系统。项目围绕 CodeMate Campus 的产品决策，持续监控 Cursor、GitHub Copilot、Trae、通义灵码和 CodeGeeX，将官网、更新日志、价格页与公开 GitHub 信息加工为可追溯证据，再由 LangChain Multi-Agent 生成情报卡片、D1—D7 能力快照、基准对比与 Markdown 简报。
 
-当前仓库完成了第一至第三周的核心工程工作，重点交付为“数据与 Mini-RAG → LangChain Agent → 情报卡片/能力快照/简报”的闭环。FastAPI 目前只是第三周能力的薄适配层；前端、数据库持久化、完整容器化部署、端到端测试和生产发布属于第四周，本文不将它们标记为已完成。
+当前仓库完成了第一至第三周的核心工程工作，以及第四周前四个阶段：SQLite 持久化、异步 Workflow、正式 API 收口和 Vue 3 前端功能骨架。系统提供证据问答、异步模型分析、分页查询、Comparison 持久化、CodeMate 产品定义基线、API Key、限流、审计、统一错误，以及趋势首页、AI 情报问答和模型分析三个核心前端入口；视觉美化、浏览器 E2E、生产观测和正式发布仍待后续阶段完成。
 
 ```text
 多源采集 → 清洗/去重/版本化 → Mini-RAG 检索与引用校验
@@ -209,9 +209,7 @@ GITHUB_TOKEN=你的只读令牌
 
 第三方视频、测评和社区地址需要先建立人工确认的 URL 允许列表，因此未验证的入口保持禁用。将可靠地址写入 `config/competitors.yaml` 的 `urls`，再把 `enabled` 改为 `true`，无需新增采集代码。
 
-## 开始爬取
-
-先查看 Cursor 和 GitHub Copilot 将执行的来源，不发送请求：
+查看采集计划，不发送请求：
 
 ```powershell
 python -m scripts.data_pipeline crawl `
@@ -253,13 +251,9 @@ python -m scripts.data_pipeline crawl --competitors all --since-days 90
 python -m scripts.data_pipeline process
 ```
 
-规则变化后可以从已有原始响应重建派生数据；该操作不重新访问网站：
-
-```powershell
-python -m scripts.data_pipeline process --rebuild
-```
-
 原始数据位于 `data/raw/<competitor>/<source_type>/<crawl_run_id>/`，结构化文档位于 `data/cleaned/documents.jsonl`。处理器执行 URL/Unicode/空白规范化、SHA-256 去重、稳定 `document_id` 与版本化 `version_id` 管理，并写入事件、能力和证据等级。
+
+规则变化后可以从已有原始响应重建派生数据；该操作不重新访问网站：
 
 ```powershell
 python -m scripts.data_pipeline process --rebuild
@@ -309,13 +303,30 @@ data/cleaned/documents.jsonl
 
 ## Mini-RAG 索引
 
-Mini-RAG 需要可用的 Elasticsearch。仓库中的 Compose 配置可用于本地启动 Elasticsearch，但它只是开发基础设施，不代表第四周容器化部署已经交付：
+Mini-RAG 需要可用的 Elasticsearch。只启动检索服务时可以执行：
 
 ```powershell
 docker compose up -d elasticsearch
 python -m scripts.audit_documents
 python -m scripts.build_index
 ```
+
+完成数据库迁移与首次初始化后，可以用 Compose 同时启动 API、独立 Workflow Worker 和 Elasticsearch：
+
+```powershell
+$env:CODERADAR_API_KEY = 'replace-with-a-long-random-value'
+docker compose up -d --build
+```
+
+API 默认监听 `http://127.0.0.1:8001`，容器内部仍使用 8000。需要其他宿主端口时可在 PowerShell 中覆盖：
+
+```powershell
+$env:CODERADAR_API_PORT = '8010'
+$env:CODERADAR_API_KEY = 'replace-with-a-long-random-value'
+docker compose up -d api
+```
+
+API 与 Worker 共享 `./data` 卷中的 SQLite 数据库，队列不依赖 Redis。一次只能运行一个 Worker；同时启动本地 Worker 和容器 Worker 时，只有取得 SQLite 单例租约的进程会执行任务。
 
 增量更新与命令行查询：
 
@@ -328,12 +339,48 @@ python .\rag_query.py "Cursor 最近有哪些 Agent 能力更新" --competitor C
 
 ## 运行第三周 Agent
 
-### 启动薄 API
+### 初始化 SQLite 并启动 API
 
-先确保 Elasticsearch 和读取别名可用，再启动：
+首次运行或迁移版本变化后，先显式升级数据库。下面的初始化命令可重复执行，重复制品不会产生重复记录：
 
 ```powershell
-python -m uvicorn backend.main:app --host 127.0.0.1 --port 8000
+python -m alembic upgrade head
+python -m scripts.init_database --seed-competitors --seed-codemate --import-artifacts artifacts/week3
+```
+
+数据库默认位于 `data/runtime/coderadar.db`，可通过 `CODERADAR_DATABASE_URL` 覆盖。API 启动时只检查连接与 Alembic 版本，不会自动建表或导入数据。正式 API 默认要求 `CODERADAR_API_KEY`；只有离线测试或受控本地调试才应显式关闭认证：
+
+```powershell
+$env:CODERADAR_API_KEY = 'replace-with-a-long-random-value'
+python -m uvicorn backend.main:app --host 127.0.0.1 --port 8001
+```
+
+异步 Multi-Agent Workflow 由独立 Worker 执行。另开一个终端启动：
+
+```powershell
+python -m scripts.run_workflow_worker
+```
+
+Worker 使用 SQLite 持久化队列，一次只运行一个 Workflow；Workflow 内选择的 Price、Product、Risk 分支继续并行执行。默认轮询、租约、心跳和超时分别为 1、30、10 和 300 秒，可通过 `CODERADAR_WORKFLOW_POLL_SECONDS`、`CODERADAR_WORKFLOW_LEASE_SECONDS`、`CODERADAR_WORKFLOW_HEARTBEAT_SECONDS`、`CODERADAR_WORKFLOW_TIMEOUT_SECONDS` 覆盖。取消采用协作式语义，运行中的外部调用返回后才会停止下游汇总。
+
+提交异步分析：
+
+```powershell
+$workflow = Invoke-RestMethod `
+  -Method Post `
+  -Uri 'http://127.0.0.1:8001/api/workflows' `
+  -ContentType 'application/json; charset=utf-8' `
+  -Headers @{ 'X-API-Key' = $env:CODERADAR_API_KEY } `
+  -Body (@{
+    competitor = 'Cursor'
+    correlation_id = 'readme-workflow-001'
+    include_snapshot = $true
+    include_briefing = $true
+  } | ConvertTo-Json)
+
+Invoke-RestMethod `
+  "http://127.0.0.1:8001$($workflow.status_url)" `
+  -Headers @{ 'X-API-Key' = $env:CODERADAR_API_KEY }
 ```
 
 分析一个产品发布事件：
@@ -352,7 +399,7 @@ $body = @{
 
 Invoke-RestMethod `
   -Method Post `
-  -Uri 'http://127.0.0.1:8000/api/agent/product' `
+  -Uri 'http://127.0.0.1:8001/api/agent/product' `
   -ContentType 'application/json; charset=utf-8' `
   -Body $body
 ```
@@ -361,7 +408,7 @@ Price、Product、Risk 的事件类型必须分别为 `pricing_change`、`produc
 
 ### 直接运行 Multi-Agent
 
-编排器和能力标签 Agent 已作为第三周核心类实现，但尚未暴露专用 HTTP 路由。可以直接调用：
+编排器和能力标签 Agent 已作为第三周核心类实现；异步 HTTP 调用使用 `/api/workflows`，也可以在 Python 中直接调用：
 
 ```python
 from agents.orchestrator import MultiAgentOrchestrator
@@ -480,14 +527,14 @@ print([row.model_dump() for row in agent.compare()])
 $body = @{ csv_path = 'benchmarks/results/to_import.csv' } | ConvertTo-Json
 Invoke-RestMethod `
   -Method Post `
-  -Uri 'http://127.0.0.1:8000/api/benchmarks/runs/import' `
+  -Uri 'http://127.0.0.1:8001/api/benchmarks/runs/import' `
   -ContentType 'application/json; charset=utf-8' `
   -Body $body
 ```
 
 导入逐行校验：错误行被隔离，未知 `task_id`、旧表头、缺失来源字段、过期任务指纹或与当前资产审计不一致的协议/starter 哈希都会被拒绝，重复 `run_id` 幂等跳过；比较阶段会再次拒绝跨协议混排。成功结果通过同目录临时文件原子更新 `benchmarks/results/manual_runs.csv`。
 
-## 当前 API（第三周薄适配）
+## 当前 API
 
 | 接口 | 用途 |
 |---|---|
@@ -499,13 +546,49 @@ Invoke-RestMethod `
 | `POST /api/rag/rebuild`、`POST /api/rag/index/incremental` | 全量/增量索引 |
 | `POST /api/rag/citations/validate`、`POST /api/rag/evaluate` | 引用校验与检索评测 |
 | `POST /api/agent/price`、`/product`、`/sentiment-risk` | 运行三个专业 Agent |
-| `GET /api/agent/cards`、`GET /api/agent/cards/{card_id}` | 查询当前进程内的情报卡片 |
-| `POST /api/agent/compare`、`GET /api/agent/snapshots` | 生成/查询当前进程内的能力快照 |
+| `GET /api/agent/cards`、`GET /api/agent/cards/{card_id}` | 从 SQLite 查询持久化情报卡片 |
+| `POST /api/agent/compare`、`GET /api/agent/snapshots` | 生成/查询持久化能力快照 |
 | `POST /api/agent/briefing` | 生成 Markdown 简报 |
+| `POST /api/workflows` | 提交异步 Multi-Agent Workflow，返回 202 |
+| `GET /api/workflows/{workflow_id}` | 查询状态、进度、分支错误和最终结果 |
+| `POST /api/workflows/{workflow_id}/cancel` | 请求取消排队或运行中的 Workflow |
+| `POST /api/workflows/{workflow_id}/retry` | 只重试失败或未完成分支 |
+| `GET /api/cards`、`GET /api/cards/{card_id}` | 卡片分页、组合过滤、详情和 Evidence Links |
+| `GET /api/evidence/{chunk_id}` | Evidence 与关联 Card IDs 反查 |
+| `GET /api/snapshots`、`GET /api/snapshots/{snapshot_id}` | 快照分页、历史过滤、来源与 provenance |
+| `GET/POST /api/comparisons`、`GET /api/comparisons/latest` | 幂等生成并查询持久化矩阵 |
+| `GET /api/briefings`、`GET /api/briefings/{id}/content` | 简报列表、详情和 Markdown 下载 |
+| `GET/POST/PUT/DELETE /api/competitors` | 竞品查询、创建、更新和软停用 |
+| `GET /api/dimensions` | 读取冻结的 D1—D7 定义和权重 |
 | `GET /api/benchmarks/tasks`、`GET /api/benchmarks/results` | 查询任务与手工运行 |
 | `POST /api/benchmarks/runs/import`、`GET /api/benchmarks/compare` | 持久化导入与竞品汇总 |
 
-需要特别注意：卡片和能力快照目前保存在 API 进程内存中，重启会丢失；Benchmark 手工结果已经持久化为 CSV。这是有意保留给第四周数据库与任务编排工作的边界。
+Agent 运行产生的卡片、证据、快照、Workflow、分支、Trace、简报和比较矩阵写入 SQLite，API 或 Worker 重启后仍可查询。正式 API 使用 `X-API-Key`、统一 Problem Details 和脱敏审计。完整接口合同见 [`docs/API接口文档.md`](docs/API接口文档.md)。本阶段不新增或持久化 Benchmark 数据。
+
+## 运行 Vue 前端
+
+前端使用 Vue 3、TypeScript、Element Plus 和 D3，主导航包含趋势首页、AI 情报问答和模型分析。首页聚合趋势事件流、能力星图、能力矩阵和参考排序；模型分析结果以 Markdown 简报为主产物，并提供能力快照、情报卡片及分栏阅读页。按照第四周范围约定，前端没有 Benchmark 菜单、路由、组件或请求。
+
+确保 API、Worker 和 Elasticsearch 已启动后运行：
+
+```powershell
+cd frontend
+Copy-Item .env.example .env.local
+npm install
+npm run dev
+```
+
+默认打开 `http://127.0.0.1:5173`，开发代理连接 `http://127.0.0.1:8001`。如果后端使用其他端口，请在 `.env.local` 中修改 `VITE_API_TARGET`。演示前端自动使用 `VITE_API_KEY` 中的默认演示 Key，不提供浏览器输入交互；DeepSeek 密钥只保存在后端环境中。该方式只适用于本地演示，正式部署应替换密钥并改用服务端会话或网关认证。
+
+顶部工具栏可为新 Workflow 选择 `Rules`、`Hybrid` 或 `LLM`。选择值保存在当前浏览器会话，并随 Workflow 请求持久化；已提交任务和重试不会被后续切换影响。`Hybrid` 支持模型失败回退，`LLM` 会如实报告模型调用失败。在线模式要求 API 与 Worker 均配置 `DEEPSEEK_API_KEY`。
+
+前端质量检查：
+
+```powershell
+npm run typecheck
+npm run test
+npm run build
+```
 
 ## Mini-RAG 评测
 
@@ -533,7 +616,7 @@ python -m pytest tests -k week3 -q
 Remove-Item Env:CODERADAR_AGENT_MODE -ErrorAction SilentlyContinue
 ```
 
-第三周测试覆盖真实 LangChain Runnable/StructuredTool/ChatDeepSeek、结构化输出重试与非法引用回退、事件级拆卡、跨字段引用约束、无证据降级、冲突记录、Dimension CLI、16 项可执行 Benchmark、D1—D7 跨产品矩阵与趋势、基线/Trace 制品、一键验收，以及 Multi-Agent 并行、故障隔离、缓存和工作流稳定性。当前结果为 `99 passed`；全项目离线回归为 `308 passed, 1 deselected`。
+第三周测试覆盖真实 LangChain Runnable/StructuredTool/ChatDeepSeek、结构化输出重试与非法引用回退、事件级拆卡、跨字段引用约束、无证据降级、冲突记录、Dimension CLI、16 项可执行 Benchmark、D1—D7 跨产品矩阵与趋势、基线/Trace 制品、一键验收，以及 Multi-Agent 并行、故障隔离、缓存和工作流稳定性。测试还覆盖 Alembic 升降级、SQLite 外键/WAL、Manifest 导入、Pydantic 往返校验、事务回滚、异步提交、分支重试、协作式取消、租约恢复、正式 API 分页、认证、限流、审计和 Comparison 幂等。当前全项目离线回归为 `363 passed, 1 skipped`。
 
 显式网络测试默认不会运行。需要自行检查公开网络时：
 
@@ -543,19 +626,17 @@ python -m pytest tests\test_network_smoke.py -m network -q
 Remove-Item Env:CODERADAR_RUN_NETWORK_TESTS
 ```
 
-## 第三周边界与第四周接续
+## 第四周后续边界
 
-第三周交付的是可测试的领域核心和薄 API，不包含以下第四周工作：
+当前仍不包含以下后续阶段工作：
 
-- React/Vue 等前端、图表、筛选交互和完整视觉验收；
-- Intelligence Card、Snapshot、Report、Workflow Trace 的数据库持久化和迁移；
-- Multi-Agent/Dimension 的正式 API、异步任务、队列、取消、进度与并发限流；
-- 身份认证、权限、速率限制、审计日志脱敏和生产密钥托管；
-- LLM Token/成本统计、预算熔断、线上观测告警与回放工具；
+- 前端统一主题、细节美化、复杂动画和完整视觉验收；
+- JWT 用户体系、多租户和生产密钥托管；
+- 完整成本换算、预算熔断、线上观测告警与回放工具；
 - 完整 Docker 镜像、环境编排、健康策略和部署文档；
 - 浏览器端到端测试、大规模真实模型质量评估、压力测试和发布验收。
 
-第四周应在不改写第三周 Pydantic 契约和证据守卫的前提下，优先完成持久化、异步执行、API 收口、前端展示、可观测性、E2E 与部署。完整资产清单、复现命令、非 Git 数据交付要求和接续建议见 `docs/交付.md`。
+后续阶段应在不改写既有 Pydantic 契约和证据守卫的前提下，继续完成视觉优化、可观测性、E2E 与部署。完整资产清单、复现命令、非 Git 数据交付要求和接续建议见 `docs/交付.md`。
 
 ## 安全与可复现约定
 

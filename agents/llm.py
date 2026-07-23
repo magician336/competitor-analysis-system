@@ -90,10 +90,10 @@ class LLMSettings(BaseModel):
     max_retries: int = Field(default=2, ge=0, le=5)
 
     @classmethod
-    def from_env(cls) -> "LLMSettings":
+    def from_env(cls, *, mode: str | None = None) -> "LLMSettings":
         project_root = Path(__file__).resolve().parents[1]
         load_dotenv(project_root / ".env", override=False)
-        raw_mode = os.getenv("CODERADAR_AGENT_MODE", "rules").strip().casefold()
+        raw_mode = (mode or os.getenv("CODERADAR_AGENT_MODE", "rules")).strip().casefold()
         mode_aliases = {"deepseek": "llm", "offline": "rules"}
         mode = mode_aliases.get(raw_mode, raw_mode)
         return cls(
@@ -136,9 +136,12 @@ class LangChainLLMClient:
         chat_model: Any | None = None,
         structured_card_runnable: Runnable | None = None,
         structured_tagging_runnable: Runnable | None = None,
+        strict: bool = False,
     ) -> None:
         self.settings = settings
         self.model_name = settings.model
+        self.strict = strict
+        self.analysis_mode = "llm" if strict else "hybrid"
         model = chat_model
         if structured_card_runnable is None and model is None:
             model = self._build_deepseek_model(settings)
@@ -186,8 +189,8 @@ class LangChainLLMClient:
         )
 
     @classmethod
-    def from_env(cls) -> "LangChainLLMClient | None":
-        settings = LLMSettings.from_env()
+    def from_env(cls, *, mode: str | None = None) -> "LangChainLLMClient | None":
+        settings = LLMSettings.from_env(mode=mode)
         if settings.mode == "rules":
             return None
         if not settings.api_key:
@@ -195,7 +198,7 @@ class LangChainLLMClient:
                 "DEEPSEEK_API_KEY is required when CODERADAR_AGENT_MODE is "
                 f"{settings.mode!r}; use mode='rules' for an offline run"
             )
-        return cls(settings=settings)
+        return cls(settings=settings, strict=settings.mode == "llm")
 
     def draft_card(
         self,

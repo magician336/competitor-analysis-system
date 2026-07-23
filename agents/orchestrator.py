@@ -6,7 +6,7 @@ import threading
 import time
 from collections import OrderedDict
 from datetime import datetime, timezone
-from typing import Any
+from typing import Any, Protocol
 
 from langchain_core.runnables import RunnableLambda, RunnableParallel
 
@@ -38,6 +38,18 @@ _BRANCH_EVENT = {
 }
 
 
+class OrchestrationObserver(Protocol):
+    """Durable execution callbacks used by the asynchronous Worker."""
+
+    def branch_started(self, branch: SpecialistBranch) -> None: ...
+
+    def branch_completed(self, outcome: BranchOutcome) -> None: ...
+
+    def stage_progress(self, stage: str, progress: int) -> None: ...
+
+    def stop_reason(self) -> str | None: ...
+
+
 class MultiAgentOrchestrator:
     """Parallel fan-out, guarded join and bounded idempotent result cache."""
 
@@ -53,6 +65,7 @@ class MultiAgentOrchestrator:
         benchmark_agent: Any | None = None,
         cache_max_entries: int = 128,
         auto_configure_llm: bool = True,
+        llm_mode: str | None = None,
     ) -> None:
         if cache_max_entries < 1:
             raise ValueError("cache_max_entries must be at least 1")
@@ -72,16 +85,19 @@ class MultiAgentOrchestrator:
             injected[SpecialistBranch.PRICE] = PriceAgent(
                 rag_service,
                 auto_configure_llm=auto_configure_llm,
+                llm_mode=llm_mode,
             )
         if injected[SpecialistBranch.PRODUCT] is None:
             injected[SpecialistBranch.PRODUCT] = ProductAgent(
                 rag_service,
                 auto_configure_llm=auto_configure_llm,
+                llm_mode=llm_mode,
             )
         if injected[SpecialistBranch.RISK] is None:
             injected[SpecialistBranch.RISK] = RiskAgent(
                 rag_service,
                 auto_configure_llm=auto_configure_llm,
+                llm_mode=llm_mode,
             )
 
         self._agents = injected
@@ -168,7 +184,11 @@ class MultiAgentOrchestrator:
 
     def _make_branch_runnable(self, branch: SpecialistBranch) -> RunnableLambda:
         def invoke_branch(payload: dict[str, Any]) -> BranchOutcome:
-            return self._run_branch(branch, payload["request"])
+            return self._run_branch(
+                branch,
+                payload["request"],
+                observer=payload.get("observer"),
+            )
 
         return RunnableLambda(
             invoke_branch,
@@ -192,8 +212,12 @@ class MultiAgentOrchestrator:
         self,
         branch: SpecialistBranch,
         request: MultiAgentAnalysisRequest,
+        *,
+        observer: OrchestrationObserver | None = None,
     ) -> BranchOutcome:
         started = time.perf_counter()
+        if observer is not None:
+            observer.branch_started(branch)
         try:
             branch_request = self._branch_request(request, branch)
             raw_result = self._agents[branch].run(branch_request)
@@ -202,19 +226,22 @@ class MultiAgentOrchestrator:
                 if isinstance(raw_result, AgentRunResult)
                 else AgentRunResult.model_validate(raw_result)
             )
-            return BranchOutcome(
+            outcome = BranchOutcome(
                 branch=branch,
                 status=BranchExecutionStatus.SUCCESS,
                 duration_ms=(time.perf_counter() - started) * 1_000,
                 result=result,
             )
         except Exception as exc:
-            return BranchOutcome(
+            outcome = BranchOutcome(
                 branch=branch,
                 status=BranchExecutionStatus.FAILED,
                 duration_ms=(time.perf_counter() - started) * 1_000,
                 error=self._structured_error(exc),
             )
+        if observer is not None:
+            observer.branch_completed(outcome)
+        return outcome
 
     @staticmethod
     def _branch_request(
@@ -238,38 +265,84 @@ class MultiAgentOrchestrator:
             retryable=isinstance(exc, (ConnectionError, TimeoutError)),
         )
 
-    def _execute(self, request: MultiAgentAnalysisRequest) -> MultiAgentAnalysisResult:
+    def run_attempt(
+        self,
+        request: MultiAgentAnalysisRequest | dict[str, Any],
+        *,
+        reusable_outcomes: dict[SpecialistBranch, BranchOutcome] | None = None,
+        observer: OrchestrationObserver | None = None,
+    ) -> MultiAgentAnalysisResult:
+        """Execute only missing branches and merge validated prior successes."""
+
+        parsed = (
+            request
+            if isinstance(request, MultiAgentAnalysisRequest)
+            else MultiAgentAnalysisRequest.model_validate(request)
+        )
+        parsed = parsed.model_copy(update={"use_cache": False}, deep=True)
+        reusable = {
+            branch: BranchOutcome.model_validate(outcome)
+            for branch, outcome in (reusable_outcomes or {}).items()
+            if branch in parsed.branches
+            and BranchOutcome.model_validate(outcome).status
+            == BranchExecutionStatus.SUCCESS
+        }
+        return self._execute(
+            parsed,
+            reusable_outcomes=reusable,
+            observer=observer,
+        )
+
+    def _execute(
+        self,
+        request: MultiAgentAnalysisRequest,
+        *,
+        reusable_outcomes: dict[SpecialistBranch, BranchOutcome] | None = None,
+        observer: OrchestrationObserver | None = None,
+    ) -> MultiAgentAnalysisResult:
         started_at = datetime.now(timezone.utc)
         started = time.perf_counter()
         downstream_failed = False
         warnings: list[str] = []
-        selected_pipeline = self._selected_pipeline(request.branches)
-        try:
-            raw_outcomes = selected_pipeline.invoke(
-                {"request": request},
-                config={
-                    "tags": ["week3", "multi-agent", "parallel"],
-                    "metadata": {
-                        "workflow_id": request.stable_workflow_id,
-                        "correlation_id": request.correlation_id,
-                        "competitor": request.competitor,
-                    },
-                },
-            )
-        except Exception as exc:  # Runnable infrastructure failure, not a branch failure.
-            infrastructure_error = self._structured_error(
-                exc,
-                stage="parallel_dispatch",
-            )
-            raw_outcomes = {
-                branch.value: BranchOutcome(
-                    branch=branch,
-                    status=BranchExecutionStatus.FAILED,
-                    duration_ms=0.0,
-                    error=infrastructure_error.model_copy(deep=True),
+        reusable_outcomes = reusable_outcomes or {}
+        active_branches = [
+            branch for branch in request.branches if branch not in reusable_outcomes
+        ]
+        raw_outcomes: dict[str, BranchOutcome] = {
+            branch.value: outcome for branch, outcome in reusable_outcomes.items()
+        }
+        if active_branches:
+            selected_pipeline = self._selected_pipeline(active_branches)
+            try:
+                raw_outcomes.update(
+                    selected_pipeline.invoke(
+                        {"request": request, "observer": observer},
+                        config={
+                            "tags": ["week3", "multi-agent", "parallel"],
+                            "metadata": {
+                                "workflow_id": request.stable_workflow_id,
+                                "correlation_id": request.correlation_id,
+                                "competitor": request.competitor,
+                            },
+                        },
+                    )
                 )
-                for branch in request.branches
-            }
+            except Exception as exc:  # Runnable infrastructure failure.
+                infrastructure_error = self._structured_error(
+                    exc,
+                    stage="parallel_dispatch",
+                )
+                for branch in active_branches:
+                    raw_outcomes[branch.value] = BranchOutcome(
+                        branch=branch,
+                        status=BranchExecutionStatus.FAILED,
+                        duration_ms=0.0,
+                        error=infrastructure_error.model_copy(deep=True),
+                    )
+        if observer is not None:
+            observer.stage_progress("branches", 80)
+
+        stopped = observer.stop_reason() if observer is not None else None
 
         outcomes: dict[SpecialistBranch, BranchOutcome] = {}
         cards = []
@@ -308,7 +381,9 @@ class MultiAgentOrchestrator:
             downstream_failed = True
 
         snapshot = None
-        if request.include_snapshot and successful_branches:
+        if stopped:
+            warnings.append(f"workflow stopped before downstream stages: {stopped}")
+        elif request.include_snapshot and successful_branches:
             try:
                 snapshot = self.compare_agent.build_snapshot(
                     request.competitor,
@@ -327,9 +402,14 @@ class MultiAgentOrchestrator:
                 )
         elif request.include_snapshot:
             warnings.append("snapshot skipped because no specialist branch succeeded")
+        if observer is not None and not stopped:
+            observer.stage_progress("snapshot", 90)
+            stopped = observer.stop_reason()
 
         briefing = None
-        if request.include_briefing and successful_branches:
+        if stopped:
+            warnings.append(f"workflow stopped before briefing: {stopped}")
+        elif request.include_briefing and successful_branches:
             try:
                 briefing = self.briefing_agent.generate(
                     request.competitor,
@@ -347,6 +427,8 @@ class MultiAgentOrchestrator:
                 briefing = None
         elif request.include_briefing:
             warnings.append("briefing skipped because no specialist branch succeeded")
+        if observer is not None and not stopped:
+            observer.stage_progress("briefing", 95)
 
         failed_branches = len(request.branches) - successful_branches
         if successful_branches == 0:
@@ -398,4 +480,4 @@ class MultiAgentOrchestrator:
         return list(tasks.values()), list(runs.values()), None
 
 
-__all__ = ["MultiAgentOrchestrator"]
+__all__ = ["MultiAgentOrchestrator", "OrchestrationObserver"]

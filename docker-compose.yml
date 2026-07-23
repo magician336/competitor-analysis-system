@@ -20,11 +20,25 @@ services:
 
   api:
     build:
-      context: ..
-      dockerfile: CodeRadar/Dockerfile
+      context: .
+      dockerfile: Dockerfile
       args:
         INSTALL_ML: ${MINIRAG_INSTALL_ML:-false}
     environment:
+      CODERADAR_DATABASE_URL: sqlite:////app/CodeRadar/data/runtime/coderadar.db
+      CODERADAR_AUTH_ENABLED: ${CODERADAR_AUTH_ENABLED:-true}
+      CODERADAR_API_KEY: ${CODERADAR_API_KEY:-coderadar-phase3-local-demo}
+      CODERADAR_READ_RATE_PER_MINUTE: ${CODERADAR_READ_RATE_PER_MINUTE:-120}
+      CODERADAR_WRITE_RATE_PER_MINUTE: ${CODERADAR_WRITE_RATE_PER_MINUTE:-30}
+      CODERADAR_CORS_ORIGINS: ${CODERADAR_CORS_ORIGINS:-http://localhost:5173}
+      CODERADAR_AGENT_MODE: ${CODERADAR_AGENT_MODE:-rules}
+      CODERADAR_LLM_PROVIDER: ${CODERADAR_LLM_PROVIDER:-deepseek}
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
+      DEEPSEEK_BASE_URL: ${DEEPSEEK_BASE_URL:-https://api.deepseek.com}
+      DEEPSEEK_MODEL: ${DEEPSEEK_MODEL:-deepseek-chat}
+      CODERADAR_LLM_TIMEOUT_SECONDS: ${CODERADAR_LLM_TIMEOUT_SECONDS:-45}
+      CODERADAR_LLM_MAX_TOKENS: ${CODERADAR_LLM_MAX_TOKENS:-1600}
+      CODERADAR_LLM_MAX_RETRIES: ${CODERADAR_LLM_MAX_RETRIES:-2}
       MINIRAG_DOCUMENTS_PATH: /app/CodeRadar/data/cleaned/documents.jsonl
       MINIRAG_ELASTICSEARCH_URL: http://elasticsearch:9200
       MINIRAG_CONFIG_PATH: /app/CodeRadar/config/mini_rag.yaml
@@ -36,10 +50,14 @@ services:
       MINIRAG_RERANKER_PROVIDER: ${MINIRAG_RERANKER_PROVIDER:-lexical}
       MINIRAG_RERANKER_MODEL: ${MINIRAG_RERANKER_MODEL:-BAAI/bge-reranker-v2-m3}
     ports:
-      - "127.0.0.1:8000:8000"
+      - "127.0.0.1:${CODERADAR_API_PORT:-8001}:8000"
     volumes:
       - ./data:/app/CodeRadar/data
+      - coderadar_runtime_data:/app/CodeRadar/data/runtime
       - coderadar_model_cache:/root/.cache/huggingface
+    dns:
+      - 223.5.5.5
+      - 1.1.1.1
     depends_on:
       elasticsearch:
         condition: service_healthy
@@ -57,6 +75,50 @@ services:
       start_period: 10s
     restart: unless-stopped
 
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        INSTALL_ML: ${MINIRAG_INSTALL_ML:-false}
+    command: ["python", "-m", "scripts.run_workflow_worker"]
+    environment:
+      CODERADAR_DATABASE_URL: sqlite:////app/CodeRadar/data/runtime/coderadar.db
+      MINIRAG_DOCUMENTS_PATH: /app/CodeRadar/data/cleaned/documents.jsonl
+      MINIRAG_ELASTICSEARCH_URL: http://elasticsearch:9200
+      MINIRAG_CONFIG_PATH: /app/CodeRadar/config/mini_rag.yaml
+      MINIRAG_TRACE_PATH: /app/CodeRadar/data/runtime/retrieval_traces.jsonl
+      MINIRAG_EMBEDDING_PROVIDER: ${MINIRAG_EMBEDDING_PROVIDER:-hash}
+      MINIRAG_EMBEDDING_MODEL: ${MINIRAG_EMBEDDING_MODEL:-BAAI/bge-m3}
+      MINIRAG_EMBEDDING_DIMENSION: ${MINIRAG_EMBEDDING_DIMENSION:-1024}
+      MINIRAG_MODEL_CACHE_DIR: /root/.cache/huggingface
+      MINIRAG_RERANKER_PROVIDER: ${MINIRAG_RERANKER_PROVIDER:-lexical}
+      MINIRAG_RERANKER_MODEL: ${MINIRAG_RERANKER_MODEL:-BAAI/bge-reranker-v2-m3}
+      CODERADAR_WORKFLOW_POLL_SECONDS: ${CODERADAR_WORKFLOW_POLL_SECONDS:-1}
+      CODERADAR_WORKFLOW_LEASE_SECONDS: ${CODERADAR_WORKFLOW_LEASE_SECONDS:-30}
+      CODERADAR_WORKFLOW_HEARTBEAT_SECONDS: ${CODERADAR_WORKFLOW_HEARTBEAT_SECONDS:-10}
+      CODERADAR_WORKFLOW_TIMEOUT_SECONDS: ${CODERADAR_WORKFLOW_TIMEOUT_SECONDS:-300}
+      CODERADAR_AGENT_MODE: ${CODERADAR_AGENT_MODE:-rules}
+      CODERADAR_LLM_PROVIDER: ${CODERADAR_LLM_PROVIDER:-deepseek}
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
+      DEEPSEEK_BASE_URL: ${DEEPSEEK_BASE_URL:-https://api.deepseek.com}
+      DEEPSEEK_MODEL: ${DEEPSEEK_MODEL:-deepseek-chat}
+      CODERADAR_LLM_TIMEOUT_SECONDS: ${CODERADAR_LLM_TIMEOUT_SECONDS:-45}
+      CODERADAR_LLM_MAX_TOKENS: ${CODERADAR_LLM_MAX_TOKENS:-1600}
+      CODERADAR_LLM_MAX_RETRIES: ${CODERADAR_LLM_MAX_RETRIES:-2}
+    volumes:
+      - ./data:/app/CodeRadar/data
+      - coderadar_runtime_data:/app/CodeRadar/data/runtime
+      - coderadar_model_cache:/root/.cache/huggingface
+    dns:
+      - 223.5.5.5
+      - 1.1.1.1
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    restart: unless-stopped
+
 volumes:
   coderadar_es_data:
   coderadar_model_cache:
+  coderadar_runtime_data:

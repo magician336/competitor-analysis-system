@@ -86,11 +86,12 @@ class EvidenceBackedAgent:
         *,
         llm_client: LangChainLLMClient | None = None,
         auto_configure_llm: bool = True,
+        llm_mode: str | None = None,
     ) -> None:
         self.rag_service = rag_service
         self.prompt_text = self._load_prompt()
         self.llm_client = (
-            LangChainLLMClient.from_env()
+            LangChainLLMClient.from_env(mode=llm_mode)
             if auto_configure_llm and llm_client is None
             else llm_client
         )
@@ -259,6 +260,8 @@ class EvidenceBackedAgent:
                     )
                     card = self._apply_llm_draft(card, draft)
                 except Exception as exc:
+                    if self.llm_client.strict:
+                        raise
                     warnings.append(
                         "LLM structured-output fallback to deterministic rules for "
                         f"event {card.card_id}: {type(exc).__name__}: {exc}"
@@ -346,7 +349,7 @@ class EvidenceBackedAgent:
             "impact_details": impacts or card.impact_details,
             "conflict_notes": draft.conflict_notes,
             "assumptions": draft.assumptions,
-            "analysis_mode": "hybrid",
+            "analysis_mode": self.llm_client.analysis_mode,
             "model_name": self.llm_client.model_name if self.llm_client else None,
         }
         # Full validation is intentional: model_copy(update=...) would skip

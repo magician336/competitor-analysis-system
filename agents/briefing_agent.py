@@ -78,10 +78,9 @@ class BriefingAgent:
             "competitor",
             "briefing_meta",
             "executive_summary",
-            "core_dynamics",
-            "opportunities",
-            "threats",
-            "actions",
+            "latest_changes",
+            "capability_observations",
+            "risk_signals",
             "capability_snapshot",
             "evidence_index",
             "review_items",
@@ -186,22 +185,31 @@ class BriefingAgent:
             "competitor": _plain(payload["competitor"]),
             "briefing_meta": cls._briefing_meta(cards, snapshot),
             "executive_summary": cls._executive_summary(cards, snapshot, evidence, reviews),
-            "core_dynamics": cls._core_dynamics(cards),
-            "opportunities": cls._statements(
+            "latest_changes": cls._core_dynamics(cards),
+            "capability_observations": cls._statements(
                 cards,
-                "opportunity",
-                "暂无可用机会结论。",
+                "impact_analysis",
+                "暂无可用能力观察。",
             ),
-            "threats": cls._statements(cards, "threat", "暂无可用威胁结论。"),
-            "actions": cls._statements(
-                cards,
-                "recommended_action",
-                "暂无可执行行动建议。",
-            ),
+            "risk_signals": cls._risk_signals(cards),
             "capability_snapshot": cls._capability_snapshot(snapshot, previous),
             "evidence_index": cls._evidence_index(evidence),
             "review_items": "\n".join(f"- {item}" for item in reviews),
         }
+
+    @staticmethod
+    def _risk_signals(cards: list[IntelligenceCard]) -> str:
+        if not cards:
+            return "暂无可用风险信号。"
+        lines: list[str] = []
+        for card in cards:
+            notes = "；".join(_plain(item) for item in card.conflict_notes if _plain(item))
+            suffix = f"；冲突：{notes}" if notes else ""
+            lines.append(
+                f"- **{_plain(card.event_title)}**：风险等级 {card.threat_level.value}；"
+                f"置信度 {card.confidence_score:.2f}{suffix}。"
+            )
+        return "\n".join(lines)
 
     @staticmethod
     def _briefing_meta(

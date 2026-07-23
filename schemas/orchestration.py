@@ -7,7 +7,7 @@ import json
 import re
 from datetime import datetime, timezone
 from enum import Enum
-from typing import Any
+from typing import Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
@@ -73,6 +73,7 @@ class MultiAgentAnalysisRequest(AgentAnalysisRequest):
         min_length=1,
         max_length=3,
     )
+    analysis_mode: Literal["rules", "hybrid", "llm"] = "rules"
     include_snapshot: bool = True
     include_briefing: bool = True
     include_benchmark_data: bool = False

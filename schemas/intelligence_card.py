@@ -422,6 +422,10 @@ class AgentExecutionTrace(BaseModel):
     llm_used: bool = False
     fallback_used: bool = False
     model_name: str | None = None
+    llm_call_count: int = Field(default=0, ge=0)
+    input_tokens: int = Field(default=0, ge=0)
+    output_tokens: int = Field(default=0, ge=0)
+    total_tokens: int = Field(default=0, ge=0)
 
 
 class AgentRunResult(BaseModel):

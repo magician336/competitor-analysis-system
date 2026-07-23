@@ -10,7 +10,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /app
 
-COPY CodeRadar/requirements-api.txt /app/CodeRadar/requirements-api.txt
+COPY requirements-api.txt /app/CodeRadar/requirements-api.txt
 RUN python -m pip install --upgrade pip && \
     python -m pip install -r /app/CodeRadar/requirements-api.txt
 
@@ -20,7 +20,7 @@ RUN if [ "${INSTALL_ML}" = "true" ]; then \
         python -m pip install "sentence-transformers==5.6.0"; \
     fi
 
-COPY CodeRadar /app/CodeRadar
+COPY . /app/CodeRadar
 WORKDIR /app/CodeRadar
 
 EXPOSE 8000

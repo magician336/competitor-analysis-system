@@ -43,3 +43,13 @@ def test_settings_reject_blank_model(monkeypatch) -> None:
 
     with pytest.raises(ValueError):
         LLMSettings.from_env()
+
+
+def test_request_mode_override_does_not_mutate_process_environment(monkeypatch) -> None:
+    monkeypatch.setenv("CODERADAR_AGENT_MODE", "rules")
+    monkeypatch.setenv("DEEPSEEK_API_KEY", "configured-for-construction")
+
+    settings = LLMSettings.from_env(mode="hybrid")
+
+    assert settings.mode == "hybrid"
+    assert LLMSettings.from_env().mode == "rules"

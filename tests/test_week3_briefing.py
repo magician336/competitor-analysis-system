@@ -102,11 +102,10 @@ def test_briefing_has_required_sections_priority_order_and_deduplicated_evidence
     output = BriefingAgent().generate("Cursor", [low, high])
 
     for heading in (
-        "## 执行摘要",
-        "## 核心动态",
-        "## 机会",
-        "## 威胁",
-        "## 行动建议",
+        "## 核心摘要",
+        "## 最新变化",
+        "## 能力观察",
+        "## 风险信号",
         "## 七维能力快照",
         "## 证据索引",
         "## 复核项",
@@ -175,7 +174,7 @@ def test_empty_inputs_still_produce_complete_reviewable_briefing() -> None:
     output = BriefingAgent().generate("Cursor", [])
 
     assert output.startswith("<!--")
-    assert "# Cursor 竞争态势简报" in output
+    assert "# Cursor 模型趋势分析简报" in output
     assert "暂无竞品动态" in output
     assert "insufficient snapshot" in output
     assert "没有匹配竞品的情报卡片" in output
