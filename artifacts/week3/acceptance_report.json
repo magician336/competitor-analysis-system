@@ -4,13 +4,13 @@
     {
       "check_id": "environment",
       "details": {
-        "conda_environment": "CodeRadar",
-        "conda_prefix": "E:\\Software\\Scoop\\apps\\miniconda3\\current\\envs\\CodeRadar",
+        "conda_environment": "base",
+        "conda_prefix": "E:\\Software\\Scoop\\apps\\miniconda3\\current",
         "python_executable": "E:\\Software\\Scoop\\apps\\miniconda3\\current\\envs\\CodeRadar\\python.exe",
         "python_version": "3.11.9"
       },
-      "message": "Python and Conda environment metadata recorded",
-      "status": "pass"
+      "message": "active Conda environment is 'base', not 'CodeRadar'",
+      "status": "warning"
     },
     {
       "check_id": "langchain_and_agents",
@@ -97,18 +97,18 @@
     }
   ],
   "environment": {
-    "conda_environment": "CodeRadar",
-    "conda_prefix": "E:\\Software\\Scoop\\apps\\miniconda3\\current\\envs\\CodeRadar",
+    "conda_environment": "base",
+    "conda_prefix": "E:\\Software\\Scoop\\apps\\miniconda3\\current",
     "python_executable": "E:\\Software\\Scoop\\apps\\miniconda3\\current\\envs\\CodeRadar\\python.exe",
     "python_version": "3.11.9"
   },
   "failed_count": 0,
-  "generated_at": "2026-07-21T08:46:48.229309Z",
+  "generated_at": "2026-07-23T14:20:47.115966Z",
   "live_llm_requested": false,
   "offline": true,
-  "passed_count": 5,
+  "passed_count": 4,
   "project_root": "D:\\code_warehouse\\Curriculum\\InternshipTraining\\Proj\\competitor-analysis-system",
   "report_version": "week3-acceptance-v1",
   "status": "accepted",
-  "warning_count": 0
+  "warning_count": 1
 }

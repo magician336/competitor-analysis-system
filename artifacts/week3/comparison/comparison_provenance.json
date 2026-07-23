@@ -30,12 +30,12 @@
     "codemate_baseline_snapshot.json",
     "comparison_provenance.json"
   ],
-  "generated_at": "2026-07-21T08:46:39.096618+00:00",
+  "generated_at": "2026-07-23T14:19:53.447393+00:00",
   "inputs": {
     "baseline_snapshot": null,
     "capability_snapshots": {
       "path": "D:\\code_warehouse\\Curriculum\\InternshipTraining\\Proj\\competitor-analysis-system\\artifacts\\week3\\capability_snapshots.json",
-      "sha256": "sha256:4b61db4b90b938d17907a53b5a2e7337c90dc0d35636baaddc11a0a70907cbc5"
+      "sha256": "sha256:3608959fb7e0232ed3bfaf0fb630826473b77cdc74552fa90929adae557cd684"
     },
     "previous_snapshots": null
   },
