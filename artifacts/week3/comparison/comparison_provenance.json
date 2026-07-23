@@ -13,9 +13,9 @@
   "current_snapshot_ids": {
     "CodeGeeX": "snap_daff2b08c5201bc50cb3",
     "CodeMate Campus": "snap_364fea7f15916e0be879",
-    "Cursor": "snap_45f7479445e30ffbe5f2",
-    "GitHub Copilot": "snap_e59aa3e8c84b1dec0abc",
-    "Trae": "snap_5427c2e7fc0a3bb7da11",
+    "Cursor": "snap_654a3cadc326fde28c59",
+    "GitHub Copilot": "snap_ed5d5e312d5f07def6b4",
+    "Trae": "snap_0ee24ef1d0e0aa56ae2f",
     "通义灵码": "snap_c3662393158c6db99887"
   },
   "external_products": [
@@ -30,12 +30,12 @@
     "codemate_baseline_snapshot.json",
     "comparison_provenance.json"
   ],
-  "generated_at": "2026-07-20T11:36:50.270943+00:00",
+  "generated_at": "2026-07-21T08:46:39.096618+00:00",
   "inputs": {
     "baseline_snapshot": null,
     "capability_snapshots": {
-      "path": "C:\\Users\\lenovo\\Desktop\\Projects\\competitor-analysis-system\\artifacts\\week3\\capability_snapshots.json",
-      "sha256": "sha256:8589ef6a6414da265a6b3c506931c0595af8a9e52e2cfdf9adebf66688509a91"
+      "path": "D:\\code_warehouse\\Curriculum\\InternshipTraining\\Proj\\competitor-analysis-system\\artifacts\\week3\\capability_snapshots.json",
+      "sha256": "sha256:4b61db4b90b938d17907a53b5a2e7337c90dc0d35636baaddc11a0a70907cbc5"
     },
     "previous_snapshots": null
   },

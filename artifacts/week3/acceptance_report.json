@@ -1,12 +1,12 @@
 {
-  "artifact_root": "C:\\Users\\lenovo\\Desktop\\Projects\\competitor-analysis-system\\artifacts\\week3",
+  "artifact_root": "D:\\code_warehouse\\Curriculum\\InternshipTraining\\Proj\\competitor-analysis-system\\artifacts\\week3",
   "checks": [
     {
       "check_id": "environment",
       "details": {
         "conda_environment": "CodeRadar",
-        "conda_prefix": "D:\\Miniconda\\envs\\CodeRadar",
-        "python_executable": "D:\\Miniconda\\envs\\CodeRadar\\python.exe",
+        "conda_prefix": "E:\\Software\\Scoop\\apps\\miniconda3\\current\\envs\\CodeRadar",
+        "python_executable": "E:\\Software\\Scoop\\apps\\miniconda3\\current\\envs\\CodeRadar\\python.exe",
         "python_version": "3.11.9"
       },
       "message": "Python and Conda environment metadata recorded",
@@ -23,7 +23,7 @@
         "structured_tool": "StructuredTool",
         "versions": {
           "langchain": "1.3.14",
-          "langchain-core": "1.4.9",
+          "langchain-core": "1.5.0",
           "langchain-deepseek": "1.1.0",
           "pydantic": "2.10.6"
         }
@@ -54,7 +54,7 @@
     {
       "check_id": "formal_manual_runs",
       "details": {
-        "path": "C:\\Users\\lenovo\\Desktop\\Projects\\competitor-analysis-system\\benchmarks\\results\\manual_runs.csv",
+        "path": "D:\\code_warehouse\\Curriculum\\InternshipTraining\\Proj\\competitor-analysis-system\\benchmarks\\results\\manual_runs.csv",
         "run_count": 0,
         "sample_run_count": 0
       },
@@ -89,7 +89,7 @@
         "scoring_version": "week3-evidence-v2",
         "snapshot_count": 5,
         "trace_count": 15,
-        "unknown_product_version_count": 2,
+        "unknown_product_version_count": 3,
         "workflow_count": 5
       },
       "message": "Manifest, cards, snapshots, workflows, traces and briefings are consistent",
@@ -98,16 +98,16 @@
   ],
   "environment": {
     "conda_environment": "CodeRadar",
-    "conda_prefix": "D:\\Miniconda\\envs\\CodeRadar",
-    "python_executable": "D:\\Miniconda\\envs\\CodeRadar\\python.exe",
+    "conda_prefix": "E:\\Software\\Scoop\\apps\\miniconda3\\current\\envs\\CodeRadar",
+    "python_executable": "E:\\Software\\Scoop\\apps\\miniconda3\\current\\envs\\CodeRadar\\python.exe",
     "python_version": "3.11.9"
   },
   "failed_count": 0,
-  "generated_at": "2026-07-21T03:32:17.211178Z",
+  "generated_at": "2026-07-21T08:46:48.229309Z",
   "live_llm_requested": false,
   "offline": true,
   "passed_count": 5,
-  "project_root": "C:\\Users\\lenovo\\Desktop\\Projects\\competitor-analysis-system",
+  "project_root": "D:\\code_warehouse\\Curriculum\\InternshipTraining\\Proj\\competitor-analysis-system",
   "report_version": "week3-acceptance-v1",
   "status": "accepted",
   "warning_count": 0

@@ -27,12 +27,12 @@
     "product": {
       "hybrid": 0,
       "llm": 0,
-      "rules": 16
+      "rules": 15
     },
     "risk": {
       "hybrid": 0,
       "llm": 0,
-      "rules": 14
+      "rules": 15
     }
   },
   "evidence_backed_card_count": 26,
@@ -62,19 +62,19 @@
     "traces": "trace_summaries.json",
     "workflows": "workflow_summary.json"
   },
-  "generated_at": "2026-07-20T11:36:08.228199+00:00",
+  "generated_at": "2026-07-21T08:46:32.777249+00:00",
   "input_sha256": {
     "cleaned_data": {
       "path": "data/cleaned/documents.jsonl",
-      "sha256": "sha256:7582e18cead048d504a2c79b19e6bb541081f4e8d1cde970aba7471ef11a51b6"
+      "sha256": "sha256:92b1cb46737c496e59c9cb1ce09f9664c18879f0a794db0d23c95f2ae88f93d1"
     },
     "scoring": {
       "path": "config/scoring.yaml",
-      "sha256": "sha256:b9ad826ac4a2753d6ec39ce5bbb205ede646efaff0251d111c6bbce4ff818961"
+      "sha256": "sha256:6d19e785f0ec14d31a632913897b49ce666c9c3ba8ab8cba06a7d400d22b4f78"
     },
     "tasks": {
       "path": "benchmarks/tasks/tasks.jsonl",
-      "sha256": "sha256:16517a067eb76f4e7a138a2010c0a1d2343fca2e88e31d8199d99e272c9b8f08"
+      "sha256": "sha256:d87c1e56011995c0e110dc8e0a4f1ba73312027b00962c10657a536acfd20aaf"
     }
   },
   "intelligence_card_count": 35,
@@ -83,8 +83,8 @@
     "embedding_dimension": 1024,
     "embedding_model": "hash-embedding/coderadar-v1",
     "index": "coderadar_chunks_current",
-    "indexed_chunks": 2633,
-    "physical_index": "coderadar_chunks_v20260720015431565746"
+    "indexed_chunks": 2052,
+    "physical_index": "coderadar_chunks_v20260721084613520361"
   },
   "requested_analysis_mode": "rules",
   "scoring_version": "week3-evidence-v2",

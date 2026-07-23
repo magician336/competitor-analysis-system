@@ -14,10 +14,10 @@ CodeRadar Briefing 安全与渲染契约：
 
 ## 执行摘要
 
-- 纳入 **7** 张情报卡片、**6** 条去重证据；当前有 **13** 项待复核。
+- 纳入 **7** 张情报卡片、**6** 条去重证据；当前有 **12** 项待复核。
 - 最高优先级动态为 **Cursor 产品与技术发布: Cursor Mobile App for iOS** （78/100，orange）。
 - 红色优先级动态 **0** 项，列表已按优先级降序排列。
-- 七维综合分 **60.68**，覆盖率 **82.0%**，总体置信度 **0.42**。
+- 七维综合分 **53.28**，覆盖率 **72.0%**，总体置信度 **0.38**。
 
 ## 核心动态
 
@@ -25,21 +25,21 @@ CodeRadar Briefing 安全与渲染契约：
    - 摘要：基于 1 条可追溯证据，Cursor 存在与产品与技术发布相关的动态：Cursor Mobile App for iOS。
    - 类型：product_release；能力：D2 项目级上下文与 Agent、D4 模型接入与扩展
    - 置信度：0.84；证据：1 条
-2. **Cursor 产品与技术发布: Cursor Security Review** — 优先级 76/100，告警 orange，风险 high
-   - 摘要：基于 2 条可追溯证据，Cursor 存在与产品与技术发布相关的动态：Cursor Security Review；Cursor Security Review。
+2. **Cursor 产品与技术发布: Cursor Security Review** — 优先级 75/100，告警 orange，风险 high
+   - 摘要：基于 1 条可追溯证据，Cursor 存在与产品与技术发布相关的动态：Cursor Security Review。
    - 类型：product_release；能力：D2 项目级上下文与 Agent、D3 IDE、工具链与生态、D4 模型接入与扩展、D6 安全与合规
-   - 置信度：0.88；证据：2 条
-3. **Cursor 产品与技术发布: Build programmatic agents with the Cursor SDK** — 优先级 72/100，告警 orange，风险 high
-   - 摘要：基于 1 条可追溯证据，Cursor 存在与产品与技术发布相关的动态：Build programmatic agents with the Cursor SDK。
-   - 类型：product_release；能力：D2 项目级上下文与 Agent、D4 模型接入与扩展、D5 性能、稳定性与成本
    - 置信度：0.84；证据：1 条
-4. **Cursor 产品与技术发布: Cursor in Jira** — 优先级 72/100，告警 orange，风险 high
+3. **Cursor 产品与技术发布: Improvements to Cursor Automations** — 优先级 73/100，告警 orange，风险 high
+   - 摘要：基于 2 条可追溯证据，Cursor 存在与产品与技术发布相关的动态：Improvements to Cursor Automations；Improvements to Cursor Automations。
+   - 类型：product_release；能力：D2 项目级上下文与 Agent、D3 IDE、工具链与生态
+   - 置信度：0.88；证据：2 条
+4. **Cursor 产品与技术发布: Organizations for Cursor Enterprise** — 优先级 72/100，告警 orange，风险 high
+   - 摘要：基于 1 条可追溯证据，Cursor 存在与产品与技术发布相关的动态：Organizations for Cursor Enterprise。
+   - 类型：product_release；能力：D2 项目级上下文与 Agent、D4 模型接入与扩展、D6 安全与合规
+   - 置信度：0.84；证据：1 条
+5. **Cursor 产品与技术发布: Cursor in Jira** — 优先级 72/100，告警 orange，风险 high
    - 摘要：基于 1 条可追溯证据，Cursor 存在与产品与技术发布相关的动态：Cursor in Jira。
    - 类型：product_release；能力：D1 代码智能与生成质量、D2 项目级上下文与 Agent
-   - 置信度：0.84；证据：1 条
-5. **Cursor 产品与技术发布: Improvements to Cursor Automations** — 优先级 72/100，告警 orange，风险 high
-   - 摘要：基于 1 条可追溯证据，Cursor 存在与产品与技术发布相关的动态：Improvements to Cursor Automations。
-   - 类型：product_release；能力：D2 项目级上下文与 Agent、D3 IDE、工具链与生态
    - 置信度：0.84；证据：1 条
 6. **Cursor 开发者体验与风险舆情: Cursor** — 优先级 20/100，告警 blue，风险 unknown
    - 摘要：未从 Mini-RAG 检索到 Cursor 的开发者体验与风险舆情证据，需要补充采集或放宽过滤条件。
@@ -77,12 +77,12 @@ CodeRadar Briefing 安全与渲染契约：
 | D1 代码智能与生成质量 | 74 | 0.34 | 1 | — | scored |
 | D2 项目级上下文与 Agent | 74 | 0.75 | 6 | — | scored |
 | D3 IDE、工具链与生态 | 74 | 0.54 | 3 | — | scored |
-| D4 模型接入与扩展 | 74 | 0.70 | 4 | — | scored |
-| D5 性能、稳定性与成本 | 74 | 0.34 | 1 | — | scored |
-| D6 安全与合规 | 74 | 0.43 | 2 | — | scored |
+| D4 模型接入与扩展 | 74 | 0.61 | 3 | — | scored |
+| D5 性能、稳定性与成本 | — | — | 0 | — | insufficient_evidence（证据不足，待复核） |
+| D6 安全与合规 | 74 | 0.45 | 2 | — | scored |
 | D7 教育适配 | — | — | 0 | — | insufficient_evidence（证据不足，待复核） |
 
-> 综合分 60.68；覆盖率 82.0%；总体置信度 0.42；快照 snap_45f7479445e30ffbe5f2。
+> 综合分 53.28；覆盖率 72.0%；总体置信度 0.38；快照 snap_654a3cadc326fde28c59。
 
 ## 证据索引
 
@@ -90,10 +90,10 @@ CodeRadar Briefing 安全与渲染契约：
 |---|---|---|:---:|---|---|
 | `chunk_274fd035596704cdaff36f33` | Cursor Mobile App for iOS | [https://cursor.com/changelog/ios-mobile-app](<https://cursor.com/changelog/ios-mobile-app>) | A | 2026-06-29 / 3.9.0 | Cursor 产品与技术发布: Cursor Mobile App for iOS |
 | `chunk_a170127cf88580ed3a239878` | Cursor Security Review | [https://cursor.com/changelog/04-30-26](<https://cursor.com/changelog/04-30-26>) | A | 2026-04-30 / 版本未知（待复核） | Cursor 产品与技术发布: Cursor Security Review |
-| `chunk_36f72c54a6630c5893d28207` | Cursor Security Review | [https://cursor.com/changelog/04-30-26](<https://cursor.com/changelog/04-30-26>) | A | 2026-04-30 / 版本未知（待复核） | Cursor 产品与技术发布: Cursor Security Review |
-| `chunk_33c1939261e77fc3e99a4f79` | Build programmatic agents with the Cursor SDK | [https://cursor.com/changelog/sdk-release](<https://cursor.com/changelog/sdk-release>) | A | 2026-04-29 / 版本未知（待复核） | Cursor 产品与技术发布: Build programmatic agents with the Cursor SDK |
-| `chunk_6505594be4e601c5494ec29c` | Cursor in Jira | [https://cursor.com/changelog/05-19-26](<https://cursor.com/changelog/05-19-26>) | A | 2026-05-19 / 版本未知（待复核） | Cursor 产品与技术发布: Cursor in Jira |
 | `chunk_ba24ea3712a1426b2315e94a` | Improvements to Cursor Automations | [https://cursor.com/changelog/06-18-26](<https://cursor.com/changelog/06-18-26>) | A | 2026-06-18 / 3.8.0 | Cursor 产品与技术发布: Improvements to Cursor Automations |
+| `chunk_44201142d36cffcccb5626f7` | Improvements to Cursor Automations | [https://cursor.com/changelog/06-18-26](<https://cursor.com/changelog/06-18-26>) | A | 2026-06-18 / 3.8.0 | Cursor 产品与技术发布: Improvements to Cursor Automations |
+| `chunk_7bf587db7b0089116e58b513` | Organizations for Cursor Enterprise | [https://cursor.com/changelog/enterprise-organizations](<https://cursor.com/changelog/enterprise-organizations>) | A | 2026-06-03 / 版本未知（待复核） | Cursor 产品与技术发布: Organizations for Cursor Enterprise |
+| `chunk_6505594be4e601c5494ec29c` | Cursor in Jira | [https://cursor.com/changelog/05-19-26](<https://cursor.com/changelog/05-19-26>) | A | 2026-05-19 / 版本未知（待复核） | Cursor 产品与技术发布: Cursor in Jira |
 
 ## 复核项
 
@@ -104,9 +104,8 @@ CodeRadar Briefing 安全与渲染契约：
 - Cursor 商业化与价格变化: Cursor：没有绑定证据。
 - Cursor 商业化与价格变化: Cursor：假设待核验——当前没有检索到可引用证据，结论仅作为待补证据的占位。
 - 证据 chunk_a170127cf88580ed3a239878 缺少产品版本。
-- 证据 chunk_36f72c54a6630c5893d28207 缺少产品版本。
-- 证据 chunk_33c1939261e77fc3e99a4f79 缺少产品版本。
+- 证据 chunk_7bf587db7b0089116e58b513 缺少产品版本。
 - 证据 chunk_6505594be4e601c5494ec29c 缺少产品版本。
-- 能力快照证据不足：D7 教育适配。
-- 能力快照覆盖率仅 82.0%。
-- 能力快照总体置信度仅 0.42。
+- 能力快照证据不足：D5 性能、稳定性与成本、D7 教育适配。
+- 能力快照覆盖率仅 72.0%。
+- 能力快照总体置信度仅 0.38。

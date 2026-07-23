@@ -39,7 +39,7 @@ class Seed:
 
 SEEDS: tuple[Seed, ...] = (
     Seed("cursor_official_agent", "Cursor 官网如何描述把开发任务交给 Agent 的工作方式？", "Cursor", "official_page", "handing off tasks to Cursor", dimension="agent_context"),
-    Seed("cursor_teams_price", "Cursor Teams 套餐的月费和团队管理能力是什么？", "Cursor", "pricing", "$40 / user / mo.", title_contains="Cursor · Pricing", dimension="performance_cost"),
+    Seed("cursor_teams_price", "Cursor Teams 套餐的月费和团队管理能力是什么？", "Cursor", "pricing", "$32 / user / mo.", title_contains="Cursor · Pricing", dimension="performance_cost"),
     Seed("cursor_enterprise_controls", "Cursor Enterprise 套餐提供哪些访问控制和审计能力？", "Cursor", "pricing", "SCIM seat management", title_contains="Cursor · Pricing", dimension="security_compliance"),
     Seed("cursor_side_chats_311", "Cursor 3.11 的 side chat 如何避免打断主 Agent 会话？", "Cursor", "official_changelog", "without interrupting your main agent conversation", title_contains="Side Chats and Conversation Search", dimension="agent_context", use_version_filter=True),
     Seed("cursor_automations_38", "Cursor 3.8 Automations 新增了哪些触发器和计算机操作能力？", "Cursor", "official_changelog", "new triggers for GitHub and Slack, and support for computer use", title_contains="Improvements to Cursor Automations", dimension="agent_context", use_version_filter=True),
@@ -115,6 +115,10 @@ def _resolve_seed(seed: Seed, chunks: Sequence[Chunk]) -> list[Chunk]:
         if chunk.competitor == seed.competitor
         and chunk.source_type.value == seed.source_type
         and seed.needle.casefold() in chunk.content.casefold()
+        # 评测 relevant chunk 必须是当前版本：case 的 query_filters 固定
+        # current_only=True，选到历史版本会导致 validate 时 current_only
+        # 过滤不满足，且与真实检索行为不一致。
+        and chunk.is_current
         and (
             seed.title_contains is None
             or seed.title_contains.casefold() in chunk.title.casefold()

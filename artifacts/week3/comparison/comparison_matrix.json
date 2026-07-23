@@ -4,26 +4,26 @@
   "current_snapshot_ids": {
     "CodeGeeX": "snap_daff2b08c5201bc50cb3",
     "CodeMate Campus": "snap_364fea7f15916e0be879",
-    "Cursor": "snap_45f7479445e30ffbe5f2",
-    "GitHub Copilot": "snap_e59aa3e8c84b1dec0abc",
-    "Trae": "snap_5427c2e7fc0a3bb7da11",
+    "Cursor": "snap_654a3cadc326fde28c59",
+    "GitHub Copilot": "snap_ed5d5e312d5f07def6b4",
+    "Trae": "snap_0ee24ef1d0e0aa56ae2f",
     "通义灵码": "snap_c3662393158c6db99887"
   },
   "fastest_growth": null,
   "gap_trends": [],
   "most_competitive_dimension": {
     "basis": "intensity_score = mean_score - population_stddev; higher means broadly strong and closely contested",
-    "dimension": "performance_cost",
-    "intensity_score": 41.411,
-    "mean_score": 62.5,
-    "population_stddev": 21.089,
+    "dimension": "security_compliance",
+    "intensity_score": 37.035,
+    "mean_score": 56.75,
+    "population_stddev": 19.715,
     "product_scores": {
       "Cursor": 74,
-      "GitHub Copilot": 76,
+      "GitHub Copilot": 53,
       "Trae": 26,
       "通义灵码": 74
     },
-    "score_spread": 50,
+    "score_spread": 48,
     "valid_product_count": 4
   },
   "previous_snapshot_ids": {},
@@ -62,17 +62,17 @@
     },
     {
       "comparable_trend_coverage": 0.0,
-      "coverage_ratio": 0.82,
+      "coverage_ratio": 0.72,
       "dimension_deltas": {},
       "gap_to_baseline_total": null,
       "product": "Cursor",
-      "rank": 1,
-      "rank_eligible": true,
-      "ranking_reason": "weighted scored-dimension coverage satisfies minimum_rank_coverage=0.80",
-      "snapshot_id": "snap_45f7479445e30ffbe5f2",
+      "rank": null,
+      "rank_eligible": false,
+      "ranking_reason": "unranked because weighted scored-dimension coverage 0.720 is below 0.800",
+      "snapshot_id": "snap_654a3cadc326fde28c59",
       "trend_eligible": false,
       "trend_reason": "trend unavailable because comparable current/previous coverage 0.000 is below 0.800",
-      "weighted_confidence": 0.515,
+      "weighted_confidence": 0.53,
       "weighted_delta": null,
       "weighted_total_score": 74.0
     },
@@ -82,15 +82,15 @@
       "dimension_deltas": {},
       "gap_to_baseline_total": null,
       "product": "GitHub Copilot",
-      "rank": 3,
+      "rank": 2,
       "rank_eligible": true,
       "ranking_reason": "weighted scored-dimension coverage satisfies minimum_rank_coverage=0.80",
-      "snapshot_id": "snap_e59aa3e8c84b1dec0abc",
+      "snapshot_id": "snap_ed5d5e312d5f07def6b4",
       "trend_eligible": false,
       "trend_reason": "trend unavailable because comparable current/previous coverage 0.000 is below 0.800",
-      "weighted_confidence": 0.697,
+      "weighted_confidence": 0.747,
       "weighted_delta": null,
-      "weighted_total_score": 67.3
+      "weighted_total_score": 64.34
     },
     {
       "comparable_trend_coverage": 0.0,
@@ -98,13 +98,13 @@
       "dimension_deltas": {},
       "gap_to_baseline_total": null,
       "product": "Trae",
-      "rank": 4,
+      "rank": 3,
       "rank_eligible": true,
       "ranking_reason": "weighted scored-dimension coverage satisfies minimum_rank_coverage=0.80",
-      "snapshot_id": "snap_5427c2e7fc0a3bb7da11",
+      "snapshot_id": "snap_0ee24ef1d0e0aa56ae2f",
       "trend_eligible": false,
       "trend_reason": "trend unavailable because comparable current/previous coverage 0.000 is below 0.800",
-      "weighted_confidence": 0.428,
+      "weighted_confidence": 0.407,
       "weighted_delta": null,
       "weighted_total_score": 26.0
     },
@@ -159,17 +159,17 @@
           "status": "scored"
         },
         {
-          "confidence": 0.639,
+          "confidence": 0.559,
           "delta_from_previous": null,
           "dimension": "code_intelligence",
           "evidence_count": 3,
           "gap_to_baseline": null,
           "product": "GitHub Copilot",
-          "score": 74,
+          "score": 63,
           "status": "scored"
         },
         {
-          "confidence": 0.366,
+          "confidence": 0.311,
           "delta_from_previous": null,
           "dimension": "code_intelligence",
           "evidence_count": 2,
@@ -190,7 +190,7 @@
         }
       ],
       "dimension": "code_intelligence",
-      "mean_score": 54.8,
+      "mean_score": 52.6,
       "score_spread": 48,
       "valid_product_count": 5
     },
@@ -227,20 +227,20 @@
           "status": "scored"
         },
         {
-          "confidence": 0.719,
+          "confidence": 0.726,
           "delta_from_previous": null,
           "dimension": "agent_context",
           "evidence_count": 16,
           "gap_to_baseline": null,
           "product": "GitHub Copilot",
-          "score": 57,
+          "score": 58,
           "status": "scored"
         },
         {
-          "confidence": 0.441,
+          "confidence": 0.533,
           "delta_from_previous": null,
           "dimension": "agent_context",
-          "evidence_count": 3,
+          "evidence_count": 5,
           "gap_to_baseline": null,
           "product": "Trae",
           "score": 26,
@@ -258,7 +258,7 @@
         }
       ],
       "dimension": "agent_context",
-      "mean_score": 51.4,
+      "mean_score": 51.6,
       "score_spread": 48,
       "valid_product_count": 5
     },
@@ -295,17 +295,17 @@
           "status": "scored"
         },
         {
-          "confidence": 0.719,
+          "confidence": 0.726,
           "delta_from_previous": null,
           "dimension": "ide_ecosystem",
           "evidence_count": 16,
           "gap_to_baseline": null,
           "product": "GitHub Copilot",
-          "score": 57,
+          "score": 58,
           "status": "scored"
         },
         {
-          "confidence": 0.366,
+          "confidence": 0.311,
           "delta_from_previous": null,
           "dimension": "ide_ecosystem",
           "evidence_count": 2,
@@ -326,7 +326,7 @@
         }
       ],
       "dimension": "ide_ecosystem",
-      "mean_score": 51.4,
+      "mean_score": 51.6,
       "score_spread": 48,
       "valid_product_count": 5
     },
@@ -353,27 +353,27 @@
           "status": "scored"
         },
         {
-          "confidence": 0.702,
+          "confidence": 0.606,
           "delta_from_previous": null,
           "dimension": "model_extensibility",
-          "evidence_count": 4,
+          "evidence_count": 3,
           "gap_to_baseline": null,
           "product": "Cursor",
           "score": 74,
           "status": "scored"
         },
         {
-          "confidence": 0.81,
+          "confidence": 0.811,
           "delta_from_previous": null,
           "dimension": "model_extensibility",
-          "evidence_count": 8,
+          "evidence_count": 11,
           "gap_to_baseline": null,
           "product": "GitHub Copilot",
-          "score": 68,
+          "score": 67,
           "status": "scored"
         },
         {
-          "confidence": 0.532,
+          "confidence": 0.46,
           "delta_from_previous": null,
           "dimension": "model_extensibility",
           "evidence_count": 4,
@@ -394,7 +394,7 @@
         }
       ],
       "dimension": "model_extensibility",
-      "mean_score": 53.6,
+      "mean_score": 53.4,
       "score_spread": 48,
       "valid_product_count": 5
     },
@@ -421,30 +421,30 @@
           "status": "insufficient_evidence"
         },
         {
-          "confidence": 0.338,
+          "confidence": 0.0,
           "delta_from_previous": null,
           "dimension": "performance_cost",
-          "evidence_count": 1,
+          "evidence_count": 0,
           "gap_to_baseline": null,
           "product": "Cursor",
-          "score": 74,
-          "status": "scored"
+          "score": null,
+          "status": "insufficient_evidence"
         },
         {
-          "confidence": 0.889,
+          "confidence": 0.906,
           "delta_from_previous": null,
           "dimension": "performance_cost",
-          "evidence_count": 6,
+          "evidence_count": 8,
           "gap_to_baseline": null,
           "product": "GitHub Copilot",
           "score": 76,
           "status": "scored"
         },
         {
-          "confidence": 0.352,
+          "confidence": 0.287,
           "delta_from_previous": null,
           "dimension": "performance_cost",
-          "evidence_count": 2,
+          "evidence_count": 1,
           "gap_to_baseline": null,
           "product": "Trae",
           "score": 26,
@@ -462,9 +462,9 @@
         }
       ],
       "dimension": "performance_cost",
-      "mean_score": 62.5,
+      "mean_score": 58.67,
       "score_spread": 50,
-      "valid_product_count": 4
+      "valid_product_count": 3
     },
     {
       "cells": [
@@ -489,7 +489,7 @@
           "status": "insufficient_evidence"
         },
         {
-          "confidence": 0.428,
+          "confidence": 0.448,
           "delta_from_previous": null,
           "dimension": "security_compliance",
           "evidence_count": 2,
@@ -499,20 +499,20 @@
           "status": "scored"
         },
         {
-          "confidence": 0.777,
+          "confidence": 0.69,
           "delta_from_previous": null,
           "dimension": "security_compliance",
-          "evidence_count": 12,
+          "evidence_count": 9,
           "gap_to_baseline": null,
           "product": "GitHub Copilot",
-          "score": 64,
+          "score": 53,
           "status": "scored"
         },
         {
-          "confidence": 0.553,
+          "confidence": 0.533,
           "delta_from_previous": null,
           "dimension": "security_compliance",
-          "evidence_count": 4,
+          "evidence_count": 5,
           "gap_to_baseline": null,
           "product": "Trae",
           "score": 26,
@@ -530,7 +530,7 @@
         }
       ],
       "dimension": "security_compliance",
-      "mean_score": 59.5,
+      "mean_score": 56.75,
       "score_spread": 48,
       "valid_product_count": 4
     },
@@ -567,13 +567,13 @@
           "status": "insufficient_evidence"
         },
         {
-          "confidence": 0.504,
+          "confidence": 0.906,
           "delta_from_previous": null,
           "dimension": "education_fit",
-          "evidence_count": 2,
+          "evidence_count": 8,
           "gap_to_baseline": null,
           "product": "GitHub Copilot",
-          "score": 74,
+          "score": 76,
           "status": "scored"
         },
         {
@@ -598,8 +598,8 @@
         }
       ],
       "dimension": "education_fit",
-      "mean_score": 58.0,
-      "score_spread": 48,
+      "mean_score": 58.67,
+      "score_spread": 50,
       "valid_product_count": 3
     }
   ],
@@ -619,19 +619,18 @@
       "evaluated_scores": {
         "CodeGeeX": 26,
         "Cursor": 74,
-        "GitHub Copilot": 74,
+        "GitHub Copilot": 63,
         "Trae": 26,
         "通义灵码": 74
       },
       "minimum_valid_products": 3,
-      "qualifying_product_count": 3,
+      "qualifying_product_count": 2,
       "qualifying_products": [
         "Cursor",
-        "GitHub Copilot",
         "通义灵码"
       ],
       "score_threshold": 70,
-      "status": "table_stakes",
+      "status": "not_table_stakes",
       "valid_product_count": 5
     },
     {
@@ -640,7 +639,7 @@
       "evaluated_scores": {
         "CodeGeeX": 26,
         "Cursor": 74,
-        "GitHub Copilot": 57,
+        "GitHub Copilot": 58,
         "Trae": 26,
         "通义灵码": 74
       },
@@ -660,7 +659,7 @@
       "evaluated_scores": {
         "CodeGeeX": 26,
         "Cursor": 74,
-        "GitHub Copilot": 57,
+        "GitHub Copilot": 58,
         "Trae": 26,
         "通义灵码": 74
       },
@@ -680,7 +679,7 @@
       "evaluated_scores": {
         "CodeGeeX": 26,
         "Cursor": 74,
-        "GitHub Copilot": 68,
+        "GitHub Copilot": 67,
         "Trae": 26,
         "通义灵码": 74
       },
@@ -698,28 +697,26 @@
       "basis": "table_stakes requires at least 3 scored products at or above 70",
       "dimension": "performance_cost",
       "evaluated_scores": {
-        "Cursor": 74,
         "GitHub Copilot": 76,
         "Trae": 26,
         "通义灵码": 74
       },
       "minimum_valid_products": 3,
-      "qualifying_product_count": 3,
+      "qualifying_product_count": 2,
       "qualifying_products": [
-        "Cursor",
         "GitHub Copilot",
         "通义灵码"
       ],
       "score_threshold": 70,
-      "status": "table_stakes",
-      "valid_product_count": 4
+      "status": "not_table_stakes",
+      "valid_product_count": 3
     },
     {
       "basis": "table_stakes requires at least 3 scored products at or above 70",
       "dimension": "security_compliance",
       "evaluated_scores": {
         "Cursor": 74,
-        "GitHub Copilot": 64,
+        "GitHub Copilot": 53,
         "Trae": 26,
         "通义灵码": 74
       },
@@ -738,7 +735,7 @@
       "dimension": "education_fit",
       "evaluated_scores": {
         "CodeGeeX": 26,
-        "GitHub Copilot": 74,
+        "GitHub Copilot": 76,
         "通义灵码": 74
       },
       "minimum_valid_products": 3,

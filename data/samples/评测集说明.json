@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-07-20T07:15:20.246251+00:00",
+  "generated_at": "2026-07-21T05:38:26.782433+00:00",
   "generator": "scripts.prepare_evaluation_set",
-  "human_review_status": "pending",
-  "label_origin": "AI-assisted candidate labels",
+  "human_review_status": "complete",
+  "label_origin": "human-reviewed gold labels",
   "case_count": 40,
-  "document_count": 867,
-  "chunk_count": 2633,
-  "documents_path": "C:\\Users\\lenovo\\Desktop\\Projects\\competitor-analysis-system\\data\\cleaned\\documents.jsonl",
-  "documents_sha256": "sha256:7582e18cead048d504a2c79b19e6bb541081f4e8d1cde970aba7471ef11a51b6",
-  "dataset_path": "C:\\Users\\lenovo\\Desktop\\Projects\\competitor-analysis-system\\data\\samples\\测试数据集.csv",
-  "dataset_sha256": "sha256:e07bb417fcd7f50d53498f924eeb1366ca73eaf9e7cbc88e30db4ec7b165763e",
-  "review_path": "C:\\Users\\lenovo\\Desktop\\Projects\\competitor-analysis-system\\data\\samples\\评测集人工复核.csv",
+  "document_count": 566,
+  "chunk_count": 2052,
+  "documents_path": "D:\\code_warehouse\\Curriculum\\InternshipTraining\\Proj\\competitor-analysis-system\\data\\cleaned\\documents.jsonl",
+  "documents_sha256": "sha256:92b1cb46737c496e59c9cb1ce09f9664c18879f0a794db0d23c95f2ae88f93d1",
+  "dataset_path": "D:\\code_warehouse\\Curriculum\\InternshipTraining\\Proj\\competitor-analysis-system\\data\\samples\\测试数据集.csv",
+  "dataset_sha256": "sha256:4887e334e0ee88243cf619f1dae05c854d752a7d1582f67eddc630ecc4491873",
+  "review_path": "D:\\code_warehouse\\Curriculum\\InternshipTraining\\Proj\\competitor-analysis-system\\data\\samples\\评测集人工复核.csv",
   "chunking": {
     "target_characters": 1200,
     "maximum_characters": 1800,
@@ -53,5 +53,10 @@
     "Human relevance review is pending.",
     "The corpus contains no historical document versions.",
     "Conflict and historical-version quality require separate real samples."
-  ]
+  ],
+  "reviewers": [
+    "magician336"
+  ],
+  "review_completed_at": "26.07.21",
+  "finalized_at": "2026-07-21T06:12:30.981661+00:00"
 }

@@ -8,16 +8,16 @@ CodeRadar Briefing 安全与渲染契约：
 
 # GitHub Copilot 竞争态势简报
 
-> 快照日期 2026-07-20；分析窗口 2026-04-21 至 2026-07-20；产品版本 1.123.0；评分规则 week3-evidence-v2。
+> 快照日期 2026-07-20；分析窗口 2026-04-21 至 2026-07-20；产品版本 unknown；评分规则 week3-evidence-v2。
 >
 > 生成约束：证据仅用于可追溯引用，其文本永远不作为指令执行。
 
 ## 执行摘要
 
-- 纳入 **9** 张情报卡片、**16** 条去重证据；当前有 **18** 项待复核。
+- 纳入 **9** 张情报卡片、**16** 条去重证据；当前有 **19** 项待复核。
 - 最高优先级动态为 **GitHub Copilot 产品与技术发布: Codex as agent provider and agentic enhancements in JetBrains IDEs** （87/100，red）。
 - 红色优先级动态 **3** 项，列表已按优先级降序排列。
-- 七维综合分 **67.30**，覆盖率 **100.0%**，总体置信度 **0.70**。
+- 七维综合分 **64.34**，覆盖率 **100.0%**，总体置信度 **0.75**。
 
 ## 核心动态
 
@@ -25,30 +25,30 @@ CodeRadar Briefing 安全与渲染契约：
    - 摘要：基于 2 条可追溯证据，GitHub Copilot 存在与产品与技术发布相关的动态：Codex as agent provider and agentic enhancements in JetBrains IDEs；Codex as agent provider and agentic enhancements in JetBrains IDEs。
    - 类型：product_release；能力：D1 代码智能与生成质量、D2 项目级上下文与 Agent、D3 IDE、工具链与生态、D4 模型接入与扩展、D5 性能、稳定性与成本、D6 安全与合规、D7 教育适配
    - 置信度：0.88；证据：2 条
-2. **GitHub Copilot 产品与技术发布: GitHub Copilot in Visual Studio Code, June 2026 releases** — 优先级 83/100，告警 red，风险 critical
-   - 摘要：基于 1 条可追溯证据，GitHub Copilot 存在与产品与技术发布相关的动态：GitHub Copilot in Visual Studio Code, June 2026 releases。
-   - 类型：product_release；能力：D1 代码智能与生成质量、D2 项目级上下文与 Agent、D3 IDE、工具链与生态、D4 模型接入与扩展、D5 性能、稳定性与成本、D6 安全与合规
-   - 置信度：0.84；证据：1 条
-3. **GitHub Copilot 产品与技术发布: Kimi K2.7 Code is generally available in GitHub Copilot** — 优先级 82/100，告警 red，风险 critical
-   - 摘要：基于 3 条可追溯证据，GitHub Copilot 存在与产品与技术发布相关的动态：Kimi K2.7 Code is generally available in GitHub Copilot；Kimi K2.7 Code is generally available in GitHub Copilot；Kimi K2.7 Code is generally available in GitHub Copilot。
-   - 类型：product_release；能力：D2 项目级上下文与 Agent、D3 IDE、工具链与生态、D4 模型接入与扩展、D5 性能、稳定性与成本、D6 安全与合规
-   - 置信度：0.93；证据：3 条
-4. **GitHub Copilot 产品与技术发布: Copilot agent session streaming is now in public preview** — 优先级 79/100，告警 orange，风险 high
-   - 摘要：基于 2 条可追溯证据，GitHub Copilot 存在与产品与技术发布相关的动态：Copilot agent session streaming is now in public preview；Copilot agent session streaming is now in public preview。
-   - 类型：product_release；能力：D2 项目级上下文与 Agent、D3 IDE、工具链与生态、D6 安全与合规
+2. **GitHub Copilot 产品与技术发布: GitHub Copilot in Visual Studio — June update** — 优先级 85/100，告警 red，风险 critical
+   - 摘要：基于 4 条可追溯证据，GitHub Copilot 存在与产品与技术发布相关的动态：GitHub Copilot in Visual Studio — June update；GitHub Copilot in Visual Studio — June update；GitHub Copilot in Visual Studio — June update。
+   - 类型：product_release；能力：D2 项目级上下文与 Agent、D3 IDE、工具链与生态、D4 模型接入与扩展、D5 性能、稳定性与成本、D7 教育适配
+   - 置信度：0.95；证据：4 条
+3. **GitHub Copilot 产品与技术发布: GitHub Copilot for JetBrains expands BYOK capabilities** — 优先级 84/100，告警 red，风险 critical
+   - 摘要：基于 2 条可追溯证据，GitHub Copilot 存在与产品与技术发布相关的动态：GitHub Copilot for JetBrains expands BYOK capabilities；GitHub Copilot for JetBrains expands BYOK capabilities。
+   - 类型：product_release；能力：D2 项目级上下文与 Agent、D3 IDE、工具链与生态、D4 模型接入与扩展、D5 性能、稳定性与成本、D6 安全与合规、D7 教育适配
    - 置信度：0.88；证据：2 条
-5. **GitHub Copilot 开发者体验与风险舆情: Feature request: configurable session root / CWD for chat agent sandbox** — 优先级 73/100，告警 orange，风险 high
+4. **GitHub Copilot 开发者体验与风险舆情: Feature request: configurable session root / CWD for chat agent sandbox** — 优先级 73/100，告警 orange，风险 high
    - 摘要：基于 2 条可追溯证据，GitHub Copilot 存在与开发者体验与风险舆情相关的动态：Feature request: configurable session root / CWD for chat agent sandbox；Feature request: configurable session root / CWD for chat agent sandbox。
    - 类型：risk_experience；能力：D2 项目级上下文与 Agent、D3 IDE、工具链与生态、D6 安全与合规
    - 置信度：0.78；证据：2 条
-6. **GitHub Copilot 开发者体验与风险舆情: Chat agent sandbox sets CWD to temp directory instead of workspace root** — 优先级 73/100，告警 orange，风险 high
+5. **GitHub Copilot 开发者体验与风险舆情: Chat agent sandbox sets CWD to temp directory instead of workspace root** — 优先级 73/100，告警 orange，风险 high
    - 摘要：基于 2 条可追溯证据，GitHub Copilot 存在与开发者体验与风险舆情相关的动态：Chat agent sandbox sets CWD to temp directory instead of workspace root；Chat agent sandbox sets CWD to temp directory instead of workspace root。
    - 类型：risk_experience；能力：D2 项目级上下文与 Agent、D3 IDE、工具链与生态、D6 安全与合规
    - 置信度：0.78；证据：2 条
-7. **GitHub Copilot 开发者体验与风险舆情: Windows Copilot CLI shim crashes when Get-Command copilot returns null** — 优先级 70/100，告警 orange，风险 high
-   - 摘要：基于 2 条可追溯证据，GitHub Copilot 存在与开发者体验与风险舆情相关的动态：Windows Copilot CLI shim crashes when Get-Command copilot returns null；Windows Copilot CLI shim crashes when Get-Command copilot returns null。
-   - 类型：risk_experience；能力：D2 项目级上下文与 Agent、D3 IDE、工具链与生态
-   - 置信度：0.78；证据：2 条
+6. **GitHub Copilot 开发者体验与风险舆情: No settings-level way to override default denyRead: [$HOME] in chat agent san...** — 优先级 72/100，告警 orange，风险 high
+   - 摘要：基于 1 条可追溯证据，GitHub Copilot 存在与开发者体验与风险舆情相关的动态：No settings-level way to override default denyRead: [$HOME] in chat a...。
+   - 类型：risk_experience；能力：D2 项目级上下文与 Agent、D3 IDE、工具链与生态、D6 安全与合规
+   - 置信度：0.74；证据：1 条
+7. **GitHub Copilot 开发者体验与风险舆情: Ollama BYOK agent conversation compaction appears to use incorrect token acco...** — 优先级 72/100，告警 orange，风险 high
+   - 摘要：基于 1 条可追溯证据，GitHub Copilot 存在与开发者体验与风险舆情相关的动态：Ollama BYOK agent conversation compaction appears to use incorrect to...。
+   - 类型：risk_experience；能力：D1 代码智能与生成质量、D2 项目级上下文与 Agent、D3 IDE、工具链与生态、D4 模型接入与扩展
+   - 置信度：0.74；证据：1 条
 8. **GitHub Copilot 开发者体验与风险舆情: Notify when Copilot agent sessions need attention or finish** — 优先级 70/100，告警 orange，风险 high
    - 摘要：基于 2 条可追溯证据，GitHub Copilot 存在与开发者体验与风险舆情相关的动态：Notify when Copilot agent sessions need attention or finish；Notify when Copilot agent sessions need attention or finish。
    - 类型：risk_experience；能力：D2 项目级上下文与 Agent、D3 IDE、工具链与生态、D4 模型接入与扩展
@@ -81,34 +81,34 @@ CodeRadar Briefing 安全与渲染契约：
 
 | 能力维度 | 得分 | 置信度 | 证据数 | 较上期 | 状态 |
 |---|---:|---:|---:|---:|---|
-| D1 代码智能与生成质量 | 74 | 0.64 | 3 | — | scored |
-| D2 项目级上下文与 Agent | 57 | 0.72 | 16 | — | scored |
-| D3 IDE、工具链与生态 | 57 | 0.72 | 16 | — | scored |
-| D4 模型接入与扩展 | 68 | 0.81 | 8 | — | scored |
-| D5 性能、稳定性与成本 | 76 | 0.89 | 6 | — | scored |
-| D6 安全与合规 | 64 | 0.78 | 12 | — | scored |
-| D7 教育适配 | 74 | 0.50 | 2 | — | scored |
+| D1 代码智能与生成质量 | 63 | 0.56 | 3 | — | scored |
+| D2 项目级上下文与 Agent | 58 | 0.73 | 16 | — | scored |
+| D3 IDE、工具链与生态 | 58 | 0.73 | 16 | — | scored |
+| D4 模型接入与扩展 | 67 | 0.81 | 11 | — | scored |
+| D5 性能、稳定性与成本 | 76 | 0.91 | 8 | — | scored |
+| D6 安全与合规 | 53 | 0.69 | 9 | — | scored |
+| D7 教育适配 | 76 | 0.91 | 8 | — | scored |
 
-> 综合分 67.30；覆盖率 100.0%；总体置信度 0.70；快照 snap_e59aa3e8c84b1dec0abc。
+> 综合分 64.34；覆盖率 100.0%；总体置信度 0.75；快照 snap_ed5d5e312d5f07def6b4。
 
 ## 证据索引
 
 | chunk_id | 标题 | URL | 等级 | 日期 / 版本 | 关联动态 |
 |---|---|---|:---:|---|---|
-| `chunk_e81d76d3d568ba9e68f4cf74` | Codex as agent provider and agentic enhancements in JetBrains IDEs | [https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides](<https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides>) | A | 2026-07-08 / 版本未知（待复核） | GitHub Copilot 产品与技术发布: Codex as agent provider and agentic enhancements in JetBrains IDEs |
-| `chunk_bab3f8fb69f4abc61c2c7bdd` | Codex as agent provider and agentic enhancements in JetBrains IDEs | [https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides](<https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides>) | A | 2026-07-08 / 版本未知（待复核） | GitHub Copilot 产品与技术发布: Codex as agent provider and agentic enhancements in JetBrains IDEs |
-| `chunk_ffce6e70876fa62843650d3a` | GitHub Copilot in Visual Studio Code, June 2026 releases | [https://github.blog/changelog/2026-07-08-github-copilot-in-visual-studio-code-june-2026-releases](<https://github.blog/changelog/2026-07-08-github-copilot-in-visual-studio-code-june-2026-releases>) | A | 2026-07-09 / 1.123.0 | GitHub Copilot 产品与技术发布: GitHub Copilot in Visual Studio Code, June 2026 releases |
-| `chunk_6c8e68bf285a78d21392db6d` | Kimi K2.7 Code is generally available in GitHub Copilot | [https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot](<https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot>) | A | 2026-07-02 / 版本未知（待复核） | GitHub Copilot 产品与技术发布: Kimi K2.7 Code is generally available in GitHub Copilot |
-| `chunk_d9148d332bba9d8c52d341c9` | Kimi K2.7 Code is generally available in GitHub Copilot | [https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot](<https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot>) | A | 2026-07-02 / 版本未知（待复核） | GitHub Copilot 产品与技术发布: Kimi K2.7 Code is generally available in GitHub Copilot |
-| `chunk_847aa4d5eab9426a83f043c4` | Kimi K2.7 Code is generally available in GitHub Copilot | [https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot](<https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot>) | A | 2026-07-02 / 版本未知（待复核） | GitHub Copilot 产品与技术发布: Kimi K2.7 Code is generally available in GitHub Copilot |
-| `chunk_f455490fba5b660972719a31` | Copilot agent session streaming is now in public preview | [https://github.blog/changelog/2026-07-02-copilot-agent-session-streaming-is-now-in-public-preview](<https://github.blog/changelog/2026-07-02-copilot-agent-session-streaming-is-now-in-public-preview>) | A | 2026-07-02 / 版本未知（待复核） | GitHub Copilot 产品与技术发布: Copilot agent session streaming is now in public preview |
-| `chunk_c707cf36344ba2be248b7a4e` | Copilot agent session streaming is now in public preview | [https://github.blog/changelog/2026-07-02-copilot-agent-session-streaming-is-now-in-public-preview](<https://github.blog/changelog/2026-07-02-copilot-agent-session-streaming-is-now-in-public-preview>) | A | 2026-07-02 / 版本未知（待复核） | GitHub Copilot 产品与技术发布: Copilot agent session streaming is now in public preview |
+| `chunk_888689d411f3283e57a8cab6` | Codex as agent provider and agentic enhancements in JetBrains IDEs | [https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides](<https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides>) | A | 2026-07-15 / 版本未知（待复核） | GitHub Copilot 产品与技术发布: Codex as agent provider and agentic enhancements in JetBrains IDEs |
+| `chunk_bab3f8fb69f4abc61c2c7bdd` | Codex as agent provider and agentic enhancements in JetBrains IDEs | [https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides](<https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides>) | A | 2026-07-15 / 版本未知（待复核） | GitHub Copilot 产品与技术发布: Codex as agent provider and agentic enhancements in JetBrains IDEs |
+| `chunk_d1a9db9ec2654f5e9ea97775` | GitHub Copilot in Visual Studio — June update | [https://github.blog/changelog/2026-07-14-github-copilot-in-visual-studio-june-update](<https://github.blog/changelog/2026-07-14-github-copilot-in-visual-studio-june-update>) | A | 2026-07-15 / 版本未知（待复核） | GitHub Copilot 产品与技术发布: GitHub Copilot in Visual Studio — June update |
+| `chunk_7a0da3080f1f0f46b6737da2` | GitHub Copilot in Visual Studio — June update | [https://github.blog/changelog/2026-07-14-github-copilot-in-visual-studio-june-update](<https://github.blog/changelog/2026-07-14-github-copilot-in-visual-studio-june-update>) | A | 2026-07-15 / 版本未知（待复核） | GitHub Copilot 产品与技术发布: GitHub Copilot in Visual Studio — June update |
+| `chunk_a27473e2aedd6d61ccdcb6ce` | GitHub Copilot in Visual Studio — June update | [https://github.blog/changelog/2026-07-14-github-copilot-in-visual-studio-june-update](<https://github.blog/changelog/2026-07-14-github-copilot-in-visual-studio-june-update>) | A | 2026-07-15 / 版本未知（待复核） | GitHub Copilot 产品与技术发布: GitHub Copilot in Visual Studio — June update |
+| `chunk_6dfdc9e34ef664c8c66914c7` | GitHub Copilot in Visual Studio — June update | [https://github.blog/changelog/2026-07-14-github-copilot-in-visual-studio-june-update](<https://github.blog/changelog/2026-07-14-github-copilot-in-visual-studio-june-update>) | A | 2026-07-15 / 版本未知（待复核） | GitHub Copilot 产品与技术发布: GitHub Copilot in Visual Studio — June update |
+| `chunk_50c2c26d323228e4ec41a9ab` | GitHub Copilot for JetBrains expands BYOK capabilities | [https://github.blog/changelog/2026-07-14-github-copilot-for-jetbrains-expands-byok-capabilities](<https://github.blog/changelog/2026-07-14-github-copilot-for-jetbrains-expands-byok-capabilities>) | A | 2026-07-15 / 版本未知（待复核） | GitHub Copilot 产品与技术发布: GitHub Copilot for JetBrains expands BYOK capabilities |
+| `chunk_30b9a0df6a48e752a619d025` | GitHub Copilot for JetBrains expands BYOK capabilities | [https://github.blog/changelog/2026-07-14-github-copilot-for-jetbrains-expands-byok-capabilities](<https://github.blog/changelog/2026-07-14-github-copilot-for-jetbrains-expands-byok-capabilities>) | A | 2026-07-15 / 版本未知（待复核） | GitHub Copilot 产品与技术发布: GitHub Copilot for JetBrains expands BYOK capabilities |
 | `chunk_580d81dc8fdf8fc7a0ea1b1e` | Feature request: configurable session root / CWD for chat agent sandbox | [https://github.com/microsoft/vscode-copilot-chat/issues/5100](<https://github.com/microsoft/vscode-copilot-chat/issues/5100>) | B | 2026-05-03 / 版本未知（待复核） | GitHub Copilot 开发者体验与风险舆情: Feature request: configurable session root / CWD for chat agent sandbox |
 | `chunk_618b1649375b3e0573704789` | Feature request: configurable session root / CWD for chat agent sandbox | [https://github.com/microsoft/vscode-copilot-chat/issues/5100](<https://github.com/microsoft/vscode-copilot-chat/issues/5100>) | B | 2026-05-03 / 版本未知（待复核） | GitHub Copilot 开发者体验与风险舆情: Feature request: configurable session root / CWD for chat agent sandbox |
 | `chunk_2cee20c5de0335f3ce2c6bad` | Chat agent sandbox sets CWD to temp directory instead of workspace root | [https://github.com/microsoft/vscode-copilot-chat/issues/5097](<https://github.com/microsoft/vscode-copilot-chat/issues/5097>) | B | 2026-05-03 / 版本未知（待复核） | GitHub Copilot 开发者体验与风险舆情: Chat agent sandbox sets CWD to temp directory instead of workspace root |
 | `chunk_303b8122adddf2cdf9a0c400` | Chat agent sandbox sets CWD to temp directory instead of workspace root | [https://github.com/microsoft/vscode-copilot-chat/issues/5097](<https://github.com/microsoft/vscode-copilot-chat/issues/5097>) | B | 2026-05-03 / 版本未知（待复核） | GitHub Copilot 开发者体验与风险舆情: Chat agent sandbox sets CWD to temp directory instead of workspace root |
-| `chunk_6e588e136096f0168c079682` | Windows Copilot CLI shim crashes when Get-Command copilot returns null | [https://github.com/microsoft/vscode-copilot-chat/issues/5110](<https://github.com/microsoft/vscode-copilot-chat/issues/5110>) | B | 2026-05-10 / 版本未知（待复核） | GitHub Copilot 开发者体验与风险舆情: Windows Copilot CLI shim crashes when Get-Command copilot returns null |
-| `chunk_19f23f6eefa71edb63a7589b` | Windows Copilot CLI shim crashes when Get-Command copilot returns null | [https://github.com/microsoft/vscode-copilot-chat/issues/5110](<https://github.com/microsoft/vscode-copilot-chat/issues/5110>) | B | 2026-05-10 / 版本未知（待复核） | GitHub Copilot 开发者体验与风险舆情: Windows Copilot CLI shim crashes when Get-Command copilot returns null |
+| `chunk_33a102c8dad6bd832c54ef73` | No settings-level way to override default denyRead: [$HOME] in chat agent sandbox | [https://github.com/microsoft/vscode-copilot-chat/issues/5099](<https://github.com/microsoft/vscode-copilot-chat/issues/5099>) | B | 2026-05-03 / 版本未知（待复核） | GitHub Copilot 开发者体验与风险舆情: No settings-level way to override default denyRead: [$HOME] in chat agent san... |
+| `chunk_d41041f22da6bfc0a012df60` | Ollama BYOK agent conversation compaction appears to use incorrect token accounting/budget | [https://github.com/microsoft/vscode-copilot-chat/issues/5091](<https://github.com/microsoft/vscode-copilot-chat/issues/5091>) | B | 2026-04-28 / 版本未知（待复核） | GitHub Copilot 开发者体验与风险舆情: Ollama BYOK agent conversation compaction appears to use incorrect token acco... |
 | `chunk_6a9e33f742ffb2929667ec7a` | Notify when Copilot agent sessions need attention or finish | [https://github.com/microsoft/vscode-copilot-chat/issues/5118](<https://github.com/microsoft/vscode-copilot-chat/issues/5118>) | B | 2026-05-18 / 版本未知（待复核） | GitHub Copilot 开发者体验与风险舆情: Notify when Copilot agent sessions need attention or finish |
 | `chunk_9adc98ba5b7f991ed8a20f7e` | Notify when Copilot agent sessions need attention or finish | [https://github.com/microsoft/vscode-copilot-chat/issues/5118](<https://github.com/microsoft/vscode-copilot-chat/issues/5118>) | B | 2026-05-18 / 版本未知（待复核） | GitHub Copilot 开发者体验与风险舆情: Notify when Copilot agent sessions need attention or finish |
 
@@ -117,18 +117,19 @@ CodeRadar Briefing 安全与渲染契约：
 - GitHub Copilot 商业化与价格变化: GitHub Copilot：置信度 0.12 低于 0.55。
 - GitHub Copilot 商业化与价格变化: GitHub Copilot：没有绑定证据。
 - GitHub Copilot 商业化与价格变化: GitHub Copilot：假设待核验——当前没有检索到可引用证据，结论仅作为待补证据的占位。
-- 证据 chunk_e81d76d3d568ba9e68f4cf74 缺少产品版本。
+- 证据 chunk_888689d411f3283e57a8cab6 缺少产品版本。
 - 证据 chunk_bab3f8fb69f4abc61c2c7bdd 缺少产品版本。
-- 证据 chunk_6c8e68bf285a78d21392db6d 缺少产品版本。
-- 证据 chunk_d9148d332bba9d8c52d341c9 缺少产品版本。
-- 证据 chunk_847aa4d5eab9426a83f043c4 缺少产品版本。
-- 证据 chunk_f455490fba5b660972719a31 缺少产品版本。
-- 证据 chunk_c707cf36344ba2be248b7a4e 缺少产品版本。
+- 证据 chunk_d1a9db9ec2654f5e9ea97775 缺少产品版本。
+- 证据 chunk_7a0da3080f1f0f46b6737da2 缺少产品版本。
+- 证据 chunk_a27473e2aedd6d61ccdcb6ce 缺少产品版本。
+- 证据 chunk_6dfdc9e34ef664c8c66914c7 缺少产品版本。
+- 证据 chunk_50c2c26d323228e4ec41a9ab 缺少产品版本。
+- 证据 chunk_30b9a0df6a48e752a619d025 缺少产品版本。
 - 证据 chunk_580d81dc8fdf8fc7a0ea1b1e 缺少产品版本。
 - 证据 chunk_618b1649375b3e0573704789 缺少产品版本。
 - 证据 chunk_2cee20c5de0335f3ce2c6bad 缺少产品版本。
 - 证据 chunk_303b8122adddf2cdf9a0c400 缺少产品版本。
-- 证据 chunk_6e588e136096f0168c079682 缺少产品版本。
-- 证据 chunk_19f23f6eefa71edb63a7589b 缺少产品版本。
+- 证据 chunk_33a102c8dad6bd832c54ef73 缺少产品版本。
+- 证据 chunk_d41041f22da6bfc0a012df60 缺少产品版本。
 - 证据 chunk_6a9e33f742ffb2929667ec7a 缺少产品版本。
 - 证据 chunk_9adc98ba5b7f991ed8a20f7e 缺少产品版本。
