@@ -28,3 +28,5 @@ data/runtime/*
 docs/*
 !docs/*.md
 !docs/.gitkeep
+.tokensave/
+_verify_result.txt
