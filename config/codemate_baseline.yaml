@@ -1,0 +1,34 @@
+snapshot_id: snap_5ac35eaa2c0c351115ec
+competitor: CodeMate Campus
+snapshot_date: 2026-07-20
+product_version: concept-definition-v1
+scoring_version: week3-evidence-v2
+window_start: 2026-04-21T23:59:59.999999Z
+window_end: 2026-07-20T23:59:59.999999Z
+source_kind: product_definition
+planning_only: true
+source_references:
+  - docs/AI编程助手.md#31-产品名称
+  - docs/AI编程助手.md#32-产品定位
+  - docs/AI编程助手.md#33-核心功能设定
+dimensions:
+  code_intelligence:
+    score: 72
+    confidence: 0.55
+    rationale: 产品设定包含代码问答、编译与运行错误诊断、算法讲解和代码审查；该分数表示规划成熟度，尚未经过正式实测。
+  agent_context:
+    score: 60
+    confidence: 0.45
+    rationale: 产品设定包含多文件读取、模块关系分析和实验过程辅助，但尚未明确长流程自主 Agent 能力。
+  ide_ecosystem:
+    rationale: VS Code 或 Web IDE 插件仅是后续扩展方向，当前保持 N/A。
+  model_extensibility:
+    rationale: 当前产品设定没有明确模型切换、第三方模型或开放扩展机制，保持 N/A。
+  performance_cost:
+    rationale: 当前没有响应速度、稳定性、Token 成本或资源消耗数据，保持 N/A。
+  security_compliance:
+    rationale: 已提出学术诚信边界，但隐私、隔离、权限和审计实现尚无验证，保持 N/A。
+  education_fit:
+    score: 88
+    confidence: 0.75
+    rationale: 高校学生、中文课程理解、分步讲解、实验辅助和学术诚信是明确核心定位；该分数仍属于设计目标。

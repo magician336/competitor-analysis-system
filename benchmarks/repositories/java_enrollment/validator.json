@@ -1,0 +1,23 @@
+{
+  "task_id": "bench_015",
+  "version": "1.1.0",
+  "timeout_seconds": 240,
+  "expected_starter_status": "fail",
+  "protected_paths": [
+    "TASK.md",
+    "validator.json",
+    "validate.py",
+    "EnrollmentException.java",
+    "EnrollmentService.java",
+    "validator_assets/capacity_disabled/EnrollmentService.java",
+    "validator_assets/capacity_off_by_one/EnrollmentService.java",
+    "validator_assets/concurrent_duplicate_allowed/EnrollmentService.java",
+    "validator_assets/duplicate_silently_accepted/EnrollmentService.java",
+    "validator_assets/prerequisites_ignored/EnrollmentService.java",
+    "validator_support/MiniJupiterRunner.java",
+    "validator_support/org/junit/jupiter/api/Assertions.java",
+    "validator_support/org/junit/jupiter/api/Test.java",
+    "validator_support/org/junit/jupiter/api/function/Executable.java"
+  ],
+  "command": ["{python}", "-B", "-I", "-X", "utf8", "validate.py"]
+}

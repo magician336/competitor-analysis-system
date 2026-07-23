@@ -1,0 +1,99 @@
+[
+  {
+    "branches": {
+      "price": "success",
+      "product": "success",
+      "risk": "success"
+    },
+    "card_count": 7,
+    "competitor": "Cursor",
+    "evidence_count": 6,
+    "snapshot_coverage": 0.82,
+    "snapshot_id": "snap_45f7479445e30ffbe5f2",
+    "snapshot_score": 60.68,
+    "status": "success",
+    "warnings": [
+      "price: no RAG evidence matched the Agent request",
+      "product: event card limit applied: retained 5 of 6 evidence events",
+      "risk: no RAG evidence matched the Agent request"
+    ],
+    "workflow_id": "workflow_9c94c11bb99776cdb6cb3e1b"
+  },
+  {
+    "branches": {
+      "price": "success",
+      "product": "success",
+      "risk": "success"
+    },
+    "card_count": 9,
+    "competitor": "GitHub Copilot",
+    "evidence_count": 16,
+    "snapshot_coverage": 1.0,
+    "snapshot_id": "snap_e59aa3e8c84b1dec0abc",
+    "snapshot_score": 67.3,
+    "status": "success",
+    "warnings": [
+      "price: no RAG evidence matched the Agent request"
+    ],
+    "workflow_id": "workflow_b3d49db94af8d898db965bb9"
+  },
+  {
+    "branches": {
+      "price": "success",
+      "product": "success",
+      "risk": "success"
+    },
+    "card_count": 7,
+    "competitor": "Trae",
+    "evidence_count": 6,
+    "snapshot_coverage": 0.82,
+    "snapshot_id": "snap_5427c2e7fc0a3bb7da11",
+    "snapshot_score": 21.32,
+    "status": "success",
+    "warnings": [
+      "price: no RAG evidence matched the Agent request",
+      "product: no RAG evidence matched the Agent request",
+      "risk: event card limit applied: retained 5 of 7 evidence events"
+    ],
+    "workflow_id": "workflow_2b42314f0476c35a2196351d"
+  },
+  {
+    "branches": {
+      "price": "success",
+      "product": "success",
+      "risk": "success"
+    },
+    "card_count": 7,
+    "competitor": "通义灵码",
+    "evidence_count": 5,
+    "snapshot_coverage": 1.0,
+    "snapshot_id": "snap_c3662393158c6db99887",
+    "snapshot_score": 74.0,
+    "status": "success",
+    "warnings": [
+      "price: no RAG evidence matched the Agent request",
+      "product: event card limit applied: retained 5 of 8 evidence events",
+      "risk: no RAG evidence matched the Agent request"
+    ],
+    "workflow_id": "workflow_84eca5f7db0334804a0e19f4"
+  },
+  {
+    "branches": {
+      "price": "success",
+      "product": "success",
+      "risk": "success"
+    },
+    "card_count": 5,
+    "competitor": "CodeGeeX",
+    "evidence_count": 4,
+    "snapshot_coverage": 0.78,
+    "snapshot_id": "snap_daff2b08c5201bc50cb3",
+    "snapshot_score": 20.28,
+    "status": "success",
+    "warnings": [
+      "price: no RAG evidence matched the Agent request",
+      "product: no RAG evidence matched the Agent request"
+    ],
+    "workflow_id": "workflow_257d86970d4a6b113c155aba"
+  }
+]

@@ -1,0 +1,2954 @@
+[
+  {
+    "benchmark_run_ids": [],
+    "competitor": "Cursor",
+    "confidence": {
+      "agent_context": 0.746,
+      "code_intelligence": 0.338,
+      "education_fit": 0.0,
+      "ide_ecosystem": 0.543,
+      "model_extensibility": 0.702,
+      "performance_cost": 0.338,
+      "security_compliance": 0.428
+    },
+    "coverage_ratio": 0.82,
+    "deltas": {},
+    "details": [
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.338,
+        "delta": null,
+        "dimension": "code_intelligence",
+        "evidence_chunk_ids": [
+          "chunk_6505594be4e601c5494ec29c"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_9890b400d9398d547eca",
+            "chunk_id": "chunk_6505594be4e601c5494ec29c",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-19T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://cursor.com/changelog/05-19-26"
+          }
+        ],
+        "evidence_count": 1,
+        "evidence_levels": {
+          "A": 1
+        },
+        "evidence_score": 74.0,
+        "independent_source_count": 1,
+        "rationale": "code_intelligence: 证据分 74.0（1 条、1 个独立来源）。",
+        "score": 74,
+        "source_card_ids": [
+          "card_9890b400d9398d547eca"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.746,
+        "delta": null,
+        "dimension": "agent_context",
+        "evidence_chunk_ids": [
+          "chunk_6505594be4e601c5494ec29c",
+          "chunk_ba24ea3712a1426b2315e94a",
+          "chunk_a170127cf88580ed3a239878",
+          "chunk_36f72c54a6630c5893d28207",
+          "chunk_274fd035596704cdaff36f33",
+          "chunk_33c1939261e77fc3e99a4f79"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_9890b400d9398d547eca",
+            "chunk_id": "chunk_6505594be4e601c5494ec29c",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-19T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://cursor.com/changelog/05-19-26"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_d4268cfa094bc466bfc1",
+            "chunk_id": "chunk_ba24ea3712a1426b2315e94a",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-06-18T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://cursor.com/changelog/06-18-26"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_03470dab38ef2d0a1cfc",
+            "chunk_id": "chunk_a170127cf88580ed3a239878",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-04-30T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://cursor.com/changelog/04-30-26"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_03470dab38ef2d0a1cfc",
+            "chunk_id": "chunk_36f72c54a6630c5893d28207",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-04-30T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://cursor.com/changelog/04-30-26"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_c80f35a1585e08893081",
+            "chunk_id": "chunk_274fd035596704cdaff36f33",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-06-29T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://cursor.com/changelog/ios-mobile-app"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_4852dfaaaf43e3f96436",
+            "chunk_id": "chunk_33c1939261e77fc3e99a4f79",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-04-29T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://cursor.com/changelog/sdk-release"
+          }
+        ],
+        "evidence_count": 6,
+        "evidence_levels": {
+          "A": 6
+        },
+        "evidence_score": 74.0,
+        "independent_source_count": 5,
+        "rationale": "agent_context: 证据分 74.0（6 条、5 个独立来源）。",
+        "score": 74,
+        "source_card_ids": [
+          "card_9890b400d9398d547eca",
+          "card_d4268cfa094bc466bfc1",
+          "card_03470dab38ef2d0a1cfc",
+          "card_c80f35a1585e08893081",
+          "card_4852dfaaaf43e3f96436"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.543,
+        "delta": null,
+        "dimension": "ide_ecosystem",
+        "evidence_chunk_ids": [
+          "chunk_ba24ea3712a1426b2315e94a",
+          "chunk_a170127cf88580ed3a239878",
+          "chunk_36f72c54a6630c5893d28207"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_d4268cfa094bc466bfc1",
+            "chunk_id": "chunk_ba24ea3712a1426b2315e94a",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-06-18T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://cursor.com/changelog/06-18-26"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_03470dab38ef2d0a1cfc",
+            "chunk_id": "chunk_a170127cf88580ed3a239878",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-04-30T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://cursor.com/changelog/04-30-26"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_03470dab38ef2d0a1cfc",
+            "chunk_id": "chunk_36f72c54a6630c5893d28207",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-04-30T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://cursor.com/changelog/04-30-26"
+          }
+        ],
+        "evidence_count": 3,
+        "evidence_levels": {
+          "A": 3
+        },
+        "evidence_score": 74.0,
+        "independent_source_count": 2,
+        "rationale": "ide_ecosystem: 证据分 74.0（3 条、2 个独立来源）。",
+        "score": 74,
+        "source_card_ids": [
+          "card_d4268cfa094bc466bfc1",
+          "card_03470dab38ef2d0a1cfc"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.702,
+        "delta": null,
+        "dimension": "model_extensibility",
+        "evidence_chunk_ids": [
+          "chunk_a170127cf88580ed3a239878",
+          "chunk_36f72c54a6630c5893d28207",
+          "chunk_274fd035596704cdaff36f33",
+          "chunk_33c1939261e77fc3e99a4f79"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_03470dab38ef2d0a1cfc",
+            "chunk_id": "chunk_a170127cf88580ed3a239878",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-04-30T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://cursor.com/changelog/04-30-26"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_03470dab38ef2d0a1cfc",
+            "chunk_id": "chunk_36f72c54a6630c5893d28207",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-04-30T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://cursor.com/changelog/04-30-26"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_c80f35a1585e08893081",
+            "chunk_id": "chunk_274fd035596704cdaff36f33",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-06-29T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://cursor.com/changelog/ios-mobile-app"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_4852dfaaaf43e3f96436",
+            "chunk_id": "chunk_33c1939261e77fc3e99a4f79",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-04-29T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://cursor.com/changelog/sdk-release"
+          }
+        ],
+        "evidence_count": 4,
+        "evidence_levels": {
+          "A": 4
+        },
+        "evidence_score": 74.0,
+        "independent_source_count": 3,
+        "rationale": "model_extensibility: 证据分 74.0（4 条、3 个独立来源）。",
+        "score": 74,
+        "source_card_ids": [
+          "card_03470dab38ef2d0a1cfc",
+          "card_c80f35a1585e08893081",
+          "card_4852dfaaaf43e3f96436"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.338,
+        "delta": null,
+        "dimension": "performance_cost",
+        "evidence_chunk_ids": [
+          "chunk_33c1939261e77fc3e99a4f79"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_4852dfaaaf43e3f96436",
+            "chunk_id": "chunk_33c1939261e77fc3e99a4f79",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-04-29T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://cursor.com/changelog/sdk-release"
+          }
+        ],
+        "evidence_count": 1,
+        "evidence_levels": {
+          "A": 1
+        },
+        "evidence_score": 74.0,
+        "independent_source_count": 1,
+        "rationale": "performance_cost: 证据分 74.0（1 条、1 个独立来源）。",
+        "score": 74,
+        "source_card_ids": [
+          "card_4852dfaaaf43e3f96436"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.428,
+        "delta": null,
+        "dimension": "security_compliance",
+        "evidence_chunk_ids": [
+          "chunk_a170127cf88580ed3a239878",
+          "chunk_36f72c54a6630c5893d28207"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_03470dab38ef2d0a1cfc",
+            "chunk_id": "chunk_a170127cf88580ed3a239878",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-04-30T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://cursor.com/changelog/04-30-26"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_03470dab38ef2d0a1cfc",
+            "chunk_id": "chunk_36f72c54a6630c5893d28207",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-04-30T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://cursor.com/changelog/04-30-26"
+          }
+        ],
+        "evidence_count": 2,
+        "evidence_levels": {
+          "A": 2
+        },
+        "evidence_score": 74.0,
+        "independent_source_count": 1,
+        "rationale": "security_compliance: 证据分 74.0（2 条、1 个独立来源）。",
+        "score": 74,
+        "source_card_ids": [
+          "card_03470dab38ef2d0a1cfc"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.0,
+        "delta": null,
+        "dimension": "education_fit",
+        "evidence_chunk_ids": [],
+        "evidence_contributions": [],
+        "evidence_count": 0,
+        "evidence_levels": {},
+        "evidence_score": null,
+        "independent_source_count": 0,
+        "rationale": "education_fit 没有可用证据或对应基准结果，未生成推测性基线分。",
+        "score": 0,
+        "source_card_ids": [],
+        "status": "insufficient_evidence"
+      }
+    ],
+    "evidence_count": {
+      "agent_context": 6,
+      "code_intelligence": 1,
+      "education_fit": 0,
+      "ide_ecosystem": 3,
+      "model_extensibility": 4,
+      "performance_cost": 1,
+      "security_compliance": 2
+    },
+    "input_card_ids": [
+      "card_9890b400d9398d547eca",
+      "card_d4268cfa094bc466bfc1",
+      "card_03470dab38ef2d0a1cfc",
+      "card_c80f35a1585e08893081",
+      "card_4852dfaaaf43e3f96436"
+    ],
+    "overall_confidence": 0.422,
+    "previous_snapshot_id": null,
+    "product_version": "mixed",
+    "scores": {
+      "agent_context": 74,
+      "code_intelligence": 74,
+      "education_fit": 0,
+      "ide_ecosystem": 74,
+      "model_extensibility": 74,
+      "performance_cost": 74,
+      "security_compliance": 74
+    },
+    "scoring_version": "week3-evidence-v2",
+    "snapshot_date": "2026-07-20",
+    "snapshot_id": "snap_45f7479445e30ffbe5f2",
+    "total_score": 60.68,
+    "window_end": "2026-07-20T23:59:59.999999Z",
+    "window_start": "2026-04-21T23:59:59.999999Z"
+  },
+  {
+    "benchmark_run_ids": [],
+    "competitor": "GitHub Copilot",
+    "confidence": {
+      "agent_context": 0.719,
+      "code_intelligence": 0.639,
+      "education_fit": 0.504,
+      "ide_ecosystem": 0.719,
+      "model_extensibility": 0.81,
+      "performance_cost": 0.889,
+      "security_compliance": 0.777
+    },
+    "coverage_ratio": 1.0,
+    "deltas": {},
+    "details": [
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.639,
+        "delta": null,
+        "dimension": "code_intelligence",
+        "evidence_chunk_ids": [
+          "chunk_ffce6e70876fa62843650d3a",
+          "chunk_e81d76d3d568ba9e68f4cf74",
+          "chunk_bab3f8fb69f4abc61c2c7bdd"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_c11262e24eadefcaefdb",
+            "chunk_id": "chunk_ffce6e70876fa62843650d3a",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-09T19:58:08Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-08-github-copilot-in-visual-studio-code-june-2026-releases"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_dd7ea2c8f1eb49677b55",
+            "chunk_id": "chunk_e81d76d3d568ba9e68f4cf74",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-08T18:28:53Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_dd7ea2c8f1eb49677b55",
+            "chunk_id": "chunk_bab3f8fb69f4abc61c2c7bdd",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-08T18:28:53Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides"
+          }
+        ],
+        "evidence_count": 3,
+        "evidence_levels": {
+          "A": 3
+        },
+        "evidence_score": 74.0,
+        "independent_source_count": 2,
+        "rationale": "code_intelligence: 证据分 74.0（3 条、2 个独立来源）。",
+        "score": 74,
+        "source_card_ids": [
+          "card_c11262e24eadefcaefdb",
+          "card_dd7ea2c8f1eb49677b55"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.719,
+        "delta": null,
+        "dimension": "agent_context",
+        "evidence_chunk_ids": [
+          "chunk_f455490fba5b660972719a31",
+          "chunk_c707cf36344ba2be248b7a4e",
+          "chunk_6c8e68bf285a78d21392db6d",
+          "chunk_d9148d332bba9d8c52d341c9",
+          "chunk_847aa4d5eab9426a83f043c4",
+          "chunk_ffce6e70876fa62843650d3a",
+          "chunk_e81d76d3d568ba9e68f4cf74",
+          "chunk_bab3f8fb69f4abc61c2c7bdd",
+          "chunk_6a9e33f742ffb2929667ec7a",
+          "chunk_9adc98ba5b7f991ed8a20f7e",
+          "chunk_2cee20c5de0335f3ce2c6bad",
+          "chunk_303b8122adddf2cdf9a0c400",
+          "chunk_580d81dc8fdf8fc7a0ea1b1e",
+          "chunk_618b1649375b3e0573704789",
+          "chunk_6e588e136096f0168c079682",
+          "chunk_19f23f6eefa71edb63a7589b"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_1c0c294a449de1d0d54c",
+            "chunk_id": "chunk_f455490fba5b660972719a31",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-02T21:19:03Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-02-copilot-agent-session-streaming-is-now-in-public-preview"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_1c0c294a449de1d0d54c",
+            "chunk_id": "chunk_c707cf36344ba2be248b7a4e",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-02T21:19:03Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-02-copilot-agent-session-streaming-is-now-in-public-preview"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_cc3a98bb8edc68bb96e7",
+            "chunk_id": "chunk_6c8e68bf285a78d21392db6d",
+            "confidence_weight": 0.93,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 7,
+            "publish_time": "2026-07-02T02:53:42Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_cc3a98bb8edc68bb96e7",
+            "chunk_id": "chunk_d9148d332bba9d8c52d341c9",
+            "confidence_weight": 0.93,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 7,
+            "publish_time": "2026-07-02T02:53:42Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_cc3a98bb8edc68bb96e7",
+            "chunk_id": "chunk_847aa4d5eab9426a83f043c4",
+            "confidence_weight": 0.93,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 7,
+            "publish_time": "2026-07-02T02:53:42Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_c11262e24eadefcaefdb",
+            "chunk_id": "chunk_ffce6e70876fa62843650d3a",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-09T19:58:08Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-08-github-copilot-in-visual-studio-code-june-2026-releases"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_dd7ea2c8f1eb49677b55",
+            "chunk_id": "chunk_e81d76d3d568ba9e68f4cf74",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-08T18:28:53Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_dd7ea2c8f1eb49677b55",
+            "chunk_id": "chunk_bab3f8fb69f4abc61c2c7bdd",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-08T18:28:53Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_c3f7251adb85d79a3cb8",
+            "chunk_id": "chunk_6a9e33f742ffb2929667ec7a",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-18T23:28:36Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5118"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_c3f7251adb85d79a3cb8",
+            "chunk_id": "chunk_9adc98ba5b7f991ed8a20f7e",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-18T23:28:36Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5118"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_dd6408f2b2ab82fc6a4d",
+            "chunk_id": "chunk_2cee20c5de0335f3ce2c6bad",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-03T06:37:11Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5097"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_dd6408f2b2ab82fc6a4d",
+            "chunk_id": "chunk_303b8122adddf2cdf9a0c400",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-03T06:37:11Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5097"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_4b845938dbd6e6559d43",
+            "chunk_id": "chunk_580d81dc8fdf8fc7a0ea1b1e",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-03T06:38:11Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5100"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_4b845938dbd6e6559d43",
+            "chunk_id": "chunk_618b1649375b3e0573704789",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-03T06:38:11Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5100"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_253fd213d3151d29ca92",
+            "chunk_id": "chunk_6e588e136096f0168c079682",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-10T15:48:05Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5110"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_253fd213d3151d29ca92",
+            "chunk_id": "chunk_19f23f6eefa71edb63a7589b",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-10T15:48:05Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5110"
+          }
+        ],
+        "evidence_count": 16,
+        "evidence_levels": {
+          "A": 8,
+          "B": 8
+        },
+        "evidence_score": 56.82,
+        "independent_source_count": 8,
+        "rationale": "agent_context: 证据分 56.8（16 条、8 个独立来源）。",
+        "score": 57,
+        "source_card_ids": [
+          "card_1c0c294a449de1d0d54c",
+          "card_cc3a98bb8edc68bb96e7",
+          "card_c11262e24eadefcaefdb",
+          "card_dd7ea2c8f1eb49677b55",
+          "card_c3f7251adb85d79a3cb8",
+          "card_dd6408f2b2ab82fc6a4d",
+          "card_4b845938dbd6e6559d43",
+          "card_253fd213d3151d29ca92"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.719,
+        "delta": null,
+        "dimension": "ide_ecosystem",
+        "evidence_chunk_ids": [
+          "chunk_f455490fba5b660972719a31",
+          "chunk_c707cf36344ba2be248b7a4e",
+          "chunk_6c8e68bf285a78d21392db6d",
+          "chunk_d9148d332bba9d8c52d341c9",
+          "chunk_847aa4d5eab9426a83f043c4",
+          "chunk_ffce6e70876fa62843650d3a",
+          "chunk_e81d76d3d568ba9e68f4cf74",
+          "chunk_bab3f8fb69f4abc61c2c7bdd",
+          "chunk_6a9e33f742ffb2929667ec7a",
+          "chunk_9adc98ba5b7f991ed8a20f7e",
+          "chunk_2cee20c5de0335f3ce2c6bad",
+          "chunk_303b8122adddf2cdf9a0c400",
+          "chunk_580d81dc8fdf8fc7a0ea1b1e",
+          "chunk_618b1649375b3e0573704789",
+          "chunk_6e588e136096f0168c079682",
+          "chunk_19f23f6eefa71edb63a7589b"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_1c0c294a449de1d0d54c",
+            "chunk_id": "chunk_f455490fba5b660972719a31",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-02T21:19:03Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-02-copilot-agent-session-streaming-is-now-in-public-preview"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_1c0c294a449de1d0d54c",
+            "chunk_id": "chunk_c707cf36344ba2be248b7a4e",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-02T21:19:03Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-02-copilot-agent-session-streaming-is-now-in-public-preview"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_cc3a98bb8edc68bb96e7",
+            "chunk_id": "chunk_6c8e68bf285a78d21392db6d",
+            "confidence_weight": 0.93,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 7,
+            "publish_time": "2026-07-02T02:53:42Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_cc3a98bb8edc68bb96e7",
+            "chunk_id": "chunk_d9148d332bba9d8c52d341c9",
+            "confidence_weight": 0.93,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 7,
+            "publish_time": "2026-07-02T02:53:42Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_cc3a98bb8edc68bb96e7",
+            "chunk_id": "chunk_847aa4d5eab9426a83f043c4",
+            "confidence_weight": 0.93,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 7,
+            "publish_time": "2026-07-02T02:53:42Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_c11262e24eadefcaefdb",
+            "chunk_id": "chunk_ffce6e70876fa62843650d3a",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-09T19:58:08Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-08-github-copilot-in-visual-studio-code-june-2026-releases"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_dd7ea2c8f1eb49677b55",
+            "chunk_id": "chunk_e81d76d3d568ba9e68f4cf74",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-08T18:28:53Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_dd7ea2c8f1eb49677b55",
+            "chunk_id": "chunk_bab3f8fb69f4abc61c2c7bdd",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-08T18:28:53Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_c3f7251adb85d79a3cb8",
+            "chunk_id": "chunk_6a9e33f742ffb2929667ec7a",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-18T23:28:36Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5118"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_c3f7251adb85d79a3cb8",
+            "chunk_id": "chunk_9adc98ba5b7f991ed8a20f7e",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-18T23:28:36Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5118"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_dd6408f2b2ab82fc6a4d",
+            "chunk_id": "chunk_2cee20c5de0335f3ce2c6bad",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-03T06:37:11Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5097"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_dd6408f2b2ab82fc6a4d",
+            "chunk_id": "chunk_303b8122adddf2cdf9a0c400",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-03T06:37:11Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5097"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_4b845938dbd6e6559d43",
+            "chunk_id": "chunk_580d81dc8fdf8fc7a0ea1b1e",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-03T06:38:11Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5100"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_4b845938dbd6e6559d43",
+            "chunk_id": "chunk_618b1649375b3e0573704789",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-03T06:38:11Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5100"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_253fd213d3151d29ca92",
+            "chunk_id": "chunk_6e588e136096f0168c079682",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-10T15:48:05Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5110"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_253fd213d3151d29ca92",
+            "chunk_id": "chunk_19f23f6eefa71edb63a7589b",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-10T15:48:05Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5110"
+          }
+        ],
+        "evidence_count": 16,
+        "evidence_levels": {
+          "A": 8,
+          "B": 8
+        },
+        "evidence_score": 56.82,
+        "independent_source_count": 8,
+        "rationale": "ide_ecosystem: 证据分 56.8（16 条、8 个独立来源）。",
+        "score": 57,
+        "source_card_ids": [
+          "card_1c0c294a449de1d0d54c",
+          "card_cc3a98bb8edc68bb96e7",
+          "card_c11262e24eadefcaefdb",
+          "card_dd7ea2c8f1eb49677b55",
+          "card_c3f7251adb85d79a3cb8",
+          "card_dd6408f2b2ab82fc6a4d",
+          "card_4b845938dbd6e6559d43",
+          "card_253fd213d3151d29ca92"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.81,
+        "delta": null,
+        "dimension": "model_extensibility",
+        "evidence_chunk_ids": [
+          "chunk_6c8e68bf285a78d21392db6d",
+          "chunk_d9148d332bba9d8c52d341c9",
+          "chunk_847aa4d5eab9426a83f043c4",
+          "chunk_ffce6e70876fa62843650d3a",
+          "chunk_e81d76d3d568ba9e68f4cf74",
+          "chunk_bab3f8fb69f4abc61c2c7bdd",
+          "chunk_6a9e33f742ffb2929667ec7a",
+          "chunk_9adc98ba5b7f991ed8a20f7e"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_cc3a98bb8edc68bb96e7",
+            "chunk_id": "chunk_6c8e68bf285a78d21392db6d",
+            "confidence_weight": 0.93,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 7,
+            "publish_time": "2026-07-02T02:53:42Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_cc3a98bb8edc68bb96e7",
+            "chunk_id": "chunk_d9148d332bba9d8c52d341c9",
+            "confidence_weight": 0.93,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 7,
+            "publish_time": "2026-07-02T02:53:42Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_cc3a98bb8edc68bb96e7",
+            "chunk_id": "chunk_847aa4d5eab9426a83f043c4",
+            "confidence_weight": 0.93,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 7,
+            "publish_time": "2026-07-02T02:53:42Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_c11262e24eadefcaefdb",
+            "chunk_id": "chunk_ffce6e70876fa62843650d3a",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-09T19:58:08Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-08-github-copilot-in-visual-studio-code-june-2026-releases"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_dd7ea2c8f1eb49677b55",
+            "chunk_id": "chunk_e81d76d3d568ba9e68f4cf74",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-08T18:28:53Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_dd7ea2c8f1eb49677b55",
+            "chunk_id": "chunk_bab3f8fb69f4abc61c2c7bdd",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-08T18:28:53Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_c3f7251adb85d79a3cb8",
+            "chunk_id": "chunk_6a9e33f742ffb2929667ec7a",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-18T23:28:36Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5118"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_c3f7251adb85d79a3cb8",
+            "chunk_id": "chunk_9adc98ba5b7f991ed8a20f7e",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-18T23:28:36Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5118"
+          }
+        ],
+        "evidence_count": 8,
+        "evidence_levels": {
+          "A": 6,
+          "B": 2
+        },
+        "evidence_score": 67.67,
+        "independent_source_count": 4,
+        "rationale": "model_extensibility: 证据分 67.7（8 条、4 个独立来源）。",
+        "score": 68,
+        "source_card_ids": [
+          "card_cc3a98bb8edc68bb96e7",
+          "card_c11262e24eadefcaefdb",
+          "card_dd7ea2c8f1eb49677b55",
+          "card_c3f7251adb85d79a3cb8"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.889,
+        "delta": null,
+        "dimension": "performance_cost",
+        "evidence_chunk_ids": [
+          "chunk_6c8e68bf285a78d21392db6d",
+          "chunk_d9148d332bba9d8c52d341c9",
+          "chunk_847aa4d5eab9426a83f043c4",
+          "chunk_ffce6e70876fa62843650d3a",
+          "chunk_e81d76d3d568ba9e68f4cf74",
+          "chunk_bab3f8fb69f4abc61c2c7bdd"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_cc3a98bb8edc68bb96e7",
+            "chunk_id": "chunk_6c8e68bf285a78d21392db6d",
+            "confidence_weight": 0.93,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 7,
+            "publish_time": "2026-07-02T02:53:42Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_cc3a98bb8edc68bb96e7",
+            "chunk_id": "chunk_d9148d332bba9d8c52d341c9",
+            "confidence_weight": 0.93,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 7,
+            "publish_time": "2026-07-02T02:53:42Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_cc3a98bb8edc68bb96e7",
+            "chunk_id": "chunk_847aa4d5eab9426a83f043c4",
+            "confidence_weight": 0.93,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 7,
+            "publish_time": "2026-07-02T02:53:42Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_c11262e24eadefcaefdb",
+            "chunk_id": "chunk_ffce6e70876fa62843650d3a",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-09T19:58:08Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-08-github-copilot-in-visual-studio-code-june-2026-releases"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_dd7ea2c8f1eb49677b55",
+            "chunk_id": "chunk_e81d76d3d568ba9e68f4cf74",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-08T18:28:53Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_dd7ea2c8f1eb49677b55",
+            "chunk_id": "chunk_bab3f8fb69f4abc61c2c7bdd",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-08T18:28:53Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides"
+          }
+        ],
+        "evidence_count": 6,
+        "evidence_levels": {
+          "A": 6
+        },
+        "evidence_score": 76.07,
+        "independent_source_count": 3,
+        "rationale": "performance_cost: 证据分 76.1（6 条、3 个独立来源）。",
+        "score": 76,
+        "source_card_ids": [
+          "card_cc3a98bb8edc68bb96e7",
+          "card_c11262e24eadefcaefdb",
+          "card_dd7ea2c8f1eb49677b55"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.777,
+        "delta": null,
+        "dimension": "security_compliance",
+        "evidence_chunk_ids": [
+          "chunk_f455490fba5b660972719a31",
+          "chunk_c707cf36344ba2be248b7a4e",
+          "chunk_6c8e68bf285a78d21392db6d",
+          "chunk_d9148d332bba9d8c52d341c9",
+          "chunk_847aa4d5eab9426a83f043c4",
+          "chunk_ffce6e70876fa62843650d3a",
+          "chunk_e81d76d3d568ba9e68f4cf74",
+          "chunk_bab3f8fb69f4abc61c2c7bdd",
+          "chunk_2cee20c5de0335f3ce2c6bad",
+          "chunk_303b8122adddf2cdf9a0c400",
+          "chunk_580d81dc8fdf8fc7a0ea1b1e",
+          "chunk_618b1649375b3e0573704789"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_1c0c294a449de1d0d54c",
+            "chunk_id": "chunk_f455490fba5b660972719a31",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-02T21:19:03Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-02-copilot-agent-session-streaming-is-now-in-public-preview"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_1c0c294a449de1d0d54c",
+            "chunk_id": "chunk_c707cf36344ba2be248b7a4e",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-02T21:19:03Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-02-copilot-agent-session-streaming-is-now-in-public-preview"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_cc3a98bb8edc68bb96e7",
+            "chunk_id": "chunk_6c8e68bf285a78d21392db6d",
+            "confidence_weight": 0.93,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 7,
+            "publish_time": "2026-07-02T02:53:42Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_cc3a98bb8edc68bb96e7",
+            "chunk_id": "chunk_d9148d332bba9d8c52d341c9",
+            "confidence_weight": 0.93,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 7,
+            "publish_time": "2026-07-02T02:53:42Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_cc3a98bb8edc68bb96e7",
+            "chunk_id": "chunk_847aa4d5eab9426a83f043c4",
+            "confidence_weight": 0.93,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 7,
+            "publish_time": "2026-07-02T02:53:42Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_c11262e24eadefcaefdb",
+            "chunk_id": "chunk_ffce6e70876fa62843650d3a",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-09T19:58:08Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-08-github-copilot-in-visual-studio-code-june-2026-releases"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_dd7ea2c8f1eb49677b55",
+            "chunk_id": "chunk_e81d76d3d568ba9e68f4cf74",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-08T18:28:53Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_dd7ea2c8f1eb49677b55",
+            "chunk_id": "chunk_bab3f8fb69f4abc61c2c7bdd",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-08T18:28:53Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_dd6408f2b2ab82fc6a4d",
+            "chunk_id": "chunk_2cee20c5de0335f3ce2c6bad",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-03T06:37:11Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5097"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_dd6408f2b2ab82fc6a4d",
+            "chunk_id": "chunk_303b8122adddf2cdf9a0c400",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-03T06:37:11Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5097"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_4b845938dbd6e6559d43",
+            "chunk_id": "chunk_580d81dc8fdf8fc7a0ea1b1e",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-03T06:38:11Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5100"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_4b845938dbd6e6559d43",
+            "chunk_id": "chunk_618b1649375b3e0573704789",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-03T06:38:11Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5100"
+          }
+        ],
+        "evidence_count": 12,
+        "evidence_levels": {
+          "A": 8,
+          "B": 4
+        },
+        "evidence_score": 64.0,
+        "independent_source_count": 6,
+        "rationale": "security_compliance: 证据分 64.0（12 条、6 个独立来源）。",
+        "score": 64,
+        "source_card_ids": [
+          "card_1c0c294a449de1d0d54c",
+          "card_cc3a98bb8edc68bb96e7",
+          "card_c11262e24eadefcaefdb",
+          "card_dd7ea2c8f1eb49677b55",
+          "card_dd6408f2b2ab82fc6a4d",
+          "card_4b845938dbd6e6559d43"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.504,
+        "delta": null,
+        "dimension": "education_fit",
+        "evidence_chunk_ids": [
+          "chunk_e81d76d3d568ba9e68f4cf74",
+          "chunk_bab3f8fb69f4abc61c2c7bdd"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_dd7ea2c8f1eb49677b55",
+            "chunk_id": "chunk_e81d76d3d568ba9e68f4cf74",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-08T18:28:53Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_dd7ea2c8f1eb49677b55",
+            "chunk_id": "chunk_bab3f8fb69f4abc61c2c7bdd",
+            "confidence_weight": 0.88,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-08T18:28:53Z",
+            "source_type": "official_changelog",
+            "url": "https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides"
+          }
+        ],
+        "evidence_count": 2,
+        "evidence_levels": {
+          "A": 2
+        },
+        "evidence_score": 74.0,
+        "independent_source_count": 1,
+        "rationale": "education_fit: 证据分 74.0（2 条、1 个独立来源）。",
+        "score": 74,
+        "source_card_ids": [
+          "card_dd7ea2c8f1eb49677b55"
+        ],
+        "status": "scored"
+      }
+    ],
+    "evidence_count": {
+      "agent_context": 16,
+      "code_intelligence": 3,
+      "education_fit": 2,
+      "ide_ecosystem": 16,
+      "model_extensibility": 8,
+      "performance_cost": 6,
+      "security_compliance": 12
+    },
+    "input_card_ids": [
+      "card_c11262e24eadefcaefdb",
+      "card_dd7ea2c8f1eb49677b55",
+      "card_1c0c294a449de1d0d54c",
+      "card_cc3a98bb8edc68bb96e7",
+      "card_c3f7251adb85d79a3cb8",
+      "card_dd6408f2b2ab82fc6a4d",
+      "card_4b845938dbd6e6559d43",
+      "card_253fd213d3151d29ca92"
+    ],
+    "overall_confidence": 0.697,
+    "previous_snapshot_id": null,
+    "product_version": "1.123.0",
+    "scores": {
+      "agent_context": 57,
+      "code_intelligence": 74,
+      "education_fit": 74,
+      "ide_ecosystem": 57,
+      "model_extensibility": 68,
+      "performance_cost": 76,
+      "security_compliance": 64
+    },
+    "scoring_version": "week3-evidence-v2",
+    "snapshot_date": "2026-07-20",
+    "snapshot_id": "snap_e59aa3e8c84b1dec0abc",
+    "total_score": 67.3,
+    "window_end": "2026-07-20T23:59:59.999999Z",
+    "window_start": "2026-04-21T23:59:59.999999Z"
+  },
+  {
+    "benchmark_run_ids": [],
+    "competitor": "Trae",
+    "confidence": {
+      "agent_context": 0.441,
+      "code_intelligence": 0.366,
+      "education_fit": 0.0,
+      "ide_ecosystem": 0.366,
+      "model_extensibility": 0.532,
+      "performance_cost": 0.352,
+      "security_compliance": 0.553
+    },
+    "coverage_ratio": 0.82,
+    "deltas": {},
+    "details": [
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.366,
+        "delta": null,
+        "dimension": "code_intelligence",
+        "evidence_chunk_ids": [
+          "chunk_25a3ba76906cd76395c87ceb",
+          "chunk_3d949a3c5f1a2debc64c8760"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_e8318b2001ad64a3ba07",
+            "chunk_id": "chunk_25a3ba76906cd76395c87ceb",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-06-20T02:21:04Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/Trae-AI/TRAE/issues/2551"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_e8318b2001ad64a3ba07",
+            "chunk_id": "chunk_3d949a3c5f1a2debc64c8760",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-06-20T02:21:04Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/Trae-AI/TRAE/issues/2551"
+          }
+        ],
+        "evidence_count": 2,
+        "evidence_levels": {
+          "B": 2
+        },
+        "evidence_score": 26.0,
+        "independent_source_count": 1,
+        "rationale": "code_intelligence: 证据分 26.0（2 条、1 个独立来源）。",
+        "score": 26,
+        "source_card_ids": [
+          "card_e8318b2001ad64a3ba07"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.441,
+        "delta": null,
+        "dimension": "agent_context",
+        "evidence_chunk_ids": [
+          "chunk_25a3ba76906cd76395c87ceb",
+          "chunk_3d949a3c5f1a2debc64c8760",
+          "chunk_71b2b517663f352ead87e943"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_e8318b2001ad64a3ba07",
+            "chunk_id": "chunk_25a3ba76906cd76395c87ceb",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-06-20T02:21:04Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/Trae-AI/TRAE/issues/2551"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_e8318b2001ad64a3ba07",
+            "chunk_id": "chunk_3d949a3c5f1a2debc64c8760",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-06-20T02:21:04Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/Trae-AI/TRAE/issues/2551"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_a72a2ddfbaf48f9045d7",
+            "chunk_id": "chunk_71b2b517663f352ead87e943",
+            "confidence_weight": 0.74,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-06-02T08:12:39Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/Trae-AI/TRAE/issues/2542"
+          }
+        ],
+        "evidence_count": 3,
+        "evidence_levels": {
+          "B": 3
+        },
+        "evidence_score": 26.0,
+        "independent_source_count": 2,
+        "rationale": "agent_context: 证据分 26.0（3 条、2 个独立来源）。",
+        "score": 26,
+        "source_card_ids": [
+          "card_e8318b2001ad64a3ba07",
+          "card_a72a2ddfbaf48f9045d7"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.366,
+        "delta": null,
+        "dimension": "ide_ecosystem",
+        "evidence_chunk_ids": [
+          "chunk_25a3ba76906cd76395c87ceb",
+          "chunk_3d949a3c5f1a2debc64c8760"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_e8318b2001ad64a3ba07",
+            "chunk_id": "chunk_25a3ba76906cd76395c87ceb",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-06-20T02:21:04Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/Trae-AI/TRAE/issues/2551"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_e8318b2001ad64a3ba07",
+            "chunk_id": "chunk_3d949a3c5f1a2debc64c8760",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-06-20T02:21:04Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/Trae-AI/TRAE/issues/2551"
+          }
+        ],
+        "evidence_count": 2,
+        "evidence_levels": {
+          "B": 2
+        },
+        "evidence_score": 26.0,
+        "independent_source_count": 1,
+        "rationale": "ide_ecosystem: 证据分 26.0（2 条、1 个独立来源）。",
+        "score": 26,
+        "source_card_ids": [
+          "card_e8318b2001ad64a3ba07"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.532,
+        "delta": null,
+        "dimension": "model_extensibility",
+        "evidence_chunk_ids": [
+          "chunk_25a3ba76906cd76395c87ceb",
+          "chunk_3d949a3c5f1a2debc64c8760",
+          "chunk_71b2b517663f352ead87e943",
+          "chunk_333592e5fc61ebf0a5c96b39"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_e8318b2001ad64a3ba07",
+            "chunk_id": "chunk_25a3ba76906cd76395c87ceb",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-06-20T02:21:04Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/Trae-AI/TRAE/issues/2551"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_e8318b2001ad64a3ba07",
+            "chunk_id": "chunk_3d949a3c5f1a2debc64c8760",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-06-20T02:21:04Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/Trae-AI/TRAE/issues/2551"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_a72a2ddfbaf48f9045d7",
+            "chunk_id": "chunk_71b2b517663f352ead87e943",
+            "confidence_weight": 0.74,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-06-02T08:12:39Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/Trae-AI/TRAE/issues/2542"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_dfd84871a1d9c8142e07",
+            "chunk_id": "chunk_333592e5fc61ebf0a5c96b39",
+            "confidence_weight": 0.74,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-12T07:14:58Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/Trae-AI/TRAE/issues/2514"
+          }
+        ],
+        "evidence_count": 4,
+        "evidence_levels": {
+          "B": 4
+        },
+        "evidence_score": 26.0,
+        "independent_source_count": 3,
+        "rationale": "model_extensibility: 证据分 26.0（4 条、3 个独立来源）。",
+        "score": 26,
+        "source_card_ids": [
+          "card_e8318b2001ad64a3ba07",
+          "card_a72a2ddfbaf48f9045d7",
+          "card_dfd84871a1d9c8142e07"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.352,
+        "delta": null,
+        "dimension": "performance_cost",
+        "evidence_chunk_ids": [
+          "chunk_ceb064d9440d571221a4f51c",
+          "chunk_333592e5fc61ebf0a5c96b39"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_177cac9b743d7cbd7a97",
+            "chunk_id": "chunk_ceb064d9440d571221a4f51c",
+            "confidence_weight": 0.74,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-01T03:13:00Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/Trae-AI/TRAE/issues/2556"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_dfd84871a1d9c8142e07",
+            "chunk_id": "chunk_333592e5fc61ebf0a5c96b39",
+            "confidence_weight": 0.74,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-12T07:14:58Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/Trae-AI/TRAE/issues/2514"
+          }
+        ],
+        "evidence_count": 2,
+        "evidence_levels": {
+          "B": 2
+        },
+        "evidence_score": 26.0,
+        "independent_source_count": 2,
+        "rationale": "performance_cost: 证据分 26.0（2 条、2 个独立来源）。",
+        "score": 26,
+        "source_card_ids": [
+          "card_177cac9b743d7cbd7a97",
+          "card_dfd84871a1d9c8142e07"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.553,
+        "delta": null,
+        "dimension": "security_compliance",
+        "evidence_chunk_ids": [
+          "chunk_25a3ba76906cd76395c87ceb",
+          "chunk_3d949a3c5f1a2debc64c8760",
+          "chunk_71b2b517663f352ead87e943",
+          "chunk_ea7b7ad561d459298b8febad"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_e8318b2001ad64a3ba07",
+            "chunk_id": "chunk_25a3ba76906cd76395c87ceb",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-06-20T02:21:04Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/Trae-AI/TRAE/issues/2551"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_e8318b2001ad64a3ba07",
+            "chunk_id": "chunk_3d949a3c5f1a2debc64c8760",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-06-20T02:21:04Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/Trae-AI/TRAE/issues/2551"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_a72a2ddfbaf48f9045d7",
+            "chunk_id": "chunk_71b2b517663f352ead87e943",
+            "confidence_weight": 0.74,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-06-02T08:12:39Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/Trae-AI/TRAE/issues/2542"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_9012bb1c8b72666c18e9",
+            "chunk_id": "chunk_ea7b7ad561d459298b8febad",
+            "confidence_weight": 0.74,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-06-20T01:24:07Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/Trae-AI/TRAE/issues/2550"
+          }
+        ],
+        "evidence_count": 4,
+        "evidence_levels": {
+          "B": 4
+        },
+        "evidence_score": 26.0,
+        "independent_source_count": 3,
+        "rationale": "security_compliance: 证据分 26.0（4 条、3 个独立来源）。",
+        "score": 26,
+        "source_card_ids": [
+          "card_e8318b2001ad64a3ba07",
+          "card_a72a2ddfbaf48f9045d7",
+          "card_9012bb1c8b72666c18e9"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.0,
+        "delta": null,
+        "dimension": "education_fit",
+        "evidence_chunk_ids": [],
+        "evidence_contributions": [],
+        "evidence_count": 0,
+        "evidence_levels": {},
+        "evidence_score": null,
+        "independent_source_count": 0,
+        "rationale": "education_fit 没有可用证据或对应基准结果，未生成推测性基线分。",
+        "score": 0,
+        "source_card_ids": [],
+        "status": "insufficient_evidence"
+      }
+    ],
+    "evidence_count": {
+      "agent_context": 3,
+      "code_intelligence": 2,
+      "education_fit": 0,
+      "ide_ecosystem": 2,
+      "model_extensibility": 4,
+      "performance_cost": 2,
+      "security_compliance": 4
+    },
+    "input_card_ids": [
+      "card_e8318b2001ad64a3ba07",
+      "card_a72a2ddfbaf48f9045d7",
+      "card_dfd84871a1d9c8142e07",
+      "card_177cac9b743d7cbd7a97",
+      "card_9012bb1c8b72666c18e9"
+    ],
+    "overall_confidence": 0.351,
+    "previous_snapshot_id": null,
+    "product_version": "unknown",
+    "scores": {
+      "agent_context": 26,
+      "code_intelligence": 26,
+      "education_fit": 0,
+      "ide_ecosystem": 26,
+      "model_extensibility": 26,
+      "performance_cost": 26,
+      "security_compliance": 26
+    },
+    "scoring_version": "week3-evidence-v2",
+    "snapshot_date": "2026-07-20",
+    "snapshot_id": "snap_5427c2e7fc0a3bb7da11",
+    "total_score": 21.32,
+    "window_end": "2026-07-20T23:59:59.999999Z",
+    "window_start": "2026-04-21T23:59:59.999999Z"
+  },
+  {
+    "benchmark_run_ids": [],
+    "competitor": "通义灵码",
+    "confidence": {
+      "agent_context": 0.732,
+      "code_intelligence": 0.338,
+      "education_fit": 0.338,
+      "ide_ecosystem": 0.686,
+      "model_extensibility": 0.732,
+      "performance_cost": 0.397,
+      "security_compliance": 0.686
+    },
+    "coverage_ratio": 1.0,
+    "deltas": {},
+    "details": [
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.338,
+        "delta": null,
+        "dimension": "code_intelligence",
+        "evidence_chunk_ids": [
+          "chunk_38d67a0ef0c9f52f0d467a0c"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_542aab2e16667e63fc6f",
+            "chunk_id": "chunk_38d67a0ef0c9f52f0d467a0c",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-04-27T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://help.aliyun.com/zh/lingma/qoder-cn-cli"
+          }
+        ],
+        "evidence_count": 1,
+        "evidence_levels": {
+          "A": 1
+        },
+        "evidence_score": 74.0,
+        "independent_source_count": 1,
+        "rationale": "code_intelligence: 证据分 74.0（1 条、1 个独立来源）。",
+        "score": 74,
+        "source_card_ids": [
+          "card_542aab2e16667e63fc6f"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.732,
+        "delta": null,
+        "dimension": "agent_context",
+        "evidence_chunk_ids": [
+          "chunk_38d67a0ef0c9f52f0d467a0c",
+          "chunk_45fee4571385be6f58e88a37",
+          "chunk_cd5fe80072566a1a1aed820b",
+          "chunk_6f870d92da816fe9033f009e",
+          "chunk_db94ee1a4242148bd37de40e"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_542aab2e16667e63fc6f",
+            "chunk_id": "chunk_38d67a0ef0c9f52f0d467a0c",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-04-27T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://help.aliyun.com/zh/lingma/qoder-cn-cli"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_fb2ae469f9ad5ee3a884",
+            "chunk_id": "chunk_45fee4571385be6f58e88a37",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-20T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://help.aliyun.com/zh/lingma/qoder-cn-cli"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_4abd1d61c91aaa672d74",
+            "chunk_id": "chunk_cd5fe80072566a1a1aed820b",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-06-09T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://help.aliyun.com/zh/lingma/cloud-agents-cn-update-log"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_18e481b3ff18278b91a2",
+            "chunk_id": "chunk_6f870d92da816fe9033f009e",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-15T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://help.aliyun.com/zh/lingma/qoder-cn-update-log"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_6cef6e35990001e4eede",
+            "chunk_id": "chunk_db94ee1a4242148bd37de40e",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-06-10T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://help.aliyun.com/zh/lingma/qoder-cn-update-log"
+          }
+        ],
+        "evidence_count": 5,
+        "evidence_levels": {
+          "A": 5
+        },
+        "evidence_score": 74.0,
+        "independent_source_count": 3,
+        "rationale": "agent_context: 证据分 74.0（5 条、3 个独立来源）。",
+        "score": 74,
+        "source_card_ids": [
+          "card_542aab2e16667e63fc6f",
+          "card_fb2ae469f9ad5ee3a884",
+          "card_4abd1d61c91aaa672d74",
+          "card_18e481b3ff18278b91a2",
+          "card_6cef6e35990001e4eede"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.686,
+        "delta": null,
+        "dimension": "ide_ecosystem",
+        "evidence_chunk_ids": [
+          "chunk_38d67a0ef0c9f52f0d467a0c",
+          "chunk_45fee4571385be6f58e88a37",
+          "chunk_cd5fe80072566a1a1aed820b",
+          "chunk_6f870d92da816fe9033f009e"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_542aab2e16667e63fc6f",
+            "chunk_id": "chunk_38d67a0ef0c9f52f0d467a0c",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-04-27T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://help.aliyun.com/zh/lingma/qoder-cn-cli"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_fb2ae469f9ad5ee3a884",
+            "chunk_id": "chunk_45fee4571385be6f58e88a37",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-20T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://help.aliyun.com/zh/lingma/qoder-cn-cli"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_4abd1d61c91aaa672d74",
+            "chunk_id": "chunk_cd5fe80072566a1a1aed820b",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-06-09T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://help.aliyun.com/zh/lingma/cloud-agents-cn-update-log"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_18e481b3ff18278b91a2",
+            "chunk_id": "chunk_6f870d92da816fe9033f009e",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-15T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://help.aliyun.com/zh/lingma/qoder-cn-update-log"
+          }
+        ],
+        "evidence_count": 4,
+        "evidence_levels": {
+          "A": 4
+        },
+        "evidence_score": 74.0,
+        "independent_source_count": 3,
+        "rationale": "ide_ecosystem: 证据分 74.0（4 条、3 个独立来源）。",
+        "score": 74,
+        "source_card_ids": [
+          "card_542aab2e16667e63fc6f",
+          "card_fb2ae469f9ad5ee3a884",
+          "card_4abd1d61c91aaa672d74",
+          "card_18e481b3ff18278b91a2"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.732,
+        "delta": null,
+        "dimension": "model_extensibility",
+        "evidence_chunk_ids": [
+          "chunk_38d67a0ef0c9f52f0d467a0c",
+          "chunk_45fee4571385be6f58e88a37",
+          "chunk_cd5fe80072566a1a1aed820b",
+          "chunk_6f870d92da816fe9033f009e",
+          "chunk_db94ee1a4242148bd37de40e"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_542aab2e16667e63fc6f",
+            "chunk_id": "chunk_38d67a0ef0c9f52f0d467a0c",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-04-27T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://help.aliyun.com/zh/lingma/qoder-cn-cli"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_fb2ae469f9ad5ee3a884",
+            "chunk_id": "chunk_45fee4571385be6f58e88a37",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-20T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://help.aliyun.com/zh/lingma/qoder-cn-cli"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_4abd1d61c91aaa672d74",
+            "chunk_id": "chunk_cd5fe80072566a1a1aed820b",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-06-09T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://help.aliyun.com/zh/lingma/cloud-agents-cn-update-log"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_18e481b3ff18278b91a2",
+            "chunk_id": "chunk_6f870d92da816fe9033f009e",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-15T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://help.aliyun.com/zh/lingma/qoder-cn-update-log"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_6cef6e35990001e4eede",
+            "chunk_id": "chunk_db94ee1a4242148bd37de40e",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-06-10T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://help.aliyun.com/zh/lingma/qoder-cn-update-log"
+          }
+        ],
+        "evidence_count": 5,
+        "evidence_levels": {
+          "A": 5
+        },
+        "evidence_score": 74.0,
+        "independent_source_count": 3,
+        "rationale": "model_extensibility: 证据分 74.0（5 条、3 个独立来源）。",
+        "score": 74,
+        "source_card_ids": [
+          "card_542aab2e16667e63fc6f",
+          "card_fb2ae469f9ad5ee3a884",
+          "card_4abd1d61c91aaa672d74",
+          "card_18e481b3ff18278b91a2",
+          "card_6cef6e35990001e4eede"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.397,
+        "delta": null,
+        "dimension": "performance_cost",
+        "evidence_chunk_ids": [
+          "chunk_6f870d92da816fe9033f009e"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_18e481b3ff18278b91a2",
+            "chunk_id": "chunk_6f870d92da816fe9033f009e",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-15T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://help.aliyun.com/zh/lingma/qoder-cn-update-log"
+          }
+        ],
+        "evidence_count": 1,
+        "evidence_levels": {
+          "A": 1
+        },
+        "evidence_score": 74.0,
+        "independent_source_count": 1,
+        "rationale": "performance_cost: 证据分 74.0（1 条、1 个独立来源）。",
+        "score": 74,
+        "source_card_ids": [
+          "card_18e481b3ff18278b91a2"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.686,
+        "delta": null,
+        "dimension": "security_compliance",
+        "evidence_chunk_ids": [
+          "chunk_38d67a0ef0c9f52f0d467a0c",
+          "chunk_45fee4571385be6f58e88a37",
+          "chunk_cd5fe80072566a1a1aed820b",
+          "chunk_6f870d92da816fe9033f009e"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_542aab2e16667e63fc6f",
+            "chunk_id": "chunk_38d67a0ef0c9f52f0d467a0c",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-04-27T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://help.aliyun.com/zh/lingma/qoder-cn-cli"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_fb2ae469f9ad5ee3a884",
+            "chunk_id": "chunk_45fee4571385be6f58e88a37",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-20T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://help.aliyun.com/zh/lingma/qoder-cn-cli"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_4abd1d61c91aaa672d74",
+            "chunk_id": "chunk_cd5fe80072566a1a1aed820b",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-06-09T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://help.aliyun.com/zh/lingma/cloud-agents-cn-update-log"
+          },
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_18e481b3ff18278b91a2",
+            "chunk_id": "chunk_6f870d92da816fe9033f009e",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 1.0,
+            "magnitude": 6,
+            "publish_time": "2026-07-15T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://help.aliyun.com/zh/lingma/qoder-cn-update-log"
+          }
+        ],
+        "evidence_count": 4,
+        "evidence_levels": {
+          "A": 4
+        },
+        "evidence_score": 74.0,
+        "independent_source_count": 3,
+        "rationale": "security_compliance: 证据分 74.0（4 条、3 个独立来源）。",
+        "score": 74,
+        "source_card_ids": [
+          "card_542aab2e16667e63fc6f",
+          "card_fb2ae469f9ad5ee3a884",
+          "card_4abd1d61c91aaa672d74",
+          "card_18e481b3ff18278b91a2"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.338,
+        "delta": null,
+        "dimension": "education_fit",
+        "evidence_chunk_ids": [
+          "chunk_cd5fe80072566a1a1aed820b"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 1.0,
+            "card_id": "card_4abd1d61c91aaa672d74",
+            "chunk_id": "chunk_cd5fe80072566a1a1aed820b",
+            "confidence_weight": 0.84,
+            "direction": "positive",
+            "evidence_level": "A",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-06-09T00:00:00Z",
+            "source_type": "official_changelog",
+            "url": "https://help.aliyun.com/zh/lingma/cloud-agents-cn-update-log"
+          }
+        ],
+        "evidence_count": 1,
+        "evidence_levels": {
+          "A": 1
+        },
+        "evidence_score": 74.0,
+        "independent_source_count": 1,
+        "rationale": "education_fit: 证据分 74.0（1 条、1 个独立来源）。",
+        "score": 74,
+        "source_card_ids": [
+          "card_4abd1d61c91aaa672d74"
+        ],
+        "status": "scored"
+      }
+    ],
+    "evidence_count": {
+      "agent_context": 5,
+      "code_intelligence": 1,
+      "education_fit": 1,
+      "ide_ecosystem": 4,
+      "model_extensibility": 5,
+      "performance_cost": 1,
+      "security_compliance": 4
+    },
+    "input_card_ids": [
+      "card_542aab2e16667e63fc6f",
+      "card_fb2ae469f9ad5ee3a884",
+      "card_4abd1d61c91aaa672d74",
+      "card_18e481b3ff18278b91a2",
+      "card_6cef6e35990001e4eede"
+    ],
+    "overall_confidence": 0.538,
+    "previous_snapshot_id": null,
+    "product_version": "mixed",
+    "scores": {
+      "agent_context": 74,
+      "code_intelligence": 74,
+      "education_fit": 74,
+      "ide_ecosystem": 74,
+      "model_extensibility": 74,
+      "performance_cost": 74,
+      "security_compliance": 74
+    },
+    "scoring_version": "week3-evidence-v2",
+    "snapshot_date": "2026-07-20",
+    "snapshot_id": "snap_c3662393158c6db99887",
+    "total_score": 74.0,
+    "window_end": "2026-07-20T23:59:59.999999Z",
+    "window_start": "2026-04-21T23:59:59.999999Z"
+  },
+  {
+    "benchmark_run_ids": [],
+    "competitor": "CodeGeeX",
+    "confidence": {
+      "agent_context": 0.394,
+      "code_intelligence": 0.488,
+      "education_fit": 0.244,
+      "ide_ecosystem": 0.394,
+      "model_extensibility": 0.244,
+      "performance_cost": 0.0,
+      "security_compliance": 0.0
+    },
+    "coverage_ratio": 0.78,
+    "deltas": {},
+    "details": [
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.488,
+        "delta": null,
+        "dimension": "code_intelligence",
+        "evidence_chunk_ids": [
+          "chunk_b4717a2f1df4397556988779",
+          "chunk_bdb7b03c64ec16cf92f69cae",
+          "chunk_b4e71eaedd35ed785c4420c3",
+          "chunk_91f9d727a2b5840f72e14b38"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_bac80c725659bb65cf79",
+            "chunk_id": "chunk_b4717a2f1df4397556988779",
+            "confidence_weight": 0.74,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-04-29T02:45:36Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/zai-org/CodeGeeX/issues/295"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_d3603602c5f093c45a42",
+            "chunk_id": "chunk_bdb7b03c64ec16cf92f69cae",
+            "confidence_weight": 0.74,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-04T16:27:34Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/zai-org/CodeGeeX/issues/297"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_347d192aeaae344bf75a",
+            "chunk_id": "chunk_b4e71eaedd35ed785c4420c3",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-28T04:28:52Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/zai-org/CodeGeeX4/issues/163"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_347d192aeaae344bf75a",
+            "chunk_id": "chunk_91f9d727a2b5840f72e14b38",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-28T04:28:52Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/zai-org/CodeGeeX4/issues/163"
+          }
+        ],
+        "evidence_count": 4,
+        "evidence_levels": {
+          "B": 4
+        },
+        "evidence_score": 26.0,
+        "independent_source_count": 3,
+        "rationale": "code_intelligence: 证据分 26.0（4 条、3 个独立来源）。",
+        "score": 26,
+        "source_card_ids": [
+          "card_bac80c725659bb65cf79",
+          "card_d3603602c5f093c45a42",
+          "card_347d192aeaae344bf75a"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.394,
+        "delta": null,
+        "dimension": "agent_context",
+        "evidence_chunk_ids": [
+          "chunk_bdb7b03c64ec16cf92f69cae",
+          "chunk_b4e71eaedd35ed785c4420c3",
+          "chunk_91f9d727a2b5840f72e14b38"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_d3603602c5f093c45a42",
+            "chunk_id": "chunk_bdb7b03c64ec16cf92f69cae",
+            "confidence_weight": 0.74,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-04T16:27:34Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/zai-org/CodeGeeX/issues/297"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_347d192aeaae344bf75a",
+            "chunk_id": "chunk_b4e71eaedd35ed785c4420c3",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-28T04:28:52Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/zai-org/CodeGeeX4/issues/163"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_347d192aeaae344bf75a",
+            "chunk_id": "chunk_91f9d727a2b5840f72e14b38",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-28T04:28:52Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/zai-org/CodeGeeX4/issues/163"
+          }
+        ],
+        "evidence_count": 3,
+        "evidence_levels": {
+          "B": 3
+        },
+        "evidence_score": 26.0,
+        "independent_source_count": 2,
+        "rationale": "agent_context: 证据分 26.0（3 条、2 个独立来源）。",
+        "score": 26,
+        "source_card_ids": [
+          "card_d3603602c5f093c45a42",
+          "card_347d192aeaae344bf75a"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.394,
+        "delta": null,
+        "dimension": "ide_ecosystem",
+        "evidence_chunk_ids": [
+          "chunk_b4717a2f1df4397556988779",
+          "chunk_b4e71eaedd35ed785c4420c3",
+          "chunk_91f9d727a2b5840f72e14b38"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_bac80c725659bb65cf79",
+            "chunk_id": "chunk_b4717a2f1df4397556988779",
+            "confidence_weight": 0.74,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-04-29T02:45:36Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/zai-org/CodeGeeX/issues/295"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_347d192aeaae344bf75a",
+            "chunk_id": "chunk_b4e71eaedd35ed785c4420c3",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-28T04:28:52Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/zai-org/CodeGeeX4/issues/163"
+          },
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_347d192aeaae344bf75a",
+            "chunk_id": "chunk_91f9d727a2b5840f72e14b38",
+            "confidence_weight": 0.78,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-28T04:28:52Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/zai-org/CodeGeeX4/issues/163"
+          }
+        ],
+        "evidence_count": 3,
+        "evidence_levels": {
+          "B": 3
+        },
+        "evidence_score": 26.0,
+        "independent_source_count": 2,
+        "rationale": "ide_ecosystem: 证据分 26.0（3 条、2 个独立来源）。",
+        "score": 26,
+        "source_card_ids": [
+          "card_bac80c725659bb65cf79",
+          "card_347d192aeaae344bf75a"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.244,
+        "delta": null,
+        "dimension": "model_extensibility",
+        "evidence_chunk_ids": [
+          "chunk_bdb7b03c64ec16cf92f69cae"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_d3603602c5f093c45a42",
+            "chunk_id": "chunk_bdb7b03c64ec16cf92f69cae",
+            "confidence_weight": 0.74,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-05-04T16:27:34Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/zai-org/CodeGeeX/issues/297"
+          }
+        ],
+        "evidence_count": 1,
+        "evidence_levels": {
+          "B": 1
+        },
+        "evidence_score": 26.0,
+        "independent_source_count": 1,
+        "rationale": "model_extensibility: 证据分 26.0（1 条、1 个独立来源）。",
+        "score": 26,
+        "source_card_ids": [
+          "card_d3603602c5f093c45a42"
+        ],
+        "status": "scored"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.0,
+        "delta": null,
+        "dimension": "performance_cost",
+        "evidence_chunk_ids": [],
+        "evidence_contributions": [],
+        "evidence_count": 0,
+        "evidence_levels": {},
+        "evidence_score": null,
+        "independent_source_count": 0,
+        "rationale": "performance_cost 没有可用证据或对应基准结果，未生成推测性基线分。",
+        "score": 0,
+        "source_card_ids": [],
+        "status": "insufficient_evidence"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.0,
+        "delta": null,
+        "dimension": "security_compliance",
+        "evidence_chunk_ids": [],
+        "evidence_contributions": [],
+        "evidence_count": 0,
+        "evidence_levels": {},
+        "evidence_score": null,
+        "independent_source_count": 0,
+        "rationale": "security_compliance 没有可用证据或对应基准结果，未生成推测性基线分。",
+        "score": 0,
+        "source_card_ids": [],
+        "status": "insufficient_evidence"
+      },
+      {
+        "benchmark_contributions": [],
+        "benchmark_run_ids": [],
+        "benchmark_score": null,
+        "confidence": 0.244,
+        "delta": null,
+        "dimension": "education_fit",
+        "evidence_chunk_ids": [
+          "chunk_b4717a2f1df4397556988779"
+        ],
+        "evidence_contributions": [
+          {
+            "authority_weight": 0.82,
+            "card_id": "card_bac80c725659bb65cf79",
+            "chunk_id": "chunk_b4717a2f1df4397556988779",
+            "confidence_weight": 0.74,
+            "direction": "negative",
+            "evidence_level": "B",
+            "freshness_weight": 0.85,
+            "magnitude": 6,
+            "publish_time": "2026-04-29T02:45:36Z",
+            "source_type": "github_issue",
+            "url": "https://github.com/zai-org/CodeGeeX/issues/295"
+          }
+        ],
+        "evidence_count": 1,
+        "evidence_levels": {
+          "B": 1
+        },
+        "evidence_score": 26.0,
+        "independent_source_count": 1,
+        "rationale": "education_fit: 证据分 26.0（1 条、1 个独立来源）。",
+        "score": 26,
+        "source_card_ids": [
+          "card_bac80c725659bb65cf79"
+        ],
+        "status": "scored"
+      }
+    ],
+    "evidence_count": {
+      "agent_context": 3,
+      "code_intelligence": 4,
+      "education_fit": 1,
+      "ide_ecosystem": 3,
+      "model_extensibility": 1,
+      "performance_cost": 0,
+      "security_compliance": 0
+    },
+    "input_card_ids": [
+      "card_bac80c725659bb65cf79",
+      "card_d3603602c5f093c45a42",
+      "card_347d192aeaae344bf75a"
+    ],
+    "overall_confidence": 0.284,
+    "previous_snapshot_id": null,
+    "product_version": "unknown",
+    "scores": {
+      "agent_context": 26,
+      "code_intelligence": 26,
+      "education_fit": 26,
+      "ide_ecosystem": 26,
+      "model_extensibility": 26,
+      "performance_cost": 0,
+      "security_compliance": 0
+    },
+    "scoring_version": "week3-evidence-v2",
+    "snapshot_date": "2026-07-20",
+    "snapshot_id": "snap_daff2b08c5201bc50cb3",
+    "total_score": 20.28,
+    "window_end": "2026-07-20T23:59:59.999999Z",
+    "window_start": "2026-04-21T23:59:59.999999Z"
+  }
+]

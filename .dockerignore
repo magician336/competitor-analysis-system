@@ -1,0 +1,14 @@
+.git
+.env
+.env.local
+.venv
+.cache
+.pytest_cache
+.vscode
+**/__pycache__
+**/*.pyc
+data/raw
+data/runtime
+artifacts/week3/comparison
+frontend/node_modules
+frontend/dist

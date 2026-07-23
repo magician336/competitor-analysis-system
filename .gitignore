@@ -9,6 +9,7 @@ __pycache__/
 .coverage
 htmlcov/
 .cache/
+.benchmark-build/
 
 # Runtime output
 logs/
@@ -23,3 +24,7 @@ data/runtime/*
 !data/cleaned/.gitkeep
 !data/snapshots/.gitkeep
 !data/runtime/.gitkeep
+
+docs/*
+!docs/*.md
+!docs/.gitkeep

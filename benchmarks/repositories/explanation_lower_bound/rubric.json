@@ -1,0 +1,39 @@
+{
+  "task_id": "bench_007",
+  "rubric_version": "1.0.0",
+  "maximum_score": 10,
+  "passing_score": 8,
+  "dimensions": [
+    {
+      "id": "loop_invariant",
+      "max_score": 3,
+      "full_credit": "准确说明 [lo, hi) 左闭右开区间，以及 lo 左侧均小于 target、hi 右侧均大于等于 target 的循环不变式。"
+    },
+    {
+      "id": "updates_and_termination",
+      "max_score": 2,
+      "full_credit": "解释两个更新分支、搜索区间严格缩小、lo == hi 时得到首个可插入位置。"
+    },
+    {
+      "id": "boundary_examples",
+      "max_score": 2,
+      "full_credit": "至少正确推演两个不同类型的边界例子，且包含具体输入、target 与返回下标。"
+    },
+    {
+      "id": "complexity_and_errors",
+      "max_score": 2,
+      "full_credit": "正确给出 O(log n) 时间、O(1) 额外空间，并说明至少一个常见边界错误。"
+    },
+    {
+      "id": "freshman_clarity",
+      "max_score": 1,
+      "full_credit": "语言适合大一学生，术语有解释，结构清晰且没有事实错误。"
+    }
+  ],
+  "critical_failures": [
+    "声称算法在未排序数组上仍保证正确",
+    "把时间复杂度写成 O(n) 或 O(1)",
+    "把返回值描述为任意一个等于 target 的位置"
+  ]
+}
+

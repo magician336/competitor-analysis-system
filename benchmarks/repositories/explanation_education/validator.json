@@ -1,0 +1,18 @@
+{
+  "task_id": "bench_012",
+  "version": "1.1.0",
+  "timeout_seconds": 30,
+  "expected_starter_status": "fail",
+  "manual_review_required": true,
+  "protected_paths": [
+    "TASK.md",
+    "validator.json",
+    "validate.py",
+    "student_request.md",
+    "rubric.json",
+    "merge_rule.json",
+    "reviewer_a.template.json",
+    "reviewer_b.template.json"
+  ],
+  "command": ["{python}", "-B", "-I", "-X", "utf8", "validate.py", "RESPONSE.md"]
+}

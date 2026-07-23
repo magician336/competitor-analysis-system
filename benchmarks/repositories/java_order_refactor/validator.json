@@ -1,0 +1,14 @@
+{
+  "task_id": "bench_014",
+  "version": "1.1.0",
+  "timeout_seconds": 90,
+  "expected_starter_status": "fail",
+  "protected_paths": [
+    "TASK.md",
+    "validator.json",
+    "validate.py",
+    "OrderServiceTest.java",
+    "RecordingNotificationPort.java"
+  ],
+  "command": ["{python}", "-B", "-I", "-X", "utf8", "validate.py"]
+}

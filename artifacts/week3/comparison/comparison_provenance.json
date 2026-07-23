@@ -1,0 +1,54 @@
+{
+  "analysis_window": {
+    "end_time": "2026-07-20T23:59:59.999999+00:00",
+    "start_time": "2026-04-21T23:59:59.999999+00:00"
+  },
+  "artifact_version": "week3-comparison-v1",
+  "baseline_coverage_ratio": 0.56,
+  "baseline_product": "CodeMate Campus",
+  "baseline_scored_dimension_count": 3,
+  "baseline_snapshot_id": "snap_5ac35eaa2c0c351115ec",
+  "baseline_source": "explicit",
+  "comparison_engine": "CompareAgent.compare_snapshots",
+  "current_snapshot_ids": {
+    "CodeGeeX": "snap_daff2b08c5201bc50cb3",
+    "CodeMate Campus": "snap_5ac35eaa2c0c351115ec",
+    "Cursor": "snap_45f7479445e30ffbe5f2",
+    "GitHub Copilot": "snap_e59aa3e8c84b1dec0abc",
+    "Trae": "snap_5427c2e7fc0a3bb7da11",
+    "通义灵码": "snap_c3662393158c6db99887"
+  },
+  "external_products": [
+    "CodeGeeX",
+    "Cursor",
+    "GitHub Copilot",
+    "Trae",
+    "通义灵码"
+  ],
+  "files": [
+    "comparison_matrix.json",
+    "codemate_baseline_snapshot.json",
+    "comparison_provenance.json"
+  ],
+  "generated_at": "2026-07-21T16:22:00.956931+00:00",
+  "inputs": {
+    "baseline_snapshot": {
+      "path": "A:\\中软\\AIassistant\\artifacts\\week3\\codemate_product_definition_snapshot.json",
+      "sha256": "sha256:a00c83c168e2122a1bf352e3f1aefd7b0b15f36d6d49959e52865cab93b8cc5f"
+    },
+    "capability_snapshots": {
+      "path": "A:\\中软\\AIassistant\\artifacts\\week3\\capability_snapshots.json",
+      "sha256": "sha256:8589ef6a6414da265a6b3c506931c0595af8a9e52e2cfdf9adebf66688509a91"
+    },
+    "previous_snapshots": null
+  },
+  "minimum_rank_coverage": 0.8,
+  "network_used": false,
+  "official_ranking_ready": false,
+  "previous_snapshot_ids": {},
+  "scoring_version": "week3-evidence-v2",
+  "snapshot_date": "2026-07-20",
+  "warnings": [
+    "Baseline coverage 0.560 is below minimum_rank_coverage=0.800; official ranking is disabled."
+  ]
+}

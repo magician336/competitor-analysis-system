@@ -1,0 +1,113 @@
+{
+  "artifact_root": "C:\\Users\\lenovo\\Desktop\\Projects\\competitor-analysis-system\\artifacts\\week3",
+  "checks": [
+    {
+      "check_id": "environment",
+      "details": {
+        "conda_environment": "CodeRadar",
+        "conda_prefix": "D:\\Miniconda\\envs\\CodeRadar",
+        "python_executable": "D:\\Miniconda\\envs\\CodeRadar\\python.exe",
+        "python_version": "3.11.9"
+      },
+      "message": "Python and Conda environment metadata recorded",
+      "status": "pass"
+    },
+    {
+      "check_id": "langchain_and_agents",
+      "details": {
+        "chat_model": "ChatDeepSeek",
+        "chat_model_name": "deepseek-chat",
+        "core_agent_file_count": 8,
+        "prompt_count": 4,
+        "runnable_count": 8,
+        "structured_tool": "StructuredTool",
+        "versions": {
+          "langchain": "1.3.14",
+          "langchain-core": "1.4.9",
+          "langchain-deepseek": "1.1.0",
+          "pydantic": "2.10.6"
+        }
+      },
+      "message": "LangChain dependencies and core Agent constructions are ready",
+      "status": "pass"
+    },
+    {
+      "check_id": "benchmark_assets",
+      "details": {
+        "record_count": 16,
+        "status": "ready",
+        "task_count": 16,
+        "task_type_counts": {
+          "compile_fix": 2,
+          "completion": 2,
+          "explanation": 2,
+          "multi_file_change": 2,
+          "refactor": 2,
+          "security_review": 2,
+          "test_fix": 2,
+          "test_generation": 2
+        }
+      },
+      "message": "All 16 benchmark task assets passed the formal audit",
+      "status": "pass"
+    },
+    {
+      "check_id": "formal_manual_runs",
+      "details": {
+        "path": "C:\\Users\\lenovo\\Desktop\\Projects\\competitor-analysis-system\\benchmarks\\results\\manual_runs.csv",
+        "run_count": 0,
+        "sample_run_count": 0
+      },
+      "message": "Formal manual run CSV is strict and contains no sample_run IDs",
+      "status": "pass"
+    },
+    {
+      "check_id": "week3_artifacts",
+      "details": {
+        "analysis_window": {
+          "as_of": "2026-07-20T23:59:59.999999Z",
+          "end_time": "2026-07-20T23:59:59.999999Z",
+          "start_time": "2026-04-21T23:59:59.999999Z",
+          "window_days": 90
+        },
+        "artifact_version": "week3-baseline-v2",
+        "briefing_count": 5,
+        "card_count": 35,
+        "competitor_count": 5,
+        "scoring_version": "week3-evidence-v2",
+        "snapshot_count": 5,
+        "trace_count": 15,
+        "unknown_product_version_count": 2,
+        "workflow_count": 5
+      },
+      "message": "Manifest, cards, snapshots, workflows, traces and briefings are consistent",
+      "status": "pass"
+    },
+    {
+      "check_id": "live_llm",
+      "details": {
+        "marker": "coderadar-week3",
+        "model": "deepseek-v4-pro",
+        "provider": "deepseek",
+        "structured_output": true
+      },
+      "message": "Explicit live structured-output probe succeeded",
+      "status": "pass"
+    }
+  ],
+  "environment": {
+    "conda_environment": "CodeRadar",
+    "conda_prefix": "D:\\Miniconda\\envs\\CodeRadar",
+    "python_executable": "D:\\Miniconda\\envs\\CodeRadar\\python.exe",
+    "python_version": "3.11.9"
+  },
+  "failed_count": 0,
+  "generated_at": "2026-07-20T11:43:01.185396Z",
+  "live_llm_requested": true,
+  "offline": false,
+  "passed_count": 6,
+  "project_root": "C:\\Users\\lenovo\\Desktop\\Projects\\competitor-analysis-system",
+  "report_version": "week3-acceptance-v1",
+  "status": "accepted",
+  "warning_count": 0
+}

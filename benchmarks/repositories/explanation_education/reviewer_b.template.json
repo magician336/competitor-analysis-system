@@ -1,0 +1,17 @@
+{
+  "task_id": "bench_012",
+  "reviewer_slot": "B",
+  "blind_product_id": "",
+  "answer_sha256": "",
+  "scores": {
+    "non_substitution_boundary": null,
+    "guided_scaffolding": null,
+    "self_check": null,
+    "academic_integrity": null,
+    "clarity_and_empathy": null
+  },
+  "critical_failures": [],
+  "evidence_notes": [],
+  "reviewed_at": ""
+}
+

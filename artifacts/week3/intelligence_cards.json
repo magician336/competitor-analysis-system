@@ -1,0 +1,3766 @@
+[
+  {
+    "agent_kind": "price",
+    "alert_level": "blue",
+    "analysis_mode": "rules",
+    "assumptions": [
+      "当前没有检索到可引用证据，结论仅作为待补证据的占位。"
+    ],
+    "capability_impact": {},
+    "card_id": "card_770e850115da66739641",
+    "change_after": "unknown",
+    "change_before": "unknown",
+    "competitor": "Cursor",
+    "confidence_score": 0.12,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:06.944417Z",
+    "dimension_tags": [],
+    "event_title": "Cursor 商业化与价格变化: Cursor",
+    "event_type": "pricing_change",
+    "evidence": [],
+    "findings": [],
+    "impact_analysis": "已检索到 0 条商业化证据，可用于判断套餐门槛、额度限制和单位任务成本对 CodeMate Campus 的影响。",
+    "impact_details": [],
+    "model_name": null,
+    "opportunity": "若竞品提高门槛或弱化教育优惠，可突出校园低成本、透明额度和学生认证方案。",
+    "priority_breakdown": {
+      "event_impact": 0.2,
+      "evidence_confidence": 0.12,
+      "product_relevance": 0.3,
+      "score": 20,
+      "urgency": 0.2
+    },
+    "priority_score": 20,
+    "prompt_name": "price_prompt.md",
+    "rag_query_id": "qry_cab8de3fa1cd412485cb6beab4796d2b",
+    "recommended_action": "补充价格页快照，记录套餐、额度、学生政策和模型差异，并更新成本效率评分。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": true,
+    "schema_version": "1.0",
+    "summary": "未从 Mini-RAG 检索到 Cursor 的商业化与价格变化证据，需要补充采集或放宽过滤条件。",
+    "threat": "若竞品提供更强模型或更低学生价，可能压缩 CodeMate Campus 的价格优势。",
+    "threat_level": "unknown"
+  },
+  {
+    "agent_kind": "product",
+    "alert_level": "orange",
+    "analysis_mode": "rules",
+    "assumptions": [],
+    "capability_impact": {
+      "agent_context": 6,
+      "code_intelligence": 6
+    },
+    "card_id": "card_9890b400d9398d547eca",
+    "change_after": "# Cursor in Jira Cursor is now available in Jira. Assign work items to Cursor, or mention @Cursor in a comment to kick off a cloud agent. Cursor uses the work item title, description, comments, and your team's reposit...",
+    "change_before": "unknown",
+    "competitor": "Cursor",
+    "confidence_score": 0.84,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:07.050570Z",
+    "dimension_tags": [
+      "code_intelligence",
+      "agent_context"
+    ],
+    "event_title": "Cursor 产品与技术发布: Cursor in Jira",
+    "event_type": "product_release",
+    "evidence": [
+      {
+        "chunk_id": "chunk_6505594be4e601c5494ec29c",
+        "citation_id": "cite_85c0cfe9673c6dcc2a23dca4",
+        "competitor": "Cursor",
+        "dimension_tags": [
+          "code_intelligence",
+          "agent_context"
+        ],
+        "document_id": "doc_ba6f47174b040f5204a6ba12",
+        "event_type": "product_release",
+        "evidence_level": "A",
+        "final_score": 0.9593375687677793,
+        "product_version": null,
+        "publish_time": "2026-05-19T00:00:00Z",
+        "quote": "# Cursor in Jira\n\nCursor is now available in Jira.\n\nAssign work items to Cursor, or mention @Cursor in a comment to kick off a cloud agent. Cursor uses the work item title, description, comments, and your team's repository settings to scope the task.\n\nYou can ask Cursor to fix bugs, add features, update tests, or investigate something described in the ticket. When the agent finishes, Jira shows completion updates and includes a link to the pull request.\n\nInstall the integration from Cursor integrations. You need Cursor admin access and Jira Commercial Cloud with Rovo enabled. Learn more in our docs.",
+        "source_type": "official_changelog",
+        "title": "Cursor in Jira",
+        "url": "https://cursor.com/changelog/05-19-26",
+        "version_id": "ver_4bc9fd4314dbcf8bc8dccadc"
+      }
+    ],
+    "findings": [
+      {
+        "confidence_score": 0.84,
+        "evidence_chunk_ids": [
+          "chunk_6505594be4e601c5494ec29c"
+        ],
+        "finding_type": "fact",
+        "summary": "# Cursor in Jira Cursor is now available in Jira. Assign work items to Cursor, or mention @Cursor in a comment to kick off a cloud agent. Cursor uses the work item title, descri...",
+        "title": "Cursor in Jira"
+      }
+    ],
+    "impact_analysis": "已检索到 1 条产品证据，可用于分析代码智能、项目上下文、Agent 自主性和 IDE 生态的竞争变化。",
+    "impact_details": [
+      {
+        "confidence_score": 0.84,
+        "dimension": "code_intelligence",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_6505594be4e601c5494ec29c"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.84,
+        "dimension": "agent_context",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_6505594be4e601c5494ec29c"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      }
+    ],
+    "model_name": null,
+    "opportunity": "将通用 Agent 能力翻译成课程实验、中文报错讲解和分步学习模式，可形成教育场景差异化。",
+    "priority_breakdown": {
+      "event_impact": 0.72,
+      "evidence_confidence": 0.84,
+      "product_relevance": 0.61,
+      "score": 72,
+      "urgency": 0.72
+    },
+    "priority_score": 72,
+    "prompt_name": "product_prompt.md",
+    "rag_query_id": "qry_107c988c4f9d4982be2bf53b9b5db8f7",
+    "recommended_action": "按 D1-D7 标签复核发布证据，抽取可复现功能点，并纳入能力快照和基准任务。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": false,
+    "schema_version": "1.0",
+    "summary": "基于 1 条可追溯证据，Cursor 存在与产品与技术发布相关的动态：Cursor in Jira。",
+    "threat": "若竞品的多文件 Agent、测试修复或 IDE 集成成熟，CodeMate Campus 需要避免功能代差。",
+    "threat_level": "high"
+  },
+  {
+    "agent_kind": "product",
+    "alert_level": "orange",
+    "analysis_mode": "rules",
+    "assumptions": [],
+    "capability_impact": {
+      "agent_context": 6,
+      "ide_ecosystem": 6
+    },
+    "card_id": "card_d4268cfa094bc466bfc1",
+    "change_after": "## /automate skill Use /automate to create an automation directly in your local agent session. Describe the task you want to automate in plain language and Cursor will configure the triggers, instructions, and tools f...",
+    "change_before": "unknown",
+    "competitor": "Cursor",
+    "confidence_score": 0.84,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:07.050570Z",
+    "dimension_tags": [
+      "agent_context",
+      "ide_ecosystem"
+    ],
+    "event_title": "Cursor 产品与技术发布: Improvements to Cursor Automations",
+    "event_type": "product_release",
+    "evidence": [
+      {
+        "chunk_id": "chunk_ba24ea3712a1426b2315e94a",
+        "citation_id": "cite_c1d0ff36f8283ed3f9a7e22f",
+        "competitor": "Cursor",
+        "dimension_tags": [
+          "agent_context",
+          "ide_ecosystem"
+        ],
+        "document_id": "doc_3414937efa7cf1a0f93303c3",
+        "event_type": "product_release",
+        "evidence_level": "A",
+        "final_score": 0.9033668783272735,
+        "product_version": "3.8.0",
+        "publish_time": "2026-06-18T00:00:00Z",
+        "quote": "## /automate skill\n\nUse /automate to create an automation directly in your local agent session.\n\nDescribe the task you want to automate in plain language and Cursor will configure the triggers, instructions, and tools for you.",
+        "source_type": "official_changelog",
+        "title": "Improvements to Cursor Automations",
+        "url": "https://cursor.com/changelog/06-18-26",
+        "version_id": "ver_98536abc7fbd2584a8fad755"
+      }
+    ],
+    "findings": [
+      {
+        "confidence_score": 0.84,
+        "evidence_chunk_ids": [
+          "chunk_ba24ea3712a1426b2315e94a"
+        ],
+        "finding_type": "fact",
+        "summary": "## /automate skill Use /automate to create an automation directly in your local agent session. Describe the task you want to automate in plain language and Cursor will configure...",
+        "title": "Improvements to Cursor Automations"
+      }
+    ],
+    "impact_analysis": "已检索到 1 条产品证据，可用于分析代码智能、项目上下文、Agent 自主性和 IDE 生态的竞争变化。",
+    "impact_details": [
+      {
+        "confidence_score": 0.84,
+        "dimension": "agent_context",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_ba24ea3712a1426b2315e94a"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.84,
+        "dimension": "ide_ecosystem",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_ba24ea3712a1426b2315e94a"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      }
+    ],
+    "model_name": null,
+    "opportunity": "将通用 Agent 能力翻译成课程实验、中文报错讲解和分步学习模式，可形成教育场景差异化。",
+    "priority_breakdown": {
+      "event_impact": 0.72,
+      "evidence_confidence": 0.84,
+      "product_relevance": 0.61,
+      "score": 72,
+      "urgency": 0.72
+    },
+    "priority_score": 72,
+    "prompt_name": "product_prompt.md",
+    "rag_query_id": "qry_107c988c4f9d4982be2bf53b9b5db8f7",
+    "recommended_action": "按 D1-D7 标签复核发布证据，抽取可复现功能点，并纳入能力快照和基准任务。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": false,
+    "schema_version": "1.0",
+    "summary": "基于 1 条可追溯证据，Cursor 存在与产品与技术发布相关的动态：Improvements to Cursor Automations。",
+    "threat": "若竞品的多文件 Agent、测试修复或 IDE 集成成熟，CodeMate Campus 需要避免功能代差。",
+    "threat_level": "high"
+  },
+  {
+    "agent_kind": "product",
+    "alert_level": "orange",
+    "analysis_mode": "rules",
+    "assumptions": [],
+    "capability_impact": {
+      "agent_context": 6,
+      "ide_ecosystem": 6,
+      "model_extensibility": 6,
+      "security_compliance": 6
+    },
+    "card_id": "card_03470dab38ef2d0a1cfc",
+    "change_after": "# Cursor Security Review Cursor Security Review is now in beta on Teams and Enterprise plans. You can run two types of always-on security agents: Security Reviewer and Vulnerability Scanner.",
+    "change_before": "unknown",
+    "competitor": "Cursor",
+    "confidence_score": 0.88,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:07.050570Z",
+    "dimension_tags": [
+      "agent_context",
+      "ide_ecosystem",
+      "model_extensibility",
+      "security_compliance"
+    ],
+    "event_title": "Cursor 产品与技术发布: Cursor Security Review",
+    "event_type": "product_release",
+    "evidence": [
+      {
+        "chunk_id": "chunk_a170127cf88580ed3a239878",
+        "citation_id": "cite_b8df52da116c6aca935c5927",
+        "competitor": "Cursor",
+        "dimension_tags": [
+          "agent_context",
+          "ide_ecosystem",
+          "model_extensibility",
+          "security_compliance"
+        ],
+        "document_id": "doc_b64225e74d1edff16867ac3e",
+        "event_type": "product_release",
+        "evidence_level": "A",
+        "final_score": 0.8847488447678767,
+        "product_version": null,
+        "publish_time": "2026-04-30T00:00:00Z",
+        "quote": "# Cursor Security Review\n\nCursor Security Review is now in beta on Teams and Enterprise plans. You can run two types of always-on security agents: Security Reviewer and Vulnerability Scanner.",
+        "source_type": "official_changelog",
+        "title": "Cursor Security Review",
+        "url": "https://cursor.com/changelog/04-30-26",
+        "version_id": "ver_188118ecc001acfdaa1fcc4c"
+      },
+      {
+        "chunk_id": "chunk_36f72c54a6630c5893d28207",
+        "citation_id": "cite_e51f2a185819c358d7873cc4",
+        "competitor": "Cursor",
+        "dimension_tags": [
+          "agent_context",
+          "ide_ecosystem",
+          "model_extensibility",
+          "security_compliance"
+        ],
+        "document_id": "doc_b64225e74d1edff16867ac3e",
+        "event_type": "product_release",
+        "evidence_level": "A",
+        "final_score": 0.8537296818752643,
+        "product_version": null,
+        "publish_time": "2026-04-30T00:00:00Z",
+        "quote": "## Vulnerability Scanner\n\nVulnerability Scanner runs scheduled scans of your codebase to check for known vulnerabilities, outdated dependencies, and configuration issues. You can configure it to send updates of its findings in Slack.\n\n---\n\nCustomize Cursor-managed security agents by adjusting triggers, adding your own instructions, giving them custom tooling, and choosing how outputs are shared. For example, you can plug in MCP servers for your existing SAST, SCA, and secrets scanners for Cursor to use as part of the review.\n\nWe're also continuously improving the runtime, harness, and models powering Cursor Security Review for a strong out-of-the-box experience.\n\nSecurity agents draw from your existing usage pool. Admins can enable Security Review in the Cursor dashboard to get started.",
+        "source_type": "official_changelog",
+        "title": "Cursor Security Review",
+        "url": "https://cursor.com/changelog/04-30-26",
+        "version_id": "ver_188118ecc001acfdaa1fcc4c"
+      }
+    ],
+    "findings": [
+      {
+        "confidence_score": 0.88,
+        "evidence_chunk_ids": [
+          "chunk_a170127cf88580ed3a239878"
+        ],
+        "finding_type": "fact",
+        "summary": "# Cursor Security Review Cursor Security Review is now in beta on Teams and Enterprise plans. You can run two types of always-on security agents: Security Reviewer and Vulnerabi...",
+        "title": "Cursor Security Review"
+      },
+      {
+        "confidence_score": 0.88,
+        "evidence_chunk_ids": [
+          "chunk_36f72c54a6630c5893d28207"
+        ],
+        "finding_type": "fact",
+        "summary": "## Vulnerability Scanner Vulnerability Scanner runs scheduled scans of your codebase to check for known vulnerabilities, outdated dependencies, and configuration issues. You can...",
+        "title": "Cursor Security Review"
+      }
+    ],
+    "impact_analysis": "已检索到 2 条产品证据，可用于分析代码智能、项目上下文、Agent 自主性和 IDE 生态的竞争变化。",
+    "impact_details": [
+      {
+        "confidence_score": 0.88,
+        "dimension": "agent_context",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_a170127cf88580ed3a239878",
+          "chunk_36f72c54a6630c5893d28207"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.88,
+        "dimension": "ide_ecosystem",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_a170127cf88580ed3a239878",
+          "chunk_36f72c54a6630c5893d28207"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.88,
+        "dimension": "model_extensibility",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_a170127cf88580ed3a239878",
+          "chunk_36f72c54a6630c5893d28207"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.88,
+        "dimension": "security_compliance",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_a170127cf88580ed3a239878",
+          "chunk_36f72c54a6630c5893d28207"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      }
+    ],
+    "model_name": null,
+    "opportunity": "将通用 Agent 能力翻译成课程实验、中文报错讲解和分步学习模式，可形成教育场景差异化。",
+    "priority_breakdown": {
+      "event_impact": 0.72,
+      "evidence_confidence": 0.88,
+      "product_relevance": 0.74,
+      "score": 76,
+      "urgency": 0.72
+    },
+    "priority_score": 76,
+    "prompt_name": "product_prompt.md",
+    "rag_query_id": "qry_107c988c4f9d4982be2bf53b9b5db8f7",
+    "recommended_action": "按 D1-D7 标签复核发布证据，抽取可复现功能点，并纳入能力快照和基准任务。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": false,
+    "schema_version": "1.0",
+    "summary": "基于 2 条可追溯证据，Cursor 存在与产品与技术发布相关的动态：Cursor Security Review；Cursor Security Review。",
+    "threat": "若竞品的多文件 Agent、测试修复或 IDE 集成成熟，CodeMate Campus 需要避免功能代差。",
+    "threat_level": "high"
+  },
+  {
+    "agent_kind": "product",
+    "alert_level": "orange",
+    "analysis_mode": "rules",
+    "assumptions": [],
+    "capability_impact": {
+      "agent_context": 6,
+      "model_extensibility": 6
+    },
+    "card_id": "card_c80f35a1585e08893081",
+    "change_after": "## Remote Control Use Remote Control in the Agents Window to take an agent you're running on your computer and keep directing it from your phone. You can also turn on a setting to keep your computer awake, so your mac...",
+    "change_before": "unknown",
+    "competitor": "Cursor",
+    "confidence_score": 0.84,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:07.050570Z",
+    "dimension_tags": [
+      "agent_context",
+      "model_extensibility"
+    ],
+    "event_title": "Cursor 产品与技术发布: Cursor Mobile App for iOS",
+    "event_type": "product_release",
+    "evidence": [
+      {
+        "chunk_id": "chunk_274fd035596704cdaff36f33",
+        "citation_id": "cite_e07fab159acf39499d1b3fe8",
+        "competitor": "Cursor",
+        "dimension_tags": [
+          "agent_context",
+          "model_extensibility"
+        ],
+        "document_id": "doc_73002d1c5da204affdb7012f",
+        "event_type": "product_release",
+        "evidence_level": "A",
+        "final_score": 0.39405290844513224,
+        "product_version": "3.9.0",
+        "publish_time": "2026-06-29T00:00:00Z",
+        "quote": "## Remote Control\n\nUse Remote Control in the Agents Window to take an agent you're running on your computer and keep directing it from your phone.\n\nYou can also turn on a setting to keep your computer awake, so your machine stays reachable while you're away from your desk.\n\nOn Teams and Enterprise plans, admins must enable Remote Control from the Cursor Dashboard.",
+        "source_type": "official_changelog",
+        "title": "Cursor Mobile App for iOS",
+        "url": "https://cursor.com/changelog/ios-mobile-app",
+        "version_id": "ver_50af428f79521408222a7062"
+      }
+    ],
+    "findings": [
+      {
+        "confidence_score": 0.84,
+        "evidence_chunk_ids": [
+          "chunk_274fd035596704cdaff36f33"
+        ],
+        "finding_type": "fact",
+        "summary": "## Remote Control Use Remote Control in the Agents Window to take an agent you're running on your computer and keep directing it from your phone. You can also turn on a setting ...",
+        "title": "Cursor Mobile App for iOS"
+      }
+    ],
+    "impact_analysis": "已检索到 1 条产品证据，可用于分析代码智能、项目上下文、Agent 自主性和 IDE 生态的竞争变化。",
+    "impact_details": [
+      {
+        "confidence_score": 0.84,
+        "dimension": "agent_context",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_274fd035596704cdaff36f33"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.84,
+        "dimension": "model_extensibility",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_274fd035596704cdaff36f33"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      }
+    ],
+    "model_name": null,
+    "opportunity": "将通用 Agent 能力翻译成课程实验、中文报错讲解和分步学习模式，可形成教育场景差异化。",
+    "priority_breakdown": {
+      "event_impact": 0.72,
+      "evidence_confidence": 0.84,
+      "product_relevance": 0.61,
+      "score": 78,
+      "urgency": 0.95
+    },
+    "priority_score": 78,
+    "prompt_name": "product_prompt.md",
+    "rag_query_id": "qry_107c988c4f9d4982be2bf53b9b5db8f7",
+    "recommended_action": "按 D1-D7 标签复核发布证据，抽取可复现功能点，并纳入能力快照和基准任务。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": false,
+    "schema_version": "1.0",
+    "summary": "基于 1 条可追溯证据，Cursor 存在与产品与技术发布相关的动态：Cursor Mobile App for iOS。",
+    "threat": "若竞品的多文件 Agent、测试修复或 IDE 集成成熟，CodeMate Campus 需要避免功能代差。",
+    "threat_level": "high"
+  },
+  {
+    "agent_kind": "product",
+    "alert_level": "orange",
+    "analysis_mode": "rules",
+    "assumptions": [],
+    "capability_impact": {
+      "agent_context": 6,
+      "model_extensibility": 6,
+      "performance_cost": 6
+    },
+    "card_id": "card_4852dfaaaf43e3f96436",
+    "change_after": "# Build programmatic agents with the Cursor SDK We're introducing the Cursor SDK so you can build agents with the same runtime, harness, and models that power Cursor. The agents that run in the Cursor desktop app, CLI...",
+    "change_before": "unknown",
+    "competitor": "Cursor",
+    "confidence_score": 0.84,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:07.050570Z",
+    "dimension_tags": [
+      "agent_context",
+      "model_extensibility",
+      "performance_cost"
+    ],
+    "event_title": "Cursor 产品与技术发布: Build programmatic agents with the Cursor SDK",
+    "event_type": "product_release",
+    "evidence": [
+      {
+        "chunk_id": "chunk_33c1939261e77fc3e99a4f79",
+        "citation_id": "cite_cc11b293746e47036b45fd96",
+        "competitor": "Cursor",
+        "dimension_tags": [
+          "agent_context",
+          "model_extensibility",
+          "performance_cost"
+        ],
+        "document_id": "doc_1971895acf4148114856193f",
+        "event_type": "product_release",
+        "evidence_level": "A",
+        "final_score": 0.3793492145163623,
+        "product_version": null,
+        "publish_time": "2026-04-29T00:00:00Z",
+        "quote": "# Build programmatic agents with the Cursor SDK\n\nWe're introducing the Cursor SDK so you can build agents with the same runtime, harness, and models that power Cursor.\n\nThe agents that run in the Cursor desktop app, CLI, and web app are now accessible with a few lines of TypeScript. Run it on your machine or on Cursor's cloud against a dedicated VM, with any frontier model.\n\nRun npm install @cursor/sdk to get started. You can also use Cursor's native /sdk skill to help you start building.\n\n```\nimport { Agent } from \"@cursor/sdk\";\n\nconst agent = await Agent.create({\napiKey: process.env.CURSOR_API_KEY!,\nmodel: { id: \"composer-2\" },\nlocal: { cwd: process.cwd() },\n});\n\nconst run = await agent.send(\"Summarize what this repository does\");\n\nfor await (const event of run.stream()) {\nconsole.log(event);\n}\n```\n\nWe built a few sample projects that you can access from a public repo. Fork and extend them for your own use case.\n\nThe Cursor SDK is now available for all users in public beta and is billed based on standard, token-based consumption pricing. Learn more in our announcement and docs.",
+        "source_type": "official_changelog",
+        "title": "Build programmatic agents with the Cursor SDK",
+        "url": "https://cursor.com/changelog/sdk-release",
+        "version_id": "ver_4deab7fb6e9a4d0dec62b9e1"
+      }
+    ],
+    "findings": [
+      {
+        "confidence_score": 0.84,
+        "evidence_chunk_ids": [
+          "chunk_33c1939261e77fc3e99a4f79"
+        ],
+        "finding_type": "fact",
+        "summary": "# Build programmatic agents with the Cursor SDK We're introducing the Cursor SDK so you can build agents with the same runtime, harness, and models that power Cursor. The agents...",
+        "title": "Build programmatic agents with the Cursor SDK"
+      }
+    ],
+    "impact_analysis": "已检索到 1 条产品证据，可用于分析代码智能、项目上下文、Agent 自主性和 IDE 生态的竞争变化。",
+    "impact_details": [
+      {
+        "confidence_score": 0.84,
+        "dimension": "agent_context",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_33c1939261e77fc3e99a4f79"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.84,
+        "dimension": "model_extensibility",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_33c1939261e77fc3e99a4f79"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.84,
+        "dimension": "performance_cost",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_33c1939261e77fc3e99a4f79"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      }
+    ],
+    "model_name": null,
+    "opportunity": "将通用 Agent 能力翻译成课程实验、中文报错讲解和分步学习模式，可形成教育场景差异化。",
+    "priority_breakdown": {
+      "event_impact": 0.72,
+      "evidence_confidence": 0.84,
+      "product_relevance": 0.61,
+      "score": 72,
+      "urgency": 0.72
+    },
+    "priority_score": 72,
+    "prompt_name": "product_prompt.md",
+    "rag_query_id": "qry_107c988c4f9d4982be2bf53b9b5db8f7",
+    "recommended_action": "按 D1-D7 标签复核发布证据，抽取可复现功能点，并纳入能力快照和基准任务。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": false,
+    "schema_version": "1.0",
+    "summary": "基于 1 条可追溯证据，Cursor 存在与产品与技术发布相关的动态：Build programmatic agents with the Cursor SDK。",
+    "threat": "若竞品的多文件 Agent、测试修复或 IDE 集成成熟，CodeMate Campus 需要避免功能代差。",
+    "threat_level": "high"
+  },
+  {
+    "agent_kind": "risk",
+    "alert_level": "blue",
+    "analysis_mode": "rules",
+    "assumptions": [
+      "当前没有检索到可引用证据，结论仅作为待补证据的占位。"
+    ],
+    "capability_impact": {},
+    "card_id": "card_0a882a682d88a0f3e9a8",
+    "change_after": "unknown",
+    "change_before": "unknown",
+    "competitor": "Cursor",
+    "confidence_score": 0.12,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:07.027086Z",
+    "dimension_tags": [],
+    "event_title": "Cursor 开发者体验与风险舆情: Cursor",
+    "event_type": "risk_experience",
+    "evidence": [],
+    "findings": [],
+    "impact_analysis": "已检索到 0 条风险证据，可用于判断稳定性、安全隐私、Agent 行为边界和教育场景风险。",
+    "impact_details": [],
+    "model_name": null,
+    "opportunity": "竞品风险可转化为 CodeMate Campus 的安全边界、教师可控和学术诚信设计卖点。",
+    "priority_breakdown": {
+      "event_impact": 0.2,
+      "evidence_confidence": 0.12,
+      "product_relevance": 0.3,
+      "score": 20,
+      "urgency": 0.2
+    },
+    "priority_score": 20,
+    "prompt_name": "risk_prompt.md",
+    "rag_query_id": "qry_7cc562208f074cd681c0f6002b3b9945",
+    "recommended_action": "建立风险复核清单，优先验证危险命令、代码上传、错误讲解和直接代写边界。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": true,
+    "schema_version": "1.0",
+    "summary": "未从 Mini-RAG 检索到 Cursor 的开发者体验与风险舆情证据，需要补充采集或放宽过滤条件。",
+    "threat": "若同类风险在本产品中复现，会直接影响学生代码安全、课程合规和教师信任。",
+    "threat_level": "unknown"
+  },
+  {
+    "agent_kind": "price",
+    "alert_level": "blue",
+    "analysis_mode": "rules",
+    "assumptions": [
+      "当前没有检索到可引用证据，结论仅作为待补证据的占位。"
+    ],
+    "capability_impact": {},
+    "card_id": "card_7edf6c57f7390efa8d45",
+    "change_after": "unknown",
+    "change_before": "unknown",
+    "competitor": "GitHub Copilot",
+    "confidence_score": 0.12,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:07.289128Z",
+    "dimension_tags": [],
+    "event_title": "GitHub Copilot 商业化与价格变化: GitHub Copilot",
+    "event_type": "pricing_change",
+    "evidence": [],
+    "findings": [],
+    "impact_analysis": "已检索到 0 条商业化证据，可用于判断套餐门槛、额度限制和单位任务成本对 CodeMate Campus 的影响。",
+    "impact_details": [],
+    "model_name": null,
+    "opportunity": "若竞品提高门槛或弱化教育优惠，可突出校园低成本、透明额度和学生认证方案。",
+    "priority_breakdown": {
+      "event_impact": 0.2,
+      "evidence_confidence": 0.12,
+      "product_relevance": 0.3,
+      "score": 20,
+      "urgency": 0.2
+    },
+    "priority_score": 20,
+    "prompt_name": "price_prompt.md",
+    "rag_query_id": "qry_b1230c21b5a14d789f2de6fedb79bde6",
+    "recommended_action": "补充价格页快照，记录套餐、额度、学生政策和模型差异，并更新成本效率评分。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": true,
+    "schema_version": "1.0",
+    "summary": "未从 Mini-RAG 检索到 GitHub Copilot 的商业化与价格变化证据，需要补充采集或放宽过滤条件。",
+    "threat": "若竞品提供更强模型或更低学生价，可能压缩 CodeMate Campus 的价格优势。",
+    "threat_level": "unknown"
+  },
+  {
+    "agent_kind": "product",
+    "alert_level": "orange",
+    "analysis_mode": "rules",
+    "assumptions": [],
+    "capability_impact": {
+      "agent_context": 6,
+      "ide_ecosystem": 6,
+      "security_compliance": 6
+    },
+    "card_id": "card_1c0c294a449de1d0d54c",
+    "change_after": "# Copilot agent session streaming is now in public preview GitHub Enterprise Cloud customers with enterprise managed users can now access GitHub Copilot agent session data across all Copilot clients, including: - Clou...",
+    "change_before": "unknown",
+    "competitor": "GitHub Copilot",
+    "confidence_score": 0.88,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:07.550085Z",
+    "dimension_tags": [
+      "agent_context",
+      "ide_ecosystem",
+      "security_compliance"
+    ],
+    "event_title": "GitHub Copilot 产品与技术发布: Copilot agent session streaming is now in public preview",
+    "event_type": "product_release",
+    "evidence": [
+      {
+        "chunk_id": "chunk_f455490fba5b660972719a31",
+        "citation_id": "cite_ddadabcac3ab4bf6a4cef865",
+        "competitor": "GitHub Copilot",
+        "dimension_tags": [
+          "agent_context",
+          "ide_ecosystem",
+          "security_compliance"
+        ],
+        "document_id": "doc_d44015a3c888559af17ae22b",
+        "event_type": "product_release",
+        "evidence_level": "A",
+        "final_score": 0.9771386296924481,
+        "product_version": null,
+        "publish_time": "2026-07-02T21:19:03Z",
+        "quote": "# Copilot agent session streaming is now in public preview\n\nGitHub Enterprise Cloud customers with enterprise managed users can now access GitHub Copilot agent session data across all Copilot clients, including:\n\n- Cloud agents operating on github.com and data resident deployments on ghe.com\n- GitHub Copilot CLI\n- Visual Studio Code\n- Visual Studio\n- Partner IDEs, such as those provided by JetBrains and Eclipse\n\nThis gives you direct visibility into agent session activity (e.g., prompts, responses, and tool calls) so you can manage AI usage across your enterprise. You can choose to access this data via a streaming endpoint or the REST API. To enable this, go to the Copilot subpage in AI Controls and select Enable everywhere for both “Copilot Usage Records Streaming” and “Copilot Usage Records API”.",
+        "source_type": "official_changelog",
+        "title": "Copilot agent session streaming is now in public preview",
+        "url": "https://github.blog/changelog/2026-07-02-copilot-agent-session-streaming-is-now-in-public-preview",
+        "version_id": "ver_8be621ab6b200e3ade6f09c5"
+      },
+      {
+        "chunk_id": "chunk_c707cf36344ba2be248b7a4e",
+        "citation_id": "cite_385411043880bd70663eeff8",
+        "competitor": "GitHub Copilot",
+        "dimension_tags": [
+          "agent_context",
+          "ide_ecosystem",
+          "security_compliance"
+        ],
+        "document_id": "doc_d44015a3c888559af17ae22b",
+        "event_type": "product_release",
+        "evidence_level": "A",
+        "final_score": 0.875748656023097,
+        "product_version": null,
+        "publish_time": "2026-07-02T21:19:03Z",
+        "quote": "### Streaming endpoint\n\nYou can initiate a streaming connection to an event collector or SIEM tool of your choice from your audit log settings. Once configured, GitHub automatically streams all session data for your enterprise to that endpoint. Microsoft Purview is also available as a supported streaming endpoint in public preview, giving customers in the Microsoft ecosystem a direct pathway to send auditability data from all GitHub Copilot clients. For more information, see our documentation on setting up audit log streaming.",
+        "source_type": "official_changelog",
+        "title": "Copilot agent session streaming is now in public preview",
+        "url": "https://github.blog/changelog/2026-07-02-copilot-agent-session-streaming-is-now-in-public-preview",
+        "version_id": "ver_8be621ab6b200e3ade6f09c5"
+      }
+    ],
+    "findings": [
+      {
+        "confidence_score": 0.88,
+        "evidence_chunk_ids": [
+          "chunk_f455490fba5b660972719a31"
+        ],
+        "finding_type": "fact",
+        "summary": "# Copilot agent session streaming is now in public preview GitHub Enterprise Cloud customers with enterprise managed users can now access GitHub Copilot agent session data acros...",
+        "title": "Copilot agent session streaming is now in public preview"
+      },
+      {
+        "confidence_score": 0.88,
+        "evidence_chunk_ids": [
+          "chunk_c707cf36344ba2be248b7a4e"
+        ],
+        "finding_type": "fact",
+        "summary": "### Streaming endpoint You can initiate a streaming connection to an event collector or SIEM tool of your choice from your audit log settings. Once configured, GitHub automatica...",
+        "title": "Copilot agent session streaming is now in public preview"
+      }
+    ],
+    "impact_analysis": "已检索到 2 条产品证据，可用于分析代码智能、项目上下文、Agent 自主性和 IDE 生态的竞争变化。",
+    "impact_details": [
+      {
+        "confidence_score": 0.88,
+        "dimension": "agent_context",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_f455490fba5b660972719a31",
+          "chunk_c707cf36344ba2be248b7a4e"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.88,
+        "dimension": "ide_ecosystem",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_f455490fba5b660972719a31",
+          "chunk_c707cf36344ba2be248b7a4e"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.88,
+        "dimension": "security_compliance",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_f455490fba5b660972719a31",
+          "chunk_c707cf36344ba2be248b7a4e"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      }
+    ],
+    "model_name": null,
+    "opportunity": "将通用 Agent 能力翻译成课程实验、中文报错讲解和分步学习模式，可形成教育场景差异化。",
+    "priority_breakdown": {
+      "event_impact": 0.72,
+      "evidence_confidence": 0.88,
+      "product_relevance": 0.61,
+      "score": 79,
+      "urgency": 0.95
+    },
+    "priority_score": 79,
+    "prompt_name": "product_prompt.md",
+    "rag_query_id": "qry_9967fbda0717497ca94acce605c5213f",
+    "recommended_action": "按 D1-D7 标签复核发布证据，抽取可复现功能点，并纳入能力快照和基准任务。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": false,
+    "schema_version": "1.0",
+    "summary": "基于 2 条可追溯证据，GitHub Copilot 存在与产品与技术发布相关的动态：Copilot agent session streaming is now in public preview；Copilot agent session streaming is now in public preview。",
+    "threat": "若竞品的多文件 Agent、测试修复或 IDE 集成成熟，CodeMate Campus 需要避免功能代差。",
+    "threat_level": "high"
+  },
+  {
+    "agent_kind": "product",
+    "alert_level": "red",
+    "analysis_mode": "rules",
+    "assumptions": [],
+    "capability_impact": {
+      "agent_context": 7,
+      "ide_ecosystem": 7,
+      "model_extensibility": 7,
+      "performance_cost": 7,
+      "security_compliance": 7
+    },
+    "card_id": "card_cc3a98bb8edc68bb96e7",
+    "change_after": "### Availability in GitHub Copilot Kimi K2.7 Code is beginning to roll out to Copilot Pro, Pro+, and Max plans. You’ll be able to select the model in the model picker in Visual Studio Code. Rollout will be gradual and...",
+    "change_before": "unknown",
+    "competitor": "GitHub Copilot",
+    "confidence_score": 0.93,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:07.550085Z",
+    "dimension_tags": [
+      "agent_context",
+      "ide_ecosystem",
+      "model_extensibility",
+      "performance_cost",
+      "security_compliance"
+    ],
+    "event_title": "GitHub Copilot 产品与技术发布: Kimi K2.7 Code is generally available in GitHub Copilot",
+    "event_type": "product_release",
+    "evidence": [
+      {
+        "chunk_id": "chunk_6c8e68bf285a78d21392db6d",
+        "citation_id": "cite_e604a9119ab5ef431edb87a2",
+        "competitor": "GitHub Copilot",
+        "dimension_tags": [
+          "agent_context",
+          "ide_ecosystem",
+          "model_extensibility",
+          "performance_cost",
+          "security_compliance"
+        ],
+        "document_id": "doc_52c9b03ecbd574d84236c98f",
+        "event_type": "product_release",
+        "evidence_level": "A",
+        "final_score": 0.9047261346955884,
+        "product_version": null,
+        "publish_time": "2026-07-02T02:53:42Z",
+        "quote": "### Availability in GitHub Copilot\n\nKimi K2.7 Code is beginning to roll out to Copilot Pro, Pro+, and Max plans. You’ll be able to select the model in the model picker in Visual Studio Code. Rollout will be gradual and we’ll continue to monitor the model’s quality and performance.\n\nWe’ll expand to Copilot Business, Enterprise, and additional surfaces over the coming weeks. Check back soon if you don’t see it yet.\n\nYou’ll be able to select the model in the model picker in:\n\n- Visual Studio Code version 1.127.0 or later\n- Visual Studio version 17.14.6 or later\n- Copilot CLI\n- GitHub Copilot cloud agent\n- GitHub Copilot App\n- github.com\n- GitHub Mobile iOS and Android\n- JetBrains version 1.9.1-251 or later\n- Xcode\n- Eclipse",
+        "source_type": "official_changelog",
+        "title": "Kimi K2.7 Code is generally available in GitHub Copilot",
+        "url": "https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot",
+        "version_id": "ver_17280f7f918e3ff3f3bce97f"
+      },
+      {
+        "chunk_id": "chunk_d9148d332bba9d8c52d341c9",
+        "citation_id": "cite_ec0972d9978934ff39fef88f",
+        "competitor": "GitHub Copilot",
+        "dimension_tags": [
+          "agent_context",
+          "ide_ecosystem",
+          "model_extensibility",
+          "performance_cost",
+          "security_compliance"
+        ],
+        "document_id": "doc_52c9b03ecbd574d84236c98f",
+        "event_type": "product_release",
+        "evidence_level": "A",
+        "final_score": 0.8492494354596114,
+        "product_version": null,
+        "publish_time": "2026-07-02T02:53:42Z",
+        "quote": "# Kimi K2.7 Code is generally available in GitHub Copilot\n\nKimi K2.7 Code, an open-weight model, is now generally available in GitHub Copilot. This is the first open-weight model offered as a selectable option in the Copilot model picker, giving you more choice and a lower-cost option for your coding workflows.\n\nKimi K2.7 Code is hosted by GitHub on Microsoft Azure.\n\nThis model is billed at provider list pricing under usage-based billing. See GitHub Copilot’s pricing for models and requests for details.",
+        "source_type": "official_changelog",
+        "title": "Kimi K2.7 Code is generally available in GitHub Copilot",
+        "url": "https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot",
+        "version_id": "ver_17280f7f918e3ff3f3bce97f"
+      },
+      {
+        "chunk_id": "chunk_847aa4d5eab9426a83f043c4",
+        "citation_id": "cite_8af427fcc31a81726e301cd8",
+        "competitor": "GitHub Copilot",
+        "dimension_tags": [
+          "agent_context",
+          "ide_ecosystem",
+          "model_extensibility",
+          "performance_cost",
+          "security_compliance"
+        ],
+        "document_id": "doc_52c9b03ecbd574d84236c98f",
+        "event_type": "product_release",
+        "evidence_level": "A",
+        "final_score": 0.7975720430746097,
+        "product_version": null,
+        "publish_time": "2026-07-02T02:53:42Z",
+        "quote": "### Learn more\n\nTo explore all models available in GitHub Copilot, see our documentation on supported models and choosing the right AI model for your task.",
+        "source_type": "official_changelog",
+        "title": "Kimi K2.7 Code is generally available in GitHub Copilot",
+        "url": "https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot",
+        "version_id": "ver_17280f7f918e3ff3f3bce97f"
+      }
+    ],
+    "findings": [
+      {
+        "confidence_score": 0.93,
+        "evidence_chunk_ids": [
+          "chunk_6c8e68bf285a78d21392db6d"
+        ],
+        "finding_type": "fact",
+        "summary": "### Availability in GitHub Copilot Kimi K2.7 Code is beginning to roll out to Copilot Pro, Pro+, and Max plans. You’ll be able to select the model in the model picker in Visual ...",
+        "title": "Kimi K2.7 Code is generally available in GitHub Copilot"
+      },
+      {
+        "confidence_score": 0.93,
+        "evidence_chunk_ids": [
+          "chunk_d9148d332bba9d8c52d341c9"
+        ],
+        "finding_type": "fact",
+        "summary": "# Kimi K2.7 Code is generally available in GitHub Copilot Kimi K2.7 Code, an open-weight model, is now generally available in GitHub Copilot. This is the first open-weight model...",
+        "title": "Kimi K2.7 Code is generally available in GitHub Copilot"
+      },
+      {
+        "confidence_score": 0.93,
+        "evidence_chunk_ids": [
+          "chunk_847aa4d5eab9426a83f043c4"
+        ],
+        "finding_type": "fact",
+        "summary": "### Learn more To explore all models available in GitHub Copilot, see our documentation on supported models and choosing the right AI model for your task.",
+        "title": "Kimi K2.7 Code is generally available in GitHub Copilot"
+      }
+    ],
+    "impact_analysis": "已检索到 3 条产品证据，可用于分析代码智能、项目上下文、Agent 自主性和 IDE 生态的竞争变化。",
+    "impact_details": [
+      {
+        "confidence_score": 0.93,
+        "dimension": "agent_context",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_6c8e68bf285a78d21392db6d",
+          "chunk_d9148d332bba9d8c52d341c9",
+          "chunk_847aa4d5eab9426a83f043c4"
+        ],
+        "magnitude": 7,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.93,
+        "dimension": "ide_ecosystem",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_6c8e68bf285a78d21392db6d",
+          "chunk_d9148d332bba9d8c52d341c9",
+          "chunk_847aa4d5eab9426a83f043c4"
+        ],
+        "magnitude": 7,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.93,
+        "dimension": "model_extensibility",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_6c8e68bf285a78d21392db6d",
+          "chunk_d9148d332bba9d8c52d341c9",
+          "chunk_847aa4d5eab9426a83f043c4"
+        ],
+        "magnitude": 7,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.93,
+        "dimension": "performance_cost",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_6c8e68bf285a78d21392db6d",
+          "chunk_d9148d332bba9d8c52d341c9",
+          "chunk_847aa4d5eab9426a83f043c4"
+        ],
+        "magnitude": 7,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.93,
+        "dimension": "security_compliance",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_6c8e68bf285a78d21392db6d",
+          "chunk_d9148d332bba9d8c52d341c9",
+          "chunk_847aa4d5eab9426a83f043c4"
+        ],
+        "magnitude": 7,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      }
+    ],
+    "model_name": null,
+    "opportunity": "将通用 Agent 能力翻译成课程实验、中文报错讲解和分步学习模式，可形成教育场景差异化。",
+    "priority_breakdown": {
+      "event_impact": 0.72,
+      "evidence_confidence": 0.93,
+      "product_relevance": 0.74,
+      "score": 82,
+      "urgency": 0.95
+    },
+    "priority_score": 82,
+    "prompt_name": "product_prompt.md",
+    "rag_query_id": "qry_9967fbda0717497ca94acce605c5213f",
+    "recommended_action": "按 D1-D7 标签复核发布证据，抽取可复现功能点，并纳入能力快照和基准任务。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": false,
+    "schema_version": "1.0",
+    "summary": "基于 3 条可追溯证据，GitHub Copilot 存在与产品与技术发布相关的动态：Kimi K2.7 Code is generally available in GitHub Copilot；Kimi K2.7 Code is generally available in GitHub Copilot；Kimi K2.7 Code is generally available in GitHub Copilot。",
+    "threat": "若竞品的多文件 Agent、测试修复或 IDE 集成成熟，CodeMate Campus 需要避免功能代差。",
+    "threat_level": "critical"
+  },
+  {
+    "agent_kind": "product",
+    "alert_level": "red",
+    "analysis_mode": "rules",
+    "assumptions": [],
+    "capability_impact": {
+      "agent_context": 6,
+      "code_intelligence": 6,
+      "ide_ecosystem": 6,
+      "model_extensibility": 6,
+      "performance_cost": 6,
+      "security_compliance": 6
+    },
+    "card_id": "card_c11262e24eadefcaefdb",
+    "change_after": "### More agent workflow wins - Session sync and chronicle: Sync chat sessions to your GitHub account and search coding history across machines and workspaces. - Gutter feedback: Leave comments on an agent’s changes di...",
+    "change_before": "unknown",
+    "competitor": "GitHub Copilot",
+    "confidence_score": 0.84,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:07.550085Z",
+    "dimension_tags": [
+      "code_intelligence",
+      "agent_context",
+      "ide_ecosystem",
+      "model_extensibility",
+      "performance_cost",
+      "security_compliance"
+    ],
+    "event_title": "GitHub Copilot 产品与技术发布: GitHub Copilot in Visual Studio Code, June 2026 releases",
+    "event_type": "product_release",
+    "evidence": [
+      {
+        "chunk_id": "chunk_ffce6e70876fa62843650d3a",
+        "citation_id": "cite_dafbe59e8cdbf9e2e19df824",
+        "competitor": "GitHub Copilot",
+        "dimension_tags": [
+          "code_intelligence",
+          "agent_context",
+          "ide_ecosystem",
+          "model_extensibility",
+          "performance_cost",
+          "security_compliance"
+        ],
+        "document_id": "doc_80f39385c29b604bae424e75",
+        "event_type": "product_release",
+        "evidence_level": "A",
+        "final_score": 0.8068295854298104,
+        "product_version": "1.123.0",
+        "publish_time": "2026-07-09T19:58:08Z",
+        "quote": "### More agent workflow wins\n\n- Session sync and chronicle: Sync chat sessions to your GitHub account and search coding history across machines and workspaces.\n- Gutter feedback: Leave comments on an agent’s changes directly from the editor gutter.\n- Smarter pull request creation: Create a pull request from a session with the title and description generated from session context.\n- 1M context windows: Work with compatible Anthropic and OpenAI models using much larger context windows for bigger codebases and longer conversations.\n- Model hover cards: See a quick model descriptor and jump directly to relevant configuration options.\n- Official Ollama extension: Move from the built-in Ollama provider to the official VS Code extension for faster model and capability updates.\n- Managed Copilot settings: Deliver Copilot configuration through native device management on Windows and macOS.\n- File-based managed settings: Apply managed Copilot settings from a JSON file for machines that are not enrolled in device management.\n- MCP OAuth credentials: Configure preregistered OAuth client IDs and keep client secrets in VS Code secret storage.\n- Extension auto-update delay: A two-hour delay is",
+        "source_type": "official_changelog",
+        "title": "GitHub Copilot in Visual Studio Code, June 2026 releases",
+        "url": "https://github.blog/changelog/2026-07-08-github-copilot-in-visual-studio-code-june-2026-releases",
+        "version_id": "ver_0c26131a5a7eb1258f4ed9c7"
+      }
+    ],
+    "findings": [
+      {
+        "confidence_score": 0.84,
+        "evidence_chunk_ids": [
+          "chunk_ffce6e70876fa62843650d3a"
+        ],
+        "finding_type": "fact",
+        "summary": "### More agent workflow wins - Session sync and chronicle: Sync chat sessions to your GitHub account and search coding history across machines and workspaces. - Gutter feedback:...",
+        "title": "GitHub Copilot in Visual Studio Code, June 2026 releases"
+      }
+    ],
+    "impact_analysis": "已检索到 1 条产品证据，可用于分析代码智能、项目上下文、Agent 自主性和 IDE 生态的竞争变化。",
+    "impact_details": [
+      {
+        "confidence_score": 0.84,
+        "dimension": "code_intelligence",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_ffce6e70876fa62843650d3a"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.84,
+        "dimension": "agent_context",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_ffce6e70876fa62843650d3a"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.84,
+        "dimension": "ide_ecosystem",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_ffce6e70876fa62843650d3a"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.84,
+        "dimension": "model_extensibility",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_ffce6e70876fa62843650d3a"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.84,
+        "dimension": "performance_cost",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_ffce6e70876fa62843650d3a"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.84,
+        "dimension": "security_compliance",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_ffce6e70876fa62843650d3a"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      }
+    ],
+    "model_name": null,
+    "opportunity": "将通用 Agent 能力翻译成课程实验、中文报错讲解和分步学习模式，可形成教育场景差异化。",
+    "priority_breakdown": {
+      "event_impact": 0.72,
+      "evidence_confidence": 0.84,
+      "product_relevance": 0.87,
+      "score": 83,
+      "urgency": 0.95
+    },
+    "priority_score": 83,
+    "prompt_name": "product_prompt.md",
+    "rag_query_id": "qry_9967fbda0717497ca94acce605c5213f",
+    "recommended_action": "按 D1-D7 标签复核发布证据，抽取可复现功能点，并纳入能力快照和基准任务。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": false,
+    "schema_version": "1.0",
+    "summary": "基于 1 条可追溯证据，GitHub Copilot 存在与产品与技术发布相关的动态：GitHub Copilot in Visual Studio Code, June 2026 releases。",
+    "threat": "若竞品的多文件 Agent、测试修复或 IDE 集成成熟，CodeMate Campus 需要避免功能代差。",
+    "threat_level": "critical"
+  },
+  {
+    "agent_kind": "product",
+    "alert_level": "red",
+    "analysis_mode": "rules",
+    "assumptions": [],
+    "capability_impact": {
+      "agent_context": 6,
+      "code_intelligence": 6,
+      "education_fit": 6,
+      "ide_ecosystem": 6,
+      "model_extensibility": 6,
+      "performance_cost": 6,
+      "security_compliance": 6
+    },
+    "card_id": "card_dd7ea2c8f1eb49677b55",
+    "change_after": "### Codex as agent provider in public preview Codex is now available as an agent provider in public preview, giving you more flexibility to pick the agent that best fits your task. And you can do this without leaving ...",
+    "change_before": "unknown",
+    "competitor": "GitHub Copilot",
+    "confidence_score": 0.88,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:07.550085Z",
+    "dimension_tags": [
+      "code_intelligence",
+      "agent_context",
+      "ide_ecosystem",
+      "model_extensibility",
+      "performance_cost",
+      "security_compliance",
+      "education_fit"
+    ],
+    "event_title": "GitHub Copilot 产品与技术发布: Codex as agent provider and agentic enhancements in JetBrains IDEs",
+    "event_type": "product_release",
+    "evidence": [
+      {
+        "chunk_id": "chunk_e81d76d3d568ba9e68f4cf74",
+        "citation_id": "cite_b8eeaf4136cf7c7e9d1d8158",
+        "competitor": "GitHub Copilot",
+        "dimension_tags": [
+          "code_intelligence",
+          "agent_context",
+          "ide_ecosystem",
+          "model_extensibility",
+          "performance_cost",
+          "security_compliance",
+          "education_fit"
+        ],
+        "document_id": "doc_06b1173779ee9384b2cfe433",
+        "event_type": "product_release",
+        "evidence_level": "A",
+        "final_score": 0.39118375769927866,
+        "product_version": null,
+        "publish_time": "2026-07-08T18:28:53Z",
+        "quote": "### Codex as agent provider in public preview\n\nCodex is now available as an agent provider in public preview, giving you more flexibility to pick the agent that best fits your task. And you can do this without leaving your JetBrains IDE.\n\nTo use it, first install the Codex CLI on your machine. Then go to Settings > Tools > GitHub Copilot > Chat, enable Codex and set the Codex CLI path. Once configured, select Codex from the agent picker in the Copilot Chat panel to start a session.\n\n> If you are a Copilot Business or Copilot Enterprise subscriber, an administrator will have to enable the editor preview features policy before you can use this feature.",
+        "source_type": "official_changelog",
+        "title": "Codex as agent provider and agentic enhancements in JetBrains IDEs",
+        "url": "https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides",
+        "version_id": "ver_3acb579a1dafa117d4326fe7"
+      },
+      {
+        "chunk_id": "chunk_bab3f8fb69f4abc61c2c7bdd",
+        "citation_id": "cite_3522fc6770e77af54e881857",
+        "competitor": "GitHub Copilot",
+        "dimension_tags": [
+          "code_intelligence",
+          "agent_context",
+          "ide_ecosystem",
+          "model_extensibility",
+          "performance_cost",
+          "security_compliance",
+          "education_fit"
+        ],
+        "document_id": "doc_06b1173779ee9384b2cfe433",
+        "event_type": "product_release",
+        "evidence_level": "A",
+        "final_score": 0.3824598655473912,
+        "product_version": null,
+        "publish_time": "2026-07-08T18:28:53Z",
+        "quote": "## Try it out\n\nWe encourage you to try out the latest version of the GitHub Copilot plugin and share your feedback. Your input is invaluable in helping us refine and improve the product.",
+        "source_type": "official_changelog",
+        "title": "Codex as agent provider and agentic enhancements in JetBrains IDEs",
+        "url": "https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides",
+        "version_id": "ver_3acb579a1dafa117d4326fe7"
+      }
+    ],
+    "findings": [
+      {
+        "confidence_score": 0.88,
+        "evidence_chunk_ids": [
+          "chunk_e81d76d3d568ba9e68f4cf74"
+        ],
+        "finding_type": "fact",
+        "summary": "### Codex as agent provider in public preview Codex is now available as an agent provider in public preview, giving you more flexibility to pick the agent that best fits your ta...",
+        "title": "Codex as agent provider and agentic enhancements in JetBrains IDEs"
+      },
+      {
+        "confidence_score": 0.88,
+        "evidence_chunk_ids": [
+          "chunk_bab3f8fb69f4abc61c2c7bdd"
+        ],
+        "finding_type": "fact",
+        "summary": "## Try it out We encourage you to try out the latest version of the GitHub Copilot plugin and share your feedback. Your input is invaluable in helping us refine and improve the ...",
+        "title": "Codex as agent provider and agentic enhancements in JetBrains IDEs"
+      }
+    ],
+    "impact_analysis": "已检索到 2 条产品证据，可用于分析代码智能、项目上下文、Agent 自主性和 IDE 生态的竞争变化。",
+    "impact_details": [
+      {
+        "confidence_score": 0.88,
+        "dimension": "code_intelligence",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_e81d76d3d568ba9e68f4cf74",
+          "chunk_bab3f8fb69f4abc61c2c7bdd"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.88,
+        "dimension": "agent_context",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_e81d76d3d568ba9e68f4cf74",
+          "chunk_bab3f8fb69f4abc61c2c7bdd"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.88,
+        "dimension": "ide_ecosystem",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_e81d76d3d568ba9e68f4cf74",
+          "chunk_bab3f8fb69f4abc61c2c7bdd"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.88,
+        "dimension": "model_extensibility",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_e81d76d3d568ba9e68f4cf74",
+          "chunk_bab3f8fb69f4abc61c2c7bdd"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.88,
+        "dimension": "performance_cost",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_e81d76d3d568ba9e68f4cf74",
+          "chunk_bab3f8fb69f4abc61c2c7bdd"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.88,
+        "dimension": "security_compliance",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_e81d76d3d568ba9e68f4cf74",
+          "chunk_bab3f8fb69f4abc61c2c7bdd"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.88,
+        "dimension": "education_fit",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_e81d76d3d568ba9e68f4cf74",
+          "chunk_bab3f8fb69f4abc61c2c7bdd"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      }
+    ],
+    "model_name": null,
+    "opportunity": "将通用 Agent 能力翻译成课程实验、中文报错讲解和分步学习模式，可形成教育场景差异化。",
+    "priority_breakdown": {
+      "event_impact": 0.72,
+      "evidence_confidence": 0.88,
+      "product_relevance": 1.0,
+      "score": 87,
+      "urgency": 0.95
+    },
+    "priority_score": 87,
+    "prompt_name": "product_prompt.md",
+    "rag_query_id": "qry_9967fbda0717497ca94acce605c5213f",
+    "recommended_action": "按 D1-D7 标签复核发布证据，抽取可复现功能点，并纳入能力快照和基准任务。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": false,
+    "schema_version": "1.0",
+    "summary": "基于 2 条可追溯证据，GitHub Copilot 存在与产品与技术发布相关的动态：Codex as agent provider and agentic enhancements in JetBrains IDEs；Codex as agent provider and agentic enhancements in JetBrains IDEs。",
+    "threat": "若竞品的多文件 Agent、测试修复或 IDE 集成成熟，CodeMate Campus 需要避免功能代差。",
+    "threat_level": "critical"
+  },
+  {
+    "agent_kind": "risk",
+    "alert_level": "orange",
+    "analysis_mode": "rules",
+    "assumptions": [],
+    "capability_impact": {
+      "agent_context": 6,
+      "ide_ecosystem": 6,
+      "model_extensibility": 6
+    },
+    "card_id": "card_c3f7251adb85d79a3cb8",
+    "change_after": "Notify when Copilot agent sessions need attention or finish ## Type Feature request ## Summary When running multiple Copilot agent sessions across multiple VS Code windows, it is easy to lose track of which session is...",
+    "change_before": "unknown",
+    "competitor": "GitHub Copilot",
+    "confidence_score": 0.78,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:07.538427Z",
+    "dimension_tags": [
+      "agent_context",
+      "ide_ecosystem",
+      "model_extensibility"
+    ],
+    "event_title": "GitHub Copilot 开发者体验与风险舆情: Notify when Copilot agent sessions need attention or finish",
+    "event_type": "risk_experience",
+    "evidence": [
+      {
+        "chunk_id": "chunk_6a9e33f742ffb2929667ec7a",
+        "citation_id": "cite_6fe92af8641d772abeaa9cd7",
+        "competitor": "GitHub Copilot",
+        "dimension_tags": [
+          "agent_context",
+          "ide_ecosystem",
+          "model_extensibility"
+        ],
+        "document_id": "doc_ebcd252e4bfeb1d3a32a9d96",
+        "event_type": "risk_experience",
+        "evidence_level": "B",
+        "final_score": 0.9423296460063244,
+        "product_version": null,
+        "publish_time": "2026-05-18T23:28:36Z",
+        "quote": "Notify when Copilot agent sessions need attention or finish\n\n## Type\n\nFeature request\n\n## Summary\n\nWhen running multiple Copilot agent sessions across multiple VS Code windows, it is easy to lose track of which session is still running, which one needs user input, and which one has finished.\n\nPlease add optional OS notifications for Copilot agent session state changes, with click-through behavior that focuses the correct VS Code window and reveals the exact chat/session.\n\n## Current behavior\n\nToday, if I start agent work in several VS Code windows while multitasking, I have to manually remember where each session is running and periodically check each window/session.\n\nThe Agent Sessions / Sessions view helps when I am already looking at it, but I do not get an OS-level notification when a session needs attention or completes.\n\n## Requested behavior\n\nAdd an opt-in notification setting for Copilot agent sessions, for example:\n\n- Notify when an agent session needs user input.\n- Notify when an agent session finishes successfully.\n- Notify when an agent session fails or is blocked.\n- Clicking the notification focuses the correct VS Code window and opens/reveals the exact Copilot chat/session.",
+        "source_type": "github_issue",
+        "title": "Notify when Copilot agent sessions need attention or finish",
+        "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5118",
+        "version_id": "ver_0c9aeaf49211ee0a45213861"
+      },
+      {
+        "chunk_id": "chunk_9adc98ba5b7f991ed8a20f7e",
+        "citation_id": "cite_6cedff84dd6e21fc806c4a59",
+        "competitor": "GitHub Copilot",
+        "dimension_tags": [
+          "agent_context",
+          "ide_ecosystem",
+          "model_extensibility"
+        ],
+        "document_id": "doc_ebcd252e4bfeb1d3a32a9d96",
+        "event_type": "risk_experience",
+        "evidence_level": "B",
+        "final_score": 0.9143376246758625,
+        "product_version": null,
+        "publish_time": "2026-05-18T23:28:36Z",
+        "quote": "when an agent session fails or is blocked.\n- Clicking the notification focuses the correct VS Code window and opens/reveals the exact Copilot chat/session.\n\nIt would be useful if the notification text included enough context to identify the session, such as workspace/repository name and session title.\n\n## Why this matters\n\nAgent mode is most useful when I can delegate work and continue with other tasks. Without notifications, I often forget which VS Code window contains the active agent session, or I discover much later that the agent was waiting for input.\n\nThis becomes especially painful when working across several repositories and worktrees at once.\n\n## Possible implementation direction\n\nThis seems like it would fit naturally on top of the existing Agent Sessions / Sessions model:\n\n- Treat session state changes as notification triggers.\n- Add user settings for which state changes should notify.\n- Add notification actions such as `Open Session`, `Dismiss`, and optionally `Disable Notifications`.\n- Use the existing session/window routing to focus the right window and reveal the relevant session.\n\n## Similar issues searched\n\nI searched for similar issues before filing, using terms such as:\n\n- `Copilot agent session notification`\n- `agent sessions notification`\n- `copilot desktop notification`\n- `copilot agent finished`\n- `copilot needs attention`\n- `Copilot chat notification`\n- `Copilot open chat session`\n\nI did not find a direct duplicate. Nearby but not equivalent issues included session visualization/session attribution and terminal cleanup requests.\n\n## Environment\n\n- VS Code: 1.120.0\n- GitHub Copilot Chat: 0.48.1\n- OS: Linux\n\nIssue state: open",
+        "source_type": "github_issue",
+        "title": "Notify when Copilot agent sessions need attention or finish",
+        "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5118",
+        "version_id": "ver_0c9aeaf49211ee0a45213861"
+      }
+    ],
+    "findings": [
+      {
+        "confidence_score": 0.78,
+        "evidence_chunk_ids": [
+          "chunk_6a9e33f742ffb2929667ec7a"
+        ],
+        "finding_type": "fact",
+        "summary": "Notify when Copilot agent sessions need attention or finish ## Type Feature request ## Summary When running multiple Copilot agent sessions across multiple VS Code windows, it i...",
+        "title": "Notify when Copilot agent sessions need attention or finish"
+      },
+      {
+        "confidence_score": 0.78,
+        "evidence_chunk_ids": [
+          "chunk_9adc98ba5b7f991ed8a20f7e"
+        ],
+        "finding_type": "fact",
+        "summary": "when an agent session fails or is blocked. - Clicking the notification focuses the correct VS Code window and opens/reveals the exact Copilot chat/session. It would be useful if...",
+        "title": "Notify when Copilot agent sessions need attention or finish"
+      }
+    ],
+    "impact_analysis": "已检索到 2 条风险证据，可用于判断稳定性、安全隐私、Agent 行为边界和教育场景风险。",
+    "impact_details": [
+      {
+        "confidence_score": 0.78,
+        "dimension": "agent_context",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_6a9e33f742ffb2929667ec7a",
+          "chunk_9adc98ba5b7f991ed8a20f7e"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.78,
+        "dimension": "ide_ecosystem",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_6a9e33f742ffb2929667ec7a",
+          "chunk_9adc98ba5b7f991ed8a20f7e"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.78,
+        "dimension": "model_extensibility",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_6a9e33f742ffb2929667ec7a",
+          "chunk_9adc98ba5b7f991ed8a20f7e"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      }
+    ],
+    "model_name": null,
+    "opportunity": "竞品风险可转化为 CodeMate Campus 的安全边界、教师可控和学术诚信设计卖点。",
+    "priority_breakdown": {
+      "event_impact": 0.78,
+      "evidence_confidence": 0.78,
+      "product_relevance": 0.48,
+      "score": 70,
+      "urgency": 0.72
+    },
+    "priority_score": 70,
+    "prompt_name": "risk_prompt.md",
+    "rag_query_id": "qry_aec323fe703745569517e7db110b5651",
+    "recommended_action": "建立风险复核清单，优先验证危险命令、代码上传、错误讲解和直接代写边界。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": false,
+    "schema_version": "1.0",
+    "summary": "基于 2 条可追溯证据，GitHub Copilot 存在与开发者体验与风险舆情相关的动态：Notify when Copilot agent sessions need attention or finish；Notify when Copilot agent sessions need attention or finish。",
+    "threat": "若同类风险在本产品中复现，会直接影响学生代码安全、课程合规和教师信任。",
+    "threat_level": "high"
+  },
+  {
+    "agent_kind": "risk",
+    "alert_level": "orange",
+    "analysis_mode": "rules",
+    "assumptions": [],
+    "capability_impact": {
+      "agent_context": 6,
+      "ide_ecosystem": 6,
+      "security_compliance": 6
+    },
+    "card_id": "card_dd6408f2b2ab82fc6a4d",
+    "change_after": "Chat agent sandbox sets CWD to temp directory instead of workspace root When `chat.agent.sandbox.enabled` is `\"on\"`, the agent's working directory is a temporary directory (e.g. `/tmp/...`) rather than the workspace r...",
+    "change_before": "unknown",
+    "competitor": "GitHub Copilot",
+    "confidence_score": 0.78,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:07.538427Z",
+    "dimension_tags": [
+      "agent_context",
+      "ide_ecosystem",
+      "security_compliance"
+    ],
+    "event_title": "GitHub Copilot 开发者体验与风险舆情: Chat agent sandbox sets CWD to temp directory instead of workspace root",
+    "event_type": "risk_experience",
+    "evidence": [
+      {
+        "chunk_id": "chunk_2cee20c5de0335f3ce2c6bad",
+        "citation_id": "cite_8362fa9730f2bb19cb15fb2f",
+        "competitor": "GitHub Copilot",
+        "dimension_tags": [
+          "agent_context",
+          "ide_ecosystem",
+          "security_compliance"
+        ],
+        "document_id": "doc_0665ea37b8b96cc14c802a1f",
+        "event_type": "risk_experience",
+        "evidence_level": "B",
+        "final_score": 0.927810255422812,
+        "product_version": null,
+        "publish_time": "2026-05-03T06:37:11Z",
+        "quote": "Chat agent sandbox sets CWD to temp directory instead of workspace root\n\nWhen `chat.agent.sandbox.enabled` is `\"on\"`, the agent's working directory is a temporary directory (e.g. `/tmp/...`) rather than the workspace root. This breaks relative paths, `git` commands, build tools, and any tool that expects to run from the project root.\n\n**Steps to reproduce**\n\n1. Enable `chat.agent.sandbox.enabled: \"on\"`\n2. Ask the agent to run `pwd` or `git status`\n\n**Expected behavior**\n\nCWD should default to the workspace root.\n\n**Environment**\n\n- VS Code Copilot Chat 0.46.2\n- Linux\n\nIssue state: closed",
+        "source_type": "github_issue",
+        "title": "Chat agent sandbox sets CWD to temp directory instead of workspace root",
+        "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5097",
+        "version_id": "ver_1a2bd0f985934fede0f6067c"
+      },
+      {
+        "chunk_id": "chunk_303b8122adddf2cdf9a0c400",
+        "citation_id": "cite_5726f31cdf70df51a33310e3",
+        "competitor": "GitHub Copilot",
+        "dimension_tags": [
+          "agent_context",
+          "ide_ecosystem",
+          "security_compliance"
+        ],
+        "document_id": "doc_0665ea37b8b96cc14c802a1f",
+        "event_type": "risk_experience",
+        "evidence_level": "B",
+        "final_score": 0.8622229757403359,
+        "product_version": null,
+        "publish_time": "2026-05-03T06:37:11Z",
+        "quote": "Comment by yehsuf at 2026-05-03T08:17:56Z\n\nFiled in wrong repository. Refiling on microsoft/vscode.",
+        "source_type": "github_issue",
+        "title": "Chat agent sandbox sets CWD to temp directory instead of workspace root",
+        "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5097",
+        "version_id": "ver_1a2bd0f985934fede0f6067c"
+      }
+    ],
+    "findings": [
+      {
+        "confidence_score": 0.78,
+        "evidence_chunk_ids": [
+          "chunk_2cee20c5de0335f3ce2c6bad"
+        ],
+        "finding_type": "fact",
+        "summary": "Chat agent sandbox sets CWD to temp directory instead of workspace root When `chat.agent.sandbox.enabled` is `\"on\"`, the agent's working directory is a temporary directory (e.g....",
+        "title": "Chat agent sandbox sets CWD to temp directory instead of workspace root"
+      },
+      {
+        "confidence_score": 0.78,
+        "evidence_chunk_ids": [
+          "chunk_303b8122adddf2cdf9a0c400"
+        ],
+        "finding_type": "fact",
+        "summary": "Comment by yehsuf at 2026-05-03T08:17:56Z Filed in wrong repository. Refiling on microsoft/vscode.",
+        "title": "Chat agent sandbox sets CWD to temp directory instead of workspace root"
+      }
+    ],
+    "impact_analysis": "已检索到 2 条风险证据，可用于判断稳定性、安全隐私、Agent 行为边界和教育场景风险。",
+    "impact_details": [
+      {
+        "confidence_score": 0.78,
+        "dimension": "agent_context",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_2cee20c5de0335f3ce2c6bad",
+          "chunk_303b8122adddf2cdf9a0c400"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.78,
+        "dimension": "ide_ecosystem",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_2cee20c5de0335f3ce2c6bad",
+          "chunk_303b8122adddf2cdf9a0c400"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.78,
+        "dimension": "security_compliance",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_2cee20c5de0335f3ce2c6bad",
+          "chunk_303b8122adddf2cdf9a0c400"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      }
+    ],
+    "model_name": null,
+    "opportunity": "竞品风险可转化为 CodeMate Campus 的安全边界、教师可控和学术诚信设计卖点。",
+    "priority_breakdown": {
+      "event_impact": 0.78,
+      "evidence_confidence": 0.78,
+      "product_relevance": 0.61,
+      "score": 73,
+      "urgency": 0.72
+    },
+    "priority_score": 73,
+    "prompt_name": "risk_prompt.md",
+    "rag_query_id": "qry_aec323fe703745569517e7db110b5651",
+    "recommended_action": "建立风险复核清单，优先验证危险命令、代码上传、错误讲解和直接代写边界。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": false,
+    "schema_version": "1.0",
+    "summary": "基于 2 条可追溯证据，GitHub Copilot 存在与开发者体验与风险舆情相关的动态：Chat agent sandbox sets CWD to temp directory instead of workspace root；Chat agent sandbox sets CWD to temp directory instead of workspace root。",
+    "threat": "若同类风险在本产品中复现，会直接影响学生代码安全、课程合规和教师信任。",
+    "threat_level": "high"
+  },
+  {
+    "agent_kind": "risk",
+    "alert_level": "orange",
+    "analysis_mode": "rules",
+    "assumptions": [],
+    "capability_impact": {
+      "agent_context": 6,
+      "ide_ecosystem": 6,
+      "security_compliance": 6
+    },
+    "card_id": "card_4b845938dbd6e6559d43",
+    "change_after": "Feature request: configurable session root / CWD for chat agent sandbox ## Summary Allow users to configure the working directory for a chat agent session, defaulting to the workspace root. ## Motivation Currently the...",
+    "change_before": "unknown",
+    "competitor": "GitHub Copilot",
+    "confidence_score": 0.78,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:07.538427Z",
+    "dimension_tags": [
+      "agent_context",
+      "ide_ecosystem",
+      "security_compliance"
+    ],
+    "event_title": "GitHub Copilot 开发者体验与风险舆情: Feature request: configurable session root / CWD for chat agent sandbox",
+    "event_type": "risk_experience",
+    "evidence": [
+      {
+        "chunk_id": "chunk_580d81dc8fdf8fc7a0ea1b1e",
+        "citation_id": "cite_8fdbb450988ae7ef32df3ebe",
+        "competitor": "GitHub Copilot",
+        "dimension_tags": [
+          "agent_context",
+          "ide_ecosystem",
+          "security_compliance"
+        ],
+        "document_id": "doc_6d3b416d4f3716ed2c18281a",
+        "event_type": "risk_experience",
+        "evidence_level": "B",
+        "final_score": 0.9022442847730867,
+        "product_version": null,
+        "publish_time": "2026-05-03T06:38:11Z",
+        "quote": "Feature request: configurable session root / CWD for chat agent sandbox\n\n## Summary\n\nAllow users to configure the working directory for a chat agent session, defaulting to the workspace root.\n\n## Motivation\n\nCurrently the sandbox sets CWD to a temporary directory (see #5097). Even after that bug is fixed, there are legitimate use cases for running an agent session rooted at a specific subdirectory — e.g. a monorepo where only one package is in scope for the session.\n\n## Proposed behavior\n\n- **Default:** CWD is the workspace root (fixing the current bug)\n- **Per-session override:** A UI affordance or slash command to set the session root at session start (e.g. `/root ./packages/my-service`)\n- **Settings fallback:** Optionally, a `chat.agent.sandbox.sessionRoot` setting for a persistent default\n\n## Why this matters\n\nTools like `git`, `npm`, `make`, and most build systems derive their context from CWD. Agents that run in the wrong directory silently produce incorrect results or fail with confusing errors.\n\nIssue state: closed",
+        "source_type": "github_issue",
+        "title": "Feature request: configurable session root / CWD for chat agent sandbox",
+        "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5100",
+        "version_id": "ver_7111966858373a8ecb28266f"
+      },
+      {
+        "chunk_id": "chunk_618b1649375b3e0573704789",
+        "citation_id": "cite_3944db21d1b7f3d8a4192a09",
+        "competitor": "GitHub Copilot",
+        "dimension_tags": [
+          "agent_context",
+          "ide_ecosystem",
+          "security_compliance"
+        ],
+        "document_id": "doc_6d3b416d4f3716ed2c18281a",
+        "event_type": "risk_experience",
+        "evidence_level": "B",
+        "final_score": 0.8681732605045143,
+        "product_version": null,
+        "publish_time": "2026-05-03T06:38:11Z",
+        "quote": "Comment by yehsuf at 2026-05-03T08:18:01Z\n\nFiled in wrong repository. Refiling on microsoft/vscode.",
+        "source_type": "github_issue",
+        "title": "Feature request: configurable session root / CWD for chat agent sandbox",
+        "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5100",
+        "version_id": "ver_7111966858373a8ecb28266f"
+      }
+    ],
+    "findings": [
+      {
+        "confidence_score": 0.78,
+        "evidence_chunk_ids": [
+          "chunk_580d81dc8fdf8fc7a0ea1b1e"
+        ],
+        "finding_type": "fact",
+        "summary": "Feature request: configurable session root / CWD for chat agent sandbox ## Summary Allow users to configure the working directory for a chat agent session, defaulting to the wor...",
+        "title": "Feature request: configurable session root / CWD for chat agent sandbox"
+      },
+      {
+        "confidence_score": 0.78,
+        "evidence_chunk_ids": [
+          "chunk_618b1649375b3e0573704789"
+        ],
+        "finding_type": "fact",
+        "summary": "Comment by yehsuf at 2026-05-03T08:18:01Z Filed in wrong repository. Refiling on microsoft/vscode.",
+        "title": "Feature request: configurable session root / CWD for chat agent sandbox"
+      }
+    ],
+    "impact_analysis": "已检索到 2 条风险证据，可用于判断稳定性、安全隐私、Agent 行为边界和教育场景风险。",
+    "impact_details": [
+      {
+        "confidence_score": 0.78,
+        "dimension": "agent_context",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_580d81dc8fdf8fc7a0ea1b1e",
+          "chunk_618b1649375b3e0573704789"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.78,
+        "dimension": "ide_ecosystem",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_580d81dc8fdf8fc7a0ea1b1e",
+          "chunk_618b1649375b3e0573704789"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.78,
+        "dimension": "security_compliance",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_580d81dc8fdf8fc7a0ea1b1e",
+          "chunk_618b1649375b3e0573704789"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      }
+    ],
+    "model_name": null,
+    "opportunity": "竞品风险可转化为 CodeMate Campus 的安全边界、教师可控和学术诚信设计卖点。",
+    "priority_breakdown": {
+      "event_impact": 0.78,
+      "evidence_confidence": 0.78,
+      "product_relevance": 0.61,
+      "score": 73,
+      "urgency": 0.72
+    },
+    "priority_score": 73,
+    "prompt_name": "risk_prompt.md",
+    "rag_query_id": "qry_aec323fe703745569517e7db110b5651",
+    "recommended_action": "建立风险复核清单，优先验证危险命令、代码上传、错误讲解和直接代写边界。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": false,
+    "schema_version": "1.0",
+    "summary": "基于 2 条可追溯证据，GitHub Copilot 存在与开发者体验与风险舆情相关的动态：Feature request: configurable session root / CWD for chat agent sandbox；Feature request: configurable session root / CWD for chat agent sandbox。",
+    "threat": "若同类风险在本产品中复现，会直接影响学生代码安全、课程合规和教师信任。",
+    "threat_level": "high"
+  },
+  {
+    "agent_kind": "risk",
+    "alert_level": "orange",
+    "analysis_mode": "rules",
+    "assumptions": [],
+    "capability_impact": {
+      "agent_context": 6,
+      "ide_ecosystem": 6
+    },
+    "card_id": "card_253fd213d3151d29ca92",
+    "change_after": "Windows Copilot CLI shim crashes when Get-Command copilot returns null ## Bug The Windows Copilot CLI shim can crash in `Find-RealCopilot` when `Get-Command copilot` returns no command. Source file: `src/extension/cha...",
+    "change_before": "unknown",
+    "competitor": "GitHub Copilot",
+    "confidence_score": 0.78,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:07.538427Z",
+    "dimension_tags": [
+      "agent_context",
+      "ide_ecosystem"
+    ],
+    "event_title": "GitHub Copilot 开发者体验与风险舆情: Windows Copilot CLI shim crashes when Get-Command copilot returns null",
+    "event_type": "risk_experience",
+    "evidence": [
+      {
+        "chunk_id": "chunk_6e588e136096f0168c079682",
+        "citation_id": "cite_c005ebf76dfad3fef39fac1f",
+        "competitor": "GitHub Copilot",
+        "dimension_tags": [
+          "agent_context",
+          "ide_ecosystem"
+        ],
+        "document_id": "doc_f6cab1d145390bc5c7db7cb8",
+        "event_type": "risk_experience",
+        "evidence_level": "B",
+        "final_score": 0.8647344977760894,
+        "product_version": null,
+        "publish_time": "2026-05-10T15:48:05Z",
+        "quote": "Windows Copilot CLI shim crashes when Get-Command copilot returns null\n\n## Bug\n\nThe Windows Copilot CLI shim can crash in `Find-RealCopilot` when `Get-Command copilot` returns no command.\n\nSource file:\n\n`src/extension/chatSessions/vscode-node/copilotCLIShim.ps1`\n\nCurrent code:\n\n```powershell\n$CopilotPath = (Get-Command copilot -ErrorAction SilentlyContinue).Source\n\n# ...later:\nif ($CurrentScript -eq $CopilotPath -or (Split-Path $CurrentScript -Parent) -eq (Split-Path $CopilotPath -Parent) -or ($CurrentScriptResolved -and $CopilotPathResolved -and $CurrentScriptResolved -eq $CopilotPathResolved)) {\n```\n\nWhen `Get-Command copilot -ErrorAction SilentlyContinue` finds nothing, `$CopilotPath` is `$null`. The second `-or` clause still evaluates when the first clause is false, so PowerShell runs:\n\n```powershell\nSplit-Path $CopilotPath -Parent\n```\n\nThat throws because `Split-Path` cannot bind a null/empty path.\n\n## Why this matters\n\nThis is the exact case the shim appears intended to handle: bootstrap or install when no real `copilot` command is available, while avoiding recursion if the shim shadows the real binary. Instead, the lookup path can fail before the install/update prompt path",
+        "source_type": "github_issue",
+        "title": "Windows Copilot CLI shim crashes when Get-Command copilot returns null",
+        "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5110",
+        "version_id": "ver_0bd940e8c6cb2b7d223a471e"
+      },
+      {
+        "chunk_id": "chunk_19f23f6eefa71edb63a7589b",
+        "citation_id": "cite_1a4ce4807394749532324396",
+        "competitor": "GitHub Copilot",
+        "dimension_tags": [
+          "agent_context",
+          "ide_ecosystem"
+        ],
+        "document_id": "doc_f6cab1d145390bc5c7db7cb8",
+        "event_type": "risk_experience",
+        "evidence_level": "B",
+        "final_score": 0.8314692401975159,
+        "product_version": null,
+        "publish_time": "2026-05-10T15:48:05Z",
+        "quote": "{ $null }\n$CopilotPathDir = if ($CopilotPath) { Split-Path $CopilotPath -Parent } else { $null }\n\nif (-not $CopilotPath -or $CurrentScript -eq $CopilotPath -or ($CurrentScriptDir -and $CopilotPathDir -and $CurrentScriptDir -eq $CopilotPathDir) -or ($CurrentScriptResolved -and $CopilotPathResolved -and $CurrentScriptResolved -eq $CopilotPathResolved)) {\n```\n\nA smaller guard around only the existing second clause would also work:\n\n```powershell\n($CopilotPath -and (Split-Path $CurrentScript -Parent) -eq (Split-Path $CopilotPath -Parent))\n```\n\n## Notes\n\nThis does not appear to be a user-authored script. The generated file is under `globalStorage\\github.copilot-chat\\copilotCli`, and the same shim text is embedded in the shipped Copilot Chat extension bundle.\n\nIssue state: open",
+        "source_type": "github_issue",
+        "title": "Windows Copilot CLI shim crashes when Get-Command copilot returns null",
+        "url": "https://github.com/microsoft/vscode-copilot-chat/issues/5110",
+        "version_id": "ver_0bd940e8c6cb2b7d223a471e"
+      }
+    ],
+    "findings": [
+      {
+        "confidence_score": 0.78,
+        "evidence_chunk_ids": [
+          "chunk_6e588e136096f0168c079682"
+        ],
+        "finding_type": "fact",
+        "summary": "Windows Copilot CLI shim crashes when Get-Command copilot returns null ## Bug The Windows Copilot CLI shim can crash in `Find-RealCopilot` when `Get-Command copilot` returns no ...",
+        "title": "Windows Copilot CLI shim crashes when Get-Command copilot returns null"
+      },
+      {
+        "confidence_score": 0.78,
+        "evidence_chunk_ids": [
+          "chunk_19f23f6eefa71edb63a7589b"
+        ],
+        "finding_type": "fact",
+        "summary": "{ $null } $CopilotPathDir = if ($CopilotPath) { Split-Path $CopilotPath -Parent } else { $null } if (-not $CopilotPath -or $CurrentScript -eq $CopilotPath -or ($CurrentScriptDir...",
+        "title": "Windows Copilot CLI shim crashes when Get-Command copilot returns null"
+      }
+    ],
+    "impact_analysis": "已检索到 2 条风险证据，可用于判断稳定性、安全隐私、Agent 行为边界和教育场景风险。",
+    "impact_details": [
+      {
+        "confidence_score": 0.78,
+        "dimension": "agent_context",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_6e588e136096f0168c079682",
+          "chunk_19f23f6eefa71edb63a7589b"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.78,
+        "dimension": "ide_ecosystem",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_6e588e136096f0168c079682",
+          "chunk_19f23f6eefa71edb63a7589b"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      }
+    ],
+    "model_name": null,
+    "opportunity": "竞品风险可转化为 CodeMate Campus 的安全边界、教师可控和学术诚信设计卖点。",
+    "priority_breakdown": {
+      "event_impact": 0.78,
+      "evidence_confidence": 0.78,
+      "product_relevance": 0.48,
+      "score": 70,
+      "urgency": 0.72
+    },
+    "priority_score": 70,
+    "prompt_name": "risk_prompt.md",
+    "rag_query_id": "qry_aec323fe703745569517e7db110b5651",
+    "recommended_action": "建立风险复核清单，优先验证危险命令、代码上传、错误讲解和直接代写边界。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": false,
+    "schema_version": "1.0",
+    "summary": "基于 2 条可追溯证据，GitHub Copilot 存在与开发者体验与风险舆情相关的动态：Windows Copilot CLI shim crashes when Get-Command copilot returns null；Windows Copilot CLI shim crashes when Get-Command copilot returns null。",
+    "threat": "若同类风险在本产品中复现，会直接影响学生代码安全、课程合规和教师信任。",
+    "threat_level": "high"
+  },
+  {
+    "agent_kind": "price",
+    "alert_level": "blue",
+    "analysis_mode": "rules",
+    "assumptions": [
+      "当前没有检索到可引用证据，结论仅作为待补证据的占位。"
+    ],
+    "capability_impact": {},
+    "card_id": "card_98b5e1d0b7fd3586d063",
+    "change_after": "unknown",
+    "change_before": "unknown",
+    "competitor": "Trae",
+    "confidence_score": 0.12,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:07.664493Z",
+    "dimension_tags": [],
+    "event_title": "Trae 商业化与价格变化: Trae",
+    "event_type": "pricing_change",
+    "evidence": [],
+    "findings": [],
+    "impact_analysis": "已检索到 0 条商业化证据，可用于判断套餐门槛、额度限制和单位任务成本对 CodeMate Campus 的影响。",
+    "impact_details": [],
+    "model_name": null,
+    "opportunity": "若竞品提高门槛或弱化教育优惠，可突出校园低成本、透明额度和学生认证方案。",
+    "priority_breakdown": {
+      "event_impact": 0.2,
+      "evidence_confidence": 0.12,
+      "product_relevance": 0.3,
+      "score": 20,
+      "urgency": 0.2
+    },
+    "priority_score": 20,
+    "prompt_name": "price_prompt.md",
+    "rag_query_id": "qry_89da76fcd91c458e8205d5b9ae38e349",
+    "recommended_action": "补充价格页快照，记录套餐、额度、学生政策和模型差异，并更新成本效率评分。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": true,
+    "schema_version": "1.0",
+    "summary": "未从 Mini-RAG 检索到 Trae 的商业化与价格变化证据，需要补充采集或放宽过滤条件。",
+    "threat": "若竞品提供更强模型或更低学生价，可能压缩 CodeMate Campus 的价格优势。",
+    "threat_level": "unknown"
+  },
+  {
+    "agent_kind": "product",
+    "alert_level": "blue",
+    "analysis_mode": "rules",
+    "assumptions": [
+      "当前没有检索到可引用证据，结论仅作为待补证据的占位。"
+    ],
+    "capability_impact": {},
+    "card_id": "card_a2cba48bc231ebaa97a4",
+    "change_after": "unknown",
+    "change_before": "unknown",
+    "competitor": "Trae",
+    "confidence_score": 0.12,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:07.660487Z",
+    "dimension_tags": [],
+    "event_title": "Trae 产品与技术发布: Trae",
+    "event_type": "product_release",
+    "evidence": [],
+    "findings": [],
+    "impact_analysis": "已检索到 0 条产品证据，可用于分析代码智能、项目上下文、Agent 自主性和 IDE 生态的竞争变化。",
+    "impact_details": [],
+    "model_name": null,
+    "opportunity": "将通用 Agent 能力翻译成课程实验、中文报错讲解和分步学习模式，可形成教育场景差异化。",
+    "priority_breakdown": {
+      "event_impact": 0.2,
+      "evidence_confidence": 0.12,
+      "product_relevance": 0.3,
+      "score": 20,
+      "urgency": 0.2
+    },
+    "priority_score": 20,
+    "prompt_name": "product_prompt.md",
+    "rag_query_id": "qry_11356f02fec34374b251d13db9680c2a",
+    "recommended_action": "按 D1-D7 标签复核发布证据，抽取可复现功能点，并纳入能力快照和基准任务。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": true,
+    "schema_version": "1.0",
+    "summary": "未从 Mini-RAG 检索到 Trae 的产品与技术发布证据，需要补充采集或放宽过滤条件。",
+    "threat": "若竞品的多文件 Agent、测试修复或 IDE 集成成熟，CodeMate Campus 需要避免功能代差。",
+    "threat_level": "unknown"
+  },
+  {
+    "agent_kind": "risk",
+    "alert_level": "red",
+    "analysis_mode": "rules",
+    "assumptions": [],
+    "capability_impact": {
+      "agent_context": 6,
+      "code_intelligence": 6,
+      "ide_ecosystem": 6,
+      "model_extensibility": 6,
+      "security_compliance": 6
+    },
+    "card_id": "card_e8318b2001ad64a3ba07",
+    "change_after": "【强烈建议】希望 Trae 支持类似 Claude /btw 或 Codex /side 的旁路任务能力 我强烈建议 Trae / SOLO 支持类似 Claude Code 的 `/btw`,或 Codex 的 `/side` 这类“旁路任务”能力。 在实际使用 Agent 处理长任务时,这个需求非常常见。 比如 Agent 正在执行一个较长的开发任务:修改代码、排查问题、运行测试、整理方案、做重构等。这个过程中,用户经常会临时...",
+    "change_before": "unknown",
+    "competitor": "Trae",
+    "confidence_score": 0.78,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:07.793514Z",
+    "dimension_tags": [
+      "code_intelligence",
+      "agent_context",
+      "ide_ecosystem",
+      "model_extensibility",
+      "security_compliance"
+    ],
+    "event_title": "Trae 开发者体验与风险舆情: 【强烈建议】希望 Trae 支持类似 Claude /btw 或 Codex /side 的旁路任务能力",
+    "event_type": "risk_experience",
+    "evidence": [
+      {
+        "chunk_id": "chunk_25a3ba76906cd76395c87ceb",
+        "citation_id": "cite_6a65d615aa46642ddeaf15f4",
+        "competitor": "Trae",
+        "dimension_tags": [
+          "code_intelligence",
+          "agent_context",
+          "ide_ecosystem",
+          "model_extensibility",
+          "security_compliance"
+        ],
+        "document_id": "doc_ea013ca25521bc318b2afe27",
+        "event_type": "risk_experience",
+        "evidence_level": "B",
+        "final_score": 0.9547492766870789,
+        "product_version": null,
+        "publish_time": "2026-06-20T02:21:04Z",
+        "quote": "【强烈建议】希望 Trae 支持类似 Claude /btw 或 Codex /side 的旁路任务能力\n\n我强烈建议 Trae / SOLO 支持类似 Claude Code 的 `/btw`,或 Codex 的 `/side` 这类“旁路任务”能力。\n\n在实际使用 Agent 处理长任务时,这个需求非常常见。\n\n比如 Agent 正在执行一个较长的开发任务:修改代码、排查问题、运行测试、整理方案、做重构等。这个过程中,用户经常会临时想到一些相关问题,例如想让 Agent 顺手解释一个报错、查一下某个函数在哪里被调用、确认某个依赖是否还在使用,或者补充一个背景信息。\n\n但这些临时问题,并不一定意味着用户想改变当前主任务。\n\n现在 Trae 的交互方式更像是一条单线对话流。用户只要在当前对话里插入一句话,Agent 就可能把它理解成新的任务方向,或者把它混入原来的任务规划里。这样一来,主任务容易被打断,上下文也会变得不够清晰。\n\n我的诉求很明确:\n\n希望 Trae 提供一种方式,让用户可以明确表达:\n\n> 这是一个旁路问题 / 临时任务,不要改变当前主任务;处理完之后,请继续回到原来的任务。\n\n例如:\n\n```text\n/btw 解释一下这个报错的原因,但不要改变当前修复计划\n```\n\n或者:\n\n```text\n/side 查一下这个函数在哪里被调用,完成后继续刚才的重构任务\n```\n\n希望这类能力至少具备以下特性:\n\n1. `/btw` 或 `/side` 触发的内容应被视为旁路任务,而不是新的主任务。\n2. 旁路任务不应覆盖、重置或污染当前主任务目标。\n3. 旁路任务完成后,Agent 应该能回到原来的任务上下文。\n4. UI 上最好能区分“主任务”和“旁路任务”,让用户知道当前处理的是哪条任务线。\n5. 旁路任务可以先从轻量场景开始支持,例如查询文件、解释代码、搜索上下文、回答临时问题。\n6. 如果旁路任务涉及修改文件或执行命令,再按现有安全策略进行确认即可。\n\n这个能力对长任务体验非常关键。\n\nAgent 在真实开发场景中,通常不会只处理一个完全线性的任务。开发过程中经常会出现临时确认、旁路检查、局部解释、风险验证等需求。如果这些内容都只能塞进同一条主线对话里,任务边界会越来越模糊,Agent 也更容易跑偏。\n\n一些很典型的场景包括:\n\n- 解释某个报错,但继续当前修复任务。\n- 查询某个函数的调用位置,但不要改变当前实现计划。\n- 临时确认某个依赖是否还在使用,然后回到主任务。\n- 回答一个背景问题,但不要把它作为新的开发目标。\n- 插入一个旁路检查,但主任务目标保持不变。\n\n现在缺少这类机制时,用户在长任务中途反而不太敢提问,因为担心把 Agent 的任务方向带偏。对 SOLO / Agent 这类产品来说,这会影响长任务的可控性和可靠性。\n\n如果 Trae 的定位是 Agentic IDE,而不仅仅是普通聊天面板,那么它应该具备更清晰的任务管理能力:\n\n- 主任务应该稳定\n- 旁路任务应该隔离\n- 临时问题不应该污染主线\n- 用户应该能明确表达“这是旁路,不要打断当前任务”\n- Agent 应该能在旁路任务后恢复原来的任务现场\n\n如果完整的多任务并行实现成本较高,可以先支持一个轻量版本,例如:\n\n```text\n/btw <临时问题>\n/side <旁路检查>\n/resume 回到主任务\n/main 查看当前主任务\n```\n\n哪怕第一版只是做上下文标记和任务恢复,也会明显改善长任务体验。\n\n这类能力不是锦上添花,而是 Agent 长任务场景里非常核心的交互能力。希望 Trae 团队可以认真考虑支持。\n\nIssue state: open",
+        "source_type": "github_issue",
+        "title": "【强烈建议】希望 Trae 支持类似 Claude /btw 或 Codex /side 的旁路任务能力",
+        "url": "https://github.com/Trae-AI/TRAE/issues/2551",
+        "version_id": "ver_f3d7f6b430f44e0be796134c"
+      },
+      {
+        "chunk_id": "chunk_3d949a3c5f1a2debc64c8760",
+        "citation_id": "cite_fa250e260bc56cd21566f0e4",
+        "competitor": "Trae",
+        "dimension_tags": [
+          "code_intelligence",
+          "agent_context",
+          "ide_ecosystem",
+          "model_extensibility",
+          "security_compliance"
+        ],
+        "document_id": "doc_ea013ca25521bc318b2afe27",
+        "event_type": "risk_experience",
+        "evidence_level": "B",
+        "final_score": 0.7357394065437182,
+        "product_version": null,
+        "publish_time": "2026-06-20T02:21:04Z",
+        "quote": "Comment by NicholasHwang at 2026-06-21T03:25:04Z\n\n支持,目前长任务已经在开发中有很多场景需要使用了。这个时候发现中间某个步骤的一个小问题,需要旁路命令来解决这个小问题,不然只能中断长任务来解决小问题或者等待长任务再回头看小问题。这种方式很有可能已经遗失了相关上下文等",
+        "source_type": "github_issue",
+        "title": "【强烈建议】希望 Trae 支持类似 Claude /btw 或 Codex /side 的旁路任务能力",
+        "url": "https://github.com/Trae-AI/TRAE/issues/2551",
+        "version_id": "ver_f3d7f6b430f44e0be796134c"
+      }
+    ],
+    "findings": [
+      {
+        "confidence_score": 0.78,
+        "evidence_chunk_ids": [
+          "chunk_25a3ba76906cd76395c87ceb"
+        ],
+        "finding_type": "fact",
+        "summary": "【强烈建议】希望 Trae 支持类似 Claude /btw 或 Codex /side 的旁路任务能力 我强烈建议 Trae / SOLO 支持类似 Claude Code 的 `/btw`,或 Codex 的 `/side` 这类“旁路任务”能力。 在实际使用 Agent 处理长任务时,这个需求非常常见。 比如 Agent 正在执行一个较长的开发任...",
+        "title": "【强烈建议】希望 Trae 支持类似 Claude /btw 或 Codex /side 的旁路任务能力"
+      },
+      {
+        "confidence_score": 0.78,
+        "evidence_chunk_ids": [
+          "chunk_3d949a3c5f1a2debc64c8760"
+        ],
+        "finding_type": "fact",
+        "summary": "Comment by NicholasHwang at 2026-06-21T03:25:04Z 支持,目前长任务已经在开发中有很多场景需要使用了。这个时候发现中间某个步骤的一个小问题,需要旁路命令来解决这个小问题,不然只能中断长任务来解决小问题或者等待长任务再回头看小问题。这种方式很有可能已经遗失了相关上下文等",
+        "title": "【强烈建议】希望 Trae 支持类似 Claude /btw 或 Codex /side 的旁路任务能力"
+      }
+    ],
+    "impact_analysis": "已检索到 2 条风险证据，可用于判断稳定性、安全隐私、Agent 行为边界和教育场景风险。",
+    "impact_details": [
+      {
+        "confidence_score": 0.78,
+        "dimension": "code_intelligence",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_25a3ba76906cd76395c87ceb",
+          "chunk_3d949a3c5f1a2debc64c8760"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.78,
+        "dimension": "agent_context",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_25a3ba76906cd76395c87ceb",
+          "chunk_3d949a3c5f1a2debc64c8760"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.78,
+        "dimension": "ide_ecosystem",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_25a3ba76906cd76395c87ceb",
+          "chunk_3d949a3c5f1a2debc64c8760"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.78,
+        "dimension": "model_extensibility",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_25a3ba76906cd76395c87ceb",
+          "chunk_3d949a3c5f1a2debc64c8760"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.78,
+        "dimension": "security_compliance",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_25a3ba76906cd76395c87ceb",
+          "chunk_3d949a3c5f1a2debc64c8760"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      }
+    ],
+    "model_name": null,
+    "opportunity": "竞品风险可转化为 CodeMate Campus 的安全边界、教师可控和学术诚信设计卖点。",
+    "priority_breakdown": {
+      "event_impact": 0.78,
+      "evidence_confidence": 0.78,
+      "product_relevance": 0.74,
+      "score": 81,
+      "urgency": 0.95
+    },
+    "priority_score": 81,
+    "prompt_name": "risk_prompt.md",
+    "rag_query_id": "qry_15c84f041c7247738a590a30a17d5b64",
+    "recommended_action": "建立风险复核清单，优先验证危险命令、代码上传、错误讲解和直接代写边界。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": false,
+    "schema_version": "1.0",
+    "summary": "基于 2 条可追溯证据，Trae 存在与开发者体验与风险舆情相关的动态：【强烈建议】希望 Trae 支持类似 Claude /btw 或 Codex /side 的旁路任务能力；【强烈建议】希望 Trae 支持类似 Claude /btw 或 Codex /side 的旁路任务能力。",
+    "threat": "若同类风险在本产品中复现，会直接影响学生代码安全、课程合规和教师信任。",
+    "threat_level": "critical"
+  },
+  {
+    "agent_kind": "risk",
+    "alert_level": "orange",
+    "analysis_mode": "rules",
+    "assumptions": [],
+    "capability_impact": {
+      "agent_context": 6,
+      "model_extensibility": 6,
+      "security_compliance": 6
+    },
+    "card_id": "card_a72a2ddfbaf48f9045d7",
+    "change_after": "【强烈反馈】自动运行仍频繁要求手动确认,SOLO 长任务体验被彻底打断 我已经在 Trae / SOLO 里配置了“自动运行”,但实际使用中仍然频繁要求手动点击“运行”。 问题不是偶发,而是长期存在,已经严重影响 Agent 长任务体验。 我的诉求很明确: 1. 如果产品里选择了“自动运行”,就应该明确哪些命令会自动运行、哪些命令不会自动运行。 2. 如果 rm / Remove-Item / Copy-Item / 跨工作区文件...",
+    "change_before": "unknown",
+    "competitor": "Trae",
+    "confidence_score": 0.74,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:07.793514Z",
+    "dimension_tags": [
+      "agent_context",
+      "model_extensibility",
+      "security_compliance"
+    ],
+    "event_title": "Trae 开发者体验与风险舆情: 【强烈反馈】自动运行仍频繁要求手动确认,SOLO 长任务体验被彻底打断",
+    "event_type": "risk_experience",
+    "evidence": [
+      {
+        "chunk_id": "chunk_71b2b517663f352ead87e943",
+        "citation_id": "cite_0f4465797526937fe05e9ff3",
+        "competitor": "Trae",
+        "dimension_tags": [
+          "agent_context",
+          "model_extensibility",
+          "security_compliance"
+        ],
+        "document_id": "doc_6dd53f259c7772b9d880329a",
+        "event_type": "risk_experience",
+        "evidence_level": "B",
+        "final_score": 0.8444220580712314,
+        "product_version": null,
+        "publish_time": "2026-06-02T08:12:39Z",
+        "quote": "【强烈反馈】自动运行仍频繁要求手动确认,SOLO 长任务体验被彻底打断\n\n我已经在 Trae / SOLO 里配置了“自动运行”,但实际使用中仍然频繁要求手动点击“运行”。\n\n问题不是偶发,而是长期存在,已经严重影响 Agent 长任务体验。\n\n我的诉求很明确:\n\n1. 如果产品里选择了“自动运行”,就应该明确哪些命令会自动运行、哪些命令不会自动运行。\n2. 如果 rm / Remove-Item / Copy-Item / 跨工作区文件操作会被强制拦截,就不要把这个模式命名成“自动运行”,这会误导用户。\n3. 现在的问题是:用户以为已经配置好了自动运行,结果 Agent 跑到一半卡在确认按钮上,几个小时后才发现任务根本没继续执行。\n4. 对 SOLO / Agent 产品来说,这不是小体验问题,而是核心能力断裂。长任务、自动测试、自动构建、自动清理临时文件,全都会被这个确认弹窗打断。\n5. 安全我能理解,但现在的设计太粗暴:要么全挡,要么不解释。建议提供更细粒度的策略:\n\n- 允许用户自定义可信工作区\n- 允许用户自定义命令白名单 / 黑名单\n- 白名单不要只做关键字匹配,而要解析完整命令\n- 对删除命令支持“仅允许删除当前工作区内临时目录”\n- 支持“本次会话信任”\n- 支持“本项目永久信任”\n- 对被强制拦截的命令,在 UI 上明确标注“该命令即使开启自动运行也不会自动执行”\n\n现在最让人难受的是:设置里写着自动运行,实际又不是自动运行。用户不是怕安全拦截,而是怕产品行为不透明、不一致、没法预期。\n\n如果 Trae 团队自己真的长期用 SOLO 跑项目,应该很容易复现这个痛点:Agent 自动改代码、跑测试、清理文件、复制构建产物,然后突然卡在一个确认按钮上。这个体验非常割裂。\n\n希望官方不要再只回复“为了安全”就结束。安全策略可以保留,但必须给高级用户一个可控、可解释、可配置的自动化权限模型。\n\n现在这个设计的实际效果是:看起来像 Agent,跑起来像半自动脚本,还得用户守在旁边点按钮。这和 SOLO 的产品定位是冲突的。\n\nIssue state: open",
+        "source_type": "github_issue",
+        "title": "【强烈反馈】自动运行仍频繁要求手动确认,SOLO 长任务体验被彻底打断",
+        "url": "https://github.com/Trae-AI/TRAE/issues/2542",
+        "version_id": "ver_4e9988dc18a7b33758adbe9f"
+      }
+    ],
+    "findings": [
+      {
+        "confidence_score": 0.74,
+        "evidence_chunk_ids": [
+          "chunk_71b2b517663f352ead87e943"
+        ],
+        "finding_type": "fact",
+        "summary": "【强烈反馈】自动运行仍频繁要求手动确认,SOLO 长任务体验被彻底打断 我已经在 Trae / SOLO 里配置了“自动运行”,但实际使用中仍然频繁要求手动点击“运行”。 问题不是偶发,而是长期存在,已经严重影响 Agent 长任务体验。 我的诉求很明确: 1. 如果产品里选择了“自动运行”,就应该明确哪些命令会自动运行、哪些命令不会自动运行。 2. ...",
+        "title": "【强烈反馈】自动运行仍频繁要求手动确认,SOLO 长任务体验被彻底打断"
+      }
+    ],
+    "impact_analysis": "已检索到 1 条风险证据，可用于判断稳定性、安全隐私、Agent 行为边界和教育场景风险。",
+    "impact_details": [
+      {
+        "confidence_score": 0.74,
+        "dimension": "agent_context",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_71b2b517663f352ead87e943"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.74,
+        "dimension": "model_extensibility",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_71b2b517663f352ead87e943"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.74,
+        "dimension": "security_compliance",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_71b2b517663f352ead87e943"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      }
+    ],
+    "model_name": null,
+    "opportunity": "竞品风险可转化为 CodeMate Campus 的安全边界、教师可控和学术诚信设计卖点。",
+    "priority_breakdown": {
+      "event_impact": 0.78,
+      "evidence_confidence": 0.74,
+      "product_relevance": 0.61,
+      "score": 72,
+      "urgency": 0.72
+    },
+    "priority_score": 72,
+    "prompt_name": "risk_prompt.md",
+    "rag_query_id": "qry_15c84f041c7247738a590a30a17d5b64",
+    "recommended_action": "建立风险复核清单，优先验证危险命令、代码上传、错误讲解和直接代写边界。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": false,
+    "schema_version": "1.0",
+    "summary": "基于 1 条可追溯证据，Trae 存在与开发者体验与风险舆情相关的动态：【强烈反馈】自动运行仍频繁要求手动确认,SOLO 长任务体验被彻底打断。",
+    "threat": "若同类风险在本产品中复现，会直接影响学生代码安全、课程合规和教师信任。",
+    "threat_level": "high"
+  },
+  {
+    "agent_kind": "risk",
+    "alert_level": "orange",
+    "analysis_mode": "rules",
+    "assumptions": [],
+    "capability_impact": {
+      "performance_cost": 6
+    },
+    "card_id": "card_177cac9b743d7cbd7a97",
+    "change_after": "申请退款 Trae 团队你们好, 我是 Trae 的用户,由于我未注意到每月的自动续费功能,我的账号产生了一笔的扣款。 我目前并没有继续续费使用的意愿,并且在本次扣费发生后,我完全没有使用过新周期内的任何 Pro 额度和功能。目前我已经手动取消了后续的自动订阅。 抱歉,我知道我没有及时(24h内)发现这笔费用并申请退款,这可能给你们带来一些麻烦,但这笔看似微不足道的钱对我来说依旧很重要,感谢你们的服务,trae给我带来了很大的帮助...",
+    "change_before": "unknown",
+    "competitor": "Trae",
+    "confidence_score": 0.74,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:07.793514Z",
+    "dimension_tags": [
+      "performance_cost"
+    ],
+    "event_title": "Trae 开发者体验与风险舆情: 申请退款",
+    "event_type": "risk_experience",
+    "evidence": [
+      {
+        "chunk_id": "chunk_ceb064d9440d571221a4f51c",
+        "citation_id": "cite_2160d201867d3be795d2a6cb",
+        "competitor": "Trae",
+        "dimension_tags": [
+          "performance_cost"
+        ],
+        "document_id": "doc_08072907cbcedca419574292",
+        "event_type": "risk_experience",
+        "evidence_level": "B",
+        "final_score": 0.6465469643420767,
+        "product_version": null,
+        "publish_time": "2026-07-01T03:13:00Z",
+        "quote": "申请退款\n\nTrae 团队你们好,\n我是 Trae 的用户,由于我未注意到每月的自动续费功能,我的账号产生了一笔的扣款。\n我目前并没有继续续费使用的意愿,并且在本次扣费发生后,我完全没有使用过新周期内的任何 Pro 额度和功能。目前我已经手动取消了后续的自动订阅。\n抱歉,我知道我没有及时(24h内)发现这笔费用并申请退款,这可能给你们带来一些麻烦,但这笔看似微不足道的钱对我来说依旧很重要,感谢你们的服务,trae给我带来了很大的帮助,但目前我暂时不需要pro服务。\n希望能申请将这笔非本意的扣款原路退回。以下是我的账号及订单信息。:\n相关联的账号是2474025585@qq.com(谷歌)\n具体的扣款时间是:2026/07/01 10:51:24\n实际扣除的费用是:¥68.28\n订单号是:2026070123001453491449502123\n商家订单号是:2026070119074101000170091644161\n\n我已经向[feedback@mail.trae.ai](mailto:feedback@mail.trae.ai)提交相应的邮件\n\nIssue state: open",
+        "source_type": "github_issue",
+        "title": "申请退款",
+        "url": "https://github.com/Trae-AI/TRAE/issues/2556",
+        "version_id": "ver_b1c003fd4ffce496e674edf7"
+      }
+    ],
+    "findings": [
+      {
+        "confidence_score": 0.74,
+        "evidence_chunk_ids": [
+          "chunk_ceb064d9440d571221a4f51c"
+        ],
+        "finding_type": "fact",
+        "summary": "申请退款 Trae 团队你们好, 我是 Trae 的用户,由于我未注意到每月的自动续费功能,我的账号产生了一笔的扣款。 我目前并没有继续续费使用的意愿,并且在本次扣费发生后,我完全没有使用过新周期内的任何 Pro 额度和功能。目前我已经手动取消了后续的自动订阅。 抱歉,我知道我没有及时(24h内)发现这笔费用并申请退款,这可能给你们带来一些麻烦,但这笔...",
+        "title": "申请退款"
+      }
+    ],
+    "impact_analysis": "已检索到 1 条风险证据，可用于判断稳定性、安全隐私、Agent 行为边界和教育场景风险。",
+    "impact_details": [
+      {
+        "confidence_score": 0.74,
+        "dimension": "performance_cost",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_ceb064d9440d571221a4f51c"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      }
+    ],
+    "model_name": null,
+    "opportunity": "竞品风险可转化为 CodeMate Campus 的安全边界、教师可控和学术诚信设计卖点。",
+    "priority_breakdown": {
+      "event_impact": 0.78,
+      "evidence_confidence": 0.74,
+      "product_relevance": 0.48,
+      "score": 75,
+      "urgency": 0.95
+    },
+    "priority_score": 75,
+    "prompt_name": "risk_prompt.md",
+    "rag_query_id": "qry_15c84f041c7247738a590a30a17d5b64",
+    "recommended_action": "建立风险复核清单，优先验证危险命令、代码上传、错误讲解和直接代写边界。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": false,
+    "schema_version": "1.0",
+    "summary": "基于 1 条可追溯证据，Trae 存在与开发者体验与风险舆情相关的动态：申请退款。",
+    "threat": "若同类风险在本产品中复现，会直接影响学生代码安全、课程合规和教师信任。",
+    "threat_level": "high"
+  },
+  {
+    "agent_kind": "risk",
+    "alert_level": "orange",
+    "analysis_mode": "rules",
+    "assumptions": [],
+    "capability_impact": {
+      "security_compliance": 6
+    },
+    "card_id": "card_9012bb1c8b72666c18e9",
+    "change_after": "Comment by jiangguix0309-cell at 2026-06-25T03:50:16Z 请问是国际版有这个问题吗?我的也是。但是国内版本就可以",
+    "change_before": "unknown",
+    "competitor": "Trae",
+    "confidence_score": 0.74,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:07.793514Z",
+    "dimension_tags": [
+      "security_compliance"
+    ],
+    "event_title": "Trae 开发者体验与风险舆情: 沙箱没有权限,没法自动化任务",
+    "event_type": "risk_experience",
+    "evidence": [
+      {
+        "chunk_id": "chunk_ea7b7ad561d459298b8febad",
+        "citation_id": "cite_d8702b6db044f0fbccd0b1a8",
+        "competitor": "Trae",
+        "dimension_tags": [
+          "security_compliance"
+        ],
+        "document_id": "doc_2fbd983a9eebd2fc9e77d04f",
+        "event_type": "risk_experience",
+        "evidence_level": "B",
+        "final_score": 0.6130689047954947,
+        "product_version": null,
+        "publish_time": "2026-06-20T01:24:07Z",
+        "quote": "Comment by jiangguix0309-cell at 2026-06-25T03:50:16Z\n\n请问是国际版有这个问题吗?我的也是。但是国内版本就可以",
+        "source_type": "github_issue",
+        "title": "沙箱没有权限,没法自动化任务",
+        "url": "https://github.com/Trae-AI/TRAE/issues/2550",
+        "version_id": "ver_16d6d19751ed5eef33d3f95d"
+      }
+    ],
+    "findings": [
+      {
+        "confidence_score": 0.74,
+        "evidence_chunk_ids": [
+          "chunk_ea7b7ad561d459298b8febad"
+        ],
+        "finding_type": "fact",
+        "summary": "Comment by jiangguix0309-cell at 2026-06-25T03:50:16Z 请问是国际版有这个问题吗?我的也是。但是国内版本就可以",
+        "title": "沙箱没有权限,没法自动化任务"
+      }
+    ],
+    "impact_analysis": "已检索到 1 条风险证据，可用于判断稳定性、安全隐私、Agent 行为边界和教育场景风险。",
+    "impact_details": [
+      {
+        "confidence_score": 0.74,
+        "dimension": "security_compliance",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_ea7b7ad561d459298b8febad"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      }
+    ],
+    "model_name": null,
+    "opportunity": "竞品风险可转化为 CodeMate Campus 的安全边界、教师可控和学术诚信设计卖点。",
+    "priority_breakdown": {
+      "event_impact": 0.78,
+      "evidence_confidence": 0.74,
+      "product_relevance": 0.48,
+      "score": 75,
+      "urgency": 0.95
+    },
+    "priority_score": 75,
+    "prompt_name": "risk_prompt.md",
+    "rag_query_id": "qry_15c84f041c7247738a590a30a17d5b64",
+    "recommended_action": "建立风险复核清单，优先验证危险命令、代码上传、错误讲解和直接代写边界。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": false,
+    "schema_version": "1.0",
+    "summary": "基于 1 条可追溯证据，Trae 存在与开发者体验与风险舆情相关的动态：沙箱没有权限,没法自动化任务。",
+    "threat": "若同类风险在本产品中复现，会直接影响学生代码安全、课程合规和教师信任。",
+    "threat_level": "high"
+  },
+  {
+    "agent_kind": "risk",
+    "alert_level": "orange",
+    "analysis_mode": "rules",
+    "assumptions": [],
+    "capability_impact": {
+      "model_extensibility": 6,
+      "performance_cost": 6
+    },
+    "card_id": "card_dfd84871a1d9c8142e07",
+    "change_after": "Comment by CatcherOne at 2026-05-13T03:35:44Z 也是好奇怎么算额度的,我是4月26续费了一个月的,然后到5月26来着。然后5月7号的时候想着直接开个一年的,然后我看计费变得飞快想着算了,先退款,可是还是扣了五十多。这个有问题吧,我5月份用的不应该是之前开的月度会员的额度吗? @",
+    "change_before": "unknown",
+    "competitor": "Trae",
+    "confidence_score": 0.74,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:07.793514Z",
+    "dimension_tags": [
+      "model_extensibility",
+      "performance_cost"
+    ],
+    "event_title": "Trae 开发者体验与风险舆情: 套餐到底是怎么计费的",
+    "event_type": "risk_experience",
+    "evidence": [
+      {
+        "chunk_id": "chunk_333592e5fc61ebf0a5c96b39",
+        "citation_id": "cite_c62d896ee2cc1983d3adf0a7",
+        "competitor": "Trae",
+        "dimension_tags": [
+          "model_extensibility",
+          "performance_cost"
+        ],
+        "document_id": "doc_1f719a23807ae02ca821ad1f",
+        "event_type": "risk_experience",
+        "evidence_level": "B",
+        "final_score": 0.577525246140896,
+        "product_version": null,
+        "publish_time": "2026-05-12T07:14:58Z",
+        "quote": "Comment by CatcherOne at 2026-05-13T03:35:44Z\n\n也是好奇怎么算额度的,我是4月26续费了一个月的,然后到5月26来着。然后5月7号的时候想着直接开个一年的,然后我看计费变得飞快想着算了,先退款,可是还是扣了五十多。这个有问题吧,我5月份用的不应该是之前开的月度会员的额度吗? @",
+        "source_type": "github_issue",
+        "title": "套餐到底是怎么计费的",
+        "url": "https://github.com/Trae-AI/TRAE/issues/2514",
+        "version_id": "ver_0f6f3a530fcfd9e5d5b5f5c5"
+      }
+    ],
+    "findings": [
+      {
+        "confidence_score": 0.74,
+        "evidence_chunk_ids": [
+          "chunk_333592e5fc61ebf0a5c96b39"
+        ],
+        "finding_type": "fact",
+        "summary": "Comment by CatcherOne at 2026-05-13T03:35:44Z 也是好奇怎么算额度的,我是4月26续费了一个月的,然后到5月26来着。然后5月7号的时候想着直接开个一年的,然后我看计费变得飞快想着算了,先退款,可是还是扣了五十多。这个有问题吧,我5月份用的不应该是之前开的月度会员的额度吗? @",
+        "title": "套餐到底是怎么计费的"
+      }
+    ],
+    "impact_analysis": "已检索到 1 条风险证据，可用于判断稳定性、安全隐私、Agent 行为边界和教育场景风险。",
+    "impact_details": [
+      {
+        "confidence_score": 0.74,
+        "dimension": "model_extensibility",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_333592e5fc61ebf0a5c96b39"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.74,
+        "dimension": "performance_cost",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_333592e5fc61ebf0a5c96b39"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      }
+    ],
+    "model_name": null,
+    "opportunity": "竞品风险可转化为 CodeMate Campus 的安全边界、教师可控和学术诚信设计卖点。",
+    "priority_breakdown": {
+      "event_impact": 0.78,
+      "evidence_confidence": 0.74,
+      "product_relevance": 0.48,
+      "score": 70,
+      "urgency": 0.72
+    },
+    "priority_score": 70,
+    "prompt_name": "risk_prompt.md",
+    "rag_query_id": "qry_15c84f041c7247738a590a30a17d5b64",
+    "recommended_action": "建立风险复核清单，优先验证危险命令、代码上传、错误讲解和直接代写边界。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": false,
+    "schema_version": "1.0",
+    "summary": "基于 1 条可追溯证据，Trae 存在与开发者体验与风险舆情相关的动态：套餐到底是怎么计费的。",
+    "threat": "若同类风险在本产品中复现，会直接影响学生代码安全、课程合规和教师信任。",
+    "threat_level": "high"
+  },
+  {
+    "agent_kind": "price",
+    "alert_level": "blue",
+    "analysis_mode": "rules",
+    "assumptions": [
+      "当前没有检索到可引用证据，结论仅作为待补证据的占位。"
+    ],
+    "capability_impact": {},
+    "card_id": "card_4735bcad4cf02f7c80b3",
+    "change_after": "unknown",
+    "change_before": "unknown",
+    "competitor": "通义灵码",
+    "confidence_score": 0.12,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:07.902980Z",
+    "dimension_tags": [],
+    "event_title": "通义灵码 商业化与价格变化: 通义灵码",
+    "event_type": "pricing_change",
+    "evidence": [],
+    "findings": [],
+    "impact_analysis": "已检索到 0 条商业化证据，可用于判断套餐门槛、额度限制和单位任务成本对 CodeMate Campus 的影响。",
+    "impact_details": [],
+    "model_name": null,
+    "opportunity": "若竞品提高门槛或弱化教育优惠，可突出校园低成本、透明额度和学生认证方案。",
+    "priority_breakdown": {
+      "event_impact": 0.2,
+      "evidence_confidence": 0.12,
+      "product_relevance": 0.3,
+      "score": 20,
+      "urgency": 0.2
+    },
+    "priority_score": 20,
+    "prompt_name": "price_prompt.md",
+    "rag_query_id": "qry_32ccb3d752a745afbaf308e6b3bf2257",
+    "recommended_action": "补充价格页快照，记录套餐、额度、学生政策和模型差异，并更新成本效率评分。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": true,
+    "schema_version": "1.0",
+    "summary": "未从 Mini-RAG 检索到 通义灵码 的商业化与价格变化证据，需要补充采集或放宽过滤条件。",
+    "threat": "若竞品提供更强模型或更低学生价，可能压缩 CodeMate Campus 的价格优势。",
+    "threat_level": "unknown"
+  },
+  {
+    "agent_kind": "product",
+    "alert_level": "orange",
+    "analysis_mode": "rules",
+    "assumptions": [],
+    "capability_impact": {
+      "agent_context": 6,
+      "code_intelligence": 6,
+      "ide_ecosystem": 6,
+      "model_extensibility": 6,
+      "security_compliance": 6
+    },
+    "card_id": "card_542aab2e16667e63fc6f",
+    "change_after": "#### 多模型、易扩展、新体验等多项能力升级 这是 Qoder CN CLI 自发布以来最大的一次升级。我们重做了交互界面、重构了权限体系、打通了多模型接入,并把 CLI 从一个\"终端里的 Agent\"扩展成可被编排、可被集成的 Agent 入口。无论你是在终端里写代码、在 CI/CD 里跑流水线,还是想把 Agent 能力嵌进自己的工具链——这次升级都为你准备好了。 全新特性 - 全新 TUI 交互界面:支持丰富的键盘输入操作...",
+    "change_before": "unknown",
+    "competitor": "通义灵码",
+    "confidence_score": 0.84,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:08.034846Z",
+    "dimension_tags": [
+      "code_intelligence",
+      "agent_context",
+      "ide_ecosystem",
+      "model_extensibility",
+      "security_compliance"
+    ],
+    "event_title": "通义灵码 产品与技术发布: Qoder CN CLI 更新日志 — 2026年04月27日 v0.2.0",
+    "event_type": "product_release",
+    "evidence": [
+      {
+        "chunk_id": "chunk_38d67a0ef0c9f52f0d467a0c",
+        "citation_id": "cite_51cf9362b592bc8164594633",
+        "competitor": "通义灵码",
+        "dimension_tags": [
+          "code_intelligence",
+          "agent_context",
+          "ide_ecosystem",
+          "model_extensibility",
+          "security_compliance"
+        ],
+        "document_id": "doc_4a7c660c3134116c650057be",
+        "event_type": "product_release",
+        "evidence_level": "A",
+        "final_score": 0.9516746517768849,
+        "product_version": "0.2.0",
+        "publish_time": "2026-04-27T00:00:00Z",
+        "quote": "#### 多模型、易扩展、新体验等多项能力升级\n\n这是 Qoder CN CLI 自发布以来最大的一次升级。我们重做了交互界面、重构了权限体系、打通了多模型接入,并把 CLI 从一个\"终端里的 Agent\"扩展成可被编排、可被集成的 Agent 入口。无论你是在终端里写代码、在 CI/CD 里跑流水线,还是想把 Agent 能力嵌进自己的工具链——这次升级都为你准备好了。\n\n全新特性\n\n- 全新 TUI 交互界面:支持丰富的键盘输入操作,自由定义喜爱的状态栏\n- 全新的权限管理体系:Plan Mode、多项目管理(/add-dir)灵活切换\n- 多模型支持:集成海内外SOTA模型,支持BYOK,不再被单一模型绑定\n- 超全内置命令:内置 50+ 快捷指令,轻松搞定日常各项工作任务\n- 对话式配置创建:一句话生成 MCP / Subagent / Skill / Hook 配置,告别手写 JSON",
+        "source_type": "official_changelog",
+        "title": "Qoder CN CLI 更新日志 — 2026年04月27日 v0.2.0",
+        "url": "https://help.aliyun.com/zh/lingma/qoder-cn-cli",
+        "version_id": "ver_232b77a4d05e4ae7f004299c"
+      }
+    ],
+    "findings": [
+      {
+        "confidence_score": 0.84,
+        "evidence_chunk_ids": [
+          "chunk_38d67a0ef0c9f52f0d467a0c"
+        ],
+        "finding_type": "fact",
+        "summary": "#### 多模型、易扩展、新体验等多项能力升级 这是 Qoder CN CLI 自发布以来最大的一次升级。我们重做了交互界面、重构了权限体系、打通了多模型接入,并把 CLI 从一个\"终端里的 Agent\"扩展成可被编排、可被集成的 Agent 入口。无论你是在终端里写代码、在 CI/CD 里跑流水线,还是想把 Agent 能力嵌进自己的工具链——这次升...",
+        "title": "Qoder CN CLI 更新日志 — 2026年04月27日 v0.2.0"
+      }
+    ],
+    "impact_analysis": "已检索到 1 条产品证据，可用于分析代码智能、项目上下文、Agent 自主性和 IDE 生态的竞争变化。",
+    "impact_details": [
+      {
+        "confidence_score": 0.84,
+        "dimension": "code_intelligence",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_38d67a0ef0c9f52f0d467a0c"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.84,
+        "dimension": "agent_context",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_38d67a0ef0c9f52f0d467a0c"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.84,
+        "dimension": "ide_ecosystem",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_38d67a0ef0c9f52f0d467a0c"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.84,
+        "dimension": "model_extensibility",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_38d67a0ef0c9f52f0d467a0c"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.84,
+        "dimension": "security_compliance",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_38d67a0ef0c9f52f0d467a0c"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      }
+    ],
+    "model_name": null,
+    "opportunity": "将通用 Agent 能力翻译成课程实验、中文报错讲解和分步学习模式，可形成教育场景差异化。",
+    "priority_breakdown": {
+      "event_impact": 0.72,
+      "evidence_confidence": 0.84,
+      "product_relevance": 0.87,
+      "score": 77,
+      "urgency": 0.72
+    },
+    "priority_score": 77,
+    "prompt_name": "product_prompt.md",
+    "rag_query_id": "qry_9fa5c82e8b3f43839cdc5fc31ea3ef2b",
+    "recommended_action": "按 D1-D7 标签复核发布证据，抽取可复现功能点，并纳入能力快照和基准任务。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": false,
+    "schema_version": "1.0",
+    "summary": "基于 1 条可追溯证据，通义灵码 存在与产品与技术发布相关的动态：Qoder CN CLI 更新日志 — 2026年04月27日 v0.2.0。",
+    "threat": "若竞品的多文件 Agent、测试修复或 IDE 集成成熟，CodeMate Campus 需要避免功能代差。",
+    "threat_level": "high"
+  },
+  {
+    "agent_kind": "product",
+    "alert_level": "orange",
+    "analysis_mode": "rules",
+    "assumptions": [],
+    "capability_impact": {
+      "agent_context": 6,
+      "ide_ecosystem": 6,
+      "model_extensibility": 6,
+      "security_compliance": 6
+    },
+    "card_id": "card_fb2ae469f9ad5ee3a884",
+    "change_after": "#### Qoder CN CLI 1.0 重磅发布 新功能 - 云端运行:支持 qodercli --remote flag,Cloud 模式支持任务一次性提交云端容器,关机断网不影响执行,支持数小时长时工作流; - RepoWiki:支持 qodercli wiki 子指令,代码不出域本地生成 repowiki 文档; - Voice:支持 /voice 指令,语音输入能力全面升级,免费开放; - Goal:支持 /goal ...",
+    "change_before": "unknown",
+    "competitor": "通义灵码",
+    "confidence_score": 0.84,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:08.034846Z",
+    "dimension_tags": [
+      "agent_context",
+      "ide_ecosystem",
+      "model_extensibility",
+      "security_compliance"
+    ],
+    "event_title": "通义灵码 产品与技术发布: Qoder CN CLI 更新日志 — 2026年05月20日 v1.0.0",
+    "event_type": "product_release",
+    "evidence": [
+      {
+        "chunk_id": "chunk_45fee4571385be6f58e88a37",
+        "citation_id": "cite_0731da5482b0f1ce0a70d7ab",
+        "competitor": "通义灵码",
+        "dimension_tags": [
+          "agent_context",
+          "ide_ecosystem",
+          "model_extensibility",
+          "security_compliance"
+        ],
+        "document_id": "doc_2eb879bd876a0368ddbcae20",
+        "event_type": "product_release",
+        "evidence_level": "A",
+        "final_score": 0.8350607890473601,
+        "product_version": "1.0.0",
+        "publish_time": "2026-05-20T00:00:00Z",
+        "quote": "#### Qoder CN CLI 1.0 重磅发布\n\n新功能\n\n- 云端运行:支持 qodercli --remote flag,Cloud 模式支持任务一次性提交云端容器,关机断网不影响执行,支持数小时长时工作流;\n- RepoWiki:支持 qodercli wiki 子指令,代码不出域本地生成 repowiki 文档;\n- Voice:支持 /voice 指令,语音输入能力全面升级,免费开放;\n- Goal:支持 /goal 指令,面向目标长程任务执行不跑偏;\n- 开放模型参数:支持自定义 efforts 档位 以及支持 1M 上下文窗口设置:\n\n面向企业开放被集成能力\n\n- Agent SDK:支持 TypeScript 和 Python,几行代码即可集成完整 Agent 能力;编程级控制(工具授权回调、执行前拦截、参数修改);\n- Cloud Agents:Agents 即服务,沙箱隔离、状态管理、异步编排、凭证管理、长时运行平台内置;\n\n核心能力升级\n\n- 编排:任务自动拆分多 Agent 并行执行,主 Agent 判定拆分策略,子 Agent 独立事件循环;\n- 扩展:支持 Skills / Hooks / MCP / Subagent / Command 五类正交扩展点;\n- 自治:Agent 自判风险,仅关键节点请求确认;LLM / SLM / VLM 自动路由;\n- 集成:Headless(CI/CD 无人值守)、ACP(标准双向通信)、SDK(TS / Python)三种接入形态",
+        "source_type": "official_changelog",
+        "title": "Qoder CN CLI 更新日志 — 2026年05月20日 v1.0.0",
+        "url": "https://help.aliyun.com/zh/lingma/qoder-cn-cli",
+        "version_id": "ver_716b793d2ea1f34fd6f9ad18"
+      }
+    ],
+    "findings": [
+      {
+        "confidence_score": 0.84,
+        "evidence_chunk_ids": [
+          "chunk_45fee4571385be6f58e88a37"
+        ],
+        "finding_type": "fact",
+        "summary": "#### Qoder CN CLI 1.0 重磅发布 新功能 - 云端运行:支持 qodercli --remote flag,Cloud 模式支持任务一次性提交云端容器,关机断网不影响执行,支持数小时长时工作流; - RepoWiki:支持 qodercli wiki 子指令,代码不出域本地生成 repowiki 文档; - Voice:支持 /vo...",
+        "title": "Qoder CN CLI 更新日志 — 2026年05月20日 v1.0.0"
+      }
+    ],
+    "impact_analysis": "已检索到 1 条产品证据，可用于分析代码智能、项目上下文、Agent 自主性和 IDE 生态的竞争变化。",
+    "impact_details": [
+      {
+        "confidence_score": 0.84,
+        "dimension": "agent_context",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_45fee4571385be6f58e88a37"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.84,
+        "dimension": "ide_ecosystem",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_45fee4571385be6f58e88a37"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.84,
+        "dimension": "model_extensibility",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_45fee4571385be6f58e88a37"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.84,
+        "dimension": "security_compliance",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_45fee4571385be6f58e88a37"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      }
+    ],
+    "model_name": null,
+    "opportunity": "将通用 Agent 能力翻译成课程实验、中文报错讲解和分步学习模式，可形成教育场景差异化。",
+    "priority_breakdown": {
+      "event_impact": 0.72,
+      "evidence_confidence": 0.84,
+      "product_relevance": 0.74,
+      "score": 75,
+      "urgency": 0.72
+    },
+    "priority_score": 75,
+    "prompt_name": "product_prompt.md",
+    "rag_query_id": "qry_9fa5c82e8b3f43839cdc5fc31ea3ef2b",
+    "recommended_action": "按 D1-D7 标签复核发布证据，抽取可复现功能点，并纳入能力快照和基准任务。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": false,
+    "schema_version": "1.0",
+    "summary": "基于 1 条可追溯证据，通义灵码 存在与产品与技术发布相关的动态：Qoder CN CLI 更新日志 — 2026年05月20日 v1.0.0。",
+    "threat": "若竞品的多文件 Agent、测试修复或 IDE 集成成熟，CodeMate Campus 需要避免功能代差。",
+    "threat_level": "high"
+  },
+  {
+    "agent_kind": "product",
+    "alert_level": "orange",
+    "analysis_mode": "rules",
+    "assumptions": [],
+    "capability_impact": {
+      "agent_context": 6,
+      "education_fit": 6,
+      "ide_ecosystem": 6,
+      "model_extensibility": 6,
+      "security_compliance": 6
+    },
+    "card_id": "card_4abd1d61c91aaa672d74",
+    "change_after": "### 声明式 Agent,一次定义、长期演进 通过 Agent API 声明式创建和管理 Agent——配置模型、工具、系统指令、MCP 集成。支持版本管理与回滚,平台升级模型与编排策略时,已接入的应用零代码变更自动变强。",
+    "change_before": "unknown",
+    "competitor": "通义灵码",
+    "confidence_score": 0.84,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:08.035855Z",
+    "dimension_tags": [
+      "agent_context",
+      "ide_ecosystem",
+      "model_extensibility",
+      "security_compliance",
+      "education_fit"
+    ],
+    "event_title": "通义灵码 产品与技术发布: Cloud Agents CN更新日志 — 0.0.3(2026-06-09)",
+    "event_type": "product_release",
+    "evidence": [
+      {
+        "chunk_id": "chunk_cd5fe80072566a1a1aed820b",
+        "citation_id": "cite_52a8786ca2938cf33462b70c",
+        "competitor": "通义灵码",
+        "dimension_tags": [
+          "agent_context",
+          "ide_ecosystem",
+          "model_extensibility",
+          "security_compliance",
+          "education_fit"
+        ],
+        "document_id": "doc_9f970a120861fc595aa20285",
+        "event_type": "product_release",
+        "evidence_level": "A",
+        "final_score": 0.8037330755980202,
+        "product_version": "0.0.3",
+        "publish_time": "2026-06-09T00:00:00Z",
+        "quote": "### 声明式 Agent,一次定义、长期演进\n\n通过 Agent API 声明式创建和管理 Agent——配置模型、工具、系统指令、MCP 集成。支持版本管理与回滚,平台升级模型与编排策略时,已接入的应用零代码变更自动变强。",
+        "source_type": "official_changelog",
+        "title": "Cloud Agents CN更新日志 — 0.0.3(2026-06-09)",
+        "url": "https://help.aliyun.com/zh/lingma/cloud-agents-cn-update-log",
+        "version_id": "ver_e65d624750e7f96b868b9e04"
+      }
+    ],
+    "findings": [
+      {
+        "confidence_score": 0.84,
+        "evidence_chunk_ids": [
+          "chunk_cd5fe80072566a1a1aed820b"
+        ],
+        "finding_type": "fact",
+        "summary": "### 声明式 Agent,一次定义、长期演进 通过 Agent API 声明式创建和管理 Agent——配置模型、工具、系统指令、MCP 集成。支持版本管理与回滚,平台升级模型与编排策略时,已接入的应用零代码变更自动变强。",
+        "title": "Cloud Agents CN更新日志 — 0.0.3(2026-06-09)"
+      }
+    ],
+    "impact_analysis": "已检索到 1 条产品证据，可用于分析代码智能、项目上下文、Agent 自主性和 IDE 生态的竞争变化。",
+    "impact_details": [
+      {
+        "confidence_score": 0.84,
+        "dimension": "agent_context",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_cd5fe80072566a1a1aed820b"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.84,
+        "dimension": "ide_ecosystem",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_cd5fe80072566a1a1aed820b"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.84,
+        "dimension": "model_extensibility",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_cd5fe80072566a1a1aed820b"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.84,
+        "dimension": "security_compliance",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_cd5fe80072566a1a1aed820b"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.84,
+        "dimension": "education_fit",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_cd5fe80072566a1a1aed820b"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      }
+    ],
+    "model_name": null,
+    "opportunity": "将通用 Agent 能力翻译成课程实验、中文报错讲解和分步学习模式，可形成教育场景差异化。",
+    "priority_breakdown": {
+      "event_impact": 0.72,
+      "evidence_confidence": 0.84,
+      "product_relevance": 0.87,
+      "score": 77,
+      "urgency": 0.72
+    },
+    "priority_score": 77,
+    "prompt_name": "product_prompt.md",
+    "rag_query_id": "qry_9fa5c82e8b3f43839cdc5fc31ea3ef2b",
+    "recommended_action": "按 D1-D7 标签复核发布证据，抽取可复现功能点，并纳入能力快照和基准任务。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": false,
+    "schema_version": "1.0",
+    "summary": "基于 1 条可追溯证据，通义灵码 存在与产品与技术发布相关的动态：Cloud Agents CN更新日志 — 0.0.3(2026-06-09)。",
+    "threat": "若竞品的多文件 Agent、测试修复或 IDE 集成成熟，CodeMate Campus 需要避免功能代差。",
+    "threat_level": "high"
+  },
+  {
+    "agent_kind": "product",
+    "alert_level": "red",
+    "analysis_mode": "rules",
+    "assumptions": [],
+    "capability_impact": {
+      "agent_context": 6,
+      "ide_ecosystem": 6,
+      "model_extensibility": 6,
+      "performance_cost": 6,
+      "security_compliance": 6
+    },
+    "card_id": "card_18e481b3ff18278b91a2",
+    "change_after": "##### 功能更新 - Hook 能力全面升级:新增 SessionStart、SessionEnd、SubagentStart、SubagentStop、Notification 五类事件;新增 Hook 异步唤醒能力(asyncRewake);工具事件支持 if 条件匹配指定工具。 - 浏览器可视化标注:浏览器操作过程中支持直接选中元素、圈选标注,辅助页面可视化调试与调整。 - 新增语音输入: 语音转文字后可自动优化口语化表...",
+    "change_before": "unknown",
+    "competitor": "通义灵码",
+    "confidence_score": 0.84,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:08.035855Z",
+    "dimension_tags": [
+      "agent_context",
+      "ide_ecosystem",
+      "model_extensibility",
+      "performance_cost",
+      "security_compliance"
+    ],
+    "event_title": "通义灵码 产品与技术发布: Qoder CN 更新日志 — v1.7.0 (2026-07-15) 新增 Enterprise 版本与浏览器可视化标注,Hook 能力全面升级",
+    "event_type": "product_release",
+    "evidence": [
+      {
+        "chunk_id": "chunk_6f870d92da816fe9033f009e",
+        "citation_id": "cite_fcabc27dc0a2d874ac2a6be4",
+        "competitor": "通义灵码",
+        "dimension_tags": [
+          "agent_context",
+          "ide_ecosystem",
+          "model_extensibility",
+          "performance_cost",
+          "security_compliance"
+        ],
+        "document_id": "doc_370a12826552c776ffd2c713",
+        "event_type": "product_release",
+        "evidence_level": "A",
+        "final_score": 0.7808142597864663,
+        "product_version": "1.7.0",
+        "publish_time": "2026-07-15T00:00:00Z",
+        "quote": "##### 功能更新\n\n- Hook 能力全面升级:新增 SessionStart、SessionEnd、SubagentStart、SubagentStop、Notification 五类事件;新增 Hook 异步唤醒能力(asyncRewake);工具事件支持 if 条件匹配指定工具。\n- 浏览器可视化标注:浏览器操作过程中支持直接选中元素、圈选标注,辅助页面可视化调试与调整。\n- 新增语音输入: 语音转文字后可自动优化口语化表达, 让输入内容更清晰、自然, 提升与智能体的对话质量。\n- Workspace 支持添加文件夹:Quest 支持将多个文件夹添加到同一 Workspace,方便在一个工作区内灵活组织和管理多目录内容。\n- 支持 Qoder CN(全家桶) Enterprise 版订阅:Qoder CN(全家桶)Enterprise 版,包含 Teams 全部功能,还增加了基于群组的权限和计费管理、多维度模型策略管控、插件分享与下发管控、企业私有能力市场、操作审计、优先服务支持。同时,支持 Qoder CN(原灵码)企业标准版迁移到 Qoder CN(全家桶)Teams 版 和 Enterprise 版,升级后企业成员登录新账号可将原实例账号下的 AI 数据(如会话历史 、规则、 记忆 、 智能体 、 代码索引)等迁移到新账号,历史记录不会丢失。",
+        "source_type": "official_changelog",
+        "title": "Qoder CN 更新日志 — v1.7.0 (2026-07-15) 新增 Enterprise 版本与浏览器可视化标注,Hook 能力全面升级",
+        "url": "https://help.aliyun.com/zh/lingma/qoder-cn-update-log",
+        "version_id": "ver_750e86748ce613a7a1a8ce1c"
+      }
+    ],
+    "findings": [
+      {
+        "confidence_score": 0.84,
+        "evidence_chunk_ids": [
+          "chunk_6f870d92da816fe9033f009e"
+        ],
+        "finding_type": "fact",
+        "summary": "##### 功能更新 - Hook 能力全面升级:新增 SessionStart、SessionEnd、SubagentStart、SubagentStop、Notification 五类事件;新增 Hook 异步唤醒能力(asyncRewake);工具事件支持 if 条件匹配指定工具。 - 浏览器可视化标注:浏览器操作过程中支持直接选中元素、圈选标注...",
+        "title": "Qoder CN 更新日志 — v1.7.0 (2026-07-15) 新增 Enterprise 版本与浏览器可视化标注,Hook 能力全面升级"
+      }
+    ],
+    "impact_analysis": "已检索到 1 条产品证据，可用于分析代码智能、项目上下文、Agent 自主性和 IDE 生态的竞争变化。",
+    "impact_details": [
+      {
+        "confidence_score": 0.84,
+        "dimension": "agent_context",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_6f870d92da816fe9033f009e"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.84,
+        "dimension": "ide_ecosystem",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_6f870d92da816fe9033f009e"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.84,
+        "dimension": "model_extensibility",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_6f870d92da816fe9033f009e"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.84,
+        "dimension": "performance_cost",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_6f870d92da816fe9033f009e"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.84,
+        "dimension": "security_compliance",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_6f870d92da816fe9033f009e"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      }
+    ],
+    "model_name": null,
+    "opportunity": "将通用 Agent 能力翻译成课程实验、中文报错讲解和分步学习模式，可形成教育场景差异化。",
+    "priority_breakdown": {
+      "event_impact": 0.72,
+      "evidence_confidence": 0.84,
+      "product_relevance": 0.74,
+      "score": 81,
+      "urgency": 0.95
+    },
+    "priority_score": 81,
+    "prompt_name": "product_prompt.md",
+    "rag_query_id": "qry_9fa5c82e8b3f43839cdc5fc31ea3ef2b",
+    "recommended_action": "按 D1-D7 标签复核发布证据，抽取可复现功能点，并纳入能力快照和基准任务。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": false,
+    "schema_version": "1.0",
+    "summary": "基于 1 条可追溯证据，通义灵码 存在与产品与技术发布相关的动态：Qoder CN 更新日志 — v1.7.0 (2026-07-15) 新增 Enterprise 版本与浏览器可视化标注,Hook 能力...。",
+    "threat": "若竞品的多文件 Agent、测试修复或 IDE 集成成熟，CodeMate Campus 需要避免功能代差。",
+    "threat_level": "critical"
+  },
+  {
+    "agent_kind": "product",
+    "alert_level": "orange",
+    "analysis_mode": "rules",
+    "assumptions": [],
+    "capability_impact": {
+      "agent_context": 6,
+      "model_extensibility": 6
+    },
+    "card_id": "card_6cef6e35990001e4eede",
+    "change_after": "##### 功能更新 - Quest 视窗支持自定义布局和「My Quests」任务看板:Quest 视窗支持拖拽拆分窗格以并行处理多任务,并新增「My Quests」看板按状态汇总全部 Quest,进展一览无余。 - 专家团支持自定义模型:灵活配置专家团及子智能体所使用的模型,可切换内置模型或使用自定义模型,适配更多任务场景。 - Mac 端上线 Computer Use 与窗口快照能力:授权后 Agent 可在 macOS 调...",
+    "change_before": "unknown",
+    "competitor": "通义灵码",
+    "confidence_score": 0.84,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:08.036855Z",
+    "dimension_tags": [
+      "agent_context",
+      "model_extensibility"
+    ],
+    "event_title": "通义灵码 产品与技术发布: Qoder CN 更新日志 — v1.2.0 (2026-06-10)",
+    "event_type": "product_release",
+    "evidence": [
+      {
+        "chunk_id": "chunk_db94ee1a4242148bd37de40e",
+        "citation_id": "cite_60cc940cc9e304d953c764c0",
+        "competitor": "通义灵码",
+        "dimension_tags": [
+          "agent_context",
+          "model_extensibility"
+        ],
+        "document_id": "doc_1fde7b05d6807c253d37b1fe",
+        "event_type": "product_release",
+        "evidence_level": "A",
+        "final_score": 0.7764175423391376,
+        "product_version": "1.2.0",
+        "publish_time": "2026-06-10T00:00:00Z",
+        "quote": "##### 功能更新\n\n- Quest 视窗支持自定义布局和「My Quests」任务看板:Quest 视窗支持拖拽拆分窗格以并行处理多任务,并新增「My Quests」看板按状态汇总全部 Quest,进展一览无余。\n- 专家团支持自定义模型:灵活配置专家团及子智能体所使用的模型,可切换内置模型或使用自定义模型,适配更多任务场景。\n- Mac 端上线 Computer Use 与窗口快照能力:授权后 Agent 可在 macOS 调用计算机操作、后台操控 App 完成复杂自动化任务;双击 ⌘ Command 即可将最前窗口截图作为上下文交给智能体,理解更精准(仅支持 macOS)。\n- 支持在 SSH Remote 中使用 Dev Container:在 SSH Remote 场景下新增 Dev Container 支持,同时支持 attach 到任意 Docker 容器,提升远程开发环境的灵活性与一致性。\n- 代码评审能力增强:新增支持 /ultra review,提升代码评审的分析深度与建议质量,帮助你更快发现潜在问题并改进实现。",
+        "source_type": "official_changelog",
+        "title": "Qoder CN 更新日志 — v1.2.0 (2026-06-10)",
+        "url": "https://help.aliyun.com/zh/lingma/qoder-cn-update-log",
+        "version_id": "ver_114e91569566df87e19776e8"
+      }
+    ],
+    "findings": [
+      {
+        "confidence_score": 0.84,
+        "evidence_chunk_ids": [
+          "chunk_db94ee1a4242148bd37de40e"
+        ],
+        "finding_type": "fact",
+        "summary": "##### 功能更新 - Quest 视窗支持自定义布局和「My Quests」任务看板:Quest 视窗支持拖拽拆分窗格以并行处理多任务,并新增「My Quests」看板按状态汇总全部 Quest,进展一览无余。 - 专家团支持自定义模型:灵活配置专家团及子智能体所使用的模型,可切换内置模型或使用自定义模型,适配更多任务场景。 - Mac 端上线 C...",
+        "title": "Qoder CN 更新日志 — v1.2.0 (2026-06-10)"
+      }
+    ],
+    "impact_analysis": "已检索到 1 条产品证据，可用于分析代码智能、项目上下文、Agent 自主性和 IDE 生态的竞争变化。",
+    "impact_details": [
+      {
+        "confidence_score": 0.84,
+        "dimension": "agent_context",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_db94ee1a4242148bd37de40e"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.84,
+        "dimension": "model_extensibility",
+        "direction": "positive",
+        "evidence_chunk_ids": [
+          "chunk_db94ee1a4242148bd37de40e"
+        ],
+        "magnitude": 6,
+        "rationale": "由 产品与技术发布证据推导，方向采用 product Agent 的保守规则，需结合原文复核。"
+      }
+    ],
+    "model_name": null,
+    "opportunity": "将通用 Agent 能力翻译成课程实验、中文报错讲解和分步学习模式，可形成教育场景差异化。",
+    "priority_breakdown": {
+      "event_impact": 0.72,
+      "evidence_confidence": 0.84,
+      "product_relevance": 0.61,
+      "score": 72,
+      "urgency": 0.72
+    },
+    "priority_score": 72,
+    "prompt_name": "product_prompt.md",
+    "rag_query_id": "qry_9fa5c82e8b3f43839cdc5fc31ea3ef2b",
+    "recommended_action": "按 D1-D7 标签复核发布证据，抽取可复现功能点，并纳入能力快照和基准任务。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": false,
+    "schema_version": "1.0",
+    "summary": "基于 1 条可追溯证据，通义灵码 存在与产品与技术发布相关的动态：Qoder CN 更新日志 — v1.2.0 (2026-06-10)。",
+    "threat": "若竞品的多文件 Agent、测试修复或 IDE 集成成熟，CodeMate Campus 需要避免功能代差。",
+    "threat_level": "high"
+  },
+  {
+    "agent_kind": "risk",
+    "alert_level": "blue",
+    "analysis_mode": "rules",
+    "assumptions": [
+      "当前没有检索到可引用证据，结论仅作为待补证据的占位。"
+    ],
+    "capability_impact": {},
+    "card_id": "card_9feb4c444d672f2461d5",
+    "change_after": "unknown",
+    "change_before": "unknown",
+    "competitor": "通义灵码",
+    "confidence_score": 0.12,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:07.894999Z",
+    "dimension_tags": [],
+    "event_title": "通义灵码 开发者体验与风险舆情: 通义灵码",
+    "event_type": "risk_experience",
+    "evidence": [],
+    "findings": [],
+    "impact_analysis": "已检索到 0 条风险证据，可用于判断稳定性、安全隐私、Agent 行为边界和教育场景风险。",
+    "impact_details": [],
+    "model_name": null,
+    "opportunity": "竞品风险可转化为 CodeMate Campus 的安全边界、教师可控和学术诚信设计卖点。",
+    "priority_breakdown": {
+      "event_impact": 0.2,
+      "evidence_confidence": 0.12,
+      "product_relevance": 0.3,
+      "score": 20,
+      "urgency": 0.2
+    },
+    "priority_score": 20,
+    "prompt_name": "risk_prompt.md",
+    "rag_query_id": "qry_0ea15c5f12864848bc1ba78ce8673e2c",
+    "recommended_action": "建立风险复核清单，优先验证危险命令、代码上传、错误讲解和直接代写边界。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": true,
+    "schema_version": "1.0",
+    "summary": "未从 Mini-RAG 检索到 通义灵码 的开发者体验与风险舆情证据，需要补充采集或放宽过滤条件。",
+    "threat": "若同类风险在本产品中复现，会直接影响学生代码安全、课程合规和教师信任。",
+    "threat_level": "unknown"
+  },
+  {
+    "agent_kind": "price",
+    "alert_level": "blue",
+    "analysis_mode": "rules",
+    "assumptions": [
+      "当前没有检索到可引用证据，结论仅作为待补证据的占位。"
+    ],
+    "capability_impact": {},
+    "card_id": "card_b6f9304509ca4fcdfba2",
+    "change_after": "unknown",
+    "change_before": "unknown",
+    "competitor": "CodeGeeX",
+    "confidence_score": 0.12,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:08.150406Z",
+    "dimension_tags": [],
+    "event_title": "CodeGeeX 商业化与价格变化: CodeGeeX",
+    "event_type": "pricing_change",
+    "evidence": [],
+    "findings": [],
+    "impact_analysis": "已检索到 0 条商业化证据，可用于判断套餐门槛、额度限制和单位任务成本对 CodeMate Campus 的影响。",
+    "impact_details": [],
+    "model_name": null,
+    "opportunity": "若竞品提高门槛或弱化教育优惠，可突出校园低成本、透明额度和学生认证方案。",
+    "priority_breakdown": {
+      "event_impact": 0.2,
+      "evidence_confidence": 0.12,
+      "product_relevance": 0.3,
+      "score": 20,
+      "urgency": 0.2
+    },
+    "priority_score": 20,
+    "prompt_name": "price_prompt.md",
+    "rag_query_id": "qry_4a7d8e11afe74cb393a0d9bda9de4299",
+    "recommended_action": "补充价格页快照，记录套餐、额度、学生政策和模型差异，并更新成本效率评分。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": true,
+    "schema_version": "1.0",
+    "summary": "未从 Mini-RAG 检索到 CodeGeeX 的商业化与价格变化证据，需要补充采集或放宽过滤条件。",
+    "threat": "若竞品提供更强模型或更低学生价，可能压缩 CodeMate Campus 的价格优势。",
+    "threat_level": "unknown"
+  },
+  {
+    "agent_kind": "product",
+    "alert_level": "blue",
+    "analysis_mode": "rules",
+    "assumptions": [
+      "当前没有检索到可引用证据，结论仅作为待补证据的占位。"
+    ],
+    "capability_impact": {},
+    "card_id": "card_f0a5f885cdd5ae35353d",
+    "change_after": "unknown",
+    "change_before": "unknown",
+    "competitor": "CodeGeeX",
+    "confidence_score": 0.12,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:08.145401Z",
+    "dimension_tags": [],
+    "event_title": "CodeGeeX 产品与技术发布: CodeGeeX",
+    "event_type": "product_release",
+    "evidence": [],
+    "findings": [],
+    "impact_analysis": "已检索到 0 条产品证据，可用于分析代码智能、项目上下文、Agent 自主性和 IDE 生态的竞争变化。",
+    "impact_details": [],
+    "model_name": null,
+    "opportunity": "将通用 Agent 能力翻译成课程实验、中文报错讲解和分步学习模式，可形成教育场景差异化。",
+    "priority_breakdown": {
+      "event_impact": 0.2,
+      "evidence_confidence": 0.12,
+      "product_relevance": 0.3,
+      "score": 20,
+      "urgency": 0.2
+    },
+    "priority_score": 20,
+    "prompt_name": "product_prompt.md",
+    "rag_query_id": "qry_2de84fe610174b1f87c677941d51a7a3",
+    "recommended_action": "按 D1-D7 标签复核发布证据，抽取可复现功能点，并纳入能力快照和基准任务。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": true,
+    "schema_version": "1.0",
+    "summary": "未从 Mini-RAG 检索到 CodeGeeX 的产品与技术发布证据，需要补充采集或放宽过滤条件。",
+    "threat": "若竞品的多文件 Agent、测试修复或 IDE 集成成熟，CodeMate Campus 需要避免功能代差。",
+    "threat_level": "unknown"
+  },
+  {
+    "agent_kind": "risk",
+    "alert_level": "orange",
+    "analysis_mode": "rules",
+    "assumptions": [],
+    "capability_impact": {
+      "code_intelligence": 6,
+      "education_fit": 6,
+      "ide_ecosystem": 6
+    },
+    "card_id": "card_bac80c725659bb65cf79",
+    "change_after": "请求在VS Code扩展中添加图片上传功能 您好, 我希望能为CodeGeeX的VS Code扩展添加图片上传功能。这个功能对开发者非常有帮助,具体需求如下: 功能需求: 在聊天界面添加图片上传按钮(类似回形针图标) 支持直接粘贴图片到聊天输入框 支持常见图片格式(JPG、PNG、GIF、WebP等) 使用场景: 设计稿转代码:上传UI设计稿截图,让AI根据图片生成前端代码 问题诊断:上传错误截图或界面问题,让AI帮助分析和解决 ...",
+    "change_before": "unknown",
+    "competitor": "CodeGeeX",
+    "confidence_score": 0.74,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:08.204931Z",
+    "dimension_tags": [
+      "code_intelligence",
+      "ide_ecosystem",
+      "education_fit"
+    ],
+    "event_title": "CodeGeeX 开发者体验与风险舆情: 请求在VS Code扩展中添加图片上传功能",
+    "event_type": "risk_experience",
+    "evidence": [
+      {
+        "chunk_id": "chunk_b4717a2f1df4397556988779",
+        "citation_id": "cite_19984930ee6f368b26e029e8",
+        "competitor": "CodeGeeX",
+        "dimension_tags": [
+          "code_intelligence",
+          "ide_ecosystem",
+          "education_fit"
+        ],
+        "document_id": "doc_956c8704456c0529de1e7ea0",
+        "event_type": "risk_experience",
+        "evidence_level": "B",
+        "final_score": 0.9353834534334404,
+        "product_version": null,
+        "publish_time": "2026-04-29T02:45:36Z",
+        "quote": "请求在VS Code扩展中添加图片上传功能\n\n您好,\n\n我希望能为CodeGeeX的VS Code扩展添加图片上传功能。这个功能对开发者非常有帮助,具体需求如下:\n\n功能需求:\n\n在聊天界面添加图片上传按钮(类似回形针图标)\n支持直接粘贴图片到聊天输入框\n支持常见图片格式(JPG、PNG、GIF、WebP等)\n使用场景:\n\n设计稿转代码:上传UI设计稿截图,让AI根据图片生成前端代码\n问题诊断:上传错误截图或界面问题,让AI帮助分析和解决\n代码审查:上传代码界面截图,让AI提供改进建议\n沟通更直观:通过图片描述问题,比纯文字更清晰高效\n预期价值:\n\n大幅提升开发效率\n减少沟通成本\n提升用户体验\n增强CodeGeeX的竞争力\n\nIssue state: open",
+        "source_type": "github_issue",
+        "title": "请求在VS Code扩展中添加图片上传功能",
+        "url": "https://github.com/zai-org/CodeGeeX/issues/295",
+        "version_id": "ver_77e4d1857d395ecdd832f3a3"
+      }
+    ],
+    "findings": [
+      {
+        "confidence_score": 0.74,
+        "evidence_chunk_ids": [
+          "chunk_b4717a2f1df4397556988779"
+        ],
+        "finding_type": "fact",
+        "summary": "请求在VS Code扩展中添加图片上传功能 您好, 我希望能为CodeGeeX的VS Code扩展添加图片上传功能。这个功能对开发者非常有帮助,具体需求如下: 功能需求: 在聊天界面添加图片上传按钮(类似回形针图标) 支持直接粘贴图片到聊天输入框 支持常见图片格式(JPG、PNG、GIF、WebP等) 使用场景: 设计稿转代码:上传UI设计稿截图,让A...",
+        "title": "请求在VS Code扩展中添加图片上传功能"
+      }
+    ],
+    "impact_analysis": "已检索到 1 条风险证据，可用于判断稳定性、安全隐私、Agent 行为边界和教育场景风险。",
+    "impact_details": [
+      {
+        "confidence_score": 0.74,
+        "dimension": "code_intelligence",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_b4717a2f1df4397556988779"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.74,
+        "dimension": "ide_ecosystem",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_b4717a2f1df4397556988779"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.74,
+        "dimension": "education_fit",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_b4717a2f1df4397556988779"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      }
+    ],
+    "model_name": null,
+    "opportunity": "竞品风险可转化为 CodeMate Campus 的安全边界、教师可控和学术诚信设计卖点。",
+    "priority_breakdown": {
+      "event_impact": 0.78,
+      "evidence_confidence": 0.74,
+      "product_relevance": 0.61,
+      "score": 72,
+      "urgency": 0.72
+    },
+    "priority_score": 72,
+    "prompt_name": "risk_prompt.md",
+    "rag_query_id": "qry_65503723639b47f9b74f25a07a4f2455",
+    "recommended_action": "建立风险复核清单，优先验证危险命令、代码上传、错误讲解和直接代写边界。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": false,
+    "schema_version": "1.0",
+    "summary": "基于 1 条可追溯证据，CodeGeeX 存在与开发者体验与风险舆情相关的动态：请求在VS Code扩展中添加图片上传功能。",
+    "threat": "若同类风险在本产品中复现，会直接影响学生代码安全、课程合规和教师信任。",
+    "threat_level": "high"
+  },
+  {
+    "agent_kind": "risk",
+    "alert_level": "orange",
+    "analysis_mode": "rules",
+    "assumptions": [],
+    "capability_impact": {
+      "agent_context": 6,
+      "code_intelligence": 6,
+      "model_extensibility": 6
+    },
+    "card_id": "card_d3603602c5f093c45a42",
+    "change_after": "📝 Integration Proposal: CAJAL — Scientific Paper Agent for CodeGeeX ## 📝 Integration Proposal: CAJAL — Scientific Paper Agent for CodeGeeX ### What is CAJAL? **CAJAL is not a general-purpose chat model.** It is a **sp...",
+    "change_before": "unknown",
+    "competitor": "CodeGeeX",
+    "confidence_score": 0.74,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:08.205951Z",
+    "dimension_tags": [
+      "code_intelligence",
+      "agent_context",
+      "model_extensibility"
+    ],
+    "event_title": "CodeGeeX 开发者体验与风险舆情: 📝 Integration Proposal: CAJAL — Scientific Paper Agent for CodeGeeX",
+    "event_type": "risk_experience",
+    "evidence": [
+      {
+        "chunk_id": "chunk_bdb7b03c64ec16cf92f69cae",
+        "citation_id": "cite_8d9f600f77790979b1976f4a",
+        "competitor": "CodeGeeX",
+        "dimension_tags": [
+          "code_intelligence",
+          "agent_context",
+          "model_extensibility"
+        ],
+        "document_id": "doc_5364c37f963d7438df034d1b",
+        "event_type": "risk_experience",
+        "evidence_level": "B",
+        "final_score": 0.6888938962963016,
+        "product_version": null,
+        "publish_time": "2026-05-04T16:27:34Z",
+        "quote": "📝 Integration Proposal: CAJAL — Scientific Paper Agent for CodeGeeX\n\n## 📝 Integration Proposal: CAJAL — Scientific Paper Agent for CodeGeeX\n\n### What is CAJAL?\n**CAJAL is not a general-purpose chat model.** It is a **specialized scientific paper generation tool** — local, 2GB, producing LaTeX-formatted academic output.\n\n### Part of P2PCLAW\nAgent in [P2PCLAW](https://p2pclaw.com) — 14-agent decentralized research network.\n\n### Why CodeGeeX?\nCodeGeeX is a multilingual code generation model. CAJAL + CodeGeeX = **multilingual paper generation**:\n- Papers in English, Chinese, Spanish, etc.\n- Code + paper in one workflow\n- Local execution\n\n### Proposed Integration\n```python\nfrom cajal import ScientificWriter\nfrom codegeex import CodeGenerator\n\n# Generate code + paper\ncode = CodeGenerator().generate(\"Neural network implementation\")\npaper = ScientificWriter().generate(\"Paper on neural networks\", code=code)\n```\n\n### Links\n- 🤗 HF: https://huggingface.co/Agnuxo/CAJAL-4B-P2PCLAW\n- 📁 GH: https://github.com/Agnuxo1/CAJAL\n- 🌐 P2PCLAW: https://p2pclaw.com\n\n— Francisco (@Agnuxo1), P2PCLAW\n\nIssue state: open",
+        "source_type": "github_issue",
+        "title": "📝 Integration Proposal: CAJAL — Scientific Paper Agent for CodeGeeX",
+        "url": "https://github.com/zai-org/CodeGeeX/issues/297",
+        "version_id": "ver_ee8edc1e6d990e14a9037a1c"
+      }
+    ],
+    "findings": [
+      {
+        "confidence_score": 0.74,
+        "evidence_chunk_ids": [
+          "chunk_bdb7b03c64ec16cf92f69cae"
+        ],
+        "finding_type": "fact",
+        "summary": "📝 Integration Proposal: CAJAL — Scientific Paper Agent for CodeGeeX ## 📝 Integration Proposal: CAJAL — Scientific Paper Agent for CodeGeeX ### What is CAJAL? **CAJAL is not a ge...",
+        "title": "📝 Integration Proposal: CAJAL — Scientific Paper Agent for CodeGeeX"
+      }
+    ],
+    "impact_analysis": "已检索到 1 条风险证据，可用于判断稳定性、安全隐私、Agent 行为边界和教育场景风险。",
+    "impact_details": [
+      {
+        "confidence_score": 0.74,
+        "dimension": "code_intelligence",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_bdb7b03c64ec16cf92f69cae"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.74,
+        "dimension": "agent_context",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_bdb7b03c64ec16cf92f69cae"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.74,
+        "dimension": "model_extensibility",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_bdb7b03c64ec16cf92f69cae"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      }
+    ],
+    "model_name": null,
+    "opportunity": "竞品风险可转化为 CodeMate Campus 的安全边界、教师可控和学术诚信设计卖点。",
+    "priority_breakdown": {
+      "event_impact": 0.78,
+      "evidence_confidence": 0.74,
+      "product_relevance": 0.61,
+      "score": 72,
+      "urgency": 0.72
+    },
+    "priority_score": 72,
+    "prompt_name": "risk_prompt.md",
+    "rag_query_id": "qry_65503723639b47f9b74f25a07a4f2455",
+    "recommended_action": "建立风险复核清单，优先验证危险命令、代码上传、错误讲解和直接代写边界。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": false,
+    "schema_version": "1.0",
+    "summary": "基于 1 条可追溯证据，CodeGeeX 存在与开发者体验与风险舆情相关的动态：📝 Integration Proposal: CAJAL — Scientific Paper Agent for CodeGeeX。",
+    "threat": "若同类风险在本产品中复现，会直接影响学生代码安全、课程合规和教师信任。",
+    "threat_level": "high"
+  },
+  {
+    "agent_kind": "risk",
+    "alert_level": "orange",
+    "analysis_mode": "rules",
+    "assumptions": [],
+    "capability_impact": {
+      "agent_context": 6,
+      "code_intelligence": 6,
+      "ide_ecosystem": 6
+    },
+    "card_id": "card_347d192aeaae344bf75a",
+    "change_after": "message in Conventional Commits format. Use types: feat, fix, docs, refactor, test, chore. Keep the subject line under 72 characters. Include the scope when applicable.\" } Or a template-based approach: { \"codegeex.com...",
+    "change_before": "unknown",
+    "competitor": "CodeGeeX",
+    "confidence_score": 0.78,
+    "conflict_notes": [],
+    "created_at": "2026-07-20T11:36:08.205951Z",
+    "dimension_tags": [
+      "code_intelligence",
+      "agent_context",
+      "ide_ecosystem"
+    ],
+    "event_title": "CodeGeeX 开发者体验与风险舆情: feat: support custom prompt/template for AI-generated commit messages",
+    "event_type": "risk_experience",
+    "evidence": [
+      {
+        "chunk_id": "chunk_b4e71eaedd35ed785c4420c3",
+        "citation_id": "cite_3106560cf47670dd9cfc0390",
+        "competitor": "CodeGeeX",
+        "dimension_tags": [
+          "code_intelligence",
+          "agent_context",
+          "ide_ecosystem"
+        ],
+        "document_id": "doc_1d2ecc952141b9f63d51e5e7",
+        "event_type": "risk_experience",
+        "evidence_level": "B",
+        "final_score": 0.66365776425712,
+        "product_version": null,
+        "publish_time": "2026-05-28T04:28:52Z",
+        "quote": "message in Conventional Commits\nformat. Use types: feat, fix, docs, refactor, test, chore. Keep the subject line under 72\ncharacters. Include the scope when applicable.\"\n}\n\nOr a template-based approach:\n\n{\n\"codegeex.commitMessage.format\": \"conventional-commits\",\n\"codegeex.commitMessage.includeScope\": true,\n\"codegeex.commitMessage.maxSubjectLength\": 72\n}\n\nDescribe alternatives you've considered\n\n• Using git hooks (prepare-commit-msg) — works but requires manual scripting and doesn't\nintegrate with the AI generation flow.\n• Switching to other extensions — none of them combine built-in AI code completion with\ncustomizable commit message generation as well as CodeGeeX does.\n\nAdditional context\n\nThis would be especially useful for teams that enforce commit message standards via CI (e.g., commitlint), where non-conforming messages cause pipeline failures. The prompt field could\naccept variables like {diff} for the staged changes, {branch} for the current branch name,\netc.\n\nIssue state: open",
+        "source_type": "github_issue",
+        "title": "feat: support custom prompt/template for AI-generated commit messages",
+        "url": "https://github.com/zai-org/CodeGeeX4/issues/163",
+        "version_id": "ver_94af49a2901c615a3abe78a3"
+      },
+      {
+        "chunk_id": "chunk_91f9d727a2b5840f72e14b38",
+        "citation_id": "cite_f4d4c11358629984d751c3bf",
+        "competitor": "CodeGeeX",
+        "dimension_tags": [
+          "code_intelligence",
+          "agent_context",
+          "ide_ecosystem"
+        ],
+        "document_id": "doc_1d2ecc952141b9f63d51e5e7",
+        "event_type": "risk_experience",
+        "evidence_level": "B",
+        "final_score": 0.2457346165197089,
+        "product_version": null,
+        "publish_time": "2026-05-28T04:28:52Z",
+        "quote": "feat: support custom prompt/template for AI-generated commit messages\n\n## Issue: Feature Request — Custom Commit Message Prompt\n\nTitle: feat: support custom prompt/template for AI-generated commit messages\n\n--------\n\nIs your feature request related to a problem? Please describe.\n\nCurrently, the AI commit message generation feature uses a fixed internal format with no way\nfor users to customize the output. Different teams and projects follow different commit\nconventions (Conventional Commits, Angular-style, custom formats with ticket numbers, etc.).\nWithout a configurable prompt, the generated messages often don't match the project's\nrequirements, and users have to manually rewrite them every time.\n\nDescribe the solution you'd like\n\nAdd a setting (e.g., codegeex.commitMessage.prompt or codegeex.commitMessage.template) that\nallows users to define a custom system prompt or template that controls the format and\ncontent of generated commit messages.\n\nExample configuration:\n\n{\n\"codegeex.commitMessage.prompt\": \"Generate a commit message in Conventional Commits\nformat. Use types: feat, fix, docs, refactor, test, chore. Keep the subject line under 72\ncharacters. Include the scope when",
+        "source_type": "github_issue",
+        "title": "feat: support custom prompt/template for AI-generated commit messages",
+        "url": "https://github.com/zai-org/CodeGeeX4/issues/163",
+        "version_id": "ver_94af49a2901c615a3abe78a3"
+      }
+    ],
+    "findings": [
+      {
+        "confidence_score": 0.78,
+        "evidence_chunk_ids": [
+          "chunk_b4e71eaedd35ed785c4420c3"
+        ],
+        "finding_type": "fact",
+        "summary": "message in Conventional Commits format. Use types: feat, fix, docs, refactor, test, chore. Keep the subject line under 72 characters. Include the scope when applicable.\" } Or a ...",
+        "title": "feat: support custom prompt/template for AI-generated commit messages"
+      },
+      {
+        "confidence_score": 0.78,
+        "evidence_chunk_ids": [
+          "chunk_91f9d727a2b5840f72e14b38"
+        ],
+        "finding_type": "fact",
+        "summary": "feat: support custom prompt/template for AI-generated commit messages ## Issue: Feature Request — Custom Commit Message Prompt Title: feat: support custom prompt/template for AI...",
+        "title": "feat: support custom prompt/template for AI-generated commit messages"
+      }
+    ],
+    "impact_analysis": "已检索到 2 条风险证据，可用于判断稳定性、安全隐私、Agent 行为边界和教育场景风险。",
+    "impact_details": [
+      {
+        "confidence_score": 0.78,
+        "dimension": "code_intelligence",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_b4e71eaedd35ed785c4420c3",
+          "chunk_91f9d727a2b5840f72e14b38"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.78,
+        "dimension": "agent_context",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_b4e71eaedd35ed785c4420c3",
+          "chunk_91f9d727a2b5840f72e14b38"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      },
+      {
+        "confidence_score": 0.78,
+        "dimension": "ide_ecosystem",
+        "direction": "negative",
+        "evidence_chunk_ids": [
+          "chunk_b4e71eaedd35ed785c4420c3",
+          "chunk_91f9d727a2b5840f72e14b38"
+        ],
+        "magnitude": 6,
+        "rationale": "由 开发者体验与风险舆情证据推导，方向采用 risk Agent 的保守规则，需结合原文复核。"
+      }
+    ],
+    "model_name": null,
+    "opportunity": "竞品风险可转化为 CodeMate Campus 的安全边界、教师可控和学术诚信设计卖点。",
+    "priority_breakdown": {
+      "event_impact": 0.78,
+      "evidence_confidence": 0.78,
+      "product_relevance": 0.61,
+      "score": 73,
+      "urgency": 0.72
+    },
+    "priority_score": 73,
+    "prompt_name": "risk_prompt.md",
+    "rag_query_id": "qry_65503723639b47f9b74f25a07a4f2455",
+    "recommended_action": "建立风险复核清单，优先验证危险命令、代码上传、错误讲解和直接代写边界。",
+    "relevance_to_our_product": "结论围绕 CodeMate Campus 的中文教学、编程实验、Agent 辅助、成本可控和学术诚信边界进行评估。",
+    "review_required": false,
+    "schema_version": "1.0",
+    "summary": "基于 2 条可追溯证据，CodeGeeX 存在与开发者体验与风险舆情相关的动态：feat: support custom prompt/template for AI-generated commit messages；feat: support custom prompt/template for AI-generated commit messages。",
+    "threat": "若同类风险在本产品中复现，会直接影响学生代码安全、课程合规和教师信任。",
+    "threat_level": "high"
+  }
+]
