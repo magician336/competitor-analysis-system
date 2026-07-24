@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2026-07-08-deploy-managed-copilot-settings-via-mdm-in-vs-code-and-cli",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260713T160450Z_64cb8722",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-13T16:05:09.203098Z",
+  "final_url": "https://github.blog/changelog/2026-07-08-deploy-managed-copilot-settings-via-mdm-in-vs-code-and-cli/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "14c4725b2fe197d6d202848b998b3f6e59bfa502ae59c4cae9463e6fbde3d69a",
+  "payload_path": "github_copilot/changelog/20260713T160450Z_64cb8722/a9595282183eb31b10265f0c.html",
+  "published_at": "2026-07-08T00:00:00Z",
+  "raw_record_id": "a9595282183eb31b10265f0c",
+  "requested_url": "https://github.blog/changelog/2026-07-08-deploy-managed-copilot-settings-via-mdm-in-vs-code-and-cli",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/label/copilot/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-07-08T00:00:00Z",
+    "listing_title": "Deploy managed Copilot settings via MDM in VS Code and CLI",
+    "record_role": "changelog_entry",
+    "visible_text_length": 5069
+  },
+  "source_type": "changelog"
+}

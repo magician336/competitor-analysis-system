@@ -1,0 +1,29 @@
+{
+  "acceptance_boundary": "AI pre-check only; independent human acceptance remains required.",
+  "audit_record_count": 885,
+  "audit_run_id": "20260717-full-885",
+  "audit_schema_version": "1.0",
+  "dimensions_path": "D:\\26Spring\\project\\CodeRadar\\config\\dimensions.yaml",
+  "dimensions_sha256": "sha256:7e72777e0239533f60779e1e9ac7d826d1bec70ba18a1ef6eb54822d7de73770",
+  "documents_path": "D:\\26Spring\\project\\CodeRadar\\data\\cleaned\\documents.jsonl",
+  "documents_sha256": "sha256:9780973870c4c8adade2d70b724767f342e0a46924206c6b5531d71c5cd083b0",
+  "generated_at": "2026-07-17T03:41:27.953526Z",
+  "input_line_count": 885,
+  "limitations": [
+    "This is an AI pre-check and does not replace human acceptance.",
+    "Sensitive-data flags are pattern candidates and require contextual review.",
+    "Keyword label evidence does not prove semantic completeness."
+  ],
+  "output_sha256": {
+    "documents_audit": "sha256:88ab7c900b56d88cdaeede3767478254365fceb71fcbeb8882674af01273b79e",
+    "review_queue": "sha256:a31aa8c219b68dbbb537569755bddde30b9e68e7f3a53965f8718baf47c18f52",
+    "summary": "sha256:303805c616401309d33f60e1b47ffe451b7333c15890cf1174f06cb68ed3dc12"
+  },
+  "outputs": {
+    "documents_audit": "documents.audit.jsonl",
+    "review_queue": "review-queue.csv",
+    "summary": "summary.json"
+  },
+  "review_agent": "codex-ai-precheck",
+  "valid_document_count": 885
+}

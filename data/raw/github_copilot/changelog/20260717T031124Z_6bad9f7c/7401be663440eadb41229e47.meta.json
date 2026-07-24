@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2026-07-14-github-copilot-in-visual-studio-june-update/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260717T031124Z_6bad9f7c",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-17T03:13:08.861804Z",
+  "final_url": "https://github.blog/changelog/2026-07-14-github-copilot-in-visual-studio-june-update/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "d95d0e33d6186968d0525d54006c4324eb3b44a868cab7c26bc6eff9678940db",
+  "payload_path": "github_copilot/changelog/20260717T031124Z_6bad9f7c/7401be663440eadb41229e47.html",
+  "published_at": "2026-07-14T00:00:00Z",
+  "raw_record_id": "7401be663440eadb41229e47",
+  "requested_url": "https://github.blog/changelog/2026-07-14-github-copilot-in-visual-studio-june-update",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/label/copilot/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-07-14T00:00:00Z",
+    "listing_title": "GitHub Copilot in Visual Studio — June update",
+    "record_role": "changelog_entry",
+    "visible_text_length": 5691
+  },
+  "source_type": "changelog"
+}

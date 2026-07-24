@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2025-12-17-dynamic-copilot-prompts-on-github-docs",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260713T162601Z_fda2c425",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-13T16:27:00.082057Z",
+  "final_url": "https://github.blog/changelog/2025-12-17-dynamic-copilot-prompts-on-github-docs/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "aab622d98305343ab2ab8063d8957230fb45d311f0557446b31b924bd768acb5",
+  "payload_path": "github_copilot/changelog/20260713T162601Z_fda2c425/d25813f70d55d4567f7e39bd.html",
+  "published_at": "2025-12-17T00:00:00Z",
+  "raw_record_id": "d25813f70d55d4567f7e39bd",
+  "requested_url": "https://github.blog/changelog/2025-12-17-dynamic-copilot-prompts-on-github-docs",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2025/?label=copilot",
+    "changelog_page_number": 2,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2025-12-17T00:00:00Z",
+    "listing_title": "Dynamic Copilot prompts on GitHub Docs",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3008
+  },
+  "source_type": "changelog"
+}

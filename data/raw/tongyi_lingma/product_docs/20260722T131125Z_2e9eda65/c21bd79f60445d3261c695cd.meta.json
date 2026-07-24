@@ -1,0 +1,31 @@
+{
+  "canonical_url": "https://help.aliyun.com/zh/lingma/qoder-cn/user-guide/overview-of-chat",
+  "competitor": "tongyi_lingma",
+  "content_type": "text/html;charset=UTF-8",
+  "crawl_run_id": "20260722T131125Z_2e9eda65",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-22T13:12:00.986505Z",
+  "final_url": "https://help.aliyun.com/zh/lingma/qoder-cn/user-guide/overview-of-chat",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "2373d3638f46e35f4f6ad5076198c934803c5e1a3ef49ca5d1573ee68c477d74",
+  "payload_path": "tongyi_lingma/product_docs/20260722T131125Z_2e9eda65/c21bd79f60445d3261c695cd.html",
+  "published_at": null,
+  "raw_record_id": "c21bd79f60445d3261c695cd",
+  "requested_url": "https://help.aliyun.com/zh/lingma/user-guide/overview-of-chat",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "competitor_aliases": [
+      "Lingma",
+      "Qoder CN",
+      "智能编码助手通义灵码"
+    ],
+    "competitor_name": "通义灵码",
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": 4415
+  },
+  "source_type": "product_docs"
+}

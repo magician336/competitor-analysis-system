@@ -1,0 +1,33 @@
+{
+  "canonical_url": "https://github.com/orgs/community/discussions/categories/copilot",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260724T071817Z_c88bf3a9",
+  "error": null,
+  "etag": "W/\"a67519a63f913345494cd8a6327b6f97\"",
+  "fetched_at": "2026-07-24T07:19:37.144360Z",
+  "final_url": "https://github.com/orgs/community/discussions/categories/copilot-conversations",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "49f79687b83cc3b1a87c19ac2982fe7532d7b099e7ab7c1a8a78af51ce241811",
+  "payload_path": "github_copilot/community/20260724T071817Z_c88bf3a9/385e92292eec484d64dd292f.html",
+  "published_at": null,
+  "raw_record_id": "385e92292eec484d64dd292f",
+  "requested_url": "https://github.com/orgs/community/discussions/categories/copilot",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://github.com/orgs/community/discussions/categories/copilot",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "embedded_content_supported": false,
+    "evidence_level": "C",
+    "format": "html",
+    "visible_text_length": 18806
+  },
+  "source_type": "community"
+}

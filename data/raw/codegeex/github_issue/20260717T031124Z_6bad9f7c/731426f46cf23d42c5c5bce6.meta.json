@@ -1,0 +1,33 @@
+{
+  "canonical_url": "https://github.com/zai-org/CodeGeeX/issues/295",
+  "competitor": "codegeex",
+  "content_type": "application/json",
+  "crawl_run_id": "20260717T031124Z_6bad9f7c",
+  "error": null,
+  "etag": "W/\"fa24ee9ed8aa763dc8c220d9fd755706b6c5d29b8af47504314fd387239b9ce8\"",
+  "fetched_at": "2026-07-17T03:17:42.385309Z",
+  "final_url": "https://api.github.com/repos/zai-org/CodeGeeX/issues?state=all&sort=updated&direction=desc&per_page=100&page=1&since=2025-07-17T03%3A11%3A24.630931Z",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "318eaeb9c2b5b4ad49faca9c79e82d060f1920a56920a9785a99c71a3000a1ad",
+  "payload_path": "codegeex/github_issue/20260717T031124Z_6bad9f7c/731426f46cf23d42c5c5bce6.json",
+  "published_at": "2026-04-29T02:45:36Z",
+  "raw_record_id": "731426f46cf23d42c5c5bce6",
+  "requested_url": "https://api.github.com/repos/zai-org/CodeGeeX/issues",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "comments_collected": 0,
+    "comments_error": null,
+    "competitor_aliases": [
+      "CodeGeeX4",
+      "CodeGeeX AI Coding Assistant"
+    ],
+    "competitor_name": "CodeGeeX",
+    "evidence_level": "B",
+    "issue_number": 295,
+    "repository": "zai-org/CodeGeeX",
+    "state": "open"
+  },
+  "source_type": "github_issue"
+}

@@ -1,0 +1,33 @@
+{
+  "canonical_url": "https://cursor.com/docs/models-and-pricing",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260723T033959Z_17c3c0f6",
+  "error": null,
+  "etag": "W/\"07c58530869787d669b3fe052af60772\"",
+  "fetched_at": "2026-07-23T03:40:02.159547Z",
+  "final_url": "https://cursor.com/docs/models-and-pricing",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "26b372e0c5b6456afba2208b6ed3272a1868f28841d5d94b3a4997ab7afbbc3c",
+  "payload_path": "cursor/product_docs/20260723T033959Z_17c3c0f6/146bbbe4724e88647d8876ab.html",
+  "published_at": null,
+  "raw_record_id": "146bbbe4724e88647d8876ab",
+  "requested_url": "https://cursor.com/docs/models-and-pricing",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://cursor.com/docs/models-and-pricing",
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "embedded_content": "cursor_next_rsc",
+    "embedded_content_supported": true,
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": 30
+  },
+  "source_type": "product_docs"
+}

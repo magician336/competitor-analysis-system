@@ -1,0 +1,51 @@
+{
+  "canonical_url": "https://help.aliyun.com/zh/lingma/product-overview/product-bulletin/",
+  "competitor": "tongyi_lingma",
+  "content_type": "text/html;charset=UTF-8",
+  "crawl_run_id": "20260715T091634Z_26502fc3",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-15T09:16:43.393089Z",
+  "final_url": "https://help.aliyun.com/zh/lingma/product-overview/product-bulletin/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "5be86daa1517ef068ce8bc2653c17488c3f9f2b4ff736079a925096dcc1dab44",
+  "payload_path": "tongyi_lingma/changelog/20260715T091634Z_26502fc3/dff3eb1480bd1be3959b750a.html",
+  "published_at": null,
+  "raw_record_id": "dff3eb1480bd1be3959b750a",
+  "requested_url": "https://help.aliyun.com/zh/lingma/product-overview/product-bulletin/",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "candidate_status": "undated",
+    "changelog_index_url": "https://help.aliyun.com/zh/lingma/product-overview/dynamics-and-announcements/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Lingma",
+      "Qoder CN",
+      "智能编码助手通义灵码"
+    ],
+    "competitor_name": "通义灵码",
+    "content_date_count": 0,
+    "content_date_earliest": null,
+    "content_date_latest": null,
+    "cutoff": "2025-07-15T09:16:34.998922Z",
+    "date_basis": null,
+    "discovery_mode": "configured_undated_directory",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_title": "产品公告",
+    "page_modified_at": "2025-03-21T15:07:45Z",
+    "page_published_at": "2024-06-14T20:29:12Z",
+    "parse_warning": "directory target has no page-level date",
+    "record_role": "changelog_candidate",
+    "undated_detail_root_selector": ".aliyun-docs-content .markdown-body",
+    "undated_entry_path_prefixes": [
+      "/zh/lingma/"
+    ],
+    "undated_entry_selector": ".aliyun-docs-content .markdown-body .directory a[href]",
+    "undated_entry_text_pattern": "更新日志|日志（存档）|产品公告",
+    "visible_text_length": 777
+  },
+  "source_type": "changelog"
+}

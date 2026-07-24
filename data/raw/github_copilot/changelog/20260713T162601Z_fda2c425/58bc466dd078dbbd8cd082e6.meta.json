@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2025-12-03-claude-opus-4-5-is-now-available-in-visual-studio-jetbrains-ides-xcode-and-eclipse",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260713T162601Z_fda2c425",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-13T16:27:23.385900Z",
+  "final_url": "https://github.blog/changelog/2025-12-03-claude-opus-4-5-is-now-available-in-visual-studio-jetbrains-ides-xcode-and-eclipse/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "a0a54f0824218a69060265422cb921dd3c195dea34d6ed2249579d92ed482ecb",
+  "payload_path": "github_copilot/changelog/20260713T162601Z_fda2c425/58bc466dd078dbbd8cd082e6.html",
+  "published_at": "2025-12-03T00:00:00Z",
+  "raw_record_id": "58bc466dd078dbbd8cd082e6",
+  "requested_url": "https://github.blog/changelog/2025-12-03-claude-opus-4-5-is-now-available-in-visual-studio-jetbrains-ides-xcode-and-eclipse",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2025/?label=copilot",
+    "changelog_page_number": 2,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2025-12-03T00:00:00Z",
+    "listing_title": "Claude Opus 4.5 is now available in Visual Studio, JetBrains IDEs, Xcode, and Eclipse",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3446
+  },
+  "source_type": "changelog"
+}

@@ -1,0 +1,14 @@
+{
+  "valid": true,
+  "case_count": 50,
+  "checked_chunk_count": 330,
+  "errors": [],
+  "dataset": "D:\\26Spring\\project\\CodeRadar\\data\\samples\\测试数据集.csv",
+  "dataset_sha256": "sha256:5bdff42353ad91912e75930ef9478dd663aed19f6c5704bfb9af762b79a7ce43",
+  "human_review_status": "pending",
+  "index_alias": "coderadar_chunks_current",
+  "physical_index": "coderadar_chunks_v20260717032357564091",
+  "indexed_chunk_count": 2688,
+  "index_embedding_model": "sentence-transformers/BAAI/bge-m3",
+  "index_embedding_dimension": 1024
+}

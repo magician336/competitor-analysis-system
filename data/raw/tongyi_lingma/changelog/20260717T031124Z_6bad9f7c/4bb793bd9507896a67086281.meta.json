@@ -1,0 +1,51 @@
+{
+  "canonical_url": "https://help.aliyun.com/zh/lingma/original-tongyi-lingma-logs-archived/",
+  "competitor": "tongyi_lingma",
+  "content_type": "text/html;charset=UTF-8",
+  "crawl_run_id": "20260717T031124Z_6bad9f7c",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-17T03:17:36.693322Z",
+  "final_url": "https://help.aliyun.com/zh/lingma/original-tongyi-lingma-logs-archived/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "875b6915a770d4aaa284046e720691fa85ff06827df4b28cd2d8eeb19f9e0e94",
+  "payload_path": "tongyi_lingma/changelog/20260717T031124Z_6bad9f7c/4bb793bd9507896a67086281.html",
+  "published_at": null,
+  "raw_record_id": "4bb793bd9507896a67086281",
+  "requested_url": "https://help.aliyun.com/zh/lingma/original-tongyi-lingma-logs-archived/",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "candidate_status": "undated",
+    "changelog_index_url": "https://help.aliyun.com/zh/lingma/product-overview/dynamics-and-announcements/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Lingma",
+      "Qoder CN",
+      "智能编码助手通义灵码"
+    ],
+    "competitor_name": "通义灵码",
+    "content_date_count": 0,
+    "content_date_earliest": null,
+    "content_date_latest": null,
+    "cutoff": "2025-07-17T03:11:24.630931Z",
+    "date_basis": null,
+    "discovery_mode": "configured_undated_directory",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_title": "原通义灵码日志（存档）",
+    "page_modified_at": "2026-07-08T03:19:52Z",
+    "page_published_at": "2026-07-08T03:19:52Z",
+    "parse_warning": "directory target has no page-level date",
+    "record_role": "changelog_candidate",
+    "undated_detail_root_selector": ".aliyun-docs-content .markdown-body",
+    "undated_entry_path_prefixes": [
+      "/zh/lingma/"
+    ],
+    "undated_entry_selector": ".aliyun-docs-content .markdown-body .directory a[href]",
+    "undated_entry_text_pattern": "更新日志|日志（存档）|产品公告",
+    "visible_text_length": 943
+  },
+  "source_type": "changelog"
+}

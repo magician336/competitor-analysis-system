@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2025-12-18-assigning-github-copilot-to-an-issue-now-adds-you-as-an-assignee",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260713T162601Z_fda2c425",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-13T16:26:46.981753Z",
+  "final_url": "https://github.blog/changelog/2025-12-18-assigning-github-copilot-to-an-issue-now-adds-you-as-an-assignee/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "cc52f04c74b25c2e4553aac968e339ea12e17c1efa94d1ca4301d8bb085dae13",
+  "payload_path": "github_copilot/changelog/20260713T162601Z_fda2c425/333fba78666693e58712f95d.html",
+  "published_at": "2025-12-18T00:00:00Z",
+  "raw_record_id": "333fba78666693e58712f95d",
+  "requested_url": "https://github.blog/changelog/2025-12-18-assigning-github-copilot-to-an-issue-now-adds-you-as-an-assignee",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2025/?label=copilot",
+    "changelog_page_number": 2,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2025-12-18T00:00:00Z",
+    "listing_title": "Assigning GitHub Copilot to an issue now adds you as an assignee",
+    "record_role": "changelog_entry",
+    "visible_text_length": 2704
+  },
+  "source_type": "changelog"
+}

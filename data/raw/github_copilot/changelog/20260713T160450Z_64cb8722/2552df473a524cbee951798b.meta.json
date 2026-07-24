@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2026-07-02-upcoming-deprecation-of-gemini-2-5-pro-and-gemini-3-flash",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260713T160450Z_64cb8722",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-13T16:05:19.899660Z",
+  "final_url": "https://github.blog/changelog/2026-07-02-upcoming-deprecation-of-gemini-2-5-pro-and-gemini-3-flash/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "e22fba427e14c7ed9829cdbb8ec916218fd571b045897b43e27711854798ae3f",
+  "payload_path": "github_copilot/changelog/20260713T160450Z_64cb8722/2552df473a524cbee951798b.html",
+  "published_at": "2026-07-02T00:00:00Z",
+  "raw_record_id": "2552df473a524cbee951798b",
+  "requested_url": "https://github.blog/changelog/2026-07-02-upcoming-deprecation-of-gemini-2-5-pro-and-gemini-3-flash",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/label/copilot/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-07-02T00:00:00Z",
+    "listing_title": "Upcoming deprecation of Gemini 2.5 Pro and Gemini 3 Flash",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3524
+  },
+  "source_type": "changelog"
+}

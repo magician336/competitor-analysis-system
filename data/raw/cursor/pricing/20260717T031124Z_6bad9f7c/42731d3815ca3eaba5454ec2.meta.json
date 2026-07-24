@@ -1,0 +1,29 @@
+{
+  "canonical_url": "https://cursor.com/pricing",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260717T031124Z_6bad9f7c",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-17T03:13:01.612677Z",
+  "final_url": "https://cursor.com/pricing",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "8c9c23cfed53e153ebb724f9059eddf0d8630a045530e6b00ebc308478e1004d",
+  "payload_path": "cursor/pricing/20260717T031124Z_6bad9f7c/42731d3815ca3eaba5454ec2.html",
+  "published_at": null,
+  "raw_record_id": "42731d3815ca3eaba5454ec2",
+  "requested_url": "https://cursor.com/pricing",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": 7506
+  },
+  "source_type": "pricing"
+}

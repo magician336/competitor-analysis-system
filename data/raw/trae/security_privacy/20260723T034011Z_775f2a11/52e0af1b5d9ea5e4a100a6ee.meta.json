@@ -1,0 +1,67 @@
+{
+  "canonical_url": "https://www.trae.ai/terms-of-service",
+  "competitor": "trae",
+  "content_type": "application/json",
+  "crawl_run_id": "20260723T034011Z_775f2a11",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-23T03:40:16.376003Z",
+  "final_url": "https://ug-normal.trae.ai/cloudide/api/v3/trae/terms/get?Language=EN&TermsType=service_terms",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "e4ef9e7c8896239fc908784e13fa7396b3190fea96edf3cd08eedb7635479fdf",
+  "payload_path": "trae/security_privacy/20260723T034011Z_775f2a11/52e0af1b5d9ea5e4a100a6ee.json",
+  "published_at": null,
+  "raw_record_id": "52e0af1b5d9ea5e4a100a6ee",
+  "requested_url": "https://www.trae.ai/terms-of-service",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "POST",
+    "acquisition_url": "https://ug-normal.trae.ai/cloudide/api/v3/trae/terms/get",
+    "competitor_aliases": [
+      "TRAE",
+      "TRAE IDE"
+    ],
+    "competitor_name": "Trae",
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "json_document": {
+      "content_fields": [
+        "Content"
+      ],
+      "publish_time_field": "SubTitle",
+      "result_path": "Result",
+      "title_field": "Title"
+    },
+    "request_overrides": {
+      "https://www.trae.ai/privacy-policy": {
+        "json": {
+          "language": "EN",
+          "termsType": "user_privacy"
+        },
+        "method": "POST",
+        "params": {
+          "Language": "EN",
+          "TermsType": "user_privacy"
+        },
+        "url": "https://ug-normal.trae.ai/cloudide/api/v3/trae/terms/get"
+      },
+      "https://www.trae.ai/terms-of-service": {
+        "json": {
+          "language": "EN",
+          "termsType": "service_terms"
+        },
+        "method": "POST",
+        "params": {
+          "Language": "EN",
+          "TermsType": "service_terms"
+        },
+        "url": "https://ug-normal.trae.ai/cloudide/api/v3/trae/terms/get"
+      }
+    },
+    "visible_text_length": null
+  },
+  "source_type": "security_privacy"
+}

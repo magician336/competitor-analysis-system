@@ -1,0 +1,30 @@
+{
+  "canonical_url": "https://www.trae.ai/privacy-policy",
+  "competitor": "trae",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260722T131125Z_2e9eda65",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-22T13:11:55.769374Z",
+  "final_url": "https://www.trae.ai/privacy-policy",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": true,
+  "payload_hash": "da1d786a2c54413d46e2767b6dceb6e69509c8545df265bf5be0090c49a3ab58",
+  "payload_path": "trae/security_privacy/20260722T131125Z_2e9eda65/2a0d9f3d4b304b5a9d42d6be.html",
+  "published_at": null,
+  "raw_record_id": "2a0d9f3d4b304b5a9d42d6be",
+  "requested_url": "https://www.trae.ai/privacy-policy",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "competitor_aliases": [
+      "TRAE",
+      "TRAE IDE"
+    ],
+    "competitor_name": "Trae",
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": 57
+  },
+  "source_type": "security_privacy"
+}

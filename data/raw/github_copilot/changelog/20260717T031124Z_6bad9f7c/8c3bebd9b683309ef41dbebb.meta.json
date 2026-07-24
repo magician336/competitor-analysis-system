@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2025-12-18-copilot-code-review-preview-features-now-supported-in-github-enterprise-cloud-with-data-residency/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260717T031124Z_6bad9f7c",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-17T03:13:52.639609Z",
+  "final_url": "https://github.blog/changelog/2025-12-18-copilot-code-review-preview-features-now-supported-in-github-enterprise-cloud-with-data-residency/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "a056f15854cbc5f7d151fec14be80904f4ec18a37c4ee6cdbb6f5344a188fb41",
+  "payload_path": "github_copilot/changelog/20260717T031124Z_6bad9f7c/8c3bebd9b683309ef41dbebb.html",
+  "published_at": "2025-12-18T00:00:00Z",
+  "raw_record_id": "8c3bebd9b683309ef41dbebb",
+  "requested_url": "https://github.blog/changelog/2025-12-18-copilot-code-review-preview-features-now-supported-in-github-enterprise-cloud-with-data-residency",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2025/?label=copilot",
+    "changelog_page_number": 2,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2025-12-18T00:00:00Z",
+    "listing_title": "Copilot code review preview features now supported in GitHub Enterprise Cloud with data residency",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3305
+  },
+  "source_type": "changelog"
+}

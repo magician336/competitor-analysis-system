@@ -1,0 +1,33 @@
+{
+  "canonical_url": "https://cursor.com/docs/agent/overview",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260723T033959Z_17c3c0f6",
+  "error": null,
+  "etag": "W/\"2fdc7cb45e28cd6a76505206e41e66b7\"",
+  "fetched_at": "2026-07-23T03:40:03.094625Z",
+  "final_url": "https://cursor.com/docs/agent/overview",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "4492333dd22cd6c65cacda767b0cbcfae456b7b2657b1fa11f33ec45d22c5ebc",
+  "payload_path": "cursor/product_docs/20260723T033959Z_17c3c0f6/592696803638f7f149319d6d.html",
+  "published_at": null,
+  "raw_record_id": "592696803638f7f149319d6d",
+  "requested_url": "https://cursor.com/docs/agent/overview",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://cursor.com/docs/agent/overview",
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "embedded_content": "cursor_next_rsc",
+    "embedded_content_supported": true,
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": 22
+  },
+  "source_type": "product_docs"
+}

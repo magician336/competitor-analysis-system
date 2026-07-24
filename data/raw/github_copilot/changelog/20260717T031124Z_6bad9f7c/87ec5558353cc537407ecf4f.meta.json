@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2026-07-02-copilot-agent-session-streaming-is-now-in-public-preview/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260717T031124Z_6bad9f7c",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-17T03:13:32.620805Z",
+  "final_url": "https://github.blog/changelog/2026-07-02-copilot-agent-session-streaming-is-now-in-public-preview/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "dde936d5c9b7ddf1843661c17baeaa368d4071ebf7edc43df18b193ff6574771",
+  "payload_path": "github_copilot/changelog/20260717T031124Z_6bad9f7c/87ec5558353cc537407ecf4f.html",
+  "published_at": "2026-07-02T00:00:00Z",
+  "raw_record_id": "87ec5558353cc537407ecf4f",
+  "requested_url": "https://github.blog/changelog/2026-07-02-copilot-agent-session-streaming-is-now-in-public-preview",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/label/copilot/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-07-02T00:00:00Z",
+    "listing_title": "Copilot agent session streaming is now in public preview",
+    "record_role": "changelog_entry",
+    "visible_text_length": 4111
+  },
+  "source_type": "changelog"
+}

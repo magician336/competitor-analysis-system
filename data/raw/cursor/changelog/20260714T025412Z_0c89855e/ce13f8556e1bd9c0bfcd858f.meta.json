@@ -1,0 +1,34 @@
+{
+  "canonical_url": "https://cursor.com/changelog/bugbot-updates-june-2026",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260714T025412Z_0c89855e",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-14T02:54:23.022707Z",
+  "final_url": "https://cursor.com/changelog/bugbot-updates-june-2026",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "6a7dc4a74fbbec439ccd5401e9725b1cee699552a6c72331f442697a74823e35",
+  "payload_path": "cursor/changelog/20260714T025412Z_0c89855e/ce13f8556e1bd9c0bfcd858f.html",
+  "published_at": "2026-06-10T00:00:00Z",
+  "raw_record_id": "ce13f8556e1bd9c0bfcd858f",
+  "requested_url": "https://cursor.com/changelog/bugbot-updates-june-2026",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://cursor.com/changelog/page/2",
+    "changelog_page_number": 2,
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-06-10T00:00:00Z",
+    "listing_title": "Jun 10, 2026",
+    "record_role": "changelog_entry",
+    "visible_text_length": 4115
+  },
+  "source_type": "changelog"
+}

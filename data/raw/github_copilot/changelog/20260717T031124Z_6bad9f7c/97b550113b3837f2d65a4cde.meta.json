@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2026-07-01-new-c-language-server-config-skill-for-copilot-cli/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260717T031124Z_6bad9f7c",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-17T03:13:37.036483Z",
+  "final_url": "https://github.blog/changelog/2026-07-01-new-c-language-server-config-skill-for-copilot-cli/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "beaee6f22bd3ffa4237aa328bcff31881c914d085abe4fa62557afe6bb19e61d",
+  "payload_path": "github_copilot/changelog/20260717T031124Z_6bad9f7c/97b550113b3837f2d65a4cde.html",
+  "published_at": "2026-07-01T00:00:00Z",
+  "raw_record_id": "97b550113b3837f2d65a4cde",
+  "requested_url": "https://github.blog/changelog/2026-07-01-new-c-language-server-config-skill-for-copilot-cli",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/label/copilot/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-07-01T00:00:00Z",
+    "listing_title": "New C++ language server config skill for Copilot CLI",
+    "record_role": "changelog_entry",
+    "visible_text_length": 6288
+  },
+  "source_type": "changelog"
+}

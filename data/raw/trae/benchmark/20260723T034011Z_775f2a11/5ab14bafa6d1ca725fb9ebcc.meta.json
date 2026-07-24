@@ -1,0 +1,33 @@
+{
+  "canonical_url": "https://www.trae.ai/blog/product_update_0528",
+  "competitor": "trae",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260723T034011Z_775f2a11",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-23T03:40:18.163156Z",
+  "final_url": "https://www.trae.ai/blog/product_update_0528",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "2e152340a825eae9f74ef9253f6e11188aa18adb691036f6403e2f90fa458ce5",
+  "payload_path": "trae/benchmark/20260723T034011Z_775f2a11/5ab14bafa6d1ca725fb9ebcc.html",
+  "published_at": null,
+  "raw_record_id": "5ab14bafa6d1ca725fb9ebcc",
+  "requested_url": "https://www.trae.ai/blog/product_update_0528",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://www.trae.ai/blog/product_update_0528",
+    "competitor_aliases": [
+      "TRAE",
+      "TRAE IDE"
+    ],
+    "competitor_name": "Trae",
+    "embedded_content_supported": false,
+    "evidence_level": "B",
+    "format": "html",
+    "visible_text_length": 9053
+  },
+  "source_type": "benchmark"
+}

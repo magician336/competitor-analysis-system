@@ -1,0 +1,39 @@
+{
+  "canonical_url": "https://www.trae.ai/changelog",
+  "competitor": "trae",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260713T162601Z_fda2c425",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-13T16:29:05.298382Z",
+  "final_url": "https://www.trae.ai/changelog",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": true,
+  "payload_hash": "0d35c45e43eadbb9118ea2c412a1bceecb72b47949968ba1e93b22f35b284f18",
+  "payload_path": "trae/changelog/20260713T162601Z_fda2c425/12aaa58904c225f7a9f169dc.html",
+  "published_at": null,
+  "raw_record_id": "12aaa58904c225f7a9f169dc",
+  "requested_url": "https://www.trae.ai/changelog",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "TRAE",
+      "TRAE IDE"
+    ],
+    "competitor_name": "Trae",
+    "cutoff": "2025-07-13T16:26:01.405833Z",
+    "dated_entry_count": 0,
+    "eligible_entry_count": 0,
+    "evidence_level": "A",
+    "format": "html_changelog_index",
+    "max_entries": 200,
+    "next_url": null,
+    "parse_warning": "no dated changelog entry links found",
+    "record_role": "changelog_index",
+    "rejected_cross_origin_entry_count": 0,
+    "visible_text_length": 383
+  },
+  "source_type": "changelog"
+}

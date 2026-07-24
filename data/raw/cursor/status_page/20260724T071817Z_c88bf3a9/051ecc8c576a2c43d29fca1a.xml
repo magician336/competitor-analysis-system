@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Cursor Status - Incident History</title>
+    <link>https://status.cursor.com</link>
+    <description>Statuspage</description>
+    <pubDate>Fri, 24 Jul 2026 06:29:42 +0000</pubDate>
+    <item>
+      <title>We're Investigating an issue with requests to Fable causing degraded behaviour</title>
+      <description>
+&lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;23&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;16:36&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;23&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;15:56&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating a service degradation affecting Fable model requests &lt;/p&gt;      </description>
+      <pubDate>Thu, 23 Jul 2026 16:36:56 +0000</pubDate>
+      <link>https://status.cursor.com/incidents/d8whvf5gt6jm</link>
+      <guid>https://status.cursor.com/incidents/d8whvf5gt6jm</guid>
+    </item>
+    <item>
+      <title>Anthropic elevated errors</title>
+      <description>
+&lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;21&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;18:53&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;21&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;15:52&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating and observing a service degradation from several Anthropic models. &lt;br /&gt;&lt;br /&gt;https://status.claude.com/ &lt;/p&gt;      </description>
+      <pubDate>Tue, 21 Jul 2026 18:53:17 +0000</pubDate>
+      <link>https://status.cursor.com/incidents/wc6nnyw1pqq9</link>
+      <guid>https://status.cursor.com/incidents/wc6nnyw1pqq9</guid>
+    </item>
+    <item>
+      <title>Investigating service degradation</title>
+      <description>
+&lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;20&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;12:23&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;20&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;03:46&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Monitoring&lt;/strong&gt; - Service has stabilized across the affected surfaces, and we are actively monitoring performance. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;20&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;02:54&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating a service degradation. Affected agent surfaces: Composer, Cursor Grok 4.5, and Auto. &lt;/p&gt;      </description>
+      <pubDate>Mon, 20 Jul 2026 12:23:21 +0000</pubDate>
+      <link>https://status.cursor.com/incidents/q3q7y4xympz1</link>
+      <guid>https://status.cursor.com/incidents/q3q7y4xympz1</guid>
+    </item>
+    <item>
+      <title>Investigating service degradation</title>
+      <description>
+&lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;20&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;02:19&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;20&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;02:00&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating a service degradation of Cursor Grok 4.5, Cursor Grok 4.5 Fast, and Auto. &lt;/p&gt;      </description>
+      <pubDate>Mon, 20 Jul 2026 02:19:28 +0000</pubDate>
+      <link>https://status.cursor.com/incidents/kdn6bp1p66zp</link>
+      <guid>https://status.cursor.com/incidents/kdn6bp1p66zp</guid>
+    </item>
+    <item>
+      <title>Investigating Anthropic degradation</title>
+      <description>
+&lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;17&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;12:27&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;17&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;07:17&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Identified&lt;/strong&gt; - The root cause has been identified and a fix is being implemented. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;17&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;07:17&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - Some Anthropic models are degraded. More information can be found here: https://status.claude.com/incidents/7gpjd8n56rlq &lt;/p&gt;      </description>
+      <pubDate>Fri, 17 Jul 2026 12:27:52 +0000</pubDate>
+      <link>https://status.cursor.com/incidents/htxx9vp5s24f</link>
+      <guid>https://status.cursor.com/incidents/htxx9vp5s24f</guid>
+    </item>
+    <item>
+      <title>Investigating service degradation — Cloud Agents</title>
+      <description>
+&lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;17&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;00:15&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;16&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;22:54&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Update&lt;/strong&gt; - We are continuing to investigate this issue. Cloud Agents may fail to run properly because of an upstream Github incident: https://www.githubstatus.com/incidents/gxycch3076xk &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;16&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;22:33&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating a service degradation affecting Cloud Agents. &lt;/p&gt;      </description>
+      <pubDate>Fri, 17 Jul 2026 00:15:58 +0000</pubDate>
+      <link>https://status.cursor.com/incidents/178b853sq35c</link>
+      <guid>https://status.cursor.com/incidents/178b853sq35c</guid>
+    </item>
+    <item>
+      <title>Authentication System degradation</title>
+      <description>
+&lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;16&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;10:46&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;16&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;10:20&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Monitoring&lt;/strong&gt; - A fix has been implemented by our service provider, and we are monitoring for service restoration. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;16&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;08:32&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are continuing to investigate a service degradation impacting authentication. If already logged in, please remain logged into Cursor to continue using Cursor services &lt;/p&gt;      </description>
+      <pubDate>Thu, 16 Jul 2026 10:46:43 +0000</pubDate>
+      <link>https://status.cursor.com/incidents/cg09dhswq6cy</link>
+      <guid>https://status.cursor.com/incidents/cg09dhswq6cy</guid>
+    </item>
+    <item>
+      <title>Investigating Grok 4.5 degradation</title>
+      <description>
+&lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;16&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;09:36&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;16&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;09:34&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Monitoring&lt;/strong&gt; - A fix has been implemented and we are monitoring for service restoration. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;16&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;07:50&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Update&lt;/strong&gt; - Investigation is ongoing for degradation of Grok 4.5. Users should switch to Auto or try another model while we work toward a resolution. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;16&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;07:35&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Update&lt;/strong&gt; - We are continuing to work on the Grok 4.5 degradation. Please switch to Auto or try another model. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;16&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;07:22&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Update&lt;/strong&gt; - We are continuing to investigate this issue. We will provide updates as more information becomes available. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;16&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;07:01&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating partial degradation of Grok 4.5. Users should switch to Auto or try another model. &lt;/p&gt;      </description>
+      <pubDate>Thu, 16 Jul 2026 09:36:45 +0000</pubDate>
+      <link>https://status.cursor.com/incidents/kktsh6d4fm6v</link>
+      <guid>https://status.cursor.com/incidents/kktsh6d4fm6v</guid>
+    </item>
+    <item>
+      <title>Investigating GPT-5.6 Sol degradation</title>
+      <description>
+&lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;16&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;06:15&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - This has been resolved. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;16&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;05:31&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - GPT-5.6 Sol is degraded. The model provider is investigating. &lt;/p&gt;      </description>
+      <pubDate>Thu, 16 Jul 2026 06:15:26 +0000</pubDate>
+      <link>https://status.cursor.com/incidents/34y2yzdrtr5g</link>
+      <guid>https://status.cursor.com/incidents/34y2yzdrtr5g</guid>
+    </item>
+    <item>
+      <title>Investigating service degradation</title>
+      <description>
+&lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;15&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;11:32&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;15&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;10:58&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Monitoring&lt;/strong&gt; - A fix has been implemented and we are monitoring for service restoration. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;15&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;08:52&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating a service degradation affecting Grok 4.5 &lt;/p&gt;      </description>
+      <pubDate>Wed, 15 Jul 2026 11:32:24 +0000</pubDate>
+      <link>https://status.cursor.com/incidents/m4dvkx7rxwgj</link>
+      <guid>https://status.cursor.com/incidents/m4dvkx7rxwgj</guid>
+    </item>
+    <item>
+      <title>Investigating service degradation — Cloud Agents</title>
+      <description>
+&lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;15&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;11:31&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;15&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;11:28&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Monitoring&lt;/strong&gt; - A fix has been implemented and we are monitoring for service restoration. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;15&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;10:21&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating a service degradation affecting Cloud Agents. &lt;/p&gt;      </description>
+      <pubDate>Wed, 15 Jul 2026 11:31:24 +0000</pubDate>
+      <link>https://status.cursor.com/incidents/j10ddhwm6g2f</link>
+      <guid>https://status.cursor.com/incidents/j10ddhwm6g2f</guid>
+    </item>
+    <item>
+      <title>Investigating service degradation</title>
+      <description>
+&lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;15&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;09:11&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;14&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;19:52&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating a service degradation. Some users may experience occasional low rate errors when using grok 4.5 models. &lt;/p&gt;      </description>
+      <pubDate>Wed, 15 Jul 2026 09:11:48 +0000</pubDate>
+      <link>https://status.cursor.com/incidents/h71m65my586h</link>
+      <guid>https://status.cursor.com/incidents/h71m65my586h</guid>
+    </item>
+    <item>
+      <title>Investigating service degradation - Sol</title>
+      <description>
+&lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;14&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;20:10&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;14&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;20:05&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - This incident is now resolved. &lt;/p&gt;      </description>
+      <pubDate>Tue, 14 Jul 2026 20:10:38 +0000</pubDate>
+      <link>https://status.cursor.com/incidents/96m8j04k15r5</link>
+      <guid>https://status.cursor.com/incidents/96m8j04k15r5</guid>
+    </item>
+    <item>
+      <title>Investigating service degradation</title>
+      <description>
+&lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;13&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;07:58&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;13&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;07:41&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating a service degradation. Affected agent surfaces: Composer, Grok &lt;/p&gt;      </description>
+      <pubDate>Mon, 13 Jul 2026 07:58:52 +0000</pubDate>
+      <link>https://status.cursor.com/incidents/fglvvgj73skw</link>
+      <guid>https://status.cursor.com/incidents/fglvvgj73skw</guid>
+    </item>
+    <item>
+      <title>Investigating service degradation</title>
+      <description>
+&lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt;13&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;07:37&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - We are investigating a service degradation. Affected agent surfaces: Composer. &lt;/p&gt;      </description>
+      <pubDate>Mon, 13 Jul 2026 07:37:00 +0000</pubDate>
+      <link>https://status.cursor.com/incidents/cc8l176b11yw</link>
+      <guid>https://status.cursor.com/incidents/cc8l176b11yw</guid>
+    </item>
+    <item>
+      <title>Incorrect Usage Amount on Dashboard</title>
+      <description>
+&lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt; 8&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;14:58&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. Usage should display correctly in the dashboard. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt; 8&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;14:28&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating a service degradation affecting cursor.com, causing usage to incorrectly display as 0% &lt;/p&gt;      </description>
+      <pubDate>Wed, 08 Jul 2026 14:58:34 +0000</pubDate>
+      <link>https://status.cursor.com/incidents/nb19145gygvb</link>
+      <guid>https://status.cursor.com/incidents/nb19145gygvb</guid>
+    </item>
+    <item>
+      <title>Degraded Performance for Auto</title>
+      <description>
+&lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt; 8&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;14:38&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt; 8&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;14:33&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating a service degradation for Auto mode &lt;/p&gt;      </description>
+      <pubDate>Wed, 08 Jul 2026 14:38:58 +0000</pubDate>
+      <link>https://status.cursor.com/incidents/yy1pdpp30ldj</link>
+      <guid>https://status.cursor.com/incidents/yy1pdpp30ldj</guid>
+    </item>
+    <item>
+      <title>Degraded Performance for Anthropic Models</title>
+      <description>
+&lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt; 7&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;22:25&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt; 7&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;21:12&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating a service degradation for Anthropic models: https://status.claude.com/ &lt;/p&gt;      </description>
+      <pubDate>Tue, 07 Jul 2026 22:25:08 +0000</pubDate>
+      <link>https://status.cursor.com/incidents/86vzlrhqhsgd</link>
+      <guid>https://status.cursor.com/incidents/86vzlrhqhsgd</guid>
+    </item>
+    <item>
+      <title>Investigating service degradation</title>
+      <description>
+&lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt; 6&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;11:02&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt; 6&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;10:40&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Update&lt;/strong&gt; - We are continuing to investigate the issue. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jul &lt;var data-var=&apos;date&apos;&gt; 6&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;09:29&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating increased latencies, with high errors for GLM 5.2. &lt;/p&gt;      </description>
+      <pubDate>Mon, 06 Jul 2026 11:02:09 +0000</pubDate>
+      <link>https://status.cursor.com/incidents/g1tf5ytnjdw8</link>
+      <guid>https://status.cursor.com/incidents/g1tf5ytnjdw8</guid>
+    </item>
+    <item>
+      <title>Elevated errors across Anthropic models</title>
+      <description>
+&lt;p&gt; &lt;small&gt;Jun &lt;var data-var=&apos;date&apos;&gt;23&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;16:47&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jun &lt;var data-var=&apos;date&apos;&gt;23&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;15:40&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Monitoring&lt;/strong&gt; - A fix has been implemented and we are monitoring for service restoration. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jun &lt;var data-var=&apos;date&apos;&gt;23&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;14:26&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating elevated errors across Anthropic Models &lt;/p&gt;      </description>
+      <pubDate>Tue, 23 Jun 2026 16:47:03 +0000</pubDate>
+      <link>https://status.cursor.com/incidents/yfdwf8w91gqc</link>
+      <guid>https://status.cursor.com/incidents/yfdwf8w91gqc</guid>
+    </item>
+    <item>
+      <title>Investigating service degradation — Automations</title>
+      <description>
+&lt;p&gt; &lt;small&gt;Jun &lt;var data-var=&apos;date&apos;&gt;22&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;04:53&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jun &lt;var data-var=&apos;date&apos;&gt;22&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;04:52&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Update&lt;/strong&gt; - We are currently investigating this issue. We will provide updates as more information becomes available. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jun &lt;var data-var=&apos;date&apos;&gt;22&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;04:44&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating a service degradation affecting creating automations. &lt;/p&gt;      </description>
+      <pubDate>Mon, 22 Jun 2026 04:53:19 +0000</pubDate>
+      <link>https://status.cursor.com/incidents/jygvg6pxzqvp</link>
+      <guid>https://status.cursor.com/incidents/jygvg6pxzqvp</guid>
+    </item>
+    <item>
+      <title>Degraded Performance for Composer 2.5</title>
+      <description>
+&lt;p&gt; &lt;small&gt;Jun &lt;var data-var=&apos;date&apos;&gt;17&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;17:19&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jun &lt;var data-var=&apos;date&apos;&gt;17&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;17:04&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Update&lt;/strong&gt; - We are currently investigating this issue. We will provide updates as more information becomes available. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jun &lt;var data-var=&apos;date&apos;&gt;17&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;16:29&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - Degraded Performance for Composer 2.5 &lt;/p&gt;      </description>
+      <pubDate>Wed, 17 Jun 2026 17:19:45 +0000</pubDate>
+      <link>https://status.cursor.com/incidents/d495545zkd58</link>
+      <guid>https://status.cursor.com/incidents/d495545zkd58</guid>
+    </item>
+    <item>
+      <title>Investigating service degradation — Composer 2.5</title>
+      <description>
+&lt;p&gt; &lt;small&gt;Jun &lt;var data-var=&apos;date&apos;&gt;17&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;10:20&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jun &lt;var data-var=&apos;date&apos;&gt;17&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;10:15&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Monitoring&lt;/strong&gt; - A fix has been implemented, stability has improved significantly and we are monitoring. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jun &lt;var data-var=&apos;date&apos;&gt;17&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;09:28&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating an elevated error rate for composer 2.5 fast, which may affect other services, such as bugbot &lt;/p&gt;      </description>
+      <pubDate>Wed, 17 Jun 2026 10:20:09 +0000</pubDate>
+      <link>https://status.cursor.com/incidents/00k0vjsxgbk9</link>
+      <guid>https://status.cursor.com/incidents/00k0vjsxgbk9</guid>
+    </item>
+    <item>
+      <title>Elevated errors across many models on Anthropic</title>
+      <description>
+&lt;p&gt; &lt;small&gt;Jun &lt;var data-var=&apos;date&apos;&gt;16&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;19:41&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jun &lt;var data-var=&apos;date&apos;&gt;16&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;18:11&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Update&lt;/strong&gt; - This is resolved now &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jun &lt;var data-var=&apos;date&apos;&gt;16&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;18:00&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating elevated errors across many models on Anthropic &lt;/p&gt;      </description>
+      <pubDate>Tue, 16 Jun 2026 19:41:19 +0000</pubDate>
+      <link>https://status.cursor.com/incidents/73l6395lw69p</link>
+      <guid>https://status.cursor.com/incidents/73l6395lw69p</guid>
+    </item>
+    <item>
+      <title>Investigating service degradation of the Auto model</title>
+      <description>
+&lt;p&gt; &lt;small&gt;Jun &lt;var data-var=&apos;date&apos;&gt;16&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;13:38&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Resolved&lt;/strong&gt; - This incident has been resolved. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Jun &lt;var data-var=&apos;date&apos;&gt;16&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;13:04&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Investigating&lt;/strong&gt; - We are investigating a service degradation affecting the &apos;Auto&apos; routing model &lt;/p&gt;      </description>
+      <pubDate>Tue, 16 Jun 2026 13:38:48 +0000</pubDate>
+      <link>https://status.cursor.com/incidents/1fqzvthv5hxl</link>
+      <guid>https://status.cursor.com/incidents/1fqzvthv5hxl</guid>
+    </item>
+  </channel>
+</rss>

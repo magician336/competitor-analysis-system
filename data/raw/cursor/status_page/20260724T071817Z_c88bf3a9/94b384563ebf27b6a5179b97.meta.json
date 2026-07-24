@@ -1,0 +1,32 @@
+{
+  "canonical_url": "https://status.cursor.com/history",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260724T071817Z_c88bf3a9",
+  "error": null,
+  "etag": "W/\"00cffa22003c65f741d773a18a80421b\"",
+  "fetched_at": "2026-07-24T07:18:20.438753Z",
+  "final_url": "https://status.cursor.com/history",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "00cffa22003c65f741d773a18a80421b6d9830a429a35b6009ef0e3447130004",
+  "payload_path": "cursor/status_page/20260724T071817Z_c88bf3a9/94b384563ebf27b6a5179b97.html",
+  "published_at": null,
+  "raw_record_id": "94b384563ebf27b6a5179b97",
+  "requested_url": "https://status.cursor.com/history",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://status.cursor.com/history",
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": 5021
+  },
+  "source_type": "status_page"
+}

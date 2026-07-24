@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2026-07-02-copilot-cli-no-longer-needs-a-personal-access-token-in-github-actions",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260713T162601Z_fda2c425",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-13T16:26:30.630862Z",
+  "final_url": "https://github.blog/changelog/2026-07-02-copilot-cli-no-longer-needs-a-personal-access-token-in-github-actions/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "d29a1232f37d64cf25f87912576e133092b678922e9947135c498e81a34a6e45",
+  "payload_path": "github_copilot/changelog/20260713T162601Z_fda2c425/d7ec524392cf9fecb79002d1.html",
+  "published_at": "2026-07-02T00:00:00Z",
+  "raw_record_id": "d7ec524392cf9fecb79002d1",
+  "requested_url": "https://github.blog/changelog/2026-07-02-copilot-cli-no-longer-needs-a-personal-access-token-in-github-actions",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/label/copilot/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-07-02T00:00:00Z",
+    "listing_title": "Copilot CLI no longer needs a personal access token in GitHub Actions",
+    "record_role": "changelog_entry",
+    "visible_text_length": 4773
+  },
+  "source_type": "changelog"
+}

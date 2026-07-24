@@ -1,0 +1,30 @@
+{
+  "canonical_url": "https://www.codegeex.cn/",
+  "competitor": "codegeex",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260717T031124Z_6bad9f7c",
+  "error": null,
+  "etag": "W/\"5434350-4316-2025-09-24T02:16:00.000Z\"",
+  "fetched_at": "2026-07-17T03:17:39.778367Z",
+  "final_url": "https://www.codegeex.cn/",
+  "http_status": 200,
+  "last_modified": "Wed, 24 Sep 2025 02:16:00 GMT",
+  "needs_browser": true,
+  "payload_hash": "a47a49b0d51a2cc3530386c814bcb8fc35d0bf9378fd186fd9eb30d4278dc6f8",
+  "payload_path": "codegeex/official/20260717T031124Z_6bad9f7c/4f25736a74ae159e9a6714df.html",
+  "published_at": null,
+  "raw_record_id": "4f25736a74ae159e9a6714df",
+  "requested_url": "https://www.codegeex.cn/",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "competitor_aliases": [
+      "CodeGeeX4",
+      "CodeGeeX AI Coding Assistant"
+    ],
+    "competitor_name": "CodeGeeX",
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": 0
+  },
+  "source_type": "official"
+}

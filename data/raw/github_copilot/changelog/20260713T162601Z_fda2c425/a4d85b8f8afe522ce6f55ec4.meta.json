@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2025-12-04-openais-gpt-5-1-codex-max-is-now-in-public-preview-for-github-copilot",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260713T162601Z_fda2c425",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-13T16:27:19.269033Z",
+  "final_url": "https://github.blog/changelog/2025-12-04-openais-gpt-5-1-codex-max-is-now-in-public-preview-for-github-copilot/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "94a6a7e8cdd28029e12893bb20efb62d83b1f1f0b2d3fc49d0d86ccce069dc10",
+  "payload_path": "github_copilot/changelog/20260713T162601Z_fda2c425/a4d85b8f8afe522ce6f55ec4.html",
+  "published_at": "2025-12-04T00:00:00Z",
+  "raw_record_id": "a4d85b8f8afe522ce6f55ec4",
+  "requested_url": "https://github.blog/changelog/2025-12-04-openais-gpt-5-1-codex-max-is-now-in-public-preview-for-github-copilot",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2025/?label=copilot",
+    "changelog_page_number": 2,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2025-12-04T00:00:00Z",
+    "listing_title": "OpenAI’s GPT-5.1-Codex-Max is now in public preview for GitHub Copilot",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3964
+  },
+  "source_type": "changelog"
+}

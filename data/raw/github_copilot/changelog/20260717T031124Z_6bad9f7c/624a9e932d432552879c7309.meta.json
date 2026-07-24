@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2026-07-14-github-copilot-for-jetbrains-expands-byok-capabilities/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260717T031124Z_6bad9f7c",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-17T03:13:09.802872Z",
+  "final_url": "https://github.blog/changelog/2026-07-14-github-copilot-for-jetbrains-expands-byok-capabilities/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "3fabc5d4185046c04ec48b491a614e6808a952bcb1cd12372fefe5a1b5ecc1c2",
+  "payload_path": "github_copilot/changelog/20260717T031124Z_6bad9f7c/624a9e932d432552879c7309.html",
+  "published_at": "2026-07-14T00:00:00Z",
+  "raw_record_id": "624a9e932d432552879c7309",
+  "requested_url": "https://github.blog/changelog/2026-07-14-github-copilot-for-jetbrains-expands-byok-capabilities",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/label/copilot/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-07-14T00:00:00Z",
+    "listing_title": "GitHub Copilot for JetBrains expands BYOK capabilities",
+    "record_role": "changelog_entry",
+    "visible_text_length": 5869
+  },
+  "source_type": "changelog"
+}

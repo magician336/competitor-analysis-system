@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2025-12-16-more-direct-access-to-agent-session-creation-across-github-mobile",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260713T162601Z_fda2c425",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-13T16:27:07.208172Z",
+  "final_url": "https://github.blog/changelog/2025-12-16-more-direct-access-to-agent-session-creation-across-github-mobile/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "0cb68e0328ecd0a5060337ed6ad459ac094ec359a9f23f3b61921bd8b339040b",
+  "payload_path": "github_copilot/changelog/20260713T162601Z_fda2c425/09ac3fae42c133eca7626af3.html",
+  "published_at": "2025-12-16T00:00:00Z",
+  "raw_record_id": "09ac3fae42c133eca7626af3",
+  "requested_url": "https://github.blog/changelog/2025-12-16-more-direct-access-to-agent-session-creation-across-github-mobile",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2025/?label=copilot",
+    "changelog_page_number": 2,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2025-12-16T00:00:00Z",
+    "listing_title": "More direct access to agent session creation across GitHub Mobile",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3186
+  },
+  "source_type": "changelog"
+}

@@ -1,0 +1,30 @@
+{
+  "canonical_url": "https://plugins.jetbrains.com/plugin/20587-codegeex-ai-coding-assistant",
+  "competitor": "codegeex",
+  "content_type": "text/html;charset=UTF-8",
+  "crawl_run_id": "20260722T131125Z_2e9eda65",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-22T13:12:06.135294Z",
+  "final_url": "https://plugins.jetbrains.com/plugin/20587-codegeex-ai-coding-assistant",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": true,
+  "payload_hash": "63ac77294b7559ebaef47b7b6c0ab1e34eee47621f9afdde90fb552a52aa57a2",
+  "payload_path": "codegeex/plugin_marketplace/20260722T131125Z_2e9eda65/ecdcc2a2a33f3a7853112176.html",
+  "published_at": null,
+  "raw_record_id": "ecdcc2a2a33f3a7853112176",
+  "requested_url": "https://plugins.jetbrains.com/plugin/20587-codegeex-ai-coding-assistant",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "competitor_aliases": [
+      "CodeGeeX4",
+      "CodeGeeX AI Coding Assistant"
+    ],
+    "competitor_name": "CodeGeeX",
+    "evidence_level": "B",
+    "format": "html",
+    "visible_text_length": 91
+  },
+  "source_type": "plugin_marketplace"
+}

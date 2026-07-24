@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2026-07-07-copilot-billing-preview-app-will-be-retired-on-august-3/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260717T031124Z_6bad9f7c",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-17T03:13:26.399563Z",
+  "final_url": "https://github.blog/changelog/2026-07-07-copilot-billing-preview-app-will-be-retired-on-august-3/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "6b2c32f2f0774f3eb13a1dddabb55cd156ec1b00d390d71b2a169a6db0ff97e6",
+  "payload_path": "github_copilot/changelog/20260717T031124Z_6bad9f7c/1e5098e25b7a34ecde5ca514.html",
+  "published_at": "2026-07-07T00:00:00Z",
+  "raw_record_id": "1e5098e25b7a34ecde5ca514",
+  "requested_url": "https://github.blog/changelog/2026-07-07-copilot-billing-preview-app-will-be-retired-on-august-3",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/label/copilot/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-07-07T00:00:00Z",
+    "listing_title": "Copilot Billing Preview app will be retired on August 3",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3370
+  },
+  "source_type": "changelog"
+}

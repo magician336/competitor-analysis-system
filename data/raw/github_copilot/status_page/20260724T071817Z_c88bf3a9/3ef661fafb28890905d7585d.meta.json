@@ -1,0 +1,33 @@
+{
+  "canonical_url": "https://www.githubstatus.com/history.rss",
+  "competitor": "github_copilot",
+  "content_type": "application/rss+xml; charset=utf-8",
+  "crawl_run_id": "20260724T071817Z_c88bf3a9",
+  "error": null,
+  "etag": "W/\"44d0186249411fd812224cd98960338e\"",
+  "fetched_at": "2026-07-24T07:18:28.014009Z",
+  "final_url": "https://www.githubstatus.com/history.rss",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "44d0186249411fd812224cd98960338e74c2e8c32965f39929d3183969cf6eca",
+  "payload_path": "github_copilot/status_page/20260724T071817Z_c88bf3a9/3ef661fafb28890905d7585d.xml",
+  "published_at": null,
+  "raw_record_id": "3ef661fafb28890905d7585d",
+  "requested_url": "https://www.githubstatus.com/history.rss",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://www.githubstatus.com/history.rss",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": null
+  },
+  "source_type": "status_page"
+}

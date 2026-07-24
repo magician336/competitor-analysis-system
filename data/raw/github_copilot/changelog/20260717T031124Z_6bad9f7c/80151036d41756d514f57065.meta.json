@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2025-12-18-github-copilot-now-supports-agent-skills/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260717T031124Z_6bad9f7c",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-17T03:13:50.113101Z",
+  "final_url": "https://github.blog/changelog/2025-12-18-github-copilot-now-supports-agent-skills/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "c8578c64a7901273c994f0965a0a578066670e377df7d02f60a16b3f9aca0a35",
+  "payload_path": "github_copilot/changelog/20260717T031124Z_6bad9f7c/80151036d41756d514f57065.html",
+  "published_at": "2025-12-18T00:00:00Z",
+  "raw_record_id": "80151036d41756d514f57065",
+  "requested_url": "https://github.blog/changelog/2025-12-18-github-copilot-now-supports-agent-skills",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2025/?label=copilot",
+    "changelog_page_number": 2,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2025-12-18T00:00:00Z",
+    "listing_title": "GitHub Copilot now supports Agent Skills",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3207
+  },
+  "source_type": "changelog"
+}

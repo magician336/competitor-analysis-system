@@ -1,0 +1,37 @@
+{
+  "canonical_url": "https://cursor.com/changelog/page/6",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260714T025412Z_0c89855e",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-14T02:54:46.310766Z",
+  "final_url": "https://cursor.com/changelog/page/6",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "a89ba41b7031a84edb2f792d0211b1753208c9caab5e8d0fec6791f628a8d2ca",
+  "payload_path": "cursor/changelog/20260714T025412Z_0c89855e/24b29fca13f29a2953ac71ae.html",
+  "published_at": null,
+  "raw_record_id": "24b29fca13f29a2953ac71ae",
+  "requested_url": "https://cursor.com/changelog/page/6",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_page_number": 6,
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "cutoff": "2025-07-14T02:54:12.713106Z",
+    "dated_entry_count": 5,
+    "eligible_entry_count": 5,
+    "evidence_level": "A",
+    "format": "html_changelog_index",
+    "max_entries": 200,
+    "next_url": "https://cursor.com/changelog/page/7",
+    "record_role": "changelog_index",
+    "rejected_cross_origin_entry_count": 0,
+    "visible_text_length": 18886
+  },
+  "source_type": "changelog"
+}

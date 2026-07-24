@@ -1,0 +1,50 @@
+{
+  "canonical_url": "https://help.aliyun.com/zh/lingma/qoderwork-cn-update-log",
+  "competitor": "tongyi_lingma",
+  "content_type": "text/html;charset=UTF-8",
+  "crawl_run_id": "20260715T091634Z_26502fc3",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-15T09:16:38.347010Z",
+  "final_url": "https://help.aliyun.com/zh/lingma/qoderwork-cn-update-log",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "ad0ed1abee982c9e10f0a5a671ed74b203363397aef7e05cca591921b5d12ad3",
+  "payload_path": "tongyi_lingma/changelog/20260715T091634Z_26502fc3/88efcb974b26163902565f2d.html",
+  "published_at": "2026-07-10T00:00:00Z",
+  "raw_record_id": "88efcb974b26163902565f2d",
+  "requested_url": "https://help.aliyun.com/zh/lingma/qoderwork-cn-update-log",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "candidate_status": "eligible",
+    "changelog_index_url": "https://help.aliyun.com/zh/lingma/product-overview/dynamics-and-announcements/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Lingma",
+      "Qoder CN",
+      "智能编码助手通义灵码"
+    ],
+    "competitor_name": "通义灵码",
+    "content_date_count": 15,
+    "content_date_earliest": "2026-05-19T00:00:00Z",
+    "content_date_latest": "2026-07-10T00:00:00Z",
+    "cutoff": "2025-07-15T09:16:34.998922Z",
+    "date_basis": "content_latest",
+    "discovery_mode": "configured_undated_directory",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_title": "QoderWork CN 更新日志",
+    "page_modified_at": "2026-07-10T02:44:17Z",
+    "page_published_at": "2026-05-20T02:12:38Z",
+    "record_role": "changelog_entry",
+    "undated_detail_root_selector": ".aliyun-docs-content .markdown-body",
+    "undated_entry_path_prefixes": [
+      "/zh/lingma/"
+    ],
+    "undated_entry_selector": ".aliyun-docs-content .markdown-body .directory a[href]",
+    "undated_entry_text_pattern": "更新日志|日志（存档）|产品公告",
+    "visible_text_length": 7021
+  },
+  "source_type": "changelog"
+}

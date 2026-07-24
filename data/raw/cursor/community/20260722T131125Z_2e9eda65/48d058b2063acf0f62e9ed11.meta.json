@@ -1,0 +1,29 @@
+{
+  "canonical_url": "https://forum.cursor.com/",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260722T131125Z_2e9eda65",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-22T13:11:33.326804Z",
+  "final_url": "https://forum.cursor.com/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "535076cc3231aec84010d8062b1ae87cff6b4163de4e89b8611ec51cebb32522",
+  "payload_path": "cursor/community/20260722T131125Z_2e9eda65/48d058b2063acf0f62e9ed11.html",
+  "published_at": null,
+  "raw_record_id": "48d058b2063acf0f62e9ed11",
+  "requested_url": "https://forum.cursor.com/",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "evidence_level": "C",
+    "format": "html",
+    "visible_text_length": 1995
+  },
+  "source_type": "community"
+}

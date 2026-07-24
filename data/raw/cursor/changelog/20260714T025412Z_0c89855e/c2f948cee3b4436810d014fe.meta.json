@@ -1,0 +1,34 @@
+{
+  "canonical_url": "https://cursor.com/changelog/team-marketplace-updates",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260714T025412Z_0c89855e",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-14T02:54:16.980170Z",
+  "final_url": "https://cursor.com/changelog/team-marketplace-updates",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "1791ed94e42280aff0bb18a3e1fe05847139ff71d3883fbe9f0e55fd30d06680",
+  "payload_path": "cursor/changelog/20260714T025412Z_0c89855e/c2f948cee3b4436810d014fe.html",
+  "published_at": "2026-06-30T00:00:00Z",
+  "raw_record_id": "c2f948cee3b4436810d014fe",
+  "requested_url": "https://cursor.com/changelog/team-marketplace-updates",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://cursor.com/changelog",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-06-30T00:00:00Z",
+    "listing_title": "3.10 Jun 30, 2026",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3682
+  },
+  "source_type": "changelog"
+}

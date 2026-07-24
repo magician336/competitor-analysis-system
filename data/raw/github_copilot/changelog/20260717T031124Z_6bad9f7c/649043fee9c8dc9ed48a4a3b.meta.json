@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2025-12-03-assign-issues-to-copilot-using-the-api/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260717T031124Z_6bad9f7c",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-17T03:14:24.238092Z",
+  "final_url": "https://github.blog/changelog/2025-12-03-assign-issues-to-copilot-using-the-api/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "afa0408b16411c107619b241565037dde510700ae81d0cb9c23f38558d79008e",
+  "payload_path": "github_copilot/changelog/20260717T031124Z_6bad9f7c/649043fee9c8dc9ed48a4a3b.html",
+  "published_at": "2025-12-03T00:00:00Z",
+  "raw_record_id": "649043fee9c8dc9ed48a4a3b",
+  "requested_url": "https://github.blog/changelog/2025-12-03-assign-issues-to-copilot-using-the-api",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2025/?label=copilot",
+    "changelog_page_number": 2,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2025-12-03T00:00:00Z",
+    "listing_title": "Assign issues to Copilot using the API",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3194
+  },
+  "source_type": "changelog"
+}

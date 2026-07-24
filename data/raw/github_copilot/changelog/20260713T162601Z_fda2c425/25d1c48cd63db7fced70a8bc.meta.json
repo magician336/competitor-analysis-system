@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2026-07-08-enterprise-managed-opentelemetry-export-for-vs-code-and-cli",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260713T162601Z_fda2c425",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-13T16:26:19.172042Z",
+  "final_url": "https://github.blog/changelog/2026-07-08-enterprise-managed-opentelemetry-export-for-vs-code-and-cli/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "77450a619c9b047fefa9901f6242dd0b8ffad999458df80fecd756e6ae59442e",
+  "payload_path": "github_copilot/changelog/20260713T162601Z_fda2c425/25d1c48cd63db7fced70a8bc.html",
+  "published_at": "2026-07-08T00:00:00Z",
+  "raw_record_id": "25d1c48cd63db7fced70a8bc",
+  "requested_url": "https://github.blog/changelog/2026-07-08-enterprise-managed-opentelemetry-export-for-vs-code-and-cli",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/label/copilot/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-07-08T00:00:00Z",
+    "listing_title": "Enterprise-managed OpenTelemetry export for VS Code and CLI",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3916
+  },
+  "source_type": "changelog"
+}

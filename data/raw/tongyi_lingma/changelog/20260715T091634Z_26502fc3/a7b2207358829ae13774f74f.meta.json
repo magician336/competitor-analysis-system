@@ -1,0 +1,50 @@
+{
+  "canonical_url": "https://help.aliyun.com/zh/lingma/product-overview/qoderwake-cn-update-log",
+  "competitor": "tongyi_lingma",
+  "content_type": "text/html;charset=UTF-8",
+  "crawl_run_id": "20260715T091634Z_26502fc3",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-15T09:16:39.338540Z",
+  "final_url": "https://help.aliyun.com/zh/lingma/product-overview/qoderwake-cn-update-log",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "5605bf18cc1a2c43b5c7e6967f382f73c0429f221ce88971641da93b5586507f",
+  "payload_path": "tongyi_lingma/changelog/20260715T091634Z_26502fc3/a7b2207358829ae13774f74f.html",
+  "published_at": "2026-06-16T00:00:00Z",
+  "raw_record_id": "a7b2207358829ae13774f74f",
+  "requested_url": "https://help.aliyun.com/zh/lingma/product-overview/qoderwake-cn-update-log",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "candidate_status": "eligible",
+    "changelog_index_url": "https://help.aliyun.com/zh/lingma/product-overview/dynamics-and-announcements/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Lingma",
+      "Qoder CN",
+      "智能编码助手通义灵码"
+    ],
+    "competitor_name": "通义灵码",
+    "content_date_count": 13,
+    "content_date_earliest": "2026-05-26T00:00:00Z",
+    "content_date_latest": "2026-06-16T00:00:00Z",
+    "cutoff": "2025-07-15T09:16:34.998922Z",
+    "date_basis": "content_latest",
+    "discovery_mode": "configured_undated_directory",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_title": "QoderWake CN 更新日志",
+    "page_modified_at": "2026-06-18T07:25:07Z",
+    "page_published_at": "2026-06-17T19:25:07Z",
+    "record_role": "changelog_entry",
+    "undated_detail_root_selector": ".aliyun-docs-content .markdown-body",
+    "undated_entry_path_prefixes": [
+      "/zh/lingma/"
+    ],
+    "undated_entry_selector": ".aliyun-docs-content .markdown-body .directory a[href]",
+    "undated_entry_text_pattern": "更新日志|日志（存档）|产品公告",
+    "visible_text_length": 6342
+  },
+  "source_type": "changelog"
+}

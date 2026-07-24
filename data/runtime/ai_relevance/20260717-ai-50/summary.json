@@ -1,0 +1,42 @@
+{
+  "run_id": "20260717-ai-50",
+  "started_at": "2026-07-17T04:50:01.395302+00:00",
+  "completed_at": "2026-07-17T04:55:52.317800+00:00",
+  "case_count": 50,
+  "candidate_count": 948,
+  "positive_candidate_count": 460,
+  "grade_distribution": {
+    "0": 488,
+    "1": 332,
+    "2": 69,
+    "3": 59
+  },
+  "top_n_per_group": 20,
+  "retrieval_groups": [
+    "A",
+    "B",
+    "C"
+  ],
+  "ai_model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+  "ai_backend": "cross_encoder",
+  "human_review_status": "pending",
+  "label_origin": "AI-pre-reviewed candidate labels",
+  "documents_path": "D:\\26Spring\\project\\CodeRadar\\data\\cleaned\\documents.jsonl",
+  "documents_sha256": "sha256:9780973870c4c8adade2d70b724767f342e0a46924206c6b5531d71c5cd083b0",
+  "dataset_path": "D:\\26Spring\\project\\CodeRadar\\data\\samples\\测试数据集.csv",
+  "dataset_sha256_before": "sha256:c6109a8148a69ec9594ec8498e9c051a4af450e97f2f8a6be0b27cf6a835e9e0",
+  "dataset_sha256_after": "sha256:5bdff42353ad91912e75930ef9478dd663aed19f6c5704bfb9af762b79a7ce43",
+  "review_path": "D:\\26Spring\\project\\CodeRadar\\data\\samples\\评测集人工复核.csv",
+  "review_sha256": "sha256:b023ba252ee515b2860eef7476ffe7610d8a68f0339786285380b0b5ff00e943",
+  "manifest_path": "D:\\26Spring\\project\\CodeRadar\\data\\samples\\评测集说明.json",
+  "manifest_sha256": "sha256:aaefaf6d677958d218a786f33ea23e22f88fab52a052c46ce407bf773ba0b801",
+  "candidates_path": "D:\\26Spring\\project\\CodeRadar\\data\\runtime\\ai_relevance\\20260717-ai-50\\candidates.jsonl",
+  "candidates_sha256": "sha256:84008cf725c672698e74f0c75f9a15474cb32416fe54017ee8926ceab1b614fe",
+  "index_alias": "coderadar_chunks_current",
+  "physical_index": "coderadar_chunks_v20260717032357564091",
+  "indexed_chunk_count": 2688,
+  "limitations": [
+    "AI relevance labels are candidate labels, not human-reviewed gold labels.",
+    "Human review remains pending and must use finalize_evaluation_review separately."
+  ]
+}

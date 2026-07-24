@@ -1,0 +1,34 @@
+{
+  "canonical_url": "https://cursor.com/changelog/canvas-improvements",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260714T025412Z_0c89855e",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-14T02:54:25.996661Z",
+  "final_url": "https://cursor.com/changelog/canvas-improvements",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "8691c88be76225ebecfba9eae42ce407037712c7700bb2fac429a3b7784f91a8",
+  "payload_path": "cursor/changelog/20260714T025412Z_0c89855e/a07a9cfa88fe33fb23ef2598.html",
+  "published_at": "2026-06-04T00:00:00Z",
+  "raw_record_id": "a07a9cfa88fe33fb23ef2598",
+  "requested_url": "https://cursor.com/changelog/canvas-improvements",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://cursor.com/changelog/page/2",
+    "changelog_page_number": 2,
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-06-04T00:00:00Z",
+    "listing_title": "3.7 Jun 4, 2026",
+    "record_role": "changelog_entry",
+    "visible_text_length": 4782
+  },
+  "source_type": "changelog"
+}

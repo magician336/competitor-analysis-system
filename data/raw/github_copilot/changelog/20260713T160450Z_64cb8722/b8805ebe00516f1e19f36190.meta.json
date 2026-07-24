@@ -1,0 +1,38 @@
+{
+  "canonical_url": "https://github.blog/changelog/label/copilot/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260713T160450Z_64cb8722",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-13T16:05:04.623044Z",
+  "final_url": "https://github.blog/changelog/label/copilot/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "55e7f769e9462623607992320c4179720530219ff07f32e64717d859741ef440",
+  "payload_path": "github_copilot/changelog/20260713T160450Z_64cb8722/b8805ebe00516f1e19f36190.html",
+  "published_at": null,
+  "raw_record_id": "b8805ebe00516f1e19f36190",
+  "requested_url": "https://github.blog/changelog/label/copilot/",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "cutoff": "2026-06-13T16:04:50.092259Z",
+    "dated_entry_count": 24,
+    "eligible_entry_count": 24,
+    "evidence_level": "A",
+    "format": "html_changelog_index",
+    "max_entries": 200,
+    "next_url": "https://github.blog/changelog/2025/?label=copilot",
+    "record_role": "changelog_index",
+    "rejected_cross_origin_entry_count": 0,
+    "visible_text_length": 4127
+  },
+  "source_type": "changelog"
+}

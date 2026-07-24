@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2025-12-17-gpt-5-1-codex-max-is-now-generally-available-in-github-copilot/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260717T031124Z_6bad9f7c",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-17T03:13:57.295366Z",
+  "final_url": "https://github.blog/changelog/2025-12-17-gpt-5-1-codex-max-is-now-generally-available-in-github-copilot/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "6e15eaccd435ac03f37c2d13a755b5ce7e5822f099b22e751058e7a88391b4a0",
+  "payload_path": "github_copilot/changelog/20260717T031124Z_6bad9f7c/bb13501f43e180dc99cd3ddf.html",
+  "published_at": "2025-12-17T00:00:00Z",
+  "raw_record_id": "bb13501f43e180dc99cd3ddf",
+  "requested_url": "https://github.blog/changelog/2025-12-17-gpt-5-1-codex-max-is-now-generally-available-in-github-copilot",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2025/?label=copilot",
+    "changelog_page_number": 2,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2025-12-17T00:00:00Z",
+    "listing_title": "GPT-5.1-Codex-Max is now generally available in GitHub Copilot",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3499
+  },
+  "source_type": "changelog"
+}

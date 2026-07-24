@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2025-12-10-auto-model-selection-is-generally-available-in-github-copilot-in-visual-studio-code/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260717T031124Z_6bad9f7c",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-17T03:14:13.542963Z",
+  "final_url": "https://github.blog/changelog/2025-12-10-auto-model-selection-is-generally-available-in-github-copilot-in-visual-studio-code/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "fb89b822afe3309d89604983389a3b729dd582274f1f4587dfe356845e616237",
+  "payload_path": "github_copilot/changelog/20260717T031124Z_6bad9f7c/cb464cc9e968517dadbcd54c.html",
+  "published_at": "2025-12-10T00:00:00Z",
+  "raw_record_id": "cb464cc9e968517dadbcd54c",
+  "requested_url": "https://github.blog/changelog/2025-12-10-auto-model-selection-is-generally-available-in-github-copilot-in-visual-studio-code",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2025/?label=copilot",
+    "changelog_page_number": 2,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2025-12-10T00:00:00Z",
+    "listing_title": "Auto model selection is generally available in GitHub Copilot in Visual Studio Code",
+    "record_role": "changelog_entry",
+    "visible_text_length": 4121
+  },
+  "source_type": "changelog"
+}

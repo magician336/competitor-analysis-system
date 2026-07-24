@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2026-07-01-enterprises-can-default-to-auto-model-selection",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260713T162601Z_fda2c425",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-13T16:26:33.731744Z",
+  "final_url": "https://github.blog/changelog/2026-07-01-enterprises-can-default-to-auto-model-selection/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "fbb8e815f5cf0ae070d383b7f1720bee1f9ff0b1eb94abe8b56054ef96d0bda1",
+  "payload_path": "github_copilot/changelog/20260713T162601Z_fda2c425/576ef2df4062d025ef0db972.html",
+  "published_at": "2026-07-01T00:00:00Z",
+  "raw_record_id": "576ef2df4062d025ef0db972",
+  "requested_url": "https://github.blog/changelog/2026-07-01-enterprises-can-default-to-auto-model-selection",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/label/copilot/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-07-01T00:00:00Z",
+    "listing_title": "Enterprises can default to auto model selection",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3492
+  },
+  "source_type": "changelog"
+}

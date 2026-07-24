@@ -1,0 +1,33 @@
+{
+  "canonical_url": "https://github.com/features/copilot/plans",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260724T071817Z_c88bf3a9",
+  "error": null,
+  "etag": "W/\"b821875e417c21dc44b0fd977dac2b07\"",
+  "fetched_at": "2026-07-24T07:18:25.643611Z",
+  "final_url": "https://github.com/features/copilot/plans",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "29b583349e198271126d66b74c0bbd6872a32ded0880233be27a87be4800435d",
+  "payload_path": "github_copilot/pricing/20260724T071817Z_c88bf3a9/41d64b2a7e7eb528ff0375be.html",
+  "published_at": null,
+  "raw_record_id": "41d64b2a7e7eb528ff0375be",
+  "requested_url": "https://github.com/features/copilot/plans",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://github.com/features/copilot/plans",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": 72099
+  },
+  "source_type": "pricing"
+}

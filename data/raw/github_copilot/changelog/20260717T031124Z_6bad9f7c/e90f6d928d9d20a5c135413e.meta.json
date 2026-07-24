@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260717T031124Z_6bad9f7c",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-17T03:13:37.771093Z",
+  "final_url": "https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "7e2a388eecce26af963aad33202f9a82a44b85ec64a3700c898c86d00844160c",
+  "payload_path": "github_copilot/changelog/20260717T031124Z_6bad9f7c/e90f6d928d9d20a5c135413e.html",
+  "published_at": "2026-07-01T00:00:00Z",
+  "raw_record_id": "e90f6d928d9d20a5c135413e",
+  "requested_url": "https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/label/copilot/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-07-01T00:00:00Z",
+    "listing_title": "Kimi K2.7 Code is generally available in GitHub Copilot",
+    "record_role": "changelog_entry",
+    "visible_text_length": 4763
+  },
+  "source_type": "changelog"
+}

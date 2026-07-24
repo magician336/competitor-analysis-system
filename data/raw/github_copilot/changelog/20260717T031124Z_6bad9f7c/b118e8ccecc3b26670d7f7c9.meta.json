@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2025-12-16-track-organization-copilot-usage/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260717T031124Z_6bad9f7c",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-17T03:14:07.015233Z",
+  "final_url": "https://github.blog/changelog/2025-12-16-track-organization-copilot-usage/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "6a1cef6268e27b4b9606e4717767938f01818e3176d3a999a28b0fee883db69a",
+  "payload_path": "github_copilot/changelog/20260717T031124Z_6bad9f7c/b118e8ccecc3b26670d7f7c9.html",
+  "published_at": "2025-12-16T00:00:00Z",
+  "raw_record_id": "b118e8ccecc3b26670d7f7c9",
+  "requested_url": "https://github.blog/changelog/2025-12-16-track-organization-copilot-usage",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2025/?label=copilot",
+    "changelog_page_number": 2,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2025-12-16T00:00:00Z",
+    "listing_title": "Track organization Copilot usage",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3220
+  },
+  "source_type": "changelog"
+}

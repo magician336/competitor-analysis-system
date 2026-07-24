@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2026-07-01-enterprise-managed-settings-json-is-generally-available/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260717T031124Z_6bad9f7c",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-17T03:13:35.486750Z",
+  "final_url": "https://github.blog/changelog/2026-07-01-enterprise-managed-settings-json-is-generally-available/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "96a5eed391373abcc9a3e535974ad09220034ce55a0af64cd08c22c2cb95b3f7",
+  "payload_path": "github_copilot/changelog/20260717T031124Z_6bad9f7c/f539a91274b32bc4ed693890.html",
+  "published_at": "2026-07-01T00:00:00Z",
+  "raw_record_id": "f539a91274b32bc4ed693890",
+  "requested_url": "https://github.blog/changelog/2026-07-01-enterprise-managed-settings-json-is-generally-available",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/label/copilot/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-07-01T00:00:00Z",
+    "listing_title": "Enterprise managed-settings.json is generally available",
+    "record_role": "changelog_entry",
+    "visible_text_length": 5146
+  },
+  "source_type": "changelog"
+}

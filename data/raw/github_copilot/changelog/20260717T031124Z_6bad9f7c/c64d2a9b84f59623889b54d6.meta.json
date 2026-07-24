@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2025-12-10-the-github-mcp-server-adds-support-for-tool-specific-configuration-and-more/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260717T031124Z_6bad9f7c",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-17T03:14:16.419157Z",
+  "final_url": "https://github.blog/changelog/2025-12-10-the-github-mcp-server-adds-support-for-tool-specific-configuration-and-more/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "aeac88186fd121bf653defc0a87b762ece0a867f8058ad8d86cad8e979163cee",
+  "payload_path": "github_copilot/changelog/20260717T031124Z_6bad9f7c/c64d2a9b84f59623889b54d6.html",
+  "published_at": "2025-12-10T00:00:00Z",
+  "raw_record_id": "c64d2a9b84f59623889b54d6",
+  "requested_url": "https://github.blog/changelog/2025-12-10-the-github-mcp-server-adds-support-for-tool-specific-configuration-and-more",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2025/?label=copilot",
+    "changelog_page_number": 2,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2025-12-10T00:00:00Z",
+    "listing_title": "The GitHub MCP Server adds support for tool-specific configuration, and more",
+    "record_role": "changelog_entry",
+    "visible_text_length": 9512
+  },
+  "source_type": "changelog"
+}

@@ -1,0 +1,30 @@
+{
+  "canonical_url": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260722T131125Z_2e9eda65",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-22T13:11:48.351865Z",
+  "final_url": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "4d25e68b1f8a06ecc3cc135c97afb9bef2d4eb4fc6289ccccc214ebea9695753",
+  "payload_path": "github_copilot/security_privacy/20260722T131125Z_2e9eda65/cb81f0c494909d7110fe8b4e.html",
+  "published_at": null,
+  "raw_record_id": "cb81f0c494909d7110fe8b4e",
+  "requested_url": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": 43907
+  },
+  "source_type": "security_privacy"
+}

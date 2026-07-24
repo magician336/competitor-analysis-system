@@ -1,0 +1,43 @@
+{
+  "canonical_url": "https://www.codegeex.cn/",
+  "competitor": "codegeex",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260723T044733Z_00edaef9",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-23T04:47:51.476032Z",
+  "final_url": "https://www.codegeex.cn/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "c6ff7eac9341149014793f3c7e3bfb906ac04a1e2a2cc0bd25fb7e97708c663c",
+  "payload_path": "codegeex/official/20260723T044733Z_00edaef9/e1c140d5089a8d29c3ceea0f.html",
+  "published_at": null,
+  "raw_record_id": "e1c140d5089a8d29c3ceea0f",
+  "requested_url": "https://www.codegeex.cn/",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://www.codegeex.cn/",
+    "browser_fallback": {
+      "enabled": true,
+      "minimum_text_characters": 500,
+      "settle_milliseconds": 1500,
+      "timeout_seconds": 30,
+      "wait_selector": "#root"
+    },
+    "browser_rendered": true,
+    "browser_rendered_visible_text_length": 2144,
+    "browser_static_visible_text_length": 0,
+    "competitor_aliases": [
+      "CodeGeeX4",
+      "CodeGeeX AI Coding Assistant"
+    ],
+    "competitor_name": "CodeGeeX",
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": 2144
+  },
+  "source_type": "official"
+}

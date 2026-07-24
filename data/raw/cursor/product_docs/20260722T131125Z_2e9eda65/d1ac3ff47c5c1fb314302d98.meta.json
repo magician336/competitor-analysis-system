@@ -1,0 +1,29 @@
+{
+  "canonical_url": "https://cursor.com/docs",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260722T131125Z_2e9eda65",
+  "error": null,
+  "etag": "W/\"911df0ee838924b6052d1c396fdec358\"",
+  "fetched_at": "2026-07-22T13:11:30.120419Z",
+  "final_url": "https://cursor.com/docs",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": true,
+  "payload_hash": "c0d708f1b65e98d6dbbdeb62e17df4510a78692a776d70c1cfa998ac8b64fefc",
+  "payload_path": "cursor/product_docs/20260722T131125Z_2e9eda65/d1ac3ff47c5c1fb314302d98.html",
+  "published_at": null,
+  "raw_record_id": "d1ac3ff47c5c1fb314302d98",
+  "requested_url": "https://docs.cursor.com/en/agent/overview",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": 45
+  },
+  "source_type": "product_docs"
+}

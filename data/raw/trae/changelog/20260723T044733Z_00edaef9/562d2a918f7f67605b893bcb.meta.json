@@ -1,0 +1,47 @@
+{
+  "canonical_url": "https://www.trae.ai/changelog",
+  "competitor": "trae",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260723T044733Z_00edaef9",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-23T04:47:46.994370Z",
+  "final_url": "https://www.trae.ai/changelog",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "13f60864f094a6ff334eff6e2652b9dc93a29982ed3809b67126af91a530ef6d",
+  "payload_path": "trae/changelog/20260723T044733Z_00edaef9/562d2a918f7f67605b893bcb.html",
+  "published_at": null,
+  "raw_record_id": "562d2a918f7f67605b893bcb",
+  "requested_url": "https://www.trae.ai/changelog",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "attempted_undated_entry_count": 0,
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "TRAE",
+      "TRAE IDE"
+    ],
+    "competitor_name": "Trae",
+    "configured_undated_entry_count": 0,
+    "cutoff": "2025-07-23T04:47:33.216345Z",
+    "dated_entry_count": 0,
+    "directory_refresh_after_304": false,
+    "eligible_entry_count": 0,
+    "empty_result_marker": "No update record yet.",
+    "empty_result_markers": [
+      "No update record yet."
+    ],
+    "empty_result_valid": true,
+    "evidence_level": "A",
+    "format": "html_changelog_index",
+    "max_entries": 200,
+    "next_url": null,
+    "record_role": "changelog_index",
+    "rejected_cross_origin_entry_count": 0,
+    "undated_entry_status_counts": {},
+    "visible_text_length": 383
+  },
+  "source_type": "changelog"
+}

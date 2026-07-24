@@ -1,0 +1,30 @@
+{
+  "canonical_url": "https://github.com/zai-org/CodeGeeX",
+  "competitor": "codegeex",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260722T131125Z_2e9eda65",
+  "error": null,
+  "etag": "W/\"856f86d8cb57c7079e6054c99683b3b8\"",
+  "fetched_at": "2026-07-22T13:12:07.114718Z",
+  "final_url": "https://github.com/zai-org/CodeGeeX",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "86f0f76656f23bc5bed62985261b87fe9cd8ae70a839c59e688382d3ba1cd1cb",
+  "payload_path": "codegeex/benchmark/20260722T131125Z_2e9eda65/d7c02b29f25cf34e1e75ef36.html",
+  "published_at": null,
+  "raw_record_id": "d7c02b29f25cf34e1e75ef36",
+  "requested_url": "https://github.com/zai-org/CodeGeeX",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "competitor_aliases": [
+      "CodeGeeX4",
+      "CodeGeeX AI Coding Assistant"
+    ],
+    "competitor_name": "CodeGeeX",
+    "evidence_level": "B",
+    "format": "html",
+    "visible_text_length": 19267
+  },
+  "source_type": "benchmark"
+}

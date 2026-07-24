@@ -1,0 +1,50 @@
+{
+  "canonical_url": "https://help.aliyun.com/zh/lingma/qoder-cn-update-log",
+  "competitor": "tongyi_lingma",
+  "content_type": "text/html;charset=UTF-8",
+  "crawl_run_id": "20260717T031124Z_6bad9f7c",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-17T03:17:31.991092Z",
+  "final_url": "https://help.aliyun.com/zh/lingma/qoder-cn-update-log",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "cb8c065735d47d6a5c5b422f635f846a44f77049514247d918ecc5a6bfb76618",
+  "payload_path": "tongyi_lingma/changelog/20260717T031124Z_6bad9f7c/ba31e544f6e84900ef86c011.html",
+  "published_at": "2026-07-17T00:00:00Z",
+  "raw_record_id": "ba31e544f6e84900ef86c011",
+  "requested_url": "https://help.aliyun.com/zh/lingma/qoder-cn-update-log",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "candidate_status": "eligible",
+    "changelog_index_url": "https://help.aliyun.com/zh/lingma/product-overview/dynamics-and-announcements/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Lingma",
+      "Qoder CN",
+      "智能编码助手通义灵码"
+    ],
+    "competitor_name": "通义灵码",
+    "content_date_count": 82,
+    "content_date_earliest": "2024-06-05T00:00:00Z",
+    "content_date_latest": "2026-07-17T00:00:00Z",
+    "cutoff": "2025-07-17T03:11:24.630931Z",
+    "date_basis": "content_latest",
+    "discovery_mode": "configured_undated_directory",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_title": "Qoder CN 更新日志",
+    "page_modified_at": "2026-07-16T17:08:12Z",
+    "page_published_at": "2026-05-16T21:06:20Z",
+    "record_role": "changelog_entry",
+    "undated_detail_root_selector": ".aliyun-docs-content .markdown-body",
+    "undated_entry_path_prefixes": [
+      "/zh/lingma/"
+    ],
+    "undated_entry_selector": ".aliyun-docs-content .markdown-body .directory a[href]",
+    "undated_entry_text_pattern": "更新日志|日志（存档）|产品公告",
+    "visible_text_length": 19725
+  },
+  "source_type": "changelog"
+}
