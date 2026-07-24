@@ -6,6 +6,7 @@ import os
 from dataclasses import dataclass
 from pathlib import Path
 
+from dotenv import load_dotenv
 from mini_rag.config import MiniRAGSettings, load_settings
 
 
@@ -39,6 +40,7 @@ class ApiSettings:
 
 
 def load_api_settings() -> ApiSettings:
+    load_dotenv(PROJECT_ROOT / ".env", override=False)
     origins = tuple(
         item.strip()
         for item in os.getenv(

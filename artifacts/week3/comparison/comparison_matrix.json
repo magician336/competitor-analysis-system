@@ -2,28 +2,28 @@
   "baseline_product": "CodeMate Campus",
   "comparison_date": "2026-07-20",
   "current_snapshot_ids": {
-    "CodeGeeX": "snap_daff2b08c5201bc50cb3",
+    "CodeGeeX": "snap_273ebc162c6e0cd60384",
     "CodeMate Campus": "snap_364fea7f15916e0be879",
-    "Cursor": "snap_654a3cadc326fde28c59",
-    "GitHub Copilot": "snap_ed5d5e312d5f07def6b4",
-    "Trae": "snap_0ee24ef1d0e0aa56ae2f",
-    "通义灵码": "snap_c3662393158c6db99887"
+    "Cursor": "snap_5d3be28d4231afa4190a",
+    "GitHub Copilot": "snap_c2499545a1d7c863d2fa",
+    "Trae": "snap_a6f76e2eca33a71ccac4",
+    "通义灵码": "snap_707f18fd8723d3e8e8d8"
   },
   "fastest_growth": null,
   "gap_trends": [],
   "most_competitive_dimension": {
     "basis": "intensity_score = mean_score - population_stddev; higher means broadly strong and closely contested",
-    "dimension": "security_compliance",
-    "intensity_score": 37.035,
-    "mean_score": 56.75,
-    "population_stddev": 19.715,
+    "dimension": "performance_cost",
+    "intensity_score": 47.602,
+    "mean_score": 59.25,
+    "population_stddev": 11.648,
     "product_scores": {
-      "Cursor": 74,
-      "GitHub Copilot": 53,
-      "Trae": 26,
-      "通义灵码": 74
+      "Cursor": 57,
+      "GitHub Copilot": 74,
+      "Trae": 42,
+      "通义灵码": 64
     },
-    "score_spread": 48,
+    "score_spread": 32,
     "valid_product_count": 4
   },
   "previous_snapshot_ids": {},
@@ -46,35 +46,35 @@
     },
     {
       "comparable_trend_coverage": 0.0,
-      "coverage_ratio": 0.78,
+      "coverage_ratio": 0.9,
       "dimension_deltas": {},
       "gap_to_baseline_total": null,
       "product": "CodeGeeX",
-      "rank": null,
-      "rank_eligible": false,
-      "ranking_reason": "unranked because weighted scored-dimension coverage 0.780 is below 0.800",
-      "snapshot_id": "snap_daff2b08c5201bc50cb3",
+      "rank": 3,
+      "rank_eligible": true,
+      "ranking_reason": "weighted scored-dimension coverage satisfies minimum_rank_coverage=0.80",
+      "snapshot_id": "snap_273ebc162c6e0cd60384",
       "trend_eligible": false,
       "trend_reason": "trend unavailable because comparable current/previous coverage 0.000 is below 0.800",
-      "weighted_confidence": 0.364,
+      "weighted_confidence": 0.183,
       "weighted_delta": null,
-      "weighted_total_score": 26.0
+      "weighted_total_score": 35.89
     },
     {
       "comparable_trend_coverage": 0.0,
-      "coverage_ratio": 0.72,
+      "coverage_ratio": 0.62,
       "dimension_deltas": {},
       "gap_to_baseline_total": null,
       "product": "Cursor",
       "rank": null,
       "rank_eligible": false,
-      "ranking_reason": "unranked because weighted scored-dimension coverage 0.720 is below 0.800",
-      "snapshot_id": "snap_654a3cadc326fde28c59",
+      "ranking_reason": "unranked because weighted scored-dimension coverage 0.620 is below 0.800",
+      "snapshot_id": "snap_5d3be28d4231afa4190a",
       "trend_eligible": false,
       "trend_reason": "trend unavailable because comparable current/previous coverage 0.000 is below 0.800",
-      "weighted_confidence": 0.53,
+      "weighted_confidence": 0.534,
       "weighted_delta": null,
-      "weighted_total_score": 74.0
+      "weighted_total_score": 70.77
     },
     {
       "comparable_trend_coverage": 0.0,
@@ -85,28 +85,28 @@
       "rank": 2,
       "rank_eligible": true,
       "ranking_reason": "weighted scored-dimension coverage satisfies minimum_rank_coverage=0.80",
-      "snapshot_id": "snap_ed5d5e312d5f07def6b4",
+      "snapshot_id": "snap_c2499545a1d7c863d2fa",
       "trend_eligible": false,
       "trend_reason": "trend unavailable because comparable current/previous coverage 0.000 is below 0.800",
-      "weighted_confidence": 0.747,
+      "weighted_confidence": 0.636,
       "weighted_delta": null,
-      "weighted_total_score": 64.34
+      "weighted_total_score": 65.0
     },
     {
       "comparable_trend_coverage": 0.0,
-      "coverage_ratio": 0.82,
+      "coverage_ratio": 1.0,
       "dimension_deltas": {},
       "gap_to_baseline_total": null,
       "product": "Trae",
-      "rank": 3,
+      "rank": 4,
       "rank_eligible": true,
       "ranking_reason": "weighted scored-dimension coverage satisfies minimum_rank_coverage=0.80",
-      "snapshot_id": "snap_0ee24ef1d0e0aa56ae2f",
+      "snapshot_id": "snap_a6f76e2eca33a71ccac4",
       "trend_eligible": false,
       "trend_reason": "trend unavailable because comparable current/previous coverage 0.000 is below 0.800",
-      "weighted_confidence": 0.407,
+      "weighted_confidence": 0.289,
       "weighted_delta": null,
-      "weighted_total_score": 26.0
+      "weighted_total_score": 31.54
     },
     {
       "comparable_trend_coverage": 0.0,
@@ -117,12 +117,12 @@
       "rank": 1,
       "rank_eligible": true,
       "ranking_reason": "weighted scored-dimension coverage satisfies minimum_rank_coverage=0.80",
-      "snapshot_id": "snap_c3662393158c6db99887",
+      "snapshot_id": "snap_707f18fd8723d3e8e8d8",
       "trend_eligible": false,
       "trend_reason": "trend unavailable because comparable current/previous coverage 0.000 is below 0.800",
-      "weighted_confidence": 0.538,
+      "weighted_confidence": 0.488,
       "weighted_delta": null,
-      "weighted_total_score": 74.0
+      "weighted_total_score": 69.64
     }
   ],
   "rows": [
@@ -139,399 +139,59 @@
           "status": "insufficient_evidence"
         },
         {
-          "confidence": 0.488,
-          "delta_from_previous": null,
-          "dimension": "code_intelligence",
-          "evidence_count": 4,
-          "gap_to_baseline": null,
-          "product": "CodeGeeX",
-          "score": 26,
-          "status": "scored"
-        },
-        {
-          "confidence": 0.338,
-          "delta_from_previous": null,
-          "dimension": "code_intelligence",
-          "evidence_count": 1,
-          "gap_to_baseline": null,
-          "product": "Cursor",
-          "score": 74,
-          "status": "scored"
-        },
-        {
-          "confidence": 0.559,
+          "confidence": 0.224,
           "delta_from_previous": null,
           "dimension": "code_intelligence",
           "evidence_count": 3,
           "gap_to_baseline": null,
-          "product": "GitHub Copilot",
-          "score": 63,
+          "product": "CodeGeeX",
+          "score": 39,
           "status": "scored"
         },
         {
-          "confidence": 0.311,
+          "confidence": 0.0,
           "delta_from_previous": null,
           "dimension": "code_intelligence",
-          "evidence_count": 2,
+          "evidence_count": 0,
           "gap_to_baseline": null,
-          "product": "Trae",
-          "score": 26,
+          "product": "Cursor",
+          "score": null,
+          "status": "insufficient_evidence"
+        },
+        {
+          "confidence": 0.516,
+          "delta_from_previous": null,
+          "dimension": "code_intelligence",
+          "evidence_count": 6,
+          "gap_to_baseline": null,
+          "product": "GitHub Copilot",
+          "score": 48,
           "status": "scored"
         },
         {
-          "confidence": 0.338,
+          "confidence": 0.198,
           "delta_from_previous": null,
           "dimension": "code_intelligence",
           "evidence_count": 1,
           "gap_to_baseline": null,
+          "product": "Trae",
+          "score": 34,
+          "status": "scored"
+        },
+        {
+          "confidence": 0.4,
+          "delta_from_previous": null,
+          "dimension": "code_intelligence",
+          "evidence_count": 2,
+          "gap_to_baseline": null,
           "product": "通义灵码",
-          "score": 74,
+          "score": 70,
           "status": "scored"
         }
       ],
       "dimension": "code_intelligence",
-      "mean_score": 52.6,
-      "score_spread": 48,
-      "valid_product_count": 5
-    },
-    {
-      "cells": [
-        {
-          "confidence": 0.0,
-          "delta_from_previous": null,
-          "dimension": "agent_context",
-          "evidence_count": 0,
-          "gap_to_baseline": null,
-          "product": "CodeMate Campus",
-          "score": null,
-          "status": "insufficient_evidence"
-        },
-        {
-          "confidence": 0.394,
-          "delta_from_previous": null,
-          "dimension": "agent_context",
-          "evidence_count": 3,
-          "gap_to_baseline": null,
-          "product": "CodeGeeX",
-          "score": 26,
-          "status": "scored"
-        },
-        {
-          "confidence": 0.746,
-          "delta_from_previous": null,
-          "dimension": "agent_context",
-          "evidence_count": 6,
-          "gap_to_baseline": null,
-          "product": "Cursor",
-          "score": 74,
-          "status": "scored"
-        },
-        {
-          "confidence": 0.726,
-          "delta_from_previous": null,
-          "dimension": "agent_context",
-          "evidence_count": 16,
-          "gap_to_baseline": null,
-          "product": "GitHub Copilot",
-          "score": 58,
-          "status": "scored"
-        },
-        {
-          "confidence": 0.533,
-          "delta_from_previous": null,
-          "dimension": "agent_context",
-          "evidence_count": 5,
-          "gap_to_baseline": null,
-          "product": "Trae",
-          "score": 26,
-          "status": "scored"
-        },
-        {
-          "confidence": 0.732,
-          "delta_from_previous": null,
-          "dimension": "agent_context",
-          "evidence_count": 5,
-          "gap_to_baseline": null,
-          "product": "通义灵码",
-          "score": 74,
-          "status": "scored"
-        }
-      ],
-      "dimension": "agent_context",
-      "mean_score": 51.6,
-      "score_spread": 48,
-      "valid_product_count": 5
-    },
-    {
-      "cells": [
-        {
-          "confidence": 0.0,
-          "delta_from_previous": null,
-          "dimension": "ide_ecosystem",
-          "evidence_count": 0,
-          "gap_to_baseline": null,
-          "product": "CodeMate Campus",
-          "score": null,
-          "status": "insufficient_evidence"
-        },
-        {
-          "confidence": 0.394,
-          "delta_from_previous": null,
-          "dimension": "ide_ecosystem",
-          "evidence_count": 3,
-          "gap_to_baseline": null,
-          "product": "CodeGeeX",
-          "score": 26,
-          "status": "scored"
-        },
-        {
-          "confidence": 0.543,
-          "delta_from_previous": null,
-          "dimension": "ide_ecosystem",
-          "evidence_count": 3,
-          "gap_to_baseline": null,
-          "product": "Cursor",
-          "score": 74,
-          "status": "scored"
-        },
-        {
-          "confidence": 0.726,
-          "delta_from_previous": null,
-          "dimension": "ide_ecosystem",
-          "evidence_count": 16,
-          "gap_to_baseline": null,
-          "product": "GitHub Copilot",
-          "score": 58,
-          "status": "scored"
-        },
-        {
-          "confidence": 0.311,
-          "delta_from_previous": null,
-          "dimension": "ide_ecosystem",
-          "evidence_count": 2,
-          "gap_to_baseline": null,
-          "product": "Trae",
-          "score": 26,
-          "status": "scored"
-        },
-        {
-          "confidence": 0.686,
-          "delta_from_previous": null,
-          "dimension": "ide_ecosystem",
-          "evidence_count": 4,
-          "gap_to_baseline": null,
-          "product": "通义灵码",
-          "score": 74,
-          "status": "scored"
-        }
-      ],
-      "dimension": "ide_ecosystem",
-      "mean_score": 51.6,
-      "score_spread": 48,
-      "valid_product_count": 5
-    },
-    {
-      "cells": [
-        {
-          "confidence": 0.0,
-          "delta_from_previous": null,
-          "dimension": "model_extensibility",
-          "evidence_count": 0,
-          "gap_to_baseline": null,
-          "product": "CodeMate Campus",
-          "score": null,
-          "status": "insufficient_evidence"
-        },
-        {
-          "confidence": 0.244,
-          "delta_from_previous": null,
-          "dimension": "model_extensibility",
-          "evidence_count": 1,
-          "gap_to_baseline": null,
-          "product": "CodeGeeX",
-          "score": 26,
-          "status": "scored"
-        },
-        {
-          "confidence": 0.606,
-          "delta_from_previous": null,
-          "dimension": "model_extensibility",
-          "evidence_count": 3,
-          "gap_to_baseline": null,
-          "product": "Cursor",
-          "score": 74,
-          "status": "scored"
-        },
-        {
-          "confidence": 0.811,
-          "delta_from_previous": null,
-          "dimension": "model_extensibility",
-          "evidence_count": 11,
-          "gap_to_baseline": null,
-          "product": "GitHub Copilot",
-          "score": 67,
-          "status": "scored"
-        },
-        {
-          "confidence": 0.46,
-          "delta_from_previous": null,
-          "dimension": "model_extensibility",
-          "evidence_count": 4,
-          "gap_to_baseline": null,
-          "product": "Trae",
-          "score": 26,
-          "status": "scored"
-        },
-        {
-          "confidence": 0.732,
-          "delta_from_previous": null,
-          "dimension": "model_extensibility",
-          "evidence_count": 5,
-          "gap_to_baseline": null,
-          "product": "通义灵码",
-          "score": 74,
-          "status": "scored"
-        }
-      ],
-      "dimension": "model_extensibility",
-      "mean_score": 53.4,
-      "score_spread": 48,
-      "valid_product_count": 5
-    },
-    {
-      "cells": [
-        {
-          "confidence": 0.0,
-          "delta_from_previous": null,
-          "dimension": "performance_cost",
-          "evidence_count": 0,
-          "gap_to_baseline": null,
-          "product": "CodeMate Campus",
-          "score": null,
-          "status": "insufficient_evidence"
-        },
-        {
-          "confidence": 0.0,
-          "delta_from_previous": null,
-          "dimension": "performance_cost",
-          "evidence_count": 0,
-          "gap_to_baseline": null,
-          "product": "CodeGeeX",
-          "score": null,
-          "status": "insufficient_evidence"
-        },
-        {
-          "confidence": 0.0,
-          "delta_from_previous": null,
-          "dimension": "performance_cost",
-          "evidence_count": 0,
-          "gap_to_baseline": null,
-          "product": "Cursor",
-          "score": null,
-          "status": "insufficient_evidence"
-        },
-        {
-          "confidence": 0.906,
-          "delta_from_previous": null,
-          "dimension": "performance_cost",
-          "evidence_count": 8,
-          "gap_to_baseline": null,
-          "product": "GitHub Copilot",
-          "score": 76,
-          "status": "scored"
-        },
-        {
-          "confidence": 0.287,
-          "delta_from_previous": null,
-          "dimension": "performance_cost",
-          "evidence_count": 1,
-          "gap_to_baseline": null,
-          "product": "Trae",
-          "score": 26,
-          "status": "scored"
-        },
-        {
-          "confidence": 0.397,
-          "delta_from_previous": null,
-          "dimension": "performance_cost",
-          "evidence_count": 1,
-          "gap_to_baseline": null,
-          "product": "通义灵码",
-          "score": 74,
-          "status": "scored"
-        }
-      ],
-      "dimension": "performance_cost",
-      "mean_score": 58.67,
-      "score_spread": 50,
-      "valid_product_count": 3
-    },
-    {
-      "cells": [
-        {
-          "confidence": 0.0,
-          "delta_from_previous": null,
-          "dimension": "security_compliance",
-          "evidence_count": 0,
-          "gap_to_baseline": null,
-          "product": "CodeMate Campus",
-          "score": null,
-          "status": "insufficient_evidence"
-        },
-        {
-          "confidence": 0.0,
-          "delta_from_previous": null,
-          "dimension": "security_compliance",
-          "evidence_count": 0,
-          "gap_to_baseline": null,
-          "product": "CodeGeeX",
-          "score": null,
-          "status": "insufficient_evidence"
-        },
-        {
-          "confidence": 0.448,
-          "delta_from_previous": null,
-          "dimension": "security_compliance",
-          "evidence_count": 2,
-          "gap_to_baseline": null,
-          "product": "Cursor",
-          "score": 74,
-          "status": "scored"
-        },
-        {
-          "confidence": 0.69,
-          "delta_from_previous": null,
-          "dimension": "security_compliance",
-          "evidence_count": 9,
-          "gap_to_baseline": null,
-          "product": "GitHub Copilot",
-          "score": 53,
-          "status": "scored"
-        },
-        {
-          "confidence": 0.533,
-          "delta_from_previous": null,
-          "dimension": "security_compliance",
-          "evidence_count": 5,
-          "gap_to_baseline": null,
-          "product": "Trae",
-          "score": 26,
-          "status": "scored"
-        },
-        {
-          "confidence": 0.686,
-          "delta_from_previous": null,
-          "dimension": "security_compliance",
-          "evidence_count": 4,
-          "gap_to_baseline": null,
-          "product": "通义灵码",
-          "score": 74,
-          "status": "scored"
-        }
-      ],
-      "dimension": "security_compliance",
-      "mean_score": 56.75,
-      "score_spread": 48,
+      "mean_score": 47.75,
+      "score_spread": 36,
       "valid_product_count": 4
     },
     {
@@ -539,6 +199,346 @@
         {
           "confidence": 0.0,
           "delta_from_previous": null,
+          "dimension": "agent_context",
+          "evidence_count": 0,
+          "gap_to_baseline": null,
+          "product": "CodeMate Campus",
+          "score": null,
+          "status": "insufficient_evidence"
+        },
+        {
+          "confidence": 0.291,
+          "delta_from_previous": null,
+          "dimension": "agent_context",
+          "evidence_count": 3,
+          "gap_to_baseline": null,
+          "product": "CodeGeeX",
+          "score": 27,
+          "status": "scored"
+        },
+        {
+          "confidence": 0.657,
+          "delta_from_previous": null,
+          "dimension": "agent_context",
+          "evidence_count": 6,
+          "gap_to_baseline": null,
+          "product": "Cursor",
+          "score": 73,
+          "status": "scored"
+        },
+        {
+          "confidence": 0.655,
+          "delta_from_previous": null,
+          "dimension": "agent_context",
+          "evidence_count": 12,
+          "gap_to_baseline": null,
+          "product": "GitHub Copilot",
+          "score": 65,
+          "status": "scored"
+        },
+        {
+          "confidence": 0.449,
+          "delta_from_previous": null,
+          "dimension": "agent_context",
+          "evidence_count": 4,
+          "gap_to_baseline": null,
+          "product": "Trae",
+          "score": 23,
+          "status": "scored"
+        },
+        {
+          "confidence": 0.673,
+          "delta_from_previous": null,
+          "dimension": "agent_context",
+          "evidence_count": 5,
+          "gap_to_baseline": null,
+          "product": "通义灵码",
+          "score": 80,
+          "status": "scored"
+        }
+      ],
+      "dimension": "agent_context",
+      "mean_score": 53.6,
+      "score_spread": 57,
+      "valid_product_count": 5
+    },
+    {
+      "cells": [
+        {
+          "confidence": 0.0,
+          "delta_from_previous": null,
+          "dimension": "ide_ecosystem",
+          "evidence_count": 0,
+          "gap_to_baseline": null,
+          "product": "CodeMate Campus",
+          "score": null,
+          "status": "insufficient_evidence"
+        },
+        {
+          "confidence": 0.219,
+          "delta_from_previous": null,
+          "dimension": "ide_ecosystem",
+          "evidence_count": 2,
+          "gap_to_baseline": null,
+          "product": "CodeGeeX",
+          "score": 42,
+          "status": "scored"
+        },
+        {
+          "confidence": 0.589,
+          "delta_from_previous": null,
+          "dimension": "ide_ecosystem",
+          "evidence_count": 4,
+          "gap_to_baseline": null,
+          "product": "Cursor",
+          "score": 72,
+          "status": "scored"
+        },
+        {
+          "confidence": 0.635,
+          "delta_from_previous": null,
+          "dimension": "ide_ecosystem",
+          "evidence_count": 13,
+          "gap_to_baseline": null,
+          "product": "GitHub Copilot",
+          "score": 61,
+          "status": "scored"
+        },
+        {
+          "confidence": 0.219,
+          "delta_from_previous": null,
+          "dimension": "ide_ecosystem",
+          "evidence_count": 2,
+          "gap_to_baseline": null,
+          "product": "Trae",
+          "score": 36,
+          "status": "scored"
+        },
+        {
+          "confidence": 0.638,
+          "delta_from_previous": null,
+          "dimension": "ide_ecosystem",
+          "evidence_count": 5,
+          "gap_to_baseline": null,
+          "product": "通义灵码",
+          "score": 74,
+          "status": "scored"
+        }
+      ],
+      "dimension": "ide_ecosystem",
+      "mean_score": 57.0,
+      "score_spread": 38,
+      "valid_product_count": 5
+    },
+    {
+      "cells": [
+        {
+          "confidence": 0.0,
+          "delta_from_previous": null,
+          "dimension": "model_extensibility",
+          "evidence_count": 0,
+          "gap_to_baseline": null,
+          "product": "CodeMate Campus",
+          "score": null,
+          "status": "insufficient_evidence"
+        },
+        {
+          "confidence": 0.099,
+          "delta_from_previous": null,
+          "dimension": "model_extensibility",
+          "evidence_count": 1,
+          "gap_to_baseline": null,
+          "product": "CodeGeeX",
+          "score": 50,
+          "status": "scored"
+        },
+        {
+          "confidence": 0.52,
+          "delta_from_previous": null,
+          "dimension": "model_extensibility",
+          "evidence_count": 3,
+          "gap_to_baseline": null,
+          "product": "Cursor",
+          "score": 74,
+          "status": "scored"
+        },
+        {
+          "confidence": 0.638,
+          "delta_from_previous": null,
+          "dimension": "model_extensibility",
+          "evidence_count": 11,
+          "gap_to_baseline": null,
+          "product": "GitHub Copilot",
+          "score": 63,
+          "status": "scored"
+        },
+        {
+          "confidence": 0.483,
+          "delta_from_previous": null,
+          "dimension": "model_extensibility",
+          "evidence_count": 5,
+          "gap_to_baseline": null,
+          "product": "Trae",
+          "score": 20,
+          "status": "scored"
+        },
+        {
+          "confidence": 0.65,
+          "delta_from_previous": null,
+          "dimension": "model_extensibility",
+          "evidence_count": 5,
+          "gap_to_baseline": null,
+          "product": "通义灵码",
+          "score": 76,
+          "status": "scored"
+        }
+      ],
+      "dimension": "model_extensibility",
+      "mean_score": 56.6,
+      "score_spread": 56,
+      "valid_product_count": 5
+    },
+    {
+      "cells": [
+        {
+          "confidence": 0.0,
+          "delta_from_previous": null,
+          "dimension": "performance_cost",
+          "evidence_count": 0,
+          "gap_to_baseline": null,
+          "product": "CodeMate Campus",
+          "score": null,
+          "status": "insufficient_evidence"
+        },
+        {
+          "confidence": 0.0,
+          "delta_from_previous": null,
+          "dimension": "performance_cost",
+          "evidence_count": 0,
+          "gap_to_baseline": null,
+          "product": "CodeGeeX",
+          "score": null,
+          "status": "insufficient_evidence"
+        },
+        {
+          "confidence": 0.32,
+          "delta_from_previous": null,
+          "dimension": "performance_cost",
+          "evidence_count": 2,
+          "gap_to_baseline": null,
+          "product": "Cursor",
+          "score": 57,
+          "status": "scored"
+        },
+        {
+          "confidence": 0.805,
+          "delta_from_previous": null,
+          "dimension": "performance_cost",
+          "evidence_count": 6,
+          "gap_to_baseline": null,
+          "product": "GitHub Copilot",
+          "score": 74,
+          "status": "scored"
+        },
+        {
+          "confidence": 0.194,
+          "delta_from_previous": null,
+          "dimension": "performance_cost",
+          "evidence_count": 1,
+          "gap_to_baseline": null,
+          "product": "Trae",
+          "score": 42,
+          "status": "scored"
+        },
+        {
+          "confidence": 0.371,
+          "delta_from_previous": null,
+          "dimension": "performance_cost",
+          "evidence_count": 2,
+          "gap_to_baseline": null,
+          "product": "通义灵码",
+          "score": 64,
+          "status": "scored"
+        }
+      ],
+      "dimension": "performance_cost",
+      "mean_score": 59.25,
+      "score_spread": 32,
+      "valid_product_count": 4
+    },
+    {
+      "cells": [
+        {
+          "confidence": 0.0,
+          "delta_from_previous": null,
+          "dimension": "security_compliance",
+          "evidence_count": 0,
+          "gap_to_baseline": null,
+          "product": "CodeMate Campus",
+          "score": null,
+          "status": "insufficient_evidence"
+        },
+        {
+          "confidence": 0.109,
+          "delta_from_previous": null,
+          "dimension": "security_compliance",
+          "evidence_count": 2,
+          "gap_to_baseline": null,
+          "product": "CodeGeeX",
+          "score": 47,
+          "status": "scored"
+        },
+        {
+          "confidence": 0.486,
+          "delta_from_previous": null,
+          "dimension": "security_compliance",
+          "evidence_count": 3,
+          "gap_to_baseline": null,
+          "product": "Cursor",
+          "score": 75,
+          "status": "scored"
+        },
+        {
+          "confidence": 0.586,
+          "delta_from_previous": null,
+          "dimension": "security_compliance",
+          "evidence_count": 4,
+          "gap_to_baseline": null,
+          "product": "GitHub Copilot",
+          "score": 78,
+          "status": "scored"
+        },
+        {
+          "confidence": 0.376,
+          "delta_from_previous": null,
+          "dimension": "security_compliance",
+          "evidence_count": 5,
+          "gap_to_baseline": null,
+          "product": "Trae",
+          "score": 33,
+          "status": "scored"
+        },
+        {
+          "confidence": 0.541,
+          "delta_from_previous": null,
+          "dimension": "security_compliance",
+          "evidence_count": 3,
+          "gap_to_baseline": null,
+          "product": "通义灵码",
+          "score": 78,
+          "status": "scored"
+        }
+      ],
+      "dimension": "security_compliance",
+      "mean_score": 62.2,
+      "score_spread": 45,
+      "valid_product_count": 5
+    },
+    {
+      "cells": [
+        {
+          "confidence": 0.0,
+          "delta_from_previous": null,
           "dimension": "education_fit",
           "evidence_count": 0,
           "gap_to_baseline": null,
@@ -547,13 +547,13 @@
           "status": "insufficient_evidence"
         },
         {
-          "confidence": 0.244,
+          "confidence": 0.099,
           "delta_from_previous": null,
           "dimension": "education_fit",
           "evidence_count": 1,
           "gap_to_baseline": null,
           "product": "CodeGeeX",
-          "score": 26,
+          "score": 22,
           "status": "scored"
         },
         {
@@ -567,40 +567,40 @@
           "status": "insufficient_evidence"
         },
         {
-          "confidence": 0.906,
+          "confidence": 0.688,
           "delta_from_previous": null,
           "dimension": "education_fit",
-          "evidence_count": 8,
+          "evidence_count": 6,
           "gap_to_baseline": null,
           "product": "GitHub Copilot",
-          "score": 76,
+          "score": 74,
           "status": "scored"
         },
         {
-          "confidence": 0.0,
+          "confidence": 0.165,
           "delta_from_previous": null,
           "dimension": "education_fit",
-          "evidence_count": 0,
+          "evidence_count": 1,
           "gap_to_baseline": null,
           "product": "Trae",
-          "score": null,
-          "status": "insufficient_evidence"
+          "score": 34,
+          "status": "scored"
         },
         {
-          "confidence": 0.338,
+          "confidence": 0.241,
           "delta_from_previous": null,
           "dimension": "education_fit",
           "evidence_count": 1,
           "gap_to_baseline": null,
           "product": "通义灵码",
-          "score": 74,
+          "score": 50,
           "status": "scored"
         }
       ],
       "dimension": "education_fit",
-      "mean_score": 58.67,
-      "score_spread": 50,
-      "valid_product_count": 3
+      "mean_score": 45.0,
+      "score_spread": 52,
+      "valid_product_count": 4
     }
   ],
   "rules": {
@@ -617,31 +617,29 @@
       "basis": "table_stakes requires at least 3 scored products at or above 70",
       "dimension": "code_intelligence",
       "evaluated_scores": {
-        "CodeGeeX": 26,
-        "Cursor": 74,
-        "GitHub Copilot": 63,
-        "Trae": 26,
-        "通义灵码": 74
+        "CodeGeeX": 39,
+        "GitHub Copilot": 48,
+        "Trae": 34,
+        "通义灵码": 70
       },
       "minimum_valid_products": 3,
-      "qualifying_product_count": 2,
+      "qualifying_product_count": 1,
       "qualifying_products": [
-        "Cursor",
         "通义灵码"
       ],
       "score_threshold": 70,
       "status": "not_table_stakes",
-      "valid_product_count": 5
+      "valid_product_count": 4
     },
     {
       "basis": "table_stakes requires at least 3 scored products at or above 70",
       "dimension": "agent_context",
       "evaluated_scores": {
-        "CodeGeeX": 26,
-        "Cursor": 74,
-        "GitHub Copilot": 58,
-        "Trae": 26,
-        "通义灵码": 74
+        "CodeGeeX": 27,
+        "Cursor": 73,
+        "GitHub Copilot": 65,
+        "Trae": 23,
+        "通义灵码": 80
       },
       "minimum_valid_products": 3,
       "qualifying_product_count": 2,
@@ -657,10 +655,10 @@
       "basis": "table_stakes requires at least 3 scored products at or above 70",
       "dimension": "ide_ecosystem",
       "evaluated_scores": {
-        "CodeGeeX": 26,
-        "Cursor": 74,
-        "GitHub Copilot": 58,
-        "Trae": 26,
+        "CodeGeeX": 42,
+        "Cursor": 72,
+        "GitHub Copilot": 61,
+        "Trae": 36,
         "通义灵码": 74
       },
       "minimum_valid_products": 3,
@@ -677,11 +675,11 @@
       "basis": "table_stakes requires at least 3 scored products at or above 70",
       "dimension": "model_extensibility",
       "evaluated_scores": {
-        "CodeGeeX": 26,
+        "CodeGeeX": 50,
         "Cursor": 74,
-        "GitHub Copilot": 67,
-        "Trae": 26,
-        "通义灵码": 74
+        "GitHub Copilot": 63,
+        "Trae": 20,
+        "通义灵码": 76
       },
       "minimum_valid_products": 3,
       "qualifying_product_count": 2,
@@ -697,34 +695,15 @@
       "basis": "table_stakes requires at least 3 scored products at or above 70",
       "dimension": "performance_cost",
       "evaluated_scores": {
-        "GitHub Copilot": 76,
-        "Trae": 26,
-        "通义灵码": 74
+        "Cursor": 57,
+        "GitHub Copilot": 74,
+        "Trae": 42,
+        "通义灵码": 64
       },
       "minimum_valid_products": 3,
-      "qualifying_product_count": 2,
+      "qualifying_product_count": 1,
       "qualifying_products": [
-        "GitHub Copilot",
-        "通义灵码"
-      ],
-      "score_threshold": 70,
-      "status": "not_table_stakes",
-      "valid_product_count": 3
-    },
-    {
-      "basis": "table_stakes requires at least 3 scored products at or above 70",
-      "dimension": "security_compliance",
-      "evaluated_scores": {
-        "Cursor": 74,
-        "GitHub Copilot": 53,
-        "Trae": 26,
-        "通义灵码": 74
-      },
-      "minimum_valid_products": 3,
-      "qualifying_product_count": 2,
-      "qualifying_products": [
-        "Cursor",
-        "通义灵码"
+        "GitHub Copilot"
       ],
       "score_threshold": 70,
       "status": "not_table_stakes",
@@ -732,21 +711,42 @@
     },
     {
       "basis": "table_stakes requires at least 3 scored products at or above 70",
-      "dimension": "education_fit",
+      "dimension": "security_compliance",
       "evaluated_scores": {
-        "CodeGeeX": 26,
-        "GitHub Copilot": 76,
-        "通义灵码": 74
+        "CodeGeeX": 47,
+        "Cursor": 75,
+        "GitHub Copilot": 78,
+        "Trae": 33,
+        "通义灵码": 78
       },
       "minimum_valid_products": 3,
-      "qualifying_product_count": 2,
+      "qualifying_product_count": 3,
       "qualifying_products": [
+        "Cursor",
         "GitHub Copilot",
         "通义灵码"
       ],
       "score_threshold": 70,
+      "status": "table_stakes",
+      "valid_product_count": 5
+    },
+    {
+      "basis": "table_stakes requires at least 3 scored products at or above 70",
+      "dimension": "education_fit",
+      "evaluated_scores": {
+        "CodeGeeX": 22,
+        "GitHub Copilot": 74,
+        "Trae": 34,
+        "通义灵码": 50
+      },
+      "minimum_valid_products": 3,
+      "qualifying_product_count": 1,
+      "qualifying_products": [
+        "GitHub Copilot"
+      ],
+      "score_threshold": 70,
       "status": "not_table_stakes",
-      "valid_product_count": 3
+      "valid_product_count": 4
     }
   ]
 }

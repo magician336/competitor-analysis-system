@@ -1299,10 +1299,8 @@ def _configured_json_document_item(
             str(configuration.get("publish_time_field") or ""),
         )
     )
-    author_value = _json_path(
-        document,
-        str(configuration.get("author_field") or ""),
-    )
+    author_field = configuration.get("author_field")
+    author_value = _json_path(document, author_field) if author_field else None
     raw_version, product_version = extract_version(title, content[:1_000])
     return CleanedItem(
         title=title,

@@ -1,5 +1,5 @@
 {
-  "analysis_mode": "rules",
+  "analysis_mode": "hybrid",
   "analysis_window": {
     "as_of": "2026-07-20T23:59:59.999999+00:00",
     "end_time": "2026-07-20T23:59:59.999999+00:00",
@@ -17,7 +17,7 @@
     "通义灵码",
     "CodeGeeX"
   ],
-  "degraded_card_count": 9,
+  "degraded_card_count": 12,
   "effective_analysis_mode_counts": {
     "price": {
       "hybrid": 0,
@@ -25,17 +25,17 @@
       "rules": 5
     },
     "product": {
-      "hybrid": 0,
+      "hybrid": 13,
       "llm": 0,
-      "rules": 15
+      "rules": 4
     },
     "risk": {
-      "hybrid": 0,
+      "hybrid": 12,
       "llm": 0,
-      "rules": 15
+      "rules": 2
     }
   },
-  "evidence_backed_card_count": 26,
+  "evidence_backed_card_count": 24,
   "files": {
     "all": [
       "manifest.json",
@@ -62,11 +62,11 @@
     "traces": "trace_summaries.json",
     "workflows": "workflow_summary.json"
   },
-  "generated_at": "2026-07-21T08:46:32.777249+00:00",
+  "generated_at": "2026-07-24T05:10:40.233601+00:00",
   "input_sha256": {
     "cleaned_data": {
       "path": "data/cleaned/documents.jsonl",
-      "sha256": "sha256:92b1cb46737c496e59c9cb1ce09f9664c18879f0a794db0d23c95f2ae88f93d1"
+      "sha256": "sha256:c6c5ea0f53f8c991b7368e08bc404dcb05138b0dbe44a4f3eeda64b88dfbbc69"
     },
     "scoring": {
       "path": "config/scoring.yaml",
@@ -77,16 +77,16 @@
       "sha256": "sha256:d87c1e56011995c0e110dc8e0a4f1ba73312027b00962c10657a536acfd20aaf"
     }
   },
-  "intelligence_card_count": 35,
+  "intelligence_card_count": 36,
   "mini_rag": {
     "embedding_compatible": true,
     "embedding_dimension": 1024,
-    "embedding_model": "hash-embedding/coderadar-v1",
+    "embedding_model": "sentence-transformers/BAAI/bge-m3",
     "index": "coderadar_chunks_current",
-    "indexed_chunks": 2052,
-    "physical_index": "coderadar_chunks_v20260721084613520361"
+    "indexed_chunks": 3165,
+    "physical_index": "coderadar_chunks_v20260724041659408492"
   },
-  "requested_analysis_mode": "rules",
+  "requested_analysis_mode": "hybrid",
   "scoring_version": "week3-evidence-v2",
   "snapshot_count": 5,
   "top_k": 8,

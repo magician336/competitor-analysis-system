@@ -4,13 +4,13 @@
     {
       "check_id": "environment",
       "details": {
-        "conda_environment": "base",
-        "conda_prefix": "E:\\Software\\Scoop\\apps\\miniconda3\\current",
+        "conda_environment": "CodeRadar",
+        "conda_prefix": "E:\\Software\\Scoop\\apps\\miniconda3\\current\\envs\\CodeRadar",
         "python_executable": "E:\\Software\\Scoop\\apps\\miniconda3\\current\\envs\\CodeRadar\\python.exe",
         "python_version": "3.11.9"
       },
-      "message": "active Conda environment is 'base', not 'CodeRadar'",
-      "status": "warning"
+      "message": "Python and Conda environment metadata recorded",
+      "status": "pass"
     },
     {
       "check_id": "langchain_and_agents",
@@ -72,7 +72,7 @@
         },
         "artifact_version": "week3-baseline-v2",
         "briefing_count": 5,
-        "card_count": 35,
+        "card_count": 36,
         "comparison": {
           "artifact_version": "week3-comparison-v1",
           "baseline_coverage_ratio": 0.0,
@@ -89,7 +89,7 @@
         "scoring_version": "week3-evidence-v2",
         "snapshot_count": 5,
         "trace_count": 15,
-        "unknown_product_version_count": 3,
+        "unknown_product_version_count": 2,
         "workflow_count": 5
       },
       "message": "Manifest, cards, snapshots, workflows, traces and briefings are consistent",
@@ -97,18 +97,18 @@
     }
   ],
   "environment": {
-    "conda_environment": "base",
-    "conda_prefix": "E:\\Software\\Scoop\\apps\\miniconda3\\current",
+    "conda_environment": "CodeRadar",
+    "conda_prefix": "E:\\Software\\Scoop\\apps\\miniconda3\\current\\envs\\CodeRadar",
     "python_executable": "E:\\Software\\Scoop\\apps\\miniconda3\\current\\envs\\CodeRadar\\python.exe",
     "python_version": "3.11.9"
   },
   "failed_count": 0,
-  "generated_at": "2026-07-23T14:20:47.115966Z",
+  "generated_at": "2026-07-24T05:12:06.776440Z",
   "live_llm_requested": false,
   "offline": true,
-  "passed_count": 4,
+  "passed_count": 5,
   "project_root": "D:\\code_warehouse\\Curriculum\\InternshipTraining\\Proj\\competitor-analysis-system",
   "report_version": "week3-acceptance-v1",
   "status": "accepted",
-  "warning_count": 1
+  "warning_count": 0
 }

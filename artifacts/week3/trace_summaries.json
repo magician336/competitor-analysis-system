@@ -4,1273 +4,2730 @@
     "card_ids": [
       "card_770e850115da66739641"
     ],
-    "duration_ms": 181.0433999999077,
+    "duration_ms": 811.4369999998416,
     "error": null,
-    "rag_query_id": "qry_f7fc95e6a74c461aa90944d1578de182",
+    "rag_query_id": "qry_7b63b7ea894b4f82b0320ac761dbd28e",
     "status": "success",
     "trace": {
       "agent_kind": "price",
-      "duration_ms": 180.875,
+      "duration_ms": 811.245,
       "events": [
         {
-          "at": "2026-07-21T08:46:32.214211+00:00",
+          "at": "2026-07-24T05:06:13.184662+00:00",
           "event": "start",
           "stage": "RunnableSequence"
         },
         {
-          "at": "2026-07-21T08:46:32.214211+00:00",
+          "at": "2026-07-24T05:06:13.184662+00:00",
           "event": "start",
           "stage": "price_prepare"
         },
         {
-          "at": "2026-07-21T08:46:32.214211+00:00",
+          "at": "2026-07-24T05:06:13.184662+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.214211+00:00",
+          "at": "2026-07-24T05:06:13.184662+00:00",
           "event": "start",
           "stage": "price_rag_tool"
         },
         {
-          "at": "2026-07-21T08:46:32.214211+00:00",
+          "at": "2026-07-24T05:06:13.184662+00:00",
           "event": "start",
           "stage": "retrieve_price_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.214211+00:00",
+          "at": "2026-07-24T05:06:13.184662+00:00",
           "event": "start",
           "stage": "retrieve_price_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.397627+00:00",
+          "at": "2026-07-24T05:06:13.995768+00:00",
           "event": "end",
           "stage": "retrieve_price_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.397627+00:00",
+          "at": "2026-07-24T05:06:13.995768+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.397627+00:00",
+          "at": "2026-07-24T05:06:13.995768+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.397627+00:00",
+          "at": "2026-07-24T05:06:13.995768+00:00",
           "event": "start",
           "stage": "price_guard_and_structure"
         },
         {
-          "at": "2026-07-21T08:46:32.398630+00:00",
+          "at": "2026-07-24T05:06:13.995768+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.398630+00:00",
+          "at": "2026-07-24T05:06:13.995768+00:00",
           "event": "end",
           "stage": "chain"
         }
       ],
       "fallback_used": false,
       "llm_used": false,
-      "model_name": null,
-      "trace_id": "trace_2bda763b4c50417ebdd700d662f7659d"
+      "model_name": "deepseek-chat",
+      "trace_id": "trace_47b2513836874133a47ab068bdf742e1"
     },
     "warnings": [
+      "configured Cross-Encoder was not used; backend=uninitialised; error=None",
       "no RAG evidence matched the Agent request"
     ],
-    "workflow_id": "workflow_9c94c11bb99776cdb6cb3e1b"
+    "workflow_id": "workflow_e6d53b4c0165c1a76b318418"
   },
   {
     "branch": "product",
     "card_ids": [
-      "card_d66fc5ed3849e7b2292c",
-      "card_9890b400d9398d547eca",
-      "card_93556130fc937fef7132",
-      "card_bf4941b9a6ab55d301f4",
-      "card_c80f35a1585e08893081"
+      "card_827a4b34f95a20e6a981",
+      "card_dafd0739d904fa06b89b",
+      "card_d2b5420154cc4c751132",
+      "card_f9f43e9b88850f6d4934",
+      "card_a2de2b83b93deaa4e9c4"
     ],
-    "duration_ms": 180.24549999972805,
+    "duration_ms": 56759.32060000014,
     "error": null,
-    "rag_query_id": "qry_569d61c610a54d1b81c1f2d48c04aa70",
+    "rag_query_id": "qry_ce388a35f7c64760b728aad0f9dd2b58",
     "status": "success",
     "trace": {
       "agent_kind": "product",
-      "duration_ms": 179.935,
+      "duration_ms": 56758.451,
       "events": [
         {
-          "at": "2026-07-21T08:46:32.220565+00:00",
+          "at": "2026-07-24T05:06:13.184662+00:00",
           "event": "start",
           "stage": "RunnableSequence"
         },
         {
-          "at": "2026-07-21T08:46:32.220565+00:00",
+          "at": "2026-07-24T05:06:13.184662+00:00",
           "event": "start",
           "stage": "product_prepare"
         },
         {
-          "at": "2026-07-21T08:46:32.220565+00:00",
+          "at": "2026-07-24T05:06:13.184662+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.220565+00:00",
+          "at": "2026-07-24T05:06:13.184662+00:00",
           "event": "start",
           "stage": "product_rag_tool"
         },
         {
-          "at": "2026-07-21T08:46:32.220565+00:00",
+          "at": "2026-07-24T05:06:13.184662+00:00",
           "event": "start",
           "stage": "retrieve_product_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.220565+00:00",
+          "at": "2026-07-24T05:06:13.184662+00:00",
           "event": "start",
           "stage": "retrieve_product_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.399528+00:00",
+          "at": "2026-07-24T05:06:24.513515+00:00",
           "event": "end",
           "stage": "retrieve_product_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.400044+00:00",
+          "at": "2026-07-24T05:06:24.513515+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.400044+00:00",
+          "at": "2026-07-24T05:06:24.513515+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.400044+00:00",
+          "at": "2026-07-24T05:06:24.513515+00:00",
           "event": "start",
           "stage": "product_guard_and_structure"
         },
         {
-          "at": "2026-07-21T08:46:32.401116+00:00",
+          "at": "2026-07-24T05:06:24.523006+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:06:24.523006+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:06:24.523006+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:06:24.523006+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.401116+00:00",
+          "at": "2026-07-24T05:06:24.527011+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:06:34.400808+00:00",
+          "event": "end",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:06:34.402553+00:00",
+          "event": "start",
+          "stage": "PydanticOutputParser"
+        },
+        {
+          "at": "2026-07-24T05:06:34.402553+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:06:34.402553+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:06:34.402553+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:06:34.404558+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:06:34.404558+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:06:34.404558+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:06:34.404558+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:06:34.406563+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:06:44.258116+00:00",
+          "event": "end",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:06:44.258116+00:00",
+          "event": "start",
+          "stage": "PydanticOutputParser"
+        },
+        {
+          "at": "2026-07-24T05:06:44.258116+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:06:44.258116+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:06:44.258116+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:06:44.264149+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:06:44.264149+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:06:44.264149+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:06:44.264149+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:06:44.268164+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:06:55.211007+00:00",
+          "event": "end",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:06:55.211007+00:00",
+          "event": "start",
+          "stage": "PydanticOutputParser"
+        },
+        {
+          "at": "2026-07-24T05:06:55.211007+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:06:55.211007+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:06:55.211007+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:06:55.211007+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:06:55.211007+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:06:55.211007+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:06:55.211007+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:06:55.211007+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:07:01.170928+00:00",
+          "event": "end",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:07:01.170928+00:00",
+          "event": "start",
+          "stage": "PydanticOutputParser"
+        },
+        {
+          "at": "2026-07-24T05:07:01.172939+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:01.172939+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:01.172939+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:01.178401+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:07:01.178909+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:07:01.178909+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:07:01.178909+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:01.182944+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:07:09.945368+00:00",
+          "event": "end",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:07:09.945368+00:00",
+          "event": "start",
+          "stage": "PydanticOutputParser"
+        },
+        {
+          "at": "2026-07-24T05:07:09.945368+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:09.945368+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:09.945368+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:09.945368+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:09.945368+00:00",
           "event": "end",
           "stage": "chain"
         }
       ],
       "fallback_used": false,
-      "llm_used": false,
-      "model_name": null,
-      "trace_id": "trace_ef39166dfa0944619e41549944a1c5f7"
+      "llm_used": true,
+      "model_name": "deepseek-chat",
+      "trace_id": "trace_33d6ef8d67724b358d67aced730d9899"
     },
     "warnings": [
       "event card limit applied: retained 5 of 7 evidence events"
     ],
-    "workflow_id": "workflow_9c94c11bb99776cdb6cb3e1b"
+    "workflow_id": "workflow_e6d53b4c0165c1a76b318418"
   },
   {
     "branch": "risk",
     "card_ids": [
       "card_0a882a682d88a0f3e9a8"
     ],
-    "duration_ms": 195.32609999805572,
+    "duration_ms": 806.4809000002242,
     "error": null,
-    "rag_query_id": "qry_f35afeb896b44ea0b68d2dc5f63a9f90",
+    "rag_query_id": "qry_0b275280973b4b73b70eef585352a3c6",
     "status": "success",
     "trace": {
       "agent_kind": "risk",
-      "duration_ms": 195.212,
+      "duration_ms": 806.342,
       "events": [
         {
-          "at": "2026-07-21T08:46:32.220565+00:00",
+          "at": "2026-07-24T05:06:13.192186+00:00",
           "event": "start",
           "stage": "RunnableSequence"
         },
         {
-          "at": "2026-07-21T08:46:32.220565+00:00",
+          "at": "2026-07-24T05:06:13.192186+00:00",
           "event": "start",
           "stage": "risk_prepare"
         },
         {
-          "at": "2026-07-21T08:46:32.223117+00:00",
+          "at": "2026-07-24T05:06:13.192186+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.223117+00:00",
+          "at": "2026-07-24T05:06:13.192186+00:00",
           "event": "start",
           "stage": "risk_rag_tool"
         },
         {
-          "at": "2026-07-21T08:46:32.223117+00:00",
+          "at": "2026-07-24T05:06:13.192186+00:00",
           "event": "start",
           "stage": "retrieve_risk_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.223117+00:00",
+          "at": "2026-07-24T05:06:13.192186+00:00",
           "event": "start",
           "stage": "retrieve_risk_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.416977+00:00",
+          "at": "2026-07-24T05:06:13.997771+00:00",
           "event": "end",
           "stage": "retrieve_risk_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.416977+00:00",
+          "at": "2026-07-24T05:06:13.997771+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.416977+00:00",
+          "at": "2026-07-24T05:06:13.997771+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.416977+00:00",
+          "at": "2026-07-24T05:06:13.997771+00:00",
           "event": "start",
           "stage": "risk_guard_and_structure"
         },
         {
-          "at": "2026-07-21T08:46:32.416977+00:00",
+          "at": "2026-07-24T05:06:13.997771+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.416977+00:00",
+          "at": "2026-07-24T05:06:13.997771+00:00",
           "event": "end",
           "stage": "chain"
         }
       ],
       "fallback_used": false,
       "llm_used": false,
-      "model_name": null,
-      "trace_id": "trace_4ca22d5165b74507957b9f1206a6c964"
+      "model_name": "deepseek-chat",
+      "trace_id": "trace_6638f3eb22d24190bcdaad107f01fe3a"
     },
     "warnings": [
+      "configured Cross-Encoder was not used; backend=uninitialised; error=None",
       "no RAG evidence matched the Agent request"
     ],
-    "workflow_id": "workflow_9c94c11bb99776cdb6cb3e1b"
+    "workflow_id": "workflow_e6d53b4c0165c1a76b318418"
   },
   {
     "branch": "price",
     "card_ids": [
       "card_7edf6c57f7390efa8d45"
     ],
-    "duration_ms": 99.96420000243234,
+    "duration_ms": 646.6679000000113,
     "error": null,
-    "rag_query_id": "qry_70cc96d7257c403bb2cd8ae94605ba74",
+    "rag_query_id": "qry_20fbbe1e3cf4417781d41cde20a8008e",
     "status": "success",
     "trace": {
       "agent_kind": "price",
-      "duration_ms": 99.82,
+      "duration_ms": 646.415,
       "events": [
         {
-          "at": "2026-07-21T08:46:32.420965+00:00",
+          "at": "2026-07-24T05:07:09.961259+00:00",
           "event": "start",
           "stage": "RunnableSequence"
         },
         {
-          "at": "2026-07-21T08:46:32.420965+00:00",
+          "at": "2026-07-24T05:07:09.961259+00:00",
           "event": "start",
           "stage": "price_prepare"
         },
         {
-          "at": "2026-07-21T08:46:32.420965+00:00",
+          "at": "2026-07-24T05:07:09.961259+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.420965+00:00",
+          "at": "2026-07-24T05:07:09.961259+00:00",
           "event": "start",
           "stage": "price_rag_tool"
         },
         {
-          "at": "2026-07-21T08:46:32.420965+00:00",
+          "at": "2026-07-24T05:07:09.963264+00:00",
           "event": "start",
           "stage": "retrieve_price_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.420965+00:00",
+          "at": "2026-07-24T05:07:09.963264+00:00",
           "event": "start",
           "stage": "retrieve_price_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.522107+00:00",
+          "at": "2026-07-24T05:07:10.607104+00:00",
           "event": "end",
           "stage": "retrieve_price_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.522107+00:00",
+          "at": "2026-07-24T05:07:10.607104+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.522107+00:00",
+          "at": "2026-07-24T05:07:10.607104+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.522107+00:00",
+          "at": "2026-07-24T05:07:10.607104+00:00",
           "event": "start",
           "stage": "price_guard_and_structure"
         },
         {
-          "at": "2026-07-21T08:46:32.522623+00:00",
+          "at": "2026-07-24T05:07:10.607104+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.522623+00:00",
+          "at": "2026-07-24T05:07:10.607104+00:00",
           "event": "end",
           "stage": "chain"
         }
       ],
       "fallback_used": false,
       "llm_used": false,
-      "model_name": null,
-      "trace_id": "trace_d9278dc591fe40d2baaa36e21ef9bdac"
+      "model_name": "deepseek-chat",
+      "trace_id": "trace_d7bc5d62bfbe4ebcb66c06e1cc05a4db"
     },
     "warnings": [
       "no RAG evidence matched the Agent request"
     ],
-    "workflow_id": "workflow_b3d49db94af8d898db965bb9"
+    "workflow_id": "workflow_ff9e25782d5890ebb985f053"
   },
   {
     "branch": "product",
     "card_ids": [
-      "card_e554f4cf5e630a85507e",
-      "card_dd43b0b49fe7a4a44796",
-      "card_e606f50a239bc4525cda"
+      "card_a0725a075ffd2281e5c3",
+      "card_88a3245f753a3f7623b9",
+      "card_eeb2db0b66ba8aeeae37",
+      "card_6b53db59d7bdb9ae1169",
+      "card_0f45de182da362e45121"
     ],
-    "duration_ms": 105.66689999905066,
+    "duration_ms": 103956.05599999998,
     "error": null,
-    "rag_query_id": "qry_df28b3ee28d94748becc38fdd640a82a",
+    "rag_query_id": "qry_2aa4213488c4412ebca4c1a680b1ed24",
     "status": "success",
     "trace": {
       "agent_kind": "product",
-      "duration_ms": 105.438,
+      "duration_ms": 103955.394,
       "events": [
         {
-          "at": "2026-07-21T08:46:32.420965+00:00",
+          "at": "2026-07-24T05:07:09.967272+00:00",
           "event": "start",
           "stage": "RunnableSequence"
         },
         {
-          "at": "2026-07-21T08:46:32.420965+00:00",
+          "at": "2026-07-24T05:07:09.967272+00:00",
           "event": "start",
           "stage": "product_prepare"
         },
         {
-          "at": "2026-07-21T08:46:32.420965+00:00",
+          "at": "2026-07-24T05:07:09.967272+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.420965+00:00",
+          "at": "2026-07-24T05:07:09.967272+00:00",
           "event": "start",
           "stage": "product_rag_tool"
         },
         {
-          "at": "2026-07-21T08:46:32.420965+00:00",
+          "at": "2026-07-24T05:07:09.967272+00:00",
           "event": "start",
           "stage": "retrieve_product_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.420965+00:00",
+          "at": "2026-07-24T05:07:09.967272+00:00",
           "event": "start",
           "stage": "retrieve_product_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.525101+00:00",
+          "at": "2026-07-24T05:07:11.390572+00:00",
           "event": "end",
           "stage": "retrieve_product_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.525101+00:00",
+          "at": "2026-07-24T05:07:11.390572+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.525101+00:00",
+          "at": "2026-07-24T05:07:11.390572+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.525101+00:00",
+          "at": "2026-07-24T05:07:11.390572+00:00",
           "event": "start",
           "stage": "product_guard_and_structure"
         },
         {
-          "at": "2026-07-21T08:46:32.525101+00:00",
-          "event": "end",
-          "stage": "chain"
-        },
-        {
-          "at": "2026-07-21T08:46:32.525101+00:00",
-          "event": "end",
-          "stage": "chain"
-        }
-      ],
-      "fallback_used": false,
-      "llm_used": false,
-      "model_name": null,
-      "trace_id": "trace_517cb7bab1514a87a7276124b4e4fc3f"
-    },
-    "warnings": [],
-    "workflow_id": "workflow_b3d49db94af8d898db965bb9"
-  },
-  {
-    "branch": "risk",
-    "card_ids": [
-      "card_dd6408f2b2ab82fc6a4d",
-      "card_c3f7251adb85d79a3cb8",
-      "card_4b845938dbd6e6559d43",
-      "card_a1ea614de0a69c9e6245",
-      "card_734901bbb9c8a2ca7488"
-    ],
-    "duration_ms": 101.09729999749106,
-    "error": null,
-    "rag_query_id": "qry_5553b43166a949db824300329a256344",
-    "status": "success",
-    "trace": {
-      "agent_kind": "risk",
-      "duration_ms": 100.809,
-      "events": [
-        {
-          "at": "2026-07-21T08:46:32.426972+00:00",
+          "at": "2026-07-24T05:07:11.394578+00:00",
           "event": "start",
           "stage": "RunnableSequence"
         },
         {
-          "at": "2026-07-21T08:46:32.426972+00:00",
+          "at": "2026-07-24T05:07:11.394578+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:07:11.394578+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:07:11.394578+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:11.398583+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:07:21.190224+00:00",
+          "event": "end",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:07:21.190224+00:00",
+          "event": "start",
+          "stage": "PydanticOutputParser"
+        },
+        {
+          "at": "2026-07-24T05:07:21.190224+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:21.190224+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:21.190224+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:21.194258+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:07:21.194258+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:07:21.194258+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:07:21.196265+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:21.199280+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:07:28.630601+00:00",
+          "event": "end",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:07:28.630601+00:00",
+          "event": "start",
+          "stage": "PydanticOutputParser"
+        },
+        {
+          "at": "2026-07-24T05:07:28.630601+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:28.630601+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:28.630601+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:28.633190+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:07:28.633588+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:07:28.633588+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:07:28.633588+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:28.638134+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:07:38.357314+00:00",
+          "event": "end",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:07:38.357314+00:00",
+          "event": "start",
+          "stage": "PydanticOutputParser"
+        },
+        {
+          "at": "2026-07-24T05:07:38.357831+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:38.357831+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:38.357831+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:38.359689+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:07:38.359689+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:07:38.359689+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:07:38.359689+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:38.361693+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:07:49.793665+00:00",
+          "event": "error",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:07:49.793665+00:00",
+          "event": "error",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:51.665849+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:07:51.665849+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:07:51.666357+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:51.668361+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:08:03.295180+00:00",
+          "event": "error",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:08:03.295180+00:00",
+          "event": "error",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:08:05.664117+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:08:05.664117+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:08:05.664117+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:08:05.666121+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:08:17.144963+00:00",
+          "event": "error",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:08:17.144963+00:00",
+          "event": "error",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:08:17.144963+00:00",
+          "event": "error",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:08:17.144963+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:08:17.144963+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:08:17.144963+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:08:17.144963+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:08:17.144963+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:08:28.354771+00:00",
+          "event": "error",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:08:28.354771+00:00",
+          "event": "error",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:08:29.527170+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:08:29.527170+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:08:29.527170+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:08:29.530988+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:08:40.561396+00:00",
+          "event": "error",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:08:40.561396+00:00",
+          "event": "error",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:08:42.784323+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:08:42.784323+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:08:42.784323+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:08:42.788344+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:08:53.921654+00:00",
+          "event": "error",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:08:53.921654+00:00",
+          "event": "error",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:08:53.921654+00:00",
+          "event": "error",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:08:53.921654+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:08:53.921654+00:00",
+          "event": "end",
+          "stage": "chain"
+        }
+      ],
+      "fallback_used": true,
+      "llm_used": true,
+      "model_name": "deepseek-chat",
+      "trace_id": "trace_a93a6924c90743179975d464d8a0b570"
+    },
+    "warnings": [
+      "event card limit applied: retained 5 of 6 evidence events",
+      "LLM structured-output fallback to deterministic rules for event card_6b53db59d7bdb9ae1169: LengthFinishReasonError: Could not parse response content as the length limit was reached - CompletionUsage(completion_tokens=1600, prompt_tokens=2838, total_tokens=4438, completion_tokens_details=None, prompt_tokens_details=PromptTokensDetails(audio_tokens=None, cache_write_tokens=None, cached_tokens=2816), prompt_cache_hit_tokens=2816, prompt_cache_miss_tokens=22)",
+      "LLM structured-output fallback to deterministic rules for event card_0f45de182da362e45121: LengthFinishReasonError: Could not parse response content as the length limit was reached - CompletionUsage(completion_tokens=1600, prompt_tokens=2054, total_tokens=3654, completion_tokens_details=None, prompt_tokens_details=PromptTokensDetails(audio_tokens=None, cache_write_tokens=None, cached_tokens=2048), prompt_cache_hit_tokens=2048, prompt_cache_miss_tokens=6)"
+    ],
+    "workflow_id": "workflow_ff9e25782d5890ebb985f053"
+  },
+  {
+    "branch": "risk",
+    "card_ids": [
+      "card_4f52ca1b00c08ecc9164",
+      "card_c5ea66e98a2ef6eeea54",
+      "card_d95a24a09c9a6e813649",
+      "card_9cae1700b127c70ec195"
+    ],
+    "duration_ms": 33212.42110000003,
+    "error": null,
+    "rag_query_id": "qry_dac29518498a4e7ba82d31950b81619c",
+    "status": "success",
+    "trace": {
+      "agent_kind": "risk",
+      "duration_ms": 33211.718,
+      "events": [
+        {
+          "at": "2026-07-24T05:07:09.970140+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:07:09.971148+00:00",
           "event": "start",
           "stage": "risk_prepare"
         },
         {
-          "at": "2026-07-21T08:46:32.426972+00:00",
+          "at": "2026-07-24T05:07:09.971148+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.426972+00:00",
+          "at": "2026-07-24T05:07:09.971148+00:00",
           "event": "start",
           "stage": "risk_rag_tool"
         },
         {
-          "at": "2026-07-21T08:46:32.426972+00:00",
+          "at": "2026-07-24T05:07:09.971148+00:00",
           "event": "start",
           "stage": "retrieve_risk_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.427477+00:00",
+          "at": "2026-07-24T05:07:09.971148+00:00",
           "event": "start",
           "stage": "retrieve_risk_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.525101+00:00",
+          "at": "2026-07-24T05:07:11.469175+00:00",
           "event": "end",
           "stage": "retrieve_risk_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.525101+00:00",
+          "at": "2026-07-24T05:07:11.469175+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.525101+00:00",
+          "at": "2026-07-24T05:07:11.469175+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.525101+00:00",
+          "at": "2026-07-24T05:07:11.469175+00:00",
           "event": "start",
           "stage": "risk_guard_and_structure"
         },
         {
-          "at": "2026-07-21T08:46:32.525101+00:00",
+          "at": "2026-07-24T05:07:11.473686+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:07:11.473686+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:07:11.473686+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:07:11.473686+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.525101+00:00",
+          "at": "2026-07-24T05:07:11.477692+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:07:20.243882+00:00",
+          "event": "end",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:07:20.243882+00:00",
+          "event": "start",
+          "stage": "PydanticOutputParser"
+        },
+        {
+          "at": "2026-07-24T05:07:20.243882+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:20.243882+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:20.243882+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:20.245889+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:07:20.245889+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:07:20.245889+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:07:20.245889+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:20.247897+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:07:28.254316+00:00",
+          "event": "end",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:07:28.254316+00:00",
+          "event": "start",
+          "stage": "PydanticOutputParser"
+        },
+        {
+          "at": "2026-07-24T05:07:28.254316+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:28.254316+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:28.254316+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:28.256321+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:07:28.256321+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:07:28.256321+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:07:28.256321+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:28.258326+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:07:34.225834+00:00",
+          "event": "end",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:07:34.225834+00:00",
+          "event": "start",
+          "stage": "PydanticOutputParser"
+        },
+        {
+          "at": "2026-07-24T05:07:34.225834+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:34.225834+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:34.225834+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:34.231026+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:07:34.233035+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:07:34.233035+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:07:34.233035+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:34.237057+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:07:43.180179+00:00",
+          "event": "end",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:07:43.180179+00:00",
+          "event": "start",
+          "stage": "PydanticOutputParser"
+        },
+        {
+          "at": "2026-07-24T05:07:43.180179+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:43.180179+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:43.180179+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:43.182197+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:07:43.182197+00:00",
           "event": "end",
           "stage": "chain"
         }
       ],
       "fallback_used": false,
-      "llm_used": false,
-      "model_name": null,
-      "trace_id": "trace_af64d708defc47c69784eff1662d9177"
+      "llm_used": true,
+      "model_name": "deepseek-chat",
+      "trace_id": "trace_eb33ce34fc194ab4aeac2684978fa997"
     },
     "warnings": [],
-    "workflow_id": "workflow_b3d49db94af8d898db965bb9"
+    "workflow_id": "workflow_ff9e25782d5890ebb985f053"
   },
   {
     "branch": "price",
     "card_ids": [
       "card_98b5e1d0b7fd3586d063"
     ],
-    "duration_ms": 34.68790000260924,
+    "duration_ms": 535.186099999919,
     "error": null,
-    "rag_query_id": "qry_cf5fa89acd9b48b8858bd5eb746e76f5",
+    "rag_query_id": "qry_0282971ee7bf47f6a13552baab9be547",
     "status": "success",
     "trace": {
       "agent_kind": "price",
-      "duration_ms": 34.549,
+      "duration_ms": 534.959,
       "events": [
         {
-          "at": "2026-07-21T08:46:32.532065+00:00",
+          "at": "2026-07-24T05:08:53.933660+00:00",
           "event": "start",
           "stage": "RunnableSequence"
         },
         {
-          "at": "2026-07-21T08:46:32.532065+00:00",
+          "at": "2026-07-24T05:08:53.933660+00:00",
           "event": "start",
           "stage": "price_prepare"
         },
         {
-          "at": "2026-07-21T08:46:32.532065+00:00",
+          "at": "2026-07-24T05:08:53.933660+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.532065+00:00",
+          "at": "2026-07-24T05:08:53.933660+00:00",
           "event": "start",
           "stage": "price_rag_tool"
         },
         {
-          "at": "2026-07-21T08:46:32.532065+00:00",
+          "at": "2026-07-24T05:08:53.933660+00:00",
           "event": "start",
           "stage": "retrieve_price_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.532065+00:00",
+          "at": "2026-07-24T05:08:53.933660+00:00",
           "event": "start",
           "stage": "retrieve_price_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.567397+00:00",
+          "at": "2026-07-24T05:08:54.466630+00:00",
           "event": "end",
           "stage": "retrieve_price_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.567397+00:00",
+          "at": "2026-07-24T05:08:54.466630+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.567397+00:00",
+          "at": "2026-07-24T05:08:54.466630+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.567397+00:00",
+          "at": "2026-07-24T05:08:54.466630+00:00",
           "event": "start",
           "stage": "price_guard_and_structure"
         },
         {
-          "at": "2026-07-21T08:46:32.567397+00:00",
+          "at": "2026-07-24T05:08:54.466630+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.567397+00:00",
+          "at": "2026-07-24T05:08:54.466630+00:00",
           "event": "end",
           "stage": "chain"
         }
       ],
       "fallback_used": false,
       "llm_used": false,
-      "model_name": null,
-      "trace_id": "trace_230babf66f2d4fb5a878870872d64037"
+      "model_name": "deepseek-chat",
+      "trace_id": "trace_df6a199c96c74624acea026202fb2e28"
     },
     "warnings": [
       "no RAG evidence matched the Agent request"
     ],
-    "workflow_id": "workflow_2b42314f0476c35a2196351d"
+    "workflow_id": "workflow_603e8bb088608361316fc648"
   },
   {
     "branch": "product",
     "card_ids": [
       "card_a2cba48bc231ebaa97a4"
     ],
-    "duration_ms": 43.01760000089416,
+    "duration_ms": 568.5171000000082,
     "error": null,
-    "rag_query_id": "qry_5ba7bf27a3504092b060a76708ee18bd",
+    "rag_query_id": "qry_b08c95ddc59c4a769081042c8fdb40d5",
     "status": "success",
     "trace": {
       "agent_kind": "product",
-      "duration_ms": 42.898,
+      "duration_ms": 568.328,
       "events": [
         {
-          "at": "2026-07-21T08:46:32.532065+00:00",
+          "at": "2026-07-24T05:08:53.935587+00:00",
           "event": "start",
           "stage": "RunnableSequence"
         },
         {
-          "at": "2026-07-21T08:46:32.532065+00:00",
+          "at": "2026-07-24T05:08:53.935587+00:00",
           "event": "start",
           "stage": "product_prepare"
         },
         {
-          "at": "2026-07-21T08:46:32.532065+00:00",
+          "at": "2026-07-24T05:08:53.935587+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.532065+00:00",
+          "at": "2026-07-24T05:08:53.935587+00:00",
           "event": "start",
           "stage": "product_rag_tool"
         },
         {
-          "at": "2026-07-21T08:46:32.532065+00:00",
+          "at": "2026-07-24T05:08:53.936587+00:00",
           "event": "start",
           "stage": "retrieve_product_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.532065+00:00",
+          "at": "2026-07-24T05:08:53.936587+00:00",
           "event": "start",
           "stage": "retrieve_product_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.577881+00:00",
+          "at": "2026-07-24T05:08:54.502738+00:00",
           "event": "end",
           "stage": "retrieve_product_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.577881+00:00",
+          "at": "2026-07-24T05:08:54.502738+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.577881+00:00",
+          "at": "2026-07-24T05:08:54.502738+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.577881+00:00",
+          "at": "2026-07-24T05:08:54.502738+00:00",
           "event": "start",
           "stage": "product_guard_and_structure"
         },
         {
-          "at": "2026-07-21T08:46:32.577881+00:00",
+          "at": "2026-07-24T05:08:54.502738+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.577881+00:00",
+          "at": "2026-07-24T05:08:54.502738+00:00",
           "event": "end",
           "stage": "chain"
         }
       ],
       "fallback_used": false,
       "llm_used": false,
-      "model_name": null,
-      "trace_id": "trace_cb7045911c0140988aceb38504c72586"
+      "model_name": "deepseek-chat",
+      "trace_id": "trace_888ccf66ae9e4db0be2f938689652dd7"
     },
     "warnings": [
       "no RAG evidence matched the Agent request"
     ],
-    "workflow_id": "workflow_2b42314f0476c35a2196351d"
+    "workflow_id": "workflow_603e8bb088608361316fc648"
   },
   {
     "branch": "risk",
     "card_ids": [
-      "card_e8318b2001ad64a3ba07",
-      "card_34488a04bb9cdb932b0f",
-      "card_177cac9b743d7cbd7a97",
-      "card_9012bb1c8b72666c18e9",
-      "card_32a016695fc550ece824"
+      "card_462304385d63cdc15fea",
+      "card_4336bd486fe398e722b5",
+      "card_ab02171040d3b87f302d",
+      "card_50bcc3360f358649011f",
+      "card_0306d99d96e3f30dca3f"
     ],
-    "duration_ms": 89.18000000267057,
+    "duration_ms": 36013.96399999976,
     "error": null,
-    "rag_query_id": "qry_10c0b83f373143928f026b909aa5d08f",
+    "rag_query_id": "qry_12f0af9e6b264256b9c60ab5a5dc8aee",
     "status": "success",
     "trace": {
       "agent_kind": "risk",
-      "duration_ms": 88.9,
+      "duration_ms": 36012.902,
       "events": [
         {
-          "at": "2026-07-21T08:46:32.537982+00:00",
+          "at": "2026-07-24T05:08:53.938057+00:00",
           "event": "start",
           "stage": "RunnableSequence"
         },
         {
-          "at": "2026-07-21T08:46:32.537982+00:00",
+          "at": "2026-07-24T05:08:53.938057+00:00",
           "event": "start",
           "stage": "risk_prepare"
         },
         {
-          "at": "2026-07-21T08:46:32.537982+00:00",
+          "at": "2026-07-24T05:08:53.938623+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.537982+00:00",
+          "at": "2026-07-24T05:08:53.938623+00:00",
           "event": "start",
           "stage": "risk_rag_tool"
         },
         {
-          "at": "2026-07-21T08:46:32.537982+00:00",
+          "at": "2026-07-24T05:08:53.938623+00:00",
           "event": "start",
           "stage": "retrieve_risk_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.537982+00:00",
+          "at": "2026-07-24T05:08:53.939309+00:00",
           "event": "start",
           "stage": "retrieve_risk_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.624390+00:00",
+          "at": "2026-07-24T05:08:55.027008+00:00",
           "event": "end",
           "stage": "retrieve_risk_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.624390+00:00",
+          "at": "2026-07-24T05:08:55.027008+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.624390+00:00",
+          "at": "2026-07-24T05:08:55.027008+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.624390+00:00",
+          "at": "2026-07-24T05:08:55.027008+00:00",
           "event": "start",
           "stage": "risk_guard_and_structure"
         },
         {
-          "at": "2026-07-21T08:46:32.624390+00:00",
+          "at": "2026-07-24T05:08:55.032007+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:08:55.032007+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:08:55.032007+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:08:55.033007+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.624390+00:00",
+          "at": "2026-07-24T05:08:55.036008+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:09:02.914981+00:00",
+          "event": "end",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:09:02.914981+00:00",
+          "event": "start",
+          "stage": "PydanticOutputParser"
+        },
+        {
+          "at": "2026-07-24T05:09:02.914981+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:02.914981+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:02.914981+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:02.918744+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:09:02.918744+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:09:02.920752+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:09:02.920752+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:02.924771+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:09:11.018281+00:00",
+          "event": "end",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:09:11.018811+00:00",
+          "event": "start",
+          "stage": "PydanticOutputParser"
+        },
+        {
+          "at": "2026-07-24T05:09:11.018811+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:11.018811+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:11.019324+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:11.021365+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:09:11.021365+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:09:11.021365+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:09:11.021365+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:11.023889+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:09:17.815439+00:00",
+          "event": "end",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:09:17.815439+00:00",
+          "event": "start",
+          "stage": "PydanticOutputParser"
+        },
+        {
+          "at": "2026-07-24T05:09:17.816450+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:17.816450+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:17.816450+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:17.818546+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:09:17.818546+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:09:17.818546+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:09:17.818546+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:17.818546+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:09:23.739466+00:00",
+          "event": "end",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:09:23.739466+00:00",
+          "event": "start",
+          "stage": "PydanticOutputParser"
+        },
+        {
+          "at": "2026-07-24T05:09:23.739466+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:23.739466+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:23.739466+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:23.745009+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:09:23.745009+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:09:23.746008+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:09:23.746008+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:23.748445+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:09:29.948313+00:00",
+          "event": "end",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:09:29.948313+00:00",
+          "event": "start",
+          "stage": "PydanticOutputParser"
+        },
+        {
+          "at": "2026-07-24T05:09:29.948313+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:29.948313+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:29.948313+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:29.948313+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:29.948313+00:00",
           "event": "end",
           "stage": "chain"
         }
       ],
       "fallback_used": false,
-      "llm_used": false,
-      "model_name": null,
-      "trace_id": "trace_13603ecd81b343aa99e273d16688a78c"
+      "llm_used": true,
+      "model_name": "deepseek-chat",
+      "trace_id": "trace_bc36753ca8514d0b962f1445b2f429a9"
     },
     "warnings": [
       "event card limit applied: retained 5 of 6 evidence events"
     ],
-    "workflow_id": "workflow_2b42314f0476c35a2196351d"
+    "workflow_id": "workflow_603e8bb088608361316fc648"
   },
   {
     "branch": "price",
     "card_ids": [
       "card_4735bcad4cf02f7c80b3"
     ],
-    "duration_ms": 92.63629999986733,
+    "duration_ms": 434.24899999990885,
     "error": null,
-    "rag_query_id": "qry_32abb2581380454da5f0b130232f6621",
+    "rag_query_id": "qry_f1578c4e123c44d2bba1c405ac35f144",
     "status": "success",
     "trace": {
       "agent_kind": "price",
-      "duration_ms": 92.513,
+      "duration_ms": 434.021,
       "events": [
         {
-          "at": "2026-07-21T08:46:32.629780+00:00",
+          "at": "2026-07-24T05:09:29.964791+00:00",
           "event": "start",
           "stage": "RunnableSequence"
         },
         {
-          "at": "2026-07-21T08:46:32.629780+00:00",
+          "at": "2026-07-24T05:09:29.964791+00:00",
           "event": "start",
           "stage": "price_prepare"
         },
         {
-          "at": "2026-07-21T08:46:32.629780+00:00",
+          "at": "2026-07-24T05:09:29.964791+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.629780+00:00",
+          "at": "2026-07-24T05:09:29.964791+00:00",
           "event": "start",
           "stage": "price_rag_tool"
         },
         {
-          "at": "2026-07-21T08:46:32.629780+00:00",
+          "at": "2026-07-24T05:09:29.965791+00:00",
           "event": "start",
           "stage": "retrieve_price_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.629780+00:00",
+          "at": "2026-07-24T05:09:29.965791+00:00",
           "event": "start",
           "stage": "retrieve_price_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.721866+00:00",
+          "at": "2026-07-24T05:09:30.397413+00:00",
           "event": "end",
           "stage": "retrieve_price_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.721866+00:00",
+          "at": "2026-07-24T05:09:30.397413+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.721866+00:00",
+          "at": "2026-07-24T05:09:30.397413+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.722551+00:00",
+          "at": "2026-07-24T05:09:30.397413+00:00",
           "event": "start",
           "stage": "price_guard_and_structure"
         },
         {
-          "at": "2026-07-21T08:46:32.722551+00:00",
+          "at": "2026-07-24T05:09:30.397413+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.722551+00:00",
+          "at": "2026-07-24T05:09:30.397413+00:00",
           "event": "end",
           "stage": "chain"
         }
       ],
       "fallback_used": false,
       "llm_used": false,
-      "model_name": null,
-      "trace_id": "trace_71bccb416c494ec4b1ca953d388ef953"
+      "model_name": "deepseek-chat",
+      "trace_id": "trace_acd2e4d25ef840eaa858807c67a87a70"
     },
     "warnings": [
       "no RAG evidence matched the Agent request"
     ],
-    "workflow_id": "workflow_84eca5f7db0334804a0e19f4"
+    "workflow_id": "workflow_9b029d06dd8a79d5a37ff3b1"
   },
   {
     "branch": "product",
     "card_ids": [
-      "card_542aab2e16667e63fc6f",
-      "card_fb2ae469f9ad5ee3a884",
-      "card_4abd1d61c91aaa672d74",
-      "card_18e481b3ff18278b91a2",
-      "card_6cef6e35990001e4eede"
+      "card_4841f76457ead6c09f54",
+      "card_099c09944c0d806d5296",
+      "card_3e3a76ae3db12c6c46b7",
+      "card_1852d24b1e077a8a8241",
+      "card_6dd227bef207b3d7afd8"
     ],
-    "duration_ms": 95.54760000173701,
+    "duration_ms": 49663.69699999996,
     "error": null,
-    "rag_query_id": "qry_7268c0125bde4a6bb35556dcf56e7ba8",
+    "rag_query_id": "qry_e5a6c76efc6042749586f6325e456403",
     "status": "success",
     "trace": {
       "agent_kind": "product",
-      "duration_ms": 95.283,
+      "duration_ms": 49662.688,
       "events": [
         {
-          "at": "2026-07-21T08:46:32.629780+00:00",
+          "at": "2026-07-24T05:09:29.970867+00:00",
           "event": "start",
           "stage": "RunnableSequence"
         },
         {
-          "at": "2026-07-21T08:46:32.629780+00:00",
+          "at": "2026-07-24T05:09:29.970867+00:00",
           "event": "start",
           "stage": "product_prepare"
         },
         {
-          "at": "2026-07-21T08:46:32.629780+00:00",
+          "at": "2026-07-24T05:09:29.970867+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.629780+00:00",
+          "at": "2026-07-24T05:09:29.971898+00:00",
           "event": "start",
           "stage": "product_rag_tool"
         },
         {
-          "at": "2026-07-21T08:46:32.629780+00:00",
+          "at": "2026-07-24T05:09:29.971898+00:00",
           "event": "start",
           "stage": "retrieve_product_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.629780+00:00",
+          "at": "2026-07-24T05:09:29.971898+00:00",
           "event": "start",
           "stage": "retrieve_product_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.724873+00:00",
+          "at": "2026-07-24T05:09:30.998326+00:00",
           "event": "end",
           "stage": "retrieve_product_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.724873+00:00",
+          "at": "2026-07-24T05:09:30.998326+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.724873+00:00",
+          "at": "2026-07-24T05:09:30.998326+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.724873+00:00",
+          "at": "2026-07-24T05:09:31.000329+00:00",
           "event": "start",
           "stage": "product_guard_and_structure"
         },
         {
-          "at": "2026-07-21T08:46:32.724873+00:00",
+          "at": "2026-07-24T05:09:31.003836+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:09:31.003836+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:09:31.003836+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:09:31.003836+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.724873+00:00",
+          "at": "2026-07-24T05:09:31.007841+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:09:39.976236+00:00",
+          "event": "end",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:09:39.976236+00:00",
+          "event": "start",
+          "stage": "PydanticOutputParser"
+        },
+        {
+          "at": "2026-07-24T05:09:39.976236+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:39.976236+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:39.976236+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:39.978250+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:09:39.978250+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:09:39.978250+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:09:39.978250+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:39.980256+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:09:51.666414+00:00",
+          "event": "end",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:09:51.666414+00:00",
+          "event": "start",
+          "stage": "PydanticOutputParser"
+        },
+        {
+          "at": "2026-07-24T05:09:51.667422+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:51.667422+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:51.667422+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:51.670694+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:09:51.670694+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:09:51.670694+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:09:51.670694+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:09:51.675661+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:10:01.530088+00:00",
+          "event": "end",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:10:01.530088+00:00",
+          "event": "start",
+          "stage": "PydanticOutputParser"
+        },
+        {
+          "at": "2026-07-24T05:10:01.530088+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:10:01.530088+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:10:01.530088+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:10:01.534082+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:10:01.534586+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:10:01.534586+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:10:01.534586+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:10:01.536590+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:10:10.118472+00:00",
+          "event": "end",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:10:10.118472+00:00",
+          "event": "start",
+          "stage": "PydanticOutputParser"
+        },
+        {
+          "at": "2026-07-24T05:10:10.118472+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:10:10.118472+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:10:10.118472+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:10:10.118472+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:10:10.118472+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:10:10.118472+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:10:10.125423+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:10:10.125423+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:10:19.631142+00:00",
+          "event": "end",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:10:19.631142+00:00",
+          "event": "start",
+          "stage": "PydanticOutputParser"
+        },
+        {
+          "at": "2026-07-24T05:10:19.631142+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:10:19.631142+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:10:19.631142+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:10:19.631142+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:10:19.631142+00:00",
           "event": "end",
           "stage": "chain"
         }
       ],
       "fallback_used": false,
-      "llm_used": false,
-      "model_name": null,
-      "trace_id": "trace_ff3e1bc345064364a4e5d6a2d19c1f81"
+      "llm_used": true,
+      "model_name": "deepseek-chat",
+      "trace_id": "trace_7fbc7a1a13364e69988ae7daebce409b"
     },
     "warnings": [
       "event card limit applied: retained 5 of 8 evidence events"
     ],
-    "workflow_id": "workflow_84eca5f7db0334804a0e19f4"
+    "workflow_id": "workflow_9b029d06dd8a79d5a37ff3b1"
   },
   {
     "branch": "risk",
     "card_ids": [
       "card_9feb4c444d672f2461d5"
     ],
-    "duration_ms": 89.63300000323215,
+    "duration_ms": 421.83069999964573,
     "error": null,
-    "rag_query_id": "qry_b61a4256ea924a7aa372b6ff7bc30b9a",
+    "rag_query_id": "qry_0ee8b09a789f44568c8ca93df8da4638",
     "status": "success",
     "trace": {
       "agent_kind": "risk",
-      "duration_ms": 89.546,
+      "duration_ms": 421.613,
       "events": [
         {
-          "at": "2026-07-21T08:46:32.634021+00:00",
+          "at": "2026-07-24T05:09:29.975667+00:00",
           "event": "start",
           "stage": "RunnableSequence"
         },
         {
-          "at": "2026-07-21T08:46:32.634021+00:00",
+          "at": "2026-07-24T05:09:29.975667+00:00",
           "event": "start",
           "stage": "risk_prepare"
         },
         {
-          "at": "2026-07-21T08:46:32.634021+00:00",
+          "at": "2026-07-24T05:09:29.976179+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.634021+00:00",
+          "at": "2026-07-24T05:09:29.976179+00:00",
           "event": "start",
           "stage": "risk_rag_tool"
         },
         {
-          "at": "2026-07-21T08:46:32.634021+00:00",
+          "at": "2026-07-24T05:09:29.976179+00:00",
           "event": "start",
           "stage": "retrieve_risk_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.634021+00:00",
+          "at": "2026-07-24T05:09:29.976179+00:00",
           "event": "start",
           "stage": "retrieve_risk_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.723216+00:00",
+          "at": "2026-07-24T05:09:30.395655+00:00",
           "event": "end",
           "stage": "retrieve_risk_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.723216+00:00",
+          "at": "2026-07-24T05:09:30.395655+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.723216+00:00",
+          "at": "2026-07-24T05:09:30.395655+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.723216+00:00",
+          "at": "2026-07-24T05:09:30.396669+00:00",
           "event": "start",
           "stage": "risk_guard_and_structure"
         },
         {
-          "at": "2026-07-21T08:46:32.723216+00:00",
+          "at": "2026-07-24T05:09:30.396669+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.723216+00:00",
+          "at": "2026-07-24T05:09:30.396669+00:00",
           "event": "end",
           "stage": "chain"
         }
       ],
       "fallback_used": false,
       "llm_used": false,
-      "model_name": null,
-      "trace_id": "trace_5df50056d4554309bb23c91cc3c2f906"
+      "model_name": "deepseek-chat",
+      "trace_id": "trace_d9b5bf41c657445dbefe940f7683f360"
     },
     "warnings": [
       "no RAG evidence matched the Agent request"
     ],
-    "workflow_id": "workflow_84eca5f7db0334804a0e19f4"
+    "workflow_id": "workflow_9b029d06dd8a79d5a37ff3b1"
   },
   {
     "branch": "price",
     "card_ids": [
       "card_b6f9304509ca4fcdfba2"
     ],
-    "duration_ms": 39.57509999963804,
+    "duration_ms": 522.9527000001326,
     "error": null,
-    "rag_query_id": "qry_c56b1e0773044afb907fe96bb5c50b66",
+    "rag_query_id": "qry_1e19f771fa8c4ac199c6ef58bfd725c7",
     "status": "success",
     "trace": {
       "agent_kind": "price",
-      "duration_ms": 39.446,
+      "duration_ms": 522.701,
       "events": [
         {
-          "at": "2026-07-21T08:46:32.728998+00:00",
+          "at": "2026-07-24T05:10:19.643365+00:00",
           "event": "start",
           "stage": "RunnableSequence"
         },
         {
-          "at": "2026-07-21T08:46:32.728998+00:00",
+          "at": "2026-07-24T05:10:19.643365+00:00",
           "event": "start",
           "stage": "price_prepare"
         },
         {
-          "at": "2026-07-21T08:46:32.728998+00:00",
+          "at": "2026-07-24T05:10:19.643365+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.728998+00:00",
+          "at": "2026-07-24T05:10:19.644362+00:00",
           "event": "start",
           "stage": "price_rag_tool"
         },
         {
-          "at": "2026-07-21T08:46:32.728998+00:00",
+          "at": "2026-07-24T05:10:19.644362+00:00",
           "event": "start",
           "stage": "retrieve_price_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.728998+00:00",
+          "at": "2026-07-24T05:10:19.644362+00:00",
           "event": "start",
           "stage": "retrieve_price_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.767710+00:00",
+          "at": "2026-07-24T05:10:20.165208+00:00",
           "event": "end",
           "stage": "retrieve_price_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.769271+00:00",
+          "at": "2026-07-24T05:10:20.165208+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.769271+00:00",
+          "at": "2026-07-24T05:10:20.165208+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.769271+00:00",
+          "at": "2026-07-24T05:10:20.165735+00:00",
           "event": "start",
           "stage": "price_guard_and_structure"
         },
         {
-          "at": "2026-07-21T08:46:32.769271+00:00",
+          "at": "2026-07-24T05:10:20.166263+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.769271+00:00",
+          "at": "2026-07-24T05:10:20.166263+00:00",
           "event": "end",
           "stage": "chain"
         }
       ],
       "fallback_used": false,
       "llm_used": false,
-      "model_name": null,
-      "trace_id": "trace_d11da95cb7e24740bbb9c07f6bde82fe"
+      "model_name": "deepseek-chat",
+      "trace_id": "trace_ae5fdb33acd84e428e9791c1e18f5eaf"
     },
     "warnings": [
       "no RAG evidence matched the Agent request"
     ],
-    "workflow_id": "workflow_257d86970d4a6b113c155aba"
+    "workflow_id": "workflow_6fbf5d922b9066f05fd225cf"
   },
   {
     "branch": "product",
     "card_ids": [
       "card_f0a5f885cdd5ae35353d"
     ],
-    "duration_ms": 38.173599998117425,
+    "duration_ms": 506.03129999990415,
     "error": null,
-    "rag_query_id": "qry_e4790c24e4de4cb193067cc3c1d91070",
+    "rag_query_id": "qry_8b5a7f93af544e25bf3339bbc68d6769",
     "status": "success",
     "trace": {
       "agent_kind": "product",
-      "duration_ms": 38.054,
+      "duration_ms": 505.802,
       "events": [
         {
-          "at": "2026-07-21T08:46:32.728998+00:00",
+          "at": "2026-07-24T05:10:19.647922+00:00",
           "event": "start",
           "stage": "RunnableSequence"
         },
         {
-          "at": "2026-07-21T08:46:32.728998+00:00",
+          "at": "2026-07-24T05:10:19.647922+00:00",
           "event": "start",
           "stage": "product_prepare"
         },
         {
-          "at": "2026-07-21T08:46:32.728998+00:00",
+          "at": "2026-07-24T05:10:19.648913+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.728998+00:00",
+          "at": "2026-07-24T05:10:19.648913+00:00",
           "event": "start",
           "stage": "product_rag_tool"
         },
         {
-          "at": "2026-07-21T08:46:32.728998+00:00",
+          "at": "2026-07-24T05:10:19.648913+00:00",
           "event": "start",
           "stage": "retrieve_product_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.728998+00:00",
+          "at": "2026-07-24T05:10:19.648913+00:00",
           "event": "start",
           "stage": "retrieve_product_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.769774+00:00",
+          "at": "2026-07-24T05:10:20.152807+00:00",
           "event": "end",
           "stage": "retrieve_product_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.769774+00:00",
+          "at": "2026-07-24T05:10:20.153606+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.769774+00:00",
+          "at": "2026-07-24T05:10:20.153606+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.769774+00:00",
+          "at": "2026-07-24T05:10:20.153606+00:00",
           "event": "start",
           "stage": "product_guard_and_structure"
         },
         {
-          "at": "2026-07-21T08:46:32.770367+00:00",
+          "at": "2026-07-24T05:10:20.154121+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.770367+00:00",
+          "at": "2026-07-24T05:10:20.154121+00:00",
           "event": "end",
           "stage": "chain"
         }
       ],
       "fallback_used": false,
       "llm_used": false,
-      "model_name": null,
-      "trace_id": "trace_9c7de77519c54a67859ba2191528db3b"
+      "model_name": "deepseek-chat",
+      "trace_id": "trace_bcf95b69bf5a46a68b58d844762058ac"
     },
     "warnings": [
       "no RAG evidence matched the Agent request"
     ],
-    "workflow_id": "workflow_257d86970d4a6b113c155aba"
+    "workflow_id": "workflow_6fbf5d922b9066f05fd225cf"
   },
   {
     "branch": "risk",
     "card_ids": [
-      "card_bac80c725659bb65cf79",
-      "card_d3603602c5f093c45a42",
-      "card_347d192aeaae344bf75a"
+      "card_59ef2f5e804b82f93f7d",
+      "card_d629b10a3170293f11ae",
+      "card_6ed3209f5b544a2779f7"
     ],
-    "duration_ms": 40.49459999805549,
+    "duration_ms": 20574.70000000012,
     "error": null,
-    "rag_query_id": "qry_92bba2a73242474a998fa0406a947b04",
+    "rag_query_id": "qry_6e6af9a146ef479f9a66b8a70ef9db8a",
     "status": "success",
     "trace": {
       "agent_kind": "risk",
-      "duration_ms": 40.261,
+      "duration_ms": 20574.375,
       "events": [
         {
-          "at": "2026-07-21T08:46:32.734286+00:00",
+          "at": "2026-07-24T05:10:19.651926+00:00",
           "event": "start",
           "stage": "RunnableSequence"
         },
         {
-          "at": "2026-07-21T08:46:32.734286+00:00",
+          "at": "2026-07-24T05:10:19.652931+00:00",
           "event": "start",
           "stage": "risk_prepare"
         },
         {
-          "at": "2026-07-21T08:46:32.734286+00:00",
+          "at": "2026-07-24T05:10:19.652931+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.734286+00:00",
+          "at": "2026-07-24T05:10:19.652931+00:00",
           "event": "start",
           "stage": "risk_rag_tool"
         },
         {
-          "at": "2026-07-21T08:46:32.734286+00:00",
+          "at": "2026-07-24T05:10:19.652931+00:00",
           "event": "start",
           "stage": "retrieve_risk_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.734789+00:00",
+          "at": "2026-07-24T05:10:19.654120+00:00",
           "event": "start",
           "stage": "retrieve_risk_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.772727+00:00",
+          "at": "2026-07-24T05:10:20.350424+00:00",
           "event": "end",
           "stage": "retrieve_risk_evidence"
         },
         {
-          "at": "2026-07-21T08:46:32.772727+00:00",
+          "at": "2026-07-24T05:10:20.350424+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.772727+00:00",
+          "at": "2026-07-24T05:10:20.350424+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.772727+00:00",
+          "at": "2026-07-24T05:10:20.350846+00:00",
           "event": "start",
           "stage": "risk_guard_and_structure"
         },
         {
-          "at": "2026-07-21T08:46:32.774241+00:00",
+          "at": "2026-07-24T05:10:20.355084+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:10:20.355549+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:10:20.355549+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:10:20.355549+00:00",
           "event": "end",
           "stage": "chain"
         },
         {
-          "at": "2026-07-21T08:46:32.774241+00:00",
+          "at": "2026-07-24T05:10:20.359287+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:10:26.731391+00:00",
+          "event": "end",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:10:26.731391+00:00",
+          "event": "start",
+          "stage": "PydanticOutputParser"
+        },
+        {
+          "at": "2026-07-24T05:10:26.731391+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:10:26.731391+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:10:26.731391+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:10:26.731391+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:10:26.731391+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:10:26.731391+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:10:26.731391+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:10:26.731391+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:10:33.035018+00:00",
+          "event": "end",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:10:33.035018+00:00",
+          "event": "start",
+          "stage": "PydanticOutputParser"
+        },
+        {
+          "at": "2026-07-24T05:10:33.035018+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:10:33.035018+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:10:33.035018+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:10:33.038030+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:10:33.038030+00:00",
+          "event": "start",
+          "stage": "RunnableSequence"
+        },
+        {
+          "at": "2026-07-24T05:10:33.038030+00:00",
+          "event": "start",
+          "stage": "ChatPromptTemplate"
+        },
+        {
+          "at": "2026-07-24T05:10:33.038030+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:10:33.043784+00:00",
+          "event": "start",
+          "stage": "ChatDeepSeek"
+        },
+        {
+          "at": "2026-07-24T05:10:40.225512+00:00",
+          "event": "end",
+          "stage": "llm"
+        },
+        {
+          "at": "2026-07-24T05:10:40.225512+00:00",
+          "event": "start",
+          "stage": "PydanticOutputParser"
+        },
+        {
+          "at": "2026-07-24T05:10:40.226510+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:10:40.226510+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:10:40.226510+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:10:40.226510+00:00",
+          "event": "end",
+          "stage": "chain"
+        },
+        {
+          "at": "2026-07-24T05:10:40.226510+00:00",
           "event": "end",
           "stage": "chain"
         }
       ],
       "fallback_used": false,
-      "llm_used": false,
-      "model_name": null,
-      "trace_id": "trace_389554009cd54ee98c4bf0599669184d"
+      "llm_used": true,
+      "model_name": "deepseek-chat",
+      "trace_id": "trace_6cced7ada7fb48f59936acbb7e961bcd"
     },
     "warnings": [],
-    "workflow_id": "workflow_257d86970d4a6b113c155aba"
+    "workflow_id": "workflow_6fbf5d922b9066f05fd225cf"
   }
 ]

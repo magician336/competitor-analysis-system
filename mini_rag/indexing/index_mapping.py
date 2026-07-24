@@ -86,7 +86,7 @@ def build_index_mapping(
                 "valid_to": {"type": "date"},
                 "is_current": {"type": "boolean"},
                 "language": {"type": "keyword"},
-                "author": {"type": "keyword"},
+                "author": {"type": "keyword", "ignore_above": 1024},
                 "content_hash": {"type": "keyword"},
                 "chunk_hash": {"type": "keyword"},
                 "source_metadata": {"type": "flattened"},

@@ -28,6 +28,11 @@ from schemas.orchestration import (
     WorkflowExecutionStatus,
 )
 
+# generate_comparison is called at the end of generate_baseline() so the
+# comparison matrix always matches the freshly-produced capability snapshots.
+from .generate_week3_comparison import generate_comparison
+
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = PROJECT_ROOT / "artifacts" / "week3"
@@ -530,6 +535,27 @@ def generate_baseline(
         )
     # The manifest is the commit marker for the artifact set and is written
     # only after every listed output exists.
+    #
+    # Regenerate the cross-product comparison matrix so it always reflects the
+    # freshly-produced capability snapshots.  This avoids the common workflow
+    # mistake of re-running generate_week3_baseline without re-running
+    # generate_week3_comparison, which would leave stale snapshot IDs in the
+    # comparison directory and cause verify_week3_delivery to reject the set.
+    # The manifest does not track comparison files — those are verified directly
+    # from the comparison/ directory by verify_week3_delivery.
+    comparison_dir = output_dir / "comparison"
+    comparison_dir.mkdir(parents=True, exist_ok=True)
+    try:
+        generate_comparison(
+            snapshots_path=output_dir / "capability_snapshots.json",
+            output_dir=comparison_dir,
+            baseline_product="CodeMate Campus",
+        )
+    except Exception as exc:
+        raise RuntimeError(
+            f"comparison regeneration failed after baseline write: {exc}"
+        ) from exc
+
     _write_json(manifest_path, manifest)
     return manifest
 

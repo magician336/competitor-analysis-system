@@ -8,16 +8,18 @@
     "card_count": 7,
     "competitor": "Cursor",
     "evidence_count": 6,
-    "snapshot_coverage": 0.72,
-    "snapshot_id": "snap_654a3cadc326fde28c59",
-    "snapshot_score": 53.28,
+    "snapshot_coverage": 0.62,
+    "snapshot_id": "snap_5d3be28d4231afa4190a",
+    "snapshot_score": 43.88,
     "status": "success",
     "warnings": [
+      "price: configured Cross-Encoder was not used; backend=uninitialised; error=None",
       "price: no RAG evidence matched the Agent request",
       "product: event card limit applied: retained 5 of 7 evidence events",
+      "risk: configured Cross-Encoder was not used; backend=uninitialised; error=None",
       "risk: no RAG evidence matched the Agent request"
     ],
-    "workflow_id": "workflow_9c94c11bb99776cdb6cb3e1b"
+    "workflow_id": "workflow_e6d53b4c0165c1a76b318418"
   },
   {
     "branches": {
@@ -25,17 +27,20 @@
       "product": "success",
       "risk": "success"
     },
-    "card_count": 9,
+    "card_count": 10,
     "competitor": "GitHub Copilot",
-    "evidence_count": 16,
+    "evidence_count": 15,
     "snapshot_coverage": 1.0,
-    "snapshot_id": "snap_ed5d5e312d5f07def6b4",
-    "snapshot_score": 64.34,
+    "snapshot_id": "snap_c2499545a1d7c863d2fa",
+    "snapshot_score": 65.0,
     "status": "success",
     "warnings": [
-      "price: no RAG evidence matched the Agent request"
+      "price: no RAG evidence matched the Agent request",
+      "product: event card limit applied: retained 5 of 6 evidence events",
+      "product: LLM structured-output fallback to deterministic rules for event card_6b53db59d7bdb9ae1169: LengthFinishReasonError: Could not parse response content as the length limit was reached - CompletionUsage(completion_tokens=1600, prompt_tokens=2838, total_tokens=4438, completion_tokens_details=None, prompt_tokens_details=PromptTokensDetails(audio_tokens=None, cache_write_tokens=None, cached_tokens=2816), prompt_cache_hit_tokens=2816, prompt_cache_miss_tokens=22)",
+      "product: LLM structured-output fallback to deterministic rules for event card_0f45de182da362e45121: LengthFinishReasonError: Could not parse response content as the length limit was reached - CompletionUsage(completion_tokens=1600, prompt_tokens=2054, total_tokens=3654, completion_tokens_details=None, prompt_tokens_details=PromptTokensDetails(audio_tokens=None, cache_write_tokens=None, cached_tokens=2048), prompt_cache_hit_tokens=2048, prompt_cache_miss_tokens=6)"
     ],
-    "workflow_id": "workflow_b3d49db94af8d898db965bb9"
+    "workflow_id": "workflow_ff9e25782d5890ebb985f053"
   },
   {
     "branches": {
@@ -46,16 +51,16 @@
     "card_count": 7,
     "competitor": "Trae",
     "evidence_count": 7,
-    "snapshot_coverage": 0.82,
-    "snapshot_id": "snap_0ee24ef1d0e0aa56ae2f",
-    "snapshot_score": 21.32,
+    "snapshot_coverage": 1.0,
+    "snapshot_id": "snap_a6f76e2eca33a71ccac4",
+    "snapshot_score": 31.54,
     "status": "success",
     "warnings": [
       "price: no RAG evidence matched the Agent request",
       "product: no RAG evidence matched the Agent request",
       "risk: event card limit applied: retained 5 of 6 evidence events"
     ],
-    "workflow_id": "workflow_2b42314f0476c35a2196351d"
+    "workflow_id": "workflow_603e8bb088608361316fc648"
   },
   {
     "branches": {
@@ -67,15 +72,15 @@
     "competitor": "通义灵码",
     "evidence_count": 5,
     "snapshot_coverage": 1.0,
-    "snapshot_id": "snap_c3662393158c6db99887",
-    "snapshot_score": 74.0,
+    "snapshot_id": "snap_707f18fd8723d3e8e8d8",
+    "snapshot_score": 69.64,
     "status": "success",
     "warnings": [
       "price: no RAG evidence matched the Agent request",
       "product: event card limit applied: retained 5 of 8 evidence events",
       "risk: no RAG evidence matched the Agent request"
     ],
-    "workflow_id": "workflow_84eca5f7db0334804a0e19f4"
+    "workflow_id": "workflow_9b029d06dd8a79d5a37ff3b1"
   },
   {
     "branches": {
@@ -86,14 +91,14 @@
     "card_count": 5,
     "competitor": "CodeGeeX",
     "evidence_count": 4,
-    "snapshot_coverage": 0.78,
-    "snapshot_id": "snap_daff2b08c5201bc50cb3",
-    "snapshot_score": 20.28,
+    "snapshot_coverage": 0.9,
+    "snapshot_id": "snap_273ebc162c6e0cd60384",
+    "snapshot_score": 32.3,
     "status": "success",
     "warnings": [
       "price: no RAG evidence matched the Agent request",
       "product: no RAG evidence matched the Agent request"
     ],
-    "workflow_id": "workflow_257d86970d4a6b113c155aba"
+    "workflow_id": "workflow_6fbf5d922b9066f05fd225cf"
   }
 ]

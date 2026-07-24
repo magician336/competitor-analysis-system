@@ -11,12 +11,12 @@
   "baseline_source": "synthesized_insufficient_evidence",
   "comparison_engine": "CompareAgent.compare_snapshots",
   "current_snapshot_ids": {
-    "CodeGeeX": "snap_daff2b08c5201bc50cb3",
+    "CodeGeeX": "snap_273ebc162c6e0cd60384",
     "CodeMate Campus": "snap_364fea7f15916e0be879",
-    "Cursor": "snap_654a3cadc326fde28c59",
-    "GitHub Copilot": "snap_ed5d5e312d5f07def6b4",
-    "Trae": "snap_0ee24ef1d0e0aa56ae2f",
-    "通义灵码": "snap_c3662393158c6db99887"
+    "Cursor": "snap_5d3be28d4231afa4190a",
+    "GitHub Copilot": "snap_c2499545a1d7c863d2fa",
+    "Trae": "snap_a6f76e2eca33a71ccac4",
+    "通义灵码": "snap_707f18fd8723d3e8e8d8"
   },
   "external_products": [
     "CodeGeeX",
@@ -30,12 +30,12 @@
     "codemate_baseline_snapshot.json",
     "comparison_provenance.json"
   ],
-  "generated_at": "2026-07-23T14:19:53.447393+00:00",
+  "generated_at": "2026-07-24T05:10:40.291571+00:00",
   "inputs": {
     "baseline_snapshot": null,
     "capability_snapshots": {
       "path": "D:\\code_warehouse\\Curriculum\\InternshipTraining\\Proj\\competitor-analysis-system\\artifacts\\week3\\capability_snapshots.json",
-      "sha256": "sha256:3608959fb7e0232ed3bfaf0fb630826473b77cdc74552fa90929adae557cd684"
+      "sha256": "sha256:401a53be0446f1194fe0627a5ab4f16f10aa8eecbd819805c500265b3d58de6a"
     },
     "previous_snapshots": null
   },
