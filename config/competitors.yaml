@@ -42,6 +42,7 @@ competitors:
         evidence_level: A
         urls:
           - https://status.cursor.com/history
+          - https://status.cursor.com/history.rss
       github:
         enabled: false
         evidence_level: B
@@ -57,6 +58,7 @@ competitors:
         evidence_level: C
         urls:
           - https://forum.cursor.com/
+          - https://forum.cursor.com/latest.rss
       review:
         enabled: false
         evidence_level: C
@@ -105,6 +107,7 @@ competitors:
         evidence_level: A
         urls:
           - https://www.githubstatus.com/history
+          - https://www.githubstatus.com/history.rss
       github:
         enabled: true
         evidence_level: B

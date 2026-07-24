@@ -79,10 +79,10 @@ class TemporalVersionRanker:
         self.temporal_weight = temporal_weight
         self.version_weight = version_weight
 
-    def _recency(self, published: datetime | None, now: datetime) -> float:
-        if published is None:
+    def _recency(self, effective_time: datetime | None, now: datetime) -> float:
+        if effective_time is None:
             return 0.25
-        age_days = max(0.0, (now - published).total_seconds() / 86_400.0)
+        age_days = max(0.0, (now - effective_time).total_seconds() / 86_400.0)
         return math.exp(-math.log(2.0) * age_days / self.half_life_days)
 
     def rerank(
@@ -119,16 +119,17 @@ class TemporalVersionRanker:
         for candidate in candidates:
             chunk = chunk_of(candidate)
             published = as_datetime(get_value(chunk, "publish_time", None))
+            effective_time = published or as_datetime(get_value(chunk, "valid_from", None))
             is_current = bool(get_value(chunk, "is_current", False))
             version_ok = not versions or version_matches(get_value(chunk, "product_version", None), versions)
             current_ok = not current_only or is_current
             interval_ok = as_of_value is None or _interval_contains(chunk, as_of_value)
-            start_ok = start is None or published is None or published >= start
-            end_ok = end is None or published is None or published <= end
+            start_ok = start is None or (effective_time is not None and effective_time >= start)
+            end_ok = end is None or (effective_time is not None and effective_time <= end)
             if strict_filters and not (version_ok and current_ok and interval_ok and start_ok and end_ok):
                 continue
 
-            recency = self._recency(published, now_value)
+            recency = self._recency(effective_time, now_value)
             if as_of_value is not None:
                 time_score = 1.0 if interval_ok else 0.0
             elif latest_intent:

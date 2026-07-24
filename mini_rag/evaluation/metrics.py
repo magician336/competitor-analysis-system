@@ -117,11 +117,17 @@ def _matches_filter(item: Any, name: str, expected: Any) -> bool:
     if name == "current_only":
         return not bool(expected) or bool(get_value(source, "is_current", False))
     if name == "start_time":
-        published, boundary = as_datetime(get_value(source, "publish_time", None)), as_datetime(expected)
-        return published is not None and boundary is not None and published >= boundary
+        effective_time = as_datetime(get_value(source, "publish_time", None)) or as_datetime(
+            get_value(source, "valid_from", None)
+        )
+        boundary = as_datetime(expected)
+        return effective_time is not None and boundary is not None and effective_time >= boundary
     if name == "end_time":
-        published, boundary = as_datetime(get_value(source, "publish_time", None)), as_datetime(expected)
-        return published is not None and boundary is not None and published <= boundary
+        effective_time = as_datetime(get_value(source, "publish_time", None)) or as_datetime(
+            get_value(source, "valid_from", None)
+        )
+        boundary = as_datetime(expected)
+        return effective_time is not None and boundary is not None and effective_time <= boundary
     return True
 
 
@@ -219,4 +225,3 @@ def latency_metrics(latencies_ms: Sequence[float]) -> dict[str, float]:
 
 mrr = mean_reciprocal_rank
 ndcg = ndcg_at_k
-

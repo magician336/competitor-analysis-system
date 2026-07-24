@@ -173,7 +173,22 @@ def build_filter_clauses(filters: Any) -> list[dict[str, Any]]:
             bounds["gte"] = values["start_time"]
         if values.get("end_time") is not None:
             bounds["lte"] = values["end_time"]
-        clauses.append({"range": {"publish_time": bounds}})
+        clauses.append(
+            {
+                "bool": {
+                    "should": [
+                        {"range": {"publish_time": bounds}},
+                        {
+                            "bool": {
+                                "must_not": [{"exists": {"field": "publish_time"}}],
+                                "filter": [{"range": {"valid_from": bounds}}],
+                            }
+                        },
+                    ],
+                    "minimum_should_match": 1,
+                }
+            }
+        )
     return clauses
 
 
@@ -708,15 +723,14 @@ class InMemorySearchBackend:
             if not actual.intersection(selected):
                 return False
         published = cls._date_value(document.get("publish_time"))
+        effective_time = published or cls._date_value(document.get("valid_from"))
         start = cls._date_value(values.get("start_time"))
         end = cls._date_value(values.get("end_time"))
-        # Match Elasticsearch range semantics: a missing date does not satisfy
-        # an explicit range.
-        if (start or end) and published is None:
+        if (start or end) and effective_time is None:
             return False
-        if start and published and published < start:
+        if start and effective_time and effective_time < start:
             return False
-        if end and published and published > end:
+        if end and effective_time and effective_time > end:
             return False
         return True
 

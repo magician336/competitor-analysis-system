@@ -280,4 +280,51 @@ def test_elasticsearch_filter_dsl_covers_public_query_contract() -> None:
     assert {"term": {"is_current": True}} in clauses
     assert {"terms": {"event_type": ["pricing_change"]}} in clauses
     assert {"terms": {"dimension_tags": ["performance_cost"]}} in clauses
-    assert {"range": {"publish_time": {"gte": "2026-04-01T00:00:00Z"}}} in clauses
+    assert {
+        "bool": {
+            "should": [
+                {"range": {"publish_time": {"gte": "2026-04-01T00:00:00Z"}}},
+                {
+                    "bool": {
+                        "must_not": [{"exists": {"field": "publish_time"}}],
+                        "filter": [
+                            {"range": {"valid_from": {"gte": "2026-04-01T00:00:00Z"}}}
+                        ],
+                    }
+                },
+            ],
+            "minimum_should_match": 1,
+        }
+    } in clauses
+
+
+def test_time_filter_uses_valid_from_only_when_publish_time_is_missing() -> None:
+    backend = InMemorySearchBackend()
+    embeddings = EmbeddingService(HashEmbedding(dimension=32))
+    observed = _chunk("observed", "Current pricing snapshot").model_copy(
+        update={
+            "publish_time": None,
+            "valid_from": NOW - timedelta(days=2),
+        }
+    )
+    undated = _chunk("undated", "Snapshot without any usable time").model_copy(
+        update={"publish_time": None, "valid_from": None}
+    )
+    published_before_window = _chunk("published-old", "Old published page").model_copy(
+        update={
+            "publish_time": NOW - timedelta(days=120),
+            "valid_from": NOW - timedelta(days=1),
+        }
+    )
+    report = IndexBuilder(backend, embeddings, "chunks").build(
+        [observed, undated, published_before_window]
+    )
+    assert report.ok
+
+    filters = {
+        "start_time": NOW - timedelta(days=90),
+        "end_time": NOW,
+    }
+    hits = backend.search_bm25("chunks", "snapshot page", filters, top_k=10)
+
+    assert [hit.document_id for hit in hits] == ["observed"]

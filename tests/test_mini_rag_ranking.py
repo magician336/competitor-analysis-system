@@ -168,6 +168,38 @@ def test_temporal_ranker_honours_as_of_effective_interval() -> None:
     assert [item.chunk_id for item in ranked] == ["historical"]
 
 
+def test_temporal_ranker_uses_valid_from_for_undated_snapshots() -> None:
+    observed = make_chunk("observed", "pricing snapshot", published=NOW).model_copy(
+        update={
+            "publish_time": None,
+            "valid_from": NOW - timedelta(days=2),
+        }
+    )
+    undated = make_chunk("undated", "pricing snapshot", published=NOW).model_copy(
+        update={"publish_time": None, "valid_from": None}
+    )
+    published_before_window = make_chunk(
+        "published-old",
+        "pricing snapshot",
+        published=NOW - timedelta(days=120),
+    )
+    published_before_window.valid_from = NOW - timedelta(days=1)
+
+    ranked = TemporalVersionRanker().rerank(
+        [
+            SearchCandidate(chunk=observed),
+            SearchCandidate(chunk=undated),
+            SearchCandidate(chunk=published_before_window),
+        ],
+        "最近价格",
+        start_time=NOW - timedelta(days=90),
+        end_time=NOW,
+        now=NOW,
+    )
+
+    assert [item.chunk_id for item in ranked] == ["observed"]
+
+
 def test_historical_intent_prefers_non_current_versions_without_as_of() -> None:
     current = SearchCandidate(
         chunk=make_chunk("current", "same", published=NOW, current=True),

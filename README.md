@@ -138,6 +138,28 @@ GITHUB_TOKEN=你的本地令牌
 .\.venv\Scripts\python.exe -m scripts.data_pipeline process
 ```
 
+针对价格与开发者风险证据执行定向补采：
+
+```powershell
+.\.venv\Scripts\python.exe -m scripts.data_pipeline crawl `
+  --competitors cursor,github_copilot `
+  --sources pricing,status_page,community,github_issue `
+  --since-days 120 `
+  --max-issues 100 `
+  --max-comments 20 `
+  --force
+
+.\.venv\Scripts\python.exe -m scripts.data_pipeline process --rebuild
+.\.venv\Scripts\python.exe -m scripts.audit_evidence_coverage `
+  --competitors cursor,github_copilot `
+  --event-types pricing_change,risk_experience `
+  --window-days 90
+```
+
+覆盖审计对有发布日期的文档使用 `publish_time`，对没有发布日期的网页快照使用
+`valid_from`。输出中每个“竞品—事件类型”组合都应为 `covered`；存在 `gap` 时命令
+返回退出码 2。
+
 清洗规则或标签规则调整后，从全部现有原始响应重建派生数据：
 
 ```powershell
