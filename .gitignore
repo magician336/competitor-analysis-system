@@ -12,14 +12,14 @@ htmlcov/
 
 # Runtime output
 logs/
-data/raw/*
-data/cleaned/documents.jsonl
-data/cleaned/archive/
-data/snapshots/*
-data/runtime/*
+#data/raw/*
+#data/cleaned/documents.jsonl
+#data/cleaned/archive/
+#data/snapshots/*
+#data/runtime/*
 
 # Keep directory placeholders and committed samples
-!data/raw/.gitkeep
-!data/cleaned/.gitkeep
-!data/snapshots/.gitkeep
-!data/runtime/.gitkeep
+#!data/raw/.gitkeep
+#!data/cleaned/.gitkeep
+#!data/snapshots/.gitkeep
+#!data/runtime/.gitkeep
