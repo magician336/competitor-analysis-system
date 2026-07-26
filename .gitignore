@@ -20,6 +20,9 @@ data/cleaned/backups/
 data/cleaned/archive/
 data/snapshots/*
 data/runtime/*
+# Versioned demo database: freezes the homepage cards and capability snapshots
+# used for the shared local demonstration.
+!data/runtime/coderadar.db
 
 # Keep directory placeholders and committed samples
 !data/raw/.gitkeep
