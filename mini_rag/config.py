@@ -156,11 +156,33 @@ def load_settings(
     project_root: str | Path | None = None,
     config_path: str | Path | None = None,
 ) -> MiniRAGSettings:
-    """Load YAML configuration and apply documented environment overrides."""
+    """Load YAML configuration and apply documented environment overrides.
+
+    ``MINIRAG_PROFILE`` provides a one-shot shortcut for switching between
+    pre‑defined config bundles without setting individual overrides:
+
+    * ``default`` (or unset) → ``config/mini_rag.yaml`` (hash + lexical baseline)
+    * ``formal`` → ``config/mini_rag.formal.yaml`` (BGE‑M3 + Cross‑Encoder)
+
+    An explicit ``config_path`` argument or ``MINIRAG_CONFIG_PATH`` env var
+    takes precedence over the profile — set either one to bypass profile logic.
+    Individual ``MINIRAG_*`` environment variables (embedding provider, model,
+    reranker, …) still override the loaded YAML values regardless of profile.
+    """
 
     root = Path(project_root or Path.cwd()).resolve()
     load_dotenv(root / ".env", override=False)
-    configured = config_path or os.getenv("MINIRAG_CONFIG_PATH", "config/mini_rag.yaml")
+
+    # ── Profile shortcut ────────────────────────────────────────────────
+    # Only applies when neither caller arg nor MINIRAG_CONFIG_PATH is set.
+    configured = config_path or os.getenv("MINIRAG_CONFIG_PATH")
+    if configured is None:
+        profile = os.getenv("MINIRAG_PROFILE", "").strip().lower()
+        if profile == "formal":
+            configured = "config/mini_rag.formal.yaml"
+        else:
+            configured = "config/mini_rag.yaml"
+    # (if configured was set explicitly, use it as-is)
     path = Path(configured)
     if not path.is_absolute():
         path = root / path
