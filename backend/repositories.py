@@ -188,9 +188,13 @@ class AnalysisStore:
         payload = validated.model_dump(mode="json")
         record = self.session.get(WorkflowRecord, validated.workflow_id)
         if record is None:
-            record = WorkflowRecord(workflow_id=validated.workflow_id)
+            record = WorkflowRecord(
+                workflow_id=validated.workflow_id,
+                request_fingerprint=validated.request_fingerprint,
+            )
             self.session.add(record)
-        record.request_fingerprint = validated.request_fingerprint
+        elif record.request_fingerprint is None:
+            record.request_fingerprint = validated.request_fingerprint
         record.competitor = validated.request.competitor
         record.status = validated.status.value
         record.partial_failure = validated.partial_failure

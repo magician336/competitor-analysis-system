@@ -1,17 +1,18 @@
 import MockAdapter from "axios-mock-adapter";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import { ApiError, DEFAULT_DEMO_API_KEY, http } from "../api/client";
+import { ApiError, http } from "../api/client";
 
 describe("API client", () => {
   let mock: MockAdapter;
   beforeEach(() => { mock = new MockAdapter(http); });
   afterEach(() => mock.restore());
 
-  it("adds API key and request ID to protected requests", async () => {
+  it("uses credentials and adds a request ID without exposing an API key", async () => {
     mock.onGet("/api/cards").reply((config) => {
       const headers = config.headers as Record<string, unknown>;
-      expect(headers["X-API-Key"]).toBe(DEFAULT_DEMO_API_KEY);
+      expect(headers["X-API-Key"]).toBeUndefined();
       expect(headers["X-Request-ID"]).toBeTruthy();
+      expect(config.withCredentials).toBe(true);
       return [200, { items: [] }];
     });
     await http.get("/api/cards");

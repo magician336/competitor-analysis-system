@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
+import hashlib
 from typing import Any
 
 from sqlalchemy import delete, func, or_, select, update
@@ -58,6 +59,7 @@ class WorkflowConflictError(RuntimeError):
 @dataclass(frozen=True)
 class WorkflowClaim:
     workflow_id: str
+    request_fingerprint: str
     request: MultiAgentAnalysisRequest
     attempt: int
     deadline_at: datetime
@@ -98,15 +100,27 @@ class AsyncWorkflowRepository:
         request: MultiAgentAnalysisRequest,
         *,
         max_attempts: int = 2,
+        user_id: str | None = None,
     ) -> WorkflowSubmissionResponse:
         parsed = MultiAgentAnalysisRequest.model_validate(request)
+        owner_scope = user_id or "__api__"
+        request_fingerprint = hashlib.sha256(
+            f"{owner_scope}\0{parsed.fingerprint}".encode("utf-8")
+        ).hexdigest()
+        workflow_id = (
+            "workflow_"
+            + hashlib.sha256(
+                f"{owner_scope}\0{parsed.stable_workflow_id}".encode("utf-8")
+            ).hexdigest()[:24]
+        )
         now = _now()
         with self.analysis.transaction() as store:
             statement = (
                 sqlite_insert(WorkflowRecord)
                 .values(
-                    workflow_id=parsed.stable_workflow_id,
-                    request_fingerprint=parsed.fingerprint,
+                    workflow_id=workflow_id,
+                    user_id=user_id,
+                    request_fingerprint=request_fingerprint,
                     competitor=parsed.competitor,
                     status=WorkflowStatus.QUEUED.value,
                     partial_failure=False,
@@ -133,7 +147,7 @@ class AsyncWorkflowRepository:
             inserted = store.session.execute(statement).rowcount == 1
             record = store.session.scalar(
                 select(WorkflowRecord).where(
-                    WorkflowRecord.request_fingerprint == parsed.fingerprint
+                    WorkflowRecord.request_fingerprint == request_fingerprint
                 )
             )
             if record is None:
@@ -167,10 +181,20 @@ class AsyncWorkflowRepository:
                 submitted_at=_aware(record.submitted_at),
             )
 
-    def get(self, workflow_id: str) -> WorkflowStatusResponse:
+    def get(
+        self,
+        workflow_id: str,
+        *,
+        user_id: str | None = None,
+        machine_only: bool = False,
+    ) -> WorkflowStatusResponse:
         with self.session_factory() as session:
             record = session.get(WorkflowRecord, workflow_id)
-            if record is None:
+            if (
+                record is None
+                or (user_id is not None and record.user_id != user_id)
+                or (machine_only and record.user_id is not None)
+            ):
                 raise WorkflowNotFoundError(workflow_id)
             branches = list(
                 session.scalars(
@@ -250,11 +274,21 @@ class AsyncWorkflowRepository:
             error=record.error,
         )
 
-    def cancel(self, workflow_id: str) -> WorkflowActionResponse:
+    def cancel(
+        self,
+        workflow_id: str,
+        *,
+        user_id: str | None = None,
+        machine_only: bool = False,
+    ) -> WorkflowActionResponse:
         now = _now()
         with self.analysis.transaction() as store:
             record = store.session.get(WorkflowRecord, workflow_id)
-            if record is None:
+            if (
+                record is None
+                or (user_id is not None and record.user_id != user_id)
+                or (machine_only and record.user_id is not None)
+            ):
                 raise WorkflowNotFoundError(workflow_id)
             status = WorkflowStatus(record.status)
             if status == WorkflowStatus.CANCELLED:
@@ -279,11 +313,21 @@ class AsyncWorkflowRepository:
                 record.status = WorkflowStatus.CANCELLING.value
             return self._action(record, "cancellation accepted")
 
-    def retry(self, workflow_id: str) -> WorkflowActionResponse:
+    def retry(
+        self,
+        workflow_id: str,
+        *,
+        user_id: str | None = None,
+        machine_only: bool = False,
+    ) -> WorkflowActionResponse:
         now = _now()
         with self.analysis.transaction() as store:
             record = store.session.get(WorkflowRecord, workflow_id)
-            if record is None:
+            if (
+                record is None
+                or (user_id is not None and record.user_id != user_id)
+                or (machine_only and record.user_id is not None)
+            ):
                 raise WorkflowNotFoundError(workflow_id)
             status = WorkflowStatus(record.status)
             if status not in RETRYABLE_STATUSES:
@@ -505,6 +549,7 @@ class AsyncWorkflowRepository:
                 )
             return WorkflowClaim(
                 workflow_id=record.workflow_id,
+                request_fingerprint=record.request_fingerprint or request.fingerprint,
                 request=request,
                 attempt=attempt,
                 deadline_at=deadline,

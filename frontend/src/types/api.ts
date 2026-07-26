@@ -42,6 +42,19 @@ export interface ProblemDetails {
   errors: Array<Record<string, unknown>>;
 }
 
+export interface AuthUser {
+  user_id: string;
+  username: string;
+  created_at?: string;
+}
+
+export interface LoginRequest {
+  username: string;
+  password: string;
+}
+
+export interface RegisterRequest extends LoginRequest {}
+
 export interface Competitor {
   id: string;
   name: string;
@@ -86,6 +99,21 @@ export interface EvidenceReference {
   quote?: string | null;
   final_score?: number | null;
   content?: string;
+  heading_path?: string[];
+  char_start?: number;
+  char_end?: number;
+  valid_from?: string | null;
+  valid_to?: string | null;
+  is_current?: boolean;
+  bm25_rank?: number | null;
+  dense_rank?: number | null;
+  rrf_score?: number | null;
+  rerank_score?: number | null;
+  temporal_score?: number | null;
+  version_score?: number | null;
+  evidence_score?: number | null;
+  retrieval_methods?: string[];
+  metadata?: Record<string, unknown>;
 }
 
 export interface AskRequest {
@@ -106,6 +134,22 @@ export interface AskResponse {
   generated_at: string;
 }
 
+/** A compact, user-owned entry shown in the ask history list. */
+export interface AskHistorySummary {
+  ask_id: string;
+  question: string;
+  analysis_target?: string | null;
+  answer_preview?: string | null;
+  answer_mode?: AskResponse["answer_mode"] | null;
+  generated_at: string;
+}
+
+export interface AskHistoryDetail {
+  ask_id: string;
+  request: AskRequest;
+  response: AskResponse;
+}
+
 export interface AskTurn {
   turn_id: string;
   question: string;
@@ -115,6 +159,63 @@ export interface AskTurn {
   response?: AskResponse;
   error?: string;
   created_at: string;
+}
+
+export interface RAGQueryRequest {
+  question: string;
+  competitor?: string;
+  dimension_tags?: Dimension[];
+  start_time?: string;
+  end_time?: string;
+  top_k: 10;
+}
+
+export interface RAGConflict {
+  conflict_id: string;
+  field: string;
+  competitor?: string | null;
+  values: string[];
+  chunk_ids: string[];
+  preferred_chunk_id?: string | null;
+  reason: string;
+}
+
+export interface RetrievalTrace {
+  bm25_candidates: number;
+  dense_candidates: number;
+  fused_candidates: number;
+  reranked_candidates: number;
+  returned_candidates: number;
+  latency_ms: number;
+  stage_latency_ms: Record<string, number>;
+  warnings: string[];
+  retrieval_config: Record<string, unknown>;
+}
+
+export interface RAGResponse {
+  query_id: string;
+  query: string;
+  parsed_filters: Record<string, unknown>;
+  evidence: EvidenceReference[];
+  conflicts: RAGConflict[];
+  retrieval_trace: RetrievalTrace;
+}
+
+/** A compact, user-owned entry shown in the evidence-search history list. */
+export interface EvidenceHistorySummary {
+  query_id: string;
+  question: string;
+  competitor?: string | null;
+  dimension_tags?: Dimension[];
+  result_count?: number;
+  latency_ms?: number;
+  created_at: string;
+}
+
+export interface EvidenceHistoryDetail {
+  query_id: string;
+  request: RAGQueryRequest;
+  response: RAGResponse;
 }
 
 export interface IntelligenceCard extends CardSummary {
@@ -344,9 +445,100 @@ export interface SystemHealth { status: string }
 export interface ReadyStatus {
   status: string;
   index: string;
-  indexed_chunks: number;
+  physical_index?: string | null;
+  indexed_chunks: number | null;
+  embedding_model?: string;
+  embedding_dimension?: number;
+  index_embedding_model?: string | null;
+  index_embedding_dimension?: number | null;
   embedding_compatible: boolean;
-  backend: { status: string; number_of_nodes: number };
+  backend: {
+    status: string;
+    number_of_nodes?: number;
+    active_primary_shards?: number;
+    active_shards?: number;
+    unassigned_shards?: number;
+    [key: string]: unknown;
+  };
+}
+
+export interface AdminCountItem {
+  name: string;
+  count: number;
+}
+
+export interface AdminDocumentSummary {
+  document_id: string;
+  version_id: string;
+  title: string;
+  competitor: string;
+  source_type: string;
+  publish_time?: string | null;
+  updated_at?: string | null;
+  is_current: boolean;
+}
+
+export type AdminDocumentStatus = "all" | "current" | "historical" | "review";
+
+export interface AdminDocumentListItem {
+  document_id: string;
+  version_id: string;
+  title: string;
+  competitor: string;
+  source_type: string;
+  publish_time?: string | null;
+  dimension_tags: Dimension[];
+  is_current: boolean;
+  needs_review: boolean;
+}
+
+export interface AdminDocumentListQuery {
+  page?: number;
+  page_size?: number;
+  q?: string;
+  status?: AdminDocumentStatus;
+  competitor?: string;
+  source_type?: string;
+}
+
+export interface AdminOverview {
+  dataset_updated_at?: string | null;
+  stats: {
+    documents_total: number;
+    current_versions: number;
+    historical_versions: number;
+    pending_review: number;
+  };
+  distributions: {
+    competitors: Record<string, number>;
+    source_types: Record<string, number>;
+  };
+  recent_documents: AdminDocumentSummary[];
+}
+
+export type AdminImportStatus = "success" | "partial_failure" | "save_failed";
+
+export interface AdminImportResponse {
+  status: AdminImportStatus;
+  persisted: boolean;
+  documents_imported: number;
+  documents_skipped: number;
+  chunks_generated: number;
+  chunks_indexed: number;
+  chunks_skipped: number;
+  indexed_chunks_total: number | null;
+  warnings: string[];
+  errors: string[];
+}
+
+export interface AdminImportMetadata {
+  competitor?: string;
+  title?: string;
+  source_url?: string;
+  publish_time?: string;
+  dimension_tags?: Dimension[];
+  source_type?: "product_docs";
+  evidence_level?: "C";
 }
 
 export const DIMENSIONS: Array<{ key: Dimension; code: string; name: string }> = [

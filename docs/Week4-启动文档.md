@@ -83,7 +83,7 @@ CODERADAR_AUTH_ENABLED=true
 CODERADAR_API_KEY=coderadar-phase3-local-demo
 ```
 
-> **重要**：前端演示默认会使用 `coderadar-phase3-local-demo` 作为 API Key。如果你修改了 `.env` 中的 `CODERADAR_API_KEY`，也需要同步修改 `frontend/.env` 中的 `VITE_API_KEY`。
+> **重要**：前端使用登录 Cookie，不再读取 `VITE_API_KEY`；`CODERADAR_API_KEY` 只供脚本和外部 API 调用。
 
 ### 2.2 启动 Elasticsearch
 
@@ -412,7 +412,7 @@ Worker 使用单例租约，多个 Worker 不会冲突。检查：
 
 **原因**：API Key 不匹配  
 **解决**：
-- 检查 `frontend/.env` 中的 `VITE_API_KEY` 是否与后端 `CODERADAR_API_KEY` 一致
+- 浏览器请求请先登录；脚本请求则检查后端 `CODERADAR_API_KEY`
 - 或者在浏览器 sessionStorage 中设置 `apiKey`
 
 ### 5.6 前端提示 429 Too Many Requests

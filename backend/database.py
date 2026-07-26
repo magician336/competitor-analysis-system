@@ -13,7 +13,7 @@ from sqlalchemy.orm import Session, sessionmaker
 from backend.config import database_url
 
 
-ALEMBIC_HEAD_REVISION = "0003_api_closure"
+ALEMBIC_HEAD_REVISION = "0005_machine_query_ownership"
 
 
 class Database:

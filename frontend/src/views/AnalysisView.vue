@@ -174,7 +174,7 @@ onMounted(async () => {
   <div class="analysis-page route-grid" :data-analysis-mode="form.mode">
     <div class="analysis-page__glow" aria-hidden="true" />
     <div class="analysis-frame page-wide">
-      <header class="page-intro analysis-intro">
+      <header class="page-intro analysis-intro primary-page-intro">
         <span class="module-kicker">MULTI-AGENT ANALYSIS</span>
         <h1>深度报告</h1>
         <p>从一种分析方式开始，再定义范围与问题。专业 Agent 将并行工作并生成 Markdown 趋势简报。</p>
@@ -197,7 +197,7 @@ onMounted(async () => {
             <div class="wizard-stage" :data-wizard-step="currentStep">
               <transition name="wizard-step" mode="out-in">
                 <section v-if="currentStep === 'mode'" key="mode" class="wizard-pane wizard-pane--mode">
-                  <header><span>01 / MODE</span><h2>选择这次分析的深度</h2><p>模式会改变执行策略，也会成为这次工作区的视觉线索。</p></header>
+                  <header><span>01 / MODE</span><h2>选择这次分析的深度</h2></header>
                   <div class="mode-grid" role="radiogroup" aria-label="分析方式">
                     <button
                       v-for="item in modeOptions"
@@ -217,7 +217,7 @@ onMounted(async () => {
                 </section>
 
                 <section v-else-if="currentStep === 'scope'" key="scope" class="wizard-pane">
-                  <header><span>02 / SCOPE</span><h2>确定观察对象与时间窗口</h2><p>范围越明确，检索证据和能力快照越容易解释。</p></header>
+                  <header><span>02 / SCOPE</span><h2>确定观察对象与时间窗口</h2></header>
                   <div class="scope-console observable-module">
                     <label><span>分析对象</span><strong>{{ form.competitor || "尚未选择" }}</strong></label>
                     <el-select v-model="form.competitor" placeholder="选择模型或工具" size="large">
@@ -230,7 +230,7 @@ onMounted(async () => {
                 </section>
 
                 <section v-else-if="currentStep === 'task'" key="task" class="wizard-pane">
-                  <header><span>03 / TASK</span><h2>告诉 Agent 需要回答什么</h2><p>选择预设问题或输入自己的问题，并确定需要并行执行的专业分支。</p></header>
+                  <header><span>03 / TASK</span><h2>告诉 Agent 需要回答什么</h2><p>聚焦具体问题，按需选择分析视角。</p></header>
                   <div class="preset-list">
                     <button v-for="item in presets" :key="item" type="button" :class="{ active: form.question === item }" @click="form.question = item">{{ item }}</button>
                   </div>
@@ -243,17 +243,29 @@ onMounted(async () => {
                   <el-collapse class="advanced-options">
                     <el-collapse-item title="高级参数" name="advanced">
                       <div class="advanced-grid">
-                        <label>检索证据数 <el-input-number v-model="form.topK" :min="1" :max="30" /></label>
-                        <label>最大情报卡片 <el-input-number v-model="form.maxCards" :min="1" :max="30" /></label>
-                        <el-checkbox v-model="form.includeSnapshot">生成能力快照</el-checkbox>
-                        <el-checkbox v-model="form.includeBriefing">生成 Markdown 简报</el-checkbox>
+                        <label class="advanced-number-card">
+                          <span><strong>检索证据数</strong><small>控制每个分析分支可引用的证据上限</small></span>
+                          <el-input-number v-model="form.topK" :min="1" :max="30" />
+                        </label>
+                        <label class="advanced-number-card">
+                          <span><strong>最大情报卡片</strong><small>限制最终进入报告的结构化发现数量</small></span>
+                          <el-input-number v-model="form.maxCards" :min="1" :max="30" />
+                        </label>
+                        <div class="advanced-output-grid">
+                          <el-checkbox v-model="form.includeSnapshot" class="advanced-toggle">
+                            <span><strong>生成能力快照</strong><small>汇总 D1–D7 评分、覆盖率与证据数量</small></span>
+                          </el-checkbox>
+                          <el-checkbox v-model="form.includeBriefing" class="advanced-toggle">
+                            <span><strong>生成 Markdown 简报</strong><small>输出可阅读、可下载的完整趋势报告</small></span>
+                          </el-checkbox>
+                        </div>
                       </div>
                     </el-collapse-item>
                   </el-collapse>
                 </section>
 
                 <section v-else key="review" class="wizard-pane wizard-pane--review">
-                  <header><span>04 / REVIEW</span><h2>确认分析任务</h2><p>提交后将由单个 Workflow 并行执行所选专业分支。</p></header>
+                  <header><span>04 / REVIEW</span><h2>确认分析任务</h2><p>提交后将汇集相关证据，生成一份可追溯、可阅读的分析报告。</p></header>
                   <div class="review-board observable-module">
                     <div><small>分析方式</small><strong>{{ selectedMode.title }}</strong><span>{{ selectedMode.subtitle }}</span></div>
                     <div><small>分析对象</small><strong>{{ form.competitor }}</strong><span>{{ selectedTime?.label }}</span></div>
@@ -284,13 +296,12 @@ onMounted(async () => {
             </div>
             <LoadState :loading="loading" :error="error" :empty="!items.length" @retry="loadHistory">
               <el-table :data="items" class="history-table" @row-click="openHistory">
-                <el-table-column prop="competitor" label="分析对象" width="150" />
-                <el-table-column label="分析方式" width="130"><template #default="scope">{{ modeOptions.find(item => item.value === scope.row.analysis_mode)?.title || scope.row.analysis_mode }}</template></el-table-column>
-                <el-table-column label="时间范围" width="110"><template #default="scope">{{ historyTimeLabel(scope.row) }}</template></el-table-column>
-                <el-table-column label="状态" width="130"><template #default="scope"><StatusTag :status="scope.row.status" /></template></el-table-column>
-                <el-table-column label="进度" min-width="160"><template #default="scope"><el-progress :percentage="scope.row.progress" /></template></el-table-column>
-                <el-table-column prop="submitted_at" label="提交时间" min-width="190" />
-                <el-table-column label="操作" width="110"><template #default="scope"><el-button link type="primary" :loading="openingWorkflow === scope.row.workflow_id" @click.stop="openHistory(scope.row)">打开报告</el-button></template></el-table-column>
+                <el-table-column prop="competitor" label="分析对象" min-width="150" />
+                <el-table-column label="分析方式" min-width="130"><template #default="scope">{{ modeOptions.find(item => item.value === scope.row.analysis_mode)?.title || scope.row.analysis_mode }}</template></el-table-column>
+                <el-table-column label="时间范围" min-width="110"><template #default="scope">{{ historyTimeLabel(scope.row) }}</template></el-table-column>
+                <el-table-column label="状态" min-width="130"><template #default="scope"><StatusTag :status="scope.row.status" /></template></el-table-column>
+                <el-table-column prop="submitted_at" label="提交时间" width="260" />
+                <el-table-column label="" width="120"><template #default="scope"><el-button link type="primary" :loading="openingWorkflow === scope.row.workflow_id" @click.stop="openHistory(scope.row)">打开报告</el-button></template></el-table-column>
               </el-table>
               <div class="pagination"><el-pagination v-model:current-page="page" v-model:page-size="pageSize" :total="total" @change="loadHistory" /></div>
             </LoadState>

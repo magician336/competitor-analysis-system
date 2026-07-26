@@ -1,13 +1,21 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { useAppStore } from "./stores/app";
+import { useAuthStore } from "./stores/auth";
 
 const store = useAppStore();
+const auth = useAuthStore();
 const route = useRoute();
-const activeNavigation = computed(() => route.path.startsWith("/analysis") ? "/analysis" : route.path);
+const router = useRouter();
+const activeNavigation = computed(() => {
+  if (route.path.startsWith("/analysis")) return "/analysis";
+  if (route.path.startsWith("/admin")) return "/admin";
+  return route.path;
+});
 const heroProgress = ref(0);
 const homeRoute = computed(() => route.path === "/");
+const authPage = computed(() => Boolean(route.meta.authPage));
 const headerStyle = computed(() => {
   if (!homeRoute.value) return undefined;
   const progress = Math.min(1, Math.max(0, (heroProgress.value - 0.18) / 0.7));
@@ -22,24 +30,44 @@ const headerStyle = computed(() => {
 const navigation = [
   ["/", "趋势观测"],
   ["/ask", "AI 随问"],
-  ["/analysis", "深度报告"]
+  ["/evidence", "证据检索"],
+  ["/analysis", "深度报告"],
+  ["/admin", "系统管理"]
 ];
 
 function updateHeroProgress(event: Event) {
   heroProgress.value = Math.min(1, Math.max(0, Number((event as CustomEvent<number>).detail) || 0));
 }
 
+function redirectAfterUnauthorized() {
+  if (authPage.value) return;
+  auth.clearSession();
+  void router.replace({ path: "/login", query: { returnTo: route.fullPath } });
+}
+
 onMounted(() => {
-  void store.refreshStatus();
-  void store.loadCompetitors();
+  if (!authPage.value) {
+    void store.refreshStatus();
+    void store.loadCompetitors();
+  }
   window.addEventListener("coderadar:hero-progress", updateHeroProgress);
+  window.addEventListener("coderadar:unauthorized", redirectAfterUnauthorized);
 });
-onBeforeUnmount(() => window.removeEventListener("coderadar:hero-progress", updateHeroProgress));
+onBeforeUnmount(() => {
+  window.removeEventListener("coderadar:hero-progress", updateHeroProgress);
+  window.removeEventListener("coderadar:unauthorized", redirectAfterUnauthorized);
+});
+
+async function logout() {
+  await auth.logout();
+  await router.replace("/login");
+}
 </script>
 
 <template>
-  <div class="app-shell" :class="{ 'app-shell--home': homeRoute }">
+  <div class="app-shell" :class="{ 'app-shell--home': homeRoute, 'app-shell--auth': authPage }">
     <header
+      v-if="!authPage"
       class="site-header"
       :class="{ 'site-header--hero': homeRoute && heroProgress < 0.78 }"
       :style="headerStyle"
@@ -62,6 +90,10 @@ onBeforeUnmount(() => window.removeEventListener("coderadar:hero-progress", upda
             <i class="status-dot" :class="{ online: store.apiOnline }" />
             <span>{{ store.apiOnline ? "服务在线" : "服务离线" }}</span>
           </span>
+          <div v-if="auth.user" class="account-menu">
+            <span class="account-menu__name" :title="auth.user.username">{{ auth.user.username }}</span>
+            <button type="button" @click="logout">退出</button>
+          </div>
         </div>
       </div>
     </header>

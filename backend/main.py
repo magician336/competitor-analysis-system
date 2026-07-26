@@ -18,6 +18,7 @@ from backend.api_repository import (
     ApiObjectNotFound,
     get_formal_api_repository,
 )
+from backend.auth import SESSION_COOKIE_NAME, get_auth_repository
 from backend.api_security import (
     SlidingWindowRateLimiter,
     audit_target,
@@ -28,6 +29,8 @@ from backend.api_security import (
     request_id_for,
 )
 from backend.config import load_api_settings
+from backend.routers.admin import router as admin_router
+from backend.routers.auth import router as auth_router
 from backend.routers.agents import router as agents_router
 from backend.routers.ask import router as ask_router
 from backend.routers.benchmarks import router as benchmarks_router
@@ -45,11 +48,6 @@ def create_app() -> FastAPI:
         database = get_database()
         database.check_connection()
         database.check_migration()
-        api_settings = load_api_settings()
-        if api_settings.auth_enabled and not api_settings.api_key:
-            raise RuntimeError(
-                "CODERADAR_API_KEY is required when CODERADAR_AUTH_ENABLED is true"
-            )
         yield
 
     app = FastAPI(
@@ -63,7 +61,7 @@ def create_app() -> FastAPI:
     app.add_middleware(
         CORSMiddleware,
         allow_origins=list(initial_settings.cors_origins),
-        allow_credentials=False,
+        allow_credentials=True,
         allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
         allow_headers=["Content-Type", "X-API-Key", "X-Request-ID"],
         expose_headers=[
@@ -83,36 +81,64 @@ def create_app() -> FastAPI:
         call_next: Callable[[Request], Awaitable[Response]],
     ) -> Response:
         request.state.request_id = request_id_for(request)
+        request.state.user = None
+        request.state.actor_type = "anonymous"
         started = time.perf_counter()
         settings = load_api_settings()
         rate_limit: int | None = None
         remaining: int | None = None
+        if request.method.upper() == "OPTIONS":
+            return await call_next(request)
         if request.url.path.startswith("/api/"):
-            if settings.auth_enabled and not settings.api_key:
-                return problem_response(
-                    request=request,
-                    status_code=503,
-                    code="api_auth_misconfigured",
-                    title="API authentication unavailable",
-                    detail="API authentication is enabled but no server key is configured.",
-                )
-            if not authenticate(request, settings):
+            public_auth_path = request.url.path in {
+                "/api/auth/login",
+                "/api/auth/register",
+            }
+            raw_session = request.cookies.get(SESSION_COOKIE_NAME)
+            if raw_session:
+                try:
+                    provider = request.app.dependency_overrides.get(
+                        get_auth_repository,
+                        get_auth_repository,
+                    )
+                    request.state.user = provider().user_for_token(raw_session)
+                except Exception:
+                    request.state.user = None
+            api_key_valid = authenticate(request, settings)
+            if request.state.user is not None:
+                request.state.actor_type = "user"
+            elif api_key_valid:
+                request.state.actor_type = "api_key"
+            elif not settings.auth_enabled:
+                request.state.actor_type = "anonymous"
+            elif not public_auth_path:
                 return problem_response(
                     request=request,
                     status_code=401,
-                    code="invalid_api_key",
+                    code="authentication_required",
                     title="Authentication required",
-                    detail="A valid X-API-Key header is required.",
-                    headers={"WWW-Authenticate": "ApiKey"},
+                    detail="Please sign in to continue.",
+                    headers={"WWW-Authenticate": "Session, ApiKey"},
                 )
-            if settings.auth_enabled:
+            if public_auth_path:
+                rate_limit = settings.auth_rate_per_minute
+                ip = request.client.host if request.client else "unknown"
+                rate_key = f"auth:{ip}"
+            elif settings.auth_enabled:
                 rate_limit = (
                     settings.read_rate_per_minute
                     if request.method.upper() in {"GET", "HEAD", "OPTIONS"}
                     else settings.write_rate_per_minute
                 )
+                rate_key = (
+                    f"{request.method.upper()}:"
+                    f"{rate_identity(request, user_id=getattr(request.state.user, 'user_id', None))}"
+                )
+            else:
+                rate_key = ""
+            if rate_limit is not None:
                 allowed, remaining, retry_after = rate_limiter.consume(
-                    f"{request.method.upper()}:{rate_identity(request)}",
+                    rate_key,
                     limit=rate_limit,
                 )
                 if not allowed:
@@ -261,7 +287,9 @@ def create_app() -> FastAPI:
             response.status_code = status.HTTP_503_SERVICE_UNAVAILABLE
         return result
 
+    app.include_router(auth_router)
     app.include_router(rag_router)
+    app.include_router(admin_router)
     app.include_router(ask_router)
     app.include_router(agents_router)
     app.include_router(benchmarks_router)
@@ -283,11 +311,22 @@ def create_app() -> FastAPI:
             "in": "header",
             "name": "X-API-Key",
         }
+        components.setdefault("securitySchemes", {})["SessionAuth"] = {
+            "type": "apiKey",
+            "in": "cookie",
+            "name": SESSION_COOKIE_NAME,
+        }
         for path, item in schema.get("paths", {}).items():
             if path.startswith("/api/"):
                 for operation in item.values():
                     if isinstance(operation, dict):
-                        operation["security"] = [{"ApiKeyAuth": []}]
+                        if path in {"/api/auth/login", "/api/auth/register"}:
+                            operation["security"] = []
+                        else:
+                            operation["security"] = [
+                                {"SessionAuth": []},
+                                {"ApiKeyAuth": []},
+                            ]
         app.openapi_schema = schema
         return schema
 

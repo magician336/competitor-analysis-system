@@ -185,7 +185,6 @@ copy .env.example .env
 
 ```ini
 VITE_API_TARGET=http://127.0.0.1:8000
-VITE_API_KEY=coderadar-phase3-local-demo
 ```
 
 启动前端：
@@ -420,7 +419,7 @@ ValueError: DEEPSEEK_API_KEY is required for mode 'llm'
 
 ### 6.6 前端提示 401 Unauthorized
 
-**解决**：检查 `CODERADAR_API_KEY` 是否前后端一致。前端默认用 `coderadar-phase3-local-demo`。
+**解决**：浏览器端使用登录 Cookie，不需要配置 API Key；脚本调用仍需检查 `CODERADAR_API_KEY`。
 
 ### 6.7 Docker 构建时 INSTALL_ML 导致镜像过大
 

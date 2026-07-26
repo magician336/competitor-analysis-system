@@ -539,6 +539,9 @@ Invoke-RestMethod `
 | 接口 | 用途 |
 |---|---|
 | `GET /health`、`GET /ready` | 进程存活与 Mini-RAG 就绪检查 |
+| `POST /api/auth/register`、`POST /api/auth/login`、`POST /api/auth/logout` | 用户注册、登录与退出 |
+| `GET /api/auth/me` | 读取当前浏览器登录用户 |
+| `GET /api/ask/history`、`GET /api/rag/history` | 查询当前用户的随问与证据检索历史 |
 | `POST /api/rag/query` | 混合检索，返回证据、冲突和轨迹 |
 | `GET /api/rag/evidence/{chunk_id}` | 按 Chunk 读取原始证据 |
 | `GET /api/rag/trace/{query_id}` | 读取检索阶段、候选量和延迟 |
@@ -572,13 +575,15 @@ Agent 运行产生的卡片、证据、快照、Workflow、分支、Trace、简�
 确保 API、Worker 和 Elasticsearch 已启动后运行：
 
 ```powershell
+python -m alembic upgrade head
+python -m backend.seed_demo_users
 cd frontend
 Copy-Item .env.example .env.local
 npm install
 npm run dev
 ```
 
-默认打开 `http://127.0.0.1:5173`，开发代理连接 `http://127.0.0.1:8001`。如果后端使用其他端口，请在 `.env.local` 中修改 `VITE_API_TARGET`。演示前端自动使用 `VITE_API_KEY` 中的默认演示 Key，不提供浏览器输入交互；DeepSeek 密钥只保存在后端环境中。该方式只适用于本地演示，正式部署应替换密钥并改用服务端会话或网关认证。
+默认打开 `http://127.0.0.1:5173`，开发代理连接 `http://127.0.0.1:8001`。如果后端使用其他端口，请在 `.env.local` 中修改 `VITE_API_TARGET`。浏览器使用 HttpOnly Cookie 会话，不再保存或发送固定 API Key；`X-API-Key` 仅保留给脚本和外部调用。两个本地演示账号为 `coderadar_test1 / CodeRadar@2026-1` 与 `coderadar_test2 / CodeRadar@2026-2`。
 
 顶部工具栏可为新 Workflow 选择 `Rules`、`Hybrid` 或 `LLM`。选择值保存在当前浏览器会话，并随 Workflow 请求持久化；已提交任务和重试不会被后续切换影响。`Hybrid` 支持模型失败回退，`LLM` 会如实报告模型调用失败。在线模式要求 API 与 Worker 均配置 `DEEPSEEK_API_KEY`。
 

@@ -22,7 +22,9 @@ describe("art-directed application shell", () => {
       routes: [
         { path: "/", component: { template: "<div>home</div>" } },
         { path: "/ask", component: { template: "<div>ask</div>" } },
-        { path: "/analysis", component: { template: "<div>analysis</div>" } }
+        { path: "/evidence", component: { template: "<div>evidence</div>" } },
+        { path: "/analysis", component: { template: "<div>analysis</div>" } },
+        { path: "/admin", component: { template: "<div>admin</div>" } }
       ]
     });
     await router.push("/");
@@ -33,7 +35,9 @@ describe("art-directed application shell", () => {
     expect(wrapper.find(".sidebar").exists()).toBe(false);
     expect(wrapper.find(".navigation").text()).toContain("趋势观测");
     expect(wrapper.find(".navigation").text()).toContain("AI 随问");
+    expect(wrapper.find(".navigation").text()).toContain("证据检索");
     expect(wrapper.find(".navigation").text()).toContain("深度报告");
+    expect(wrapper.find(".navigation").text()).toContain("系统管理");
     expect(wrapper.find(".header-cta").exists()).toBe(false);
     const home = readFileSync(resolve(process.cwd(), "src/views/HomeView.vue"), "utf-8");
     expect(home).toContain("随便问问");

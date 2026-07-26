@@ -83,14 +83,16 @@ class SlidingWindowRateLimiter:
 
 
 def authenticate(request: Request, settings: ApiSettings) -> bool:
-    if not settings.auth_enabled:
-        return True
+    """Return whether the request supplied the configured machine API key."""
+
     supplied = request.headers.get("X-API-Key", "")
     return bool(settings.api_key) and hmac.compare_digest(supplied, settings.api_key)
 
 
-def rate_identity(request: Request) -> str:
+def rate_identity(request: Request, *, user_id: str | None = None) -> str:
     ip = request.client.host if request.client else "unknown"
+    if user_id:
+        return hashlib.sha256(f"user\0{user_id}\0{ip}".encode("utf-8")).hexdigest()
     key = request.headers.get("X-API-Key", "disabled")
     digest = hashlib.sha256(f"{key}\0{ip}".encode("utf-8")).hexdigest()
     return digest

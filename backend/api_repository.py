@@ -453,6 +453,8 @@ class FormalApiRepository:
         *,
         page: int,
         page_size: int,
+        user_id: str | None = None,
+        machine_only: bool = False,
         competitor: str | None = None,
         snapshot_id: str | None = None,
         workflow_id: str | None = None,
@@ -462,6 +464,25 @@ class FormalApiRepository:
         with self.session_factory() as session:
             statement = select(BriefingRecord)
             filters = []
+            if user_id is not None:
+                filters.append(
+                    BriefingRecord.workflow_id.in_(
+                        select(WorkflowRecord.workflow_id).where(
+                            WorkflowRecord.user_id == user_id
+                        )
+                    )
+                )
+            elif machine_only:
+                filters.append(
+                    or_(
+                        BriefingRecord.workflow_id.is_(None),
+                        BriefingRecord.workflow_id.in_(
+                            select(WorkflowRecord.workflow_id).where(
+                                WorkflowRecord.user_id.is_(None)
+                            )
+                        ),
+                    )
+                )
             if competitor:
                 filters.append(_text_equal(BriefingRecord.competitor, competitor))
             if snapshot_id:
@@ -488,10 +509,29 @@ class FormalApiRepository:
             ]
             return Page[BriefingSummary].build(items, page=page, page_size=page_size, total=total)
 
-    def briefing(self, briefing_id: str) -> BriefingDetail:
+    def briefing(
+        self,
+        briefing_id: str,
+        *,
+        user_id: str | None = None,
+        machine_only: bool = False,
+    ) -> BriefingDetail:
         with self.session_factory() as session:
             record = session.get(BriefingRecord, briefing_id)
-            if record is None:
+            owner_id = (
+                session.scalar(
+                    select(WorkflowRecord.user_id).where(
+                        WorkflowRecord.workflow_id == record.workflow_id
+                    )
+                )
+                if record is not None and record.workflow_id is not None
+                else None
+            )
+            if (
+                record is None
+                or (user_id is not None and owner_id != user_id)
+                or (machine_only and owner_id is not None)
+            ):
                 raise ApiObjectNotFound("briefing not found")
             return BriefingDetail(
                 briefing_id=record.briefing_id,
@@ -507,6 +547,8 @@ class FormalApiRepository:
         *,
         page: int,
         page_size: int,
+        user_id: str | None = None,
+        machine_only: bool = False,
         competitor: str | None = None,
         workflow_status: str | None = None,
         analysis_mode: str | None = None,
@@ -517,12 +559,19 @@ class FormalApiRepository:
         with self.session_factory() as session:
             statement = select(WorkflowRecord)
             filters = []
+            if user_id is not None:
+                filters.append(WorkflowRecord.user_id == user_id)
+            elif machine_only:
+                filters.append(WorkflowRecord.user_id.is_(None))
             if competitor:
                 filters.append(_text_equal(WorkflowRecord.competitor, competitor))
             if workflow_status:
                 filters.append(WorkflowRecord.status == workflow_status)
             if analysis_mode:
-                filters.append(WorkflowRecord.analysis_mode == analysis_mode)
+                filters.append(
+                    WorkflowRecord.request_payload["analysis_mode"].as_string()
+                    == analysis_mode
+                )
             if correlation_id:
                 filters.append(WorkflowRecord.request_payload["correlation_id"].as_string() == correlation_id)
             if submitted_from:

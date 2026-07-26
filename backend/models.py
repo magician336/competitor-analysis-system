@@ -30,6 +30,109 @@ class Base(DeclarativeBase):
     pass
 
 
+class UserRecord(Base):
+    __tablename__ = "users"
+
+    user_id: Mapped[str] = mapped_column(String(96), primary_key=True)
+    username: Mapped[str] = mapped_column(String(32), nullable=False)
+    username_normalized: Mapped[str] = mapped_column(
+        String(32), nullable=False, unique=True, index=True
+    )
+    password_hash: Mapped[str] = mapped_column(Text, nullable=False)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=utc_now, index=True
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=utc_now, onupdate=utc_now
+    )
+
+
+class UserSessionRecord(Base):
+    __tablename__ = "user_sessions"
+
+    session_id: Mapped[str] = mapped_column(String(96), primary_key=True)
+    user_id: Mapped[str] = mapped_column(
+        String(96),
+        ForeignKey("users.user_id", ondelete="CASCADE"),
+        nullable=False,
+        index=True,
+    )
+    token_hash: Mapped[str] = mapped_column(
+        String(64), nullable=False, unique=True, index=True
+    )
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=utc_now
+    )
+    expires_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, index=True
+    )
+    last_seen_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=utc_now
+    )
+
+
+class AskHistoryRecord(Base):
+    __tablename__ = "ask_histories"
+
+    ask_id: Mapped[str] = mapped_column(String(96), primary_key=True)
+    user_id: Mapped[str] = mapped_column(
+        String(96),
+        ForeignKey("users.user_id", ondelete="CASCADE"),
+        nullable=False,
+        index=True,
+    )
+    question: Mapped[str] = mapped_column(Text, nullable=False)
+    analysis_target: Mapped[str | None] = mapped_column(String(160), index=True)
+    request_payload: Mapped[dict[str, Any]] = mapped_column(JSON, nullable=False)
+    response_payload: Mapped[dict[str, Any]] = mapped_column(JSON, nullable=False)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=utc_now, index=True
+    )
+
+    __table_args__ = (
+        Index("ix_ask_histories_user_created", "user_id", "created_at", "ask_id"),
+    )
+
+
+class EvidenceHistoryRecord(Base):
+    __tablename__ = "evidence_histories"
+
+    query_id: Mapped[str] = mapped_column(String(96), primary_key=True)
+    user_id: Mapped[str] = mapped_column(
+        String(96),
+        ForeignKey("users.user_id", ondelete="CASCADE"),
+        nullable=False,
+        index=True,
+    )
+    question: Mapped[str] = mapped_column(Text, nullable=False)
+    competitor: Mapped[str | None] = mapped_column(String(160), index=True)
+    request_payload: Mapped[dict[str, Any]] = mapped_column(JSON, nullable=False)
+    response_payload: Mapped[dict[str, Any]] = mapped_column(JSON, nullable=False)
+    result_count: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    latency_ms: Mapped[float] = mapped_column(Float, nullable=False, default=0.0)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=utc_now, index=True
+    )
+
+    __table_args__ = (
+        Index(
+            "ix_evidence_histories_user_created",
+            "user_id",
+            "created_at",
+            "query_id",
+        ),
+    )
+
+
+class MachineQueryTraceRecord(Base):
+    __tablename__ = "machine_query_traces"
+
+    query_id: Mapped[str] = mapped_column(String(96), primary_key=True)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=utc_now, index=True
+    )
+
+
 class CompetitorRecord(Base):
     __tablename__ = "competitors"
 
@@ -155,6 +258,11 @@ class WorkflowRecord(Base):
     __tablename__ = "workflows"
 
     workflow_id: Mapped[str] = mapped_column(String(96), primary_key=True)
+    user_id: Mapped[str | None] = mapped_column(
+        String(96),
+        ForeignKey("users.user_id", ondelete="SET NULL"),
+        index=True,
+    )
     request_fingerprint: Mapped[str | None] = mapped_column(
         String(64)
     )
@@ -409,6 +517,7 @@ class ArtifactImportRecord(Base):
 
 __all__ = [
     "AgentTraceRecord",
+    "AskHistoryRecord",
     "ArtifactImportRecord",
     "Base",
     "BriefingRecord",
@@ -417,9 +526,13 @@ __all__ = [
     "ComparisonMatrixRecord",
     "ComparisonSnapshotRecord",
     "CompetitorRecord",
+    "EvidenceHistoryRecord",
     "IntelligenceCardRecord",
+    "MachineQueryTraceRecord",
     "ApiAuditEventRecord",
     "SnapshotCardRecord",
+    "UserRecord",
+    "UserSessionRecord",
     "WorkflowBranchRecord",
     "WorkflowAttemptRecord",
     "WorkflowBranchAttemptRecord",

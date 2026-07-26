@@ -10,13 +10,13 @@ let observer: ResizeObserver | null = null;
 let tooltip: HTMLDivElement | null = null;
 
 const fixedModelColors: Record<string, string> = {
-  Cursor: "#2f8cff",
-  "GitHub Copilot": "#7767ef",
-  Trae: "#f2a65a",
-  "通义灵码": "#42c5a5",
-  CodeGeeX: "#f36f82"
+  Cursor: "#c45d4c",
+  "GitHub Copilot": "#3f6fae",
+  Trae: "#c2923e",
+  "通义灵码": "#45a0c2",
+  CodeGeeX: "#8a72a6"
 };
-const fallbackColors = ["#2f8cff", "#7767ef", "#f2a65a", "#42c5a5", "#f36f82", "#7b8798"];
+const fallbackColors = ["#c45d4c", "#3f6fae", "#c2923e", "#45a0c2", "#8a72a6", "#b56f7f"];
 
 interface EventItem {
   card: CardSummary;
@@ -170,11 +170,11 @@ function draw() {
     .attr("transform", `translate(0,${height - margin.bottom + 8})`)
     .call(d3.axisBottom(x).ticks(Math.min(7, visible.length)).tickFormat(tickFormat as never).tickSizeOuter(0))
     .call((axis) => {
-      axis.select(".domain").attr("stroke", "#cfd4dc");
+      axis.select(".domain").attr("stroke", "#cfc9bd");
       axis.selectAll(".tick text")
         .attr("font-size", 13)
         .attr("font-family", "Source Serif 4, STZhongsong, serif")
-        .attr("fill", "#5f6672");
+        .attr("fill", "#625e57");
     });
 
   const centerY = (margin.top + height - margin.bottom) / 2;

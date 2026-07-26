@@ -23,12 +23,14 @@ langchain-core>=1.4.9,<2.0
 langchain-deepseek>=1.1,<1.2
 elasticsearch==9.4.1
 fastapi==0.139.0
+python-multipart==0.0.22
 uvicorn==0.51.0
 httpx2==2.5.0
 
 # 第四周持久化与迁移
 SQLAlchemy>=2.0,<2.1
 alembic>=1.14,<2.0
+argon2-cffi==25.1.0
 
 # 本地 Embedding 与 Cross-Encoder Reranker
 # 模型权重在首次使用时按配置下载，不进入版本库。

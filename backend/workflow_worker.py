@@ -162,6 +162,15 @@ class WorkflowWorker:
                 reusable_outcomes=reusable,
                 observer=observer,
             )
+            # The queue owns the durable, actor-scoped workflow identifier.
+            # Orchestrators still derive their in-memory ID from only the
+            # analysis request, so replace it before persistence.
+            result = result.model_copy(
+                update={
+                    "workflow_id": claim.workflow_id,
+                    "request_fingerprint": claim.request_fingerprint,
+                }
+            )
             reason = observer.stop_reason()
             if reason in {"cancelled", "timed_out"}:
                 self.repository.finalize_stopped(

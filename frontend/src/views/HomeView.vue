@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref, watch } from "vue";
-import { cardApi, comparisonApi, snapshotApi, workflowApi } from "../api/services";
+import { computed, onBeforeUnmount, onMounted, ref } from "vue";
+import { cardApi, snapshotApi } from "../api/services";
 import { errorMessage } from "../api/client";
 import { useAppStore } from "../stores/app";
 import AbilityStar from "../components/charts/AbilityStar.vue";
@@ -8,18 +8,16 @@ import CapabilityMatrix from "../components/charts/CapabilityMatrix.vue";
 import EventStream from "../components/charts/EventStream.vue";
 import SignalFieldHero from "../components/SignalFieldHero.vue";
 import LoadState from "../components/LoadState.vue";
-import type { CardDetail, CardSummary, ComparisonResponse, SnapshotDetail, SnapshotSummary, WorkflowSummary } from "../types/api";
+import { DIMENSIONS, type CardDetail, type CardSummary, type MatrixRow, type SnapshotDetail, type SnapshotSummary } from "../types/api";
 
 const store = useAppStore();
 const loading = ref(false);
 const error = ref("");
 const cards = ref<CardSummary[]>([]);
 const snapshots = ref<SnapshotSummary[]>([]);
-const latestWorkflow = ref<WorkflowSummary | null>(null);
-const comparison = ref<ComparisonResponse | null>(null);
-const selectedTarget = ref("");
 const selectedEventTarget = ref("");
-const selectedSnapshot = ref<SnapshotDetail | null>(null);
+const radarSnapshots = ref<SnapshotDetail[]>([]);
+const selectedRadarTargets = ref<string[]>([]);
 const cardDrawer = ref(false);
 const cardDetail = ref<CardDetail | null>(null);
 const heroNarrative = ref<HTMLElement | null>(null);
@@ -31,13 +29,53 @@ const visibleEvents = computed(() => cards.value.filter((item) =>
   !selectedEventTarget.value || item.competitor === selectedEventTarget.value
 ));
 const importantCards = computed(() => [...cards.value].sort((a, b) => b.priority_score - a.priority_score).slice(0, 6));
-const products = computed(() => comparison.value?.matrix.products.map((item) => item.product) || []);
-const referenceOrder = computed(() => [...(comparison.value?.matrix.products || [])]
-  .filter((item) => item.weighted_total_score !== null)
-  .sort((a, b) => Number(b.weighted_total_score) - Number(a.weighted_total_score)));
+const referenceOrder = computed(() => [...radarSeries.value]
+  .sort((a, b) => b.snapshot.total_score - a.snapshot.total_score));
 const coverageAverage = computed(() => snapshots.value.length
   ? Math.round(snapshots.value.reduce((sum, item) => sum + item.coverage_ratio, 0) / snapshots.value.length * 100)
   : 0);
+const fixedRadarSnapshots = [
+  { competitor: "Cursor", snapshotId: "snap_5ca0ec5c4426473b1f9f", color: "#a34d3c" },
+  { competitor: "GitHub Copilot", snapshotId: "snap_0196828b31425fbfe5cc", color: "#356ca3" },
+  { competitor: "Trae", snapshotId: "snap_4bda8d293a79cfb96daf", color: "#9a753d" },
+  { competitor: "通义灵码", snapshotId: "snap_bbcf612fe84b28ee33d9", color: "#3d93b8" },
+  { competitor: "CodeGeeX", snapshotId: "snap_cafabf21d1d8ab23c09e", color: "#7c71a1" }
+] as const;
+const radarSeries = computed(() => fixedRadarSnapshots.flatMap((item) => {
+  const detail = radarSnapshots.value.find((snapshot) => snapshot.snapshot.snapshot_id === item.snapshotId);
+  return detail ? [{ competitor: item.competitor, snapshot: detail.snapshot, color: item.color }] : [];
+}));
+const displayedRadarSeries = computed(() => !selectedRadarTargets.value.length
+  ? radarSeries.value
+  : radarSeries.value.filter((item) => selectedRadarTargets.value.includes(item.competitor)));
+const selectedRadarSnapshot = computed(() => selectedRadarTargets.value.length !== 1
+  ? null
+  : radarSnapshots.value.find((item) => item.snapshot.competitor === selectedRadarTargets.value[0]) || null);
+const matrixProducts = computed(() => radarSeries.value.map((item) => item.competitor));
+const matrixRows = computed<MatrixRow[]>(() => DIMENSIONS.map((dimension) => {
+  const cells = radarSeries.value.map((item) => {
+    const detail = item.snapshot.details.find((value) => value.dimension === dimension.key);
+    const scored = detail?.status === "scored";
+    return {
+      product: item.competitor,
+      dimension: dimension.key,
+      status: scored ? "scored" as const : "insufficient_evidence" as const,
+      score: scored ? detail.score : null,
+      confidence: detail?.confidence || 0,
+      evidence_count: detail?.evidence_count || 0,
+      gap_to_baseline: null,
+      delta_from_previous: null
+    };
+  });
+  const scores = cells.flatMap((cell) => cell.score === null ? [] : [cell.score]);
+  return {
+    dimension: dimension.key,
+    cells,
+    valid_product_count: scores.length,
+    mean_score: scores.length ? scores.reduce((sum, score) => sum + score, 0) / scores.length : null,
+    score_spread: scores.length ? Math.max(...scores) - Math.min(...scores) : null
+  };
+}));
 
 function clamp(value: number, min = 0, max = 1) {
   return Math.min(max, Math.max(min, value));
@@ -86,6 +124,16 @@ function updateHeroProgress() {
   window.dispatchEvent(new CustomEvent("coderadar:hero-progress", { detail: heroProgress.value }));
 }
 
+function showAllRadarTargets() {
+  selectedRadarTargets.value = [];
+}
+
+function toggleRadarTarget(competitor: string) {
+  selectedRadarTargets.value = selectedRadarTargets.value.includes(competitor)
+    ? selectedRadarTargets.value.filter((item) => item !== competitor)
+    : [...selectedRadarTargets.value, competitor];
+}
+
 function requestHeroProgress() {
   if (!scrollFrame) scrollFrame = window.requestAnimationFrame(updateHeroProgress);
 }
@@ -95,26 +143,19 @@ async function load() {
   error.value = "";
   try {
     await Promise.all([store.refreshStatus(), store.loadCompetitors()]);
-    const [cardPage, snapshotPage, workflowPage] = await Promise.all([
+    const [cardPage, snapshotPage, radarDetails] = await Promise.all([
       cardApi.list({ page: 1, page_size: 100, sort_by: "created_at", order: "desc" }),
       snapshotApi.list({ page: 1, page_size: 100 }),
-      workflowApi.list({ page: 1, page_size: 1 })
+      Promise.all(fixedRadarSnapshots.map((item) => snapshotApi.detail(item.snapshotId)))
     ]);
     cards.value = cardPage.items;
     snapshots.value = snapshotPage.items;
-    latestWorkflow.value = workflowPage.items[0] || null;
-    try { comparison.value = await comparisonApi.latest(); } catch { comparison.value = null; }
-    if (!selectedTarget.value) selectedTarget.value = snapshots.value[0]?.competitor || "";
+    radarSnapshots.value = radarDetails;
   } catch (reason) {
     error.value = errorMessage(reason);
   } finally {
     loading.value = false;
   }
-}
-
-async function loadSelectedSnapshot() {
-  const item = snapshots.value.find((snapshot) => snapshot.competitor === selectedTarget.value);
-  selectedSnapshot.value = item ? await snapshotApi.detail(item.snapshot_id) : null;
 }
 
 async function openCard(card: CardSummary) {
@@ -123,7 +164,6 @@ async function openCard(card: CardSummary) {
   try { cardDetail.value = await cardApi.detail(card.card_id); } catch { cardDetail.value = null; }
 }
 
-watch(selectedTarget, () => void loadSelectedSnapshot());
 onMounted(async () => {
   window.addEventListener("scroll", requestHeroProgress, { passive: true });
   window.addEventListener("resize", requestHeroProgress, { passive: true });
@@ -135,7 +175,6 @@ onMounted(async () => {
     }));
   }
   await load();
-  await loadSelectedSnapshot();
 });
 onBeforeUnmount(() => {
   window.cancelAnimationFrame(scrollFrame);
@@ -190,8 +229,8 @@ onBeforeUnmount(() => {
         <div class="metric-strip hero-metric-strip" aria-label="系统摘要">
           <div><span>分析对象</span><strong>{{ store.enabledCompetitors.length }}</strong><small>MODELS</small></div>
           <div><span>近期情报</span><strong>{{ cards.length }}</strong><small>SIGNALS</small></div>
+          <div><span>可追溯证据</span><strong>{{ store.ready?.indexed_chunks ?? 0 }}</strong><small>EVIDENCE</small></div>
           <div><span>平均覆盖</span><strong>{{ coverageAverage }}%</strong><small>COVERAGE</small></div>
-          <div><span>最新分析</span><strong class="metric-strip__status">{{ latestWorkflow?.status || "暂无" }}</strong><small>WORKFLOW</small></div>
         </div>
       </div>
     </section>
@@ -213,44 +252,62 @@ onBeforeUnmount(() => {
         <div class="visual-observatory">
           <section class="content-section star-section">
             <div class="section-heading">
-              <div><span class="section-index">02</span><h2>最新能力星图</h2><p>分数、置信度与证据量的组合视图</p></div>
-              <el-tag v-if="selectedSnapshot?.source_kind === 'product_definition'" type="warning">产品设计基线</el-tag>
+              <div><span class="section-index">02</span><h2>能力雷达图</h2><p>轮廓位置表示能力得分，圆点大小表示对应维度的证据数量；可同时选择多个模型进行对比。</p></div>
+              <div class="radar-switch" aria-label="能力雷达查看方式">
+                <button
+                  type="button"
+                  :class="{ active: !selectedRadarTargets.length }"
+                  @click="showAllRadarTargets"
+                >全部对比</button>
+                <button
+                  v-for="item in radarSeries"
+                  :key="item.competitor"
+                  type="button"
+                  :class="{ active: selectedRadarTargets.includes(item.competitor) }"
+                  @click="toggleRadarTarget(item.competitor)"
+                >{{ item.competitor }}</button>
+              </div>
             </div>
-            <AbilityStar :snapshot="selectedSnapshot?.snapshot || null" />
-            <div v-if="selectedSnapshot" class="metric-row">
-              <span>总分 <strong>{{ selectedSnapshot.snapshot.total_score.toFixed(1) }}</strong></span>
-              <span>覆盖率 <strong>{{ Math.round(selectedSnapshot.snapshot.coverage_ratio * 100) }}%</strong></span>
-              <span>置信度 <strong>{{ Math.round(selectedSnapshot.snapshot.overall_confidence * 100) }}%</strong></span>
+            <AbilityStar :series="displayedRadarSeries" />
+            <div class="metric-row">
+              <template v-if="selectedRadarSnapshot">
+                <span>总分 <strong>{{ selectedRadarSnapshot.snapshot.total_score.toFixed(1) }}</strong></span>
+                <span>覆盖率 <strong>{{ Math.round(selectedRadarSnapshot.snapshot.coverage_ratio * 100) }}%</strong></span>
+                <span>置信度 <strong>{{ Math.round(selectedRadarSnapshot.snapshot.overall_confidence * 100) }}%</strong></span>
+              </template>
+              <template v-else>
+                <span>对比对象 <strong>{{ radarSeries.length }}</strong></span>
+                <span>能力维度 <strong>7</strong></span>
+              </template>
             </div>
           </section>
 
           <aside class="content-section ranking-section">
-            <div class="section-heading"><div><span class="section-index">03</span><h2>参考排序</h2><p>基于最新可比较快照</p></div></div>
-            <p v-if="comparison && !comparison.official_ranking_ready" class="ranking-notice">当前数据覆盖不足，排序仅供观察。</p>
+            <div class="section-heading"><div><span class="section-index">03</span><h2>参考排序</h2><p>基于当前完整能力快照</p></div></div>
             <el-empty v-if="!referenceOrder.length" description="暂无可比较结果" />
             <ol v-else class="ranking-list">
-              <li v-for="(item, index) in referenceOrder" :key="item.product">
+              <li v-for="(item, index) in referenceOrder" :key="item.competitor">
                 <span class="ranking-index">{{ String(index + 1).padStart(2, '0') }}</span>
-                <div><strong>{{ item.product }}</strong><small>{{ item.rank_eligible ? "覆盖充分" : item.ranking_reason }}</small></div>
-                <b>{{ item.weighted_total_score?.toFixed(1) }}</b>
+                <div><strong>{{ item.competitor }}</strong><small>覆盖充分</small></div>
+                <b>{{ item.snapshot.total_score.toFixed(1) }}</b>
               </li>
             </ol>
           </aside>
         </div>
 
-        <section class="content-section">
-          <div class="section-heading"><div><span class="section-index">04</span><h2>最新能力矩阵</h2><p>N/A 表示证据不足，不参与颜色映射与平均值</p></div></div>
-          <CapabilityMatrix v-if="comparison" :rows="comparison.matrix.rows" :products="products" />
+        <section class="content-section matrix-section">
+          <div class="section-heading"><div><span class="section-index">04</span><h2>最新能力矩阵</h2><p>蓝色色阶越深表示能力得分越高，悬停可查看证据量与置信度。</p></div></div>
+          <CapabilityMatrix v-if="matrixProducts.length" :rows="matrixRows" :products="matrixProducts" />
           <el-empty v-else description="暂无能力矩阵" />
         </section>
 
         <section class="content-section changes-section">
           <div class="section-heading"><div><span class="section-index">05</span><h2>最新关键变化</h2><p>按情报优先级排列，点击查看原始证据</p></div></div>
-          <div class="signal-list">
-            <article v-for="card in importantCards" :key="card.card_id" @click="openCard(card)">
-              <div class="signal-list__index">{{ card.competitor.slice(0, 2).toUpperCase() }}</div>
-              <div><span>{{ card.competitor }} · {{ card.event_type }}</span><h3>{{ card.event_title }}</h3><p>{{ card.summary }}</p></div>
-              <div class="signal-list__meta"><strong>{{ card.priority_score }}</strong><small>PRIORITY</small><span>{{ card.evidence_count }} 条证据 · {{ Math.round(card.confidence_score * 100) }}%</span></div>
+          <div class="signal-card-grid">
+            <article v-for="(card, index) in importantCards" :key="card.card_id" class="signal-card" @click="openCard(card)">
+              <div class="signal-card__top"><span>{{ String(index + 1).padStart(2, '0') }}</span><small>{{ card.competitor }} · {{ card.event_type }}</small></div>
+              <h3>{{ card.event_title }}</h3><p>{{ card.summary }}</p>
+              <div class="signal-card__meta"><span>{{ card.evidence_count }} 条证据</span><strong>{{ Math.round(card.confidence_score * 100) }}%</strong></div>
             </article>
           </div>
         </section>

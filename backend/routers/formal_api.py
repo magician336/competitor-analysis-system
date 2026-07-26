@@ -7,8 +7,9 @@ from datetime import date, datetime
 from typing import Annotated, Literal
 
 import yaml
-from fastapi import APIRouter, Depends, Query, Response, status
+from fastapi import APIRouter, Depends, Query, Request, Response, status
 
+from backend.auth import actor_ownership
 from backend.api_repository import FormalApiRepository, get_formal_api_repository
 from backend.config import PROJECT_ROOT
 from schemas.api import (
@@ -158,6 +159,7 @@ def get_comparison(comparison_id: str, repository: FormalApiRepository = Depends
 
 @router.get("/api/briefings", response_model=Page[BriefingSummary])
 def list_briefings(
+    request: Request,
     page: PageNumber = 1,
     page_size: PageSize = 20,
     competitor: str | None = None,
@@ -167,9 +169,12 @@ def list_briefings(
     created_to: datetime | None = None,
     repository: FormalApiRepository = Depends(get_formal_api_repository),
 ) -> Page[BriefingSummary]:
+    user_id, machine_only = actor_ownership(request)
     return repository.list_briefings(
         page=page,
         page_size=page_size,
+        user_id=user_id,
+        machine_only=machine_only,
         competitor=competitor,
         snapshot_id=snapshot_id,
         workflow_id=workflow_id,
@@ -179,13 +184,27 @@ def list_briefings(
 
 
 @router.get("/api/briefings/{briefing_id}", response_model=BriefingDetail)
-def get_briefing(briefing_id: str, repository: FormalApiRepository = Depends(get_formal_api_repository)) -> BriefingDetail:
-    return repository.briefing(briefing_id)
+def get_briefing(
+    briefing_id: str,
+    request: Request,
+    repository: FormalApiRepository = Depends(get_formal_api_repository),
+) -> BriefingDetail:
+    user_id, machine_only = actor_ownership(request)
+    return repository.briefing(
+        briefing_id, user_id=user_id, machine_only=machine_only
+    )
 
 
 @router.get("/api/briefings/{briefing_id}/content", response_class=Response)
-def download_briefing(briefing_id: str, repository: FormalApiRepository = Depends(get_formal_api_repository)) -> Response:
-    briefing = repository.briefing(briefing_id)
+def download_briefing(
+    briefing_id: str,
+    request: Request,
+    repository: FormalApiRepository = Depends(get_formal_api_repository),
+) -> Response:
+    user_id, machine_only = actor_ownership(request)
+    briefing = repository.briefing(
+        briefing_id, user_id=user_id, machine_only=machine_only
+    )
     safe_name = re.sub(r"[^A-Za-z0-9_.-]", "-", briefing.briefing_id)
     return Response(
         content=briefing.markdown,
@@ -196,6 +215,7 @@ def download_briefing(briefing_id: str, repository: FormalApiRepository = Depend
 
 @router.get("/api/workflows", response_model=Page[WorkflowSummary])
 def list_workflows(
+    request: Request,
     page: PageNumber = 1,
     page_size: PageSize = 20,
     competitor: str | None = None,
@@ -206,9 +226,12 @@ def list_workflows(
     submitted_to: datetime | None = None,
     repository: FormalApiRepository = Depends(get_formal_api_repository),
 ) -> Page[WorkflowSummary]:
+    user_id, machine_only = actor_ownership(request)
     return repository.list_workflows(
         page=page,
         page_size=page_size,
+        user_id=user_id,
+        machine_only=machine_only,
         competitor=competitor,
         workflow_status=workflow_status.value if workflow_status else None,
         analysis_mode=analysis_mode,

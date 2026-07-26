@@ -2,6 +2,14 @@ import { http } from "./client";
 import type {
   AskRequest,
   AskResponse,
+  AskHistoryDetail,
+  AskHistorySummary,
+  AuthUser,
+  AdminImportMetadata,
+  AdminImportResponse,
+  AdminDocumentListItem,
+  AdminDocumentListQuery,
+  AdminOverview,
   BriefingDetail,
   BriefingSummary,
   CardDetail,
@@ -9,7 +17,13 @@ import type {
   ComparisonResponse,
   Competitor,
   EvidenceDetail,
+  EvidenceHistoryDetail,
+  EvidenceHistorySummary,
+  LoginRequest,
   Page,
+  RAGQueryRequest,
+  RAGResponse,
+  RegisterRequest,
   ReadyStatus,
   SnapshotDetail,
   SnapshotSummary,
@@ -33,9 +47,54 @@ export const systemApi = {
   ready: async () => (await http.get<ReadyStatus>("/ready")).data
 };
 
+export const authApi = {
+  register: async (payload: RegisterRequest) => (await http.post<AuthUser>("/api/auth/register", payload)).data,
+  login: async (payload: LoginRequest) => (await http.post<AuthUser>("/api/auth/login", payload)).data,
+  logout: async () => (await http.post("/api/auth/logout")).data,
+  me: async () => (await http.get<AuthUser>("/api/auth/me")).data
+};
+
+export const adminApi = {
+  overview: async () => (await http.get<AdminOverview>("/api/admin/overview")).data,
+  documents: async (params: AdminDocumentListQuery) =>
+    (await http.get<Page<AdminDocumentListItem>>("/api/admin/documents", {
+      params: cleanQuery({ ...params })
+    })).data,
+  importDocuments: async (
+    file: File,
+    metadata: AdminImportMetadata,
+    onProgress?: (percent: number) => void
+  ) => {
+    const form = new FormData();
+    form.append("file", file);
+    Object.entries(metadata).forEach(([key, raw]) => {
+      if (raw === undefined || raw === null || raw === "") return;
+      const value = Array.isArray(raw) ? JSON.stringify(raw) : String(raw);
+      form.append(key, value);
+    });
+    return (await http.post<AdminImportResponse>("/api/admin/documents/import", form, {
+      onUploadProgress: (event) => {
+        if (!event.total || !onProgress) return;
+        onProgress(Math.min(100, Math.round((event.loaded / event.total) * 100)));
+      }
+    })).data;
+  }
+};
+
 export const askApi = {
   ask: async (payload: AskRequest) =>
-    (await http.post<AskResponse>("/api/ask", payload)).data
+    (await http.post<AskResponse>("/api/ask", payload)).data,
+  history: async (params: Query = {}) =>
+    (await http.get<Page<AskHistorySummary>>("/api/ask/history", { params: cleanQuery(params) })).data,
+  detail: async (id: string) => (await http.get<AskHistoryDetail>(`/api/ask/history/${id}`)).data
+};
+
+export const ragApi = {
+  query: async (payload: RAGQueryRequest) =>
+    (await http.post<RAGResponse>("/api/rag/query", payload)).data,
+  history: async (params: Query = {}) =>
+    (await http.get<Page<EvidenceHistorySummary>>("/api/rag/history", { params: cleanQuery(params) })).data,
+  detail: async (id: string) => (await http.get<EvidenceHistoryDetail>(`/api/rag/history/${id}`)).data
 };
 
 export const competitorApi = {

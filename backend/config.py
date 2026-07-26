@@ -37,6 +37,9 @@ class ApiSettings:
     read_rate_per_minute: int
     write_rate_per_minute: int
     cors_origins: tuple[str, ...]
+    cookie_secure: bool
+    session_ttl_seconds: int
+    auth_rate_per_minute: int
 
 
 def load_api_settings() -> ApiSettings:
@@ -58,6 +61,13 @@ def load_api_settings() -> ApiSettings:
             1, int(os.getenv("CODERADAR_WRITE_RATE_PER_MINUTE", "30"))
         ),
         cors_origins=origins,
+        cookie_secure=_bool_env("CODERADAR_COOKIE_SECURE", False),
+        session_ttl_seconds=max(
+            300, int(os.getenv("CODERADAR_SESSION_TTL_SECONDS", "604800"))
+        ),
+        auth_rate_per_minute=max(
+            1, int(os.getenv("CODERADAR_AUTH_RATE_PER_MINUTE", "10"))
+        ),
     )
 
 

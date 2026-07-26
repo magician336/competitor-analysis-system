@@ -8,9 +8,9 @@ import router from "../router";
 import type { CapabilitySnapshot, MatrixRow, SnapshotSummary } from "../types/api";
 
 describe("frontend scope and chart semantics", () => {
-  it("has three clear product entrances, result routes, and no Benchmark route", () => {
+  it("has four clear product entrances, result routes, and no Benchmark route", () => {
     const paths = router.getRoutes().map((route) => route.path.toLowerCase());
-    expect(paths).toEqual(expect.arrayContaining(["/", "/ask", "/analysis", "/analysis/:workflowid", "/analysis/:workflowid/report"]));
+    expect(paths).toEqual(expect.arrayContaining(["/", "/ask", "/evidence", "/analysis", "/admin", "/admin/documents", "/analysis/:workflowid", "/analysis/:workflowid/report"]));
     expect(paths.some((path) => path.includes("benchmark"))).toBe(false);
   });
 

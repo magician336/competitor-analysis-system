@@ -190,7 +190,7 @@ def test_api_key_rate_limit_problem_details_and_safe_audit(
     missing = client.get("/api/cards")
     wrong = client.get("/api/cards", headers={"X-API-Key": "wrong"})
     assert missing.status_code == wrong.status_code == 401
-    assert missing.json()["code"] == "invalid_api_key"
+    assert missing.json()["code"] == "authentication_required"
     headers = {"X-API-Key": "phase3-secret-key", "X-Request-ID": "phase3-test"}
     assert client.get("/api/cards", headers=headers).status_code == 200
     not_found = client.get("/api/evidence/chunk_missing", headers=headers)
@@ -222,7 +222,10 @@ def test_openapi_has_security_and_no_benchmark_fields(phase3_repository: FormalA
     client = _client(phase3_repository)
     schema = client.get("/openapi.json").json()
     assert schema["components"]["securitySchemes"]["ApiKeyAuth"]["name"] == "X-API-Key"
-    assert schema["paths"]["/api/cards"]["get"]["security"] == [{"ApiKeyAuth": []}]
+    assert schema["paths"]["/api/cards"]["get"]["security"] == [
+        {"SessionAuth": []},
+        {"ApiKeyAuth": []},
+    ]
     request_fields = schema["components"]["schemas"]["ComparisonCreateRequest"]["properties"]
     assert not any("benchmark" in name.casefold() for name in request_fields)
     table_names = set(Base.metadata.tables)

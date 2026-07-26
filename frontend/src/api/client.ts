@@ -1,8 +1,6 @@
 import axios, { AxiosError } from "axios";
 import type { ProblemDetails } from "../types/api";
 
-export const DEFAULT_DEMO_API_KEY = import.meta.env.VITE_API_KEY || "coderadar-phase3-local-demo";
-
 export class ApiError extends Error {
   constructor(
     message: string,
@@ -14,14 +12,12 @@ export class ApiError extends Error {
   }
 }
 
-export const http = axios.create({ baseURL: "/", timeout: 30_000 });
+// Browser requests authenticate through the HttpOnly session cookie.  API-key
+// authentication remains available to non-browser clients on the backend.
+export const http = axios.create({ baseURL: "/", timeout: 30_000, withCredentials: true });
 
 http.interceptors.request.use((config) => {
-  const url = String(config.url || "");
   config.headers.set("X-Request-ID", crypto.randomUUID());
-  if (url.startsWith("/api/")) {
-    config.headers.set("X-API-Key", DEFAULT_DEMO_API_KEY);
-  }
   return config;
 });
 
@@ -36,6 +32,10 @@ http.interceptors.response.use(
     const message = status === 429 && retryAfter
       ? `请求过于频繁，请在 ${retryAfter} 秒后重试`
       : problem?.detail || error.message || "请求失败";
+    const url = String(error.config?.url || "");
+    if (status === 401 && url.startsWith("/api/") && !url.startsWith("/api/auth/")) {
+      window.dispatchEvent(new CustomEvent("coderadar:unauthorized"));
+    }
     return Promise.reject(new ApiError(message, status, problem, retryAfter));
   }
 );

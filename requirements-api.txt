@@ -10,6 +10,8 @@ langchain-core>=1.4.9,<2.0
 langchain-deepseek>=1.1,<1.2
 elasticsearch==9.4.1
 fastapi==0.139.0
+python-multipart==0.0.22
 uvicorn==0.51.0
 SQLAlchemy>=2.0,<2.1
 alembic>=1.14,<2.0
+argon2-cffi==25.1.0

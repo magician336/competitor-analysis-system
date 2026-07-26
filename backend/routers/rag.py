@@ -4,9 +4,15 @@ from __future__ import annotations
 
 from typing import Any
 
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, Query, Request, status
 from pydantic import BaseModel, Field
 
+from backend.auth import optional_user, require_user
+from backend.history_repository import (
+    HistoryNotFoundError,
+    HistoryRepository,
+    get_history_repository,
+)
 from backend.services.rag_service import get_rag_service
 from mini_rag.api import MiniRAGService
 from mini_rag.models import (
@@ -17,6 +23,9 @@ from mini_rag.models import (
     RAGQuery,
     RAGResponse,
 )
+from schemas.api import Page
+from schemas.auth import AuthUser
+from schemas.history import EvidenceHistoryDetail, EvidenceHistorySummary
 
 
 router = APIRouter(prefix="/api/rag", tags=["Mini-RAG"])
@@ -84,12 +93,45 @@ def _service_error(exc: Exception) -> HTTPException:
 @router.post("/query", response_model=RAGResponse)
 def query_rag(
     request: RAGQuery,
+    http_request: Request,
     service: MiniRAGService = Depends(get_rag_service),
+    history: HistoryRepository = Depends(get_history_repository),
 ) -> RAGResponse:
     try:
-        return service.query(request)
+        response = RAGResponse.model_validate(service.query(request))
+        user = getattr(http_request.state, "user", None)
+        if user is not None:
+            history.save_evidence(user.user_id, request, response)
+        elif getattr(http_request.state, "actor_type", "anonymous") == "api_key":
+            history.mark_machine_query(response.query_id)
+        return response
     except Exception as exc:
         raise _service_error(exc) from exc
+
+
+@router.get("/history", response_model=Page[EvidenceHistorySummary])
+def list_history(
+    page: int = Query(default=1, ge=1),
+    page_size: int = Query(default=20, ge=1, le=100),
+    user: AuthUser = Depends(require_user),
+    history: HistoryRepository = Depends(get_history_repository),
+) -> Page[EvidenceHistorySummary]:
+    return history.list_evidence(user.user_id, page=page, page_size=page_size)
+
+
+@router.get("/history/{query_id}", response_model=EvidenceHistoryDetail)
+def history_detail(
+    query_id: str,
+    user: AuthUser = Depends(require_user),
+    history: HistoryRepository = Depends(get_history_repository),
+) -> EvidenceHistoryDetail:
+    try:
+        return history.evidence(user.user_id, query_id)
+    except HistoryNotFoundError as exc:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=str(exc),
+        ) from exc
 
 
 @router.get("/evidence/{chunk_id}")
@@ -109,8 +151,25 @@ def get_evidence(
 @router.get("/trace/{query_id}")
 def get_trace(
     query_id: str,
+    request: Request,
     service: MiniRAGService = Depends(get_rag_service),
+    history: HistoryRepository = Depends(get_history_repository),
 ) -> RAGResponse:
+    user = optional_user(request)
+    if user is not None:
+        try:
+            return history.evidence(user.user_id, query_id).response
+        except HistoryNotFoundError as exc:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="query trace not found",
+            ) from exc
+    if getattr(request.state, "actor_type", "anonymous") == "api_key":
+        if not history.is_machine_query(query_id):
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="query trace not found",
+            )
     trace = service.get_trace(query_id)
     if trace is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="query trace not found")

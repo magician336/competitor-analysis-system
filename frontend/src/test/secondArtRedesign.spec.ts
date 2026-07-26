@@ -90,7 +90,12 @@ describe("mode-first analysis wizard", () => {
     await wrapper.get('[data-test="wizard-submit"]').trigger("click");
     await flushPromises();
 
-    expect(submit).toHaveBeenCalledWith(expect.objectContaining({ competitor: "Cursor", analysis_mode: "llm" }));
+    expect(submit).toHaveBeenCalledWith(expect.objectContaining({
+      competitor: "Cursor",
+      analysis_mode: "llm",
+      include_snapshot: true,
+      include_briefing: true,
+    }));
     expect(router.currentRoute.value.path).toBe("/analysis/workflow_new");
   });
 });
