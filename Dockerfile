@@ -10,9 +10,9 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /app
 
-COPY requirements-api.txt /app/CodeRadar/requirements-api.txt
+COPY requirements.txt /app/CodeRadar/requirements.txt
 RUN python -m pip install --upgrade pip && \
-    python -m pip install -r /app/CodeRadar/requirements-api.txt
+    python -m pip install -r /app/CodeRadar/requirements.txt
 
 RUN if [ "${INSTALL_ML}" = "true" ]; then \
         python -m pip install "torch==${TORCH_VERSION}" \
