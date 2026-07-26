@@ -1,0 +1,50 @@
+{
+  "canonical_url": "https://help.aliyun.com/zh/lingma/cloud-agents-cn-update-log",
+  "competitor": "tongyi_lingma",
+  "content_type": "text/html;charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T14:14:04.737851Z",
+  "final_url": "https://help.aliyun.com/zh/lingma/cloud-agents-cn-update-log",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "0401e529c76c2dd20c97f07f4ab9ac4b05c67b60a6fa5ddf8617af8e39617da4",
+  "payload_path": "tongyi_lingma/changelog/20260726T134021Z_a4a3c961/295ea53b1366b7e12c81ce0b.html",
+  "published_at": "2026-07-15T00:00:00Z",
+  "raw_record_id": "295ea53b1366b7e12c81ce0b",
+  "requested_url": "https://help.aliyun.com/zh/lingma/cloud-agents-cn-update-log",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "candidate_status": "eligible",
+    "changelog_index_url": "https://help.aliyun.com/zh/lingma/product-overview/dynamics-and-announcements/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Lingma",
+      "Qoder CN",
+      "智能编码助手通义灵码"
+    ],
+    "competitor_name": "通义灵码",
+    "content_date_count": 8,
+    "content_date_earliest": "2026-06-09T00:00:00Z",
+    "content_date_latest": "2026-07-15T00:00:00Z",
+    "cutoff": "2023-07-27T13:40:21.046700Z",
+    "date_basis": "content_latest",
+    "discovery_mode": "configured_undated_directory",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_title": "Cloud Agents CN更新日志",
+    "page_modified_at": "2026-07-15T08:02:37Z",
+    "page_published_at": "2026-06-09T02:38:25Z",
+    "record_role": "changelog_entry",
+    "undated_detail_root_selector": ".aliyun-docs-content .markdown-body",
+    "undated_entry_path_prefixes": [
+      "/zh/lingma/"
+    ],
+    "undated_entry_selector": ".aliyun-docs-content .markdown-body .directory a[href]",
+    "undated_entry_text_pattern": "更新日志|日志（存档）|产品公告",
+    "visible_text_length": 6727
+  },
+  "source_type": "changelog"
+}

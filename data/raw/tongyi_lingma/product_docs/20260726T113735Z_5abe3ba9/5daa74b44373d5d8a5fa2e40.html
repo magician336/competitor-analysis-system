@@ -1,0 +1,632 @@
+
+<!DOCTYPE html><html lang="zh"><head>
+  <meta name="nav-disable" content="flex">
+  
+  <link rel="icon" href="https://img.alicdn.com/imgextra/i2/O1CN01TFs5Qw27uYvfA6gib_!!6000000007857-55-tps-32-32.svg" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="72x72" href="https://img.alicdn.com/imgextra/i4/O1CN01jlcNT71YBfZJJI7qY_!!6000000003021-2-tps-128-128.png">
+  
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="nav-config" content="footer=default">
+  <meta name="aplus-core" content="aplus.js">
+  <meta name="aplus-ajax" content="chksum">
+  <meta name="aplus-waiting" content="MAN">
+  <meta name="aplus-pvhash" content="1">
+  
+  <meta name="data-spm" content="a2c4g">
+  
+  <script>
+    window.pageStartTime = Date.now();
+  </script>
+
+  
+  <title>
+    后端开发核心场景应用示例-智能编码助手通义灵码-阿里云
+  </title>
+  <link rel="canonical" href="https://help.aliyun.com/zh/lingma/back-end-development">
+  <meta name="keywords" content="学习文件编辑后端实践,用灵码文件编辑生成代码,用灵码文件编辑生成单测,文件编辑后端实践,文件编辑应用场景,灵码知识库集成">
+  <meta name="description" content="本文权威讲解通义灵码在后端开发中的文件编辑实践，覆盖代码生成、重构与单元测试等场景，助您显著提升研发效率与代码质量。">
+  <meta name="last-modified" content="2025-06-06T13:30:23+08:00">
+  <meta name="date" content="2025-03-20T06:47:47+08:00">
+  <meta property="og:title" content="文件编辑后端使用实践">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://help.aliyun.com/zh/lingma/back-end-development">
+  <meta property="og:image" content="https://img.alicdn.com/imgextra/i1/O1CN012QgtoH1c1Mu70xD3w_!!6000000003540-2-tps-640-640.png">
+  <meta property="og:description" content="本文权威讲解通义灵码在后端开发中的文件编辑实践，覆盖代码生成、重构与单元测试等场景，助您显著提升研发效率与代码质量。">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://help.aliyun.com/zh/lingma/back-end-development",
+    "publisher": {
+      "@type": "Organization",
+      "name": "阿里云计算",
+      "url": "https://www.aliyun.com/",
+      "logo": "https://img.alicdn.com/imgextra/i1/O1CN01BEqugB1KebzCRyIJl_!!6000000001189-55-tps-48-48.svg"
+    }
+  }
+  </script>
+  
+
+  <link href="https://g.alicdn.com/aliyun-help/help-portal-fe/0.12.51/css/index.css" rel="stylesheet">
+  
+
+  <script>
+    window.globalData = {
+      nodeId: "2874264",
+      website: "cn",
+      language: "zh",
+    }
+    window.$ACE_TRACKER_CONFIG = {
+      "enableHistory": true,
+      "enableHash": false
+    }
+  </script>
+<script>
+    window.__ICE_SSR_ENABLED__=true;
+    window.__ICE_APP_DATA__={};
+window.__ICE_PAGE_PROPS__={"docDetailData":{"storeData":{"alias":"/lingma/back-end-development","nodeId":null,"data":{"website":"cn","lastModifiedTime":1749187823000,"keywords":"学习文件编辑后端实践,用灵码文件编辑生成代码,用灵码文件编辑生成单测,文件编辑后端实践,文件编辑应用场景,灵码知识库集成","level":7,"docTitle":"文件编辑后端使用实践","language":"zh","nodeType":1,"seoTitle":"后端开发核心场景应用示例-智能编码助手通义灵码-阿里云","title":"文件编辑后端使用实践","version":5,"content":"<div lang=\"zh\" class=\"icms-help-docs-content\">\n<main id=\"main-2862951\"><p id=\"439508cd25821\" data-tag=\"shortdesc\" class=\"shortdesc\"><span data-tag=\"ph\" id=\"a8885a8e18vn1\" data-ref-searchable=\"yes\" docid=\"5541476\" props=\"china\" data-cond-props=\"china\" class=\"ph\">通义灵码</span>文件编辑，具备多文件代码修改（Multi-file Edit）和工具使用（Tool-use）的能力，可以与开发者协同完成编码任务，如需求实现、问题解决、单元测试用例生成、批量代码修改等。本文聚焦于后端研发中的典型场景，提供包含代码生成、代码重构以及自动化测试编写等核心场景使用实践。同时，通过结合企业私域数据，可实现符合企业特定的个性化推荐与生成，显著提升研发效率与质量。</p><div data-tag=\"body\" class=\"body\"><section id=\"92ac6c3a60ikc\" class=\"section\"><h2 id=\"ad636b5871zxz\"><b>背景信息</b></h2><p id=\"78efc5235f9ty\">在现代企业开发中，基于企业自研框架的代码生成、技术框架的代码替换与重构以及单元测试编写等场景，是开发者频繁面对的核心任务和高频需求。然而，传统的<span class=\"help-letter-space\"></span>AI<span class=\"help-letter-space\"></span>工具通常依赖通用模型进行代码生成和推荐，难以充分结合企业的私域数据，实现个性化支持，这在一定程度上限制了其在实际开发中的应用效果。</p><p id=\"824079d00etzg\"><span data-tag=\"ph\" id=\"9b70316b3doux\" data-ref-searchable=\"yes\" docid=\"5541476\" props=\"china\" data-cond-props=\"china\" class=\"ph\">通义灵码</span>通过提供文件编辑和企业知识库两大核心功能，不仅能够使用文件编辑完成工程级代码生成，还能够基于企业私域数据完成个性化推荐，为开发者提供更加贴合实际需求的智能化解决方案。本文将通过几个使用实践，详细展示<span data-tag=\"ph\" id=\"24f85396d9ggi\" data-ref-searchable=\"yes\" docid=\"5541476\" props=\"china\" data-cond-props=\"china\" class=\"ph\">通义灵码</span>在这些场景中的实际应用与价值。</p><div id=\"87b682d6e5yzn\" type=\"note\" class=\"note note-note\"><div class=\"note-icon-wrapper\"><i class=\"icon-note note note\"></i></div><div class=\"noteContentSpan\"><strong>说明 </strong><p id=\"4b5dcdb905bfv\">为了使知识库检索增强技术发挥最佳效果，请确保知识库文档（例如 API 文档、技术框架说明等）符合<b>企业知识库准备</b>中的规范要求，更多信息可参考<a href=\"https://help.aliyun.com/zh/lingma/qoder-cn/use-cases/knowledge-base-chat-enhancement-a-guide-to-building-and-managing-knowledge-bases\" id=\"c864cf062e8v4\" title=\"\" class=\"xref\">知识库构建指南</a>和<a href=\"https://help.aliyun.com/zh/lingma/qoder-cn/user-guide/enterprise-knowledge-base-q-a\" id=\"e1aabffa14xmg\" title=\"\" class=\"xref\">检索增强指南</a>。</p></div></div></section><section id=\"2c10373673o3a\" class=\"section\"><h2 id=\"da3056d93bt6r\"><b>场景<span class=\"help-letter-space\"></span>1：基于 API 文档的代码生成</b></h2><p id=\"dae680a0a59ke\">在企业开发中，<span data-tag=\"ph\" id=\"6185bde867l8e\" data-ref-searchable=\"yes\" docid=\"5541476\" props=\"china\" data-cond-props=\"china\" class=\"ph\">通义灵码</span>可利用 API 文档，快速生成高质量业务代码。只需输入需求描述和相关参数，<span data-tag=\"ph\" id=\"1669702b2b7nr\" data-ref-searchable=\"yes\" docid=\"5541476\" props=\"china\" data-cond-props=\"china\" class=\"ph\">通义灵码</span>即可为您自动生成后端代码，提升开发效率，让您的团队投入更多精力专注于更高价值的开发工作。</p><section id=\"f0929d751bt7i\" class=\"section\"><h3 id=\"b604721cc5vi8\"><b>1. 企业知识库准备</b></h3><section id=\"78bbf046fdd3r\" class=\"section\"><h4 id=\"4fc1e0d37fw41\"><b>API 文档准备原则</b></h4><ol id=\"96859aace6zie\"><li id=\"2351d26755p89\"><p jc=\"start\" id=\"a4ba44f0a0z7k\" style=\"text-align:start\">结构清晰：应按逻辑顺序组织，分为接口描述、请求参数、返回数据等模块，每个模块需有清晰标题。</p></li><li id=\"6f9675e1b9znh\"><p id=\"791e5ab1788b2\">接口信息：</p><ul id=\"e586f04ba8m2m\"><li id=\"0a383f67399tr\"><p id=\"3effb98966lud\">功能：简述接口功能（如获取知识库列表）。</p></li><li id=\"2530599cfa9g2\"><p id=\"5ab74d2cc68xk\">方法：说明使用的 HTTP 方法（如 GET ）。</p></li><li id=\"f9de5a9986tx3\"><p id=\"74b8432e65z8a\">地址：提供完整 URL 示例。</p></li><li data-spm-anchor-id=\"395e44f7.4d3ad9aa.0.i65.66bb3d333sKisc\" id=\"c1b63bfda57ma\"><p id=\"d4308af7e5gm0\">认证：说明需要的认证方式（如通过 Header 中的 Authorization 进行身份验证）。</p></li></ul></li><li id=\"4b8ee1a079snx\"><p id=\"14ee9b0df6typ\">请求参数：列出每个参数，说明含义、类型、是否必填及默认值。</p></li><li id=\"578da7161d1bg\"><p id=\"9644d2ee07me2\">响应数据：描述成功和错误响应的数据结构。</p></li><li id=\"c1042fa7b3p3j\"><p id=\"8bcbb11f2br8w\">错误处理：说明错误场景和对应的状态码。</p></li><li id=\"bae894a1d2nqr\"><p id=\"7b0e547dbet6n\">代码示例：提供任意语言的代码实现或 <code data-tag=\"code\" id=\"2e3babcb10fti\" class=\"code\">curl</code> 示例即可。具体可参考以下《获取知识库文件列表 API 文档》示例。</p></li></ol></section><section id=\"53b9f3d0dbi38\" class=\"section\"><h4 id=\"4f06cc4f93h2c\"><b>文档参考示例</b></h4><div id=\"96ecb211fbx9u\" outputclass=\"collapse\" class=\"collapse\"><p id=\"c8ffa2e36ax7s\" data-tag=\"expandable-title\" class=\"expandable-title\"><b>获取知识库文件列表 API 文档.md</b></p><div id=\"0258de0f81qxg\" data-tag=\"expandable-content\" class=\"expandable-content\"><pre code-type=\"xCode\" id=\"e7d4424532raj\" data-tag=\"codeblock\" outputclass=\"language-markdown\" class=\"pre codeblock language-markdown\"><code># ListKbFiles - 获取知识库文件列表\n\n获取知识库文件列表。\n\n\n### 服务接入点与授权信息\n- 获取服务接入点，替换 API 请求语法中的 &amp;lt;domain&amp;gt; ：[服务接入点（domain）](../../API接入.md)。\n- 获取个人访问令牌，具体操作，请参见[获取个人访问令牌](../../获取访问令牌.md)。\n\n|产品|资源|所需权限|\n|-|-|-|\n|灵码|知识库文件|只读|\n\n\n### 请求语法\n```\nGET https://{domain}/oapi/v1/lingma/organizations/{organizationId}/knowledgeBases/{kbId}/files\n```\n\n### 请求头\n|参数|类型|是否必填|描述|示例值|\n|-|-|-|-|-|\n|x-yunxiao-token|string|是|个人访问令牌。|pt-0fh3\\*\\*\\*\\*0fbG_35af\\*\\*\\*\\*0484|\n\n\n### 请求参数\n|参数|类型|位置|是否必填|描述|示例值|\n|-|-|-|-|-|-|\n| organizationId | string | path | 是 | 所属企业 ID。  | &lt;nil&gt; |\n| kbId | string | path | 是 | 知识库 id。  | &lt;nil&gt; |\n| query | string | query | 否 | 文件名称模糊查询。  | &lt;nil&gt; |\n| orderBy | string | query | 否 | 排序列，支持如下排序字段：gmt_added，kb_id，file_state。  | &lt;nil&gt; |\n| sort | string | query | 否 | 排序顺序，支持倒序和正序：desc，asc。  | &lt;nil&gt; |\n| page | integer | query | 否 | 当前页，默认1。  | &lt;nil&gt; |\n| perPage | integer | query | 否 | 每页数据条数，默认20。  | &lt;nil&gt; |\n\n\n\n### 请求示例\n```\ncurl -X 'GET' \\\n  'https://test.rdc.aliyuncs.com/oapi/v1/lingma/organizations/{organizationId}/knowledgeBases/{kbId}/files?query={query}&amp;orderBy={orderBy}&amp;sort={sort}&amp;page={page}&amp;perPage={perPage}' \\\n  -H 'Content-Type: application/json' \\\n  -H 'x-yunxiao-token: pt-0fh3****0fbG_35af****0484'\n```\n\n\n### 返回参数\n|参数|类型|描述|示例值|\n|-|-|-|-|\n| gmtCreated | integer | 创建时间 | 1722149052460 |\n| gmtModified | integer  | 修改时间 | 1722149055731 |\n| gmtAdded | integer  | 添加时间 | 1722149052515 |\n| fileId | string | 文件唯一 ID | 30d4****aca4 |\n| filename | string | 文件名称 | history.txt |\n| fileSize | string | 文件大小 | 5 B |\n| filePath | string | 文件完整路径 | lingma/rag_kb/... |\n| fileState | string | 文件处理状态 | PROCESSED |\n| kdId | string | 知识库唯一 ID | 3a41****3eca |\n| organizationId | string | 所属组织 ID | 9a2****5ef1 |                     \n| uploadUser | object | 文件添加者信息 |  |\n| &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;id | string | 用户唯一 ID | d402****9ae6 |\n| &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;displayName | string | 用户登录名 | lingma |\n| &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;userName | string | 用户昵称 | lingma |\n| &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;avatarUrl | string | 用户头像地址 | /objects/ajax/... |\n\n\n### 返回示例\n```\n[\n    {\n        \"fileId\": \"\",\n        \"filePath\": \"\",\n        \"fileSize\": \"\",\n        \"fileState\": \"\",\n        \"filename\": \"\",\n        \"gmtAdded\": 0,\n        \"gmtCreated\": 0,\n        \"gmtModified\": 0,\n        \"kbId\": \"\",\n        \"organizationId\": \"\",\n        \"uploadUser\": {\n            \"avatarUrl\": \"\",\n            \"displayName\": \"\",\n            \"id\": \"\",\n            \"userName\": \"\"\n        }\n    }\n]\n```\n\n\n\n### 响应头\n|参数|描述|示例值|\n|-|-|-|\n|x-next-page|下一页。| &lt;nil&gt; |\n|x-page|当前页。| &lt;nil&gt; |\n|x-per-page|每页数据条数。| &lt;nil&gt; |\n|x-prev-page|上一页。| &lt;nil&gt; |\n|x-total|总数据量。| &lt;nil&gt; |\n|x-total-pages|总分页数。| &lt;nil&gt; |\n\n\n\n### 错误码\n|HTTP status code|错误码|错误信息|描述|\n|400|BadRequest|Bad Request|错误请求。|\n|401|Unauthorized|Unauthorized|未授权。|\n|403|Forbidden|Forbidden|当前用户未加入组织。|\n|429|TooManyRequests|TooManyRequests|发送了过多请求。|\n|500|InternalServerError|InternalServerError|内部错误。|</code></pre></div></div></section></section><section id=\"d0a6714ce6qji\" class=\"section\"><h3 id=\"19960f0d60sq0\" uuid=\"m7xiibcz3l6dif9w3ud\" left=\"0\"><b>2. 场景演示：《</b><span data-tag=\"ph\" id=\"eca80e1546ri6\" data-ref-searchable=\"yes\" docid=\"5541476\" props=\"china\" data-cond-props=\"china\" class=\"ph\">通义灵码</span><b>知识库列表查询》</b></h3><video id=\"36b08dbe79v7f\" name=\"根据API生成代码1.mp4\" data-tag=\"video\" src=\"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20250319/beguxz/%E6%A0%B9%E6%8D%AEAPI%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%811.mp4\" controls=\"\" class=\"video\" poster=\"https://img.alicdn.com/imgextra/i1/O1CN016UJXJm1Exws0KRfi2_!!6000000000419-0-tps-1204-677.jpg\" title=\"文件编辑后端使用实践\" alt=\"文件编辑后端使用实践\"></video></section></section><section id=\"3faad544fcnyv\" class=\"section\"><h2 id=\"a100cbceff7q0\"><b>场景<span class=\"help-letter-space\"></span>2：基于业务框架的代码生成</b></h2><p id=\"ea3301d2299tc\">在企业 AI 编码落地过程中，经常遇到模型生成的代码未能采用企业自研的技术和业务架构的问题，<span data-tag=\"ph\" id=\"0d329a6370sl9\" data-ref-searchable=\"yes\" docid=\"5541476\" props=\"china\" data-cond-props=\"china\" class=\"ph\">通义灵码</span>通过集成企业知识库，即可适配自研框架。例如，在以下商品库存系统场景中，企业通过将分布式锁实现方案及业务框架标准化文档放至企业知识库后，开发者即可实现基于标准化库存管理模块的代码生成，通过标准化代码的复用，提升开发效率，减少重复开发成本。同时，又确保了业务逻辑的一致性，提升代码质量。</p><section id=\"919dbd9b55jn7\" class=\"section\"><h3 id=\"0787f0e615u49\"><b>1. 企业知识库准备</b></h3><section id=\"6b72a8f14c469\" class=\"section\"><h4 id=\"946793761c3ql\" jc=\"start\" style=\"text-align:start\"><b>知识选择原则</b></h4><ol id=\"211e5dc37fdb0\"><li id=\"c13f7175e7yk7\"><p id=\"0c23ab8fafyzw\">明确目标业务模式和具体实现机制：</p><ul id=\"9ab8f20ef6b2h\"><li id=\"a4185d0635kxj\"><p id=\"4dae9b64068ux\">识别关键业务模块：确定系统中需统一实现的关键业务逻辑模块，如库存管理、订单处理、支付系统等。</p></li><li id=\"ec83a1819amsz\"><p id=\"983527b44cmfy\">细化具体业务实现机制：例如，库存管理可能涉及库存扣减、查询和锁定等不同场景，每个场景可能需要不同的实现机制。</p></li></ul></li><li id=\"5e1a03f39ffuq\"><p id=\"16aa388911zvb\">选择相关业务框架内的代码文件并纳入企业代码知识库：</p><ul id=\"023275693bav9\"><li id=\"22fafa1f10akf\"><p id=\"727ac5b2cdkpq\">从业务框架中筛选出实现关键业务逻辑的核心代码，整理并存入独立知识库。例如，库存扣减需使用分布式锁机制确保并发安全，因此选择实现分布式锁的核心代码模块。</p></li></ul></li></ol></section><section id=\"c8ef3ef2day2v\" class=\"section\"><h4 id=\"6c71fce45fkxc\"><b>业务框架文档准备原则</b></h4><ol id=\"865d853e7d8vt\"><li id=\"84d1cd6cd3tli\"><p id=\"c2ee949471izk\">结构化呈现：文档必须包含简介、特性、架构设计、使用说明和示例代码等，采用<code data-tag=\"code\" id=\"657994616ed3l\" class=\"code\"> ## 模块名称</code>/<code data-tag=\"code\" id=\"b4e0876d01oi5\" class=\"code\">### 层级标记</code>，标题命名无歧义。</p></li><li id=\"bb038b9928agc\"><p id=\"cad459c79305c\">术语标准化：使用企业统一且常用的术语（如 Lua 脚本、同步消息、异步消息等），方便您在 IDE 端通过写提示词准确召回。</p></li><li id=\"f36d94cbd0zt7\"><p id=\"e2a5d08addj87\">代码示例要求</p><ol id=\"bc9b5844d5alz\"><li id=\"4abcd29bacj48\"><p id=\"4cd374efecza8\">依赖声明：完整展示 pom.xml / gradle 引入方式。</p></li><li id=\"d1f3575ebdslq\"><p id=\"6ab13f7e03xfs\">核心实现：提供 Redis 加锁的完整代码块。具体可参考以下《Redis 加锁保护》示例，请确保文档已经放在企业知识库。</p></li></ol></li></ol></section><section id=\"2286e09bd16dn\" class=\"section\"><h4 id=\"fdfbb52436pan\"><b>文档参考示例</b></h4><div id=\"efb267d02b44w\" outputclass=\"collapse\" class=\"collapse\"><p id=\"cd5b2480fff8m\" data-tag=\"expandable-title\" class=\"expandable-title\"><b>Redis 加锁保护.md</b></p><div id=\"2e04ff1f48360\" data-tag=\"expandable-content\" class=\"expandable-content\"><pre code-type=\"xCode\" id=\"4014f0c8ee2hc\" data-tag=\"codeblock\" outputclass=\"language-markdown\" class=\"pre codeblock language-markdown\"><code># 基于 Redis 的分布式锁框架说明文档\n\n## 简介\n\n在分布式系统中，多个实例可能会同时访问共享资源，导致数据不一致或资源竞争等问题。分布式锁旨在通过协调多个服务实例的访问，确保同一时间只有一个实例能够操作特定资源。本框架基于 Redis 实现分布式锁，提供简单、高效的加锁与解锁机制，适用于 Java 应用程序。\n\n---\n\n## 特性\n\n- **简单易用**：提供简洁的 API 接口，方便集成到现有项目中。\n- **高效可靠**：基于 Redis 的原子操作，确保锁的可靠性。\n- **可配置性强**：支持锁的过期时间和最大等待时间等参数的配置。\n- **支持可重入锁**：同一线程可以重复获取锁，避免死锁。\n\n---\n\n## 架构设计\n\n本分布式锁框架基于 Redis 的 `SET` 命令和 Lua 脚本实现。具体设计如下：\n\n1. **加锁**：使用 Redis 的 `SET NX PX` 命令设置锁，保证操作的原子性。\n2. **解锁**：通过 Lua 脚本验证锁的拥有者后再进行删除，防止误删其他客户端的锁。\n3. **可重入锁支持**：通过在锁的值中存储线程标识和重入计数，允许同一线程多次获取锁。\n\n\n---\n\n## 使用说明\n\n### 前提条件\n\n- 已部署并运行 Redis 服务。\n- Java 环境已搭建，使用 Maven 或 Gradle 进行项目管理。\n\n### 集成步骤\n\n1. **添加依赖**：在项目中引入 Redis 客户端库，如 Jedis 或 Lettuce。\n2. **配置 Redis 连接**：配置 Redis 的主机、端口、密码等连接信息。\n3. **初始化锁框架**：通过框架提供的工厂类获取锁实例。\n4. **使用锁**：在需要加锁的代码区域调用锁的加锁与解锁方法。\n\n---\n\n## 示例代码\n\n以下示例基于 Jedis 客户端实现，请根据实际使用的 Redis 客户端进行调整。\n\n### 依赖配置\n\n使用 Maven 管理依赖，在 `pom.xml` 中添加 Jedis 依赖：\n\n```xml\n&lt;dependencies&gt;\n    &lt;dependency&gt;\n        &lt;groupId&gt;redis.clients&lt;/groupId&gt;\n        &lt;artifactId&gt;jedis&lt;/artifactId&gt;\n        &lt;version&gt;4.3.1&lt;/version&gt;\n    &lt;/dependency&gt;\n&lt;/dependencies&gt;\n```\n\n### 锁的实现\n\n```java\nimport redis.clients.jedis.Jedis;\nimport redis.clients.jedis.params.SetParams;\n\nimport java.util.UUID;\n\npublic class RedisDistributedLock {\n    private Jedis jedis;\n    private String lockKey;\n    private String lockValue;\n    private long expireTime; // 锁的过期时间，单位毫秒\n    private long acquireTimeout; // 获取锁的最大等待时间，单位毫秒\n\n    public RedisDistributedLock(Jedis jedis, String lockKey, long expireTime, long acquireTimeout) {\n        this.jedis = jedis;\n        this.lockKey = lockKey;\n        this.expireTime = expireTime;\n        this.acquireTimeout = acquireTimeout;\n        this.lockValue = UUID.randomUUID().toString();\n    }\n\n    /**\n     * 尝试获取锁\n     * @return 是否获取锁成功\n     */\n    public boolean lock() {\n        long end = System.currentTimeMillis() + acquireTimeout;\n        SetParams params = new SetParams();\n        params.nx().px(expireTime);\n\n        while (System.currentTimeMillis() &lt; end) {\n            String result = jedis.set(lockKey, lockValue, params);\n            if (\"OK\".equals(result)) {\n                return true;\n            }\n            try {\n                Thread.sleep(100); // 等待一段时间后重试\n            } catch (InterruptedException e) {\n                Thread.currentThread().interrupt();\n                return false;\n            }\n        }\n        return false;\n    }\n\n    /**\n     * 释放锁\n     * @return 是否释放锁成功\n     */\n    public boolean unlock() {\n        String luaScript =\n                \"if redis.call('get', KEYS[1]) == ARGV[1] then \" +\n                \"   return redis.call('del', KEYS[1]) \" +\n                \"else \" +\n                \"   return 0 \" +\n                \"end\";\n\n        Object result = jedis.eval(luaScript, 1, lockKey, lockValue);\n        return \"1\".equals(result.toString());\n    }\n}\n```\n\n### 使用示例\n\n```java\nimport redis.clients.jedis.Jedis;\n\npublic class LockExample {\n    public static void main(String[] args) {\n        // 连接 Redis\n        Jedis jedis = new Jedis(\"localhost\", 6379);\n        try {\n            // 初始化分布式锁\n            RedisDistributedLock lock = new RedisDistributedLock(jedis, \"my_lock_key\", 5000, 10000);\n\n            // 尝试获取锁\n            if (lock.lock()) {\n                try {\n                    // 获取锁成功后的业务逻辑\n                    \n                } finally {\n                    // 释放锁\n                    boolean unlocked = lock.unlock();\n                    if (unlocked) {\n                        System.out.println(\"锁释放成功\");\n                    } else {\n                        System.out.println(\"锁释放失败\");\n                    }\n                }\n            } else {\n                System.out.println(\"无法获取锁，执行其他逻辑或重试\");\n            }\n        } catch (InterruptedException e) {\n            e.printStackTrace();\n        } finally {\n            jedis.close();\n        }\n    }\n}\n```\n</code></pre></div></div></section></section><section id=\"8e48f65363bkk\" class=\"section\"><h3 id=\"672b88bc1f3k5\" uuid=\"m7xiibcz3l6dif9w3ud\" left=\"0\"><b>2. 场景演示：《电商库存管理的分布式锁资源保护》</b></h3><video id=\"66ee703a75um1\" name=\"Redis分布式锁1.mp4\" data-tag=\"video\" src=\"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20250319/mbmehc/Redis%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%811.mp4\" controls=\"\" class=\"video\" poster=\"https://img.alicdn.com/imgextra/i1/O1CN016UJXJm1Exws0KRfi2_!!6000000000419-0-tps-1204-677.jpg\" title=\"文件编辑后端使用实践\" alt=\"文件编辑后端使用实践\"></video></section></section><section id=\"bc14bc0966yhc\" class=\"section\"><h2 id=\"30400ccabe6j4\"><b>场景<span class=\"help-letter-space\"></span>3：基于自研技术框架的代码重构</b></h2><p id=\"7aef35ab00b0h\">在企业技术架构调整中，替换技术组件（如将 RabbitMQ 替换为 RocketMQ）常面临代码改动复杂和质量保障难题。<span data-tag=\"ph\" id=\"a4db74e06eyfg\" data-ref-searchable=\"yes\" docid=\"5541476\" props=\"china\" data-cond-props=\"china\" class=\"ph\">通义灵码</span>通过文件编辑及企业知识库，助力企业高效完成组件替换，确保系统质量与一致性，同时缩短周期并降低风险。</p><section id=\"265a3d165foqm\" class=\"section\"><h3 id=\"e1cd844f6c46u\"><b>1. 企业知识库文档准备</b></h3><section id=\"c8aba99cccca0\" class=\"section\"><h4 id=\"b89bb96e8ddx0\"><b>技术框架文档准备原则</b></h4><ol id=\"c31b853cb8cja\"><li data-spm-anchor-id=\"395e44f7.4d3ad9aa.0.i87.66bb3d333sKisc\" id=\"99aad16362e6w\"><p id=\"9c6937ff6bbqh\">结构化要求</p><ul id=\"c078fef4acxqt\"><li id=\"472f98bad0ngi\"><p id=\"2d939fae1d8rk\">标题层级：<code data-tag=\"code\" class=\"code blog-code\" id=\"112cdde388foq\"># 主标题</code>定义功能模块（如消息发送机制），<code data-tag=\"code\" class=\"code blog-code\" id=\"fb57f8998edr4\">##/### 子标题</code>划分操作步骤（如<span class=\"help-letter-space\"></span>Topic<span class=\"help-letter-space\"></span>创建/同步发送）。</p></li><li id=\"ccfef580d34zu\"><p id=\"4ad65ed2676es\">内容隔离：独立功能单元强制分节；消息发送方式（同步/异步/单向）分别独立说明。</p></li></ul></li><li id=\"f14a4af099dho\"><p id=\"03f2df0a25brb\">技术关键参数说明</p><ul id=\"5e7c0ee53daqp\"><li id=\"a26163bfe8fp7\"><p id=\"daf89b21c93tp\">对重要配置（如 <code data-tag=\"code\" class=\"code blog-code\" id=\"0cadc621a7q3z\">autoCreateTopicEnable</code>）标注作用域及风险场景。</p></li><li id=\"0793b61157jg7\"><p id=\"3454db8fc82jy\">提供具体的 CLI 命令示例（如<code data-tag=\"code\" class=\"code blog-code\" id=\"527137b35fi82\">mqadmin updateTopic -t ORDER_TOPIC</code>）和输出结果。</p></li></ul></li><li id=\"1a6fede2f49fe\"><p id=\"6885d30e62de7\">代码块格式化：使用 Markdown 的代码块语法（```）对命令行和代码进行格式化，区分不同语言（如 Shell、Java）。</p></li><li id=\"d562fb51fdr5z\"><p id=\"32f372f1cckyf\">容错设计：同步/异步操作需强制异常捕获及重试机制；单向传输不可靠，数据不允许丢失时应选择其他方式。</p></li><li id=\"95ea70d7d8jlz\"><p id=\"86eac25833ubr\">代码示范标准<b>【重要】</b></p><ul id=\"c88df027d6vbv\"><li id=\"a257af34db5q2\"><p id=\"5d788bf893sei\">全链路示例：每种消息模式（同步/异步/单向）提供<code data-tag=\"code\" class=\"code blog-code\" id=\"007b2057c594u\">初始化→发送→关闭</code>完整代码。</p></li><li id=\"277decdc1fsjm\"><p id=\"bd7b3fd1670m0\">关键注释：在<code data-tag=\"code\" class=\"code blog-code\" id=\"9a01b3f19c1lk\">producer 创建</code>、<code data-tag=\"code\" class=\"code blog-code\" id=\"54a65b1485kjo\">消息体构建</code>等节点标注技术要点。</p></li></ul></li><li id=\"af27dcaff1fsy\"><p id=\"9e0486a8945pf\">代码示例可参考以下《企业自研中间件 RocketMQ 消息发送》示例，请确保文档已经放在企业知识库。</p></li></ol></section><section id=\"146aeece833f8\" class=\"section\"><p id=\"ea2e8d7a8f7ir\"><b>文档参考示例</b></p><div id=\"26e3f350d9q3m\" outputclass=\"collapse\" class=\"collapse\"><p id=\"3ce4913ee594p\" data-tag=\"expandable-title\" class=\"expandable-title\"><b>企业自研中间件 RocketMQ 消息发送.md</b></p><div id=\"d385dc1cc2l9i\" data-tag=\"expandable-content\" class=\"expandable-content\"><pre code-type=\"xCode\" id=\"fd960417c20d7\" data-tag=\"codeblock\" outputclass=\"language-markdown\" class=\"pre codeblock language-markdown\"><code># 普通消息发送\n\n## 1.向集群中创建 Topic\n\n发送消息前，需要确保目标主题已经被创建和初始化。可以利用 RocketMQ Admin 工具创建目标 Topic 。\n\nRocketMQ 部署安装包默认开启了 **autoCreateTopicEnable** 配置，会自动为发送的消息创建 Topic，但该特性仅推荐在初期测试时使用。\n\n**生产环境强烈建议管理所有主题的生命周期，关闭自动创建参数**，以避免生产集群出现大量无效主题，无法管理和回收，造成集群注册压力增大，影响生产集群的稳定性。\n\n```shell\n$ sh bin/mqadmin updateTopic -c DefaultCluster -t TopicTest -n 127.0.0.1:9876\ncreate topic to 127.0.0.1:10911 success.\nTopicConfig [topicName=TopicTest, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes=null]\n```\n\n可以看到在执行完命令后，在该台Broker机器上创建了8个队列，名为TopicTest的Topic。\n\n## 2.添加客户端依赖\n\n首先需要在 JAVA 程序中添加 RocketMQ 的客户端依赖。\n\nimport Tabs from '@theme/Tabs';\nimport TabItem from '@theme/TabItem';\n\n&lt;Tabs&gt;\n&lt;TabItem value=\"Maven\" label=\"Maven\" default &gt;\n\n```java\n&lt;dependency&gt;\n  &lt;groupId&gt;org.apache.rocketmq&lt;/groupId&gt;\n  &lt;artifactId&gt;rocketmq-client&lt;/artifactId&gt;\n  &lt;version&gt;4.9.4&lt;/version&gt;\n&lt;/dependency&gt;\n```\n&lt;/TabItem&gt;\n&lt;TabItem value=\"Gradle\" label=\"Gradle\"&gt;\n\n```java \ncompile 'org.apache.rocketmq:rocketmq-client:4.9.4'\n```\n\n&lt;/TabItem&gt;\n\n&lt;/Tabs&gt;\n\n\n## 3.消息发送\n\nApache RocketMQ可用于以三种方式发送消息：**同步、异步和单向传输**。前两种消息类型是可靠的，因为无论它们是否成功发送都有响应。\n\n### 3.1 同步发送\n\n同步发送是最常用的方式，是指消息发送方发出一条消息后，会在收到服务端同步响应之后才发下一条消息的通讯方式，可靠的同步传输被广泛应用于各种场景，如重要的通知消息、短消息通知等。\n\n\n同步发送的整个代码流程如下：\n1. **首先会创建一个producer**。普通消息可以创建 DefaultMQProducer，创建时需要填写生产组的名称，生产者组是指同一类Producer的集合，这类Producer发送同一类消息且发送逻辑一致。\n2. **设置 NameServer 的地址**。Apache RocketMQ很多方式设置NameServer地址(客户端配置中有介绍)，这里是在代码中调用producer的API setNamesrvAddr进行设置，如果有多个NameServer，中间以分号隔开，比如\"127.0.0.2:9876;127.0.0.3:9876\"。 \n3. **第三步是构建消息**。指定topic、tag、body等信息，tag可以理解成标签，对消息进行再归类，RocketMQ可以在消费端对tag进行过滤。\n4. **最后调用send接口将消息发送出去**。同步发送等待结果最后返回SendResult，SendResult包含实际发送状态还包括SEND_OK（发送成功）, FLUSH_DISK_TIMEOUT（刷盘超时）, FLUSH_SLAVE_TIMEOUT（同步到备超时）, SLAVE_NOT_AVAILABLE（备不可用），如果发送失败会抛出异常。\n``` java\npublic class SyncProducer {\n  public static void main(String[] args) throws Exception {\n    // 初始化一个producer并设置Producer group name\n    DefaultMQProducer producer = new DefaultMQProducer(\"please_rename_unique_group_name\"); //（1）\n    // 设置NameServer地址\n    producer.setNamesrvAddr(\"localhost:9876\");  //（2）\n    // 启动producer\n    producer.start();\n  \n      // 创建一条消息，并指定topic、tag、body等信息，tag可以理解成标签，对消息进行再归类，RocketMQ可以在消费端对tag进行过滤\n      Message msg = new Message(\"TopicTest\" /* Topic */,\n        \"TagA\" /* Tag */,\n        (\"Hello RocketMQ \" + i).getBytes(RemotingHelper.DEFAULT_CHARSET) /* Message body */\n        );   //（3）\n      // 利用producer进行发送，并同步等待发送结果\n      SendResult sendResult = producer.send(msg);   //（4）\n      System.out.printf(\"%s%n\", sendResult);\n    \n    // 一旦producer不再使用，关闭producer\n    producer.shutdown();\n  \n}\n```\n\n:::note\n同步发送方式请务必捕获发送异常，并做业务侧失败兜底逻辑，如果忽略异常则可能会导致消息未成功发送的情况。\n:::\n\n\n### 3.2 异步发送\n\n\n异步发送是指发送方发出一条消息后，不等服务端返回响应，接着发送下一条消息的通讯方式。\n:::note\n异步发送需要实现**异步发送回调接口**（SendCallback）。\n:::\n消息发送方在发送了一条消息后，不需要等待服务端响应即可发送第二条消息，发送方通过回调接口接收服务端响应，并处理响应结果。异步发送一般用于链路耗时较长，对响应时间较为敏感的业务场景。例如，视频上传后通知启动转码服务，转码完成后通知推送转码结果等。\n\n如下是示例代码。\n\n``` java\npublic class AsyncProducer {\n  public static void main(String[] args) throws Exception {\n    // 初始化一个producer并设置Producer group name\n    DefaultMQProducer producer = new DefaultMQProducer(\"please_rename_unique_group_name\");\n    // 设置NameServer地址\n    producer.setNamesrvAddr(\"localhost:9876\");\n    // 启动producer\n    producer.start();\n    producer.setRetryTimesWhenSendAsyncFailed(0);\n    \n    final CountDownLatch countDownLatch = new CountDownLatch(messageCount);\n   \n      try {\n          final int index = i;\n          // 创建一条消息，并指定topic、tag、body等信息，tag可以理解成标签，对消息进行再归类，RocketMQ可以在消费端对tag进行过滤\n          Message msg = new Message(\"TopicTest\",\n            \"TagA\",\n            \"Hello world\".getBytes(RemotingHelper.DEFAULT_CHARSET));\n          // 异步发送消息, 发送结果通过callback返回给客户端\n          producer.send(msg, new SendCallback() {\n            @Override\n            public void onSuccess(SendResult sendResult) {\n              System.out.printf(\"%-10d OK %s %n\", index,\n                sendResult.getMsgId());\n              countDownLatch.countDown();\n            }\n            @Override\n            public void onException(Throwable e) {\n              System.out.printf(\"%-10d Exception %s %n\", index, e);\n              e.printStackTrace();\n              countDownLatch.countDown();\n            }\n          });\n        } catch (Exception e) {\n            e.printStackTrace();\n            countDownLatch.countDown();\n        }\n    \n    //异步发送，如果要求可靠传输，必须要等回调接口返回明确结果后才能结束逻辑，否则立即关闭Producer可能导致部分消息尚未传输成功\n    countDownLatch.await(5, TimeUnit.SECONDS);\n    // 一旦producer不再使用，关闭producer\n    producer.shutdown();\n  }\n}\n```\n\n:::note\n异步发送与同步发送代码唯一区别在于调用send接口的参数不同，异步发送不会等待发送返回，取而代之的是send方法需要传入 SendCallback 的实现，SendCallback 接口主要有onSuccess 和 onException 两个方法，表示消息发送成功和消息发送失败。\n:::\n\n### 3.3 单向模式发送\n\n\n发送方只负责发送消息，不等待服务端返回响应且没有回调函数触发，即只发送请求不等待应答。此方式发送消息的过程耗时非常短，一般在微秒级别。适用于某些耗时非常短，但对可靠性要求并不高的场景，例如日志收集。\n\n``` java\npublic class OnewayProducer {\n  public static void main(String[] args) throws Exception{\n    // 初始化一个producer并设置Producer group name\n    DefaultMQProducer producer = new DefaultMQProducer(\"please_rename_unique_group_name\");\n    // 设置NameServer地址\n    producer.setNamesrvAddr(\"localhost:9876\");\n    // 启动producer\n    producer.start();\n    \n      // 创建一条消息，并指定topic、tag、body等信息，tag可以理解成标签，对消息进行再归类，RocketMQ可以在消费端对tag进行过滤\n      Message msg = new Message(\"TopicTest\" /* Topic */,\n        \"TagA\" /* Tag */,\n        (\"Hello RocketMQ \" + i).getBytes(RemotingHelper.DEFAULT_CHARSET) /* Message body */\n      );\n      // 由于在oneway方式发送消息时没有请求应答处理，如果出现消息发送失败，则会因为没有重试而导致数据丢失。若数据不可丢，建议选用可靠同步或可靠异步发送方式。\n      producer.sendOneway(msg);\n    }\n     // 一旦producer不再使用，关闭producer\n     producer.shutdown();\n  \n}\n```\n\n单向模式调用sendOneway，不会对返回结果有任何等待和处理。\n</code></pre></div></div></section></section><section id=\"9185b1b347t7v\" class=\"section\"><h3 id=\"70fa6d165a27r\" uuid=\"m7xiibcz3l6dif9w3ud\" left=\"0\"><b>2. 场景演示：《消息队列组件的更换：从 RabbitMQ 到 RocketMQ》</b></h3><video id=\"aa03c43ab2xna\" name=\"AI程序员+RAG_基于自研中间件改写.mp4\" data-tag=\"video\" src=\"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20250318/caomim/AI%E7%A8%8B%E5%BA%8F%E5%91%98_RAG_%E5%9F%BA%E4%BA%8E%E8%87%AA%E7%A0%94%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%94%B9%E5%86%99.mp4\" controls=\"\" class=\"video\" poster=\"https://img.alicdn.com/imgextra/i1/O1CN016UJXJm1Exws0KRfi2_!!6000000000419-0-tps-1204-677.jpg\" title=\"文件编辑后端使用实践\" alt=\"文件编辑后端使用实践\"></video></section></section><section id=\"1a5e4ee712649\" class=\"section\"><h2 id=\"ff144a7f48v0g\"><b>场景<span class=\"help-letter-space\"></span>4：单测智能体</b></h2><p id=\"60fb1eea7ckeb\">单元测试智能体是文件编辑的一项专业能力，针对代码变更（#codeChanges）、单个或多个代码文件批量生成单元测试文件。您只需输入待测内容和要求后，AI 自动生成测试计划、测试用例，并进行编译、运行及自动修复，提升测试覆盖率和质量，降低您的编写成本。</p><div id=\"462263cc3d0mg\" type=\"note\" class=\"note note-note\"><div class=\"note-icon-wrapper\"><i class=\"icon-note note note\"></i></div><div class=\"noteContentSpan\"><strong>说明 </strong><p id=\"9ee508cfc8t55\"><span data-tag=\"ph\" id=\"41a2f3ea051rc\" data-ref-searchable=\"yes\" docid=\"5541476\" props=\"china\" data-cond-props=\"china\" class=\"ph\">通义灵码</span>已上线单元测试智能体功能，包括自动编译、运行和修复。</p></div></div><section id=\"13d6f2af2dh3s\" class=\"section\"><h3 uuid=\"m7xkr2o46qw7svn8f37\" left=\"0\" id=\"68d35414d8u1h\"><b>1. 单测智能体度量指标</b></h3><p id=\"42668a6e6bvr6\">技术评估维度（编译通过率、运行通过率）——基于<span class=\"help-letter-space\"></span>Java<span class=\"help-letter-space\"></span>代码本地测评集的测评结果：</p><ol id=\"e839f75334uyc\"><li data-spm-anchor-id=\"395e44f7.4d3ad9aa.0.i35.66bb5fb4LdWDul\" id=\"7e39697d619ie\"><p id=\"cdbb73dbf0j4u\">一次性编译通过率：该指标用于衡量单元测试智能体生成的代码在编译阶段的成功比例。当前编译通过率为<span class=\"help-letter-space\"></span>81.00%。</p></li><li data-spm-anchor-id=\"395e44f7.4d3ad9aa.0.i34.66bb5fb4LdWDul\" id=\"4de479f23cfxe\"><p id=\"fb6c14177cup0\">一次性运行通过率：运行通过率关注的是生成的单元测试在实际运行环境中的表现情况。目前的运行通过率为<span class=\"help-letter-space\"></span>80.55%，显示出代码在执行阶段的表现与编译阶段相近。</p></li></ol><p jc=\"start\" id=\"7e455e44b5ewc\" style=\"text-align:start\">业务效能评估——业务团队单测覆盖率：单测覆盖率作为业务团队的关键度量标准，反映了自动化单元测试对代码库的覆盖程度。提高这一比率不仅能增强产品质量，还能促进更快的开发周期和更高的客户满意度。</p></section><section id=\"09d39bf55flcr\" class=\"section\"><h3 uuid=\"m7xiibcz3l6dif9w3ud\" left=\"0\" id=\"d29fd8a29aho2\"><b>2. 场景演示：《单元测试自动生成、编译与运行》</b></h3><video id=\"65b6de28ddpd3\" name=\"后端+单测生成.mp4\" data-tag=\"video\" src=\"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20250320/kdzryb/%E5%90%8E%E7%AB%AF_%E5%8D%95%E6%B5%8B%E7%94%9F%E6%88%90.mp4\" controls=\"\" class=\"video\" poster=\"https://img.alicdn.com/imgextra/i1/O1CN016UJXJm1Exws0KRfi2_!!6000000000419-0-tps-1204-677.jpg\" title=\"文件编辑后端使用实践\" alt=\"文件编辑后端使用实践\"></video></section></section><p id=\"2e6eedae37brs\"></p><p id=\"9174b36a5f64p\"></p><p id=\"bd6f195631aq2\"></p></div></main>\n\n</div>","url":"/zh/lingma/back-end-development","tags":[{"value":"1","key":"accept","desc":"已承接"},{"value":false,"key":"autoTranslation","desc":"非自动翻译"},{"value":2874264,"key":"nodeId","desc":"文档ID"}],"userVO":{},"recommendDocs":[],"path":"https://help.aliyun.com/zh/lingma/back-end-development","productNodeVO":{"emptyNode":false,"level":3,"validDocument":true,"headNavEnable":false,"docTitle":"Qoder CN 系列","id":2804669,"title":"Qoder CN 系列","url":"/zh/lingma/"},"directoryPath":{"children":[{"children":[{"children":[{"children":[{"emptyNode":false,"level":7,"validDocument":true,"headNavEnable":false,"docTitle":"文件编辑后端使用实践","id":2874264,"title":"文件编辑后端使用实践","url":"/zh/lingma/back-end-development"}],"emptyNode":false,"level":6,"validDocument":true,"headNavEnable":false,"docTitle":"文件编辑使用实践","id":2874263,"title":"文件编辑使用实践","url":"/zh/lingma/file-editing-guides/"}],"emptyNode":false,"level":5,"validDocument":true,"headNavEnable":false,"docTitle":"实践教程","id":2849361,"title":"实践教程","url":"/zh/lingma/use-cases/"}],"emptyNode":false,"level":4,"validDocument":true,"headNavEnable":false,"docTitle":"Qoder CN","id":3033567,"title":"Qoder CN","url":"/zh/lingma/qoder-cn/"}],"emptyNode":false,"level":3,"validDocument":true,"headNavEnable":false,"docTitle":"Qoder CN 系列","id":2804669,"title":"Qoder CN 系列","url":"/zh/lingma/"},"alias":"/lingma/back-end-development","showType":1,"productUrl":"https://lingma.aliyun.com/","nodeId":2874264,"taskStatus":"NO_TASK_AVAILABLE","desc":"本文权威讲解通义灵码在后端开发中的文件编辑实践，覆盖代码生成、重构与单元测试等场景，助您显著提升研发效率与代码质量。"},"breadcrumb":[{"emptyNode":false,"level":3,"validDocument":true,"headNavEnable":false,"docTitle":"Qoder CN 系列","id":2804669,"title":"Qoder CN 系列","url":"/zh/lingma/"},{"emptyNode":false,"level":4,"validDocument":true,"headNavEnable":false,"docTitle":"Qoder CN","id":3033567,"title":"Qoder CN","url":"/zh/lingma/qoder-cn/"},{"emptyNode":false,"level":5,"validDocument":true,"headNavEnable":false,"docTitle":"实践教程","id":2849361,"title":"实践教程","url":"/zh/lingma/use-cases/"},{"emptyNode":false,"level":6,"validDocument":true,"headNavEnable":false,"docTitle":"文件编辑使用实践","id":2874263,"title":"文件编辑使用实践","url":"/zh/lingma/file-editing-guides/"},{"emptyNode":false,"level":7,"validDocument":true,"headNavEnable":false,"docTitle":"文件编辑后端使用实践","id":2874264,"title":"文件编辑后端使用实践","url":"/zh/lingma/back-end-development"}],"isMachineTranslation":false,"isNotFound":false,"helpResponseCode":200,"redirectUrl":"","helpDocVersion":1,"reloadFlag":true}}};
+  </script><link href="https://g.alicdn.com/code/npm/@ali/??hmod-ace-2023-box/0.1.0/index.css,hmod-aliyun-com-global-nav-search/0.8.5/index.css,hmod-aliyun-com-global-nav/0.3.18/index.css" rel="stylesheet"/>
+<link href="https://g.alicdn.com/code/npm/@ali/??hmod-ace-2023-box/0.1.0/index.css,hmod-ace-2024-global-footer/0.2.1/index.css" rel="stylesheet"/>
+</head>
+
+<body><script>
+with(document)with(body)with(insertBefore(createElement("script"),firstChild))setAttribute("exparams","category=&userid=&aplus&yunid=&&trid=215041d317850670546793301e385d&asid=AQAAAAAu9mVqUeBHWgAAAADU6oX+AJrf0g==",id="tb-beacon-aplus",src=(location>"https"?"//g":"//g")+".alicdn.com/alilog/mlog/aplus_v2.js")
+</script>
+
+  <script>
+    var _performance_domStart = window.performance && window.performance.now();
+  </script>
+  <header><div id="77597e3303f7f62742f8e02d3f883457"><div class="_18a32969382a277c44015217fbc5cb5a_box"><div class="_3bd147f6948a20d6c528ac898ad4ba47_pc de5ef2fee09ebcb2b1dcaf0c982523bc_theme _277ebb348812c9712fac6b680ad5e513_reset _277ebb348812c9712fac6b680ad5e513_aliyun-font-family" data-ai-assistant-text-selection-tooltip="disabled"><header class="_702422913dd5754f065139ec2d2def80_container   "><button class="_17fcaf1a4ee37405e5ad5fbad24204b4_container _17fcaf1a4ee37405e5ad5fbad24204b4_loading" aria-label="打开菜单" data-spm="d_dashboard_trigger" data-tracker-exp="true"><span class="_17fcaf1a4ee37405e5ad5fbad24204b4_burger "><span class="_17fcaf1a4ee37405e5ad5fbad24204b4_middle"></span></span></button><a href="https://www.aliyun.com/" class="_3f46140aade30bc61f3012933357c477_logo _702422913dd5754f065139ec2d2def80_logo" data-tracker-content="LOGO" data-spm="d_logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4608 1024" fill="#ff6a00" width="80"><path d="M3266.56 773.12h327.68v-102.4h-327.68v-102.4H3584V35.84H2846.72v532.48h317.44v102.4h-327.68v102.4h327.68v112.64h-353.28v102.4h814.08v-102.4h-353.28v-112.64zM3276.8 138.24h215.04v112.64H3276.8V138.24z m0 215.04h215.04V460.8H3276.8V353.28zM3174.4 460.8h-215.04V353.28H3174.4V460.8z m0-209.92h-215.04V138.24H3174.4v112.64zM537.6 445.44H1075.2v122.88H537.6z"></path><path d="M1341.44 5.12h-353.28L1075.2 128l256 81.92c46.08 15.36 76.8 61.44 76.8 107.52v389.12c0 46.08-30.72 92.16-76.8 107.52l-256 81.92-87.04 122.88h353.28c148.48 0 266.24-117.76 266.24-266.24V276.48c0-148.48-117.76-271.36-266.24-271.36zM276.48 814.08c-46.08-15.36-76.8-61.44-76.8-107.52V317.44c0-46.08 30.72-92.16 76.8-107.52l256-81.92L619.52 5.12H266.24C117.76 5.12 0 128 0 276.48v471.04c0 148.48 117.76 266.24 266.24 266.24h353.28l-87.04-122.88-256-76.8zM2493.44 250.88h-261.12v537.6h261.12V250.88z m-107.52 430.08h-56.32V353.28h56.32v327.68zM1848.32 988.16h102.4V138.24h107.52L1996.8 419.84v102.4h61.44v225.28c0 15.36-10.24 25.6-25.6 25.6h-25.6v102.4h51.2c56.32 0 102.4-46.08 102.4-102.4v-358.4H2099.2l61.44-281.6v-102.4h-312.32v957.44z"></path><path d="M2206.72 138.24H2560v660.48c0 46.08-35.84 87.04-87.04 87.04h-76.8v102.4h107.52c87.04 0 163.84-71.68 163.84-163.84V138.24h35.84v-102.4h-496.64v102.4zM3763.2 40.96h737.28v102.4H3763.2zM4541.44 527.36v-102.4H3727.36v102.4h204.8l-163.84 358.4v102.4h691.2c30.72 0 51.2-25.6 51.2-51.2 0-10.24 0-15.36-5.12-20.48l-87.04-194.56h-112.64l76.8 163.84h-496.64l163.84-358.4h491.52z"></path></svg></a><div class="e76910c82efe8556eb8a6ce6019c5d00_container"><button class="e76910c82efe8556eb8a6ce6019c5d00_controller" data-spm="dscroll-left"><i class="ee52067fb65534cb06d3b35f654f5441_icon ddd10ed9ffa4788f54781e516c4c6560-button_left"></i></button><div class="e76910c82efe8556eb8a6ce6019c5d00_menu-warp"><nav class="_0b0e00051b37611378e027e6ac3a695a_menus"><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/product/tongyi" data-spm="d_menu_0">大模型</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/product/list" data-spm="d_menu_1">产品</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/solution/tech-solution/" data-spm="d_menu_2">解决方案</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/benefit" data-spm="d_menu_3">权益</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/price" data-spm="d_menu_4">定价</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://market.aliyun.com/" data-spm="d_menu_5">云市场</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://partner.aliyun.com/management/v2" data-spm="d_menu_6">伙伴</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/service" data-spm="d_menu_7">服务</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/about" data-spm="d_menu_8">了解阿里云</a></nav></div><button class="e76910c82efe8556eb8a6ce6019c5d00_controller" data-spm="dscroll-right"><i class="ee52067fb65534cb06d3b35f654f5441_icon ddd10ed9ffa4788f54781e516c4c6560-button_right"></i></button></div><div class="_702422913dd5754f065139ec2d2def80_search-wrap " style="--left-width:0px;--right-width:0px"><div class="global-nav-search _626567c051250ffe2f303af907d3fc83_global-nav-search"><div class="global-search-container _626567c051250ffe2f303af907d3fc83_global-nav-search-desktop-container"><div class="ff4f4a96a12f52ffbdd0d6adbdb6a2b0_position-desktop-search-container"><div><div class="f6fd7e4d3293f0634b9ac54848c275b7_default-search-panel  f6fd7e4d3293f0634b9ac54848c275b7_hidden-default-search-panel"></div><div class="_3b4f5487091623b0b6852e2b46d2729e_search-recommend-panel  _3b4f5487091623b0b6852e2b46d2729e_hidden-search-recommend-panel"><button class="_4b65cdd64479a2fabe582b8c0789821e_search-no-content " type="button">查看 &quot;&quot; 全部搜索结果</button></div></div></div></div><div class="_626567c051250ffe2f303af907d3fc83_global-nav-search-mobile-container"><a class="_626567c051250ffe2f303af907d3fc83_search-button" href="https://www.aliyun.com/search?from=h5-global-nav-search"><span role="img" class="_9a1d73bbcd1a80626a31035a12410804_icon _626567c051250ffe2f303af907d3fc83_search-button-icon"><svg width="1em" height="1em" viewBox="0 0 32 32" focusable="false" color="currentColor" fill="currentColor" class="" data-icon="search"><g><g><path fill-opacity="1" fill-rule="evenodd" d="M14,4C15.3558,4,16.653399999999998,4.262105,17.8926,4.786314C19.089100000000002,5.29242,20.1486,6.00666,21.071,6.92905C21.9933,7.85144,22.7076,8.91087,23.2137,10.10735C23.7379,11.34664,24,12.64419,24,14C24,15.3558,23.7379,16.653399999999998,23.2137,17.892699999999998C22.8382,18.7803,22.3482,19.5925,21.7436,20.3293L27.7072,26.2928L26.293,27.7071L20.3294,21.7435C19.592599999999997,22.3481,18.7803,22.8382,17.8926,23.2137C16.653399999999998,23.7379,15.3558,24,14,24C12.64419,24,11.34664,23.7379,10.10735,23.2137C8.91087,22.7076,7.85144,21.9933,6.92905,21.0709C6.00666,20.1486,5.29242,19.089100000000002,4.786314,17.8926C4.262105,16.653399999999998,4,15.3558,4,14C4,12.64419,4.262105,11.34664,4.786314,10.10735C5.29242,8.91087,6.00666,7.85144,6.92905,6.92905C7.85144,6.00666,8.91087,5.29242,10.10735,4.786314C11.34664,4.262105,12.64419,4,14,4ZM14,6C11.79102,6,9.905439999999999,6.78109,8.34326,8.34326C6.78109,9.905439999999999,6,11.79102,6,14C6,16.209,6.78109,18.0946,8.34326,19.6567C9.905439999999999,21.2189,11.79102,22,14,22C16.209,22,18.0946,21.2189,19.6567,19.6567C21.2189,18.0946,22,16.209,22,14C22,11.79102,21.2189,9.905439999999999,19.6567,8.34326C18.0946,6.78109,16.209,6,14,6Z"></path></g></g></svg></span></a></div></div></div><div class="_174801eef2caf75aeaee91c72b19c09a_container"><a class="global-nav-ai-assistant _174801eef2caf75aeaee91c72b19c09a_item _2d3ef330b3f8055912d355b9a255bfcf_btn" href="https://www.aliyun.com/ai-assistant?displayMode=side" data-spm="dai_assistant" target="_blank"><div class="LogoStyled-aliyun-ai-assistant-rc-8096__sc-1qusfpt-0 cpJKij"><div class="ai-assistant-brand-logo-icon" style="background:no-repeat center/100%  url(https://img.alicdn.com/imgextra/i4/O1CN012X1Rxl1clAgB5waMK_!!6000000003640-2-tps-52-52.png)"><img src="https://img.alicdn.com/imgextra/i2/O1CN01bYc1m81RrcSAyOjMu_!!6000000002165-54-tps-60-60.apng" loading="lazy"/></div><div class="ai-assistant-brand-logo-tooltip "><div class="ai-assistant-logo-tooltip-content">AI 助理</div></div></div></a><button class="_174801eef2caf75aeaee91c72b19c09a_item c017bf0be22012eb313124a5a5408d0f_button"><i class="ee52067fb65534cb06d3b35f654f5441_icon ddd10ed9ffa4788f54781e516c4c6560-intl"></i></button><button class="_174801eef2caf75aeaee91c72b19c09a_item"><i class="ee52067fb65534cb06d3b35f654f5441_icon ddd10ed9ffa4788f54781e516c4c6560-contact f9c0581c7b0803efa9027b0f2d228294_icon"></i></button><a class="_174801eef2caf75aeaee91c72b19c09a_item" href="https://help.aliyun.com/" target="_blank" data-spm="d_quick_access_3">文档</a><a class="_174801eef2caf75aeaee91c72b19c09a_item" href="https://beian.aliyun.com/" target="_blank" data-spm="d_quick_access_4">备案</a><a class="_174801eef2caf75aeaee91c72b19c09a_item" href="https://home.console.aliyun.com/home/dashboard/ProductAndService" target="_blank" data-spm="d_quick_access_5" rel="nofollow">控制台</a><span class="f8312ad103723788906e97b238dccd8c_loading _174801eef2caf75aeaee91c72b19c09a_item"></span></div></header></div><div class="_3bd147f6948a20d6c528ac898ad4ba47_mobile de5ef2fee09ebcb2b1dcaf0c982523bc_theme _277ebb348812c9712fac6b680ad5e513_reset _277ebb348812c9712fac6b680ad5e513_aliyun-font-family"></div><div class="_18a32969382a277c44015217fbc5cb5a_box"></div></div></div></header>
+
+  <div id="app"><div class="MainLayout--mainContainer--FzmzeDI" id="docs-container"><div class="MainLayout--helpBodyHead--fFcCOhC"><div class="HelpBodyHead--helpBodyHeadBox--VWOHGv0 help-body-head" data-spm="help-sub-nav"><div class="HelpBodyHead--helpBodyHead--YgG0_RH help-body-head-content"><div class="HelpBodyHead--helpHeadDocName--eZC8orQ"><a href="/zh" data-spm="d_logo">官方文档</a></div><div class="help-tablist"></div><div class="HelpBodyHead--bodyHeadRight--mgSoj67"></div></div><div class="HelpBodyHead--productList--YJ9ism5" style="display:none"><div class="ProductList--allProducts--Z87vhzs"><div class="ProductList--allProductsHead--l2aMmm6"><div class="ProductList--allProductsSearchWrapper--PgTrGTl"><div class="ProductList--allProductsSearch--edTNjmr"><span role="img" class="Icon--icon--jErARdR ProductList--searchIcon--NrFYKki"><svg width="1em" height="1em" viewBox="0 0 32 32" focusable="false" color="currentColor" fill="currentColor" class="" data-icon="document-search"><g fill-rule="evenodd" stroke-width="1"><path d="M19,3 L27,11 L27,29 L5,29 L5,3 L19,3 Z M18,5 L7,5 L7,27 L25,27 L25,12 L18,12 L18,5 Z M20,6.82842636 L20,10 L23.1715736,10 L20,6.82842636 Z"></path><path d="M15.5,13.5 C16.8806419,13.5 18.0591358,13.9881726 19.0354815,14.9645178 C20.0118272,15.9408637 20.5,17.1193577 20.5,18.5 C20.5,19.5346034 20.2258676,20.4556918 19.6776028,21.2632651 L22.1636839,23.7493687 L20.749464,25.1635761 L18.2634125,22.6775026 C17.4558048,23.2258342 16.5346673,23.5 15.5,23.5 C14.1193581,23.5 12.9408642,23.0118272 11.9645183,22.0354815 C10.9881728,21.0591364 10.5,19.8806426 10.5,18.5 C10.5,17.1193576 10.9881728,15.9408636 11.9645183,14.9645181 C12.9408638,13.9881727 14.1193577,13.5 15.5,13.5 Z M15.5,15.5 C14.6716423,15.5 13.9645529,15.7929106 13.3787317,16.3787317 C12.7929106,16.9645527 12.5,17.6716421 12.5,18.5 C12.5,19.3283571 12.7929105,20.0354462 13.3787315,20.6212673 C13.964553,21.2070891 14.6716425,21.5 15.5,21.5 C16.3283577,21.5 17.0354471,21.2070891 17.6212683,20.6212673 C18.2070894,20.0354462 18.5,19.3283571 18.5,18.5 C18.5,17.6716421 18.2070894,16.9645526 17.6212683,16.3787315 C17.0354471,15.7929105 16.3283577,15.5 15.5,15.5 Z"></path></g></svg></span><input placeholder="输入文档关键字查找"></div></div></div><div class="ProductList--allProductsBody--jNYsZlh"></div></div></div></div></div><div class="PcLayout--docsContainer--pwbB9bE"><div class="PcLayout--mobileHelpBodyHead--g_YCRMg"><div class="HelpBodyHead--mobileHeadBlank--_hX8BWJ"></div></div><div class="PcLayout--aliyunAppLayout--_QE36ni"><nav class="aliyun-docs-menu" id="aliyun-docs-menu"><div class="Menu--helpMenuBox--WZ7MX3B" id="help-menu-box" style="width:300px"><div class="Menu--helpMenuInnerBox--kxSXymh aliyun-docs-toc-content" style="width:300px"><div class="Menu--helpMenuDrag--fs9WrRe help-menu-drag-box"></div><div class="Menu--helpMenu--reWzeMt"><div class="help-menu-subproduct"><div class="help-subproduct-container"></div></div><div class="MenuSearch--collapseActionBar--m98Zp_n"><div class="MenuSearch--searchContainer--yxqXL6w"><div class="MenuSearch--searchInputWrapper--xJnk941"><span role="img" class="Icon--icon--jErARdR MenuSearch--searchIcon--YWpGKq9"><svg width="1em" height="1em" viewBox="0 0 32 32" focusable="false" color="currentColor" fill="currentColor" class="" data-icon="document-search"><g fill-rule="evenodd" stroke-width="1"><path d="M19,3 L27,11 L27,29 L5,29 L5,3 L19,3 Z M18,5 L7,5 L7,27 L25,27 L25,12 L18,12 L18,5 Z M20,6.82842636 L20,10 L23.1715736,10 L20,6.82842636 Z"></path><path d="M15.5,13.5 C16.8806419,13.5 18.0591358,13.9881726 19.0354815,14.9645178 C20.0118272,15.9408637 20.5,17.1193577 20.5,18.5 C20.5,19.5346034 20.2258676,20.4556918 19.6776028,21.2632651 L22.1636839,23.7493687 L20.749464,25.1635761 L18.2634125,22.6775026 C17.4558048,23.2258342 16.5346673,23.5 15.5,23.5 C14.1193581,23.5 12.9408642,23.0118272 11.9645183,22.0354815 C10.9881728,21.0591364 10.5,19.8806426 10.5,18.5 C10.5,17.1193576 10.9881728,15.9408636 11.9645183,14.9645181 C12.9408638,13.9881727 14.1193577,13.5 15.5,13.5 Z M15.5,15.5 C14.6716423,15.5 13.9645529,15.7929106 13.3787317,16.3787317 C12.7929106,16.9645527 12.5,17.6716421 12.5,18.5 C12.5,19.3283571 12.7929105,20.0354462 13.3787315,20.6212673 C13.964553,21.2070891 14.6716425,21.5 15.5,21.5 C16.3283577,21.5 17.0354471,21.2070891 17.6212683,20.6212673 C18.2070894,20.0354462 18.5,19.3283571 18.5,18.5 C18.5,17.6716421 18.2070894,16.9645526 17.6212683,16.3787315 C17.0354471,15.7929105 16.3283577,15.5 15.5,15.5 Z"></path></g></svg></span><input placeholder="在目录中筛选" class="MenuSearch--searchInput--vYXA7NN"></div></div></div><div class="help-menu-scroll-container Menu--menuContent--f6GC88t" data-spm="help-menu-undefined"><ul id="common-menu-container">
+ <li id="3033605" class="Menu--level1--UN3zYr3">
+<a href="/zh/lingma/qoder-cn/product-overview/">
+<i class="iconfont icon-close-arrow"></i>
+<span class="Menu--menuItemText--a6B4ZGH">产品概述</span>
+</a>
+</li>
+ <li id="2804678" class="Menu--level1--UN3zYr3">
+<a href="/zh/lingma/qoder-cn/user-guide/">
+<i class="iconfont icon-close-arrow"></i>
+<span class="Menu--menuItemText--a6B4ZGH">操作指南</span>
+</a>
+</li>
+ <li id="2849361" class="Menu--level1--UN3zYr3">
+<a href="/zh/lingma/qoder-cn/use-cases/">
+<i class="iconfont icon-close-arrow"></i>
+<span class="Menu--menuItemText--a6B4ZGH">实践教程</span>
+</a>
+</li>
+ <li id="2804675" class="Menu--level1--UN3zYr3">
+<a href="/zh/lingma/qoder-cn/support/">
+<i class="iconfont icon-close-arrow"></i>
+<span class="Menu--menuItemText--a6B4ZGH">服务支持</span>
+</a>
+</li>
+ <li id="2840171" class="Menu--level1--UN3zYr3">
+<a href="/zh/lingma/qoder-cn/developer-reference/">
+<i class="iconfont icon-close-arrow"></i>
+<span class="Menu--menuItemText--a6B4ZGH">开发参考</span>
+</a>
+</li>
+</ul></div></div></div></div></nav><main class="aliyun-docs-view" id="aliyun-docs-view"><div class="ProductDetail--contentWrapper--iCunrBZ"><section class="aliyun-docs-content" style="height:auto"><header class="aliyun-docs-view-header"><div class="Header--topBar--LXfTLL5"><div class="BreadCrumb--breadcrumb--s_Uzlex"><div class="help-header-breadcrumb"><a href="/zh">首页</a></div></div></div><div class="Header--title--iTk2tUo"><h1>文件编辑后端使用实践</h1><div class="Header--actionBar--dvzFYrk"><div class="Header--left--x8TGxDL"><span class="Header--updateTime--YXGPhcZ">更新时间：</span></div><div class="Header--right--l4TSW1E"><span class="Header--copyButtonWrapper--LDbniON"><span class="CopyAsMarkdown--copyButton--SVGoWIG"><span role="img" class="Icon--icon--jErARdR"><svg width="1em" height="1em" viewBox="0 0 32 32" focusable="false" color="currentColor" fill="currentColor" class="" data-icon="copy"><g fill-rule="evenodd" stroke-width="1"><polygon fill-rule="nonzero" points="8 6.80000019 8 4 28 4 28 24 25 24 25 22 26 22 26 6 10 6 10 6.80000019"></polygon><path d="M24,8 L24,28 L4,28 L4,8 L24,8 Z M22,10 L6,10 L6,26 L22,26 L22,10 Z"></path></g></svg></span>复制 MD 格式</span></span><div class="Header--linkButton--LpCRs1O"><div class="OuterUrl--outUrl--ZFzJIhk"><a href="https://lingma.aliyun.com/" target="_blank" rel="noreferrer">产品详情</a></div></div><div class="Contact--contactButton--TBwTX5R"><span class="Contact--favoritesBtn--J8mRVBp" title="收藏本文档" data-spm-click="gostr=/aliyun;locaid=collect"><i class="help-iconfont help-icon-like"></i></span><a href="/my_favorites.html">我的收藏</a></div></div></div></div></header><div class="pc-markdown-container unionContainer" id="pc-markdown-container"><div class="markdown-body"><div lang="zh" class="icms-help-docs-content">
+<main id="main-2862951"><p id="439508cd25821" data-tag="shortdesc" class="shortdesc"><span data-tag="ph" id="a8885a8e18vn1" data-ref-searchable="yes" docid="5541476" props="china" data-cond-props="china" class="ph">通义灵码</span>文件编辑，具备多文件代码修改（Multi-file Edit）和工具使用（Tool-use）的能力，可以与开发者协同完成编码任务，如需求实现、问题解决、单元测试用例生成、批量代码修改等。本文聚焦于后端研发中的典型场景，提供包含代码生成、代码重构以及自动化测试编写等核心场景使用实践。同时，通过结合企业私域数据，可实现符合企业特定的个性化推荐与生成，显著提升研发效率与质量。</p><div data-tag="body" class="body"><section id="92ac6c3a60ikc" class="section"><h2 id="ad636b5871zxz"><b>背景信息</b></h2><p id="78efc5235f9ty">在现代企业开发中，基于企业自研框架的代码生成、技术框架的代码替换与重构以及单元测试编写等场景，是开发者频繁面对的核心任务和高频需求。然而，传统的<span class="help-letter-space"></span>AI<span class="help-letter-space"></span>工具通常依赖通用模型进行代码生成和推荐，难以充分结合企业的私域数据，实现个性化支持，这在一定程度上限制了其在实际开发中的应用效果。</p><p id="824079d00etzg"><span data-tag="ph" id="9b70316b3doux" data-ref-searchable="yes" docid="5541476" props="china" data-cond-props="china" class="ph">通义灵码</span>通过提供文件编辑和企业知识库两大核心功能，不仅能够使用文件编辑完成工程级代码生成，还能够基于企业私域数据完成个性化推荐，为开发者提供更加贴合实际需求的智能化解决方案。本文将通过几个使用实践，详细展示<span data-tag="ph" id="24f85396d9ggi" data-ref-searchable="yes" docid="5541476" props="china" data-cond-props="china" class="ph">通义灵码</span>在这些场景中的实际应用与价值。</p><div id="87b682d6e5yzn" type="note" class="note note-note"><div class="note-icon-wrapper"><i class="icon-note note note"></i></div><div class="noteContentSpan"><strong>说明 </strong><p id="4b5dcdb905bfv">为了使知识库检索增强技术发挥最佳效果，请确保知识库文档（例如 API 文档、技术框架说明等）符合<b>企业知识库准备</b>中的规范要求，更多信息可参考<a href="https://help.aliyun.com/zh/lingma/qoder-cn/use-cases/knowledge-base-chat-enhancement-a-guide-to-building-and-managing-knowledge-bases" id="c864cf062e8v4" title="" class="xref">知识库构建指南</a>和<a href="https://help.aliyun.com/zh/lingma/qoder-cn/user-guide/enterprise-knowledge-base-q-a" id="e1aabffa14xmg" title="" class="xref">检索增强指南</a>。</p></div></div></section><section id="2c10373673o3a" class="section"><h2 id="da3056d93bt6r"><b>场景<span class="help-letter-space"></span>1：基于 API 文档的代码生成</b></h2><p id="dae680a0a59ke">在企业开发中，<span data-tag="ph" id="6185bde867l8e" data-ref-searchable="yes" docid="5541476" props="china" data-cond-props="china" class="ph">通义灵码</span>可利用 API 文档，快速生成高质量业务代码。只需输入需求描述和相关参数，<span data-tag="ph" id="1669702b2b7nr" data-ref-searchable="yes" docid="5541476" props="china" data-cond-props="china" class="ph">通义灵码</span>即可为您自动生成后端代码，提升开发效率，让您的团队投入更多精力专注于更高价值的开发工作。</p><section id="f0929d751bt7i" class="section"><h3 id="b604721cc5vi8"><b>1. 企业知识库准备</b></h3><section id="78bbf046fdd3r" class="section"><h4 id="4fc1e0d37fw41"><b>API 文档准备原则</b></h4><ol id="96859aace6zie"><li id="2351d26755p89"><p jc="start" id="a4ba44f0a0z7k" style="text-align:start">结构清晰：应按逻辑顺序组织，分为接口描述、请求参数、返回数据等模块，每个模块需有清晰标题。</p></li><li id="6f9675e1b9znh"><p id="791e5ab1788b2">接口信息：</p><ul id="e586f04ba8m2m"><li id="0a383f67399tr"><p id="3effb98966lud">功能：简述接口功能（如获取知识库列表）。</p></li><li id="2530599cfa9g2"><p id="5ab74d2cc68xk">方法：说明使用的 HTTP 方法（如 GET ）。</p></li><li id="f9de5a9986tx3"><p id="74b8432e65z8a">地址：提供完整 URL 示例。</p></li><li data-spm-anchor-id="395e44f7.4d3ad9aa.0.i65.66bb3d333sKisc" id="c1b63bfda57ma"><p id="d4308af7e5gm0">认证：说明需要的认证方式（如通过 Header 中的 Authorization 进行身份验证）。</p></li></ul></li><li id="4b8ee1a079snx"><p id="14ee9b0df6typ">请求参数：列出每个参数，说明含义、类型、是否必填及默认值。</p></li><li id="578da7161d1bg"><p id="9644d2ee07me2">响应数据：描述成功和错误响应的数据结构。</p></li><li id="c1042fa7b3p3j"><p id="8bcbb11f2br8w">错误处理：说明错误场景和对应的状态码。</p></li><li id="bae894a1d2nqr"><p id="7b0e547dbet6n">代码示例：提供任意语言的代码实现或 <code data-tag="code" id="2e3babcb10fti" class="code">curl</code> 示例即可。具体可参考以下《获取知识库文件列表 API 文档》示例。</p></li></ol></section><section id="53b9f3d0dbi38" class="section"><h4 id="4f06cc4f93h2c"><b>文档参考示例</b></h4><div id="96ecb211fbx9u" outputclass="collapse" class="collapse"><p id="c8ffa2e36ax7s" data-tag="expandable-title" class="expandable-title"><b>获取知识库文件列表 API 文档.md</b></p><div id="0258de0f81qxg" data-tag="expandable-content" class="expandable-content"><pre code-type="xCode" id="e7d4424532raj" data-tag="codeblock" outputclass="language-markdown" class="pre codeblock language-markdown"><code># ListKbFiles - 获取知识库文件列表
+
+获取知识库文件列表。
+
+
+### 服务接入点与授权信息
+- 获取服务接入点，替换 API 请求语法中的 &amp;lt;domain&amp;gt; ：[服务接入点（domain）](../../API接入.md)。
+- 获取个人访问令牌，具体操作，请参见[获取个人访问令牌](../../获取访问令牌.md)。
+
+|产品|资源|所需权限|
+|-|-|-|
+|灵码|知识库文件|只读|
+
+
+### 请求语法
+```
+GET https://{domain}/oapi/v1/lingma/organizations/{organizationId}/knowledgeBases/{kbId}/files
+```
+
+### 请求头
+|参数|类型|是否必填|描述|示例值|
+|-|-|-|-|-|
+|x-yunxiao-token|string|是|个人访问令牌。|pt-0fh3\*\*\*\*0fbG_35af\*\*\*\*0484|
+
+
+### 请求参数
+|参数|类型|位置|是否必填|描述|示例值|
+|-|-|-|-|-|-|
+| organizationId | string | path | 是 | 所属企业 ID。  | &lt;nil&gt; |
+| kbId | string | path | 是 | 知识库 id。  | &lt;nil&gt; |
+| query | string | query | 否 | 文件名称模糊查询。  | &lt;nil&gt; |
+| orderBy | string | query | 否 | 排序列，支持如下排序字段：gmt_added，kb_id，file_state。  | &lt;nil&gt; |
+| sort | string | query | 否 | 排序顺序，支持倒序和正序：desc，asc。  | &lt;nil&gt; |
+| page | integer | query | 否 | 当前页，默认1。  | &lt;nil&gt; |
+| perPage | integer | query | 否 | 每页数据条数，默认20。  | &lt;nil&gt; |
+
+
+
+### 请求示例
+```
+curl -X 'GET' \
+  'https://test.rdc.aliyuncs.com/oapi/v1/lingma/organizations/{organizationId}/knowledgeBases/{kbId}/files?query={query}&amp;orderBy={orderBy}&amp;sort={sort}&amp;page={page}&amp;perPage={perPage}' \
+  -H 'Content-Type: application/json' \
+  -H 'x-yunxiao-token: pt-0fh3****0fbG_35af****0484'
+```
+
+
+### 返回参数
+|参数|类型|描述|示例值|
+|-|-|-|-|
+| gmtCreated | integer | 创建时间 | 1722149052460 |
+| gmtModified | integer  | 修改时间 | 1722149055731 |
+| gmtAdded | integer  | 添加时间 | 1722149052515 |
+| fileId | string | 文件唯一 ID | 30d4****aca4 |
+| filename | string | 文件名称 | history.txt |
+| fileSize | string | 文件大小 | 5 B |
+| filePath | string | 文件完整路径 | lingma/rag_kb/... |
+| fileState | string | 文件处理状态 | PROCESSED |
+| kdId | string | 知识库唯一 ID | 3a41****3eca |
+| organizationId | string | 所属组织 ID | 9a2****5ef1 |                     
+| uploadUser | object | 文件添加者信息 |  |
+| &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;id | string | 用户唯一 ID | d402****9ae6 |
+| &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;displayName | string | 用户登录名 | lingma |
+| &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;userName | string | 用户昵称 | lingma |
+| &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;avatarUrl | string | 用户头像地址 | /objects/ajax/... |
+
+
+### 返回示例
+```
+[
+    {
+        "fileId": "",
+        "filePath": "",
+        "fileSize": "",
+        "fileState": "",
+        "filename": "",
+        "gmtAdded": 0,
+        "gmtCreated": 0,
+        "gmtModified": 0,
+        "kbId": "",
+        "organizationId": "",
+        "uploadUser": {
+            "avatarUrl": "",
+            "displayName": "",
+            "id": "",
+            "userName": ""
+        }
+    }
+]
+```
+
+
+
+### 响应头
+|参数|描述|示例值|
+|-|-|-|
+|x-next-page|下一页。| &lt;nil&gt; |
+|x-page|当前页。| &lt;nil&gt; |
+|x-per-page|每页数据条数。| &lt;nil&gt; |
+|x-prev-page|上一页。| &lt;nil&gt; |
+|x-total|总数据量。| &lt;nil&gt; |
+|x-total-pages|总分页数。| &lt;nil&gt; |
+
+
+
+### 错误码
+|HTTP status code|错误码|错误信息|描述|
+|400|BadRequest|Bad Request|错误请求。|
+|401|Unauthorized|Unauthorized|未授权。|
+|403|Forbidden|Forbidden|当前用户未加入组织。|
+|429|TooManyRequests|TooManyRequests|发送了过多请求。|
+|500|InternalServerError|InternalServerError|内部错误。|</code></pre></div></div></section></section><section id="d0a6714ce6qji" class="section"><h3 id="19960f0d60sq0" uuid="m7xiibcz3l6dif9w3ud" left="0"><b>2. 场景演示：《</b><span data-tag="ph" id="eca80e1546ri6" data-ref-searchable="yes" docid="5541476" props="china" data-cond-props="china" class="ph">通义灵码</span><b>知识库列表查询》</b></h3><video id="36b08dbe79v7f" name="根据API生成代码1.mp4" data-tag="video" src="https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20250319/beguxz/%E6%A0%B9%E6%8D%AEAPI%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%811.mp4" controls="" class="video" poster="https://img.alicdn.com/imgextra/i1/O1CN016UJXJm1Exws0KRfi2_!!6000000000419-0-tps-1204-677.jpg" title="文件编辑后端使用实践" alt="文件编辑后端使用实践"></video></section></section><section id="3faad544fcnyv" class="section"><h2 id="a100cbceff7q0"><b>场景<span class="help-letter-space"></span>2：基于业务框架的代码生成</b></h2><p id="ea3301d2299tc">在企业 AI 编码落地过程中，经常遇到模型生成的代码未能采用企业自研的技术和业务架构的问题，<span data-tag="ph" id="0d329a6370sl9" data-ref-searchable="yes" docid="5541476" props="china" data-cond-props="china" class="ph">通义灵码</span>通过集成企业知识库，即可适配自研框架。例如，在以下商品库存系统场景中，企业通过将分布式锁实现方案及业务框架标准化文档放至企业知识库后，开发者即可实现基于标准化库存管理模块的代码生成，通过标准化代码的复用，提升开发效率，减少重复开发成本。同时，又确保了业务逻辑的一致性，提升代码质量。</p><section id="919dbd9b55jn7" class="section"><h3 id="0787f0e615u49"><b>1. 企业知识库准备</b></h3><section id="6b72a8f14c469" class="section"><h4 id="946793761c3ql" jc="start" style="text-align:start"><b>知识选择原则</b></h4><ol id="211e5dc37fdb0"><li id="c13f7175e7yk7"><p id="0c23ab8fafyzw">明确目标业务模式和具体实现机制：</p><ul id="9ab8f20ef6b2h"><li id="a4185d0635kxj"><p id="4dae9b64068ux">识别关键业务模块：确定系统中需统一实现的关键业务逻辑模块，如库存管理、订单处理、支付系统等。</p></li><li id="ec83a1819amsz"><p id="983527b44cmfy">细化具体业务实现机制：例如，库存管理可能涉及库存扣减、查询和锁定等不同场景，每个场景可能需要不同的实现机制。</p></li></ul></li><li id="5e1a03f39ffuq"><p id="16aa388911zvb">选择相关业务框架内的代码文件并纳入企业代码知识库：</p><ul id="023275693bav9"><li id="22fafa1f10akf"><p id="727ac5b2cdkpq">从业务框架中筛选出实现关键业务逻辑的核心代码，整理并存入独立知识库。例如，库存扣减需使用分布式锁机制确保并发安全，因此选择实现分布式锁的核心代码模块。</p></li></ul></li></ol></section><section id="c8ef3ef2day2v" class="section"><h4 id="6c71fce45fkxc"><b>业务框架文档准备原则</b></h4><ol id="865d853e7d8vt"><li id="84d1cd6cd3tli"><p id="c2ee949471izk">结构化呈现：文档必须包含简介、特性、架构设计、使用说明和示例代码等，采用<code data-tag="code" id="657994616ed3l" class="code"> ## 模块名称</code>/<code data-tag="code" id="b4e0876d01oi5" class="code">### 层级标记</code>，标题命名无歧义。</p></li><li id="bb038b9928agc"><p id="cad459c79305c">术语标准化：使用企业统一且常用的术语（如 Lua 脚本、同步消息、异步消息等），方便您在 IDE 端通过写提示词准确召回。</p></li><li id="f36d94cbd0zt7"><p id="e2a5d08addj87">代码示例要求</p><ol id="bc9b5844d5alz"><li id="4abcd29bacj48"><p id="4cd374efecza8">依赖声明：完整展示 pom.xml / gradle 引入方式。</p></li><li id="d1f3575ebdslq"><p id="6ab13f7e03xfs">核心实现：提供 Redis 加锁的完整代码块。具体可参考以下《Redis 加锁保护》示例，请确保文档已经放在企业知识库。</p></li></ol></li></ol></section><section id="2286e09bd16dn" class="section"><h4 id="fdfbb52436pan"><b>文档参考示例</b></h4><div id="efb267d02b44w" outputclass="collapse" class="collapse"><p id="cd5b2480fff8m" data-tag="expandable-title" class="expandable-title"><b>Redis 加锁保护.md</b></p><div id="2e04ff1f48360" data-tag="expandable-content" class="expandable-content"><pre code-type="xCode" id="4014f0c8ee2hc" data-tag="codeblock" outputclass="language-markdown" class="pre codeblock language-markdown"><code># 基于 Redis 的分布式锁框架说明文档
+
+## 简介
+
+在分布式系统中，多个实例可能会同时访问共享资源，导致数据不一致或资源竞争等问题。分布式锁旨在通过协调多个服务实例的访问，确保同一时间只有一个实例能够操作特定资源。本框架基于 Redis 实现分布式锁，提供简单、高效的加锁与解锁机制，适用于 Java 应用程序。
+
+---
+
+## 特性
+
+- **简单易用**：提供简洁的 API 接口，方便集成到现有项目中。
+- **高效可靠**：基于 Redis 的原子操作，确保锁的可靠性。
+- **可配置性强**：支持锁的过期时间和最大等待时间等参数的配置。
+- **支持可重入锁**：同一线程可以重复获取锁，避免死锁。
+
+---
+
+## 架构设计
+
+本分布式锁框架基于 Redis 的 `SET` 命令和 Lua 脚本实现。具体设计如下：
+
+1. **加锁**：使用 Redis 的 `SET NX PX` 命令设置锁，保证操作的原子性。
+2. **解锁**：通过 Lua 脚本验证锁的拥有者后再进行删除，防止误删其他客户端的锁。
+3. **可重入锁支持**：通过在锁的值中存储线程标识和重入计数，允许同一线程多次获取锁。
+
+
+---
+
+## 使用说明
+
+### 前提条件
+
+- 已部署并运行 Redis 服务。
+- Java 环境已搭建，使用 Maven 或 Gradle 进行项目管理。
+
+### 集成步骤
+
+1. **添加依赖**：在项目中引入 Redis 客户端库，如 Jedis 或 Lettuce。
+2. **配置 Redis 连接**：配置 Redis 的主机、端口、密码等连接信息。
+3. **初始化锁框架**：通过框架提供的工厂类获取锁实例。
+4. **使用锁**：在需要加锁的代码区域调用锁的加锁与解锁方法。
+
+---
+
+## 示例代码
+
+以下示例基于 Jedis 客户端实现，请根据实际使用的 Redis 客户端进行调整。
+
+### 依赖配置
+
+使用 Maven 管理依赖，在 `pom.xml` 中添加 Jedis 依赖：
+
+```xml
+&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;redis.clients&lt;/groupId&gt;
+        &lt;artifactId&gt;jedis&lt;/artifactId&gt;
+        &lt;version&gt;4.3.1&lt;/version&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+```
+
+### 锁的实现
+
+```java
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.params.SetParams;
+
+import java.util.UUID;
+
+public class RedisDistributedLock {
+    private Jedis jedis;
+    private String lockKey;
+    private String lockValue;
+    private long expireTime; // 锁的过期时间，单位毫秒
+    private long acquireTimeout; // 获取锁的最大等待时间，单位毫秒
+
+    public RedisDistributedLock(Jedis jedis, String lockKey, long expireTime, long acquireTimeout) {
+        this.jedis = jedis;
+        this.lockKey = lockKey;
+        this.expireTime = expireTime;
+        this.acquireTimeout = acquireTimeout;
+        this.lockValue = UUID.randomUUID().toString();
+    }
+
+    /**
+     * 尝试获取锁
+     * @return 是否获取锁成功
+     */
+    public boolean lock() {
+        long end = System.currentTimeMillis() + acquireTimeout;
+        SetParams params = new SetParams();
+        params.nx().px(expireTime);
+
+        while (System.currentTimeMillis() &lt; end) {
+            String result = jedis.set(lockKey, lockValue, params);
+            if ("OK".equals(result)) {
+                return true;
+            }
+            try {
+                Thread.sleep(100); // 等待一段时间后重试
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                return false;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 释放锁
+     * @return 是否释放锁成功
+     */
+    public boolean unlock() {
+        String luaScript =
+                "if redis.call('get', KEYS[1]) == ARGV[1] then " +
+                "   return redis.call('del', KEYS[1]) " +
+                "else " +
+                "   return 0 " +
+                "end";
+
+        Object result = jedis.eval(luaScript, 1, lockKey, lockValue);
+        return "1".equals(result.toString());
+    }
+}
+```
+
+### 使用示例
+
+```java
+import redis.clients.jedis.Jedis;
+
+public class LockExample {
+    public static void main(String[] args) {
+        // 连接 Redis
+        Jedis jedis = new Jedis("localhost", 6379);
+        try {
+            // 初始化分布式锁
+            RedisDistributedLock lock = new RedisDistributedLock(jedis, "my_lock_key", 5000, 10000);
+
+            // 尝试获取锁
+            if (lock.lock()) {
+                try {
+                    // 获取锁成功后的业务逻辑
+                    
+                } finally {
+                    // 释放锁
+                    boolean unlocked = lock.unlock();
+                    if (unlocked) {
+                        System.out.println("锁释放成功");
+                    } else {
+                        System.out.println("锁释放失败");
+                    }
+                }
+            } else {
+                System.out.println("无法获取锁，执行其他逻辑或重试");
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            jedis.close();
+        }
+    }
+}
+```
+</code></pre></div></div></section></section><section id="8e48f65363bkk" class="section"><h3 id="672b88bc1f3k5" uuid="m7xiibcz3l6dif9w3ud" left="0"><b>2. 场景演示：《电商库存管理的分布式锁资源保护》</b></h3><video id="66ee703a75um1" name="Redis分布式锁1.mp4" data-tag="video" src="https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20250319/mbmehc/Redis%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%811.mp4" controls="" class="video" poster="https://img.alicdn.com/imgextra/i1/O1CN016UJXJm1Exws0KRfi2_!!6000000000419-0-tps-1204-677.jpg" title="文件编辑后端使用实践" alt="文件编辑后端使用实践"></video></section></section><section id="bc14bc0966yhc" class="section"><h2 id="30400ccabe6j4"><b>场景<span class="help-letter-space"></span>3：基于自研技术框架的代码重构</b></h2><p id="7aef35ab00b0h">在企业技术架构调整中，替换技术组件（如将 RabbitMQ 替换为 RocketMQ）常面临代码改动复杂和质量保障难题。<span data-tag="ph" id="a4db74e06eyfg" data-ref-searchable="yes" docid="5541476" props="china" data-cond-props="china" class="ph">通义灵码</span>通过文件编辑及企业知识库，助力企业高效完成组件替换，确保系统质量与一致性，同时缩短周期并降低风险。</p><section id="265a3d165foqm" class="section"><h3 id="e1cd844f6c46u"><b>1. 企业知识库文档准备</b></h3><section id="c8aba99cccca0" class="section"><h4 id="b89bb96e8ddx0"><b>技术框架文档准备原则</b></h4><ol id="c31b853cb8cja"><li data-spm-anchor-id="395e44f7.4d3ad9aa.0.i87.66bb3d333sKisc" id="99aad16362e6w"><p id="9c6937ff6bbqh">结构化要求</p><ul id="c078fef4acxqt"><li id="472f98bad0ngi"><p id="2d939fae1d8rk">标题层级：<code data-tag="code" class="code blog-code" id="112cdde388foq"># 主标题</code>定义功能模块（如消息发送机制），<code data-tag="code" class="code blog-code" id="fb57f8998edr4">##/### 子标题</code>划分操作步骤（如<span class="help-letter-space"></span>Topic<span class="help-letter-space"></span>创建/同步发送）。</p></li><li id="ccfef580d34zu"><p id="4ad65ed2676es">内容隔离：独立功能单元强制分节；消息发送方式（同步/异步/单向）分别独立说明。</p></li></ul></li><li id="f14a4af099dho"><p id="03f2df0a25brb">技术关键参数说明</p><ul id="5e7c0ee53daqp"><li id="a26163bfe8fp7"><p id="daf89b21c93tp">对重要配置（如 <code data-tag="code" class="code blog-code" id="0cadc621a7q3z">autoCreateTopicEnable</code>）标注作用域及风险场景。</p></li><li id="0793b61157jg7"><p id="3454db8fc82jy">提供具体的 CLI 命令示例（如<code data-tag="code" class="code blog-code" id="527137b35fi82">mqadmin updateTopic -t ORDER_TOPIC</code>）和输出结果。</p></li></ul></li><li id="1a6fede2f49fe"><p id="6885d30e62de7">代码块格式化：使用 Markdown 的代码块语法（```）对命令行和代码进行格式化，区分不同语言（如 Shell、Java）。</p></li><li id="d562fb51fdr5z"><p id="32f372f1cckyf">容错设计：同步/异步操作需强制异常捕获及重试机制；单向传输不可靠，数据不允许丢失时应选择其他方式。</p></li><li id="95ea70d7d8jlz"><p id="86eac25833ubr">代码示范标准<b>【重要】</b></p><ul id="c88df027d6vbv"><li id="a257af34db5q2"><p id="5d788bf893sei">全链路示例：每种消息模式（同步/异步/单向）提供<code data-tag="code" class="code blog-code" id="007b2057c594u">初始化→发送→关闭</code>完整代码。</p></li><li id="277decdc1fsjm"><p id="bd7b3fd1670m0">关键注释：在<code data-tag="code" class="code blog-code" id="9a01b3f19c1lk">producer 创建</code>、<code data-tag="code" class="code blog-code" id="54a65b1485kjo">消息体构建</code>等节点标注技术要点。</p></li></ul></li><li id="af27dcaff1fsy"><p id="9e0486a8945pf">代码示例可参考以下《企业自研中间件 RocketMQ 消息发送》示例，请确保文档已经放在企业知识库。</p></li></ol></section><section id="146aeece833f8" class="section"><p id="ea2e8d7a8f7ir"><b>文档参考示例</b></p><div id="26e3f350d9q3m" outputclass="collapse" class="collapse"><p id="3ce4913ee594p" data-tag="expandable-title" class="expandable-title"><b>企业自研中间件 RocketMQ 消息发送.md</b></p><div id="d385dc1cc2l9i" data-tag="expandable-content" class="expandable-content"><pre code-type="xCode" id="fd960417c20d7" data-tag="codeblock" outputclass="language-markdown" class="pre codeblock language-markdown"><code># 普通消息发送
+
+## 1.向集群中创建 Topic
+
+发送消息前，需要确保目标主题已经被创建和初始化。可以利用 RocketMQ Admin 工具创建目标 Topic 。
+
+RocketMQ 部署安装包默认开启了 **autoCreateTopicEnable** 配置，会自动为发送的消息创建 Topic，但该特性仅推荐在初期测试时使用。
+
+**生产环境强烈建议管理所有主题的生命周期，关闭自动创建参数**，以避免生产集群出现大量无效主题，无法管理和回收，造成集群注册压力增大，影响生产集群的稳定性。
+
+```shell
+$ sh bin/mqadmin updateTopic -c DefaultCluster -t TopicTest -n 127.0.0.1:9876
+create topic to 127.0.0.1:10911 success.
+TopicConfig [topicName=TopicTest, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes=null]
+```
+
+可以看到在执行完命令后，在该台Broker机器上创建了8个队列，名为TopicTest的Topic。
+
+## 2.添加客户端依赖
+
+首先需要在 JAVA 程序中添加 RocketMQ 的客户端依赖。
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+&lt;Tabs&gt;
+&lt;TabItem value="Maven" label="Maven" default &gt;
+
+```java
+&lt;dependency&gt;
+  &lt;groupId&gt;org.apache.rocketmq&lt;/groupId&gt;
+  &lt;artifactId&gt;rocketmq-client&lt;/artifactId&gt;
+  &lt;version&gt;4.9.4&lt;/version&gt;
+&lt;/dependency&gt;
+```
+&lt;/TabItem&gt;
+&lt;TabItem value="Gradle" label="Gradle"&gt;
+
+```java 
+compile 'org.apache.rocketmq:rocketmq-client:4.9.4'
+```
+
+&lt;/TabItem&gt;
+
+&lt;/Tabs&gt;
+
+
+## 3.消息发送
+
+Apache RocketMQ可用于以三种方式发送消息：**同步、异步和单向传输**。前两种消息类型是可靠的，因为无论它们是否成功发送都有响应。
+
+### 3.1 同步发送
+
+同步发送是最常用的方式，是指消息发送方发出一条消息后，会在收到服务端同步响应之后才发下一条消息的通讯方式，可靠的同步传输被广泛应用于各种场景，如重要的通知消息、短消息通知等。
+
+
+同步发送的整个代码流程如下：
+1. **首先会创建一个producer**。普通消息可以创建 DefaultMQProducer，创建时需要填写生产组的名称，生产者组是指同一类Producer的集合，这类Producer发送同一类消息且发送逻辑一致。
+2. **设置 NameServer 的地址**。Apache RocketMQ很多方式设置NameServer地址(客户端配置中有介绍)，这里是在代码中调用producer的API setNamesrvAddr进行设置，如果有多个NameServer，中间以分号隔开，比如"127.0.0.2:9876;127.0.0.3:9876"。 
+3. **第三步是构建消息**。指定topic、tag、body等信息，tag可以理解成标签，对消息进行再归类，RocketMQ可以在消费端对tag进行过滤。
+4. **最后调用send接口将消息发送出去**。同步发送等待结果最后返回SendResult，SendResult包含实际发送状态还包括SEND_OK（发送成功）, FLUSH_DISK_TIMEOUT（刷盘超时）, FLUSH_SLAVE_TIMEOUT（同步到备超时）, SLAVE_NOT_AVAILABLE（备不可用），如果发送失败会抛出异常。
+``` java
+public class SyncProducer {
+  public static void main(String[] args) throws Exception {
+    // 初始化一个producer并设置Producer group name
+    DefaultMQProducer producer = new DefaultMQProducer("please_rename_unique_group_name"); //（1）
+    // 设置NameServer地址
+    producer.setNamesrvAddr("localhost:9876");  //（2）
+    // 启动producer
+    producer.start();
+  
+      // 创建一条消息，并指定topic、tag、body等信息，tag可以理解成标签，对消息进行再归类，RocketMQ可以在消费端对tag进行过滤
+      Message msg = new Message("TopicTest" /* Topic */,
+        "TagA" /* Tag */,
+        ("Hello RocketMQ " + i).getBytes(RemotingHelper.DEFAULT_CHARSET) /* Message body */
+        );   //（3）
+      // 利用producer进行发送，并同步等待发送结果
+      SendResult sendResult = producer.send(msg);   //（4）
+      System.out.printf("%s%n", sendResult);
+    
+    // 一旦producer不再使用，关闭producer
+    producer.shutdown();
+  
+}
+```
+
+:::note
+同步发送方式请务必捕获发送异常，并做业务侧失败兜底逻辑，如果忽略异常则可能会导致消息未成功发送的情况。
+:::
+
+
+### 3.2 异步发送
+
+
+异步发送是指发送方发出一条消息后，不等服务端返回响应，接着发送下一条消息的通讯方式。
+:::note
+异步发送需要实现**异步发送回调接口**（SendCallback）。
+:::
+消息发送方在发送了一条消息后，不需要等待服务端响应即可发送第二条消息，发送方通过回调接口接收服务端响应，并处理响应结果。异步发送一般用于链路耗时较长，对响应时间较为敏感的业务场景。例如，视频上传后通知启动转码服务，转码完成后通知推送转码结果等。
+
+如下是示例代码。
+
+``` java
+public class AsyncProducer {
+  public static void main(String[] args) throws Exception {
+    // 初始化一个producer并设置Producer group name
+    DefaultMQProducer producer = new DefaultMQProducer("please_rename_unique_group_name");
+    // 设置NameServer地址
+    producer.setNamesrvAddr("localhost:9876");
+    // 启动producer
+    producer.start();
+    producer.setRetryTimesWhenSendAsyncFailed(0);
+    
+    final CountDownLatch countDownLatch = new CountDownLatch(messageCount);
+   
+      try {
+          final int index = i;
+          // 创建一条消息，并指定topic、tag、body等信息，tag可以理解成标签，对消息进行再归类，RocketMQ可以在消费端对tag进行过滤
+          Message msg = new Message("TopicTest",
+            "TagA",
+            "Hello world".getBytes(RemotingHelper.DEFAULT_CHARSET));
+          // 异步发送消息, 发送结果通过callback返回给客户端
+          producer.send(msg, new SendCallback() {
+            @Override
+            public void onSuccess(SendResult sendResult) {
+              System.out.printf("%-10d OK %s %n", index,
+                sendResult.getMsgId());
+              countDownLatch.countDown();
+            }
+            @Override
+            public void onException(Throwable e) {
+              System.out.printf("%-10d Exception %s %n", index, e);
+              e.printStackTrace();
+              countDownLatch.countDown();
+            }
+          });
+        } catch (Exception e) {
+            e.printStackTrace();
+            countDownLatch.countDown();
+        }
+    
+    //异步发送，如果要求可靠传输，必须要等回调接口返回明确结果后才能结束逻辑，否则立即关闭Producer可能导致部分消息尚未传输成功
+    countDownLatch.await(5, TimeUnit.SECONDS);
+    // 一旦producer不再使用，关闭producer
+    producer.shutdown();
+  }
+}
+```
+
+:::note
+异步发送与同步发送代码唯一区别在于调用send接口的参数不同，异步发送不会等待发送返回，取而代之的是send方法需要传入 SendCallback 的实现，SendCallback 接口主要有onSuccess 和 onException 两个方法，表示消息发送成功和消息发送失败。
+:::
+
+### 3.3 单向模式发送
+
+
+发送方只负责发送消息，不等待服务端返回响应且没有回调函数触发，即只发送请求不等待应答。此方式发送消息的过程耗时非常短，一般在微秒级别。适用于某些耗时非常短，但对可靠性要求并不高的场景，例如日志收集。
+
+``` java
+public class OnewayProducer {
+  public static void main(String[] args) throws Exception{
+    // 初始化一个producer并设置Producer group name
+    DefaultMQProducer producer = new DefaultMQProducer("please_rename_unique_group_name");
+    // 设置NameServer地址
+    producer.setNamesrvAddr("localhost:9876");
+    // 启动producer
+    producer.start();
+    
+      // 创建一条消息，并指定topic、tag、body等信息，tag可以理解成标签，对消息进行再归类，RocketMQ可以在消费端对tag进行过滤
+      Message msg = new Message("TopicTest" /* Topic */,
+        "TagA" /* Tag */,
+        ("Hello RocketMQ " + i).getBytes(RemotingHelper.DEFAULT_CHARSET) /* Message body */
+      );
+      // 由于在oneway方式发送消息时没有请求应答处理，如果出现消息发送失败，则会因为没有重试而导致数据丢失。若数据不可丢，建议选用可靠同步或可靠异步发送方式。
+      producer.sendOneway(msg);
+    }
+     // 一旦producer不再使用，关闭producer
+     producer.shutdown();
+  
+}
+```
+
+单向模式调用sendOneway，不会对返回结果有任何等待和处理。
+</code></pre></div></div></section></section><section id="9185b1b347t7v" class="section"><h3 id="70fa6d165a27r" uuid="m7xiibcz3l6dif9w3ud" left="0"><b>2. 场景演示：《消息队列组件的更换：从 RabbitMQ 到 RocketMQ》</b></h3><video id="aa03c43ab2xna" name="AI程序员+RAG_基于自研中间件改写.mp4" data-tag="video" src="https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20250318/caomim/AI%E7%A8%8B%E5%BA%8F%E5%91%98_RAG_%E5%9F%BA%E4%BA%8E%E8%87%AA%E7%A0%94%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%94%B9%E5%86%99.mp4" controls="" class="video" poster="https://img.alicdn.com/imgextra/i1/O1CN016UJXJm1Exws0KRfi2_!!6000000000419-0-tps-1204-677.jpg" title="文件编辑后端使用实践" alt="文件编辑后端使用实践"></video></section></section><section id="1a5e4ee712649" class="section"><h2 id="ff144a7f48v0g"><b>场景<span class="help-letter-space"></span>4：单测智能体</b></h2><p id="60fb1eea7ckeb">单元测试智能体是文件编辑的一项专业能力，针对代码变更（#codeChanges）、单个或多个代码文件批量生成单元测试文件。您只需输入待测内容和要求后，AI 自动生成测试计划、测试用例，并进行编译、运行及自动修复，提升测试覆盖率和质量，降低您的编写成本。</p><div id="462263cc3d0mg" type="note" class="note note-note"><div class="note-icon-wrapper"><i class="icon-note note note"></i></div><div class="noteContentSpan"><strong>说明 </strong><p id="9ee508cfc8t55"><span data-tag="ph" id="41a2f3ea051rc" data-ref-searchable="yes" docid="5541476" props="china" data-cond-props="china" class="ph">通义灵码</span>已上线单元测试智能体功能，包括自动编译、运行和修复。</p></div></div><section id="13d6f2af2dh3s" class="section"><h3 uuid="m7xkr2o46qw7svn8f37" left="0" id="68d35414d8u1h"><b>1. 单测智能体度量指标</b></h3><p id="42668a6e6bvr6">技术评估维度（编译通过率、运行通过率）——基于<span class="help-letter-space"></span>Java<span class="help-letter-space"></span>代码本地测评集的测评结果：</p><ol id="e839f75334uyc"><li data-spm-anchor-id="395e44f7.4d3ad9aa.0.i35.66bb5fb4LdWDul" id="7e39697d619ie"><p id="cdbb73dbf0j4u">一次性编译通过率：该指标用于衡量单元测试智能体生成的代码在编译阶段的成功比例。当前编译通过率为<span class="help-letter-space"></span>81.00%。</p></li><li data-spm-anchor-id="395e44f7.4d3ad9aa.0.i34.66bb5fb4LdWDul" id="4de479f23cfxe"><p id="fb6c14177cup0">一次性运行通过率：运行通过率关注的是生成的单元测试在实际运行环境中的表现情况。目前的运行通过率为<span class="help-letter-space"></span>80.55%，显示出代码在执行阶段的表现与编译阶段相近。</p></li></ol><p jc="start" id="7e455e44b5ewc" style="text-align:start">业务效能评估——业务团队单测覆盖率：单测覆盖率作为业务团队的关键度量标准，反映了自动化单元测试对代码库的覆盖程度。提高这一比率不仅能增强产品质量，还能促进更快的开发周期和更高的客户满意度。</p></section><section id="09d39bf55flcr" class="section"><h3 uuid="m7xiibcz3l6dif9w3ud" left="0" id="d29fd8a29aho2"><b>2. 场景演示：《单元测试自动生成、编译与运行》</b></h3><video id="65b6de28ddpd3" name="后端+单测生成.mp4" data-tag="video" src="https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20250320/kdzryb/%E5%90%8E%E7%AB%AF_%E5%8D%95%E6%B5%8B%E7%94%9F%E6%88%90.mp4" controls="" class="video" poster="https://img.alicdn.com/imgextra/i1/O1CN016UJXJm1Exws0KRfi2_!!6000000000419-0-tps-1204-677.jpg" title="文件编辑后端使用实践" alt="文件编辑后端使用实践"></video></section></section><p id="2e6eedae37brs"></p><p id="9174b36a5f64p"></p><p id="bd6f195631aq2"></p></div></main>
+
+</div></div><div class="aliyun-docs-pagination"><div class="NextPage--container--cfVcdEE"><span class="NextPage--paginationLeft--WTOmehr"><a href="/zh/lingma/file-editing-guides/" data-spm-click="gostr=/aliyun;locaid=preDoc"><i class="iconfont icon-prev-arrow"></i>上一篇：文件编辑使用实践</a></span><span class="NextPage--paginationRight--TgS6P1r"><a href="/zh/lingma/frond-end-development" data-spm-click="gostr=/aliyun;locaid=nextDoc">下一篇：文件编辑前端使用实践<i class="iconfont icon-next-arrow"></i></a></span></div></div></div><div class="RecommendDoc--container--M1qVQax"></div><div class="FeedbackButton--feedbackContainer--njtB22l aliyun-docs-feedback" id="help-doc-feedback"><div class="FeedbackButton--feedbackHelpTip--JxaBwdy">该文章对您有帮助吗？</div><div class="FeedbackButton--feedbackButtonContainer--ujiXFNJ"><div class="FeedbackButton--feedbackButtonBox--GmY1Nor"><button class="FeedbackButton--iconButton--fx4Xcop"><i class="help-iconfont help-icon-tag-empty"></i></button><button class="FeedbackButton--iconButton--fx4Xcop"><i class="help-iconfont help-icon-tag-empty" style="display:inline-block;transform:rotateX(-180deg)"></i></button><button class="FeedbackButton--clickButton--YxH6n96"><i class="help-iconfont help-icon-bianji"></i>反馈</button></div></div></div></section><div class="aliyun-docs-side" id="aliyun-docs-side"><div id="aliyun-docs-side-content" class="aliyun-docs-side-content ProductDetail--rightBox--GGLE5sH"><ul class="Outline--synopsisBox--zm_HamD" id="outline-container"></ul></div><div id="aliyun-docs-side-blank" class="aliyun-docs-side-blank"></div></div></div></main></div></div><div id="aliyun-docs-selection-div"></div></div></div>
+  <footer><div id="d3f70824d5ebd653022a88a05724eff1"><div class="_18a32969382a277c44015217fbc5cb5a_box"><footer class="_49ada0cd752f65901c49f2eed0d6c3d5_container" aria-label="PC 端页尾"><div class="_49ada0cd752f65901c49f2eed0d6c3d5_inner"><div class="_296d5000d6fdcaff9d0bfd209c64fbbc_services"><nav class="_296d5000d6fdcaff9d0bfd209c64fbbc_homepage-footer-main-services" aria-label="页脚导航"><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">为什么选择阿里云</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/about/what-is-cloud-computing" target="_blank">什么是云计算</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://infrastructure.aliyun.com/" target="_blank">全球基础设施</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/why-us/leading-technology" target="_blank">技术领先</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/why-us/reliability" target="_blank">稳定可靠</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/why-us/security-compliance" target="_blank">安全合规</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/analyst-reports" target="_blank">分析师报告</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">大模型</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/product/tongyi" target="_blank">千问大模型</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://bailian.console.aliyun.com/?tab=model#/model-market" target="_blank" rel="nofollow">大模型服务</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://bailian.console.aliyun.com/app-center?tab=app#/app-center" target="_blank" rel="nofollow">AI应用构建</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">产品和定价</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/product/list" target="_blank">全部产品</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://free.aliyun.com/" target="_blank">免费试用</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/product/news/" target="_blank">产品动态</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/price/detail" target="_blank">产品定价</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/price/cpq/list" target="_blank">配置报价器</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/price/cost-management" target="_blank">云上成本管理</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">技术内容</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/solution/tech-solution" target="_blank">技术解决方案</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://help.aliyun.com/" target="_blank">帮助文档</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://developer.aliyun.com/" target="_blank">开发者社区</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://tianchi.aliyun.com/" target="_blank">天池大赛</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://edu.aliyun.com/" target="_blank">阿里云认证</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">权益</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://free.aliyun.com/" target="_blank">免费试用</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/solution/free" target="_blank">解决方案免费试用</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://university.aliyun.com/" target="_blank">高校计划</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://dashi.aliyun.com/?ambRef=shouYeDaoHang2&amp;pageCode=yunparterIndex" target="_blank">推荐返现计划</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">服务</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/service" target="_blank">基础服务</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/service/supportplans" target="_blank">企业增值服务</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/service/devopsimpl/devopsimpl_cloudmigration_public_cn" target="_blank">迁云服务</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/notice/" target="_blank">官网公告</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://status.aliyun.com/" target="_blank">健康看板</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://security.aliyun.com/trust-center" target="_blank">信任中心</a></section></nav><article class="_7b44142961778903dda8af3f769cd06c_focus"><h3 class="_7b44142961778903dda8af3f769cd06c_ali-main-services-title">关注阿里云</h3><p class="_7b44142961778903dda8af3f769cd06c_ali-main-services-desc">关注阿里云公众号或下载阿里云APP，关注云资讯，随时随地运维管控云服务</p><img alt="阿里云APP" src="https://img.alicdn.com/imgextra/i4/O1CN01XLesV31fkf7pYNATb_!!6000000004045-2-tps-400-400.png" class="_7b44142961778903dda8af3f769cd06c_ali-official-code" loading="lazy"/><img alt="阿里云微信" src="https://img.alicdn.com/tfs/TB1AOdINW6qK1RjSZFmXXX0PFXa-258-258.jpg" class="_7b44142961778903dda8af3f769cd06c_ali-official-code" loading="lazy"/><p class="_7b44142961778903dda8af3f769cd06c_consult-text">联系我们：4008013260</p></article></div><div class="_4598709a854bea355ceb6ef9f23f10d4_about-link-wrap"><a href="https://help.aliyun.com/product/67275.html" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">法律声明</a><a href="https://terms.alicdn.com/legal-agreement/terms/platform_service/20220906101446934/20220906101446934.html" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">Cookies 政策</a><a href="https://aliyun.jubao.alibaba.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">廉正举报</a><a href="https://report.aliyun.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">安全举报</a><a href="https://www.aliyun.com/contact" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">联系我们</a><a href="https://careers.aliyun.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">加入我们</a></div><section class="_4598709a854bea355ceb6ef9f23f10d4_friend-link-wrap"><h3 hidden="">友情链接</h3><a href="https://www.alibabagroup.com/cn/global/home" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里巴巴集团</a><a href="https://www.taobao.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">淘宝网</a><a href="https://www.tmall.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">天猫</a><a href="https://www.aliexpress.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">全球速卖通</a><a href="https://www.alibaba.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里巴巴国际交易市场</a><a href="https://www.1688.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">1688</a><a href="https://www.alimama.com/index.htm" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里妈妈</a><a href="https://www.fliggy.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">飞猪</a><a href="https://www.aliyun.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里云计算</a><a href="https://wanwang.aliyun.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">万网</a><a href="https://mobile.amap.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">高德</a><a href="https://www.uc.cn/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">UC</a><a href="https://www.umeng.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">友盟</a><a href="https://www.youku.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">优酷</a><a href="https://www.dingtalk.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">钉钉</a><a href="https://www.alipay.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">支付宝</a><a href="https://damo.alibaba.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">达摩院</a><a href="https://world.taobao.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">淘宝海外</a><a href="https://www.aliyundrive.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里云盘</a><a href="https://www.ele.me/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">淘宝闪购</a></section><p class="_4598709a854bea355ceb6ef9f23f10d4_ali-copyright-text">© 2009-现在 Aliyun.com 版权所有 增值电信业务经营许可证： <a href="http://beian.miit.gov.cn/" target="_blank">浙B2-20080101</a> 域名注册服务机构许可： <a href="https://domain.miit.gov.cn/域名注册服务机构/互联网域名/阿里云计算有限公司 " target="_blank">浙D3-20210002</a></p><p class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-wrap"><a href="https://zzlz.gsxt.gov.cn/businessCheck/verifKey.do?showType=p&amp;serial=91330106673959654P-SAIC_SHOW_10000091330106673959654P1782269316568&amp;signData=MEUCIQDTH78jfQrqhsr99oZZLEZ9bvrSnyF%20tsaiBM1kAscJ1AIgWUzC8x%20mPem4t8XfwhDOOOIaNULiW8MBaKLkRHa0eWw%3D" target="_blank" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link"><img src="//gw.alicdn.com/tfs/TB1GxwdSXXXXXa.aXXXXXXXXXXX-65-70.gif" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-img" alt="" loading="lazy"/></a><a href="http://www.beian.gov.cn/portal/registerSystemInfo" target="_blank" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link"><img src="//img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-img" alt="浙公网安备 33010602009975号" loading="lazy"/><span class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link-text">浙公网安备 33010602009975号</span></a><a href="https://beian.miit.gov.cn/" target="_blank" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link"><span class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link-text _4598709a854bea355ceb6ef9f23f10d4_ali-report-link-text-unique">浙B2-20080101-4</span></a></p></div></footer><footer class="_4b41e3343c851a7a8833c9165b249eb2_container" aria-label="移动端页尾"></footer></div></div></footer>
+
+
+
+<script>
+  var _performance_domEnd = window.performance && window.performance.now();
+</script>
+
+
+  <script>
+    window.ALIYUN_PERF && window.ALIYUN_PERF.getPCP().then(rst => {
+      var data = {
+        product: 'help.aliyun.com',
+        ua: navigator.userAgent,
+        device: 'pc',
+        page: 'index',
+        lang: 'zh',
+        cna: '',
+        url: window.location.href,
+        action: 'pcp',
+        userParams1: rst || 0,
+      };
+      let queryStr = Object.keys(data).map(key => data[key] &&
+        `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`).join('&');
+      fetch('https://help-new.cn-wulanchabu.log.aliyuncs.com/logstores/web-tracking/track?APIVersion=0.6.0&' +
+        queryStr);
+    });
+  </script>
+  
+
+  <script crossorigin="" src="https://g.alicdn.com/code/lib/??react/16.8.6/umd/react.production.min.js,react-dom/16.8.6/umd/react-dom.production.min.js"></script>
+  <script src="https://g.alicdn.com/code/lib/lodash.js/4.17.21/lodash.min.js" crossorigin="anonymous"></script>
+  <script>
+  window.resourceBaseUrl="https://g.alicdn.com/aliyun-help/help-portal-fe/0.12.51/"
+</script>
+<script defer="" src="https://g.alicdn.com/aliyun-help/help-portal-fe/0.12.51/js/index.js"></script>
+<script defer src="https://g.alicdn.com/aliyun-help/help-portal-fe/0.12.51/js/vendor.js"></script>
+  
+  <script async="" src="https://g.alicdn.com/dawn/assets-loader/scripts/fast-login.js?tenantName=help-new-aliyun-com"></script>
+  <script async="" src="https://g.alicdn.com/aliyun/perf/js/index.js"></script>
+  <script src="//cloud-assets.alicdn.com/website.js" crossorigin=""></script>
+  
+
+<script src="https://website.alyasset.com/npm.combo/@ali/biu-loader/0.1.9/~~index.js,plugins/global-react.js,plugins/ace-module.js"></script>
+<script src="https://website.alyasset.com/npm.combo/@ali/~~hmod-preact/0.0.1/index.js,hmod-preact-hooks/0.0.1/index.js,hmod-preact-compat/0.0.1/index.js,hmod-preact-bridge/0.1.4/index.js"></script>
+<script src="https://website.alyasset.com/code.combo/aliyun-com/~~lowcode-env-inject/0.1.0/aliyun.prod.pc.zh-CN.js,lowcode-engine/0.1.125/renderer/build/js/index.js"></script>
+<script src="https://g.alicdn.com/code/npm/@ali/??hmod-ace-2023-box/0.1.0/index.js,hmod-aliyun-com-floating-toolbar/0.2.4/index.js,hmod-aliyun-com-global-nav-search/0.8.5/index.js,hmod-aliyun-com-global-nav-search/0.8.5/locales/zh-CN.js,hmod-aliyun-com-global-nav/0.3.18/index.js,hmod-aliyun-com-global-nav/0.3.18/locales/zh-CN.js"></script>
+<script src="https://website.alyasset.com/lowcode/entry/prod/77597e3303f7f62742f8e02d3f883457.js"></script>
+<script src="https://g.alicdn.com/code/npm/@ali/??hmod-ace-2023-box/0.1.0/index.js,hmod-ace-2024-global-footer/0.2.1/index.js,hmod-ace-2024-global-footer/0.2.1/locales/zh-CN.js,hmod-lowcode-normal-page/0.1.0/index.js"></script>
+<script src="https://website.alyasset.com/lowcode/entry/prod/d3f70824d5ebd653022a88a05724eff1.js"></script>
+</body></html>

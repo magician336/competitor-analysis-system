@@ -1,0 +1,50 @@
+{
+  "canonical_url": "https://docs.trae.ai/ide/refactoring-insights?_lang=en",
+  "competitor": "trae",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T14:05:36.412792Z",
+  "final_url": "https://docs.trae.ai/ide/refactoring-insights?_lang=en",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "a42a5ae6b8a5f6aa4f60ab6c160339f42f0783406e1d8340ace14b36e66541fc",
+  "payload_path": "trae/product_docs/20260726T134021Z_a4a3c961/d9e14758c66c68f46037233d.html",
+  "published_at": null,
+  "raw_record_id": "d9e14758c66c68f46037233d",
+  "requested_url": "https://docs.trae.ai/ide/refactoring-insights?_lang=en",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://docs.trae.ai/ide/refactoring-insights?_lang=en",
+    "competitor_aliases": [
+      "TRAE",
+      "TRAE IDE"
+    ],
+    "competitor_name": "Trae",
+    "discovery": {
+      "depth": 1,
+      "max_depth": 1,
+      "method": "same_origin_links"
+    },
+    "embedded_content": "trae_router_document",
+    "embedded_content_supported": true,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/ide/"
+      ],
+      "enabled": true,
+      "max_depth": 1,
+      "max_urls": 120,
+      "query_params": {
+        "_lang": "en"
+      }
+    },
+    "visible_text_length": 52
+  },
+  "source_type": "product_docs"
+}

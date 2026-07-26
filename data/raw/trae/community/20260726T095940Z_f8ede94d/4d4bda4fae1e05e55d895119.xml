@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en-US">
+  <id>tag:github.com,2008:/Trae-AI/TRAE/discussions</id>
+  <link type="text/html" rel="alternate" href="https://github.com/Trae-AI/TRAE/discussions"/>
+  <link type="application/atom+xml" rel="self" href="https://github.com/Trae-AI/TRAE/discussions.atom"/>
+  <title>Recent discussions in Trae-AI/TRAE</title>
+  <updated>2026-05-23T17:24:26+00:00</updated>
+  <entry>
+    <id>tag:github.com,2008:10122320</id>
+    <link type="text/html" rel="alternate" href="https://github.com/Trae-AI/TRAE/discussions/2534"/>
+    <title>
+      Workspace Index is Getting Failed
+    </title>
+    <published>2026-05-23T17:24:26+00:00</published>
+    <updated>2026-05-23T17:24:26+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/255415290?s=30&amp;v=4"/>
+    <author>
+      <name>codeincult</name>
+      <uri>https://github.com/codeincult</uri>
+    </author>
+    <content type="html">
+      &lt;p dir=&quot;auto&quot;&gt;I have a pretty simple code base with React Router. But the indexing did nothing every time when I click to the build button.&lt;/p&gt;
+&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://private-user-images.githubusercontent.com/255415290/597226056-98f37e50-555d-42d2-af4a-25feab72fb88.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODUwNjAyODEsIm5iZiI6MTc4NTA1OTk4MSwicGF0aCI6Ii8yNTU0MTUyOTAvNTk3MjI2MDU2LTk4ZjM3ZTUwLTU1NWQtNDJkMi1hZjRhLTI1ZmVhYjcyZmI4OC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzI2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcyNlQwOTU5NDFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03NjQyOWI2NjdiZjFiYThiMzNkYmJlMDBhYzUzMjNkNmM0NTQ3OTc2MDZjZjdiZTNkMzA3ODAyNzYyNGY3ZjMyJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.SNO2OlCw-inhpsknesv_eFHciULfeLYejeMFgL1zIBM&quot;&gt;&lt;img width=&quot;634&quot; height=&quot;374&quot; alt=&quot;20260523_23h19m45s_grim&quot; src=&quot;https://private-user-images.githubusercontent.com/255415290/597226056-98f37e50-555d-42d2-af4a-25feab72fb88.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODUwNjAyODEsIm5iZiI6MTc4NTA1OTk4MSwicGF0aCI6Ii8yNTU0MTUyOTAvNTk3MjI2MDU2LTk4ZjM3ZTUwLTU1NWQtNDJkMi1hZjRhLTI1ZmVhYjcyZmI4OC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzI2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcyNlQwOTU5NDFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03NjQyOWI2NjdiZjFiYThiMzNkYmJlMDBhYzUzMjNkNmM0NTQ3OTc2MDZjZjdiZTNkMzA3ODAyNzYyNGY3ZjMyJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.SNO2OlCw-inhpsknesv_eFHciULfeLYejeMFgL1zIBM&quot; style=&quot;max-width: 100%; height: auto; max-height: 374px;; aspect-ratio: 634 / 374; background-color: var(--bgColor-muted); border-radius: 6px&quot; class=&quot;js-gh-image-fallback&quot;&gt;&lt;/a&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:10089943</id>
+    <link type="text/html" rel="alternate" href="https://github.com/Trae-AI/TRAE/discussions/2527"/>
+    <title>
+      现在的trae，慢得一塌糊涂
+    </title>
+    <published>2026-05-19T02:59:31+00:00</published>
+    <updated>2026-05-19T03:00:31+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/4146849?s=30&amp;v=4"/>
+    <author>
+      <name>netsafer</name>
+      <uri>https://github.com/netsafer</uri>
+    </author>
+    <content type="html">
+      &lt;p dir=&quot;auto&quot;&gt;现在的trae，慢得一塌糊涂&lt;br&gt;
+卡很久&lt;br&gt;
+经常性报错，检测到循环之类&lt;/p&gt;
+&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://private-user-images.githubusercontent.com/4146849/594433292-0ad65b85-9731-4ef2-a83a-0f53ea31788e.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODUwNjAyODEsIm5iZiI6MTc4NTA1OTk4MSwicGF0aCI6Ii80MTQ2ODQ5LzU5NDQzMzI5Mi0wYWQ2NWI4NS05NzMxLTRlZjItYTgzYS0wZjUzZWEzMTc4OGUucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI2MDcyNiUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNjA3MjZUMDk1OTQxWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9YTgxMDQyN2NmZTE0NDEzY2IyODY0NjI1ZWVmNmEzMTUyOTE1ZDM4Y2Y3OTUwMjcwNDVmYjc2OTM3OTdmMmVlYSZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmcmVzcG9uc2UtY29udGVudC10eXBlPWltYWdlJTJGcG5nIn0.iv8Lj0qNCJWYnloWCQrzVULnnA7vM9go-PqXz0a5HVc&quot;&gt;&lt;img width=&quot;613&quot; height=&quot;626&quot; alt=&quot;微信图片_20260514122756_8024_135&quot; src=&quot;https://private-user-images.githubusercontent.com/4146849/594433292-0ad65b85-9731-4ef2-a83a-0f53ea31788e.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODUwNjAyODEsIm5iZiI6MTc4NTA1OTk4MSwicGF0aCI6Ii80MTQ2ODQ5LzU5NDQzMzI5Mi0wYWQ2NWI4NS05NzMxLTRlZjItYTgzYS0wZjUzZWEzMTc4OGUucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI2MDcyNiUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNjA3MjZUMDk1OTQxWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9YTgxMDQyN2NmZTE0NDEzY2IyODY0NjI1ZWVmNmEzMTUyOTE1ZDM4Y2Y3OTUwMjcwNDVmYjc2OTM3OTdmMmVlYSZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmcmVzcG9uc2UtY29udGVudC10eXBlPWltYWdlJTJGcG5nIn0.iv8Lj0qNCJWYnloWCQrzVULnnA7vM9go-PqXz0a5HVc&quot; style=&quot;max-width: 100%; height: auto; max-height: 626px;; aspect-ratio: 613 / 626; background-color: var(--bgColor-muted); border-radius: 6px&quot; class=&quot;js-gh-image-fallback&quot;&gt;&lt;/a&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:10064376</id>
+    <link type="text/html" rel="alternate" href="https://github.com/Trae-AI/TRAE/discussions/2523"/>
+    <title>
+      我已经升级到30美元套餐，但 5.3 codex模型没有回来
+    </title>
+    <published>2026-05-14T09:44:28+00:00</published>
+    <updated>2026-05-14T09:44:28+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/71162666?s=30&amp;v=4"/>
+    <author>
+      <name>RustLoverTheCoder</name>
+      <uri>https://github.com/RustLoverTheCoder</uri>
+    </author>
+    <content type="html">
+      &lt;p dir=&quot;auto&quot;&gt;怎么继续使用 5.3 codex 模型？&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:8705281</id>
+    <link type="text/html" rel="alternate" href="https://github.com/Trae-AI/TRAE/discussions/1330"/>
+    <title>
+      Dear Trae Support Team,
+    </title>
+    <published>2025-08-09T13:37:03+00:00</published>
+    <updated>2026-04-08T07:55:43+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/217484376?s=30&amp;v=4"/>
+    <author>
+      <name>qismawnaseeb</name>
+      <uri>https://github.com/qismawnaseeb</uri>
+    </author>
+    <content type="html">
+      &lt;p dir=&quot;auto&quot;&gt;I hope this email finds you well.&lt;br&gt;
+I am writing to formally request the cancellation of my recently renewed subscription and to ask for a full refund. My subscription was automatically renewed on 06-08-2025 , and the charge was unexpected as I no longer require the service.&lt;br&gt;
+My account details are as follows:&lt;br&gt;
+Email Address: [ &lt;a href=&quot;mailto:buty1853@gmail.com&quot;&gt;buty1853@gmail.com&lt;/a&gt; ]&lt;br&gt;
+Username (if any): Bea Uty&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;I was not aware that the auto-renewal feature was enabled and I did not plan to continue using the platform. Therefore, I kindly request that you cancel the subscription effective immediately and process a full refund to my original payment method.&lt;br&gt;
+I have enjoyed using Trae, but my needs have changed. I would be very grateful if you could assist me with this request.&lt;br&gt;
+Thank you for your understanding and support.&lt;br&gt;
+Sincerely,&lt;br&gt;
+MOUNIR BAGHDAD&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:9547339</id>
+    <link type="text/html" rel="alternate" href="https://github.com/Trae-AI/TRAE/discussions/2309"/>
+    <title>
+      Does support exist?
+    </title>
+    <published>2026-02-27T20:31:54+00:00</published>
+    <updated>2026-04-02T07:19:16+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/73431074?s=30&amp;v=4"/>
+    <author>
+      <name>BAFfle-d</name>
+      <uri>https://github.com/BAFfle-d</uri>
+    </author>
+    <content type="html">
+      &lt;h1 dir=&quot;auto&quot;&gt;Whither the harbors of support, the safe havens for the lost and ill-at-ease&lt;/h1&gt;
+&lt;p dir=&quot;auto&quot;&gt;Trae Discord? Gone. (Invalid Link)&lt;br&gt;
+Language Barrier? Github says English, but the issues page is anything but.&lt;br&gt;
+Github is empty? The readme&#39;s are blank.&lt;br&gt;
+Models gone? I&#39;m paying and I have three - gemini x2 and kimi.&lt;/p&gt;
+&lt;h1 dir=&quot;auto&quot;&gt;I fear the worse.&lt;/h1&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:9806820</id>
+    <link type="text/html" rel="alternate" href="https://github.com/Trae-AI/TRAE/discussions/2428"/>
+    <title>
+      Account limit reached error despite premium subscription
+    </title>
+    <published>2026-04-01T13:31:26+00:00</published>
+    <updated>2026-04-01T13:31:26+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/149059132?s=30&amp;v=4"/>
+    <author>
+      <name>yosiagurning</name>
+      <uri>https://github.com/yosiagurning</uri>
+    </author>
+    <content type="html">
+      &lt;p dir=&quot;auto&quot;&gt;Hi Trae Team,&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;I am experiencing an &quot;account limit reached on this device&quot; error even after purchasing a premium subscription.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Problem Details:&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Error Message: &quot;Account limit reached on this device&quot;&lt;br&gt;
+I previously created multiple free accounts from this device&lt;br&gt;
+I have now purchased a premium subscription&lt;br&gt;
+The error persists even with the premium account&lt;br&gt;
+What I&#39;ve tried:&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Cleared browser cache and cookies&lt;br&gt;
+Tried different browsers&lt;br&gt;
+Uninstalled and reinstalled the app (if applicable)&lt;br&gt;
+Request:&lt;br&gt;
+Could you please reset the device limit for my premium account?&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Account Information:&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Email: [ (&lt;a href=&quot;mailto:yosiagurning@gmaill.com&quot;&gt;yosiagurning@gmaill.com&lt;/a&gt;) (mail to:&lt;a href=&quot;mailto:yosiagurning@gmaill.com&quot;&gt;yosiagurning@gmaill.com&lt;/a&gt;)]&lt;br&gt;
+Subscription: Premium&lt;br&gt;
+Device: [windows]&lt;br&gt;
+Thank you for your help!&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:9767004</id>
+    <link type="text/html" rel="alternate" href="https://github.com/Trae-AI/TRAE/discussions/2413"/>
+    <title>
+      [Feature] Contextual Ask AI (inline Q&amp;A from selection)
+    </title>
+    <published>2026-03-27T06:55:53+00:00</published>
+    <updated>2026-03-27T06:59:12+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/172879445?s=30&amp;v=4"/>
+    <author>
+      <name>Antoanyabo</name>
+      <uri>https://github.com/Antoanyabo</uri>
+    </author>
+    <content type="html">
+      &lt;h3 dir=&quot;auto&quot;&gt;💡 Feature Request: Contextual “Ask AI” (Inline / One-click Q&amp;amp;A from selected content)&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Hi TRAE team,&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;First of all, thank you for building such a powerful AI coding IDE. TRAE already provides strong capabilities with inline chat and code understanding, but I’d like to suggest a feature that could significantly improve UX and workflow speed.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 dir=&quot;auto&quot;&gt;🚀 Feature idea&lt;/h2&gt;
+&lt;p dir=&quot;auto&quot;&gt;Introduce a &lt;strong&gt;contextual “Ask AI” action&lt;/strong&gt; that allows users to:&lt;/p&gt;
+&lt;ul dir=&quot;auto&quot;&gt;
+&lt;li&gt;Select any text (code, logs, docs, error messages)&lt;/li&gt;
+&lt;li&gt;Right-click or click a floating button → &lt;strong&gt;“Ask TRAE”&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Instantly open an AI query using that selection as context (without manual copy-paste)&lt;/li&gt;
+&lt;li&gt;Image example :&lt;/li&gt;
+&lt;/ul&gt;
+&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://private-user-images.githubusercontent.com/172879445/570233377-eaf2bed9-778e-4579-b573-dd7b42216fd9.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODUwNjAyODEsIm5iZiI6MTc4NTA1OTk4MSwicGF0aCI6Ii8xNzI4Nzk0NDUvNTcwMjMzMzc3LWVhZjJiZWQ5LTc3OGUtNDU3OS1iNTczLWRkN2I0MjIxNmZkOS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzI2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcyNlQwOTU5NDFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00MmU2ZTc4NzY1ZTc2YjQyNGUyZWUxNzliZWQyNWI4Nzc3YzQzM2RiZDFiOTgxMTBiNTI5MGI3NjE1ZmI3NjUwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.AWQ7W_yOEpyo-TmsST6GejAV9izlLcU1FO1c2kPYeY0&quot;&gt;&lt;img width=&quot;605&quot; height=&quot;180&quot; alt=&quot;Image&quot; src=&quot;https://private-user-images.githubusercontent.com/172879445/570233377-eaf2bed9-778e-4579-b573-dd7b42216fd9.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODUwNjAyODEsIm5iZiI6MTc4NTA1OTk4MSwicGF0aCI6Ii8xNzI4Nzk0NDUvNTcwMjMzMzc3LWVhZjJiZWQ5LTc3OGUtNDU3OS1iNTczLWRkN2I0MjIxNmZkOS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzI2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcyNlQwOTU5NDFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00MmU2ZTc4NzY1ZTc2YjQyNGUyZWUxNzliZWQyNWI4Nzc3YzQzM2RiZDFiOTgxMTBiNTI5MGI3NjE1ZmI3NjUwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.AWQ7W_yOEpyo-TmsST6GejAV9izlLcU1FO1c2kPYeY0&quot; style=&quot;max-width: 100%; height: auto; max-height: 180px;; aspect-ratio: 605 / 180; background-color: var(--bgColor-muted); border-radius: 6px&quot; class=&quot;js-gh-image-fallback&quot;&gt;&lt;/a&gt;
+&lt;hr&gt;
+&lt;h2 dir=&quot;auto&quot;&gt;🎯 Why this matters&lt;/h2&gt;
+&lt;p dir=&quot;auto&quot;&gt;Currently, even though TRAE has an AI assistant, the flow is still:&lt;/p&gt;
+&lt;ol dir=&quot;auto&quot;&gt;
+&lt;li&gt;Copy content&lt;/li&gt;
+&lt;li&gt;Open chat&lt;/li&gt;
+&lt;li&gt;Paste&lt;/li&gt;
+&lt;li&gt;Ask question&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p dir=&quot;auto&quot;&gt;This adds friction, especially during debugging or reading unfamiliar code.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;A contextual “Ask AI” would:&lt;/p&gt;
+&lt;ul dir=&quot;auto&quot;&gt;
+&lt;li&gt;Reduce interaction cost (fewer steps)&lt;/li&gt;
+&lt;li&gt;Improve developer flow state&lt;/li&gt;
+&lt;li&gt;Make TRAE feel more like a true &lt;strong&gt;AI copilot&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 dir=&quot;auto&quot;&gt;🧠 Suggested implementation&lt;/h2&gt;
+&lt;p dir=&quot;auto&quot;&gt;Conceptually, this is a &lt;strong&gt;context-aware query system&lt;/strong&gt; (similar to “Ask ChatGPT” in some UIs):&lt;/p&gt;
+&lt;ul dir=&quot;auto&quot;&gt;
+&lt;li&gt;
+&lt;p dir=&quot;auto&quot;&gt;Inject selected content into the prompt automatically&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p dir=&quot;auto&quot;&gt;Optionally include:&lt;/p&gt;
+&lt;ul dir=&quot;auto&quot;&gt;
+&lt;li&gt;file path&lt;/li&gt;
+&lt;li&gt;surrounding code&lt;/li&gt;
+&lt;li&gt;project context (if available)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p dir=&quot;auto&quot;&gt;Example prompt:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p dir=&quot;auto&quot;&gt;“Explain / debug / optimize this code: [selected snippet]”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 dir=&quot;auto&quot;&gt;✨ Possible extensions&lt;/h2&gt;
+&lt;ul dir=&quot;auto&quot;&gt;
+&lt;li&gt;
+&lt;p dir=&quot;auto&quot;&gt;Quick actions:&lt;/p&gt;
+&lt;ul dir=&quot;auto&quot;&gt;
+&lt;li&gt;“Explain this”&lt;/li&gt;
+&lt;li&gt;“Fix bug”&lt;/li&gt;
+&lt;li&gt;“Refactor”&lt;/li&gt;
+&lt;li&gt;“Add comments”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p dir=&quot;auto&quot;&gt;Keyboard shortcut (e.g. Cmd/Ctrl + Shift + Enter)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p dir=&quot;auto&quot;&gt;Works in:&lt;/p&gt;
+&lt;ul dir=&quot;auto&quot;&gt;
+&lt;li&gt;editor&lt;/li&gt;
+&lt;li&gt;terminal output&lt;/li&gt;
+&lt;li&gt;logs panel&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 dir=&quot;auto&quot;&gt;🧩 Why it fits TRAE&lt;/h2&gt;
+&lt;p dir=&quot;auto&quot;&gt;TRAE is positioned as an &lt;strong&gt;AI-powered coding partner&lt;/strong&gt; ([&lt;a href=&quot;https://traeide.com/?utm_source=chatgpt.com&quot; rel=&quot;nofollow&quot;&gt;TraeIDE&lt;/a&gt;]&lt;a href=&quot;https://traeide.com/?utm_source=chatgpt.com&quot; title=&quot;TraeIDE&quot; rel=&quot;nofollow&quot;&gt;1&lt;/a&gt;), so reducing friction between “seeing something” → “asking AI about it” would be a huge UX win.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;This feature is already becoming standard in next-gen AI IDEs, and implementing it would help TRAE stay competitive.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 dir=&quot;auto&quot;&gt;🙌 Summary&lt;/h2&gt;
+&lt;p dir=&quot;auto&quot;&gt;A lightweight but high-impact feature:&lt;br&gt;
+👉 Turn any selected content into an instant AI query&lt;br&gt;
+👉 No copy-paste needed&lt;br&gt;
+👉 Faster, more natural developer workflow&lt;/p&gt;
+&lt;hr&gt;
+&lt;p dir=&quot;auto&quot;&gt;Thanks for considering this idea!&lt;br&gt;
+Happy to provide mockups or further details if needed.&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:9626039</id>
+    <link type="text/html" rel="alternate" href="https://github.com/Trae-AI/TRAE/discussions/2378"/>
+    <title>
+      Trae is destroying codes
+    </title>
+    <published>2026-03-11T21:15:49+00:00</published>
+    <updated>2026-03-11T21:42:12+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/224841591?s=30&amp;v=4"/>
+    <author>
+      <name>stacynjimbob-glitch</name>
+      <uri>https://github.com/stacynjimbob-glitch</uri>
+    </author>
+    <content type="html">
+      &lt;p dir=&quot;auto&quot;&gt;I gave trae a code to fix, and within 2 hours, builder had destroyed it!! Please shut this horrible IDE down!! and Trae needs to give it&#39;s previous users compensation for lost coding time!&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:9461139</id>
+    <link type="text/html" rel="alternate" href="https://github.com/Trae-AI/TRAE/discussions/2236"/>
+    <title>
+      Trae AI PhpStorm plugin cannot log out / switch account
+    </title>
+    <published>2026-02-11T18:12:36+00:00</published>
+    <updated>2026-02-12T21:26:05+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/6003803?s=30&amp;v=4"/>
+    <author>
+      <name>nekooee</name>
+      <uri>https://github.com/nekooee</uri>
+    </author>
+    <content type="html">
+      &lt;p dir=&quot;auto&quot;&gt;Hi. I first logged in with Google and activated the Trae AI plugin in PhpStorm. Later, I purchased a subscription using a different email account. Now I need to switch the plugin to the new account, but there is no logout option in the PhpStorm plugin. Even after uninstalling and reinstalling the plugin, it still logs in with the old account and keeps the previous session. How can I fully sign out and log in with the new account?&lt;br&gt;
+As a next step, I also deleted PhpStorm together with all its related folders from different locations on the system and then reinstalled it again, but it still didn’t help.&lt;br&gt;
+I also want to change my account password, but there is no option anywhere on the website to change it.&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:9460763</id>
+    <link type="text/html" rel="alternate" href="https://github.com/Trae-AI/TRAE/discussions/2235"/>
+    <title>
+      Hi, I’m new to Trae IDE and had a question about codebase indexing.
+    </title>
+    <published>2026-02-11T16:51:40+00:00</published>
+    <updated>2026-02-11T16:51:40+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/74142472?s=30&amp;v=4"/>
+    <author>
+      <name>pyzit</name>
+      <uri>https://github.com/pyzit</uri>
+    </author>
+    <content type="html">
+      &lt;p dir=&quot;auto&quot;&gt;Hi, I’m new to Trae IDE and had a question about codebase indexing.&lt;br&gt;
+When workspace codebase indexing starts, is the indexing data stored locally on the user’s machine, or is it uploaded to Trae servers?&lt;br&gt;
+I’d appreciate any clarification. Thank you!&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:9241736</id>
+    <link type="text/html" rel="alternate" href="https://github.com/Trae-AI/TRAE/discussions/1906"/>
+    <title>
+      Request Grok Code Fast 1
+    </title>
+    <published>2025-12-12T16:26:02+00:00</published>
+    <updated>2025-12-12T16:26:02+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/11542818?s=30&amp;v=4"/>
+    <author>
+      <name>artaasd95</name>
+      <uri>https://github.com/artaasd95</uri>
+    </author>
+    <content type="html">
+      &lt;p dir=&quot;auto&quot;&gt;Hi,&lt;br&gt;
+I have been using trae as my main editor since the main models were sonnet 3.5 and sonnet 3.7,&lt;br&gt;
+After removal of those models (and Sonnet 4) I had to change to DeepSeek mostly which I am ok but it has a huge room for improvements like DeepSeek R1 and V3.2!&lt;br&gt;
+I am using the BYOK feature to use other models but these are not native support and miss to use the built-in feature of trae.&lt;br&gt;
+I have also used Cursor with trae simultaneously and I am sure Trae is better in many aspect especially the pricing.&lt;br&gt;
+I am appreciate the team for adding the GPT-5.1, but there still a huge room to add a grok-code-fast-1 which is a very fast, reliable, accurate and cost-efficient model.&lt;br&gt;
+So please consider adding it to the Trae so we can use Trae as out main IDE.&lt;br&gt;
+Thanks in advance!&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:8853285</id>
+    <link type="text/html" rel="alternate" href="https://github.com/Trae-AI/TRAE/discussions/1468"/>
+    <title>
+      Trae context size?
+    </title>
+    <published>2025-09-07T10:28:35+00:00</published>
+    <updated>2025-09-07T10:28:36+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/7593391?s=30&amp;v=4"/>
+    <author>
+      <name>dmenisdev</name>
+      <uri>https://github.com/dmenisdev</uri>
+    </author>
+    <content type="html">
+      &lt;p dir=&quot;auto&quot;&gt;What is the max context size in Trae?&lt;br&gt;
+Appreciate if you could share the link where I can find this info.&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:8852436</id>
+    <link type="text/html" rel="alternate" href="https://github.com/Trae-AI/TRAE/discussions/1466"/>
+    <title>
+      Trae v1.3.0 not able to see any direct download link in trae.ai.  by any chance, anyone has archived link? zip or exe ?
+    </title>
+    <published>2025-09-07T05:54:10+00:00</published>
+    <updated>2025-09-07T05:54:10+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/212652827?s=30&amp;v=4"/>
+    <author>
+      <name>shivashankaractc</name>
+      <uri>https://github.com/shivashankaractc</uri>
+    </author>
+    <content type="html">
+      &lt;p dir=&quot;auto&quot;&gt;I am trying to download Trae version 1.3.0. but not successful. not interested in latest versions.&lt;br&gt;
+by any chance, any archived link if a vaialble, or if anyone has this link, kind can yiou share me?&lt;br&gt;
+shivashankaractc at the rate gmail dot com.  pls tell me any detials.&lt;br&gt;
+Thanks in advance.&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:8767969</id>
+    <link type="text/html" rel="alternate" href="https://github.com/Trae-AI/TRAE/discussions/1391"/>
+    <title>
+      Acesso completo à IDE TRAE
+    </title>
+    <published>2025-08-20T14:58:29+00:00</published>
+    <updated>2025-08-20T14:58:30+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/224621687?s=30&amp;v=4"/>
+    <author>
+      <name>jluizdiv-arch</name>
+      <uri>https://github.com/jluizdiv-arch</uri>
+    </author>
+    <content type="html">
+      &lt;p dir=&quot;auto&quot;&gt;Bom dia,&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Sou assinante da TRAE e, recentemente, notei que minha IDE não possui mais acesso completo às funcionalidades que fazem parte do plano contratado, tais como:&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;✅ Edição direta de código (modificação de linhas de código)&lt;br&gt;
+✅ Execução de comandos no terminal&lt;br&gt;
+✅ Alterações em arquivos&lt;br&gt;
+✅ Execução de builds e compilações&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Ao revisar as ferramentas disponíveis hoje, percebi que também não consigo acessar:&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;❌ Ferramenta de edição de arquivos&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;❌ Ferramenta de execução de comandos de terminal&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;❌ Ferramenta de criação/modificação de arquivos&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Poderiam, por favor, me informar o que ocorreu e como posso restaurar o acesso completo à minha IDE?&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Agradeço desde já pelo suporte e aguardo retorno.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Atenciosamente,&lt;br&gt;
+José Luiz&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:8765758</id>
+    <link type="text/html" rel="alternate" href="https://github.com/Trae-AI/TRAE/discussions/1386"/>
+    <title>
+      Does Linux version is supported or not?
+    </title>
+    <published>2025-08-20T08:00:29+00:00</published>
+    <updated>2025-08-20T08:00:29+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/142737223?s=30&amp;v=4"/>
+    <author>
+      <name>Builder247</name>
+      <uri>https://github.com/Builder247</uri>
+    </author>
+    <content type="html">
+      &lt;p dir=&quot;auto&quot;&gt;I need question&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:8371081</id>
+    <link type="text/html" rel="alternate" href="https://github.com/Trae-AI/TRAE/discussions/1036"/>
+    <title>
+      Use English (especially in Issues)
+    </title>
+    <published>2025-05-25T14:57:43+00:00</published>
+    <updated>2025-07-26T05:50:02+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/16405602?s=30&amp;v=4"/>
+    <author>
+      <name>bigbott</name>
+      <uri>https://github.com/bigbott</uri>
+    </author>
+    <content type="html">
+      &lt;p dir=&quot;auto&quot;&gt;There are a lot of issues created in Chinese.&lt;br&gt;
+I am Ukrainian, also speak Russian and Hebrew, but I don&#39;t understand Chinese.&lt;br&gt;
+It would be beneficial for everybody if we all used English to communicate.&lt;/p&gt;
+    </content>
+  </entry>
+</feed>

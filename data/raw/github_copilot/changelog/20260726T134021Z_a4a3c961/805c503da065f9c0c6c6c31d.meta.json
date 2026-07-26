@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2025-12-17-gpt-5-2-is-now-generally-available-in-github-copilot/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:46:52.689069Z",
+  "final_url": "https://github.blog/changelog/2025-12-17-gpt-5-2-is-now-generally-available-in-github-copilot/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "0319b4e5d2a0ec5c421f9abd475ec7769d433c2333157d69f4f6e4c56b64303e",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/805c503da065f9c0c6c6c31d.html",
+  "published_at": "2025-12-17T00:00:00Z",
+  "raw_record_id": "805c503da065f9c0c6c6c31d",
+  "requested_url": "https://github.blog/changelog/2025-12-17-gpt-5-2-is-now-generally-available-in-github-copilot",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2025/?label=copilot",
+    "changelog_page_number": 2,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2025-12-17T00:00:00Z",
+    "listing_title": "GPT-5.2 is now generally available in GitHub Copilot",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3540
+  },
+  "source_type": "changelog"
+}

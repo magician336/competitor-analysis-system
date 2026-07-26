@@ -1,0 +1,46 @@
+{
+  "canonical_url": "https://plugins.jetbrains.com/api/plugins/20587/updates",
+  "competitor": "codegeex",
+  "content_type": "application/json",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T14:21:00.386198Z",
+  "final_url": "https://plugins.jetbrains.com/api/plugins/20587/updates",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "16ab1f498bf89955454a61ad102e0e9da758bd65108682b98c5e61e440a334ef",
+  "payload_path": "codegeex/changelog/20260726T134021Z_a4a3c961/68659bfab7650cb0a27e9300.json",
+  "published_at": null,
+  "raw_record_id": "68659bfab7650cb0a27e9300",
+  "requested_url": "https://plugins.jetbrains.com/api/plugins/20587/updates",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://plugins.jetbrains.com/api/plugins/20587/updates",
+    "competitor_aliases": [
+      "CodeGeeX4",
+      "CodeGeeX AI Coding Assistant"
+    ],
+    "competitor_name": "CodeGeeX",
+    "embedded_content_supported": false,
+    "evidence_level": "B",
+    "format": "json",
+    "json_items": {
+      "author_field": "author.name",
+      "content_fields": [
+        "notes",
+        "sinceUntil"
+      ],
+      "identity_field": "id",
+      "publish_time_field": "cdate",
+      "title_field": "version",
+      "url_base": "https://plugins.jetbrains.com",
+      "url_field": "link"
+    },
+    "note": "The verified JetBrains Marketplace updates API is the public product-update source.",
+    "visible_text_length": null
+  },
+  "source_type": "changelog"
+}

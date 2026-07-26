@@ -1,0 +1,54 @@
+{
+  "canonical_url": "https://cursor.com/docs/models/gemini-3-6-flash",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": "W/\"50d95f4db1ab0d5d6ec1918e0a988073\"",
+  "fetched_at": "2026-07-26T13:44:40.576892Z",
+  "final_url": "https://cursor.com/docs/models/gemini-3-6-flash",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "60711009e4320460ada9861c51e7327c25996f3b9303cc30bb20bbc512306e4f",
+  "payload_path": "cursor/product_docs/20260726T134021Z_a4a3c961/419adb90cde7315567785bcf.html",
+  "published_at": null,
+  "raw_record_id": "419adb90cde7315567785bcf",
+  "requested_url": "https://cursor.com/docs/models/gemini-3-6-flash",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://cursor.com/docs/models/gemini-3-6-flash",
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "discovery": {
+      "configured_sitemap_urls": [
+        "https://cursor.com/docs/sitemap.xml"
+      ],
+      "method": "sitemap"
+    },
+    "embedded_content": "cursor_next_rsc",
+    "embedded_content_supported": true,
+    "evidence_level": "A",
+    "format": "html",
+    "sitemap_discovery": {
+      "allowed_path_prefixes": [
+        "/docs/"
+      ],
+      "enabled": true,
+      "excluded_path_prefixes": [
+        "/docs-static/",
+        "/docs/page.mdx"
+      ],
+      "max_sitemaps": 2,
+      "max_urls": 200,
+      "urls": [
+        "https://cursor.com/docs/sitemap.xml"
+      ]
+    },
+    "visible_text_length": 30
+  },
+  "source_type": "product_docs"
+}

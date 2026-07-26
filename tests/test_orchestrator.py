@@ -52,6 +52,8 @@ def test_collector_task_parses_aliases_and_common_yaml_shapes() -> None:
     assert SourceType.parse("forum") is SourceType.COMMUNITY
     assert SourceType.parse("privacy") is SourceType.SECURITY_PRIVACY
     assert SourceType.parse("benchmarks") is SourceType.BENCHMARK
+    assert SourceType.parse("feed") is SourceType.RSS
+    assert SourceType.parse("atom") is SourceType.RSS
 
 
 def test_real_configuration_declares_all_source_categories() -> None:
@@ -72,6 +74,7 @@ def test_real_configuration_declares_all_source_categories() -> None:
         "review",
         "security_privacy",
         "benchmark",
+        "rss",
     }
 
     for competitor in config["competitors"]:
@@ -106,10 +109,36 @@ def test_real_configuration_builds_only_enabled_selected_tasks(tmp_path) -> None
         ("github_copilot", "github"),
     }
     github_task = next(task for task in tasks if task.source_type is SourceType.GITHUB)
-    assert github_task.repositories == ("microsoft/vscode-copilot-chat",)
+    assert github_task.repositories == (
+        "microsoft/vscode-copilot-release",
+        "microsoft/vscode-copilot-chat",
+    )
     assert github_task.max_issues == 12
     assert github_task.max_comments == 3
     assert github_task.force is True
+
+
+def test_real_configuration_builds_enabled_rss_tasks(tmp_path) -> None:
+    orchestrator = CrawlOrchestrator.from_yaml(
+        PROJECT_ROOT / "config" / "competitors.yaml",
+        tmp_path / "data",
+        client=_offline_client(),
+    )
+
+    tasks, errors = orchestrator.build_tasks(sources="rss", since_days=90)
+
+    assert errors == []
+    assert {
+        (task.competitor, task.source_type, task.format, task.urls)
+        for task in tasks
+    } == {
+        (
+            "trae",
+            SourceType.RSS,
+            "rss",
+            ("https://www.trae.ai/rss.xml",),
+        )
+    }
 
 
 def test_broad_github_selection_preserves_configured_subtype_switches(

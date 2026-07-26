@@ -1,0 +1,46 @@
+{
+  "canonical_url": "https://docs.github.com/en/copilot/how-tos/copilot-sdk/features/session-limits",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:50:59.945376Z",
+  "final_url": "https://docs.github.com/en/copilot/how-tos/copilot-sdk/features/session-limits",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "6b7cefc48fe762dab2d0cda1e045f0e4d80990134fe9390f22ad31030d58667c",
+  "payload_path": "github_copilot/product_docs/20260726T134021Z_a4a3c961/e8475c35b112603463796b0a.html",
+  "published_at": null,
+  "raw_record_id": "e8475c35b112603463796b0a",
+  "requested_url": "https://docs.github.com/en/copilot/how-tos/copilot-sdk/features/session-limits",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://docs.github.com/en/copilot/how-tos/copilot-sdk/features/session-limits",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "discovery": {
+      "depth": 1,
+      "max_depth": 1,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/en/copilot"
+      ],
+      "enabled": true,
+      "max_depth": 1,
+      "max_urls": 500
+    },
+    "visible_text_length": 15780
+  },
+  "source_type": "product_docs"
+}

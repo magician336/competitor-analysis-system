@@ -1,0 +1,32 @@
+{
+  "canonical_url": "https://cursor.com/blog/composer-2-technical-report",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:45:49.430412Z",
+  "final_url": "https://cursor.com/blog/composer-2-technical-report",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "bb51ae83c198e4b0afadba0496ab7e2eac6f1b3cc2f2b503340282fd23c47b09",
+  "payload_path": "cursor/benchmark/20260726T134021Z_a4a3c961/a0d8c7ef5fb8ecd7f51c613e.html",
+  "published_at": null,
+  "raw_record_id": "a0d8c7ef5fb8ecd7f51c613e",
+  "requested_url": "https://cursor.com/blog/composer-2-technical-report",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://cursor.com/blog/composer-2-technical-report",
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "embedded_content_supported": false,
+    "evidence_level": "B",
+    "format": "html",
+    "visible_text_length": 8497
+  },
+  "source_type": "benchmark"
+}

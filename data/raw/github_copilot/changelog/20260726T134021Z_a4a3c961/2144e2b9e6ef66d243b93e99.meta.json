@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2024-12-04-full-compatibility-and-enhanced-authentication-for-github-copilot-in-jetbrains-ides-2024-3/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:47:34.438083Z",
+  "final_url": "https://github.blog/changelog/2024-12-04-full-compatibility-and-enhanced-authentication-for-github-copilot-in-jetbrains-ides-2024-3/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "8e79fdf4c5f5ec57210f35f0d78dca368327eb2358a57e28ecfa9dfdf86a6d4e",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/2144e2b9e6ef66d243b93e99.html",
+  "published_at": "2024-12-04T00:00:00Z",
+  "raw_record_id": "2144e2b9e6ef66d243b93e99",
+  "requested_url": "https://github.blog/changelog/2024-12-04-full-compatibility-and-enhanced-authentication-for-github-copilot-in-jetbrains-ides-2024-3",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2024/?label=copilot",
+    "changelog_page_number": 3,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2024-12-04T00:00:00Z",
+    "listing_title": "Full compatibility and enhanced authentication for GitHub Copilot in JetBrains IDEs 2024.3",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3650
+  },
+  "source_type": "changelog"
+}

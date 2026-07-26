@@ -1,0 +1,46 @@
+{
+  "canonical_url": "https://docs.github.com/en/copilot/reference/agent-session-filters",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T11:48:27.148349Z",
+  "final_url": "https://docs.github.com/en/copilot/reference/agent-session-filters",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "9e534f4b575e5d23f15063cbe81c917d44b82a6de55128e4180c1a8a186d0f22",
+  "payload_path": "github_copilot/product_docs/20260726T113735Z_5abe3ba9/6e3a66429d8fe76d1c1f2c10.html",
+  "published_at": null,
+  "raw_record_id": "6e3a66429d8fe76d1c1f2c10",
+  "requested_url": "https://docs.github.com/en/copilot/reference/agent-session-filters",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://docs.github.com/en/copilot/reference/agent-session-filters",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "discovery": {
+      "depth": 1,
+      "max_depth": 1,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/en/copilot"
+      ],
+      "enabled": true,
+      "max_depth": 1,
+      "max_urls": 500
+    },
+    "visible_text_length": 12474
+  },
+  "source_type": "product_docs"
+}

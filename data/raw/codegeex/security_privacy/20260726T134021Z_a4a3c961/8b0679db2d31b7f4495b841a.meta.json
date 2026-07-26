@@ -1,0 +1,34 @@
+{
+  "canonical_url": "https://github.com/CodeGeeX/codegeex-vscode-extension#privacy",
+  "competitor": "codegeex",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": "W/\"deb3ebe65b85bbf29a50996cd3af15f8\"",
+  "fetched_at": "2026-07-26T14:23:28.407926Z",
+  "final_url": "https://github.com/CodeGeeX/codegeex-vscode-extension#privacy",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "fe5ada187702c660fa9d1106f85140f686897771a81430fa38a3d9a4c669cd51",
+  "payload_path": "codegeex/security_privacy/20260726T134021Z_a4a3c961/8b0679db2d31b7f4495b841a.html",
+  "published_at": null,
+  "raw_record_id": "8b0679db2d31b7f4495b841a",
+  "requested_url": "https://github.com/CodeGeeX/codegeex-vscode-extension#privacy",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://github.com/CodeGeeX/codegeex-vscode-extension#privacy",
+    "competitor_aliases": [
+      "CodeGeeX4",
+      "CodeGeeX AI Coding Assistant"
+    ],
+    "competitor_name": "CodeGeeX",
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "note": "The official extension repository documents how source code and generated code are handled.",
+    "visible_text_length": 10551
+  },
+  "source_type": "security_privacy"
+}

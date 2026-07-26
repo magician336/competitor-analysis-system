@@ -199,6 +199,9 @@ class ElasticsearchClient:
     therefore does not require the optional official Python client package.
     """
 
+    DEFAULT_BULK_MAX_BYTES = 5 * 1024 * 1024
+    DEFAULT_BULK_MAX_ACTIONS = 500
+
     def __init__(
         self,
         base_url: str = "http://127.0.0.1:9200",
@@ -211,6 +214,8 @@ class ElasticsearchClient:
         session: Any | None = None,
         request_timeout: float | None = None,
         verify_certs: bool | None = None,
+        bulk_max_bytes: int = DEFAULT_BULK_MAX_BYTES,
+        bulk_max_actions: int = DEFAULT_BULK_MAX_ACTIONS,
     ) -> None:
         try:
             import requests
@@ -220,6 +225,12 @@ class ElasticsearchClient:
         self.timeout = float(request_timeout if request_timeout is not None else timeout)
         self.verify = verify if verify_certs is None else bool(verify_certs)
         self.session = session or requests.Session()
+        if isinstance(bulk_max_bytes, bool) or int(bulk_max_bytes) <= 0:
+            raise ValueError("bulk_max_bytes must be a positive integer")
+        if isinstance(bulk_max_actions, bool) or int(bulk_max_actions) <= 0:
+            raise ValueError("bulk_max_actions must be a positive integer")
+        self.bulk_max_bytes = int(bulk_max_bytes)
+        self.bulk_max_actions = int(bulk_max_actions)
         if username is not None:
             self.session.auth = (username, password or "")
         self._headers = {"Accept": "application/json"}
@@ -319,36 +330,85 @@ class ElasticsearchClient:
         report = BulkResult(attempted=len(materialized))
         if not materialized:
             return report
-        lines: list[str] = []
+
+        operations: list[tuple[str, str, int]] = []
         for document in materialized:
             identifier = document.get(id_field)
             if not identifier:
                 raise ValueError(f"bulk document is missing {id_field}")
-            lines.append(json.dumps({"index": {"_index": index, "_id": identifier}}))
-            lines.append(json.dumps(document, ensure_ascii=False, separators=(",", ":")))
-        payload = "\n".join(lines) + "\n"
-        result = self._request(
-            "POST",
-            "/_bulk",
-            data=payload,
-            headers={"Content-Type": "application/x-ndjson"},
-            params={"refresh": "wait_for" if refresh else "false"},
-        )
-        for item in result.get("items", []):
-            operation = item.get("index", {})
-            status = int(operation.get("status", 500))
-            if 200 <= status < 300:
-                report.indexed += 1
-            else:
-                report.failed += 1
+            action = json.dumps(
+                {"index": {"_index": index, "_id": identifier}},
+                separators=(",", ":"),
+            )
+            source = json.dumps(
+                document,
+                ensure_ascii=False,
+                separators=(",", ":"),
+            )
+            operation_size = len(action.encode("utf-8")) + len(
+                source.encode("utf-8")
+            ) + 2
+            operations.append((action, source, operation_size))
+
+        batch_lines: list[str] = []
+        batch_actions = 0
+        batch_bytes = 0
+
+        def flush() -> None:
+            nonlocal batch_lines, batch_actions, batch_bytes
+            if not batch_actions:
+                return
+            payload = "\n".join(batch_lines) + "\n"
+            result = self._request(
+                "POST",
+                "/_bulk",
+                data=payload,
+                headers={"Content-Type": "application/x-ndjson"},
+                params={"refresh": "wait_for" if refresh else "false"},
+            )
+            accounted = 0
+            for item in (result or {}).get("items", []):
+                operation = item.get("index", {})
+                status = int(operation.get("status", 500))
+                accounted += 1
+                if 200 <= status < 300:
+                    report.indexed += 1
+                else:
+                    report.failed += 1
+                    report.errors.append(
+                        f"{operation.get('_id', '<unknown>')}: "
+                        f"{operation.get('error', status)}"
+                    )
+            unaccounted = batch_actions - accounted
+            if unaccounted > 0:
+                report.failed += unaccounted
                 report.errors.append(
-                    f"{operation.get('_id', '<unknown>')}: {operation.get('error', status)}"
+                    f"bulk response omitted {unaccounted} operations"
                 )
-        # A malformed response must not look successful.
-        unaccounted = report.attempted - report.indexed - report.failed
-        if unaccounted > 0:
-            report.failed += unaccounted
-            report.errors.append(f"bulk response omitted {unaccounted} operations")
+            batch_lines = []
+            batch_actions = 0
+            batch_bytes = 0
+
+        for action, source, operation_size in operations:
+            if operation_size > self.bulk_max_bytes:
+                flush()
+                report.failed += 1
+                identifier = json.loads(action)["index"]["_id"]
+                report.errors.append(
+                    f"{identifier}: serialized bulk operation is "
+                    f"{operation_size} bytes, exceeding "
+                    f"bulk_max_bytes={self.bulk_max_bytes}"
+                )
+                continue
+            if (
+                batch_actions >= self.bulk_max_actions
+                or batch_bytes + operation_size > self.bulk_max_bytes
+            ):
+                flush()
+            batch_lines.extend((action, source))
+            batch_actions += 1
+            batch_bytes += operation_size
+        flush()
         return report
 
     def delete_documents(

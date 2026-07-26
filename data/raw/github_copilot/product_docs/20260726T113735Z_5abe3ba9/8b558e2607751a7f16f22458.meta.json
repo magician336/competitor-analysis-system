@@ -1,0 +1,46 @@
+{
+  "canonical_url": "https://docs.github.com/en/copilot/tutorials/learn-a-new-language",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T11:51:10.119642Z",
+  "final_url": "https://docs.github.com/en/copilot/tutorials/learn-a-new-language",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "7627e92ae6785a2e8bd3d064062eb33fd5b6b34b8ab3e3284baf7ca857f02bf3",
+  "payload_path": "github_copilot/product_docs/20260726T113735Z_5abe3ba9/8b558e2607751a7f16f22458.html",
+  "published_at": null,
+  "raw_record_id": "8b558e2607751a7f16f22458",
+  "requested_url": "https://docs.github.com/en/copilot/tutorials/learn-a-new-language",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://docs.github.com/en/copilot/tutorials/learn-a-new-language",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "discovery": {
+      "depth": 1,
+      "max_depth": 1,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/en/copilot"
+      ],
+      "enabled": true,
+      "max_depth": 1,
+      "max_urls": 500
+    },
+    "visible_text_length": 22052
+  },
+  "source_type": "product_docs"
+}

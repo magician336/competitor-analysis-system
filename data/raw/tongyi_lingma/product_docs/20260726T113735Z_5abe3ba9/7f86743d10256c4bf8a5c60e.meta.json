@@ -1,0 +1,47 @@
+{
+  "canonical_url": "https://help.aliyun.com/zh/lingma/qoder-cn/user-guide/authorization-management",
+  "competitor": "tongyi_lingma",
+  "content_type": "text/html;charset=UTF-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T11:57:16.649532Z",
+  "final_url": "https://help.aliyun.com/zh/lingma/qoder-cn/user-guide/authorization-management",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "4a80023c23288071bb67c1b992de30d3cfff69ecde1b9fefa98ded0d78c16faa",
+  "payload_path": "tongyi_lingma/product_docs/20260726T113735Z_5abe3ba9/7f86743d10256c4bf8a5c60e.html",
+  "published_at": null,
+  "raw_record_id": "7f86743d10256c4bf8a5c60e",
+  "requested_url": "https://help.aliyun.com/zh/lingma/qoder-cn/user-guide/authorization-management",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://help.aliyun.com/zh/lingma/qoder-cn/user-guide/authorization-management",
+    "competitor_aliases": [
+      "Lingma",
+      "Qoder CN",
+      "智能编码助手通义灵码"
+    ],
+    "competitor_name": "通义灵码",
+    "discovery": {
+      "depth": 2,
+      "max_depth": 3,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/zh/lingma/"
+      ],
+      "enabled": true,
+      "max_depth": 3,
+      "max_urls": 300
+    },
+    "visible_text_length": 1180
+  },
+  "source_type": "product_docs"
+}

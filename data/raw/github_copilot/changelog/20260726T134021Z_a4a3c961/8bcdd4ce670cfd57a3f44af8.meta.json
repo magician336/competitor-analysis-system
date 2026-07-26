@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2024-11-22-update-to-seat-created_at-timestamp-in-the-copilot-user-management-rest-api-public-preview/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:47:36.883278Z",
+  "final_url": "https://github.blog/changelog/2024-11-22-update-to-seat-created_at-timestamp-in-the-copilot-user-management-rest-api-public-preview/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "6707654b3c48038f8c73d58c99b4a32a99f7701d8a4efa18b12d6950cb0c4b76",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/8bcdd4ce670cfd57a3f44af8.html",
+  "published_at": "2024-11-22T00:00:00Z",
+  "raw_record_id": "8bcdd4ce670cfd57a3f44af8",
+  "requested_url": "https://github.blog/changelog/2024-11-22-update-to-seat-created_at-timestamp-in-the-copilot-user-management-rest-api-public-preview",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2024/?label=copilot",
+    "changelog_page_number": 3,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2024-11-22T00:00:00Z",
+    "listing_title": "Update to seat `created_at` timestamp in the Copilot user management REST API [Public Preview]",
+    "record_role": "changelog_entry",
+    "visible_text_length": 2961
+  },
+  "source_type": "changelog"
+}

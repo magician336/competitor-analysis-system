@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://developer.aliyun.com/article/1666660",
+  "competitor": "tongyi_lingma",
+  "content_type": "text/html;charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T14:20:52.783170Z",
+  "final_url": "https://developer.aliyun.com/article/1666660",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "9a37c2d2e48e55b68bdeea21f0e1ae1a64262c346d9b43280d122bb7c6386401",
+  "payload_path": "tongyi_lingma/review/20260726T134021Z_a4a3c961/6d1dfbcebb9e63cd3dd1d6ac.html",
+  "published_at": null,
+  "raw_record_id": "6d1dfbcebb9e63cd3dd1d6ac",
+  "requested_url": "https://developer.aliyun.com/article/1666660",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://developer.aliyun.com/article/1666660",
+    "competitor_aliases": [
+      "Lingma",
+      "Qoder CN",
+      "智能编码助手通义灵码"
+    ],
+    "competitor_name": "通义灵码",
+    "embedded_content_supported": false,
+    "evidence_level": "C",
+    "format": "html",
+    "note": "URLs form the curated public review allowlist for 通义灵码.",
+    "visible_text_length": 6998
+  },
+  "source_type": "review"
+}

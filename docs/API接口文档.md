@@ -47,7 +47,7 @@ CodeRadar 主体服务使用 FastAPI（基于 Python 的 Web 应用程序接口�
 }
 ```
 
-`event_types` 接受 E1—E3 枚举值，`dimension_tags` 接受 D1—D7 枚举值。`top_k` 的接口模型上限为 100，服务配置的当前实际最大值为 50；超过配置上限返回 400。
+`event_types` 接受 E1—E3 枚举值，`dimension_tags` 接受 D1—D7 枚举值。`source_types` 接受结构化来源枚举，包括 `official_page`、`official_changelog`、`pricing`、`product_docs`、`status_page`、`github_release`、`github_issue`、`plugin_marketplace`、`community`、`review`、`security_privacy`、`benchmark` 和 `rss`。其中 `rss` 表示简易信息聚合（Really Simple Syndication）产品更新条目。`top_k` 的接口模型上限为 100，服务配置的当前实际最大值为 50；超过配置上限返回 400。
 
 响应遵循 `RAGResponse`：
 

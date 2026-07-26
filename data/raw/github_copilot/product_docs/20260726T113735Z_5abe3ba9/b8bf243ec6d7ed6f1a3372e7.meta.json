@@ -1,0 +1,46 @@
+{
+  "canonical_url": "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-enterprise/enable-custom-models",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T11:47:16.322148Z",
+  "final_url": "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-enterprise/enable-custom-models",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "75774d8316a4ad1cc046a5c94233158ac0281b255aeb6a8833059675090e17de",
+  "payload_path": "github_copilot/product_docs/20260726T113735Z_5abe3ba9/b8bf243ec6d7ed6f1a3372e7.html",
+  "published_at": null,
+  "raw_record_id": "b8bf243ec6d7ed6f1a3372e7",
+  "requested_url": "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-enterprise/enable-custom-models",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-enterprise/enable-custom-models",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "discovery": {
+      "depth": 1,
+      "max_depth": 1,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/en/copilot"
+      ],
+      "enabled": true,
+      "max_depth": 1,
+      "max_urls": 500
+    },
+    "visible_text_length": 16408
+  },
+  "source_type": "product_docs"
+}

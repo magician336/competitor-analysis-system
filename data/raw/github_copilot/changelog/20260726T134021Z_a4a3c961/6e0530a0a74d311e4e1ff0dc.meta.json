@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2025-12-18-enterprise-level-pull-request-activity-metrics-now-in-public-preview/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:46:51.563521Z",
+  "final_url": "https://github.blog/changelog/2025-12-18-enterprise-level-pull-request-activity-metrics-now-in-public-preview/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "8f28c0618d015c3ee8a205054d8284d0a6fd185912f43468498ad8e1935e572d",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/6e0530a0a74d311e4e1ff0dc.html",
+  "published_at": "2025-12-18T00:00:00Z",
+  "raw_record_id": "6e0530a0a74d311e4e1ff0dc",
+  "requested_url": "https://github.blog/changelog/2025-12-18-enterprise-level-pull-request-activity-metrics-now-in-public-preview",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2025/?label=copilot",
+    "changelog_page_number": 2,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2025-12-18T00:00:00Z",
+    "listing_title": "Enterprise-level pull request activity now included in Copilot Usage Metrics in public preview",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3736
+  },
+  "source_type": "changelog"
+}

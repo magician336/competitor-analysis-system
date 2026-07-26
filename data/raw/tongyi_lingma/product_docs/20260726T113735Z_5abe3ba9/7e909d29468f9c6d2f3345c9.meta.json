@@ -1,0 +1,47 @@
+{
+  "canonical_url": "https://help.aliyun.com/zh/lingma/qoder-cn/developer-reference/error-code-center",
+  "competitor": "tongyi_lingma",
+  "content_type": "text/html;charset=UTF-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T11:59:46.252215Z",
+  "final_url": "https://help.aliyun.com/zh/lingma/qoder-cn/developer-reference/error-code-center",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "a4c20f2d175e736be4da3a9da43d90af5fb1a295bc350fe191e6c6955aead84f",
+  "payload_path": "tongyi_lingma/product_docs/20260726T113735Z_5abe3ba9/7e909d29468f9c6d2f3345c9.html",
+  "published_at": null,
+  "raw_record_id": "7e909d29468f9c6d2f3345c9",
+  "requested_url": "https://help.aliyun.com/zh/lingma/qoder-cn/developer-reference/error-code-center",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://help.aliyun.com/zh/lingma/qoder-cn/developer-reference/error-code-center",
+    "competitor_aliases": [
+      "Lingma",
+      "Qoder CN",
+      "智能编码助手通义灵码"
+    ],
+    "competitor_name": "通义灵码",
+    "discovery": {
+      "depth": 3,
+      "max_depth": 3,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/zh/lingma/"
+      ],
+      "enabled": true,
+      "max_depth": 3,
+      "max_urls": 300
+    },
+    "visible_text_length": 1693
+  },
+  "source_type": "product_docs"
+}

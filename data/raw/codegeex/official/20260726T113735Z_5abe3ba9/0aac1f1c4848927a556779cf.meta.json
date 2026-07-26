@@ -1,0 +1,43 @@
+{
+  "canonical_url": "https://www.codegeex.cn/",
+  "competitor": "codegeex",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T12:00:44.181317Z",
+  "final_url": "https://www.codegeex.cn/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "8509e6e852e8b64b1b11d1c59d0114e3e7e830bb881aa6717672f31e59d64fe5",
+  "payload_path": "codegeex/official/20260726T113735Z_5abe3ba9/0aac1f1c4848927a556779cf.html",
+  "published_at": null,
+  "raw_record_id": "0aac1f1c4848927a556779cf",
+  "requested_url": "https://www.codegeex.cn/",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://www.codegeex.cn/",
+    "browser_fallback": {
+      "enabled": true,
+      "minimum_text_characters": 500,
+      "settle_milliseconds": 1500,
+      "timeout_seconds": 30,
+      "wait_selector": "#root"
+    },
+    "browser_rendered": true,
+    "browser_rendered_visible_text_length": 2102,
+    "browser_static_visible_text_length": 0,
+    "competitor_aliases": [
+      "CodeGeeX4",
+      "CodeGeeX AI Coding Assistant"
+    ],
+    "competitor_name": "CodeGeeX",
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": 2102
+  },
+  "source_type": "official"
+}

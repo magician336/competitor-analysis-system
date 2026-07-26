@@ -1,0 +1,46 @@
+{
+  "canonical_url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/change-settings",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T11:43:38.794137Z",
+  "final_url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/change-settings",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "9e69d489cbbb0eb090e1f5173f9f85a151e07290e8ffec9a8a5d61a150055fd6",
+  "payload_path": "github_copilot/product_docs/20260726T113735Z_5abe3ba9/1969be8ec67475c0dfd97ae5.html",
+  "published_at": null,
+  "raw_record_id": "1969be8ec67475c0dfd97ae5",
+  "requested_url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/change-settings",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/change-settings",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "discovery": {
+      "depth": 1,
+      "max_depth": 1,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/en/copilot"
+      ],
+      "enabled": true,
+      "max_depth": 1,
+      "max_urls": 500
+    },
+    "visible_text_length": 18147
+  },
+  "source_type": "product_docs"
+}

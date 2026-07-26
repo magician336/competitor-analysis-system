@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2024-12-02-github-copilot-extensions-now-supported-in-jetbrains-ides/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:47:35.758832Z",
+  "final_url": "https://github.blog/changelog/2024-12-02-github-copilot-extensions-now-supported-in-jetbrains-ides/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "1bb2dcbae11ae1e01c9aa7b8c42a06a8334905784f6d66482b7fd3b200b8c595",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/345af67b5b78b12bbf9cd83b.html",
+  "published_at": "2024-12-02T00:00:00Z",
+  "raw_record_id": "345af67b5b78b12bbf9cd83b",
+  "requested_url": "https://github.blog/changelog/2024-12-02-github-copilot-extensions-now-supported-in-jetbrains-ides",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2024/?label=copilot",
+    "changelog_page_number": 3,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2024-12-02T00:00:00Z",
+    "listing_title": "GitHub Copilot Extensions now supported in JetBrains IDEs",
+    "record_role": "changelog_entry",
+    "visible_text_length": 4246
+  },
+  "source_type": "changelog"
+}

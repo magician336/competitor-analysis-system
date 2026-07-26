@@ -1,0 +1,33 @@
+{
+  "canonical_url": "https://github.com/microsoft/vscode-copilot-release/issues/12650",
+  "competitor": "github_copilot",
+  "content_type": "application/json",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": "W/\"be8c8c4f43d6d7c8fc476b313d9b49e07bfad280b2483952948ec3551b7d47b3\"",
+  "fetched_at": "2026-07-26T14:00:44.656788Z",
+  "final_url": "https://api.github.com/repositories/629635341/issues?state=all&sort=updated&direction=desc&per_page=100&page=5&since=2023-07-27T13%3A40%3A21.046700Z&after=Y3Vyc29yOnYyOpLPAAABmxRUPoDOgOH9UQ%3D%3D",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "74a8d15f739a4fb2213ef02b8090bcb47070512ed0fea30903aef804786fd6d4",
+  "payload_path": "github_copilot/github_issue/20260726T134021Z_a4a3c961/28213b21e174d9186e167268.json",
+  "published_at": "2025-06-17T09:41:56Z",
+  "raw_record_id": "28213b21e174d9186e167268",
+  "requested_url": "https://api.github.com/repositories/629635341/issues?state=all&sort=updated&direction=desc&per_page=100&page=5&since=2023-07-27T13%3A40%3A21.046700Z&after=Y3Vyc29yOnYyOpLPAAABmxRUPoDOgOH9UQ%3D%3D",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "comments_collected": 1,
+    "comments_error": null,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "B",
+    "issue_number": 12650,
+    "repository": "microsoft/vscode-copilot-release",
+    "state": "closed"
+  },
+  "source_type": "github_issue"
+}

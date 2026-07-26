@@ -1,0 +1,34 @@
+{
+  "canonical_url": "https://cursor.com/changelog/0-21-4-nightly",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:42:26.430904Z",
+  "final_url": "https://cursor.com/changelog/0-21-4-nightly",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "34358087b06056da8e31f7370115a1ba329d844091d4b20500ad6f27e18ff469",
+  "payload_path": "cursor/changelog/20260726T134021Z_a4a3c961/db089657fde9718f4df0c01f.html",
+  "published_at": "2023-12-31T12:23:00Z",
+  "raw_record_id": "db089657fde9718f4df0c01f",
+  "requested_url": "https://cursor.com/changelog/0-21-4-nightly",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://cursor.com/changelog/page/20",
+    "changelog_page_number": 20,
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2023-12-31T12:23:00Z",
+    "listing_title": "0.21.4-nightly Dec 31, 2023",
+    "record_role": "changelog_entry",
+    "visible_text_length": 1927
+  },
+  "source_type": "changelog"
+}

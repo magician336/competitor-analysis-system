@@ -1,0 +1,34 @@
+{
+  "canonical_url": "https://cursor.com/changelog/claude-support",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:42:10.421764Z",
+  "final_url": "https://cursor.com/changelog/claude-support",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "7712c063101912d3ce8f5a8c9a602c9a1bf6c19ee2b6326934bdddbc9739ace1",
+  "payload_path": "cursor/changelog/20260726T134021Z_a4a3c961/e097745c257adade367e452c.html",
+  "published_at": "2024-03-12T06:44:00Z",
+  "raw_record_id": "e097745c257adade367e452c",
+  "requested_url": "https://cursor.com/changelog/claude-support",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://cursor.com/changelog/page/17",
+    "changelog_page_number": 17,
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2024-03-12T06:44:00Z",
+    "listing_title": "Mar 12, 2024",
+    "record_role": "changelog_entry",
+    "visible_text_length": 2231
+  },
+  "source_type": "changelog"
+}

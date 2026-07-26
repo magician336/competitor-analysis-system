@@ -1,0 +1,50 @@
+{
+  "canonical_url": "https://docs.trae.ai/ide/top-10-recommended-skills-for-development-scenarios?_lang=en",
+  "competitor": "trae",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T11:52:59.088945Z",
+  "final_url": "https://docs.trae.ai/ide/top-10-recommended-skills-for-development-scenarios?_lang=en",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "d3ac955b9ac2dba331d898047e5da077c6e1534668cf85c0183ed46e56ad96ce",
+  "payload_path": "trae/product_docs/20260726T113735Z_5abe3ba9/2930b6e1b2ed75ed1e363648.html",
+  "published_at": null,
+  "raw_record_id": "2930b6e1b2ed75ed1e363648",
+  "requested_url": "https://docs.trae.ai/ide/top-10-recommended-skills-for-development-scenarios?_lang=en",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://docs.trae.ai/ide/top-10-recommended-skills-for-development-scenarios?_lang=en",
+    "competitor_aliases": [
+      "TRAE",
+      "TRAE IDE"
+    ],
+    "competitor_name": "Trae",
+    "discovery": {
+      "depth": 1,
+      "max_depth": 1,
+      "method": "same_origin_links"
+    },
+    "embedded_content": "trae_router_document",
+    "embedded_content_supported": true,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/ide/"
+      ],
+      "enabled": true,
+      "max_depth": 1,
+      "max_urls": 120,
+      "query_params": {
+        "_lang": "en"
+      }
+    },
+    "visible_text_length": 74
+  },
+  "source_type": "product_docs"
+}

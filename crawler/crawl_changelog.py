@@ -1177,6 +1177,7 @@ class ChangelogCollector(PageCollector):
                         source_metadata={
                             **task.metadata,
                             "format": "feed",
+                            "record_role": "feed_empty",
                             "entry_count": 0,
                             "parse_warning": "no feed entries found",
                         },
@@ -1188,6 +1189,11 @@ class ChangelogCollector(PageCollector):
                 event_time = item.published_at or item.updated_at
                 if cutoff and event_time and _utc(event_time) < cutoff:
                     continue
+                entry_kind = (
+                    "rss_entry"
+                    if self.source_type is SourceType.RSS
+                    else "changelog_entry"
+                )
                 result.records.append(
                     self.writer.write_json(
                         competitor=task.competitor,
@@ -1200,14 +1206,14 @@ class ChangelogCollector(PageCollector):
                         last_modified=response.headers.get("Last-Modified"),
                         published_at=event_time,
                         payload={
-                            "kind": "changelog_entry",
+                            "kind": entry_kind,
                             "feed_url": response.url or url,
                             "entry": item.to_dict(),
                         },
                         source_metadata={
                             **task.metadata,
                             "format": "feed_entry",
-                            "record_role": "changelog_entry",
+                            "record_role": entry_kind,
                             "entry_id": item.id,
                             "original_content_type": response.headers.get("Content-Type"),
                         },
@@ -1216,12 +1222,23 @@ class ChangelogCollector(PageCollector):
         return result
 
     def collect(self, task: CollectorTask) -> CollectorResult:
+        if task.format.strip().lower() == "json":
+            return super().collect(task)
         if self._is_feed(task):
             return self._collect_feed(task)
         return self._collect_html(task)
 
 
+class RSSCollector(ChangelogCollector):
+    """Collect an RSS or Atom source as stable, cutoff-aware entry records."""
+
+    source_type = SourceType.RSS
+
+    def collect(self, task: CollectorTask) -> CollectorResult:
+        return self._collect_feed(task)
+
+
 ChangelogCrawler = ChangelogCollector
 
 
-__all__ = ["ChangelogCollector", "ChangelogCrawler"]
+__all__ = ["ChangelogCollector", "ChangelogCrawler", "RSSCollector"]

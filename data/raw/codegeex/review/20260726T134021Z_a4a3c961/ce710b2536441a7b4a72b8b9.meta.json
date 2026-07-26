@@ -1,0 +1,34 @@
+{
+  "canonical_url": "https://dex.koi.security/reports/jet/20587/2.21.2-211",
+  "competitor": "codegeex",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T14:23:24.270218Z",
+  "final_url": "https://dex.koi.security/reports/jet/20587/2.21.2-211",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "0c4807a6e6992afecd31cfbe4a11eb1b2e5624148ff522889b438096ea7ab832",
+  "payload_path": "codegeex/review/20260726T134021Z_a4a3c961/ce710b2536441a7b4a72b8b9.html",
+  "published_at": null,
+  "raw_record_id": "ce710b2536441a7b4a72b8b9",
+  "requested_url": "https://dex.koi.security/reports/jet/20587/2.21.2-211",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://dex.koi.security/reports/jet/20587/2.21.2-211",
+    "competitor_aliases": [
+      "CodeGeeX4",
+      "CodeGeeX AI Coding Assistant"
+    ],
+    "competitor_name": "CodeGeeX",
+    "embedded_content_supported": false,
+    "evidence_level": "C",
+    "format": "html",
+    "note": "URLs form the curated public review and security-analysis allowlist for CodeGeeX.",
+    "visible_text_length": 4469
+  },
+  "source_type": "review"
+}

@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2024-11-12-content-exclusion-ga/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:47:39.529889Z",
+  "final_url": "https://github.blog/changelog/2024-11-12-content-exclusion-ga/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "1b771b584c38ca7960e6577f797874a74ede1d367401b7b638447de46c8c5b11",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/cc66458a5cc85191d9c80758.html",
+  "published_at": "2024-11-12T00:00:00Z",
+  "raw_record_id": "cc66458a5cc85191d9c80758",
+  "requested_url": "https://github.blog/changelog/2024-11-12-content-exclusion-ga",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2024/?label=copilot",
+    "changelog_page_number": 3,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2024-11-12T00:00:00Z",
+    "listing_title": "Copilot content exclusion is now generally available in IDEs",
+    "record_role": "changelog_entry",
+    "visible_text_length": 4407
+  },
+  "source_type": "changelog"
+}

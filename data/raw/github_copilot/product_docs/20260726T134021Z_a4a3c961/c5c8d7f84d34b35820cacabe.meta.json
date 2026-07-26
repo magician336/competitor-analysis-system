@@ -1,0 +1,46 @@
+{
+  "canonical_url": "https://docs.github.com/en/copilot/tutorials/copilot-cookbook/debug-errors/handle-api-rate-limits",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:53:43.327324Z",
+  "final_url": "https://docs.github.com/en/copilot/tutorials/copilot-cookbook/debug-errors/handle-api-rate-limits",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "9f35ed7d25cc458f7df37d2d1b2705bca0c57df17c14f7407c21bc8653f22960",
+  "payload_path": "github_copilot/product_docs/20260726T134021Z_a4a3c961/c5c8d7f84d34b35820cacabe.html",
+  "published_at": null,
+  "raw_record_id": "c5c8d7f84d34b35820cacabe",
+  "requested_url": "https://docs.github.com/en/copilot/tutorials/copilot-cookbook/debug-errors/handle-api-rate-limits",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://docs.github.com/en/copilot/tutorials/copilot-cookbook/debug-errors/handle-api-rate-limits",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "discovery": {
+      "depth": 1,
+      "max_depth": 1,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/en/copilot"
+      ],
+      "enabled": true,
+      "max_depth": 1,
+      "max_urls": 500
+    },
+    "visible_text_length": 15185
+  },
+  "source_type": "product_docs"
+}

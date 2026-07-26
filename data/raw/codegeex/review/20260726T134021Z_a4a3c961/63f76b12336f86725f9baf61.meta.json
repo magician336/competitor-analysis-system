@@ -1,0 +1,34 @@
+{
+  "canonical_url": "https://aistacknav.com/codegeex-review-2026-2/",
+  "competitor": "codegeex",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T14:23:27.558152Z",
+  "final_url": "https://aistacknav.com/codegeex-review-2026-2/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "52bbe4956e14a83de519fd199f7e2779175bc5d84d2400e60cf1e9c2b30b2507",
+  "payload_path": "codegeex/review/20260726T134021Z_a4a3c961/63f76b12336f86725f9baf61.html",
+  "published_at": null,
+  "raw_record_id": "63f76b12336f86725f9baf61",
+  "requested_url": "https://aistacknav.com/codegeex-review-2026-2/",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://aistacknav.com/codegeex-review-2026-2/",
+    "competitor_aliases": [
+      "CodeGeeX4",
+      "CodeGeeX AI Coding Assistant"
+    ],
+    "competitor_name": "CodeGeeX",
+    "embedded_content_supported": false,
+    "evidence_level": "C",
+    "format": "html",
+    "note": "URLs form the curated public review and security-analysis allowlist for CodeGeeX.",
+    "visible_text_length": 6928
+  },
+  "source_type": "review"
+}

@@ -1,0 +1,40 @@
+{
+  "canonical_url": "https://www.trae.ai/work",
+  "competitor": "trae",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T11:52:31.930002Z",
+  "final_url": "https://www.trae.ai/work",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "ae578ab4f708bb562445656895ff420002299819e584db3740742ed2106d84d2",
+  "payload_path": "trae/official/20260726T113735Z_5abe3ba9/cd2df63635e0085ddfca6100.html",
+  "published_at": null,
+  "raw_record_id": "cd2df63635e0085ddfca6100",
+  "requested_url": "https://www.trae.ai/work",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://www.trae.ai/work",
+    "browser_fallback": {
+      "enabled": true,
+      "minimum_text_characters": 500,
+      "settle_milliseconds": 1500,
+      "timeout_seconds": 30,
+      "wait_selector": "#root"
+    },
+    "competitor_aliases": [
+      "TRAE",
+      "TRAE IDE"
+    ],
+    "competitor_name": "Trae",
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": 2045
+  },
+  "source_type": "official"
+}

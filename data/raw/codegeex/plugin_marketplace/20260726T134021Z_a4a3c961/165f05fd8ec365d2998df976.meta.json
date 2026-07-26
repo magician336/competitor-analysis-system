@@ -1,0 +1,49 @@
+{
+  "canonical_url": "https://plugins.jetbrains.com/plugin/20587-codegeex-ai-coding-assistant",
+  "competitor": "codegeex",
+  "content_type": "application/json",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T14:23:21.595443Z",
+  "final_url": "https://plugins.jetbrains.com/api/plugins/20587",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "26056e378650b06970176fa4ea15dfca4523e6686c1524cedb3ab265554d0d9a",
+  "payload_path": "codegeex/plugin_marketplace/20260726T134021Z_a4a3c961/165f05fd8ec365d2998df976.json",
+  "published_at": null,
+  "raw_record_id": "165f05fd8ec365d2998df976",
+  "requested_url": "https://plugins.jetbrains.com/plugin/20587-codegeex-ai-coding-assistant",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://plugins.jetbrains.com/api/plugins/20587",
+    "competitor_aliases": [
+      "CodeGeeX4",
+      "CodeGeeX AI Coding Assistant"
+    ],
+    "competitor_name": "CodeGeeX",
+    "embedded_content_supported": false,
+    "evidence_level": "B",
+    "format": "html",
+    "json_document": {
+      "author_field": "vendor.publicName",
+      "content_fields": [
+        "description",
+        "preview",
+        "pricingModel"
+      ],
+      "publish_time_field": "cdate",
+      "title_field": "name"
+    },
+    "request_overrides": {
+      "https://plugins.jetbrains.com/plugin/20587-codegeex-ai-coding-assistant": {
+        "method": "GET",
+        "url": "https://plugins.jetbrains.com/api/plugins/20587"
+      }
+    },
+    "visible_text_length": null
+  },
+  "source_type": "plugin_marketplace"
+}

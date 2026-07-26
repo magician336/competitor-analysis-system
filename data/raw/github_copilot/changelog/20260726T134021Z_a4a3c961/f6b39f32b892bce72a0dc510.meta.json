@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2026-07-01-set-ai-credit-session-limits-in-copilot-cli-and-sdk/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:46:40.666719Z",
+  "final_url": "https://github.blog/changelog/2026-07-01-set-ai-credit-session-limits-in-copilot-cli-and-sdk/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "7b9bd6aadc19d663927ed15b8c902ab6132ec6357e0c5f9a425357977d0cb078",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/f6b39f32b892bce72a0dc510.html",
+  "published_at": "2026-07-01T00:00:00Z",
+  "raw_record_id": "f6b39f32b892bce72a0dc510",
+  "requested_url": "https://github.blog/changelog/2026-07-01-set-ai-credit-session-limits-in-copilot-cli-and-sdk",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/label/copilot/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-07-01T00:00:00Z",
+    "listing_title": "Set AI credit session limits in Copilot CLI and SDK",
+    "record_role": "changelog_entry",
+    "visible_text_length": 4013
+  },
+  "source_type": "changelog"
+}

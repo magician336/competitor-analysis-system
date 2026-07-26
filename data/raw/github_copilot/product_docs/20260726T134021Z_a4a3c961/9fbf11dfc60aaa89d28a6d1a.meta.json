@@ -1,0 +1,46 @@
+{
+  "canonical_url": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/customize-github-copilot-app",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:50:40.821512Z",
+  "final_url": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/customize-github-copilot-app",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "cb676feabbc2156f59441e6fdd3c7256a98aa32394e09bbf417d0ddf67dc992a",
+  "payload_path": "github_copilot/product_docs/20260726T134021Z_a4a3c961/9fbf11dfc60aaa89d28a6d1a.html",
+  "published_at": null,
+  "raw_record_id": "9fbf11dfc60aaa89d28a6d1a",
+  "requested_url": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/customize-github-copilot-app",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/customize-github-copilot-app",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "discovery": {
+      "depth": 1,
+      "max_depth": 1,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/en/copilot"
+      ],
+      "enabled": true,
+      "max_depth": 1,
+      "max_urls": 500
+    },
+    "visible_text_length": 14276
+  },
+  "source_type": "product_docs"
+}

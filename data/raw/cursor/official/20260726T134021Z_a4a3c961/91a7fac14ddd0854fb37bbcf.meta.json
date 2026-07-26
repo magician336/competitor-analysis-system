@@ -1,0 +1,32 @@
+{
+  "canonical_url": "https://cursor.com/students",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:40:27.910150Z",
+  "final_url": "https://cursor.com/students",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "9f7654cf289b6cd3e4c9b33a6bb977d774fea9c5d8b0c4f25f332c2a49b8d1d5",
+  "payload_path": "cursor/official/20260726T134021Z_a4a3c961/91a7fac14ddd0854fb37bbcf.html",
+  "published_at": null,
+  "raw_record_id": "91a7fac14ddd0854fb37bbcf",
+  "requested_url": "https://cursor.com/students",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://cursor.com/students",
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": 6745
+  },
+  "source_type": "official"
+}

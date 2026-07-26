@@ -1,0 +1,47 @@
+{
+  "canonical_url": "https://help.aliyun.com/zh/lingma/qoder-cn/user-guide/installation-guide",
+  "competitor": "tongyi_lingma",
+  "content_type": "text/html;charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T14:15:15.959238Z",
+  "final_url": "https://help.aliyun.com/zh/lingma/qoder-cn/user-guide/installation-guide",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "d4fe3cf0c18f232f861471c0c215abd76f56d565b7d721b267ccf5ce35276af3",
+  "payload_path": "tongyi_lingma/product_docs/20260726T134021Z_a4a3c961/df8267397289bd034530f704.html",
+  "published_at": null,
+  "raw_record_id": "df8267397289bd034530f704",
+  "requested_url": "https://help.aliyun.com/zh/lingma/qoder-cn/user-guide/installation-guide",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://help.aliyun.com/zh/lingma/qoder-cn/user-guide/installation-guide",
+    "competitor_aliases": [
+      "Lingma",
+      "Qoder CN",
+      "智能编码助手通义灵码"
+    ],
+    "competitor_name": "通义灵码",
+    "discovery": {
+      "depth": 1,
+      "max_depth": 3,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/zh/lingma/"
+      ],
+      "enabled": true,
+      "max_depth": 3,
+      "max_urls": 300
+    },
+    "visible_text_length": 2936
+  },
+  "source_type": "product_docs"
+}

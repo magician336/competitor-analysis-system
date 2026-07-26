@@ -1,0 +1,46 @@
+{
+  "canonical_url": "https://docs.github.com/en/copilot/tutorials/copilot-cookbook/refactor-code/refactor-data-access-layers",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:53:53.323248Z",
+  "final_url": "https://docs.github.com/en/copilot/tutorials/copilot-cookbook/refactor-code/refactor-data-access-layers",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "dc83a8e2ac77b7bf89f112bf0eb6549bd5f18b70a68e5bec1ed93f3246720b27",
+  "payload_path": "github_copilot/product_docs/20260726T134021Z_a4a3c961/6fe3efc714d91cd36f1e4b9a.html",
+  "published_at": null,
+  "raw_record_id": "6fe3efc714d91cd36f1e4b9a",
+  "requested_url": "https://docs.github.com/en/copilot/tutorials/copilot-cookbook/refactor-code/refactor-data-access-layers",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://docs.github.com/en/copilot/tutorials/copilot-cookbook/refactor-code/refactor-data-access-layers",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "discovery": {
+      "depth": 1,
+      "max_depth": 1,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/en/copilot"
+      ],
+      "enabled": true,
+      "max_depth": 1,
+      "max_urls": 500
+    },
+    "visible_text_length": 17735
+  },
+  "source_type": "product_docs"
+}

@@ -40,19 +40,19 @@ flowchart LR
 
 ## 当前数据快照
 
-当前 `data/cleaned/documents.jsonl` 的 SHA-256（Secure Hash Algorithm 256-bit，256 位安全散列算法）为 `47054cd2dd016c8101eccf9e2e8c0e4c3dc05d2b662a404738050c184e31f284`。
+当前 `data/cleaned/documents.jsonl` 的文件大小为 4,412,343 字节，SHA-256（Secure Hash Algorithm 256-bit，256 位安全散列算法）为 `0893637a61c62b55dcba8bb40d11bb0f38e6a7dd20eaf227eb4e8bb561c57c5f`。
 
 | 指标 | 值 |
 | --- | ---: |
-| 原始载荷 | 1,501 |
-| 原始元数据 | 1,501 |
-| 结构化文档版本 | 1,003 |
-| 当前版本 | 993 |
+| 原始载荷 | 1,549 |
+| 原始元数据 | 1,549 |
+| 结构化文档版本 | 1,077 |
+| 当前版本 | 1,067 |
 | 历史版本 | 10 |
-| `needs_review=true` | 219 |
-| 空能力标签 | 218 |
+| `needs_review=true` | 245 |
+| 空能力标签 | 244 |
 
-`data/raw` 还包含一个目录占位文件 `.gitkeep`，因此文件总数为 3,003。结构化文档按竞品分布如下：GitHub Copilot 483、通义灵码 210、Cursor 123、Trae 113、CodeGeeX 74。
+`data/raw` 还包含一个目录占位文件 `.gitkeep`，因此文件总数为 3,099。结构化文档按竞品分布如下：GitHub Copilot 486、通义灵码 217、Cursor 126、Trae 155、CodeGeeX 93。
 
 ## 环境安装
 
@@ -88,24 +88,26 @@ notepad .env
   --dry-run
 ```
 
-当前配置包含 5 个竞品，每个竞品显式定义 11 类来源，共 37 个启用项和 18 个带原因的禁用项。`github` 任务可以生成 `github_release` 和 `github_issue` 两种结构化来源。
+当前竞品配置版本为 2，包含 5 个竞品。每个竞品显式定义 12 类来源，共 49 个启用项和 11 个带原因的禁用项。RSS（Really Simple Syndication，简易信息聚合）用于采集产品发布型 Feed，当前 TRAE 已启用该来源。`github` 任务可以生成 `github_release` 和 `github_issue` 两种结构化来源。
 
 执行定向采集与处理：
 
 ```powershell
 & .\.venv\Scripts\python.exe -m scripts.data_pipeline crawl `
-  --competitors cursor,github_copilot `
-  --sources pricing,status_page,community,github_issue `
+  --competitors all `
+  --sources rss,review,community `
   --since-days 120 `
-  --max-issues 100 `
-  --max-comments 20 `
   --force
 
 & .\.venv\Scripts\python.exe -m scripts.data_pipeline process --rebuild
 & .\.venv\Scripts\python.exe -m scripts.audit_documents
+& .\.venv\Scripts\python.exe -m scripts.audit_evidence_coverage `
+  --competitors all `
+  --event-types product_release,risk_experience `
+  --window-days 120
 ```
 
-`crawl` 写入原始载荷和元数据。`process --rebuild` 只读取本地 `data/raw`，原子重建 `documents.jsonl`。普通 `process` 支持幂等增量版本合并。
+`crawl` 写入原始载荷和元数据。`process --rebuild` 只读取本地 `data/raw`，原子重建 `documents.jsonl`。普通 `process` 支持幂等增量版本合并。文档审计检查结构化契约和原始数据追溯，证据覆盖审计检查产品发布与风险体验事件在指定时间窗内的竞品覆盖情况。
 
 事件类型固定为 E1 价格变化、E2 产品发布、E3 风险与体验；能力维度固定为 D1—D7。字段与枚举见 [监控维度设计](docs/AI编程助手监控维度设计.md)。
 
@@ -124,7 +126,7 @@ docker compose up -d elasticsearch
 
 默认参数使用 1,200 个目标字符、1,800 个最大字符、160 个重叠字符和 80 个最小字符。检索分别召回 20 个 BM25 候选和 20 个稠密候选，经 RRF 融合、词法或 Cross-Encoder（交叉编码器）重排序，再按语义 0.70、时间 0.12、版本 0.08、证据 0.10 计算最终分数。
 
-当前本机存在 3,337-Chunk 的新物理索引，但读取别名仍指向 2,688-Chunk 物理索引。使用当前 1,003 个文档版本进行分析前，需要全量构建并确认别名指向新索引。
+当前本机存在 3,337-Chunk 的物理索引，但读取别名仍指向 2,688-Chunk 物理索引。本轮 1,077 个文档版本尚未重建索引；使用当前结构化数据进行分析前，需要全量构建并确认别名指向新索引。
 
 ## 查询和 API
 
@@ -174,7 +176,7 @@ Invoke-RestMethod http://127.0.0.1:8000/ready
 & .\.venv\Scripts\python.exe -m pytest -m 'not network' -q
 ```
 
-主体代码最近一次离线全量回归为 250 项通过、1 项跳过。显式网络测试默认关闭：
+主体代码最近一次离线全量回归为 258 项通过、1 项未选择（deselected）。显式网络测试默认关闭：
 
 ```powershell
 $env:CODERADAR_RUN_NETWORK_TESTS = '1'

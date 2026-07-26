@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2024-12-19-github-copilot-for-jetbrains-update-to-support-free-plan-ga/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:47:23.442261Z",
+  "final_url": "https://github.blog/changelog/2024-12-19-github-copilot-for-jetbrains-update-to-support-free-plan-ga/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "a989cf5a91efe3ba9038331f857c091c0862f58ba04a49100d10123361831027",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/44c4490609fc00e7afae16fa.html",
+  "published_at": "2024-12-19T00:00:00Z",
+  "raw_record_id": "44c4490609fc00e7afae16fa",
+  "requested_url": "https://github.blog/changelog/2024-12-19-github-copilot-for-jetbrains-update-to-support-free-plan-ga",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2024/?label=copilot",
+    "changelog_page_number": 3,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2024-12-19T00:00:00Z",
+    "listing_title": "GitHub Copilot for JetBrains (update to support Free Plan) [GA]",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3614
+  },
+  "source_type": "changelog"
+}

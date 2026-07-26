@@ -1,0 +1,34 @@
+{
+  "canonical_url": "https://dynalord.com/blog/github-copilot-review",
+  "competitor": "github_copilot",
+  "content_type": "text/html",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T14:03:44.413235Z",
+  "final_url": "https://dynalord.com/blog/github-copilot-review",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "961d90d467dcdcf769009411950018288deae9b3cc004c701ebf306163729d90",
+  "payload_path": "github_copilot/review/20260726T134021Z_a4a3c961/2f949cb76cc3113e19ffae81.html",
+  "published_at": null,
+  "raw_record_id": "2f949cb76cc3113e19ffae81",
+  "requested_url": "https://dynalord.com/blog/github-copilot-review",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://dynalord.com/blog/github-copilot-review",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "embedded_content_supported": false,
+    "evidence_level": "C",
+    "format": "html",
+    "note": "URLs form the curated public review allowlist for GitHub Copilot.",
+    "visible_text_length": 7749
+  },
+  "source_type": "review"
+}

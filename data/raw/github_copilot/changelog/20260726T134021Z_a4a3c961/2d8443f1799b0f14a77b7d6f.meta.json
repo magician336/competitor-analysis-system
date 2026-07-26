@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2026-07-17-repository-level-github-copilot-usage-metrics-generally-available/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:46:06.592314Z",
+  "final_url": "https://github.blog/changelog/2026-07-17-repository-level-github-copilot-usage-metrics-generally-available/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "444ebc6318224b2966bbed2152e95a2ef2f0d5520574af8247407d4a9cd6ffa9",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/2d8443f1799b0f14a77b7d6f.html",
+  "published_at": "2026-07-17T00:00:00Z",
+  "raw_record_id": "2d8443f1799b0f14a77b7d6f",
+  "requested_url": "https://github.blog/changelog/2026-07-17-repository-level-github-copilot-usage-metrics-generally-available",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/label/copilot/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-07-17T00:00:00Z",
+    "listing_title": "Repository-level GitHub Copilot usage metrics generally available",
+    "record_role": "changelog_entry",
+    "visible_text_length": 4127
+  },
+  "source_type": "changelog"
+}

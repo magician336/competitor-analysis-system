@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2023-11-08-github-copilot-in-the-cli-now-in-public-beta/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:47:48.381950Z",
+  "final_url": "https://github.blog/changelog/2023-11-08-github-copilot-in-the-cli-now-in-public-beta/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "1164f1ecfc4acf232d35c58a7795f4434d57ddb137079d438b784e61689a6db7",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/0ebc68fc2c156ceb6ea80761.html",
+  "published_at": "2023-11-08T00:00:00Z",
+  "raw_record_id": "0ebc68fc2c156ceb6ea80761",
+  "requested_url": "https://github.blog/changelog/2023-11-08-github-copilot-in-the-cli-now-in-public-beta",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2023/?label=copilot",
+    "changelog_page_number": 4,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2023-11-08T00:00:00Z",
+    "listing_title": "GitHub Copilot in the CLI now in public beta",
+    "record_role": "changelog_entry",
+    "visible_text_length": 2764
+  },
+  "source_type": "changelog"
+}

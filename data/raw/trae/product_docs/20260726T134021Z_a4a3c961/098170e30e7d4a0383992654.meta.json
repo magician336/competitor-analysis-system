@@ -1,0 +1,50 @@
+{
+  "canonical_url": "https://docs.trae.ai/ide/add-mcp-servers?_lang=en",
+  "competitor": "trae",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T14:06:29.104764Z",
+  "final_url": "https://docs.trae.ai/ide/add-mcp-servers?_lang=en",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "5d51c63c75d225c5b020950a3bf853773251c2612ce1e3d6c76f270be81a24c6",
+  "payload_path": "trae/product_docs/20260726T134021Z_a4a3c961/098170e30e7d4a0383992654.html",
+  "published_at": null,
+  "raw_record_id": "098170e30e7d4a0383992654",
+  "requested_url": "https://docs.trae.ai/ide/add-mcp-servers?_lang=en",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://docs.trae.ai/ide/add-mcp-servers?_lang=en",
+    "competitor_aliases": [
+      "TRAE",
+      "TRAE IDE"
+    ],
+    "competitor_name": "Trae",
+    "discovery": {
+      "depth": 1,
+      "max_depth": 1,
+      "method": "same_origin_links"
+    },
+    "embedded_content": "trae_router_document",
+    "embedded_content_supported": true,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/ide/"
+      ],
+      "enabled": true,
+      "max_depth": 1,
+      "max_urls": 120,
+      "query_params": {
+        "_lang": "en"
+      }
+    },
+    "visible_text_length": 38
+  },
+  "source_type": "product_docs"
+}

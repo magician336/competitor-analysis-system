@@ -1,0 +1,34 @@
+{
+  "canonical_url": "https://github.com/zai-org/CodeGeeX",
+  "competitor": "codegeex",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": "W/\"700b491874be647037b76c98233018e2\"",
+  "fetched_at": "2026-07-26T14:21:01.529643Z",
+  "final_url": "https://github.com/zai-org/CodeGeeX",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "c7b3d270d89debccf9775a6057b959100aca96fa8c17cd6e3a8fe69fe2060c08",
+  "payload_path": "codegeex/pricing/20260726T134021Z_a4a3c961/2ab4a63624511dda9cd8a3ca.html",
+  "published_at": null,
+  "raw_record_id": "2ab4a63624511dda9cd8a3ca",
+  "requested_url": "https://github.com/zai-org/CodeGeeX",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://github.com/zai-org/CodeGeeX",
+    "competitor_aliases": [
+      "CodeGeeX4",
+      "CodeGeeX AI Coding Assistant"
+    ],
+    "competitor_name": "CodeGeeX",
+    "embedded_content_supported": false,
+    "evidence_level": "B",
+    "format": "html",
+    "note": "The official repository states that the public VS Code extension is available for free; content snapshots track future changes.",
+    "visible_text_length": 18931
+  },
+  "source_type": "pricing"
+}

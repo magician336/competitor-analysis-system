@@ -1,0 +1,46 @@
+{
+  "canonical_url": "https://docs.github.com/en/copilot/reference/policy-conflicts",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:53:10.244287Z",
+  "final_url": "https://docs.github.com/en/copilot/reference/policy-conflicts",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "3872307f9635a4c951995c6026293dbc30c69948617f59e8e62b2208550cb661",
+  "payload_path": "github_copilot/product_docs/20260726T134021Z_a4a3c961/f16a47f1a02cdc2b1949fbe7.html",
+  "published_at": null,
+  "raw_record_id": "f16a47f1a02cdc2b1949fbe7",
+  "requested_url": "https://docs.github.com/en/copilot/reference/policy-conflicts",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://docs.github.com/en/copilot/reference/policy-conflicts",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "discovery": {
+      "depth": 1,
+      "max_depth": 1,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/en/copilot"
+      ],
+      "enabled": true,
+      "max_depth": 1,
+      "max_urls": 500
+    },
+    "visible_text_length": 15716
+  },
+  "source_type": "product_docs"
+}

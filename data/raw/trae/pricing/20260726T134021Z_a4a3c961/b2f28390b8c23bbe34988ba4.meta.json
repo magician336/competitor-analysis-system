@@ -1,0 +1,33 @@
+{
+  "canonical_url": "https://www.trae.ai/pricing",
+  "competitor": "trae",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T14:04:10.366027Z",
+  "final_url": "https://www.trae.ai/pricing",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "9f035297cc5a50d7246d358326f3aaa73b6133c58280024c5845f5aa53e77b6e",
+  "payload_path": "trae/pricing/20260726T134021Z_a4a3c961/b2f28390b8c23bbe34988ba4.html",
+  "published_at": null,
+  "raw_record_id": "b2f28390b8c23bbe34988ba4",
+  "requested_url": "https://www.trae.ai/pricing",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://www.trae.ai/pricing",
+    "competitor_aliases": [
+      "TRAE",
+      "TRAE IDE"
+    ],
+    "competitor_name": "Trae",
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": 1960
+  },
+  "source_type": "pricing"
+}

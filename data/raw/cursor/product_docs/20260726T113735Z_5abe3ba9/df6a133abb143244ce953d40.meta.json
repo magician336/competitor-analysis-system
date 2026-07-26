@@ -1,0 +1,53 @@
+{
+  "canonical_url": "https://cursor.com/docs/account/enterprise/cyber-safeguards",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": "W/\"48ee52c0744f31cd41b2d6662e8e625a\"",
+  "fetched_at": "2026-07-26T11:37:49.412736Z",
+  "final_url": "https://cursor.com/docs/account/enterprise/cyber-safeguards",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "6d5ea959a0a2eac6cce7edf54fcb0b51347eccf10affe6b5a490739e1f4cd5af",
+  "payload_path": "cursor/product_docs/20260726T113735Z_5abe3ba9/df6a133abb143244ce953d40.html",
+  "published_at": null,
+  "raw_record_id": "df6a133abb143244ce953d40",
+  "requested_url": "https://cursor.com/docs/account/enterprise/cyber-safeguards",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://cursor.com/docs/account/enterprise/cyber-safeguards",
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "discovery": {
+      "configured_sitemap_urls": [
+        "https://cursor.com/docs/sitemap.xml"
+      ],
+      "method": "sitemap"
+    },
+    "embedded_content": "cursor_next_rsc",
+    "embedded_content_supported": true,
+    "evidence_level": "A",
+    "format": "html",
+    "sitemap_discovery": {
+      "allowed_path_prefixes": [
+        "/docs/"
+      ],
+      "enabled": true,
+      "excluded_path_prefixes": [
+        "/docs-static/"
+      ],
+      "max_sitemaps": 2,
+      "max_urls": 200,
+      "urls": [
+        "https://cursor.com/docs/sitemap.xml"
+      ]
+    },
+    "visible_text_length": 30
+  },
+  "source_type": "product_docs"
+}

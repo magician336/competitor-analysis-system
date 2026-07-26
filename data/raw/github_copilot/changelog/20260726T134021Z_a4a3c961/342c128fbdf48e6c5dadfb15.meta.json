@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2024-12-20-openai-o1-is-now-available-in-github-copilot-chat-preview/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:47:22.184726Z",
+  "final_url": "https://github.blog/changelog/2024-12-20-openai-o1-is-now-available-in-github-copilot-chat-preview/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "35688590d851ba4c9116a62336982d865bb96d03455fec453fa64c6dbd0a57b2",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/342c128fbdf48e6c5dadfb15.html",
+  "published_at": "2024-12-20T00:00:00Z",
+  "raw_record_id": "342c128fbdf48e6c5dadfb15",
+  "requested_url": "https://github.blog/changelog/2024-12-20-openai-o1-is-now-available-in-github-copilot-chat-preview",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2024/?label=copilot",
+    "changelog_page_number": 3,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2024-12-20T00:00:00Z",
+    "listing_title": "OpenAI o1 is now available in GitHub Copilot Chat (preview)",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3132
+  },
+  "source_type": "changelog"
+}

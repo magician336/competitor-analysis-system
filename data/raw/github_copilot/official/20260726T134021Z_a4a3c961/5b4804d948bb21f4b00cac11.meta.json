@@ -1,0 +1,33 @@
+{
+  "canonical_url": "https://github.com/features/copilot/whats-new",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": "W/\"49ddd3290ec587d75ecea0cd69043d7e\"",
+  "fetched_at": "2026-07-26T13:45:55.904337Z",
+  "final_url": "https://github.com/features/copilot/whats-new",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "809552d7799cf2cf68e27568962be10fba25e7430038b76ab4d6537fedf00d79",
+  "payload_path": "github_copilot/official/20260726T134021Z_a4a3c961/5b4804d948bb21f4b00cac11.html",
+  "published_at": null,
+  "raw_record_id": "5b4804d948bb21f4b00cac11",
+  "requested_url": "https://github.com/features/copilot/whats-new",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://github.com/features/copilot/whats-new",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": 5027
+  },
+  "source_type": "official"
+}

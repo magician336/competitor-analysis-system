@@ -1,0 +1,46 @@
+{
+  "canonical_url": "https://docs.github.com/en/copilot/tutorials/explore-a-codebase",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T11:50:54.472208Z",
+  "final_url": "https://docs.github.com/en/copilot/tutorials/explore-a-codebase",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "750a0eaa5bc11778c6496d8a2b624e5d0b1a1cf3d8be214046bc7ff174535156",
+  "payload_path": "github_copilot/product_docs/20260726T113735Z_5abe3ba9/87614435473c47065fcd0725.html",
+  "published_at": null,
+  "raw_record_id": "87614435473c47065fcd0725",
+  "requested_url": "https://docs.github.com/en/copilot/tutorials/explore-a-codebase",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://docs.github.com/en/copilot/tutorials/explore-a-codebase",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "discovery": {
+      "depth": 1,
+      "max_depth": 1,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/en/copilot"
+      ],
+      "enabled": true,
+      "max_depth": 1,
+      "max_urls": 500
+    },
+    "visible_text_length": 18436
+  },
+  "source_type": "product_docs"
+}

@@ -1,0 +1,33 @@
+{
+  "canonical_url": "https://github.com/features/copilot",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": "W/\"9d9b6033a2a724c100b5cab52bfb45f9\"",
+  "fetched_at": "2026-07-26T13:45:51.139701Z",
+  "final_url": "https://github.com/features/copilot",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "ae502286b518af489e973eab5c43f101cd98b52022a32809375f996017409696",
+  "payload_path": "github_copilot/official/20260726T134021Z_a4a3c961/fd0ff49d689195821fad1ee0.html",
+  "published_at": null,
+  "raw_record_id": "fd0ff49d689195821fad1ee0",
+  "requested_url": "https://github.com/features/copilot",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://github.com/features/copilot",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": 67304
+  },
+  "source_type": "official"
+}

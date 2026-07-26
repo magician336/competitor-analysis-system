@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en-US">
+  <id>tag:github.com,2008:/zai-org/CodeGeeX/discussions</id>
+  <link type="text/html" rel="alternate" href="https://github.com/zai-org/CodeGeeX/discussions"/>
+  <link type="application/atom+xml" rel="self" href="https://github.com/zai-org/CodeGeeX/discussions.atom"/>
+  <title>Recent discussions in zai-org/CodeGeeX</title>
+  <updated>2025-12-07T13:11:42+00:00</updated>
+  <entry>
+    <id>tag:github.com,2008:9219175</id>
+    <link type="text/html" rel="alternate" href="https://github.com/zai-org/CodeGeeX/discussions/278"/>
+    <title>
+      correction
+    </title>
+    <published>2025-12-07T13:11:42+00:00</published>
+    <updated>2025-12-07T13:11:42+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/248300335?s=30&amp;v=4"/>
+    <author>
+      <name>hadjarabchanez75-cyber</name>
+      <uri>https://github.com/hadjarabchanez75-cyber</uri>
+    </author>
+    <content type="html">
+      &lt;p dir=&quot;auto&quot;&gt;la solution de ce tp&lt;br&gt;
+5 Miroir …&lt;br&gt;
+Ecrire et traduire en C un algorithme qui « retourne » un nombre n saisi compris entre 0 et 999.&lt;br&gt;
+Exemples :&lt;br&gt;
+• 178 donnera 871&lt;br&gt;
+• 32 (032) donnera 230&lt;br&gt;
+• 100 donnera 1 (001)&lt;br&gt;
+S’inspirer de l’exercice sur l’extraction des chiffres de la centaine, de la dizaine et de l’unité vu en EI&lt;br&gt;
+en réalisant une procédure dont l’en-tête est :&lt;br&gt;
+Procédure extraction (↓ n,  centaine,  dizaine,  unité : entier)&lt;br&gt;
+En utilisant la procédure précédente, réaliser le retournement à partir d’une fonction et d’une&lt;br&gt;
+procédure dont les en-tête sont :&lt;br&gt;
+Fonction miroir (↓ n : entier) : entier&lt;br&gt;
+Procedure miroir (↕  n : entier)&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:5544111</id>
+    <link type="text/html" rel="alternate" href="https://github.com/zai-org/CodeGeeX/discussions/208"/>
+    <title>
+      [question][login] Hide login &quot;Welcome&quot; notification
+    </title>
+    <published>2023-08-21T18:44:29+00:00</published>
+    <updated>2023-08-21T18:44:30+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/10191085?s=30&amp;v=4"/>
+    <author>
+      <name>angelhdzmultimedia</name>
+      <uri>https://github.com/angelhdzmultimedia</uri>
+    </author>
+    <content type="html">
+      &lt;p dir=&quot;auto&quot;&gt;Thank you for this amazing extension! Appreciation to the team.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;May ask, how to disable the &quot;Welcome&quot; notification every time I open VSCode and it does the login? Thank you.&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:5214156</id>
+    <link type="text/html" rel="alternate" href="https://github.com/zai-org/CodeGeeX/discussions/152"/>
+    <title>
+      Why does my codegeex in vs code not response anything?
+    </title>
+    <published>2023-05-20T02:19:52+00:00</published>
+    <updated>2023-05-20T14:59:10+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/47685165?s=30&amp;v=4"/>
+    <author>
+      <name>BraveDrXuTF</name>
+      <uri>https://github.com/BraveDrXuTF</uri>
+    </author>
+    <content type="html">
+      &lt;p dir=&quot;auto&quot;&gt;怎么让他提示和翻译，翻译那块一直加载不显示东西。提示一开始有一点，现在什么都不提示了。&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:5108161</id>
+    <link type="text/html" rel="alternate" href="https://github.com/zai-org/CodeGeeX/discussions/126"/>
+    <title>
+      What I think a code assistant should do
+    </title>
+    <published>2023-04-20T02:17:09+00:00</published>
+    <updated>2023-04-20T02:17:09+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/17372655?s=30&amp;v=4"/>
+    <author>
+      <name>dbsxdbsx</name>
+      <uri>https://github.com/dbsxdbsx</uri>
+    </author>
+    <content type="html">
+      &lt;p dir=&quot;auto&quot;&gt;The below is what I sent to copilot after unsubscrible it. The feature I requested is what I think  code assistant should have, though I know it is complicated to do.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p dir=&quot;auto&quot;&gt;Current version (without ChatGPT), it is  useless. I don&#39;t want to check the auto generated text/code.   And even with the ChatGPT in the prebuild version, I don&#39;t think it better than using ChatGPT directly.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p dir=&quot;auto&quot;&gt;I think Copilot could have a killer feature if and only if it could gain GLOBAL informatio of a project opened by vscode. This feature would be especially useful for a HUGE project. With this feature, I could send sommd commands to it, like:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;ol dir=&quot;auto&quot;&gt;
+&lt;li&gt;Why would this function use this parameter？&lt;/li&gt;
+&lt;li&gt;I want to know which part(s)  of the project is related to Feature A, could you tell me?&lt;/li&gt;
+&lt;li&gt;I want to add a feature (e.g. adding audio stream to a method which already dealt with video stream with some code style ande 3rd library)to this project, some suggestion or code?&lt;/li&gt;
+&lt;li&gt;Try to optimize the code globally (Of course, the routine should not violate the existed logic)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:4960635</id>
+    <link type="text/html" rel="alternate" href="https://github.com/zai-org/CodeGeeX/discussions/85"/>
+    <title>
+      CodeGeeX Poll: Add your favourite programming languages to CodeGeeX
+    </title>
+    <published>2023-03-14T06:15:26+00:00</published>
+    <updated>2023-03-14T06:15:26+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/104395647?s=30&amp;v=4"/>
+    <author>
+      <name>yyz218</name>
+      <uri>https://github.com/yyz218</uri>
+    </author>
+    <content type="html">
+      &lt;p dir=&quot;auto&quot;&gt;For those who haven&#39;t had a chance to participate in the poll, here is the link to the Google form where you can vote for the languages you&#39;d like to see integrated into CodeGeeX. Please feel free to comment on any programming language that you would like to use with CodeGeeX, even if it is not listed as an answer option in the poll. Your feedback is valuable to us and will help us improve the CodeGeeX model for all users. Thank you all for your continued support!&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;&lt;a href=&quot;https://forms.gle/V4LVcEpauQXsuL8w9&quot; rel=&quot;nofollow&quot;&gt;https://forms.gle/V4LVcEpauQXsuL8w9&lt;/a&gt;&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:4957053</id>
+    <link type="text/html" rel="alternate" href="https://github.com/zai-org/CodeGeeX/discussions/84"/>
+    <title>
+      Welcome to CodeGeeX Discussions!
+    </title>
+    <published>2023-03-13T07:16:20+00:00</published>
+    <updated>2025-04-21T16:03:03+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/26864197?s=30&amp;v=4"/>
+    <author>
+      <name>Stanislas0</name>
+      <uri>https://github.com/Stanislas0</uri>
+    </author>
+    <content type="html">
+      
+&lt;h2 dir=&quot;auto&quot;&gt;👋 Welcome!&lt;/h2&gt;
+&lt;p dir=&quot;auto&quot;&gt;We’re using Discussions as a place to connect with other members of our community. We hope that you:&lt;/p&gt;
+&lt;ul dir=&quot;auto&quot;&gt;
+&lt;li&gt;Ask questions you’re wondering about.&lt;/li&gt;
+&lt;li&gt;Share ideas.&lt;/li&gt;
+&lt;li&gt;Engage with other community members.&lt;/li&gt;
+&lt;li&gt;Welcome others and are open-minded. Remember that this is a community we&lt;br&gt;
+build together 💪.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p dir=&quot;auto&quot;&gt;To get started, comment below with an introduction of yourself and tell us about what you do with this community.&lt;/p&gt;
+
+    </content>
+  </entry>
+</feed>

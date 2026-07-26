@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import math
 from datetime import datetime, timedelta, timezone
 
@@ -7,6 +8,7 @@ import pytest
 
 from mini_rag.embedding import EmbeddingService, HashEmbedding
 from mini_rag.indexing import (
+    ElasticsearchClient,
     InMemorySearchBackend,
     IndexBuilder,
     IndexManager,
@@ -24,6 +26,82 @@ from mini_rag.retrieval import (
 
 
 NOW = datetime(2026, 7, 14, tzinfo=timezone.utc)
+
+
+def test_elasticsearch_bulk_index_batches_by_encoded_bytes(monkeypatch) -> None:
+    client = ElasticsearchClient(
+        bulk_max_bytes=420,
+        bulk_max_actions=100,
+    )
+    payloads: list[str] = []
+
+    def request(method, path, **kwargs):
+        assert method == "POST"
+        assert path == "/_bulk"
+        payload = kwargs["data"]
+        payloads.append(payload)
+        assert len(payload.encode("utf-8")) <= client.bulk_max_bytes
+        lines = payload.splitlines()
+        return {
+            "items": [
+                {
+                    "index": {
+                        "_id": json.loads(lines[index])["index"]["_id"],
+                        "status": 201,
+                    }
+                }
+                for index in range(0, len(lines), 2)
+            ]
+        }
+
+    monkeypatch.setattr(client, "_request", request)
+    report = client.bulk_index(
+        "chunks",
+        [
+            {"chunk_id": f"chunk-{index}", "content": "汉" * 80}
+            for index in range(3)
+        ],
+    )
+
+    assert report.attempted == report.indexed == 3
+    assert report.failed == 0
+    assert len(payloads) == 3
+
+
+def test_elasticsearch_bulk_index_batches_by_action_count(monkeypatch) -> None:
+    client = ElasticsearchClient(
+        bulk_max_bytes=1024 * 1024,
+        bulk_max_actions=2,
+    )
+    batch_sizes: list[int] = []
+
+    def request(method, path, **kwargs):
+        lines = kwargs["data"].splitlines()
+        batch_sizes.append(len(lines) // 2)
+        return {
+            "items": [
+                {
+                    "index": {
+                        "_id": json.loads(lines[index])["index"]["_id"],
+                        "status": 201,
+                    }
+                }
+                for index in range(0, len(lines), 2)
+            ]
+        }
+
+    monkeypatch.setattr(client, "_request", request)
+    report = client.bulk_index(
+        "chunks",
+        [
+            {"chunk_id": f"chunk-{index}", "content": "evidence"}
+            for index in range(5)
+        ],
+    )
+
+    assert report.attempted == report.indexed == 5
+    assert report.failed == 0
+    assert batch_sizes == [2, 2, 1]
 
 
 def _chunk(

@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2026-07-17-github-copilot-app-now-available-in-the-usage-metrics-api/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:46:07.749466Z",
+  "final_url": "https://github.blog/changelog/2026-07-17-github-copilot-app-now-available-in-the-usage-metrics-api/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "b8a971bd8c8c76c8a213b6fde1d1a26b568ecec6fc49f0dd530f7e416f45bf67",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/70f1c3098dc66431ed8481a3.html",
+  "published_at": "2026-07-17T00:00:00Z",
+  "raw_record_id": "70f1c3098dc66431ed8481a3",
+  "requested_url": "https://github.blog/changelog/2026-07-17-github-copilot-app-now-available-in-the-usage-metrics-api",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/label/copilot/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-07-17T00:00:00Z",
+    "listing_title": "GitHub Copilot app now available in the usage metrics API",
+    "record_role": "changelog_entry",
+    "visible_text_length": 4278
+  },
+  "source_type": "changelog"
+}

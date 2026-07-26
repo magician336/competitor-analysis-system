@@ -1,0 +1,46 @@
+{
+  "canonical_url": "https://docs.github.com/en/copilot/concepts/billing/organizations-and-enterprises",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T11:42:16.097247Z",
+  "final_url": "https://docs.github.com/en/copilot/concepts/billing/organizations-and-enterprises",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "c442f990f40c6a3d88f5928132b329259744c3bad15c0363cf13b956fb4db661",
+  "payload_path": "github_copilot/product_docs/20260726T113735Z_5abe3ba9/de4e78e6647bd7ecf756f97f.html",
+  "published_at": null,
+  "raw_record_id": "de4e78e6647bd7ecf756f97f",
+  "requested_url": "https://docs.github.com/en/copilot/concepts/billing/organizations-and-enterprises",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://docs.github.com/en/copilot/concepts/billing/organizations-and-enterprises",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "discovery": {
+      "depth": 1,
+      "max_depth": 1,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/en/copilot"
+      ],
+      "enabled": true,
+      "max_depth": 1,
+      "max_urls": 500
+    },
+    "visible_text_length": 15078
+  },
+  "source_type": "product_docs"
+}

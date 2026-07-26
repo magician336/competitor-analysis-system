@@ -1,7 +1,7 @@
 """CodeRadar multi-source acquisition package."""
 
 from .base import BaseCollector, PageCollector
-from .crawl_changelog import ChangelogCollector
+from .crawl_changelog import ChangelogCollector, RSSCollector
 from .crawl_github import GitHubCollector
 from .crawl_official import OfficialCollector
 from .crawl_pricing import PricingCollector
@@ -19,6 +19,8 @@ from .models import (
     SourceType,
 )
 from .orchestrator import CrawlOrchestrator
+from .page_discovery import LinkDiscoverySettings, discover_page_urls
+from .sitemap_loader import SitemapDiscoverySettings, SitemapLoader
 from .storage import RawWriter
 
 
@@ -33,11 +35,16 @@ __all__ = [
     "GitHubCollector",
     "HttpClient",
     "HttpClientConfig",
+    "LinkDiscoverySettings",
     "OfficialCollector",
     "PageCollector",
     "PricingCollector",
+    "RSSCollector",
     "RawRecord",
     "RawWriter",
     "RobotsDeniedError",
+    "SitemapDiscoverySettings",
+    "SitemapLoader",
     "SourceType",
+    "discover_page_urls",
 ]

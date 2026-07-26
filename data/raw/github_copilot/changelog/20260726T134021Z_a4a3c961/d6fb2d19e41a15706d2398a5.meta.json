@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2026-07-02-improved-accuracy-and-coverage-in-copilot-usage-metrics-reports/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:46:27.773303Z",
+  "final_url": "https://github.blog/changelog/2026-07-02-improved-accuracy-and-coverage-in-copilot-usage-metrics-reports/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "233a5f9b4dc8622320a1b93ac9a45c836ebab3fe5ed97177af56cd6f4c7bc1e6",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/d6fb2d19e41a15706d2398a5.html",
+  "published_at": "2026-07-02T00:00:00Z",
+  "raw_record_id": "d6fb2d19e41a15706d2398a5",
+  "requested_url": "https://github.blog/changelog/2026-07-02-improved-accuracy-and-coverage-in-copilot-usage-metrics-reports",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/label/copilot/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-07-02T00:00:00Z",
+    "listing_title": "Improved accuracy and coverage in Copilot usage metrics reports",
+    "record_role": "changelog_entry",
+    "visible_text_length": 5191
+  },
+  "source_type": "changelog"
+}

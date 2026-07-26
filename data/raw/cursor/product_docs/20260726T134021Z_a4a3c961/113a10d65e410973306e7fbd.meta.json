@@ -1,0 +1,54 @@
+{
+  "canonical_url": "https://cursor.com/docs/enterprise/compliance-and-monitoring",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": "W/\"6a219e1e901c688f0e7de17738461e8a\"",
+  "fetched_at": "2026-07-26T13:43:50.415985Z",
+  "final_url": "https://cursor.com/docs/enterprise/compliance-and-monitoring",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "fada8e125caa2b07235f83f341348a8f3974974c655c8aafad2afd4094a9a581",
+  "payload_path": "cursor/product_docs/20260726T134021Z_a4a3c961/113a10d65e410973306e7fbd.html",
+  "published_at": null,
+  "raw_record_id": "113a10d65e410973306e7fbd",
+  "requested_url": "https://cursor.com/docs/enterprise/compliance-and-monitoring",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://cursor.com/docs/enterprise/compliance-and-monitoring",
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "discovery": {
+      "configured_sitemap_urls": [
+        "https://cursor.com/docs/sitemap.xml"
+      ],
+      "method": "sitemap"
+    },
+    "embedded_content": "cursor_next_rsc",
+    "embedded_content_supported": true,
+    "evidence_level": "A",
+    "format": "html",
+    "sitemap_discovery": {
+      "allowed_path_prefixes": [
+        "/docs/"
+      ],
+      "enabled": true,
+      "excluded_path_prefixes": [
+        "/docs-static/",
+        "/docs/page.mdx"
+      ],
+      "max_sitemaps": 2,
+      "max_urls": 200,
+      "urls": [
+        "https://cursor.com/docs/sitemap.xml"
+      ]
+    },
+    "visible_text_length": 39
+  },
+  "source_type": "product_docs"
+}

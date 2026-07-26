@@ -1,0 +1,49 @@
+{
+  "canonical_url": "https://marketplace.visualstudio.com/items?itemName=aminer.codegeex",
+  "competitor": "codegeex",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T14:23:20.692100Z",
+  "final_url": "https://marketplace.visualstudio.com/items?itemName=aminer.codegeex",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "3e06f5b23deac065a0f40e08e7f786c1eb15cf1fa1a010dfbe0624d7d6392396",
+  "payload_path": "codegeex/plugin_marketplace/20260726T134021Z_a4a3c961/e1115f9d1c2290924fad924f.html",
+  "published_at": null,
+  "raw_record_id": "e1115f9d1c2290924fad924f",
+  "requested_url": "https://marketplace.visualstudio.com/items?itemName=aminer.codegeex",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://marketplace.visualstudio.com/items?itemName=aminer.codegeex",
+    "competitor_aliases": [
+      "CodeGeeX4",
+      "CodeGeeX AI Coding Assistant"
+    ],
+    "competitor_name": "CodeGeeX",
+    "embedded_content_supported": false,
+    "evidence_level": "B",
+    "format": "html",
+    "json_document": {
+      "author_field": "vendor.publicName",
+      "content_fields": [
+        "description",
+        "preview",
+        "pricingModel"
+      ],
+      "publish_time_field": "cdate",
+      "title_field": "name"
+    },
+    "request_overrides": {
+      "https://plugins.jetbrains.com/plugin/20587-codegeex-ai-coding-assistant": {
+        "method": "GET",
+        "url": "https://plugins.jetbrains.com/api/plugins/20587"
+      }
+    },
+    "visible_text_length": 6636
+  },
+  "source_type": "plugin_marketplace"
+}

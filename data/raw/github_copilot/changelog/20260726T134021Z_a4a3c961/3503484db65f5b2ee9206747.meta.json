@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2025-12-03-github-copilot-in-visual-studio-november-update/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:47:13.954212Z",
+  "final_url": "https://github.blog/changelog/2025-12-03-github-copilot-in-visual-studio-november-update/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "d9fba14fafa9885ed14db3039955fba1a68721630a9776006c9d32e06b011549",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/3503484db65f5b2ee9206747.html",
+  "published_at": "2025-12-03T00:00:00Z",
+  "raw_record_id": "3503484db65f5b2ee9206747",
+  "requested_url": "https://github.blog/changelog/2025-12-03-github-copilot-in-visual-studio-november-update",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2025/?label=copilot",
+    "changelog_page_number": 2,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2025-12-03T00:00:00Z",
+    "listing_title": "GitHub Copilot in Visual Studio — November update",
+    "record_role": "changelog_entry",
+    "visible_text_length": 4288
+  },
+  "source_type": "changelog"
+}

@@ -1,0 +1,32 @@
+{
+  "canonical_url": "https://trae.ai/blog/engineering_thought_0108",
+  "competitor": "trae",
+  "content_type": "application/json",
+  "crawl_run_id": "20260726T100002Z_7890a396",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T10:00:03.572932Z",
+  "final_url": "https://www.trae.ai/rss.xml",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "1e9c48bef9f44f87beb060ea758411cae940284849f75a54b3ef776e5d58db24",
+  "payload_path": "trae/rss/20260726T100002Z_7890a396/4c9c1c030086d8329da68722.json",
+  "published_at": "2026-01-07T16:00:00Z",
+  "raw_record_id": "4c9c1c030086d8329da68722",
+  "requested_url": "https://www.trae.ai/rss.xml",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "competitor_aliases": [
+      "TRAE",
+      "TRAE IDE"
+    ],
+    "competitor_name": "Trae",
+    "entry_id": "engineering_thought_0108",
+    "evidence_level": "B",
+    "format": "feed_entry",
+    "original_content_type": "application/xml",
+    "record_role": "rss_entry"
+  },
+  "source_type": "rss"
+}

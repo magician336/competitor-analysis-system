@@ -1,0 +1,1198 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="applicable-device" content="pc,mobile" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="aplus-core" content="aplus.js" />
+  <meta name="aplus-waiting" content="MAN" />
+  <meta name="data-spm" content="a2c6h" />
+  <title>通义灵码评测: 阿里云出品通义大模型AI代码编程辅助工具-阿里云开发者社区</title>
+  <meta name="date" content="2024-06-21 16:07:38" />
+  <meta name="last-modified" content="2024-06-22 11:22:20" />
+  <meta name="keywords" content="人工智能,自然语言处理,测试技术,开发工具,开发者" />
+  <meta name="description" content="通义灵码是阿里云出品的一款基于通义大模型的AI智能编码辅助工具，提供行级/函数级实时续写、自然语言生成代码、单元测试生成、代码注释生成、代码解释、研发智能问答、异常报错排查等能力，并针对阿里云 SDK/OpenAPI 的使用场景调优，助力开发者高效、流畅的编码。" />
+  <meta property="og:title" content="通义灵码评测: 阿里云出品通义大模型AI代码编程辅助工具-阿里云开发者社区" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="通义灵码是阿里云出品的一款基于通义大模型的AI智能编码辅助工具，提供行级/函数级实时续写、自然语言生成代码、单元测试生成、代码注释生成、代码解释、研发智能问答、异常报错排查等能力，并针对阿里云 SDK/OpenAPI 的使用场景调优，助力开发者高效、流畅的编码。" />
+  <meta property="og:image" content="https://img.alicdn.com/tfs/TB1LCE1aQ5E3KVjSZFCXXbuzXXa-200-200.png" />
+  <meta property="og:url" content="https://developer.aliyun.com/article/1543945" />
+  <link rel="preconnect" href="https://at.alicdn.com" />
+  <link rel="preconnect" href="https://query.aliyun.com" />
+  <link rel="canonical" href="https://developer.aliyun.com/article/1543945" />
+  
+  <link rel="stylesheet" href="//g.alicdn.com/aliyun/developer-aliyun-com-fe/2.8.59/css/??articleDetail.css,yuqueDocViewer.css,markdownViewer.css,medalDialog.css,mathjax.css,report.css" />
+  
+  <link href="https://gw.alipayobjects.com/os/lib/ali/yuque-editor/1.8.18/dist/antd.css" rel="stylesheet" />
+  <link href="https://gw.alipayobjects.com/os/lib/ali/yuque-editor/1.8.18/dist/yuque_editor.css" rel="stylesheet" />
+  
+  
+    <link rel="shortcut icon" href="//img.alicdn.com/tfs/TB1_ZXuNcfpK1RjSZFOXXa6nFXa-32-32.ico" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="https://g.alicdn.com/code/npm/@ali??hmod-ace-2023-box/0.1.0/index.css,hmod-ace-2023-developer-global-community-nav/0.0.70/index.css,hmod-aliyun-com-global-nav-search/0.8.4/index.css,hmod-aliyun-com-global-nav/0.3.17/index.css" />
+    <link rel="stylesheet" href="https://g.alicdn.com/code/npm/@ali??hmod-ace-2023-box/0.1.0/index.css,hmod-ace-2024-global-footer/0.1.2/index.css" />
+    
+
+  <script nonce="c45a748a5efc478890594e7d730bd869">
+    var GLOBAL_CONFIG = {
+      "csrf_key": 'p_csrf',
+      "csrf_val": '265171fe-c1c9-4ca6-b8a8-6a35cbb9d9c2',
+      "wechat_disable": false,
+      "articleId": '1543945',
+      "groupCode": null,
+      "groupInfo": null,
+      "articleRealGroupCode": null,
+      "needLarkJs": false,
+      "larkContent": '',
+      "isLogin": false,
+      "isBest": false,
+      "authorUccId": 'qseql3plxy23a',
+      "visitorUccId": null,
+      "communityCode": 'tongyi',
+      "community": {'admins':null,'belongTab':{'link':'/tongyi/article_hot','name':'\u6587\u7AE0'},'description':null,'domainCode':null,'domainName':null,'exCommunity':{'communityCode':'tongyi','description':'\u963F\u91CC\u4E91\u81EA\u4E3B\u7814\u53D1\u7684\u5343\u95EE\u5927\u6A21\u578B\uFF0C\u51ED\u501F\u4E07\u4EBF\u7EA7\u8D85\u5927\u89C4\u6A21\u6570\u636E\u8BAD\u7EC3\u548C\u9886\u5148\u7684\u7B97\u6CD5\u6846\u67B6\uFF0C\u5B9E\u73B0\u5168\u6A21\u6001\u9AD8\u6548\u7CBE\u51C6\u7684\u6A21\u578B\u670D\u52A1\u8C03\u7528\u3002https://www.aliyun.com/product/tongyi','domainList':null,'gmtCreate':'2023-08-31 16:23:10','gmtModified':'2026-06-30 14:58:43','id':29,'logoUrl':'https://ucc.alicdn.com/pic/developer-ecology/rxups6ft4xmoi_1861d06ea935479aaee37ce30f980dda.png','name':'\u5343\u95EE\u5927\u6A21\u578B','relatedCloudProductTags':[{'children':null,'tagBizCategory':null,'tagCode':'de-product-3-sfm','tagLevel':3,'tagName':'\u5927\u6A21\u578B\u670D\u52A1\u5E73\u53F0\u767E\u70BC'}]},'exCommunityCode':'tongyi','exCommunityId':29,'gmtCreate':null,'gmtModified':null,'id':0,'isFromGroup':null,'orderWeight':null,'qaProductId':null,'relatedCloudProductTags':null},
+      "freeTierInfo":null,
+      "commentSwitch":true,
+      "articleRewardEnable":false,
+      "isOfficialBlog":false,
+      "cloudProductCodeList":'[\"nlp\",\"sfm\"]',
+    };
+  </script>
+  <style>
+    .article-detail #skill-builder-waker-button{
+        margin-left: 16px;
+    }
+  </style>
+</head>
+<body data-spm="12873639"><script type="text/javascript"
+id="beacon-aplus"
+src="//g.alicdn.com/alilog/mlog/aplus_v2.js"
+exparams="category=&userid=&aplus&yunid=&yunpk=&channel=&cps="
+nonce="c45a748a5efc478890594e7d730bd869"
+cspx="c45a748a5efc478890594e7d730bd869"
+async>
+</script>
+  
+  
+    <div class="yuque-sdk-extra-container yuquesdk"></div>
+    <script nonce="c45a748a5efc478890594e7d730bd869">
+      window._VIEWER_JS_URL = "https://gw.alipayobjects.com/os/lib/ali/yuque-editor/1.8.18/dist/yuque_editor.js";
+      window._VIEWER_CSS_URL = [
+        `https://gw.alipayobjects.com/os/lib/ali/yuque-editor/1.8.18/dist/antd.css`,
+        `https://gw.alipayobjects.com/os/lib/ali/yuque-editor/1.8.18/dist/yuque_editor.css`,
+      ];
+      window.__imageBrowser_options = {
+        container : document.querySelectorAll(".yuque-sdk-extra-container.yuquesdk")
+      };
+    </script>
+    <script type="text/javascript" src="//gw.alipayobjects.com/os/lib/??moment/2.24.0/min/moment.min.js" nonce="c45a748a5efc478890594e7d730bd869"></script>
+    <script type="text/javascript" src="//gw.alipayobjects.com/as/g/larkgroup/lake-codemirror/6.0.2/CodeMirror.js" nonce="c45a748a5efc478890594e7d730bd869"></script>
+    <script nonce="c45a748a5efc478890594e7d730bd869">
+      /*<![CDATA[*/
+      if(!window.React || window.React.version != "16.14.0") {
+        var nonce = 'c45a748a5efc478890594e7d730bd869';
+        document.write('<script type="text/javascript" src="//g.alicdn.com/developer_center/developer-fresh-aliyun-com-fe/0.7.41/??react.js,react-dom.js" nonce="'+ nonce + '"><\/script>');
+      }
+      GLOBAL_CONFIG.larkContent = null;
+      /*]]>*/
+    </script>
+    <script type="text/javascript" src="https://gw.alipayobjects.com/os/lib/ali/yuque-editor/1.8.18/dist/yuque_editor.js" nonce="c45a748a5efc478890594e7d730bd869"></script>
+  
+  
+        
+        <script nonce="c45a748a5efc478890594e7d730bd869">
+            /*<![CDATA[*/
+            !(function(c,b,d,a){c[a]||(c[a]={});c[a].config= {
+                pid: "hl0znr436e@8b95b85ff013e64",
+                appType: "web",
+                imgUrl: "https://arms-retcode.aliyuncs.com/r.png?",
+                sendResource: true,
+                disableHook: true,
+                enableLinkTrace: true,
+                behavior: true,
+                enableConsole: true,
+                c1: window.location.href,
+                environment: (function getEnv(){
+                    return document.location.hostname === 'developer.aliyun.com' ? 'prod' : 'local';
+                })(),
+                uid: (function getUID() {
+                    var pk = document.cookie.match(/login_aliyunid_pk=(.*?);/);
+                    var cna = document.cookie.match(/cna=(.*?);/);
+                    return pk && pk.length === 2 ? pk[1] : cna && cna.length === 2 ? cna[1] : "";
+                })()
+            };with(b)with(body)with(insertBefore(createElement("script"),firstChild))setAttribute("crossorigin","",src=d)
+            })(window,document,"https://retcode.alicdn.com/retcode/bl.js","__bl");
+            /*]]>*/
+        </script>
+        <!-- 官网前端新标准使用 aes -->
+        <script src="//g.alicdn.com/aes/??tracker/3.3.3/index.js,tracker-plugin-pv/3.0.5/index.js,tracker-plugin-event/3.0.0/index.js,tracker-plugin-jserror/3.0.3/index.js,tracker-plugin-api/3.1.3/index.js,tracker-plugin-resourceError/3.0.4/index.js,tracker-plugin-perf/3.1.0/index.js,tracker-plugin-eventTiming/3.0.0/index.js,tracker-plugin-longtask/3.0.1/index.js,tracker-plugin-blank/3.0.1/index.js,tracker-plugin-autolog/3.0.3/index.js" nonce="c45a748a5efc478890594e7d730bd869"></script>
+        <script nonce="c45a748a5efc478890594e7d730bd869">
+            /*<![CDATA[*/
+            const aes = new AES({
+                pid: "B5w3hb",
+                user_type: "6",
+                uid: (function getUID() {
+                    let pk = document.cookie.match(/login_aliyunid_pk=(.*?);/);
+                    let cna = document.cookie.match(/cna=(.*?);/);
+                    return pk && pk.length === 2 ? pk[1] : cna && cna.length === 2 ? cna[1] : "";
+                })()
+            });
+            const plugins = aes.use([AESPluginPV,AESPluginEvent,AESPluginJSError,AESPluginAPI,AESPluginResourceError,AESPluginPerf,AESPluginEventTiming,AESPluginLongTask,AESPluginBlank,AESPluginAutolog]);
+            /*]]>*/
+        </script>
+    
+  <div id="e10038607e8fbd1665d8c4adc46d7200"><div class="_18a32969382a277c44015217fbc5cb5a_box"><div class="_3bd147f6948a20d6c528ac898ad4ba47_pc de5ef2fee09ebcb2b1dcaf0c982523bc_theme _277ebb348812c9712fac6b680ad5e513_reset _277ebb348812c9712fac6b680ad5e513_aliyun-font-family" data-ai-assistant-text-selection-tooltip="disabled"><header class="_702422913dd5754f065139ec2d2def80_container   "><button class="_17fcaf1a4ee37405e5ad5fbad24204b4_container _17fcaf1a4ee37405e5ad5fbad24204b4_loading" aria-label="打开菜单" data-spm="d_dashboard_trigger" data-tracker-exp="true"><span class="_17fcaf1a4ee37405e5ad5fbad24204b4_burger "><span class="_17fcaf1a4ee37405e5ad5fbad24204b4_middle"></span></span></button><a href="https://www.aliyun.com/" class="_3f46140aade30bc61f3012933357c477_logo _702422913dd5754f065139ec2d2def80_logo" data-tracker-content="LOGO" data-spm="d_logo"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 4608 1024" fill="#ff6a00" width="80"><path d="M3266.56 773.12h327.68v-102.4h-327.68v-102.4H3584V35.84H2846.72v532.48h317.44v102.4h-327.68v102.4h327.68v112.64h-353.28v102.4h814.08v-102.4h-353.28v-112.64zM3276.8 138.24h215.04v112.64H3276.8V138.24z m0 215.04h215.04V460.8H3276.8V353.28zM3174.4 460.8h-215.04V353.28H3174.4V460.8z m0-209.92h-215.04V138.24H3174.4v112.64zM537.6 445.44H1075.2v122.88H537.6z"></path><path d="M1341.44 5.12h-353.28L1075.2 128l256 81.92c46.08 15.36 76.8 61.44 76.8 107.52v389.12c0 46.08-30.72 92.16-76.8 107.52l-256 81.92-87.04 122.88h353.28c148.48 0 266.24-117.76 266.24-266.24V276.48c0-148.48-117.76-271.36-266.24-271.36zM276.48 814.08c-46.08-15.36-76.8-61.44-76.8-107.52V317.44c0-46.08 30.72-92.16 76.8-107.52l256-81.92L619.52 5.12H266.24C117.76 5.12 0 128 0 276.48v471.04c0 148.48 117.76 266.24 266.24 266.24h353.28l-87.04-122.88-256-76.8zM2493.44 250.88h-261.12v537.6h261.12V250.88z m-107.52 430.08h-56.32V353.28h56.32v327.68zM1848.32 988.16h102.4V138.24h107.52L1996.8 419.84v102.4h61.44v225.28c0 15.36-10.24 25.6-25.6 25.6h-25.6v102.4h51.2c56.32 0 102.4-46.08 102.4-102.4v-358.4H2099.2l61.44-281.6v-102.4h-312.32v957.44z"></path><path d="M2206.72 138.24H2560v660.48c0 46.08-35.84 87.04-87.04 87.04h-76.8v102.4h107.52c87.04 0 163.84-71.68 163.84-163.84V138.24h35.84v-102.4h-496.64v102.4zM3763.2 40.96h737.28v102.4H3763.2zM4541.44 527.36v-102.4H3727.36v102.4h204.8l-163.84 358.4v102.4h691.2c30.72 0 51.2-25.6 51.2-51.2 0-10.24 0-15.36-5.12-20.48l-87.04-194.56h-112.64l76.8 163.84h-496.64l163.84-358.4h491.52z"></path></svg></a><div class="e76910c82efe8556eb8a6ce6019c5d00_container"><button class="e76910c82efe8556eb8a6ce6019c5d00_controller" data-spm="dscroll-left"><i class="ee52067fb65534cb06d3b35f654f5441_icon ddd10ed9ffa4788f54781e516c4c6560-button_left"></i></button><div class="e76910c82efe8556eb8a6ce6019c5d00_menu-warp"><nav class="_0b0e00051b37611378e027e6ac3a695a_menus"><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/product/tongyi" data-spm="d_menu_0">大模型</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/product/list" data-spm="d_menu_1">产品</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/solution/tech-solution/" data-spm="d_menu_2">解决方案</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/benefit" data-spm="d_menu_3">权益</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/price" data-spm="d_menu_4">定价</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://market.aliyun.com/" data-spm="d_menu_5">云市场</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://partner.aliyun.com/management/v2" data-spm="d_menu_6">伙伴</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/service" data-spm="d_menu_7">服务</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/about" data-spm="d_menu_8">了解阿里云</a></nav></div><button class="e76910c82efe8556eb8a6ce6019c5d00_controller" data-spm="dscroll-right"><i class="ee52067fb65534cb06d3b35f654f5441_icon ddd10ed9ffa4788f54781e516c4c6560-button_right"></i></button></div><div class="_702422913dd5754f065139ec2d2def80_search-wrap " style="--left-width:0px;--right-width:0px"><div class="global-nav-search _626567c051250ffe2f303af907d3fc83_global-nav-search"><div class="global-search-container _626567c051250ffe2f303af907d3fc83_global-nav-search-desktop-container"><div class="ff4f4a96a12f52ffbdd0d6adbdb6a2b0_position-desktop-search-container"><div><div class="f6fd7e4d3293f0634b9ac54848c275b7_default-search-panel  f6fd7e4d3293f0634b9ac54848c275b7_hidden-default-search-panel"></div><div class="_3b4f5487091623b0b6852e2b46d2729e_search-recommend-panel  _3b4f5487091623b0b6852e2b46d2729e_hidden-search-recommend-panel"><button class="_4b65cdd64479a2fabe582b8c0789821e_search-no-content " type="button">查看 "" 全部搜索结果</button></div></div></div></div><div class="_626567c051250ffe2f303af907d3fc83_global-nav-search-mobile-container"><a class="_626567c051250ffe2f303af907d3fc83_search-button" href="https://www.aliyun.com/search?from=h5-global-nav-search"><span role="img" class="_9a1d73bbcd1a80626a31035a12410804_icon _626567c051250ffe2f303af907d3fc83_search-button-icon"><svg width="1em" height="1em" viewbox="0 0 32 32" focusable="false" color="currentColor" fill="currentColor" class="" data-icon="search"><g><g><path fill-opacity="1" fill-rule="evenodd" d="M14,4C15.3558,4,16.653399999999998,4.262105,17.8926,4.786314C19.089100000000002,5.29242,20.1486,6.00666,21.071,6.92905C21.9933,7.85144,22.7076,8.91087,23.2137,10.10735C23.7379,11.34664,24,12.64419,24,14C24,15.3558,23.7379,16.653399999999998,23.2137,17.892699999999998C22.8382,18.7803,22.3482,19.5925,21.7436,20.3293L27.7072,26.2928L26.293,27.7071L20.3294,21.7435C19.592599999999997,22.3481,18.7803,22.8382,17.8926,23.2137C16.653399999999998,23.7379,15.3558,24,14,24C12.64419,24,11.34664,23.7379,10.10735,23.2137C8.91087,22.7076,7.85144,21.9933,6.92905,21.0709C6.00666,20.1486,5.29242,19.089100000000002,4.786314,17.8926C4.262105,16.653399999999998,4,15.3558,4,14C4,12.64419,4.262105,11.34664,4.786314,10.10735C5.29242,8.91087,6.00666,7.85144,6.92905,6.92905C7.85144,6.00666,8.91087,5.29242,10.10735,4.786314C11.34664,4.262105,12.64419,4,14,4ZM14,6C11.79102,6,9.905439999999999,6.78109,8.34326,8.34326C6.78109,9.905439999999999,6,11.79102,6,14C6,16.209,6.78109,18.0946,8.34326,19.6567C9.905439999999999,21.2189,11.79102,22,14,22C16.209,22,18.0946,21.2189,19.6567,19.6567C21.2189,18.0946,22,16.209,22,14C22,11.79102,21.2189,9.905439999999999,19.6567,8.34326C18.0946,6.78109,16.209,6,14,6Z"></path></g></g></svg></span></a></div></div></div><div class="_174801eef2caf75aeaee91c72b19c09a_container"><a class="global-nav-ai-assistant _174801eef2caf75aeaee91c72b19c09a_item _2d3ef330b3f8055912d355b9a255bfcf_btn" href="https://www.aliyun.com/ai-assistant?displayMode=side" data-spm="dai_assistant" target="_blank"><div class="LogoStyled-aliyun-ai-assistant-rc-8096__sc-1qusfpt-0 cpJKij"><div class="ai-assistant-brand-logo-icon" style="background:no-repeat center/100%  url(https://img.alicdn.com/imgextra/i4/O1CN012X1Rxl1clAgB5waMK_!!6000000003640-2-tps-52-52.png)"><img src="https://img.alicdn.com/imgextra/i2/O1CN01bYc1m81RrcSAyOjMu_!!6000000002165-54-tps-60-60.apng" loading="lazy"></div><div class="ai-assistant-brand-logo-tooltip "><div class="ai-assistant-logo-tooltip-content">
+         AI 助理
+        </div></div></div></a><button class="_174801eef2caf75aeaee91c72b19c09a_item _0055435acd28e60da8ef7e8c053ca5c2_button"><i class="ee52067fb65534cb06d3b35f654f5441_icon ddd10ed9ffa4788f54781e516c4c6560-intl"></i></button><button class="_174801eef2caf75aeaee91c72b19c09a_item"><i class="ee52067fb65534cb06d3b35f654f5441_icon ddd10ed9ffa4788f54781e516c4c6560-contact f9c0581c7b0803efa9027b0f2d228294_icon"></i></button><a class="_174801eef2caf75aeaee91c72b19c09a_item" href="https://help.aliyun.com/" target="_blank" data-spm="d_quick_access_3">文档</a><a class="_174801eef2caf75aeaee91c72b19c09a_item" href="https://beian.aliyun.com/" target="_blank" data-spm="d_quick_access_4">备案</a><a class="_174801eef2caf75aeaee91c72b19c09a_item" href="https://home.console.aliyun.com/home/dashboard/ProductAndService" target="_blank" data-spm="d_quick_access_5" rel="nofollow">控制台</a><span class="f8312ad103723788906e97b238dccd8c_loading _174801eef2caf75aeaee91c72b19c09a_item"></span></div></header></div><div class="_3bd147f6948a20d6c528ac898ad4ba47_mobile de5ef2fee09ebcb2b1dcaf0c982523bc_theme _277ebb348812c9712fac6b680ad5e513_reset _277ebb348812c9712fac6b680ad5e513_aliyun-font-family"></div><div class="_18a32969382a277c44015217fbc5cb5a_box"><nav class="ace-developer-new-global-community-nav"><div class="ace-developer-new-global-sub-community-nav-box" id="ace-developer-new-global-sub-community-nav-box"><div class="global-sub-community-nav-pc"><div class="fixed-container"><div class="global-sub-community-nav"><div class="global-sub-community-nav-left" id="global-sub-community-nav-left"><div class="global-sub-community-nav-left-main"><div class="aliyun-sub-community-logo"><a href="https://developer.aliyun.com/" target="_blank" class="aliyun-community-logo-link" data-spm="d_logo">开发者社区</a><a target="_blank" class="aliyun-sub-community-link" data-spm="d_sub_logo" href="/tongyi/"><img class="aliyun-sub-community-image" src="https://ucc.alicdn.com/pic/developer-ecology/rxups6ft4xmoi_62815ad00e564136b68f8a867915fcef.png" alt="千问大模型"></a></div><div class="global-sub-community-nav-menu"><div class="global-sub-community-nav-menu-box"><div class="global-sub-community-menu-list"><a target="_blank" class="menu" data-spm="d_menu_0" href="/tongyi/" title="千问大模型">首页</a><a target="_blank" class="menu" data-spm="d_menu_1" href="https://www.aliyun.com/product/tongyi">千问大模型</a><a target="_blank" class="menu" data-spm="d_menu_2" href="https://www.aliyun.com/product/bailian">大模型服务平台百炼</a></div></div></div></div></div><div class="community-search-box"><div class="community-search-box-main"><input class="community-search-box-input" placeholder="" value=""><div class="community-search-box-icon"><i class="community-search-icon community-icon"></i></div></div></div></div></div></div><div class="global-sub-community-nav-mobile"></div></div><div class="nav-common-sub"><div>
+      探索云世界
+     </div><div class="sc-nav-submenu"><div class="more-list"><div><p class="more-list-title">热门</p><a href="https://developer.aliyun.com/modelstudio/" target="_blank" class="href">百炼大模型</a><a href="https://developer.aliyun.com/modelscope/" target="_blank" class="href">Modelscope模型即服务</a><a href="https://developer.aliyun.com/ecs/" target="_blank" class="href">弹性计算</a><a href="https://developer.aliyun.com/lingma/" target="_blank" class="href">通义灵码</a><a href="https://developer.aliyun.com/cloudnative/" target="_blank" class="href">云原生</a><a href="https://developer.aliyun.com/database/" target="_blank" class="href">数据库</a><a href="https://developer.aliyun.com/group/yunxiao/" target="_blank" class="href">云效DevOps</a><a href="https://developer.aliyun.com/group/aliyun_linux/" target="_blank" class="href">龙蜥操作系统</a></div><div><a href="https://developer.aliyun.com/ecs/" target="_blank" class="more-list-title hasurl">云计算</a><a href="https://developer.aliyun.com/ecs/" target="_blank" class="href">弹性计算</a><a href="https://developer.aliyun.com/group/wuying/" target="_blank" class="href">无影</a><a href="https://developer.aliyun.com/storage/" target="_blank" class="href">存储</a><a href="https://developer.aliyun.com/group/networking/" target="_blank" class="href">网络</a><a href="https://developer.aliyun.com/yitian/" target="_blank" class="href">倚天</a></div><div><a href="https://developer.aliyun.com/cloudnative/" target="_blank" class="more-list-title hasurl">云原生</a><a href="https://developer.aliyun.com/group/kubernetes/" target="_blank" class="href">容器</a><a href="https://developer.aliyun.com/group/serverless/" target="_blank" class="href">serverless</a><a href="https://developer.aliyun.com/group/aliware/" target="_blank" class="href">中间件</a><a href="https://developer.aliyun.com/group/mse/" target="_blank" class="href">微服务</a><a href="https://developer.aliyun.com/group/arms/" target="_blank" class="href">可观测</a><a href="https://developer.aliyun.com/group/rocketmq/" target="_blank" class="href">消息队列</a></div><div><a href="https://developer.aliyun.com/database/" target="_blank" class="more-list-title hasurl">数据库</a><a href="https://developer.aliyun.com/group/polardb/" target="_blank" class="href">关系型数据库</a><a href="https://developer.aliyun.com/group/hbasespark/" target="_blank" class="href">NoSQL数据库</a><a href="https://developer.aliyun.com/group/analyticdb/" target="_blank" class="href">数据仓库</a><a href="https://developer.aliyun.com/database/dm" target="_blank" class="href">数据管理工具</a><a href="https://developer.aliyun.com/polardb/" target="_blank" class="href">PolarDB开源</a><a href="https://developer.aliyun.com/database/vectordatabase" target="_blank" class="href">向量数据库</a></div><div><a href="https://developer.aliyun.com/bigdata/" target="_blank" class="more-list-title hasurl">大数据</a><a href="https://developer.aliyun.com/group/maxcompute/" target="_blank" class="href">大数据计算</a><a href="https://developer.aliyun.com/group/hologres/" target="_blank" class="href">实时数仓Hologres</a><a href="https://developer.aliyun.com/group/sc/" target="_blank" class="href">实时计算Flink</a><a href="https://developer.aliyun.com/group/aliyunemr/" target="_blank" class="href">E-MapReduce</a><a href="https://developer.aliyun.com/group/dataworks/" target="_blank" class="href">DataWorks</a><a href="https://developer.aliyun.com/group/es/" target="_blank" class="href">Elasticsearch</a><a href="https://developer.aliyun.com/group/pai/" target="_blank" class="href">机器学习平台PAI</a><a href="https://developer.aliyun.com/group/aios/" target="_blank" class="href">智能搜索推荐</a><a href="https://developer.aliyun.com/group/datav/" target="_blank" class="href">数据可视化DataV</a></div><div><a href="https://developer.aliyun.com/modelscope/" target="_blank" class="more-list-title hasurl">人工智能</a><a href="https://developer.aliyun.com/group/pai/" target="_blank" class="href">机器学习平台PAI</a><a href="https://developer.aliyun.com/group/viapi/" target="_blank" class="href">视觉智能开放平台</a><a href="https://developer.aliyun.com/group/speech/" target="_blank" class="href">智能语音交互</a><a href="https://developer.aliyun.com/group/nlp/" target="_blank" class="href">自然语言处理</a><a href="https://developer.aliyun.com/group/multimodel/" target="_blank" class="href">多模态模型</a><a href="https://developer.aliyun.com/group/pythonsdk/" target="_blank" class="href">pythonsdk</a><a href="https://developer.aliyun.com/group/others/" target="_blank" class="href">通用模型</a></div><div><a href="https://developer.aliyun.com/group/othertech/" target="_blank" class="more-list-title hasurl">开发与运维</a><a href="https://developer.aliyun.com/group/yunxiao/" target="_blank" class="href">云效DevOps</a><a href="https://developer.aliyun.com/group/yida/" target="_blank" class="href">钉钉宜搭</a><a href="https://developer.aliyun.com/group/mirror/" target="_blank" class="href">镜像站</a></div></div></div></div></nav><div class="community-global-guide-2023"></div></div></div></div>
+  
+  
+    <div class="article-detail" id="article-detail" data-spm="article-detail">
+        <div class="article-wrapper">
+            <div class="left-content">
+                <div id="article-shang-btn"></div>
+
+                
+
+                <div class="developer-nav" data-spm="article_breadcrumb">
+                    <a href="/" target="_blank" class="nav-item" data-spm="d_article_breadcrumb_1">开发者社区</a>
+                    <a class="nav-item" target="_blank" data-spm="d_article_breadcrumb_2" href="/tongyi/">千问大模型</a>
+                    
+                    <a class="nav-item" target="_blank" data-spm="d_article_breadcrumb_3" href="/tongyi/article_hot">文章</a>
+                    <span class="nav-item">正文</span>
+                </div>
+
+                
+
+                <div class="content-wrapper">
+                    
+                    
+
+                    <h1 class="article-title">通义灵码评测: 阿里云出品通义大模型AI代码编程辅助工具</h1>
+
+                    <div class="article-info">
+                        <div class="article-info-num">
+                            <div class="article-info-left">
+                                <span class="article-info-time">2024-06-21</span>
+                                <span class="article-info-read">2657</span>
+                                <span class="personal-ip-icon"></span>
+                            </div>
+                            <div class="article-info-right">
+                                
+<span class="copyright-btn copyright-open">版权</span>
+
+<span class="article-info-report"></span>
+
+                            </div>
+                        </div>
+                        <div class="article-copyright">
+                            <div class="article-copyright-info">
+                                <div class="article-copyright-info-note">版权声明：</div>
+                                <div>
+    <span>
+        本文内容由阿里云实名注册用户自发贡献，版权归原作者所有，阿里云开发者社区不拥有其著作权，亦不承担相应法律责任。具体规则请查看《
+        <a style="color:#1366EC" href="https://developer.aliyun.com/article/768092">阿里云开发者社区用户服务协议</a>》和
+        《<a style="color:#1366EC" href="https://developer.aliyun.com/article/768093">阿里云开发者社区知识产权保护指引</a>》。如果您发现本社区中有涉嫌抄袭的内容，填写
+        <a style="color:#1366EC" href="https://yida.alibaba-inc.com/o/right">侵权投诉表单</a>进行举报，一经查实，本社区将立刻删除涉嫌侵权内容。
+    </span>
+</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    
+                    
+                    
+                    
+                    <div class="article-desc">
+                        <b>简介：</b>
+                        <span>通义灵码是阿里云出品的一款基于通义大模型的AI智能编码辅助工具，提供行级/函数级实时续写、自然语言生成代码、单元测试生成、代码注释生成、代码解释、研发智能问答、异常报错排查等能力，并针对阿里云 SDK/OpenAPI 的使用场景调优，助力开发者高效、流畅的编码。</span>
+                    </div>
+
+                    <div class="article-content">
+                        
+                        <div class="article-inner" id="lark-content"><div class="yuque-servicify-container yuquesdk" data-yuque="sdk"> 
+ <div class="yuque-servicify-wrap "> 
+  <div class="yuque-servicify-content"> 
+   <div class="lake-engine-view lake-typography-traditional"> 
+    <p>随着互联网技术的快速发展，开发者面临着日益增长的压力，需要在更短的时间内交付更复杂的项目。在这种背景下，阿里云推出了通义灵码——一款旨在提高开发效率和代码质量的智能AI编码助手。本文将深入探讨通义灵码的各项功能，评估其对现代软件开发实践的影响，并提供一个全面的使用评测。</p> 
+    <h2 id="tShkp">通义灵码简介</h2> 
+    <p>通义灵码是阿里云出品的一款基于通义大模型的AI智能编码辅助工具，提供行级/函数级实时续写、自然语言生成代码、单元测试生成、代码注释生成、代码解释、研发智能问答、异常报错排查等能力，并针对阿里云 SDK/OpenAPI 的使用场景调优，助力开发者高效、流畅的编码。</p> 
+    <p><strong><br></strong></p> 
+    <p><strong>使用通义灵码：</strong><a href="https://developer.aliyun.com/topic/lingma/activities/202405?taskCode=16245&amp;recordId=12ab6df992f62744dc7c658f663614d6#/?utm_content=m_fission_1" target="_blank" rel="noopener noreferrer">点击使用</a></p> 
+    <p><br></p> 
+    <p>通义灵码利用先进的人工智能技术，为开发者提供了一系列的编程辅助功能。这些功能不仅包括代码自动生成，还涵盖了研发智能问答、单元测试生成、代码注释生成等多个方面。通义灵码的出现，标志着人工智能在软件开发领域的一个重要里程碑，它不仅能够帮助开发者提升工作效率，还能够在一定程度上提高代码的可维护性和稳定性。</p> 
+    <p><br></p> 
+    <p>通义灵码的核心优势在于其深度理解代码的能力。它能够根据当前的代码环境和上下文，智能地生成符合逻辑的代码片段。无论是进行bug修复，还是编写新的功能模块，通义灵码都能够提供实时的编码建议和解决方案。此外，它还能够根据自然语言的描述直接生成代码，极大地简化了开发者的工作流程。</p> 
+    <p><br></p> 
+    <p>通义灵码的目标是让开发者能够用自然语言来编程，降低编程的门槛和难度，提高编程的效率和质量，解决开发者在编程过程中遇到的各种问题，让开发者能够专注于创造价值，享受编程的乐趣。<strong><br></strong></p> 
+    <p><strong><br></strong></p> 
+    <h2 id="GZPwP"><strong>通义灵码特色功能</strong></h2> 
+    <p><strong><br></strong></p> 
+    <p><strong>行级/函数级实时续写：</strong></p> 
+    <p>通义灵码能够根据开发者已经编写的代码，实时地生成下一行或下一个函数的代码，帮助开发者快速完成编码任务。通义灵码能够理解代码的语法、逻辑和风格，生成符合开发者意图和需求的代码，同时保持代码的可读性和规范性。</p> 
+    <p><strong><br></strong></p> 
+    <p><strong>自然语言生成代码：</strong></p> 
+    <p>通义灵码能够根据开发者用自然语言描述的编程需求，自动地生成相应的代码，让开发者能够用自己熟悉的语言来编程。通义灵码能够理解开发者的自然语言输入，将其转换为代码的语义和结构，生成满足开发者需求的代码，同时考虑代码的正确性和优化性。</p> 
+    <p><strong><br></strong></p> 
+    <p><strong>单元测试生成：</strong></p> 
+    <p>通义灵码能够根据开发者编写的代码，自动地生成相应的单元测试，帮助开发者提高代码的质量和稳定性。通义灵码能够分析代码的功能和逻辑，生成覆盖代码的各种情况和边界的测试用例，同时生成可执行的测试代码，支持常见的测试框架和工具。</p> 
+    <p><strong><br></strong></p> 
+    <p><strong>代码注释生成：</strong></p> 
+    <p>通义灵码能够根据开发者编写的代码，自动地生成相应的代码注释，帮助开发者提高代码的可读性和可维护性。通义灵码能够理解代码的功能和逻辑，生成简洁明了的注释，同时遵循代码的规范和风格，支持常见的注释格式和工具。</p> 
+    <p><strong><br></strong></p> 
+    <p><strong>代码解释：</strong></p> 
+    <p>通义灵码能够根据开发者选择的代码，用自然语言来解释代码的功能和逻辑，帮助开发者理解和学习代码。通义灵码能够用通俗易懂的语言来描述代码的含义和作用，同时给出代码的示例和效果，支持多种语言的代码解释。</p> 
+    <p><strong><br></strong></p> 
+    <p><strong>研发智能问答：</strong></p> 
+    <p>通义灵码能够根据开发者用自然语言提出的编程相关的问题，用自然语言来回答问题，帮助开发者解决编程中遇到的各种疑惑和困难。通义灵码能够理解开发者的问题，从海量的编程知识和文档中检索和抽取相关的信息，生成准确和完整的答案，同时给出答案的来源和证据，支持多种语言的问题和答案。</p> 
+    <p><strong><br></strong></p> 
+    <p><strong>异常报错排查：</strong></p> 
+    <p>通义灵码能够根据开发者遇到的编程异常或报错，用自然语言来解释异常或报错的原因和解决方案，帮助开发者快速定位和修复编程错误。通义灵码能够分析异常或报错的信息，从海量的编程案例和经验中检索和抽取相关的解决方法，生成简单明了的解释和建议，同时给出解决方法的来源和证据，支持多种语言的异常或报错的排查。</p> 
+    <p><br></p> 
+    <h2 id="nb4tA">通义灵码功能评测</h2> 
+    <p><strong><br></strong></p> 
+    <p><strong>代码智能生成：</strong></p> 
+    <p>通义灵码的代码自动生成功能是其最引人注目的特点之一。通过深度学习技术，它能够理解复杂的编程语境，并生成高质量的代码片段。在测试中，通义灵码能够准确地根据给定的函数签名和注释生成相应的函数体。此外，它还能够根据用户的自然语言描述生成代码，这在编写快速原型或进行敏捷开发时尤为有用。</p> 
+    <p><strong><br></strong></p> 
+    <p><strong>研发智能问答：</strong></p> 
+    <p>通义灵码提供了一个智能问答系统，能够回答开发者在编程过程中遇到的各种问题。无论是关于语言特性的查询，还是寻求最佳实践的建议，通义灵码都能够提供及时且准确的答案。在实际使用中，对于新手开发者特别有帮助，能够加速他们的学习过程。</p> 
+    <p><strong><br></strong></p> 
+    <p><strong>单元测试生成：</strong></p> 
+    <p>良好的单元测试对于确保代码质量至关重要。通义灵码的单元测试生成功能能够自动创建测试用例，这不仅节省了开发者的时间，还提高了测试的全面性。在评测中，通义灵码生成的测试用例覆盖了边界条件和异常情况，显示出其对代码逻辑的深刻理解。</p> 
+    <p><strong><br></strong></p> 
+    <p><strong>代码注释生成：</strong></p> 
+    <p>良好的代码注释可以提高代码的可读性和可维护性。通义灵码的代码注释生成功能能够自动添加有意义的注释，这对于团队协作和代码审查非常有价值。在评测中，通义灵码生成的注释清晰、准确，能够有效地传达代码的意图和功能。</p> 
+    <p><strong><br></strong></p> 
+    <p><strong>代码优化：</strong></p> 
+    <p>通义灵码还提供了代码优化功能，它能够分析现有代码并提出改进建议。这些建议包括重构建议、性能优化和代码风格改进。在评测中，通义灵码的建议不仅有助于提高代码效率，还有助于保持代码的一致性和清晰性。</p> 
+    <p><br></p> 
+    <h2 id="gEKAy">通义灵码收费价格</h2> 
+    <p><br></p> 
+    <p>通义灵码提供了不同版本的服务，包括个人基础版、个人专业版、企业标准版和企业专属版，以及企业私有化部署方案。</p> 
+    <p>下面是各个版本的服务内容和价格概述：</p> 
+    <p><strong><br></strong></p> 
+    <p><strong>个人基础版</strong></p> 
+    <ul> 
+     <li>价格：免费</li> 
+     <li>代码生成：提供行/函数级代码实时续写、注释生成代码、离线模型单行补全、跨文件感知能力、多结果推荐以及企业代码库的生成增强。</li> 
+     <li>智能问答：包括研发智能问答、生成代码注释、代码解释、异常报错排查、提交信息生成、代码问题修复建议、生成单元测试、代码优化、本地工程问答和企业知识库问答。</li> 
+    </ul> 
+    <p><strong><br></strong></p> 
+    <p><strong>个人专业版</strong></p> 
+    <p>价格：¥59/月（限时免费体验）</p> 
+    <p>服务内容：与个人基础版相同。</p> 
+    <p><strong><br></strong></p> 
+    <p><strong>企业标准版</strong></p> 
+    <p>价格：¥79/人/月，10人起购（30天免费体验）</p> 
+    <p>服务内容：与个人基础版相同，但增加企业管理功能：</p> 
+    <ul> 
+     <li>企业管理：提供授权管理、统计报表、审计日志、知识管理、企业版专用推理服务、多组织管理、专属 VPC 部署、IP 白名单管理和专有网络访问。</li> 
+    </ul> 
+    <p><strong><br></strong></p> 
+    <p><strong>企业专属版</strong></p> 
+    <p>价格：¥159/人/月，100人起购</p> 
+    <p>服务内容：与企业标准版相同，并且包括企业代码库的生成增强。</p> 
+    <p><strong><br></strong></p> 
+    <p><strong>企业私有化部署方案</strong></p> 
+    <p>价格：未提供具体价格</p> 
+    <p>服务内容：未详细说明，但通常私有化部署会提供定制化服务和更高的安全性。</p> 
+    <p><br></p> 
+    <h2 id="A0Jfn">通义灵码优缺点</h2> 
+    <h3 id="Mifu7">优点：</h3> 
+    <ul> 
+     <li>提高效率：通义灵码通过自动化代码生成和单元测试，显著提高了开发效率。</li> 
+     <li>质量保证：自动生成的代码和测试用例有助于保持代码质量，减少人为错误。</li> 
+     <li>易用性：通义灵码的用户界面直观易用，即使是初学者也能快速掌握。</li> 
+     <li>多语言支持：支持多种编程语言，适用于不同的开发环境和项目需求。</li> 
+     <li>智能问答：智能问答功能为开发者提供了即时的技术支持，解答编程中的疑难问题。</li> 
+    </ul> 
+    <h3 id="EYSf0">缺点：</h3> 
+    <ul> 
+     <li>学习曲线：虽然通义灵码易于使用，但要充分利用其高级功能，用户仍需花时间学习和适应。</li> 
+     <li>依赖性：过度依赖自动化工具可能会降低开发者解决问题的能力，特别是在工具无法覆盖的情况下。</li> 
+     <li>成本考虑：对于个人开发者或小团队而言，通义灵码的高级版本可能成本较高。</li> 
+     <li>定制限制：虽然提供按需定制服务，但可能无法满足所有特定需求，特别是在复杂项目中。</li> 
+    </ul> 
+    <p><br></p> 
+    <h2 id="la8R4">通义灵码常见问题</h2> 
+    <p><strong><br></strong></p> 
+    <p><strong>Q: 通义灵码会不会替代开发者的工作？</strong></p> 
+    <p>A: 通义灵码不会替代开发者的工作，而是作为开发者的一个助手，帮助开发者提高编程的效率和质量，解决编程中遇到的各种问题，让开发者能够专注于创造价值，享受编程的乐趣。</p> 
+    <p>通义灵码只能生成和解释代码，不能理解和设计代码的业务逻辑和架构，也不能评估和优化代码的性能和安全性，这些都需要开发者的专业知识和创造力。通义灵码的目标是让开发者能够用自然语言来编程，降低编程的门槛和难度，让更多的人能够参与到编程的世界中，拓展编程的可能性和潜力。</p> 
+    <p><strong><br></strong></p> 
+    <p><strong>Q: 通义灵码生成的代码是否可靠和安全？</strong></p> 
+    <p>A: 通义灵码生成的代码是基于通义大模型的深度学习技术，以及海量的编程知识和文档，经过严格的训练和测试，保证了代码的可靠性和安全性。通义灵码生成的代码都会经过语法和逻辑的检查和验证，避免生成错误或无效的代码。</p> 
+    <p><strong><br></strong></p> 
+    <p><strong>Q: 通义灵码支持哪些编程语言和开发环境？</strong></p> 
+    <p>A: 通义灵码支持 Java、Python、Go、C/C++、JavaScript、TypeScript、PHP、Ruby、Rust、Scala 等主流编程语言，兼容 Visual Studio Code、JetBrains IDEs 等主流 IDE。通义灵码还支持多种自然语言，包括中文、英文、日文、韩文等，让不同语言的开发者都能够使用通义灵码。</p> 
+    <p><strong><br></strong></p> 
+    <p><strong>Q: 通义灵码如何使用和设置？</strong></p> 
+    <p>A: 通义灵码的使用和设置都非常简单和方便。您只需从插件市场安装通义灵码的插件，即可在代码编辑器中使用通义灵码的各项功能。您可以通过快捷键或鼠标点击来触发通义灵码的功能，也可以通过设置来调整通义灵码的功能。可以在通义灵码的官方网站上找到通义灵码的详细的使用和设置教程，以及通义灵码的常见问题和解决方法。</p> 
+    <p><strong><br></strong></p> 
+    <p><strong>Q: 如果我遇到了技术问题，该如何获得支持？</strong></p> 
+    <p>A: 通义灵码提供了全面的技术支持。您可以通过官方论坛、电子邮件或客户服务热线联系技术支持团队。</p> 
+    <p><strong><br></strong></p> 
+    <p><strong>Q: 通义灵码是否会影响我的代码隐私？</strong></p> 
+    <p>A: 通义灵码高度重视用户的代码隐私。它采用了先进的加密技术来保护您的代码不被未经授权的访问。</p> 
+    <p><strong><br></strong></p> 
+    <p><strong>Q: 通义灵码是否适合初学者使用？ </strong></p> 
+    <p>A: 是的，通义灵码非常适合初学者。它的智能问答和代码生成功能可以帮助初学者快速学习和提高编程技能。</p> 
+    <p><strong><br></strong></p> 
+    <p><strong>Q: 使用通义灵码是否会降低我的编程能力？ </strong></p> 
+    <p>A: 使用通义灵码不会降低您的编程能力。相反，它可以作为一个学习工具，帮助您更深入地理解编程概念和最佳实践。</p> 
+    <p><strong><br></strong></p> 
+    <p><strong>Q: 我可以在团队项目中使用通义灵码吗？</strong></p> 
+    <p>A: 当然可以。通义灵码支持团队协作，并提供了多用户管理和项目集成功能，非常适合团队项目。</p> 
+    <p><br></p> 
+    <h2 id="H2QFJ">总结</h2> 
+    <p><br></p> 
+    <p>通义灵码作为一款AI编程辅助工具，以其强大的功能和灵活的使用方式，在软件开发领域中占据了一席之地。它不仅能够帮助开发者提高编码效率，还能够通过智能问答和代码优化功能，提升代码质量和项目管理效率。通义灵码的多语言支持和易用性，使其成为了不同规模团队和个人开发者的理想选择。</p> 
+    <p><br></p> 
+    <p>然而，通义灵码并非完美无缺。用户需要考虑到AI生成的准确性和对自动化工具的依赖等因素。尽管如此，通义灵码的优点仍然显著，特别是对于那些追求高效率和高质量代码的开发者来说，它提供了一个非常有价值的解决方案。</p> 
+    <p><br></p> 
+    <p>展望未来，随着人工智能技术的不断进步，我们有理由相信，通义灵码将继续发展和完善，为软件开发行业带来更多的创新和变革。它可能会引入更多的定制功能，更深层次的代码分析。</p> 
+    <p><br></p> 
+    <p>通义灵码是一个值得关注的AI工具，它不仅代表了当前的技术趋势，也预示着未来软件开发的可能性。对于那些希望在编程世界中保持领先地位的人来说，通义灵码无疑是一个不可或缺的伙伴。</p> 
+   </div> 
+  </div> 
+ </div> 
+</div></div>
+                    </div>
+                    
+                        <div class="article-key-list">
+                            <div class="article-tags" data-spm="article_tag">
+    <div class="article-tags-text">文章标签：</div>
+    <div class="article-tags-list">
+        <div class="article-tags-item">
+            <a target="_blank" data-spm="d_article_tag_1" href="/label/article_de-product-3-nlp">自然语言处理</a>
+        </div>
+        <div class="article-tags-item">
+            <a target="_blank" data-spm="d_article_tag_2" href="/label/article_de-product-3-sfm">大模型服务平台百炼</a>
+        </div>
+        <div class="article-tags-item">
+            <a target="_blank" data-spm="d_article_tag_3" href="/label/article_de-3-100040">自然语言处理</a>
+        </div>
+        <div class="article-tags-item">
+            <a target="_blank" data-spm="d_article_tag_4" href="/label/article_de-3-100267">开发者</a>
+        </div>
+        <div class="article-tags-item">
+            <a target="_blank" data-spm="d_article_tag_5" href="/label/article_de-3-100022">测试技术</a>
+        </div>
+        <div class="article-tags-item">
+            <a target="_blank" data-spm="d_article_tag_6" href="/label/article_de-3-100052">人工智能</a>
+        </div>
+        <div class="article-tags-item">
+            <a target="_blank" data-spm="d_article_tag_7" href="/label/article_de-3-100016">开发工具</a>
+        </div>
+    </div>
+</div>
+                            <div class="article-tags" data-spm="article_keyword" data-tracker-container="developer_article_related_aggpage">
+    <div class="article-tags-text">关键词：</div>
+    <div class="article-tags-list">
+        <div class="article-tags-item">
+            <a target="_blank" data-tracker-scm="20140722.T_520105._.ID_520105-OR_seo-V_1" data-spm="d_article_keyword_1" href="https://www.aliyun.com/sswb/520105.html">AI编程</a>
+        </div>
+        <div class="article-tags-item">
+            <a target="_blank" data-tracker-scm="20140722.T_1683307._.ID_1683307-OR_seo-V_1" data-spm="d_article_keyword_2" href="https://www.aliyun.com/sswb/1683307.html">阿里云AI</a>
+        </div>
+        <div class="article-tags-item">
+            <a target="_blank" data-tracker-scm="20140722.T_538303._.ID_538303-OR_seo-V_1" data-spm="d_article_keyword_3" href="https://www.aliyun.com/sswb/538303.html">AI工具</a>
+        </div>
+        <div class="article-tags-item">
+            <a target="_blank" data-tracker-scm="20140722.T_453651._.ID_453651-OR_seo-V_1" data-spm="d_article_keyword_4" href="https://www.aliyun.com/sswb/453651.html">AI代码</a>
+        </div>
+        <div class="article-tags-item">
+            <a target="_blank" data-tracker-scm="20140722.T_453712._.ID_453712-OR_seo-V_1" data-spm="d_article_keyword_5" href="https://www.aliyun.com/sswb/453712.html">AI阿里云</a>
+        </div>
+    </div>
+</div>
+                            
+                        </div>
+                        
+                        
+                    
+                </div>
+                <div class="community-product"></div>
+
+                <div class="aigc-fixed" data-spm="article_author">
+                    <div class="aigc-fixed-left">
+                        <div class="aigc-fixed-left-author">
+                            <a data-spm="d_article_author_profile" target="_blank" href="/profile/qseql3plxy23a">
+                                <img loading="lazy" class="aigc-fixed-left-avatar" src="https://ucc.alicdn.com/avatar/img_e616061513105f67ba8d601700696e5a.jpg?x-oss-process=image/resize,h_150,m_lfit" />
+                            </a>
+                            <div class="aigc-fixed-left-author-badge"></div>
+                        </div>
+                        <a class="aigc-fixed-left-name" data-spm="d_article_author_profile" target="_blank" href="/profile/qseql3plxy23a">网络探索者</a>
+                        <div class="aigc-fixed-left-focus"></div>
+                        <div class="aigc-fixed-left-num"></div>
+                    </div>
+                    <div class="aigc-fixed-right">
+                        <div class="aigc-fixed-h5-catalog" data-spm="article_contents">
+                            <div class="aigc-fixed-h5-catalog-icon"></div>
+                            <div class="aigc-fixed-h5-catalog-text">目录</div>
+                        </div>
+                        <div id="action-btns"></div>
+                    </div>
+                </div>
+                <div class="article-comment">
+                    <div id="comment"></div>
+                </div>
+
+                <div class="article-feed" data-spm="article_relatearticle">
+    <div class="article-feed-title" data-tracker-container="developer_detailpage_related">相关文章</div>
+    <div class="article-feed-list">
+        <div class="feed-item">
+            <div class="feed-item-top">
+                <div class="feed-item-top-author">
+                    <a class="feed-item-top-author-link" target="_blank" href="/profile/6ibaby6qg4ku4">阿里云开发者</a>
+                    
+                </div>
+                <span class="feed-item-top-split">|</span>
+                <div class="feed-item-top-time">9月前</div>
+                <span class="feed-item-top-split">|</span>
+                <div class="feed-item-top-technology">
+                    <span class="feed-item-top-technology-link" data-code="de-3-100052">人工智能</span>
+                    <span class="feed-item-top-technology-link" data-code="de-3-100233">IDE</span>
+                    <span class="feed-item-top-technology-link" data-code="de-3-100001">Java</span>
+                </div>
+            </div>
+            <div class="feed-item-content">
+                <div class="feed-item-content-left">
+                    <a class="feed-item-content-title" target="_blank" data-tracker-scm="20140722.ID_community@@article@@1686019._.ID_community@@article@@1686019-OR_rec-PAR1_210587b917850756529744904d0c6a-V_1-RL_community@@article@@1543945" data-spm="d_article_relatearticle_1" href="https://developer.aliyun.com/article/1686019">
+                        <span>AI Coding实践：CodeFuse + prompt 从系分到代码</span>
+                    </a>
+                    <div class="feed-item-content-desc">在蚂蚁国际信贷业务系统建设过程中，技术团队始终面临双重考验：一方面需应对日益加速的需求迭代周期，满足严苛的代码质量规范与金融安全合规要求；另一方面，跨地域研发团队的协同效率与代码标准统一性，在传统开发模式下逐渐显现瓶颈。为突破效率制约、提升交付质量，我们积极探索人工智能辅助代码生成技术（AI Coding）的应用实践。本文基于蚂蚁国际信贷技术团队近期的实际项目经验，梳理AI辅助开发在金融级系统快速迭代场景中的实施要点并分享阶段性实践心得。</div>
+                    <div class="feed-item-content-bottom">
+                        <div class="feed-item-info">
+                            <div class="feed-item-top-author">
+                                <a class="feed-item-top-author-link" target="_blank" href="/profile/6ibaby6qg4ku4">阿里云开发者</a>
+                                
+                            </div>
+                            <span class="feed-item-label feed-item-count">2070</span>
+                            <span class="feed-item-label feed-item-zan">25</span>
+                            <span class="feed-item-label feed-item-like">30</span>
+                        </div>
+                    </div>
+                </div>
+                <a class="feed-item-content-img" target="_blank" href="https://developer.aliyun.com/article/1686019">
+                    <img loading="lazy" class="img" alt="AI Coding实践：CodeFuse + prompt 从系分到代码" src="https://ucc.alicdn.com/6ibaby6qg4ku4/developer-article1686019/20251023/e9d132d592204cafaa69e5afa7b03a3e.webp?x-oss-process=image/format,webp/resize,h_160,m_lfit" />
+                </a>
+            </div>
+        </div>
+        <div class="feed-item">
+            <div class="feed-item-top">
+                <div class="feed-item-top-author">
+                    <a class="feed-item-top-author-link" target="_blank" href="/profile/3j2ejrjdlukbg">reddish</a>
+                    
+                </div>
+                <span class="feed-item-top-split">|</span>
+                <div class="feed-item-top-time">9月前</div>
+                <span class="feed-item-top-split">|</span>
+                <div class="feed-item-top-technology">
+                    <span class="feed-item-top-technology-link" data-code="de-3-100052">人工智能</span>
+                    <span class="feed-item-top-technology-link" data-code="de-3-100144">机器人</span>
+                    <span class="feed-item-top-technology-link" data-code="de-3-100022">测试技术</span>
+                </div>
+            </div>
+            <div class="feed-item-content">
+                <div class="feed-item-content-left">
+                    <a class="feed-item-content-title" target="_blank" data-tracker-scm="20140722.ID_community@@article@@1686053._.ID_community@@article@@1686053-OR_rec-PAR1_210587b917850756529744904d0c6a-V_1-RL_community@@article@@1543945" data-spm="d_article_relatearticle_2" href="https://developer.aliyun.com/article/1686053">
+                        <span>AI写的代码为何金玉其外败絮其中</span>
+                    </a>
+                    <div class="feed-item-content-desc">本文分析AI编码看着好看其实很烂的现象、原因，探索行之有效的的解决方案。并从理论上延伸到如何更好的与AI协作的方式上。</div>
+                    <div class="feed-item-content-bottom">
+                        <div class="feed-item-info">
+                            <div class="feed-item-top-author">
+                                <a class="feed-item-top-author-link" target="_blank" href="/profile/3j2ejrjdlukbg">reddish</a>
+                                
+                            </div>
+                            <span class="feed-item-label feed-item-count">354</span>
+                            <span class="feed-item-label feed-item-zan">3</span>
+                            <span class="feed-item-label feed-item-like">3</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="feed-item">
+            <div class="feed-item-top">
+                <div class="feed-item-top-author">
+                    <a class="feed-item-top-author-link" target="_blank" href="/profile/tjgki4wgyxfxm">AI未闻花名</a>
+                    
+                </div>
+                <span class="feed-item-top-split">|</span>
+                <div class="feed-item-top-time">9月前</div>
+                <span class="feed-item-top-split">|</span>
+                <div class="feed-item-top-technology">
+                    <span class="feed-item-top-technology-link" data-code="de-3-100052">人工智能</span>
+                    <span class="feed-item-top-technology-link" data-code="de-3-100252">API</span>
+                    <span class="feed-item-top-technology-link" data-code="de-3-100016">开发工具</span>
+                </div>
+            </div>
+            <div class="feed-item-content">
+                <div class="feed-item-content-left">
+                    <a class="feed-item-content-title" target="_blank" data-tracker-scm="20140722.ID_community@@article@@1686085._.ID_community@@article@@1686085-OR_rec-PAR1_210587b917850756529744904d0c6a-V_1-RL_community@@article@@1543945" data-spm="d_article_relatearticle_3" href="https://developer.aliyun.com/article/1686085">
+                        <span>构建AI智能体：一、初识AI大模型与API调用</span>
+                    </a>
+                    <div class="feed-item-content-desc">本文介绍大模型基础知识及API调用方法，涵盖阿里云百炼平台密钥申请、DashScope SDK使用、Python调用示例（如文本情感分析、图像文字识别），助力开发者快速上手大模型应用开发。</div>
+                    <div class="feed-item-content-bottom">
+                        <div class="feed-item-info">
+                            <div class="feed-item-top-author">
+                                <a class="feed-item-top-author-link" target="_blank" href="/profile/tjgki4wgyxfxm">AI未闻花名</a>
+                                
+                            </div>
+                            <span class="feed-item-label feed-item-count">3166</span>
+                            <span class="feed-item-label feed-item-zan">18</span>
+                            <span class="feed-item-label feed-item-like">23</span>
+                        </div>
+                    </div>
+                </div>
+                <a class="feed-item-content-img" target="_blank" href="https://developer.aliyun.com/article/1686085">
+                    <img loading="lazy" class="img" alt="构建AI智能体：一、初识AI大模型与API调用" src="https://ucc.alicdn.com/pic/developer-ecology/tjgki4wgyxfxm_ec183758e1214943aed5e472650b002a.jpg?x-oss-process=image/format,webp/resize,h_160,m_lfit" />
+                </a>
+            </div>
+        </div>
+        <div class="feed-item">
+            <div class="feed-item-top">
+                <div class="feed-item-top-author">
+                    <a class="feed-item-top-author-link" target="_blank" href="/profile/6ibaby6qg4ku4">阿里云开发者</a>
+                    
+                </div>
+                <span class="feed-item-top-split">|</span>
+                <div class="feed-item-top-time">9月前</div>
+                <span class="feed-item-top-split">|</span>
+                <div class="feed-item-top-technology">
+                    <span class="feed-item-top-technology-link" data-code="de-3-100052">人工智能</span>
+                    <span class="feed-item-top-technology-link" data-code="de-3-100244">安全</span>
+                    <span class="feed-item-top-technology-link" data-code="de-3-100016">开发工具</span>
+                </div>
+            </div>
+            <div class="feed-item-content">
+                <div class="feed-item-content-left">
+                    <a class="feed-item-content-title" target="_blank" data-tracker-scm="20140722.ID_community@@article@@1686017._.ID_community@@article@@1686017-OR_rec-PAR1_210587b917850756529744904d0c6a-V_1-RL_community@@article@@1543945" data-spm="d_article_relatearticle_4" href="https://developer.aliyun.com/article/1686017">
+                        <span>C3仓库AI代码门禁通用实践：基于Qwen3-Coder+RAG的代码评审</span>
+                    </a>
+                    <div class="feed-item-content-desc">本文介绍基于Qwen3-Coder、RAG与Iflow在C3级代码仓库落地LLM代码评审的实践，实现AI辅助人工评审。通过CI流水线自动触发，结合私域知识库与生产代码同仓管理，已成功拦截数十次高危缺陷，显著提升评审效率与质量，具备向各类代码门禁平台复用推广的价值。（239字）</div>
+                    <div class="feed-item-content-bottom">
+                        <div class="feed-item-info">
+                            <div class="feed-item-top-author">
+                                <a class="feed-item-top-author-link" target="_blank" href="/profile/6ibaby6qg4ku4">阿里云开发者</a>
+                                
+                            </div>
+                            <span class="feed-item-label feed-item-count">1724</span>
+                            <span class="feed-item-label feed-item-zan">24</span>
+                            <span class="feed-item-label feed-item-like">24</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="feed-item">
+            <div class="feed-item-top">
+                <div class="feed-item-top-author">
+                    <a class="feed-item-top-author-link" target="_blank" href="/profile/vxywnekhvrhvu">小白学大数据</a>
+                    
+                </div>
+                <span class="feed-item-top-split">|</span>
+                <div class="feed-item-top-time">9月前</div>
+                <span class="feed-item-top-split">|</span>
+                <div class="feed-item-top-technology">
+                    <span class="feed-item-top-technology-link" data-code="de-3-100053">数据采集</span>
+                    <span class="feed-item-top-technology-link" data-code="de-3-100052">人工智能</span>
+                    <span class="feed-item-top-technology-link" data-code="de-3-100272">JSON</span>
+                </div>
+            </div>
+            <div class="feed-item-content">
+                <div class="feed-item-content-left">
+                    <a class="feed-item-content-title" target="_blank" data-tracker-scm="20140722.ID_community@@article@@1685771._.ID_community@@article@@1685771-OR_rec-PAR1_210587b917850756529744904d0c6a-V_1-RL_community@@article@@1543945" data-spm="d_article_relatearticle_5" href="https://developer.aliyun.com/article/1685771">
+                        <span>Prompt 工程实战：如何让 AI 生成高质量的 aiohttp 异步爬虫代码</span>
+                    </a>
+                    <div class="feed-item-content-desc">Prompt 工程实战：如何让 AI 生成高质量的 aiohttp 异步爬虫代码</div>
+                    <div class="feed-item-content-bottom">
+                        <div class="feed-item-info">
+                            <div class="feed-item-top-author">
+                                <a class="feed-item-top-author-link" target="_blank" href="/profile/vxywnekhvrhvu">小白学大数据</a>
+                                
+                            </div>
+                            <span class="feed-item-label feed-item-count">745</span>
+                            <span class="feed-item-label feed-item-zan">3</span>
+                            <span class="feed-item-label feed-item-like">3</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="feed-item">
+            <div class="feed-item-top">
+                <div class="feed-item-top-author">
+                    <a class="feed-item-top-author-link" target="_blank" href="/profile/6ibaby6qg4ku4">阿里云开发者</a>
+                    
+                </div>
+                <span class="feed-item-top-split">|</span>
+                <div class="feed-item-top-time">10月前</div>
+                <span class="feed-item-top-split">|</span>
+                <div class="feed-item-top-technology">
+                    <span class="feed-item-top-technology-link" data-code="de-3-100064">SQL</span>
+                    <span class="feed-item-top-technology-link" data-code="de-3-100052">人工智能</span>
+                    <span class="feed-item-top-technology-link" data-code="de-3-100040">自然语言处理</span>
+                </div>
+            </div>
+            <div class="feed-item-content">
+                <div class="feed-item-content-left">
+                    <a class="feed-item-content-title" target="_blank" data-tracker-scm="20140722.ID_community@@article@@1680338._.ID_community@@article@@1680338-OR_rec-PAR1_210587b917850756529744904d0c6a-V_1-RL_community@@article@@1543945" data-spm="d_article_relatearticle_6" href="https://developer.aliyun.com/article/1680338">
+                        <span>阿里云 CIO 蒋林泉：AI 大模型时代，我们如何用 RIDE 实现 RaaS 的首次落地？</span>
+                    </a>
+                    <div class="feed-item-content-desc">本文整理自阿里云智能集团 CIO 蒋林泉在 AICon 2025 深圳的演讲，分享了阿里云在大模型应用落地中的实践经验。通过多个数字人项目案例，探讨了企业在 AI 应用中的组织转型、业务识别、产品定义与工程落地等关键环节，并提出了 RIDE 方法论（重组、识别、定义、执行），助力企业实现 AI 有效落地。</div>
+                    <div class="feed-item-content-bottom">
+                        <div class="feed-item-info">
+                            <div class="feed-item-top-author">
+                                <a class="feed-item-top-author-link" target="_blank" href="/profile/6ibaby6qg4ku4">阿里云开发者</a>
+                                
+                            </div>
+                            <span class="feed-item-label feed-item-count">3037</span>
+                            <span class="feed-item-label feed-item-zan">2</span>
+                            <span class="feed-item-label feed-item-like">2</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="feed-item">
+            <div class="feed-item-top">
+                <div class="feed-item-top-author">
+                    <a class="feed-item-top-author-link" target="_blank" href="/profile/y6dh4f77ghpgo">DataWorks@佳里</a>
+                    
+                </div>
+                
+                
+                <span class="feed-item-top-split">|</span>
+                <div class="feed-item-top-technology">
+                    <span class="feed-item-top-technology-link" data-code="de-3-100262">存储</span>
+                    <span class="feed-item-top-technology-link" data-code="de-3-100073">运维</span>
+                    <span class="feed-item-top-technology-link" data-code="de-3-100045">数据挖掘</span>
+                </div>
+            </div>
+            <div class="feed-item-content">
+                <div class="feed-item-content-left">
+                    <a class="feed-item-content-title" target="_blank" data-tracker-scm="20140722.ID_community@@article@@1670788._.ID_community@@article@@1670788-OR_rec-PAR1_210587b917850756529744904d0c6a-V_1-RL_community@@article@@1543945" data-spm="d_article_relatearticle_7" href="https://developer.aliyun.com/article/1670788">
+                        <span>革新智能驾驶数据挖掘检索效率！某国内新能源汽车未来出行领导者选择阿里云Milvus构建多模态检索引擎</span>
+                    </a>
+                    <div class="feed-item-content-desc">在智能驾驶技术快速发展中，数据成为驱动算法进步的核心。某新能源汽车领军企业基于阿里云Milvus向量数据库构建智能驾驶数据挖掘平台，利用其高性能、可扩展的相似性检索服务，解决了大规模向量数据检索瓶颈问题，显著降低20%以上成本，缩短模型迭代周期，实现从数据采集到场景挖掘的智能化闭环，加速智能驾驶落地应用。</div>
+                    <div class="feed-item-content-bottom">
+                        <div class="feed-item-info">
+                            <div class="feed-item-top-author">
+                                <a class="feed-item-top-author-link" target="_blank" href="/profile/y6dh4f77ghpgo">DataWorks@佳里</a>
+                                
+                            </div>
+                            <span class="feed-item-label feed-item-count">1445</span>
+                            <span class="feed-item-label feed-item-zan">3</span>
+                            <span class="feed-item-label feed-item-like">3</span>
+                        </div>
+                    </div>
+                </div>
+                <a class="feed-item-content-img" target="_blank" href="https://developer.aliyun.com/article/1670788">
+                    <img loading="lazy" class="img" alt="革新智能驾驶数据挖掘检索效率！某国内新能源汽车未来出行领导者选择阿里云Milvus构建多模态检索引擎" src="https://ucc.alicdn.com/pic/developer-ecology/y6dh4f77ghpgo_4df84321da8a49f29dce978318e3f2de.png?x-oss-process=image/format,webp/resize,h_160,m_lfit" />
+                </a>
+            </div>
+        </div>
+        <div class="feed-item">
+            <div class="feed-item-top">
+                <div class="feed-item-top-author">
+                    <a class="feed-item-top-author-link" target="_blank" href="/profile/vwkxira3742tm">探索云世界</a>
+                    
+                </div>
+                
+                
+                <span class="feed-item-top-split">|</span>
+                <div class="feed-item-top-technology">
+                    <span class="feed-item-top-technology-link" data-code="de-3-100262">存储</span>
+                    <span class="feed-item-top-technology-link" data-code="de-3-100042">机器学习/深度学习</span>
+                    <span class="feed-item-top-technology-link" data-code="de-3-100261">缓存</span>
+                </div>
+            </div>
+            <div class="feed-item-content">
+                <div class="feed-item-content-left">
+                    <a class="feed-item-content-title" target="_blank" data-tracker-scm="20140722.ID_community@@article@@1672175._.ID_community@@article@@1672175-OR_rec-PAR1_210587b917850756529744904d0c6a-V_1-RL_community@@article@@1543945" data-spm="d_article_relatearticle_8" href="https://developer.aliyun.com/article/1672175">
+                        <span>阿里云AirCache技术实现多模态大模型高效推理加速，入选国际顶会ICCV2025</span>
+                    </a>
+                    <div class="feed-item-content-desc">阿里云研发的AirCache技术被计算机视觉顶会ICCV2025收录，该技术通过激活跨模态关联、优化KV缓存压缩策略，显著提升视觉语言模型（VLMs）的推理效率与存储性能。实验表明，在保留仅10%视觉缓存的情况下，模型性能下降小于1%，解码延迟最高降低66%，吞吐量提升达192%。AirCache无需修改模型结构，兼容主流VLMs，已在教育、医疗、政务等多个行业落地应用，助力多模态大模型高效赋能产业智能化升级。</div>
+                    <div class="feed-item-content-bottom">
+                        <div class="feed-item-info">
+                            <div class="feed-item-top-author">
+                                <a class="feed-item-top-author-link" target="_blank" href="/profile/vwkxira3742tm">探索云世界</a>
+                                
+                            </div>
+                            <span class="feed-item-label feed-item-count">847</span>
+                            <span class="feed-item-label feed-item-zan">1</span>
+                            <span class="feed-item-label feed-item-like">1</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+            <div id="right-box">
+                
+                
+                    <div data-spm="article_community" class="right-item-box community-box">
+    
+    <div class="community-opr">
+        
+        <a class="community-title" target="_blank" data-spm="d_article_community_community" href="/tongyi/">
+            <h2>千问大模型</h2>
+        </a>
+        
+        <div class="community-follow-btn">
+        </div>
+    </div>
+</div>
+                    <div class="right-item-box talk-box">
+    <div class="right-item-title">
+        <div class="right-item-title-text active">
+            <h2>热门文章</h2>
+        </div>
+        <div class="right-item-title-text">
+            <h2>最新文章</h2>
+        </div>
+    </div>
+    <div class="talk-box">
+        <div class="talk-box-wrapper active" data-spm="article_hotarticle">
+            <div class="talk-list article">
+                <li>
+                    <a target="_blank" class="talk-item article" data-spm="d_article_hotarticle_1" href="/article/1748095">
+                        <div class="talk-item-top" objectId="1748095">
+                            <div class="talk-item-index talk-item-index-1">1</div>
+                            
+                            <div class="talk-item-title">最新版通义千问（Qwen3.7-Max）功能介绍</div>
+                            <div class="talk-item-num"></div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" class="talk-item article" data-spm="d_article_hotarticle_2" href="/article/1748842">
+                        <div class="talk-item-top" objectId="1748842">
+                            <div class="talk-item-index talk-item-index-2">2</div>
+                            
+                            <div class="talk-item-title">最新版通义千问（Qwen3.7-Max）功能介绍</div>
+                            <div class="talk-item-num"></div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" class="talk-item article" data-spm="d_article_hotarticle_3" href="/article/1749934">
+                        <div class="talk-item-top" objectId="1749934">
+                            <div class="talk-item-index talk-item-index-3">3</div>
+                            
+                            <div class="talk-item-title">最新版通义千问（Qwen3.8-Max-Preview）功能介绍</div>
+                            <div class="talk-item-num"></div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" class="talk-item article" data-spm="d_article_hotarticle_4" href="/article/1747810">
+                        <div class="talk-item-top" objectId="1747810">
+                            
+                            <div class="talk-item-index">4</div>
+                            <div class="talk-item-title">2026 最新版通义千问付费版全功能介绍</div>
+                            <div class="talk-item-num"></div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" class="talk-item article" data-spm="d_article_hotarticle_5" href="/article/1749911">
+                        <div class="talk-item-top" objectId="1749911">
+                            
+                            <div class="talk-item-index">5</div>
+                            <div class="talk-item-title">Qwen3.8-Max-Preview深度全解析：2.4万亿参数旗舰MoE模型+Token Plan限时优惠完整落地指南</div>
+                            <div class="talk-item-num"></div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" class="talk-item article" data-spm="d_article_hotarticle_6" href="/article/1749467">
+                        <div class="talk-item-top" objectId="1749467">
+                            
+                            <div class="talk-item-index">6</div>
+                            <div class="talk-item-title">阿里云通义千问大模型介绍：核心功能、性能优势、行业落地场景与官方定价解析</div>
+                            <div class="talk-item-num"></div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" class="talk-item article" data-spm="d_article_hotarticle_7" href="/article/1748843">
+                        <div class="talk-item-top" objectId="1748843">
+                            
+                            <div class="talk-item-index">7</div>
+                            <div class="talk-item-title">最新版通义千问（Qwen3.7-Plus）功能介绍</div>
+                            <div class="talk-item-num"></div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" class="talk-item article" data-spm="d_article_hotarticle_8" href="/article/1750864">
+                        <div class="talk-item-top" objectId="1750864">
+                            
+                            <div class="talk-item-index">8</div>
+                            <div class="talk-item-title">最新版 阿里云通义千问大模型 功能介绍</div>
+                            <div class="talk-item-num"></div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" class="talk-item article" data-spm="d_article_hotarticle_9" href="/article/1740723">
+                        <div class="talk-item-top" objectId="1740723">
+                            
+                            <div class="talk-item-index">9</div>
+                            <div class="talk-item-title">阿里云通义千问大模型详解：Qwen3.7系列核心能力、应用价值与订阅全解</div>
+                            <div class="talk-item-num"></div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" class="talk-item article" data-spm="d_article_hotarticle_10" href="/article/1749327">
+                        <div class="talk-item-top" objectId="1749327">
+                            
+                            <div class="talk-item-index">10</div>
+                            <div class="talk-item-title">新服务器从0到1完整部署实践：openEuler环境搭建ChatGLM2大模型完整流程.175</div>
+                            <div class="talk-item-num"></div>
+                        </div>
+                    </a>
+                </li>
+            </div>
+            <div class="talk-more">
+                <span></span>
+            </div>
+        </div>
+        <div data-spm="article_newarticle" class="talk-box-wrapper">
+            <div class="talk-list ask">
+                <li>
+                    <a target="_blank" class="talk-item" data-spm="d_article_newarticle_1" href="/article/1751110">
+                        <div class="talk-item-top" objectId="1751110">
+                            <div class="talk-item-index talk-item-index-1">1</div>
+                            
+                            <div class="talk-item-title">大模型超长上下文显存控制：原生注意力缺陷、长文本显存暴涨原理与优化实践.180</div>
+                            <div class="talk-item-num">17</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" class="talk-item" data-spm="d_article_newarticle_2" href="/article/1751041">
+                        <div class="talk-item-top" objectId="1751041">
+                            <div class="talk-item-index talk-item-index-2">2</div>
+                            
+                            <div class="talk-item-title">最新版通义千问（Qwen3.7-Plus）功能介绍</div>
+                            <div class="talk-item-num">49</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" class="talk-item" data-spm="d_article_newarticle_3" href="/article/1751039">
+                        <div class="talk-item-top" objectId="1751039">
+                            <div class="talk-item-index talk-item-index-3">3</div>
+                            
+                            <div class="talk-item-title">最新版通义千问（Qwen3.7-Max）功能介绍 </div>
+                            <div class="talk-item-num">49</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" class="talk-item" data-spm="d_article_newarticle_4" href="/article/1751040">
+                        <div class="talk-item-top" objectId="1751040">
+                            
+                            <div class="talk-item-index">4</div>
+                            <div class="talk-item-title">最新版通义千问（Qwen3.8-Max-Preview）功能介绍 </div>
+                            <div class="talk-item-num">215</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" class="talk-item" data-spm="d_article_newarticle_5" href="/article/1751001">
+                        <div class="talk-item-top" objectId="1751001">
+                            
+                            <div class="talk-item-index">5</div>
+                            <div class="talk-item-title">阿里云百炼大模型功能介绍：一站式大模型开发与应用平台全解析</div>
+                            <div class="talk-item-num">38</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" class="talk-item" data-spm="d_article_newarticle_6" href="/article/1750994">
+                        <div class="talk-item-top" objectId="1750994">
+                            
+                            <div class="talk-item-index">6</div>
+                            <div class="talk-item-title">通义千问Qwen3.7-Max与Plus深度选型指南：百炼平台模型能力、计费方案与API接入全教程</div>
+                            <div class="talk-item-num">51</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" class="talk-item" data-spm="d_article_newarticle_7" href="/article/1750986">
+                        <div class="talk-item-top" objectId="1750986">
+                            
+                            <div class="talk-item-index">7</div>
+                            <div class="talk-item-title">Qwen-Audio-3.0-TTS：AI语音从“能说话”到“会带情绪表达”的技术跃迁</div>
+                            <div class="talk-item-num">48</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" class="talk-item" data-spm="d_article_newarticle_8" href="/article/1750982">
+                        <div class="talk-item-top" objectId="1750982">
+                            
+                            <div class="talk-item-index">8</div>
+                            <div class="talk-item-title">最新版通义千问（Qwen3.8-Max-Preview）功能介绍</div>
+                            <div class="talk-item-num">210</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" class="talk-item" data-spm="d_article_newarticle_9" href="/article/1750934">
+                        <div class="talk-item-top" objectId="1750934">
+                            
+                            <div class="talk-item-index">9</div>
+                            <div class="talk-item-title">最新版通义千问（Qwen3.7-Max）功能介绍</div>
+                            <div class="talk-item-num">73</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" class="talk-item" data-spm="d_article_newarticle_10" href="/article/1750928">
+                        <div class="talk-item-top" objectId="1750928">
+                            
+                            <div class="talk-item-index">10</div>
+                            <div class="talk-item-title">Qwen3.8-Max-Preview深度全解析：2.4万亿参数旗舰MoE模型+Token Plan限时优惠完整落地指南</div>
+                            <div class="talk-item-num">44</div>
+                        </div>
+                    </a>
+                </li>
+            </div>
+            <div class="talk-more">
+                <span></span>
+            </div>
+        </div>
+    </div>
+</div>
+                    
+                    <div class="right-item-box course-box" data-spm="article_relatecourse">
+    <div class="right-item-title">
+        <h2 class="right-item-title-text">相关课程</h2>
+        <a href="https://edu.aliyun.com/explore/" target="_blank" class="right-item-title-link" data-spm="d_article_relatecourse_more">更多</a>
+    </div>
+    <div class="right-item-list">
+        <li>
+                <a target="_blank" class="right-item-list-item" data-tracker-scm="20140722.ID_community@@course@@1267._.ID_community@@course@@1267-OR_rec-PAR1_212c0c4417850756529776413d0c0c-V_1-RL_community@@article@@1543945" data-spm="d_article_relatecourse_1" href="https://edu.aliyun.com/course/317216">AI人像动漫画实操教学</a>
+            </li>
+        <li>
+                <a target="_blank" class="right-item-list-item" data-tracker-scm="20140722.ID_community@@course@@1264._.ID_community@@course@@1264-OR_rec-PAR1_212c0c4417850756529776413d0c0c-V_1-RL_community@@article@@1543945" data-spm="d_article_relatecourse_2" href="https://edu.aliyun.com/course/317200">视觉AI技术体系及趋势概述</a>
+            </li>
+        <li>
+                <a target="_blank" class="right-item-list-item" data-tracker-scm="20140722.ID_community@@course@@1262._.ID_community@@course@@1262-OR_rec-PAR1_212c0c4417850756529776413d0c0c-V_1-RL_community@@article@@1543945" data-spm="d_article_relatecourse_3" href="https://edu.aliyun.com/course/317186">AIGC无处不在，把AI应用构建于Serverless之上</a>
+            </li>
+        <li>
+                <a target="_blank" class="right-item-list-item" data-tracker-scm="20140722.ID_community@@course@@1197._.ID_community@@course@@1197-OR_rec-PAR1_212c0c4417850756529776413d0c0c-V_1-RL_community@@article@@1543945" data-spm="d_article_relatecourse_4" href="https://tianchi.aliyun.com/course/1197">【科技少年】AI领航员探索教程（赛前训练）</a>
+            </li>
+        <li>
+                <a target="_blank" class="right-item-list-item" data-tracker-scm="20140722.ID_community@@course@@912._.ID_community@@course@@912-OR_rec-PAR1_212c0c4417850756529776413d0c0c-V_1-RL_community@@article@@1543945" data-spm="d_article_relatecourse_5" href="https://edu.aliyun.com/course/315900">达摩院视觉AI精品课</a>
+            </li>
+        <li>
+                <a target="_blank" class="right-item-list-item" data-tracker-scm="20140722.ID_community@@course@@351._.ID_community@@course@@351-OR_rec-PAR1_212c0c4417850756529776413d0c0c-V_1-RL_community@@article@@1543945" data-spm="d_article_relatecourse_6" href="https://tianchi.aliyun.com/course/351">AI开发者的Docker实践</a>
+            </li>
+    </div>
+</div>
+                    <div class="right-item-box ebook-box" data-spm="article_relateebook">
+    <div class="right-item-title">
+        <h2 class="right-item-title-text">相关电子书</h2>
+        <a href="/ebook/" target="_blank" class="right-item-title-link" data-spm="d_article_relateebook_more">更多</a>
+    </div>
+    <div class="right-item-list">
+        <li>
+                <a target="_blank" class="right-item-list-item" data-tracker-scm="20140722.ID_community@@ebook@@8460._.ID_community@@ebook@@8460-OR_rec-PAR1_210804e617850756529777482d0c05-V_1-RL_community@@article@@1543945" data-spm="d_article_relatebook_1" href="/ebook/8460">AI 原生应用开源开发者沙龙·上海站电子书</a>
+            </li>
+        <li>
+                <a target="_blank" class="right-item-list-item" data-tracker-scm="20140722.ID_community@@ebook@@8457._.ID_community@@ebook@@8457-OR_rec-PAR1_210804e617850756529777482d0c05-V_1-RL_community@@article@@1543945" data-spm="d_article_relatebook_2" href="/ebook/8457">AI原生应用开发实战营—Serverless AI专场·北京</a>
+            </li>
+        <li>
+                <a target="_blank" class="right-item-list-item" data-tracker-scm="20140722.ID_community@@ebook@@8456._.ID_community@@ebook@@8456-OR_rec-PAR1_210804e617850756529777482d0c05-V_1-RL_community@@article@@1543945" data-spm="d_article_relatebook_3" href="/ebook/8456">阿里云 AI 原生应用开发实战营</a>
+            </li>
+    </div>
+</div>
+                    <div class="right-item-box lab-course-box" data-spm="article_relatelab">
+    <div class="right-item-title">
+        <h2 class="right-item-title-text">相关实验场景</h2>
+        <a href="/adc/" target="_blank" class="right-item-title-link" data-spm="d_article_relatelab_more">更多</a>
+    </div>
+    <div class="right-item-list">
+        <li>
+            <a target="_blank" class="right-item-list-item" data-tracker-scm="20140722.ID_community@@labcourse@@272326._.ID_community@@labcourse@@272326-OR_rec-PAR1_0b0fd44d17850756529786409d0ace-V_1-RL_community@@article@@1543945" data-spm="d_article_relatelab_1" href="/adc/scenario/311000470108">使用AI容器镜像部署Qwen大语言模型</a>
+        </li>
+        <li>
+            <a target="_blank" class="right-item-list-item" data-tracker-scm="20140722.ID_community@@labcourse@@329132._.ID_community@@labcourse@@329132-OR_rec-PAR1_0b0fd44d17850756529786409d0ace-V_1-RL_community@@article@@1543945" data-spm="d_article_relatelab_2" href="/adc/scenario/311000680000">【玩转ComfyUI】基于函数计算一键部署AI生图平台ComfyUI</a>
+        </li>
+    </div>
+</div>
+                    
+                    
+                    <div class="right-sticky-item">
+                        <div class="right-item-box next-box" data-spm="article_nextarticle">
+    <div class="right-item-title">
+        <div class="right-item-title-text">下一篇</div>
+    </div>
+    <a class="next-box-title" data-spm="d_article_nextarticle_1" target="_blank" href="/article/1734354">一条命令迁移，帮你实现 OpenClaw 与 Hermes Agent 记忆互通！</a>
+</div>
+                        <div class="right-item-nav" id="right-item-nav" data-spm="article_contents"></div>
+                    </div>
+                
+            </div>
+            
+        </div>
+    </div>
+
+
+  <div id="skill-builder-root" style="display: none"></div>
+  <script type="text/javascript" nonce="c45a748a5efc478890594e7d730bd869" src="//g.alicdn.com/aliyun/developer-aliyun-com-fe/2.8.59/scripts/yuqueDocViewer.js"></script>
+  
+    
+    <div id="d7e43addbd8061cd7363a88b3bb838ec"><div class="_18a32969382a277c44015217fbc5cb5a_box"><footer class="_49ada0cd752f65901c49f2eed0d6c3d5_container" aria-label="PC 端页尾"><div class="_49ada0cd752f65901c49f2eed0d6c3d5_inner"><div class="b34f022d45e42bd104ce1362bc0808b1_services"><nav class="b34f022d45e42bd104ce1362bc0808b1_homepage-footer-main-services" aria-label="页脚导航"><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">为什么选择阿里云</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/about/what-is-cloud-computing" target="_blank">什么是云计算</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://infrastructure.aliyun.com/" target="_blank">全球基础设施</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/why-us/leading-technology" target="_blank">技术领先</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/why-us/reliability" target="_blank">稳定可靠</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/why-us/security-compliance" target="_blank">安全合规</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/analyst-reports" target="_blank">分析师报告</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">大模型</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/product/tongyi" target="_blank">千问大模型</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://bailian.console.aliyun.com/?tab=model#/model-market" target="_blank" rel="nofollow">大模型服务</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://bailian.console.aliyun.com/app-center?tab=app#/app-center" target="_blank" rel="nofollow">AI应用构建</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">产品和定价</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/product/list" target="_blank">全部产品</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://free.aliyun.com/" target="_blank">免费试用</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/product/news/" target="_blank">产品动态</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/price/detail" target="_blank">产品定价</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/price/cpq/list" target="_blank">配置报价器</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/price/cost-management" target="_blank">云上成本管理</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">技术内容</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/solution/tech-solution" target="_blank">技术解决方案</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://help.aliyun.com/" target="_blank">帮助文档</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://developer.aliyun.com/" target="_blank">开发者社区</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://tianchi.aliyun.com/" target="_blank">天池大赛</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://edu.aliyun.com/" target="_blank">阿里云认证</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">权益</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://free.aliyun.com/" target="_blank">免费试用</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/solution/free" target="_blank">解决方案免费试用</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://university.aliyun.com/" target="_blank">高校计划</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://dashi.aliyun.com/?ambRef=shouYeDaoHang2&amp;pageCode=yunparterIndex" target="_blank">推荐返现计划</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">服务</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/service" target="_blank">基础服务</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/service/supportplans" target="_blank">企业增值服务</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/service/devopsimpl/devopsimpl_cloudmigration_public_cn" target="_blank">迁云服务</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/notice/" target="_blank">官网公告</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://status.aliyun.com/" target="_blank">健康看板</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://security.aliyun.com/trust-center" target="_blank">信任中心</a></section></nav><article class="_7b44142961778903dda8af3f769cd06c_focus"><h3 class="_7b44142961778903dda8af3f769cd06c_ali-main-services-title">关注阿里云</h3><p class="_7b44142961778903dda8af3f769cd06c_ali-main-services-desc">关注阿里云公众号或下载阿里云APP，关注云资讯，随时随地运维管控云服务</p><img alt="阿里云APP" src="https://img.alicdn.com/imgextra/i4/O1CN01XLesV31fkf7pYNATb_!!6000000004045-2-tps-400-400.png" class="_7b44142961778903dda8af3f769cd06c_ali-official-code" loading="lazy"/><img alt="阿里云微信" src="https://img.alicdn.com/tfs/TB1AOdINW6qK1RjSZFmXXX0PFXa-258-258.jpg" class="_7b44142961778903dda8af3f769cd06c_ali-official-code" loading="lazy"/><p class="_7b44142961778903dda8af3f769cd06c_consult-text">联系我们：4008013260</p></article></div><div class="_4598709a854bea355ceb6ef9f23f10d4_about-link-wrap"><a href="https://help.aliyun.com/product/67275.html" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">法律声明</a><a href="https://terms.alicdn.com/legal-agreement/terms/platform_service/20220906101446934/20220906101446934.html" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">Cookies政策</a><a href="https://aliyun.jubao.alibaba.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">廉正举报</a><a href="https://report.aliyun.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">安全举报</a><a href="https://www.aliyun.com/contact" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">联系我们</a><a href="https://careers.aliyun.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">加入我们</a></div><section class="_4598709a854bea355ceb6ef9f23f10d4_friend-link-wrap"><h3 hidden="">友情链接</h3><a href="https://www.alibabagroup.com/cn/global/home" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里巴巴集团</a><a href="https://www.taobao.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">淘宝网</a><a href="https://www.qianwenai.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">千问AI平台</a><a href="https://www.tmall.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">天猫</a><a href="https://www.aliexpress.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">全球速卖通</a><a href="https://www.alibaba.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里巴巴国际交易市场</a><a href="https://www.1688.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">1688</a><a href="https://www.alimama.com/index.htm" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里妈妈</a><a href="https://www.fliggy.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">飞猪</a><a href="https://www.aliyun.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里云计算</a><a href="https://wanwang.aliyun.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">万网</a><a href="https://mobile.amap.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">高德</a><a href="https://www.uc.cn/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">UC</a><a href="https://www.umeng.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">友盟</a><a href="https://www.youku.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">优酷</a><a href="https://www.dingtalk.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">钉钉</a><a href="https://www.alipay.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">支付宝</a><a href="https://damo.alibaba.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">达摩院</a><a href="https://world.taobao.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">淘宝海外</a><a href="https://www.aliyundrive.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里云盘</a><a href="https://www.ele.me/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">淘宝闪购</a></section><p class="_4598709a854bea355ceb6ef9f23f10d4_ali-copyright-text">© 2009-现在 Aliyun.com 版权所有 增值电信业务经营许可证： <a href="http://beian.miit.gov.cn/" target="_blank">浙B2-20080101</a> 域名注册服务机构许可： <a href="https://domain.miit.gov.cn/域名注册服务机构/互联网域名/阿里云计算有限公司 " target="_blank">浙D3-20210002</a></p><p class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-wrap"><a href="https://zzlz.gsxt.gov.cn/businessCheck/verifKey.do?showType=p&amp;serial=91330106673959654P-SAIC_SHOW_10000091330106673959654P1782269316568&amp;signData=MEUCIQDTH78jfQrqhsr99oZZLEZ9bvrSnyF%20tsaiBM1kAscJ1AIgWUzC8x%20mPem4t8XfwhDOOOIaNULiW8MBaKLkRHa0eWw%3D" target="_blank" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link"><img src="//gw.alicdn.com/tfs/TB1GxwdSXXXXXa.aXXXXXXXXXXX-65-70.gif" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-img" alt="" loading="lazy"/></a><a href="http://www.beian.gov.cn/portal/registerSystemInfo" target="_blank" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link"><img src="//img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-img" alt="浙公网安备 33010602009975号" loading="lazy"/><span class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link-text">浙公网安备 33010602009975号</span></a><a href="https://beian.miit.gov.cn/" target="_blank" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link"><span class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link-text _4598709a854bea355ceb6ef9f23f10d4_ali-report-link-text-unique">浙B2-20080101-4</span></a></p></div></footer><footer class="_4b41e3343c851a7a8833c9165b249eb2_container" aria-label="移动端页尾"></footer></div></div>
+    <script type="text/javascript" nonce="c45a748a5efc478890594e7d730bd869" src="https://g.alicdn.com/code/npm/@ali/??biu-loader/0.1.2/index.js,hmod-preact/0.0.1/index.js,hmod-preact-hooks/0.0.1/index.js,hmod-preact-compat/0.0.1/index.js,hmod-preact-bridge/0.1.4/index.js,hmod-ace-service-loader/0.1.1/index.js"></script>
+    <script type="text/javascript" nonce="c45a748a5efc478890594e7d730bd869" src="https://g.alicdn.com/aliyun-com/lowcode-engine/0.1.73/renderer/build/js/index.js"></script>
+    <script type="text/javascript" nonce="c45a748a5efc478890594e7d730bd869" src="https://g.alicdn.com/code/npm/@ali??hmod-ace-2023-box/0.1.0/index.js,hmod-ace-2023-developer-global-community-nav/0.0.70/index.js,hmod-ace-2023-developer-global-guide/0.0.22/index.js,hmod-aliyun-com-floating-toolbar/0.2.6/index.js,hmod-aliyun-com-global-nav-search/0.8.4/index.js,hmod-aliyun-com-global-nav/0.3.17/index.js,hmod-lowcode-normal-page/0.1.0/index.js"></script>
+    <script type="text/javascript" nonce="c45a748a5efc478890594e7d730bd869" src="https://cloud-assets.alicdn.com/lowcode/entry/prod/e10038607e8fbd1665d8c4adc46d7200.js"></script>
+    <script type="text/javascript" nonce="c45a748a5efc478890594e7d730bd869" src="https://g.alicdn.com/code/npm/@ali??hmod-ace-2023-box/0.1.0/index.js,hmod-ace-2024-global-footer/0.1.2/index.js,hmod-lowcode-normal-page/0.1.0/index.js"></script>
+    <script type="text/javascript" nonce="c45a748a5efc478890594e7d730bd869" src="https://cloud-assets.alicdn.com/lowcode/entry/prod/d7e43addbd8061cd7363a88b3bb838ec.js"></script>
+    <script type="text/javascript" nonce="c45a748a5efc478890594e7d730bd869" src="https://cloud-assets.alicdn.com/website.js"></script>
+    
+    
+    
+    <script nonce="c45a748a5efc478890594e7d730bd869">
+        /*<![CDATA[*/
+        if(!window.React || window.React.version != "16.14.0") {
+            var nonce = 'c45a748a5efc478890594e7d730bd869';
+            document.write('<script type="text/javascript" src="//g.alicdn.com/developer_center/developer-fresh-aliyun-com-fe/0.7.41/??react.js,react-dom.js" nonce="'+ nonce + '"><\/script>');
+        }
+        /*]]>*/
+    </script>
+    
+    <script type="text/javascript" src="//g.alicdn.com/aliyun/util/1.2.36/loader.js" nonce="c45a748a5efc478890594e7d730bd869"></script>
+    
+    
+    
+    
+    
+    
+    
+    <script nonce="c45a748a5efc478890594e7d730bd869">
+        /*<![CDATA[*/
+        window.addEventListener('DOMContentLoaded',function(){
+            window.ALIYUN_PERF.reportPerfWhenStatic();
+        });
+        window.__ALIYUN_EXPERIENCE_REACT__ =  window.React;
+        window.__ALIYUN_EXPERIENCE_REACT_DOM__ = window.ReactDOM;
+        (function () {let host = window.location.hostname;if (!host.endsWith('.aliyun.com') && !host.endsWith('.aliyun.test') && !host.startsWith('127.0.0.1') && !host.startsWith('localhost')) {window.location.href = '//developer.aliyun.com';}})();
+        /*]]>*/
+    </script>
+
+  
+  <script type="text/javascript" nonce="c45a748a5efc478890594e7d730bd869" src="//g.alicdn.com/aliyun/ucc-component-fe/0.2.43/??actionButtons.js,commentsNum.js"></script>
+  
+  <script type="text/javascript" nonce="c45a748a5efc478890594e7d730bd869" src="//g.alicdn.com/aliyun/developer-aliyun-com-fe/2.8.59/scripts/articleDetail.js"></script>
+  <script type="text/javascript" defer="defer" nonce="c45a748a5efc478890594e7d730bd869" src="//g.alicdn.com/aliyun/developer-aliyun-com-fe/2.8.59/scripts/??weChatDisable.js,medalDialog.js,report.js"></script>
+  
+  <script src="https://o.alicdn.com/aliyun-com/ghost-spm/index.js" defer="defer" nonce="c45a748a5efc478890594e7d730bd869"></script>
+  <script defer="defer" nonce="c45a748a5efc478890594e7d730bd869" src="https://ucc.aliyun.com/ucc/view/log?appCode=developer-ecology&amp;bizCategory=ucc-blog&amp;objectId=1543945&amp;nonce=c45a748a5efc478890594e7d730bd869"></script>
+  <script defer="defer" type="text/javascript" src="//oneconsole.alicdn.com/sitemap/js/scm_v2.js" nonce="c45a748a5efc478890594e7d730bd869"></script>
+  <script defer="defer" type="text/javascript" nonce="c45a748a5efc478890594e7d730bd869" src="//g.alicdn.com/developer_center/developer-fresh-aliyun-com-fe/0.7.79/baidu_push.js"></script>
+  
+  
+  <script defer="defer" nonce="c45a748a5efc478890594e7d730bd869" src="//g.alicdn.com/developer-cloud-assets/aliyun-skill-builder-fe/3.1.3/plugin.js"></script>
+  <script nonce="c45a748a5efc478890594e7d730bd869">
+      let articleId = '1543945';
+      /*<![CDATA[*/
+      function skillBuilderLoader(callback) {
+          if (!window.adc || !window.adc.init) {
+              callback(false);
+              return;
+          }
+
+          // 计算面包屑
+          let breadCrumbs = [];
+          let breadCrumbsNodeList = document.querySelectorAll('.developer-nav a');
+          for (let i = 0; i < breadCrumbsNodeList.length; i++) {
+              let url = breadCrumbsNodeList[i].href;
+              if (url) {
+                  try {
+                      // 创建一个URL对象
+                      let urlObj = new URL(url);
+                      urlObj.searchParams.delete("spm");
+                      url = urlObj.toString();
+                  } catch (e) {
+                  }
+                  breadCrumbs.push({link: url, text: breadCrumbsNodeList[i].textContent});
+              } else {
+                  breadCrumbs.push({text: breadCrumbsNodeList[i].textContent});
+              }
+          }
+
+          let param = {
+              app: 'developer',
+              objType: 'article',
+              objId: articleId,
+              buttonContainer: '.article-title',
+              documentTitle: document.querySelector('.article-title').textContent,
+              documentHTML: document.querySelector('.article-title').outerHTML + document.querySelector(".article-desc").outerHTML + document.querySelector('.article-content').outerHTML,
+              zIndex: 1000,
+              breadCrumbs: breadCrumbs,
+              feedbackFunction: function(){
+                  document.querySelector('.balloon-box').click();
+              }
+          };
+          // console.log("adc.init param", param);
+          window.adc.init(param);
+          callback(true);
+      }
+
+      function retryTask(taskFunction, delayList) {
+          // 最大重试次数
+          let maxAttempts = delayList.length;
+
+          function attempt(currentAttempt) {
+              if (currentAttempt >= maxAttempts) {
+                  // console.log('已达到最大尝试次数，停止重试');
+                  return;
+              }
+              // console.log("第" + (currentAttempt + 1) + "次重试，间隔时间:" + delayList[currentAttempt]);
+              taskFunction(function (result) {
+                  if (result) {
+                      // console.log('执行skillBuilder初始化成功');
+                  } else {
+                      setTimeout(function () {
+                          attempt(currentAttempt + 1);
+                      }, delayList[currentAttempt]);
+                  }
+              });
+          }
+
+          attempt(0); // 从第1次开始尝试执行任务
+      }
+
+      // 重试任务
+      retryTask(skillBuilderLoader, [500, 500, 1000, 2000, 3000]);
+      /*]]>*/
+  </script>
+</body>
+
+
+</html>

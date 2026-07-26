@@ -1,0 +1,34 @@
+{
+  "canonical_url": "https://www.bitsminds.com/reviews/github-copilot-review",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T14:03:41.689743Z",
+  "final_url": "https://www.bitsminds.com/reviews/github-copilot-review",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "6bfcfa8ba13ad6e8f3d8ca718b9106ab1e92a41b3bad9af83b98ef682bdf2cfb",
+  "payload_path": "github_copilot/review/20260726T134021Z_a4a3c961/4943b55e6245f9aa147a8067.html",
+  "published_at": null,
+  "raw_record_id": "4943b55e6245f9aa147a8067",
+  "requested_url": "https://www.bitsminds.com/reviews/github-copilot-review",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://www.bitsminds.com/reviews/github-copilot-review",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "embedded_content_supported": false,
+    "evidence_level": "C",
+    "format": "html",
+    "note": "URLs form the curated public review allowlist for GitHub Copilot.",
+    "visible_text_length": 7962
+  },
+  "source_type": "review"
+}

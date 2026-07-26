@@ -1,0 +1,32 @@
+{
+  "canonical_url": "https://cursor.com/product",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T11:37:37.810043Z",
+  "final_url": "https://cursor.com/product",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "c0b7996feca70cedbb33dbd12f89cb0404c5cbf3e6b620b08b6485ac77ca5d60",
+  "payload_path": "cursor/official/20260726T113735Z_5abe3ba9/3dc8ede2fd7cb351e99d5222.html",
+  "published_at": null,
+  "raw_record_id": "3dc8ede2fd7cb351e99d5222",
+  "requested_url": "https://cursor.com/product",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://cursor.com/product",
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": 23182
+  },
+  "source_type": "official"
+}

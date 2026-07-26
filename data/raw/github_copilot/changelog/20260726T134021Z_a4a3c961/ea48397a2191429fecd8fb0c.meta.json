@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2026-07-20-copilot-users-can-now-see-ai-credits-used-per-billing-cycle/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:46:05.812042Z",
+  "final_url": "https://github.blog/changelog/2026-07-20-copilot-users-can-now-see-ai-credits-used-per-billing-cycle/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "e750293f5cb235a8d74399a0d3ebca1d6cefc8cababc47f6314eb27fb82855b7",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/ea48397a2191429fecd8fb0c.html",
+  "published_at": "2026-07-20T00:00:00Z",
+  "raw_record_id": "ea48397a2191429fecd8fb0c",
+  "requested_url": "https://github.blog/changelog/2026-07-20-copilot-users-can-now-see-ai-credits-used-per-billing-cycle",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/label/copilot/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-07-20T00:00:00Z",
+    "listing_title": "Copilot users can now see AI credits used per billing cycle",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3104
+  },
+  "source_type": "changelog"
+}

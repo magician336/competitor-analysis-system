@@ -1,0 +1,53 @@
+{
+  "canonical_url": "https://cursor.com/docs/agent/tools/browser",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": "W/\"c6165d49fac8efca2fec56dbb1c3bf62\"",
+  "fetched_at": "2026-07-26T11:38:13.045859Z",
+  "final_url": "https://cursor.com/docs/agent/tools/browser",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "74c0c2491ecf2ede449f9787c2f793a5d5b1ec54d4b0160eeaa1869e3f1411a6",
+  "payload_path": "cursor/product_docs/20260726T113735Z_5abe3ba9/f9025cb10182c2ac909df326.html",
+  "published_at": null,
+  "raw_record_id": "f9025cb10182c2ac909df326",
+  "requested_url": "https://cursor.com/docs/agent/tools/browser",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://cursor.com/docs/agent/tools/browser",
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "discovery": {
+      "configured_sitemap_urls": [
+        "https://cursor.com/docs/sitemap.xml"
+      ],
+      "method": "sitemap"
+    },
+    "embedded_content": "cursor_next_rsc",
+    "embedded_content_supported": true,
+    "evidence_level": "A",
+    "format": "html",
+    "sitemap_discovery": {
+      "allowed_path_prefixes": [
+        "/docs/"
+      ],
+      "enabled": true,
+      "excluded_path_prefixes": [
+        "/docs-static/"
+      ],
+      "max_sitemaps": 2,
+      "max_urls": 200,
+      "urls": [
+        "https://cursor.com/docs/sitemap.xml"
+      ]
+    },
+    "visible_text_length": 21
+  },
+  "source_type": "product_docs"
+}

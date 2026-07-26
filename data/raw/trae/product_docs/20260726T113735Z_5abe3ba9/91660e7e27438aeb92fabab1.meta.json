@@ -1,0 +1,50 @@
+{
+  "canonical_url": "https://docs.trae.ai/ide/models?_lang=en",
+  "competitor": "trae",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T11:52:47.713109Z",
+  "final_url": "https://docs.trae.ai/ide/models?_lang=en",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "3f3296ce0e667af8e646af1f1248a36f672f4d2a840ab6d8b43d6cb0e504ac54",
+  "payload_path": "trae/product_docs/20260726T113735Z_5abe3ba9/91660e7e27438aeb92fabab1.html",
+  "published_at": null,
+  "raw_record_id": "91660e7e27438aeb92fabab1",
+  "requested_url": "https://docs.trae.ai/ide/models?_lang=en",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://docs.trae.ai/ide/models?_lang=en",
+    "competitor_aliases": [
+      "TRAE",
+      "TRAE IDE"
+    ],
+    "competitor_name": "Trae",
+    "discovery": {
+      "depth": 1,
+      "max_depth": 1,
+      "method": "same_origin_links"
+    },
+    "embedded_content": "trae_router_document",
+    "embedded_content_supported": true,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/ide/"
+      ],
+      "enabled": true,
+      "max_depth": 1,
+      "max_urls": 120,
+      "query_params": {
+        "_lang": "en"
+      }
+    },
+    "visible_text_length": 54
+  },
+  "source_type": "product_docs"
+}

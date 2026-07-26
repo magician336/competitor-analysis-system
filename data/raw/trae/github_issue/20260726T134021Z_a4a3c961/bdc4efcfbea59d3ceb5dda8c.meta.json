@@ -1,0 +1,36 @@
+{
+  "canonical_url": "https://github.com/Trae-AI/TRAE/issues/2367",
+  "competitor": "trae",
+  "content_type": "application/json",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": "W/\"5809bdc0d8da43f4899c02675ba95ae527c2eaea87cbff10801e0d239e5e4b75\"",
+  "fetched_at": "2026-07-26T14:06:46.502586Z",
+  "final_url": "https://api.github.com/repos/Trae-AI/TRAE/issues?state=all&sort=updated&direction=desc&per_page=100&page=1&since=2023-07-27T13%3A40%3A21.046700Z",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "003bbf21d9cf8c26c1ed6b4f972d03ed59b1d5ac45eed3b1b83daceafcd8c514",
+  "payload_path": "trae/github_issue/20260726T134021Z_a4a3c961/bdc4efcfbea59d3ceb5dda8c.json",
+  "published_at": "2026-03-09T07:40:15Z",
+  "raw_record_id": "bdc4efcfbea59d3ceb5dda8c",
+  "requested_url": "https://api.github.com/repos/Trae-AI/TRAE/issues",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "collect_issues": true,
+    "collect_releases": false,
+    "comments_collected": 20,
+    "comments_error": null,
+    "competitor_aliases": [
+      "TRAE",
+      "TRAE IDE"
+    ],
+    "competitor_name": "Trae",
+    "evidence_level": "B",
+    "issue_number": 2367,
+    "note": "The official repository currently publishes Issues but no GitHub Releases.",
+    "repository": "Trae-AI/TRAE",
+    "state": "open"
+  },
+  "source_type": "github_issue"
+}

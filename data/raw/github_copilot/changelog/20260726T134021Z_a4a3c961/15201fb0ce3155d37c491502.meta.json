@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2026-07-23-github-mcp-server-supports-the-next-mcp-specification/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:46:00.668512Z",
+  "final_url": "https://github.blog/changelog/2026-07-23-github-mcp-server-supports-the-next-mcp-specification/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "b888cc4c6c00dc48cfa8de9489f16ea9f5ab02a45ecef5b3b49c2205532d5165",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/15201fb0ce3155d37c491502.html",
+  "published_at": "2026-07-23T00:00:00Z",
+  "raw_record_id": "15201fb0ce3155d37c491502",
+  "requested_url": "https://github.blog/changelog/2026-07-23-github-mcp-server-supports-the-next-mcp-specification",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/label/copilot/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-07-23T00:00:00Z",
+    "listing_title": "GitHub MCP Server supports the next MCP specification",
+    "record_role": "changelog_entry",
+    "visible_text_length": 4544
+  },
+  "source_type": "changelog"
+}

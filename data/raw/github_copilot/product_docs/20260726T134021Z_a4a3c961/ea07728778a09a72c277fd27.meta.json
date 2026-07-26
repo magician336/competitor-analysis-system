@@ -1,0 +1,46 @@
+{
+  "canonical_url": "https://docs.github.com/en/copilot/concepts/tools/ai-tools",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:48:56.118723Z",
+  "final_url": "https://docs.github.com/en/copilot/concepts/tools/ai-tools",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "6890638d520e59d7835bb98d677d36948ef748e8caf9afc44845103cf608b482",
+  "payload_path": "github_copilot/product_docs/20260726T134021Z_a4a3c961/ea07728778a09a72c277fd27.html",
+  "published_at": null,
+  "raw_record_id": "ea07728778a09a72c277fd27",
+  "requested_url": "https://docs.github.com/en/copilot/concepts/tools/ai-tools",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://docs.github.com/en/copilot/concepts/tools/ai-tools",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "discovery": {
+      "depth": 1,
+      "max_depth": 1,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/en/copilot"
+      ],
+      "enabled": true,
+      "max_depth": 1,
+      "max_urls": 500
+    },
+    "visible_text_length": 20026
+  },
+  "source_type": "product_docs"
+}

@@ -6,6 +6,7 @@ import argparse
 import importlib
 import logging
 import os
+import re
 import sys
 from pathlib import Path
 from typing import Any, Mapping, Sequence
@@ -13,7 +14,11 @@ from typing import Any, Mapping, Sequence
 import yaml
 from dotenv import load_dotenv
 
-from crawler import CrawlOrchestrator
+from crawler import (
+    CrawlOrchestrator,
+    LinkDiscoverySettings,
+    SitemapDiscoverySettings,
+)
 from processing import ProcessingPipeline, RuleLabeler
 
 
@@ -41,6 +46,7 @@ REQUIRED_SOURCE_TYPES = (
     "review",
     "security_privacy",
     "benchmark",
+    "rss",
 )
 LOG_LEVELS = ("DEBUG", "INFO", "WARNING", "ERROR")
 
@@ -102,7 +108,7 @@ def _add_crawl_arguments(parser: argparse.ArgumentParser) -> None:
         help=(
             "逗号分隔的来源：official,changelog,pricing,product_docs,"
             "status_page,github,github_release,github_issue,plugin_marketplace,"
-            "community,review,security_privacy,benchmark，或 all"
+            "community,review,security_privacy,benchmark,rss，或 all"
         ),
     )
     parser.add_argument(
@@ -240,6 +246,97 @@ def _doctor_competitors(config: Mapping[str, Any]) -> tuple[list[str], list[str]
                     errors.append(f"{competitor_id}.{source_name} 缺少 urls")
                 elif any(not str(url).startswith("https://") for url in urls):
                     errors.append(f"{competitor_id}.{source_name} 仅允许 HTTPS URL")
+
+            raw_link_discovery = source.get("link_discovery")
+            if raw_link_discovery is not None:
+                if not isinstance(raw_link_discovery, Mapping):
+                    errors.append(
+                        f"{competitor_id}.{source_name}.link_discovery 必须是对象"
+                    )
+                else:
+                    try:
+                        LinkDiscoverySettings.from_mapping(raw_link_discovery)
+                    except (ValueError, re.error) as exc:
+                        errors.append(
+                            f"{competitor_id}.{source_name}.link_discovery: {exc}"
+                        )
+
+            raw_sitemap_discovery = source.get("sitemap_discovery")
+            if raw_sitemap_discovery is not None:
+                if not isinstance(raw_sitemap_discovery, Mapping):
+                    errors.append(
+                        f"{competitor_id}.{source_name}.sitemap_discovery 必须是对象"
+                    )
+                else:
+                    try:
+                        sitemap_settings = SitemapDiscoverySettings.from_mapping(
+                            raw_sitemap_discovery
+                        )
+                    except ValueError as exc:
+                        errors.append(
+                            f"{competitor_id}.{source_name}.sitemap_discovery: {exc}"
+                        )
+                    else:
+                        if any(
+                            not url.startswith("https://")
+                            for url in sitemap_settings.urls
+                        ):
+                            errors.append(
+                                f"{competitor_id}.{source_name} 的 sitemap 仅允许 HTTPS URL"
+                            )
+
+            raw_allowed_item_origins = source.get("allowed_item_origins")
+            if raw_allowed_item_origins is not None:
+                if not isinstance(raw_allowed_item_origins, list) or not all(
+                    isinstance(origin, str)
+                    and origin.startswith("https://")
+                    and origin.rstrip("/").count("/") == 2
+                    for origin in raw_allowed_item_origins
+                ):
+                    errors.append(
+                        f"{competitor_id}.{source_name}.allowed_item_origins "
+                        "必须是 HTTPS origin 数组"
+                    )
+
+            for json_key in ("json_document", "json_items"):
+                json_settings = source.get(json_key)
+                if json_settings is None:
+                    continue
+                if not isinstance(json_settings, Mapping):
+                    errors.append(
+                        f"{competitor_id}.{source_name}.{json_key} 必须是对象"
+                    )
+                    continue
+                identity_mode = str(
+                    json_settings.get("identity_mode") or ""
+                ).strip().lower()
+                if identity_mode not in {"", "configured", "canonical_url"}:
+                    errors.append(
+                        f"{competitor_id}.{source_name}.{json_key}.identity_mode "
+                        "必须是 configured 或 canonical_url"
+                    )
+                if identity_mode == "configured" and not (
+                    json_settings.get("identity_field")
+                    or json_settings.get("identity_template")
+                ):
+                    errors.append(
+                        f"{competitor_id}.{source_name}.{json_key} 的 configured "
+                        "身份模式需要 identity_field 或 identity_template"
+                    )
+                if identity_mode == "canonical_url" and not (
+                    json_settings.get("url_field")
+                    or json_settings.get("url_template")
+                ):
+                    errors.append(
+                        f"{competitor_id}.{source_name}.{json_key} 的 canonical_url "
+                        "身份模式需要 url_field 或 url_template"
+                    )
+                url_base = json_settings.get("url_base")
+                if url_base is not None and not str(url_base).startswith("https://"):
+                    errors.append(
+                        f"{competitor_id}.{source_name}.{json_key}.url_base "
+                        "仅允许 HTTPS URL"
+                    )
 
     actual = set(competitor_ids)
     missing = REQUIRED_COMPETITORS - actual

@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2026-07-23-copilot-cloud-agent-for-linear-is-now-generally-available/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:45:59.577074Z",
+  "final_url": "https://github.blog/changelog/2026-07-23-copilot-cloud-agent-for-linear-is-now-generally-available/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "d9d42d8b2ebc21573a2474c45977e73ace2a53452ed17cd15a3414cdcf61dc28",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/adaed4d9503bae440b863384.html",
+  "published_at": "2026-07-23T00:00:00Z",
+  "raw_record_id": "adaed4d9503bae440b863384",
+  "requested_url": "https://github.blog/changelog/2026-07-23-copilot-cloud-agent-for-linear-is-now-generally-available",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/label/copilot/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-07-23T00:00:00Z",
+    "listing_title": "Copilot cloud agent for Linear is now generally available",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3955
+  },
+  "source_type": "changelog"
+}

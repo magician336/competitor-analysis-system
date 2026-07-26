@@ -48,6 +48,7 @@ def test_normalize_datetime_returns_utc_for_offset_naive_and_epoch_values() -> N
         default_timezone=timezone(timedelta(hours=8)),
     ) == datetime(2026, 7, 13, 0, tzinfo=timezone.utc)
     assert normalize_datetime(1_782_850_600_000) == normalize_datetime(1_782_850_600)
+    assert normalize_datetime("1782850600000") == normalize_datetime(1_782_850_600)
     assert normalize_datetime("not a date") is None
 
 

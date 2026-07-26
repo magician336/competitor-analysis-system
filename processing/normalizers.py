@@ -108,7 +108,10 @@ def normalize_datetime(value: Any, *, default_timezone: timezone = timezone.utc)
         parsed = value
     elif isinstance(value, date):
         parsed = datetime.combine(value, time.min)
-    elif isinstance(value, (int, float)):
+    elif isinstance(value, (int, float)) or (
+        isinstance(value, str)
+        and re.fullmatch(r"-?\d+(?:\.\d+)?", value.strip())
+    ):
         # GitHub and RSS timestamps are seconds; accepting milliseconds makes
         # fixtures and exported APIs safer to process.
         timestamp = float(value)

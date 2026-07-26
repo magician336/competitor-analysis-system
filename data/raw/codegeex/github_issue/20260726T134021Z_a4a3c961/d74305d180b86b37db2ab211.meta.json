@@ -1,0 +1,36 @@
+{
+  "canonical_url": "https://github.com/CodeGeeX/codegeex-vscode-extension/issues/6",
+  "competitor": "codegeex",
+  "content_type": "application/json",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": "W/\"c579ec21c797bbb057fd327847dfe0c7f6662f5026aa7590a9f8e17fe33606b9\"",
+  "fetched_at": "2026-07-26T14:23:17.748349Z",
+  "final_url": "https://api.github.com/repos/CodeGeeX/codegeex-vscode-extension/issues?state=all&sort=updated&direction=desc&per_page=100&page=1&since=2023-07-27T13%3A40%3A21.046700Z",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "732ab4cd4d29ce10713eb86e51b79c47be662d4c7116781176e24cc60f07a3c9",
+  "payload_path": "codegeex/github_issue/20260726T134021Z_a4a3c961/d74305d180b86b37db2ab211.json",
+  "published_at": "2023-08-07T08:01:12Z",
+  "raw_record_id": "d74305d180b86b37db2ab211",
+  "requested_url": "https://api.github.com/repos/CodeGeeX/codegeex-vscode-extension/issues",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "collect_issues": true,
+    "collect_releases": false,
+    "comments_collected": 3,
+    "comments_error": null,
+    "competitor_aliases": [
+      "CodeGeeX4",
+      "CodeGeeX AI Coding Assistant"
+    ],
+    "competitor_name": "CodeGeeX",
+    "evidence_level": "B",
+    "issue_number": 6,
+    "note": "The official repositories currently publish Issues but no GitHub Releases.",
+    "repository": "CodeGeeX/codegeex-vscode-extension",
+    "state": "open"
+  },
+  "source_type": "github_issue"
+}

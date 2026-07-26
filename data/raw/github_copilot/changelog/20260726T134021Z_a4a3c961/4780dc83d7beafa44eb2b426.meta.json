@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2025-12-18-claude-opus-4-5-is-now-generally-available-in-github-copilot/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:46:48.891914Z",
+  "final_url": "https://github.blog/changelog/2025-12-18-claude-opus-4-5-is-now-generally-available-in-github-copilot/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "3b792c863003418dd6f8e53d012b42974d43252f906851195b2a4f859f466ccb",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/4780dc83d7beafa44eb2b426.html",
+  "published_at": "2025-12-18T00:00:00Z",
+  "raw_record_id": "4780dc83d7beafa44eb2b426",
+  "requested_url": "https://github.blog/changelog/2025-12-18-claude-opus-4-5-is-now-generally-available-in-github-copilot",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2025/?label=copilot",
+    "changelog_page_number": 2,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2025-12-18T00:00:00Z",
+    "listing_title": "Claude Opus 4.5 is now generally available in GitHub Copilot",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3572
+  },
+  "source_type": "changelog"
+}

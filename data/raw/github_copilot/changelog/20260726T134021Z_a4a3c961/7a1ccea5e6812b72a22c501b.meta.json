@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2026-07-21-gemini-3-6-flash-is-now-available-in-github-copilot/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:46:03.809586Z",
+  "final_url": "https://github.blog/changelog/2026-07-21-gemini-3-6-flash-is-now-available-in-github-copilot/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "ef7e33b19e5cde77b30aa685b869f7dddf8b3ae49d7008090e4c89c2b21cf327",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/7a1ccea5e6812b72a22c501b.html",
+  "published_at": "2026-07-21T00:00:00Z",
+  "raw_record_id": "7a1ccea5e6812b72a22c501b",
+  "requested_url": "https://github.blog/changelog/2026-07-21-gemini-3-6-flash-is-now-available-in-github-copilot",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/label/copilot/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-07-21T00:00:00Z",
+    "listing_title": "Gemini 3.6 Flash is now available in GitHub Copilot",
+    "record_role": "changelog_entry",
+    "visible_text_length": 4170
+  },
+  "source_type": "changelog"
+}

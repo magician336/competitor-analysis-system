@@ -1,0 +1,34 @@
+{
+  "canonical_url": "https://marketplace.visualstudio.com/items?itemName=Alibaba-Cloud.tongyi-lingma",
+  "competitor": "tongyi_lingma",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T14:20:47.202998Z",
+  "final_url": "https://marketplace.visualstudio.com/items?itemName=Alibaba-Cloud.tongyi-lingma",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "0e0468f16d1cef3293b6742fa554ba8711287bc1493915e02d246806799675fb",
+  "payload_path": "tongyi_lingma/plugin_marketplace/20260726T134021Z_a4a3c961/f9eade9b5ba7d534d8d2f07c.html",
+  "published_at": null,
+  "raw_record_id": "f9eade9b5ba7d534d8d2f07c",
+  "requested_url": "https://marketplace.visualstudio.com/items?itemName=Alibaba-Cloud.tongyi-lingma",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://marketplace.visualstudio.com/items?itemName=Alibaba-Cloud.tongyi-lingma",
+    "competitor_aliases": [
+      "Lingma",
+      "Qoder CN",
+      "智能编码助手通义灵码"
+    ],
+    "competitor_name": "通义灵码",
+    "embedded_content_supported": false,
+    "evidence_level": "B",
+    "format": "html",
+    "visible_text_length": 5576
+  },
+  "source_type": "plugin_marketplace"
+}

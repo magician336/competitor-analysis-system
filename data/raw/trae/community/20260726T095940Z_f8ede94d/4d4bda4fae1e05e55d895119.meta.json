@@ -1,0 +1,34 @@
+{
+  "canonical_url": "https://github.com/Trae-AI/TRAE/discussions.atom",
+  "competitor": "trae",
+  "content_type": "application/atom+xml; charset=utf-8",
+  "crawl_run_id": "20260726T095940Z_f8ede94d",
+  "error": null,
+  "etag": "W/\"d7df0cbd63ba7f9179cad48fd7c483e7\"",
+  "fetched_at": "2026-07-26T09:59:42.012142Z",
+  "final_url": "https://github.com/Trae-AI/TRAE/discussions.atom",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "d7df0cbd63ba7f9179cad48fd7c483e78a2d7100248e45ca5603364e616eb666",
+  "payload_path": "trae/community/20260726T095940Z_f8ede94d/4d4bda4fae1e05e55d895119.xml",
+  "published_at": null,
+  "raw_record_id": "4d4bda4fae1e05e55d895119",
+  "requested_url": "https://github.com/Trae-AI/TRAE/discussions.atom",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://github.com/Trae-AI/TRAE/discussions.atom",
+    "competitor_aliases": [
+      "TRAE",
+      "TRAE IDE"
+    ],
+    "competitor_name": "Trae",
+    "embedded_content_supported": false,
+    "evidence_level": "C",
+    "format": "html",
+    "note": "Public GitHub Discussions and TRAE forum topics provide machine-readable or server-rendered community evidence.",
+    "visible_text_length": null
+  },
+  "source_type": "community"
+}

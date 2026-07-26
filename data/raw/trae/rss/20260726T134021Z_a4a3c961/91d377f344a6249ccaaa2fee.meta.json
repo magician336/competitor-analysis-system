@@ -1,0 +1,36 @@
+{
+  "canonical_url": "https://trae.ai/blog/trae_solo_mobile_0506",
+  "competitor": "trae",
+  "content_type": "application/json",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T14:04:09.828709Z",
+  "final_url": "https://www.trae.ai/rss.xml",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "2c2d8c35e3a3cc27a7ed525223e16ba9c64a7b243d8db47d253c6bec31c7724e",
+  "payload_path": "trae/rss/20260726T134021Z_a4a3c961/91d377f344a6249ccaaa2fee.json",
+  "published_at": "2026-05-05T16:00:00Z",
+  "raw_record_id": "91d377f344a6249ccaaa2fee",
+  "requested_url": "https://www.trae.ai/rss.xml",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "allowed_item_origins": [
+      "https://www.trae.ai",
+      "https://trae.ai"
+    ],
+    "competitor_aliases": [
+      "TRAE",
+      "TRAE IDE"
+    ],
+    "competitor_name": "Trae",
+    "entry_id": "trae_solo_mobile_0506",
+    "evidence_level": "A",
+    "format": "feed_entry",
+    "original_content_type": "application/xml",
+    "record_role": "rss_entry"
+  },
+  "source_type": "rss"
+}

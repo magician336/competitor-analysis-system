@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2024-11-01-claude-3-5-sonnet-is-now-available-to-all-copilot-users-in-public-preview/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:47:43.511135Z",
+  "final_url": "https://github.blog/changelog/2024-11-01-claude-3-5-sonnet-is-now-available-to-all-copilot-users-in-public-preview/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "fcf1780a204ceb32abcbe891017bf4661361fc73aaca7eb7e0c321feee221238",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/0f35b0d10a2d1b8a4c621d40.html",
+  "published_at": "2024-11-01T00:00:00Z",
+  "raw_record_id": "0f35b0d10a2d1b8a4c621d40",
+  "requested_url": "https://github.blog/changelog/2024-11-01-claude-3-5-sonnet-is-now-available-to-all-copilot-users-in-public-preview",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2024/?label=copilot",
+    "changelog_page_number": 3,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2024-11-01T00:00:00Z",
+    "listing_title": "Claude 3.5 Sonnet is now available to all Copilot users in public preview",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3479
+  },
+  "source_type": "changelog"
+}

@@ -250,6 +250,8 @@ class HttpClient:
         conditional: bool = True,
         force: bool = False,
         check_robots: bool = True,
+        allow_redirects: bool = True,
+        stream: bool = False,
     ) -> requests.Response:
         request_url = self._prepared_url(url, params)
         if check_robots and not self.can_fetch(request_url):
@@ -266,7 +268,8 @@ class HttpClient:
             params=params,
             headers=request_headers,
             timeout=timeout or self.config.timeout_seconds,
-            allow_redirects=True,
+            allow_redirects=allow_redirects,
+            stream=stream,
         )
         if response.status_code == 200:
             self.condition_store.update(request_url, response.headers)

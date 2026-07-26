@@ -1,0 +1,32 @@
+{
+  "canonical_url": "https://cursor.com/education",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T11:37:43.766469Z",
+  "final_url": "https://cursor.com/education",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": true,
+  "payload_hash": "37c5766fc7ad667b4754c9c33db48fb76b724dc7af9faede1685a874ca93826a",
+  "payload_path": "cursor/official/20260726T113735Z_5abe3ba9/7bd9502e33624a49c33d9368.html",
+  "published_at": null,
+  "raw_record_id": "7bd9502e33624a49c33d9368",
+  "requested_url": "https://cursor.com/education",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://cursor.com/education",
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": 77
+  },
+  "source_type": "official"
+}

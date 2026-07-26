@@ -1,0 +1,47 @@
+{
+  "canonical_url": "https://help.aliyun.com/zh/lingma/product-overview/members-and-roles",
+  "competitor": "tongyi_lingma",
+  "content_type": "text/html;charset=UTF-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T11:57:08.598112Z",
+  "final_url": "https://help.aliyun.com/zh/lingma/product-overview/members-and-roles",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "02f5c014d94dd3d28826b58045e63cfb8554f83fed5b886079f3d9ee22e242eb",
+  "payload_path": "tongyi_lingma/product_docs/20260726T113735Z_5abe3ba9/9f6cd9f2da57459baa4e202b.html",
+  "published_at": null,
+  "raw_record_id": "9f6cd9f2da57459baa4e202b",
+  "requested_url": "https://help.aliyun.com/zh/lingma/product-overview/members-and-roles",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://help.aliyun.com/zh/lingma/product-overview/members-and-roles",
+    "competitor_aliases": [
+      "Lingma",
+      "Qoder CN",
+      "智能编码助手通义灵码"
+    ],
+    "competitor_name": "通义灵码",
+    "discovery": {
+      "depth": 2,
+      "max_depth": 3,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/zh/lingma/"
+      ],
+      "enabled": true,
+      "max_depth": 3,
+      "max_urls": 300
+    },
+    "visible_text_length": 1644
+  },
+  "source_type": "product_docs"
+}

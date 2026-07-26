@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2024-12-30-expanding-access-to-the-github-copilot-workspace-technical-preview/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:47:19.776026Z",
+  "final_url": "https://github.blog/changelog/2024-12-30-expanding-access-to-the-github-copilot-workspace-technical-preview/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "9e3cf14c28536b2e64ec1efa6f68e15db04af4f561d9ea032afe61cc3d955e57",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/cfc6654d2baae553479e012e.html",
+  "published_at": "2024-12-30T00:00:00Z",
+  "raw_record_id": "cfc6654d2baae553479e012e",
+  "requested_url": "https://github.blog/changelog/2024-12-30-expanding-access-to-the-github-copilot-workspace-technical-preview",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2024/?label=copilot",
+    "changelog_page_number": 3,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2024-12-30T00:00:00Z",
+    "listing_title": "Expanding Access to the GitHub Copilot Workspace Technical Preview",
+    "record_role": "changelog_entry",
+    "visible_text_length": 4725
+  },
+  "source_type": "changelog"
+}

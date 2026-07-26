@@ -1,0 +1,53 @@
+{
+  "canonical_url": "https://cursor.com/docs/cursor-review/pr-page",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": "W/\"cb5426c945966236b317b7c6d699a52d\"",
+  "fetched_at": "2026-07-26T11:38:56.348939Z",
+  "final_url": "https://cursor.com/docs/cursor-review/pr-page",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "449035412e05643a8fedc16005e486741e1cc76e6cc87f02b4ab73cc26a2fabe",
+  "payload_path": "cursor/product_docs/20260726T113735Z_5abe3ba9/6a55056de54fae7b833cb957.html",
+  "published_at": null,
+  "raw_record_id": "6a55056de54fae7b833cb957",
+  "requested_url": "https://cursor.com/docs/cursor-review/pr-page",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://cursor.com/docs/cursor-review/pr-page",
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "discovery": {
+      "configured_sitemap_urls": [
+        "https://cursor.com/docs/sitemap.xml"
+      ],
+      "method": "sitemap"
+    },
+    "embedded_content": "cursor_next_rsc",
+    "embedded_content_supported": true,
+    "evidence_level": "A",
+    "format": "html",
+    "sitemap_discovery": {
+      "allowed_path_prefixes": [
+        "/docs/"
+      ],
+      "enabled": true,
+      "excluded_path_prefixes": [
+        "/docs-static/"
+      ],
+      "max_sitemaps": 2,
+      "max_urls": 200,
+      "urls": [
+        "https://cursor.com/docs/sitemap.xml"
+      ]
+    },
+    "visible_text_length": 31
+  },
+  "source_type": "product_docs"
+}

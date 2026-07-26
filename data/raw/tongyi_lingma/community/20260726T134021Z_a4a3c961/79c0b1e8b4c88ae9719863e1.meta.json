@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://developer.aliyun.com/ask/660994",
+  "competitor": "tongyi_lingma",
+  "content_type": "text/html;charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T14:20:50.872374Z",
+  "final_url": "https://developer.aliyun.com/ask/660994",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "6519c87844ae78b447138fca48429a6812af799375f84192ca45918618a4465f",
+  "payload_path": "tongyi_lingma/community/20260726T134021Z_a4a3c961/79c0b1e8b4c88ae9719863e1.html",
+  "published_at": null,
+  "raw_record_id": "79c0b1e8b4c88ae9719863e1",
+  "requested_url": "https://developer.aliyun.com/ask/660994",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://developer.aliyun.com/ask/660994",
+    "competitor_aliases": [
+      "Lingma",
+      "Qoder CN",
+      "智能编码助手通义灵码"
+    ],
+    "competitor_name": "通义灵码",
+    "embedded_content_supported": false,
+    "evidence_level": "C",
+    "format": "html",
+    "note": "Public Alibaba Cloud developer questions provide stable community evidence pages.",
+    "visible_text_length": 2764
+  },
+  "source_type": "community"
+}

@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2026-07-02-cost-centers-now-support-included-usage-caps/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:46:32.618968Z",
+  "final_url": "https://github.blog/changelog/2026-07-02-cost-centers-now-support-included-usage-caps/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "13714dd74889bb48a449e82556b7d9886b31ddc2358275b11e9681f8c5b4b09a",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/2606af8878fc72141bd7a415.html",
+  "published_at": "2026-07-02T00:00:00Z",
+  "raw_record_id": "2606af8878fc72141bd7a415",
+  "requested_url": "https://github.blog/changelog/2026-07-02-cost-centers-now-support-included-usage-caps",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/label/copilot/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-07-02T00:00:00Z",
+    "listing_title": "Cost centers now support AI credit pools",
+    "record_role": "changelog_entry",
+    "visible_text_length": 4327
+  },
+  "source_type": "changelog"
+}

@@ -1,0 +1,46 @@
+{
+  "canonical_url": "https://docs.github.com/en/copilot/how-tos/get-code-suggestions/find-matching-code",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T11:43:00.257432Z",
+  "final_url": "https://docs.github.com/en/copilot/how-tos/get-code-suggestions/find-matching-code",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "4c625e7d0244140346926305f5745a4fda2f95da74edd75bb2eabb59261b5241",
+  "payload_path": "github_copilot/product_docs/20260726T113735Z_5abe3ba9/9c3c9b8154954d15bf827232.html",
+  "published_at": null,
+  "raw_record_id": "9c3c9b8154954d15bf827232",
+  "requested_url": "https://docs.github.com/en/copilot/how-tos/get-code-suggestions/find-matching-code",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://docs.github.com/en/copilot/how-tos/get-code-suggestions/find-matching-code",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "discovery": {
+      "depth": 1,
+      "max_depth": 1,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/en/copilot"
+      ],
+      "enabled": true,
+      "max_depth": 1,
+      "max_urls": 500
+    },
+    "visible_text_length": 23087
+  },
+  "source_type": "product_docs"
+}

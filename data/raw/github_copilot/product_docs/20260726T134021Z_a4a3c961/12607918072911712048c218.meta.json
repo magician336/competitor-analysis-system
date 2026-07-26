@@ -1,0 +1,46 @@
+{
+  "canonical_url": "https://docs.github.com/en/copilot/concepts/agents/copilot-memory",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:48:36.085060Z",
+  "final_url": "https://docs.github.com/en/copilot/concepts/agents/copilot-memory",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "7da6906285b1cbfc166a460bd9ebc3840e02729c719f0ca9008b7c4c51919527",
+  "payload_path": "github_copilot/product_docs/20260726T134021Z_a4a3c961/12607918072911712048c218.html",
+  "published_at": null,
+  "raw_record_id": "12607918072911712048c218",
+  "requested_url": "https://docs.github.com/en/copilot/concepts/agents/copilot-memory",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://docs.github.com/en/copilot/concepts/agents/copilot-memory",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "discovery": {
+      "depth": 1,
+      "max_depth": 1,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/en/copilot"
+      ],
+      "enabled": true,
+      "max_depth": 1,
+      "max_urls": 500
+    },
+    "visible_text_length": 18439
+  },
+  "source_type": "product_docs"
+}

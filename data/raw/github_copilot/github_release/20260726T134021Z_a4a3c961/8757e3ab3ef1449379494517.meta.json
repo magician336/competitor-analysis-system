@@ -1,0 +1,31 @@
+{
+  "canonical_url": "https://github.com/microsoft/vscode-copilot-chat/releases/tag/v0.38.2026021202",
+  "competitor": "github_copilot",
+  "content_type": "application/json",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": "W/\"1356ca83036c41848b1d910ece78614c59369494f81aa5d1fbe96e2162f7e854\"",
+  "fetched_at": "2026-07-26T14:02:21.135003Z",
+  "final_url": "https://api.github.com/repositories/999686447/releases?per_page=100&page=2",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "4f81d4c6ecb26bdf3623290b66a3d372db9bfb43dab5a4f1a2dde42b94472e53",
+  "payload_path": "github_copilot/github_release/20260726T134021Z_a4a3c961/8757e3ab3ef1449379494517.json",
+  "published_at": "2026-02-12T18:45:34Z",
+  "raw_record_id": "8757e3ab3ef1449379494517",
+  "requested_url": "https://api.github.com/repositories/999686447/releases?per_page=100&page=2",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "B",
+    "release_id": 285815999,
+    "repository": "microsoft/vscode-copilot-chat",
+    "tag_name": "v0.38.2026021202"
+  },
+  "source_type": "github_release"
+}

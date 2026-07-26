@@ -1,0 +1,34 @@
+{
+  "canonical_url": "https://www.techradar.com/pro/security/bytedance-ai-tool-caught-spying-on-users",
+  "competitor": "trae",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T095839Z_b5521c77",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T09:58:48.637023Z",
+  "final_url": "https://www.techradar.com/pro/security/bytedance-ai-tool-caught-spying-on-users",
+  "http_status": 200,
+  "last_modified": "Fri, 24 Jul 2026 10:26:55 GMT",
+  "needs_browser": false,
+  "payload_hash": "51fc791a8b4600721e8572f58ceec3c1ea5ca56006d37808cb98f851c9b54d51",
+  "payload_path": "trae/review/20260726T095839Z_b5521c77/771689d3b8f3ced68f7ec975.html",
+  "published_at": null,
+  "raw_record_id": "771689d3b8f3ced68f7ec975",
+  "requested_url": "https://www.techradar.com/pro/security/bytedance-ai-tool-caught-spying-on-users",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://www.techradar.com/pro/security/bytedance-ai-tool-caught-spying-on-users",
+    "competitor_aliases": [
+      "TRAE",
+      "TRAE IDE"
+    ],
+    "competitor_name": "Trae",
+    "embedded_content_supported": false,
+    "evidence_level": "C",
+    "format": "html",
+    "note": "URLs form the curated public review allowlist for TRAE.",
+    "visible_text_length": 11012
+  },
+  "source_type": "review"
+}

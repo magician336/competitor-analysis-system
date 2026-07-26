@@ -1,0 +1,34 @@
+{
+  "canonical_url": "https://cursor.com/changelog/enterprise-organizations",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:40:44.768620Z",
+  "final_url": "https://cursor.com/changelog/enterprise-organizations",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "b559634e8bd3ec3f028074d49779ec54e3db085bf9a13776ee519cea0564dae2",
+  "payload_path": "cursor/changelog/20260726T134021Z_a4a3c961/eab2849f0b2a4a9458f63166.html",
+  "published_at": "2026-06-03T00:00:00Z",
+  "raw_record_id": "eab2849f0b2a4a9458f63166",
+  "requested_url": "https://cursor.com/changelog/enterprise-organizations",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://cursor.com/changelog/page/3",
+    "changelog_page_number": 3,
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-06-03T00:00:00Z",
+    "listing_title": "Jun 3, 2026",
+    "record_role": "changelog_entry",
+    "visible_text_length": 5050
+  },
+  "source_type": "changelog"
+}

@@ -1,0 +1,53 @@
+{
+  "canonical_url": "https://cursor.com/docs/models/claude-opus-4-6",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": "W/\"1cbef32ccd9d499315868800fa44cfe4\"",
+  "fetched_at": "2026-07-26T11:39:40.393665Z",
+  "final_url": "https://cursor.com/docs/models/claude-opus-4-6",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "5f92daa4e00767ba7c896cc1077c4260dea846d6bb5071d94da1e6593869806d",
+  "payload_path": "cursor/product_docs/20260726T113735Z_5abe3ba9/4ca5e110806c4b38d1921c1e.html",
+  "published_at": null,
+  "raw_record_id": "4ca5e110806c4b38d1921c1e",
+  "requested_url": "https://cursor.com/docs/models/claude-opus-4-6",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://cursor.com/docs/models/claude-opus-4-6",
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "discovery": {
+      "configured_sitemap_urls": [
+        "https://cursor.com/docs/sitemap.xml"
+      ],
+      "method": "sitemap"
+    },
+    "embedded_content": "cursor_next_rsc",
+    "embedded_content_supported": true,
+    "evidence_level": "A",
+    "format": "html",
+    "sitemap_discovery": {
+      "allowed_path_prefixes": [
+        "/docs/"
+      ],
+      "enabled": true,
+      "excluded_path_prefixes": [
+        "/docs-static/"
+      ],
+      "max_sitemaps": 2,
+      "max_urls": 200,
+      "urls": [
+        "https://cursor.com/docs/sitemap.xml"
+      ]
+    },
+    "visible_text_length": 29
+  },
+  "source_type": "product_docs"
+}

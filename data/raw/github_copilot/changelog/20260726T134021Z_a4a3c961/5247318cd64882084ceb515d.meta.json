@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2025-12-11-openais-gpt-5-2-is-now-in-public-preview-for-github-copilot/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:47:04.903287Z",
+  "final_url": "https://github.blog/changelog/2025-12-11-openais-gpt-5-2-is-now-in-public-preview-for-github-copilot/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "11af4ad69bd6f4f4270ee56f648d4f944f636ed7668cfacb2f4a120819fbf534",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/5247318cd64882084ceb515d.html",
+  "published_at": "2025-12-11T00:00:00Z",
+  "raw_record_id": "5247318cd64882084ceb515d",
+  "requested_url": "https://github.blog/changelog/2025-12-11-openais-gpt-5-2-is-now-in-public-preview-for-github-copilot",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2025/?label=copilot",
+    "changelog_page_number": 2,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2025-12-11T00:00:00Z",
+    "listing_title": "OpenAI’s GPT-5.2 is now in public preview for GitHub Copilot",
+    "record_role": "changelog_entry",
+    "visible_text_length": 4063
+  },
+  "source_type": "changelog"
+}

@@ -1,0 +1,679 @@
+
+<!DOCTYPE html><html lang="zh"><head>
+  <meta name="nav-disable" content="flex">
+  
+  <link rel="icon" href="https://img.alicdn.com/imgextra/i2/O1CN01TFs5Qw27uYvfA6gib_!!6000000007857-55-tps-32-32.svg" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="72x72" href="https://img.alicdn.com/imgextra/i4/O1CN01jlcNT71YBfZJJI7qY_!!6000000003021-2-tps-128-128.png">
+  
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="nav-config" content="footer=default">
+  <meta name="aplus-core" content="aplus.js">
+  <meta name="aplus-ajax" content="chksum">
+  <meta name="aplus-waiting" content="MAN">
+  <meta name="aplus-pvhash" content="1">
+  
+  <meta name="data-spm" content="a2c4g">
+  
+  <script>
+    window.pageStartTime = Date.now();
+  </script>
+
+  
+  <title>
+    Qoder CN CLI 插件,plugin,plugins install,plugin.json-Qoder CN 系列(Lingma)-阿里云帮助中心
+  </title>
+  <link rel="canonical" href="https://help.aliyun.com/zh/lingma/qodercli-cn/user-guide/plugins">
+  <meta name="keywords" content="插件,plugin,plugins,plugin.json,enabledPlugins,QODER_PLUGIN_ROOT,QODER_PLUGIN_DATA">
+  <meta name="description" content="插件（Plugin）是 Qoder CN CLI 中将命令、子 Agent、Skill、Hook、MCP server 等扩展能力打包成一个目录，便于安装、启用与共享的机制。一个插件目录可以包含一个或多个扩展资源，安装后这些资源会被 CLI 自动发现并加载。">
+  <meta name="last-modified" content="2026-07-07T11:43:31+08:00">
+  <meta name="date" content="2026-07-07T11:43:31+08:00">
+  <meta property="og:title" content="插件">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://help.aliyun.com/zh/lingma/qodercli-cn/user-guide/plugins">
+  <meta property="og:image" content="https://img.alicdn.com/imgextra/i1/O1CN012QgtoH1c1Mu70xD3w_!!6000000003540-2-tps-640-640.png">
+  <meta property="og:description" content="插件（Plugin）是 Qoder CN CLI 中将命令、子 Agent、Skill、Hook、MCP server 等扩展能力打包成一个目录，便于安装、启用与共享的机制。一个插件目录可以包含一个或多个扩展资源，安装后这些资源会被 CLI 自动发现并加载。">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://help.aliyun.com/zh/lingma/qodercli-cn/user-guide/plugins",
+    "publisher": {
+      "@type": "Organization",
+      "name": "阿里云计算",
+      "url": "https://www.aliyun.com/",
+      "logo": "https://img.alicdn.com/imgextra/i1/O1CN01BEqugB1KebzCRyIJl_!!6000000001189-55-tps-48-48.svg"
+    }
+  }
+  </script>
+  
+
+  <link href="https://g.alicdn.com/aliyun-help/help-portal-fe/0.12.51/css/index.css" rel="stylesheet">
+  
+
+  <script>
+    window.globalData = {
+      nodeId: "3044444",
+      website: "cn",
+      language: "zh",
+    }
+    window.$ACE_TRACKER_CONFIG = {
+      "enableHistory": true,
+      "enableHash": false
+    }
+  </script>
+<script>
+    window.__ICE_SSR_ENABLED__=true;
+    window.__ICE_APP_DATA__={};
+window.__ICE_PAGE_PROPS__={"docDetailData":{"storeData":{"alias":"/lingma/qodercli-cn/user-guide/plugins","nodeId":null,"data":{"website":"cn","lastModifiedTime":1783395811000,"keywords":"插件,plugin,plugins,plugin.json,enabledPlugins,QODER_PLUGIN_ROOT,QODER_PLUGIN_DATA","level":6,"docTitle":"插件","language":"zh","nodeType":1,"seoTitle":"Qoder CN CLI 插件,plugin,plugins install,plugin.json-Qoder CN 系列(Lingma)-阿里云帮助中心","title":"插件","version":1,"content":"<div lang=\"zh\" class=\"icms-help-docs-content\">\n\n  <main id=\"main-plugin\">\n    \n    \n    <p id=\"p-shortdesc-plugin\" data-tag=\"shortdesc\" class=\"shortdesc\">插件（Plugin）是 Qoder CN CLI 中将命令、子 Agent、Skill、Hook、MCP server 等扩展能力打包成一个目录，便于安装、启用与共享的机制。一个插件目录可以包含一个或多个扩展资源，安装后这些资源会被 CLI 自动发现并加载。</p>\n    <div id=\"body-plugin\" data-tag=\"body\" class=\"body\">\n      <section id=\"sec-plugin-quickstart\" class=\"section\">\n        <h2 id=\"h2-plugin-quickstart\">快速开始</h2>\n        <p id=\"p-plugin-qs-intro\">下面创建一个仅包含一个 Skill 的最小插件，并以本地目录形式安装。</p>\n        <h3 id=\"h3-plugin-qs-1\">1. 创建插件目录</h3><pre outputclass=\"nohighlight\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"7afa2580c4ye6\" class=\"pre codeblock nohighlight\"><code>mkdir -p ~/my-plugin/.qoder-plugin\nmkdir -p ~/my-plugin/skills/hello</code></pre>\n        <h3 id=\"h3-plugin-qs-2\">2. 编写 manifest</h3>\n        <p id=\"p-plugin-qs-2-intro\">推荐每个插件都声明 <code data-tag=\"inlineCode\" id=\"4634f4dea8cgq\" class=\"inlineCode\">plugin.json</code>，至少包含 <code data-tag=\"inlineCode\" id=\"88acd6ebf20v8\" class=\"inlineCode\">name</code> 字段，以获得稳定的元信息（详见后文 manifest 字段章节）：</p>\n        <p id=\"p-plugin-qs-2-path\"><code data-tag=\"inlineCode\" id=\"aad87fc121ov3\" class=\"inlineCode\">~/my-plugin/.qoder-plugin/plugin.json</code>：</p><pre outputclass=\"nohighlight\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"64e2c3821d47i\" class=\"pre codeblock nohighlight\"><code>{\n  \"name\": \"my-plugin\",\n  \"version\": \"0.1.0\",\n  \"description\": \"我的第一个插件\"\n}</code></pre>\n        <h3 id=\"h3-plugin-qs-3\">3. 添加一个 Skill</h3>\n        <p id=\"p-plugin-qs-3-path\"><code data-tag=\"inlineCode\" id=\"6ba8e57c1d40x\" class=\"inlineCode\">~/my-plugin/skills/hello/SKILL.md</code>：</p><pre outputclass=\"nohighlight\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"006ad229db8fl\" class=\"pre codeblock nohighlight\"><code>---\nname: hello\ndescription: 打个招呼。当用户说\"打招呼\"时使用。\n---\n\n# Hello Skill\n\n向用户友好地打个招呼。</code></pre>\n        <h3 id=\"h3-plugin-qs-4\">4. 安装</h3><pre outputclass=\"nohighlight\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"7c49630e40lia\" class=\"pre codeblock nohighlight\"><code>qoderclicn plugins install ~/my-plugin</code></pre>\n        <p id=\"p-plugin-qs-4-note\">输出 <code data-tag=\"inlineCode\" id=\"0583c61991ugw\" class=\"inlineCode\">Plugin \"my-plugin@local\" installed successfully. Run /plugins reload to apply.</code> 后，重启 CLI 或在 TUI 中执行 <code data-tag=\"inlineCode\" id=\"ec24ba142epd2\" class=\"inlineCode\">/plugins reload</code>，即可使用插件提供的 Skill。</p>\n      </section>\n      <section id=\"sec-plugin-layout\" class=\"section\">\n        <h2 id=\"h2-plugin-layout\">插件目录结构</h2>\n        <p id=\"p-plugin-layout-intro\"><code data-tag=\"inlineCode\" id=\"5133abfb90qfb\" class=\"inlineCode\">.qoder-plugin/plugin.json</code> 是 Qoder 推荐的 manifest 位置；如未声明，CLI 会按约定加载并把目录名作为插件名。约定目录<b>有则加载，无则忽略</b>。</p><pre outputclass=\"nohighlight\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"3b9266add5oez\" class=\"pre codeblock nohighlight\"><code>my-plugin/\n├── .qoder-plugin/\n│   └── plugin.json        # 推荐：manifest（声明 name/version 等元信息）\n├── commands/              # 自定义命令（.md 文件或子目录）\n├── agents/                # 自定义子 Agent\n├── skills/                # 自定义 Skill\n├── hooks/\n│   └── hooks.json         # Hook 配置\n├── output-styles/         # 输出样式\n├── bin/                   # 插件可执行文件\n└── .mcp.json              # 插件附带的 MCP server 声明</code></pre>\n        <p id=\"p-plugin-layout-outro\">约定目录的行为说明：</p>\n        <table id=\"table-plugin-layout\" tablewidth=\"799\" tablecolswidth=\"266 533\" autofit=\"false\" class=\"table\">\n          <colgroup colwidth=\"0.67*\" style=\"width:33.29%\"></colgroup>\n          <colgroup colwidth=\"1.34*\" style=\"width:66.71%\"></colgroup>\n          <tbody class=\"tbody\">\n            <tr id=\"590bf696e6mt9\">\n              <td id=\"a9ec5950dddxq\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"0ff0c99f07kod\"><span style=\"background-color:rgb(229, 229, 229)\">目录 / 文件</span></p>\n              </td>\n              <td id=\"881ef60a741za\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"6fbb78869bz2b\"><span style=\"background-color:rgb(229, 229, 229)\">用途</span></p>\n              </td>\n            </tr>\n            <tr id=\"f6538e4d8b5ee\">\n              <td id=\"c57175b6b7g80\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"f1af705610fl2\"><code data-tag=\"inlineCode\" id=\"3aefd010e1bzo\" class=\"inlineCode\">commands/</code></p>\n              </td>\n              <td id=\"a084792d70c5a\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"7842b8a559iqa\">注册自定义斜杠命令，结构与 <code data-tag=\"inlineCode\" id=\"d2c2af13db1zb\" class=\"inlineCode\">~/.qoder-cn/commands/</code> 一致</p>\n              </td>\n            </tr>\n            <tr id=\"937f56f7f0w87\">\n              <td id=\"71e95d99fdevc\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"7955c44280qx0\"><code data-tag=\"inlineCode\" id=\"cd98ce1136qrc\" class=\"inlineCode\">agents/</code></p>\n              </td>\n              <td id=\"882be80c80aq9\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"c487ce1a25sht\">注册自定义子 Agent</p>\n              </td>\n            </tr>\n            <tr id=\"a6fb42578a688\">\n              <td id=\"1dfa6a920bqa0\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"fc3571311ewh4\"><code data-tag=\"inlineCode\" id=\"c14d60f21318f\" class=\"inlineCode\">skills/</code></p>\n              </td>\n              <td id=\"ccd1db45e7lal\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"947c1b088bqxr\">注册 Skill，结构与 <code data-tag=\"inlineCode\" id=\"0057037ea58vo\" class=\"inlineCode\">~/.qoder-cn/skills/</code> 一致</p>\n              </td>\n            </tr>\n            <tr id=\"f5aac55660zf2\">\n              <td id=\"c4af97625aksh\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"2eff8c682ezbw\"><code data-tag=\"inlineCode\" id=\"fd6ba777a1tqk\" class=\"inlineCode\">hooks/hooks.json</code></p>\n              </td>\n              <td id=\"1d92d8620eotj\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"bf057b0477ows\">提供 Hook 配置；使用 <code data-tag=\"inlineCode\" id=\"3dd14715cda7q\" class=\"inlineCode\">{ \"hooks\": ... }</code> 包裹格式，其中 <code data-tag=\"inlineCode\" id=\"c635e479bc0fw\" class=\"inlineCode\">hooks</code> 字段的值与 <code data-tag=\"inlineCode\" id=\"98a26c1736p42\" class=\"inlineCode\">settings.json</code> 的 <code data-tag=\"inlineCode\" id=\"c421520ac6gue\" class=\"inlineCode\">hooks</code> 字段一致</p>\n              </td>\n            </tr>\n            <tr id=\"c73ffa252b1ms\">\n              <td id=\"05328e9a883qa\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"a8e11faa025zi\"><code data-tag=\"inlineCode\" id=\"d9f0d1bd2a228\" class=\"inlineCode\">output-styles/</code></p>\n              </td>\n              <td id=\"5b98664dc1l0v\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"f28476953bic3\">提供自定义输出样式</p>\n              </td>\n            </tr>\n            <tr id=\"9f975cb80b2k1\">\n              <td id=\"88dadc2809glt\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"f98cb7a13c0th\"><code data-tag=\"inlineCode\" id=\"249110b971nwe\" class=\"inlineCode\">bin/</code></p>\n              </td>\n              <td id=\"59eca7cb6481n\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"e5fea97634ra6\">插件提供的可执行文件</p>\n              </td>\n            </tr>\n            <tr id=\"2100d191fbrsm\">\n              <td id=\"9ddde562dcpyy\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"13280d4864r0n\"><code data-tag=\"inlineCode\" id=\"bc8d03a240jp0\" class=\"inlineCode\">.mcp.json</code></p>\n              </td>\n              <td id=\"251707169cj7a\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"4d24947593jzt\">插件附带的 MCP server 声明</p>\n              </td>\n            </tr>\n          </tbody>\n        </table>\n        <p id=\"p-plugin-layout-agent\">插件里的 <code data-tag=\"inlineCode\" id=\"a8d43d615easb\" class=\"inlineCode\">agents/</code> 也可以声明 <code data-tag=\"inlineCode\" id=\"ef6175cd69cnl\" class=\"inlineCode\">isolation: worktree</code>，适合发布需要隔离执行的实现类 Subagent。</p>\n      </section>\n      <section id=\"sec-plugin-manifest\" class=\"section\">\n        <h2 id=\"h2-plugin-manifest\">manifest 字段</h2>\n        <p id=\"p-plugin-manifest-intro\"><code data-tag=\"inlineCode\" id=\"eb0906ffcddcl\" class=\"inlineCode\">plugin.json</code> 仅 <code data-tag=\"inlineCode\" id=\"ba333767ff5j4\" class=\"inlineCode\">name</code> 必填，其余字段均可省略。</p>\n        <table id=\"table-plugin-manifest\" tablewidth=\"798\" tablecolswidth=\"177 88 533\" autofit=\"false\" class=\"table\">\n          <colgroup colwidth=\"0.67*\" style=\"width:22.18%\"></colgroup>\n          <colgroup colwidth=\"0.33*\" style=\"width:11.03%\"></colgroup>\n          <colgroup colwidth=\"2*\" style=\"width:66.79%\"></colgroup>\n          <tbody class=\"tbody\">\n            <tr id=\"6bd0ee11e7jyo\">\n              <td id=\"7c8b2fc96a4nl\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"bd6ccc2e5d2tn\"><span style=\"background-color:rgb(229, 229, 229)\">字段</span></p>\n              </td>\n              <td id=\"4aaab9f274110\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"93fcfc7533vxx\"><span style=\"background-color:rgb(229, 229, 229)\">必填</span></p>\n              </td>\n              <td id=\"365c7ad756dl9\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"5f9d33eb542us\"><span style=\"background-color:rgb(229, 229, 229)\">说明</span></p>\n              </td>\n            </tr>\n            <tr id=\"26f54de50coj3\">\n              <td id=\"9ad8ccd0660ng\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"dd115ac80cuxp\"><code data-tag=\"inlineCode\" id=\"86c3175438mw3\" class=\"inlineCode\">name</code></p>\n              </td>\n              <td id=\"dbcc490ebf4ip\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"463e4829fd9ht\">是</p>\n              </td>\n              <td id=\"61d4b02f6b66l\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"b11f8d01f9fuf\">插件唯一标识；不能包含空格，建议使用 kebab-case（如 <code data-tag=\"inlineCode\" id=\"0a62ddc2895f8\" class=\"inlineCode\">my-plugin</code>）</p>\n              </td>\n            </tr>\n            <tr id=\"06795549be4zt\">\n              <td id=\"13930c53a8476\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"84d9e1053f4vx\"><code data-tag=\"inlineCode\" id=\"9dab84068djcw\" class=\"inlineCode\">version</code></p>\n              </td>\n              <td id=\"31c9dedfe9ksv\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"4c51bdf77drf9\">否</p>\n              </td>\n              <td id=\"3565112c9ezpt\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"d4692acbb79hq\">语义化版本号（如 <code data-tag=\"inlineCode\" id=\"6fc1776d9fe9h\" class=\"inlineCode\">1.0.0</code>）</p>\n              </td>\n            </tr>\n            <tr id=\"06e746dfa9nsy\">\n              <td id=\"8b8af619edbcx\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"eafd0a4fb4jfc\"><code data-tag=\"inlineCode\" id=\"b1901098617mc\" class=\"inlineCode\">description</code></p>\n              </td>\n              <td id=\"e1605b5c0d3tj\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"b5bc3bf5429sy\">否</p>\n              </td>\n              <td id=\"5e3f294abcu65\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"b093be493daz2\">简短描述</p>\n              </td>\n            </tr>\n            <tr id=\"b5cf371c01my6\">\n              <td id=\"5744c0e234i9w\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"45165e481d0ir\"><code data-tag=\"inlineCode\" id=\"e5209af89f8bt\" class=\"inlineCode\">author</code></p>\n              </td>\n              <td id=\"dde0186beaqwe\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"7e1806c74abj9\">否</p>\n              </td>\n              <td id=\"4d8c39842e3iv\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"1eae24da6blsn\">作者信息</p>\n              </td>\n            </tr>\n            <tr id=\"7a95327af4vu2\">\n              <td id=\"6254e598c7mm9\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"a93719125ejmb\"><code data-tag=\"inlineCode\" id=\"60bccd237aeyu\" class=\"inlineCode\">homepage</code></p>\n              </td>\n              <td id=\"2de9831aban4b\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"81a6a414687rz\">否</p>\n              </td>\n              <td id=\"975bb09c46lz5\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"c9115be7018r3\">文档或主页 URL</p>\n              </td>\n            </tr>\n            <tr id=\"8e0fa4a7b3z32\">\n              <td id=\"4387358d9f7zh\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"535d29cc81gbi\"><code data-tag=\"inlineCode\" id=\"079d3cef78cvy\" class=\"inlineCode\">repository</code></p>\n              </td>\n              <td id=\"16ddfb56eb3we\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"b518323938oxn\">否</p>\n              </td>\n              <td id=\"4e6e893ab4pgf\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"69353bc9cb3af\">源码仓库 URL</p>\n              </td>\n            </tr>\n            <tr id=\"f53b4758c9wjy\">\n              <td id=\"be40670ae5tqt\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"3bff2a2459mir\"><code data-tag=\"inlineCode\" id=\"80d6447ea0xpk\" class=\"inlineCode\">license</code></p>\n              </td>\n              <td id=\"31f3037d2dk7n\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"79eb403441geb\">否</p>\n              </td>\n              <td id=\"cc95e44f8bkmt\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"77f0cf11f7an3\">SPDX license 标识（如 <code data-tag=\"inlineCode\" id=\"ec055f30aaxxr\" class=\"inlineCode\">MIT</code>）</p>\n              </td>\n            </tr>\n            <tr id=\"d8f6aed69bn5z\">\n              <td id=\"977a2b15d8sl9\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"fe732a2590qkd\"><code data-tag=\"inlineCode\" id=\"eae4b34ca4wln\" class=\"inlineCode\">keywords</code></p>\n              </td>\n              <td id=\"24022a8902d5c\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"b4a03e43f8tb5\">否</p>\n              </td>\n              <td id=\"5c658ba072phw\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"664600a2d2zth\">用于发现和分类的标签数组</p>\n              </td>\n            </tr>\n          </tbody>\n        </table>\n        <p id=\"p-plugin-manifest-advanced\">进阶：manifest 还支持显式声明 <code data-tag=\"inlineCode\" id=\"bc98206be34s3\" class=\"inlineCode\">commands</code> / <code data-tag=\"inlineCode\" id=\"6a0a582a4e0tr\" class=\"inlineCode\">agents</code> / <code data-tag=\"inlineCode\" id=\"89fe279172hs2\" class=\"inlineCode\">skills</code> / <code data-tag=\"inlineCode\" id=\"5649adccc562v\" class=\"inlineCode\">hooks</code> / <code data-tag=\"inlineCode\" id=\"3ac3aa74c8p3a\" class=\"inlineCode\">outputStyles</code> 等字段，用于覆盖默认的目录约定或使用内联内容（注意 manifest 字段使用驼峰命名 <code data-tag=\"inlineCode\" id=\"40380a7c9c57i\" class=\"inlineCode\">outputStyles</code>，对应的约定目录仍是 <code data-tag=\"inlineCode\" id=\"9e6fc6829dmb5\" class=\"inlineCode\">output-styles/</code>）。如不显式声明，CLI 会按上一节的目录约定自动发现。</p>\n      </section>\n      <section id=\"sec-plugin-scope\" class=\"section\">\n        <h2 id=\"h2-plugin-scope\">安装作用域</h2>\n        <p id=\"p-plugin-scope-intro\">插件可以安装到三个作用域：</p>\n        <table id=\"table-plugin-scope\" tablewidth=\"798\" tablecolswidth=\"145 363 290\" autofit=\"false\" class=\"table\">\n          <colgroup colwidth=\"0.55*\" style=\"width:18.17%\"></colgroup>\n          <colgroup colwidth=\"1.36*\" style=\"width:45.49%\"></colgroup>\n          <colgroup colwidth=\"1.09*\" style=\"width:36.34%\"></colgroup>\n          <tbody class=\"tbody\">\n            <tr id=\"48137e72461ed\">\n              <td id=\"f830574ac88kz\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"e5d4f510962r6\"><span style=\"background-color:rgb(229, 229, 229)\">作用域</span></p>\n              </td>\n              <td id=\"e0c8e7c1158oq\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"a95429758dhan\"><span style=\"background-color:rgb(229, 229, 229)\">说明</span></p>\n              </td>\n              <td id=\"a71ff7e142p30\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"01eebbae39a5e\"><span style=\"background-color:rgb(229, 229, 229)\">适用场景</span></p>\n              </td>\n            </tr>\n            <tr id=\"f6905fc834hxn\">\n              <td id=\"3a694de847wn5\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"da87d569edhql\"><code data-tag=\"inlineCode\" id=\"4b3d30e58ewvn\" class=\"inlineCode\">user</code></p>\n              </td>\n              <td id=\"5644eab292krx\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"320bbba124qf9\">全局可用，对当前用户的所有项目生效（默认）</p>\n              </td>\n              <td id=\"ab92acc9dbki4\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"2a2788bf8egun\">个人常用插件</p>\n              </td>\n            </tr>\n            <tr id=\"001160e8a4f11\">\n              <td id=\"4779334316tco\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"751787a7c5vbd\"><code data-tag=\"inlineCode\" id=\"287620a5abl0g\" class=\"inlineCode\">project</code></p>\n              </td>\n              <td id=\"0b1601e1628p0\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"dfa457378besx\">仅在当前项目生效，配置写入项目级 <code data-tag=\"inlineCode\" id=\"1c63bd7766xgo\" class=\"inlineCode\">settings.json</code>，可提交 git 与团队共享</p>\n              </td>\n              <td id=\"d0356950e7wud\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"6699af4f3adrb\">团队共享的项目专属插件</p>\n              </td>\n            </tr>\n            <tr id=\"6b9ebdb417bu2\">\n              <td id=\"1bf044ed922b8\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"000d1e4bde5bx\"><code data-tag=\"inlineCode\" id=\"d2d68ddcc6152\" class=\"inlineCode\">local</code></p>\n              </td>\n              <td id=\"1dfdea4f99o24\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"238d64a9e2z6d\">仅在当前项目生效，配置写入项目级 <code data-tag=\"inlineCode\" id=\"d3c1ac17f842b\" class=\"inlineCode\">settings.local.json</code>，建议加到 <code data-tag=\"inlineCode\" id=\"71810d9b06tuq\" class=\"inlineCode\">.gitignore</code></p>\n              </td>\n              <td id=\"22ea019176ero\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"c38dbe0d98j09\">本地实验性插件</p>\n              </td>\n            </tr>\n          </tbody>\n        </table>\n      </section>\n      <section id=\"sec-plugin-cmd\" class=\"section\">\n        <h2 id=\"h2-plugin-cmd\">命令</h2>\n        <p id=\"p-plugin-cmd-intro\">插件相关命令位于 <code data-tag=\"inlineCode\" id=\"1f9caea519270\" class=\"inlineCode\">qoderclicn plugins</code> 子命令组下，别名为 <code data-tag=\"inlineCode\" id=\"72e5c48eaajnm\" class=\"inlineCode\">plugin</code>。</p>\n        <h3 id=\"h3-plugin-cmd-install\">安装：plugins install</h3>\n        <p id=\"p-plugin-cmd-install-intro\">从本地目录路径安装插件：</p><pre outputclass=\"nohighlight\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"14ac378da4ure\" class=\"pre codeblock nohighlight\"><code>qoderclicn plugins install ~/my-plugin\nqoderclicn plugins install ./relative/path/to/plugin\nqoderclicn plugins install /abs/path/to/plugin --scope project</code></pre>\n        <table id=\"table-plugin-cmd-install\" tablewidth=\"700\" tablecolswidth=\"175 525\" autofit=\"false\" class=\"table\">\n          <colgroup colwidth=\"0.5*\" style=\"width:25.00%\"></colgroup>\n          <colgroup colwidth=\"1.5*\" style=\"width:75.00%\"></colgroup>\n          <tbody class=\"tbody\">\n            <tr id=\"32234b55a0cq3\">\n              <td id=\"f9b2cd8b96h13\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"e7c7ead1eeue0\"><span style=\"background-color:rgb(229, 229, 229)\">参数 / 选项</span></p>\n              </td>\n              <td id=\"e7925505a2qbm\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"298efb6090v48\"><span style=\"background-color:rgb(229, 229, 229)\">说明</span></p>\n              </td>\n            </tr>\n            <tr id=\"b9242f4287549\">\n              <td id=\"e200b7b0b5qj4\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"3629861913xtc\"><code data-tag=\"inlineCode\" id=\"7109a510d6lvg\" class=\"inlineCode\">&lt;plugin&gt;</code></p>\n              </td>\n              <td id=\"7e43cc058drbq\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"2de0ed7f17d29\">本地插件目录路径（绝对路径、相对路径或 <code data-tag=\"inlineCode\" id=\"a89d8e6738zui\" class=\"inlineCode\">~/...</code> 均可）</p>\n              </td>\n            </tr>\n            <tr id=\"0aafc0033adsg\">\n              <td id=\"1830cc9606khw\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"4c4b3bd53eyub\"><code data-tag=\"inlineCode\" id=\"63e08ce7dd8cc\" class=\"inlineCode\">-s, --scope &lt;scope&gt;</code></p>\n              </td>\n              <td id=\"a75d90a3657yz\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"2a3f3aa548pum\">安装作用域：<code data-tag=\"inlineCode\" id=\"36766f2b3crkc\" class=\"inlineCode\">user</code>（默认）、<code data-tag=\"inlineCode\" id=\"83f3179f3e7li\" class=\"inlineCode\">project</code>、<code data-tag=\"inlineCode\" id=\"841d8816d5wo1\" class=\"inlineCode\">local</code></p>\n              </td>\n            </tr>\n          </tbody>\n        </table>\n        <p id=\"p-plugin-cmd-install-note\">安装后建议重启 CLI 或在 TUI 中执行 <code data-tag=\"inlineCode\" id=\"dd91585936hf0\" class=\"inlineCode\">/plugins reload</code> 让变更生效。</p>\n        <h3 id=\"h3-plugin-cmd-uninstall\">卸载：plugins uninstall</h3><pre outputclass=\"nohighlight\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"77e7d7759dgug\" class=\"pre codeblock nohighlight\"><code>qoderclicn plugins uninstall my-plugin\nqoderclicn plugins uninstall my-plugin --scope project --keep-data</code></pre>\n        <p id=\"p-plugin-cmd-uninstall-alias\">别名：<code data-tag=\"inlineCode\" id=\"918081b96eb9c\" class=\"inlineCode\">remove</code> / <code data-tag=\"inlineCode\" id=\"a8e911470ah0a\" class=\"inlineCode\">rm</code>。</p>\n        <table id=\"table-plugin-cmd-uninstall\" tablewidth=\"700\" tablecolswidth=\"175 525\" autofit=\"false\" class=\"table\">\n          <colgroup colwidth=\"0.5*\" style=\"width:25.00%\"></colgroup>\n          <colgroup colwidth=\"1.5*\" style=\"width:75.00%\"></colgroup>\n          <tbody class=\"tbody\">\n            <tr id=\"18f39909eaa8g\">\n              <td id=\"c039b4475dxl2\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"3015da11ae3w1\"><span style=\"background-color:rgb(229, 229, 229)\">参数 / 选项</span></p>\n              </td>\n              <td id=\"cfaa088dearsk\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"052accabe06xy\"><span style=\"background-color:rgb(229, 229, 229)\">说明</span></p>\n              </td>\n            </tr>\n            <tr id=\"edcfa50a5f43n\">\n              <td id=\"bfbbdbd9a1re6\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"01fc1792f6mj1\"><code data-tag=\"inlineCode\" id=\"a6445b9cacmts\" class=\"inlineCode\">&lt;plugin&gt;</code></p>\n              </td>\n              <td id=\"fffd46af9fl2q\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"f419f44d18d21\">已安装插件名</p>\n              </td>\n            </tr>\n            <tr id=\"d13650c4a71ko\">\n              <td id=\"297cd12efed98\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"54ec586a04mth\"><code data-tag=\"inlineCode\" id=\"01f3af40116f8\" class=\"inlineCode\">-s, --scope &lt;scope&gt;</code></p>\n              </td>\n              <td id=\"bfabd01ee33xz\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"43be799319ngm\">卸载来源的作用域：<code data-tag=\"inlineCode\" id=\"e605681a92nqg\" class=\"inlineCode\">user</code>（默认）、<code data-tag=\"inlineCode\" id=\"d9c93a93a1t4j\" class=\"inlineCode\">project</code>、<code data-tag=\"inlineCode\" id=\"68127a82525vr\" class=\"inlineCode\">local</code></p>\n              </td>\n            </tr>\n            <tr id=\"aa4fde20e3dtl\">\n              <td id=\"20a4084901qke\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"8100842d05lo9\"><code data-tag=\"inlineCode\" id=\"8c3131fcf8tpl\" class=\"inlineCode\">--keep-data</code></p>\n              </td>\n              <td id=\"9e93e9f096qvn\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"e20a71570aiyd\">保留插件的数据目录</p>\n              </td>\n            </tr>\n          </tbody>\n        </table>\n        <h3 id=\"h3-plugin-cmd-enable\">启用 / 禁用：plugins enable / plugins disable</h3><pre outputclass=\"nohighlight\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"d957236c3cjvk\" class=\"pre codeblock nohighlight\"><code>qoderclicn plugins enable my-plugin\nqoderclicn plugins disable my-plugin\nqoderclicn plugins enable my-plugin --scope project\nqoderclicn plugins disable --all</code></pre>\n        <table id=\"table-plugin-cmd-enable\" tablewidth=\"700\" tablecolswidth=\"175 525\" autofit=\"false\" class=\"table\">\n          <colgroup colwidth=\"0.5*\" style=\"width:25.00%\"></colgroup>\n          <colgroup colwidth=\"1.5*\" style=\"width:75.00%\"></colgroup>\n          <tbody class=\"tbody\">\n            <tr id=\"929ba99b71xkw\">\n              <td id=\"678bf1fdf0k3c\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"61860bc8fe3l0\"><span style=\"background-color:rgb(229, 229, 229)\">参数 / 选项</span></p>\n              </td>\n              <td id=\"dcd2c7e05drx9\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"422515822dcwp\"><span style=\"background-color:rgb(229, 229, 229)\">说明</span></p>\n              </td>\n            </tr>\n            <tr id=\"4492f560e2fpe\">\n              <td id=\"050ba049b8jxl\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"8941f23020cjn\"><code data-tag=\"inlineCode\" id=\"a36c84c490s3p\" class=\"inlineCode\">&lt;plugin&gt;</code></p>\n              </td>\n              <td id=\"4972228276k84\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"34e11a6459ved\">已安装插件名</p>\n              </td>\n            </tr>\n            <tr id=\"ebfba9cc0eq0m\">\n              <td id=\"0897fb11873pv\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"60dbc7a220n0b\"><code data-tag=\"inlineCode\" id=\"1bb98ceabfhxd\" class=\"inlineCode\">-s, --scope &lt;scope&gt;</code></p>\n              </td>\n              <td id=\"76a69b1901zw8\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"4a20bbda1a686\">写入哪个作用域；不填则自动选择</p>\n              </td>\n            </tr>\n            <tr id=\"73e1a0043f5bn\">\n              <td id=\"5e65f48a06t83\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"5b034595c4fy0\"><code data-tag=\"inlineCode\" id=\"f1cb9c3cf88fk\" class=\"inlineCode\">-a, --all</code></p>\n              </td>\n              <td id=\"020b0aaabfx68\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"56460f4c4dqnw\">（仅 <code data-tag=\"inlineCode\" id=\"96121a2a54v3z\" class=\"inlineCode\">disable</code>）一键禁用作用域内所有已启用的插件</p>\n              </td>\n            </tr>\n          </tbody>\n        </table>\n        <p id=\"p-plugin-cmd-enable-note\">启用 / 禁用通过修改对应作用域 <code data-tag=\"inlineCode\" id=\"6056ed91c69ke\" class=\"inlineCode\">settings.json</code> 中的 <code data-tag=\"inlineCode\" id=\"701683c53epjk\" class=\"inlineCode\">enabledPlugins</code> 字段实现。被禁用的插件不会在新会话中加载。</p>\n        <h3 id=\"h3-plugin-cmd-list\">列出：plugins list</h3><pre outputclass=\"nohighlight\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"2c3f66a821kn1\" class=\"pre codeblock nohighlight\"><code>qoderclicn plugins list\nqoderclicn plugins list --json\nqoderclicn plugins list --plugin-dir ./local-plugins ./more-plugins</code></pre>\n        <table id=\"table-plugin-cmd-list\" tablewidth=\"699\" tablecolswidth=\"233 466\" autofit=\"false\" class=\"table\">\n          <colgroup colwidth=\"0.67*\" style=\"width:33.33%\"></colgroup>\n          <colgroup colwidth=\"1.34*\" style=\"width:66.67%\"></colgroup>\n          <tbody class=\"tbody\">\n            <tr id=\"b6448556136wc\">\n              <td id=\"1d0fa23a14pcq\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"8f95e1ac3bhtj\"><span style=\"background-color:rgb(229, 229, 229)\">选项</span></p>\n              </td>\n              <td id=\"99025fb42dj6w\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"c0361f2be4c0d\"><span style=\"background-color:rgb(229, 229, 229)\">说明</span></p>\n              </td>\n            </tr>\n            <tr id=\"5fe8724ec9xbc\">\n              <td id=\"63e6ea5d06uwr\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"0158b24542koe\"><code data-tag=\"inlineCode\" id=\"e48ab60bc49dp\" class=\"inlineCode\">--json</code></p>\n              </td>\n              <td id=\"27dd6f8e8b67u\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"d0819dd0ee05b\">以 JSON 输出</p>\n              </td>\n            </tr>\n            <tr id=\"69b7aeee7ak0r\">\n              <td id=\"515e10c26d3nw\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"6f1f1a2c35blr\"><code data-tag=\"inlineCode\" id=\"2add2578874vc\" class=\"inlineCode\">-o, --output-format &lt;format&gt;</code></p>\n              </td>\n              <td id=\"e4534a110deea\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"af17f97de5yxc\"><code data-tag=\"inlineCode\" id=\"0e37410e4ey2p\" class=\"inlineCode\">text</code> 或 <code data-tag=\"inlineCode\" id=\"d2e9bbe8d2vzv\" class=\"inlineCode\">json</code>（与 <code data-tag=\"inlineCode\" id=\"28389e7fd840u\" class=\"inlineCode\">--json</code> 等价）</p>\n              </td>\n            </tr>\n            <tr id=\"0de425de60ru5\">\n              <td id=\"26c4833f68gjg\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"3dd4c8099dxus\"><code data-tag=\"inlineCode\" id=\"52aa8920a082w\" class=\"inlineCode\">--plugin-dir &lt;dirs...&gt;</code></p>\n              </td>\n              <td id=\"73ee9493ac08t\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"7636e7e731r3v\">额外扫描这些目录中的插件并合并到列表中（不会自动安装）</p>\n              </td>\n            </tr>\n          </tbody>\n        </table>\n        <h3 id=\"h3-plugin-cmd-validate\">校验：plugins validate</h3>\n        <p id=\"p-plugin-cmd-validate-intro\">校验本地插件目录的结构是否符合约定，常用于开发期：</p><pre outputclass=\"nohighlight\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"262be7c60c06l\" class=\"pre codeblock nohighlight\"><code>qoderclicn plugins validate ~/my-plugin</code></pre>\n        <p id=\"p-plugin-cmd-validate-note\">校验会列出发现的命令、Skill、Hook 等组件，并在目录下完全没有任何约定子目录时打印一条提示。注意：<code data-tag=\"inlineCode\" id=\"0bc781eedfupg\" class=\"inlineCode\">validate</code> 本身不会因此失败，但 <code data-tag=\"inlineCode\" id=\"a0b4873c84u6k\" class=\"inlineCode\">plugins install</code> 安装本地插件时要求至少包含一个可识别的组件或资源（约定目录或 manifest 中显式声明的资源均可）。</p>\n        <p id=\"p-plugin-cmd-validate-tip\"><b>建议</b>：始终在 <code data-tag=\"inlineCode\" id=\"c32cb8e642me2\" class=\"inlineCode\">.qoder-plugin/plugin.json</code> 中声明 <code data-tag=\"inlineCode\" id=\"afa8cacc4d7xz\" class=\"inlineCode\">name</code>、<code data-tag=\"inlineCode\" id=\"d1bb12231czof\" class=\"inlineCode\">version</code> 等元信息。这是 Qoder 推荐的插件组织方式——否则插件在 <code data-tag=\"inlineCode\" id=\"984b92a71514c\" class=\"inlineCode\">plugins list</code>、<code data-tag=\"inlineCode\" id=\"88d61856f08q0\" class=\"inlineCode\">enabledPlugins</code> 配置等位置只能用目录名作为标识，不利于跨环境识别和共享。</p>\n      </section>\n      <section id=\"sec-plugin-enabled\" class=\"section\">\n        <h2 id=\"h2-plugin-enabled\">配置 enabledPlugins</h2>\n        <p id=\"p-plugin-enabled-intro\">启用 / 禁用状态保存在 <code data-tag=\"inlineCode\" id=\"86cd4eca18kon\" class=\"inlineCode\">settings.json</code> 的 <code data-tag=\"inlineCode\" id=\"c4c5b914fb0ol\" class=\"inlineCode\">enabledPlugins</code> 字段中：</p><pre outputclass=\"nohighlight\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"71eeca1d71kxw\" class=\"pre codeblock nohighlight\"><code>{\n  \"enabledPlugins\": {\n    \"my-plugin@local\": true,\n    \"another-plugin@local\": false\n  }\n}</code></pre>\n        <ul id=\"ul-plugin-enabled\">\n          <li id=\"d7a51b7f46bp4\">\n            <p id=\"d3f03db591s6r\">值为 <code data-tag=\"inlineCode\" id=\"3a0ddfbc2190i\" class=\"inlineCode\">true</code>：启用该插件</p>\n          </li>\n          <li id=\"2c87ba20f3ipf\">\n            <p id=\"47d6c39f4fjtz\">值为 <code data-tag=\"inlineCode\" id=\"5dff265b6dmr2\" class=\"inlineCode\">false</code>：显式禁用该插件</p>\n          </li>\n        </ul>\n        <p id=\"p-plugin-enabled-note\">配置 key 必须与已安装的插件 ID 完全匹配（本地安装的插件 ID 形如 <code data-tag=\"inlineCode\" id=\"3da8160ab40ri\" class=\"inlineCode\">name@local</code>）。可通过 <code data-tag=\"inlineCode\" id=\"54b113367b03e\" class=\"inlineCode\">plugins list</code> 查看每个插件的标识。</p>\n        <p id=\"p-plugin-enabled-cmd\">通过 <code data-tag=\"inlineCode\" id=\"dde3f74193avq\" class=\"inlineCode\">plugins enable</code> / <code data-tag=\"inlineCode\" id=\"5d14c12c6akfn\" class=\"inlineCode\">plugins disable</code> 修改该字段比手工编辑更可靠，因为命令会处理作用域选择、依赖关系等细节。</p>\n      </section>\n      <section id=\"sec-plugin-hook\" class=\"section\">\n        <h2 id=\"h2-plugin-hook\">编写插件 Hook</h2>\n        <p id=\"p-plugin-hook-intro\">插件可以在 <code data-tag=\"inlineCode\" id=\"8845b0aab2tcn\" class=\"inlineCode\">hooks/hooks.json</code> 中声明自身的 Hook。文件使用<b>包裹格式</b>：顶层是一个对象，其中 <code data-tag=\"inlineCode\" id=\"508328bf4f0vx\" class=\"inlineCode\">hooks</code> 字段的值与 <code data-tag=\"inlineCode\" id=\"bdef158d37wfd\" class=\"inlineCode\">settings.json</code> 的 <code data-tag=\"inlineCode\" id=\"8ad624674cxm1\" class=\"inlineCode\">hooks</code> 字段一致：</p><pre outputclass=\"nohighlight\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"9b33095b27fkv\" class=\"pre codeblock nohighlight\"><code>{\n  \"hooks\": {\n    \"PreToolUse\": [\n      {\n        \"matcher\": \"Bash\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"\\\"${QODER_PLUGIN_ROOT}\\\"/scripts/check.sh\"\n          }\n        ]\n      }\n    ]\n  }\n}</code></pre>\n        <p id=\"p-plugin-hook-diff\">这一点与 <code data-tag=\"inlineCode\" id=\"e55b15bc56ood\" class=\"inlineCode\">settings.json</code> 不同：<code data-tag=\"inlineCode\" id=\"6cd6f99ab4ehw\" class=\"inlineCode\">settings.json</code> 直接写 <code data-tag=\"inlineCode\" id=\"493658361d8qz\" class=\"inlineCode\">hooks</code> 字段；插件的 <code data-tag=\"inlineCode\" id=\"de8ec9b73daju\" class=\"inlineCode\">hooks/hooks.json</code> 需要外层多一层 <code data-tag=\"inlineCode\" id=\"763bbfb54bqjf\" class=\"inlineCode\">{ \"hooks\": ... }</code> 包裹。</p>\n        <p id=\"p-plugin-hook-env\">插件提供的 Hook 在执行时会额外得到两个环境变量：</p>\n        <table id=\"table-plugin-hook-env\" tablewidth=\"699\" tablecolswidth=\"233 466\" autofit=\"false\" class=\"table\">\n          <colgroup colwidth=\"0.67*\" style=\"width:33.33%\"></colgroup>\n          <colgroup colwidth=\"1.34*\" style=\"width:66.67%\"></colgroup>\n          <tbody class=\"tbody\">\n            <tr id=\"7ee07d2427ppw\">\n              <td id=\"26c9e16207thd\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"d8095611602o8\"><span style=\"background-color:rgb(229, 229, 229)\">环境变量</span></p>\n              </td>\n              <td id=\"20cc717f613d9\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"fd0e5978473vk\"><span style=\"background-color:rgb(229, 229, 229)\">说明</span></p>\n              </td>\n            </tr>\n            <tr id=\"2923968c06dk4\">\n              <td id=\"0f6995bc5dg0d\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"7a0d6db51f8ni\"><code data-tag=\"inlineCode\" id=\"60bc3ec53fg6g\" class=\"inlineCode\">QODER_PLUGIN_ROOT</code></p>\n              </td>\n              <td id=\"48f69ab540zjl\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"6440e82e59dk5\">当前插件的安装根目录</p>\n              </td>\n            </tr>\n            <tr id=\"6373941f9af4w\">\n              <td id=\"33b8a707feqdb\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"b45eb71dfc7nz\"><code data-tag=\"inlineCode\" id=\"9eaab4778a074\" class=\"inlineCode\">QODER_PLUGIN_DATA</code></p>\n              </td>\n              <td id=\"d8a4239e4c12r\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"cf50487a9djv3\">当前插件的数据目录（独立于安装目录，便于跨升级保留状态）</p>\n              </td>\n            </tr>\n          </tbody>\n        </table>\n        <p id=\"p-plugin-hook-more\">更多 Hook 编写细节见<a href=\"https://help.aliyun.com/zh/lingma/qodercli-cn/user-guide/hook\" id=\"xref-plugin-hooks\" title=\"\" class=\"xref\">钩子</a>。</p>\n      </section>\n    </div>\n  </main>\n\n\n\n\n</div>","url":"/zh/lingma/qodercli-cn/user-guide/plugins","tags":[{"value":false,"key":"autoTranslation","desc":"非自动翻译"},{"value":3044444,"key":"nodeId","desc":"文档ID"}],"userVO":{},"recommendDocs":[],"path":"https://help.aliyun.com/zh/lingma/qodercli-cn/user-guide/plugins","productNodeVO":{"emptyNode":false,"level":3,"validDocument":true,"headNavEnable":false,"docTitle":"Qoder CN 系列","id":2804669,"title":"Qoder CN 系列","url":"/zh/lingma/"},"directoryPath":{"children":[{"children":[{"children":[{"emptyNode":false,"level":6,"validDocument":true,"headNavEnable":false,"docTitle":"插件","id":3044444,"title":"插件","url":"/zh/lingma/qodercli-cn/user-guide/plugins"}],"emptyNode":false,"level":5,"validDocument":true,"headNavEnable":false,"docTitle":"操作指南","id":3033319,"title":"操作指南","url":"/zh/lingma/qodercli-cn/user-guide/"}],"emptyNode":false,"level":4,"validDocument":true,"headNavEnable":false,"docTitle":"Qoder CN CLI","id":3033311,"title":"Qoder CN CLI","url":"/zh/lingma/qodercli-cn/"}],"emptyNode":false,"level":3,"validDocument":true,"headNavEnable":false,"docTitle":"Qoder CN 系列","id":2804669,"title":"Qoder CN 系列","url":"/zh/lingma/"},"alias":"/lingma/qodercli-cn/user-guide/plugins","showType":1,"productUrl":"https://lingma.aliyun.com/","nodeId":3044444,"taskStatus":"NO_TASK_AVAILABLE","desc":"插件（Plugin）是 Qoder CN CLI 中将命令、子 Agent、Skill、Hook、MCP server 等扩展能力打包成一个目录，便于安装、启用与共享的机制。一个插件目录可以包含一个或多个扩展资源，安装后这些资源会被 CLI 自动发现并加载。"},"breadcrumb":[{"emptyNode":false,"level":3,"validDocument":true,"headNavEnable":false,"docTitle":"Qoder CN 系列","id":2804669,"title":"Qoder CN 系列","url":"/zh/lingma/"},{"emptyNode":false,"level":4,"validDocument":true,"headNavEnable":false,"docTitle":"Qoder CN CLI","id":3033311,"title":"Qoder CN CLI","url":"/zh/lingma/qodercli-cn/"},{"emptyNode":false,"level":5,"validDocument":true,"headNavEnable":false,"docTitle":"操作指南","id":3033319,"title":"操作指南","url":"/zh/lingma/qodercli-cn/user-guide/"},{"emptyNode":false,"level":6,"validDocument":true,"headNavEnable":false,"docTitle":"插件","id":3044444,"title":"插件","url":"/zh/lingma/qodercli-cn/user-guide/plugins"}],"isMachineTranslation":false,"isNotFound":false,"helpResponseCode":200,"redirectUrl":"","helpDocVersion":1,"reloadFlag":true}}};
+  </script><link href="https://g.alicdn.com/code/npm/@ali/??hmod-ace-2023-box/0.1.0/index.css,hmod-aliyun-com-global-nav-search/0.8.5/index.css,hmod-aliyun-com-global-nav/0.3.18/index.css" rel="stylesheet"/>
+<link href="https://g.alicdn.com/code/npm/@ali/??hmod-ace-2023-box/0.1.0/index.css,hmod-ace-2024-global-footer/0.2.1/index.css" rel="stylesheet"/>
+</head>
+
+<body><script>
+with(document)with(body)with(insertBefore(createElement("script"),firstChild))setAttribute("exparams","category=&userid=&aplus&yunid=&&trid=215041d317850756046296185e385b&asid=AQAAAACUF2ZqhNDdWwAAAADBx3uI2iSBMw==",id="tb-beacon-aplus",src=(location>"https"?"//g":"//g")+".alicdn.com/alilog/mlog/aplus_v2.js")
+</script>
+
+  <script>
+    var _performance_domStart = window.performance && window.performance.now();
+  </script>
+  <header><div id="77597e3303f7f62742f8e02d3f883457"><div class="_18a32969382a277c44015217fbc5cb5a_box"><div class="_3bd147f6948a20d6c528ac898ad4ba47_pc de5ef2fee09ebcb2b1dcaf0c982523bc_theme _277ebb348812c9712fac6b680ad5e513_reset _277ebb348812c9712fac6b680ad5e513_aliyun-font-family" data-ai-assistant-text-selection-tooltip="disabled"><header class="_702422913dd5754f065139ec2d2def80_container   "><button class="_17fcaf1a4ee37405e5ad5fbad24204b4_container _17fcaf1a4ee37405e5ad5fbad24204b4_loading" aria-label="打开菜单" data-spm="d_dashboard_trigger" data-tracker-exp="true"><span class="_17fcaf1a4ee37405e5ad5fbad24204b4_burger "><span class="_17fcaf1a4ee37405e5ad5fbad24204b4_middle"></span></span></button><a href="https://www.aliyun.com/" class="_3f46140aade30bc61f3012933357c477_logo _702422913dd5754f065139ec2d2def80_logo" data-tracker-content="LOGO" data-spm="d_logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4608 1024" fill="#ff6a00" width="80"><path d="M3266.56 773.12h327.68v-102.4h-327.68v-102.4H3584V35.84H2846.72v532.48h317.44v102.4h-327.68v102.4h327.68v112.64h-353.28v102.4h814.08v-102.4h-353.28v-112.64zM3276.8 138.24h215.04v112.64H3276.8V138.24z m0 215.04h215.04V460.8H3276.8V353.28zM3174.4 460.8h-215.04V353.28H3174.4V460.8z m0-209.92h-215.04V138.24H3174.4v112.64zM537.6 445.44H1075.2v122.88H537.6z"></path><path d="M1341.44 5.12h-353.28L1075.2 128l256 81.92c46.08 15.36 76.8 61.44 76.8 107.52v389.12c0 46.08-30.72 92.16-76.8 107.52l-256 81.92-87.04 122.88h353.28c148.48 0 266.24-117.76 266.24-266.24V276.48c0-148.48-117.76-271.36-266.24-271.36zM276.48 814.08c-46.08-15.36-76.8-61.44-76.8-107.52V317.44c0-46.08 30.72-92.16 76.8-107.52l256-81.92L619.52 5.12H266.24C117.76 5.12 0 128 0 276.48v471.04c0 148.48 117.76 266.24 266.24 266.24h353.28l-87.04-122.88-256-76.8zM2493.44 250.88h-261.12v537.6h261.12V250.88z m-107.52 430.08h-56.32V353.28h56.32v327.68zM1848.32 988.16h102.4V138.24h107.52L1996.8 419.84v102.4h61.44v225.28c0 15.36-10.24 25.6-25.6 25.6h-25.6v102.4h51.2c56.32 0 102.4-46.08 102.4-102.4v-358.4H2099.2l61.44-281.6v-102.4h-312.32v957.44z"></path><path d="M2206.72 138.24H2560v660.48c0 46.08-35.84 87.04-87.04 87.04h-76.8v102.4h107.52c87.04 0 163.84-71.68 163.84-163.84V138.24h35.84v-102.4h-496.64v102.4zM3763.2 40.96h737.28v102.4H3763.2zM4541.44 527.36v-102.4H3727.36v102.4h204.8l-163.84 358.4v102.4h691.2c30.72 0 51.2-25.6 51.2-51.2 0-10.24 0-15.36-5.12-20.48l-87.04-194.56h-112.64l76.8 163.84h-496.64l163.84-358.4h491.52z"></path></svg></a><div class="e76910c82efe8556eb8a6ce6019c5d00_container"><button class="e76910c82efe8556eb8a6ce6019c5d00_controller" data-spm="dscroll-left"><i class="ee52067fb65534cb06d3b35f654f5441_icon ddd10ed9ffa4788f54781e516c4c6560-button_left"></i></button><div class="e76910c82efe8556eb8a6ce6019c5d00_menu-warp"><nav class="_0b0e00051b37611378e027e6ac3a695a_menus"><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/product/tongyi" data-spm="d_menu_0">大模型</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/product/list" data-spm="d_menu_1">产品</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/solution/tech-solution/" data-spm="d_menu_2">解决方案</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/benefit" data-spm="d_menu_3">权益</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/price" data-spm="d_menu_4">定价</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://market.aliyun.com/" data-spm="d_menu_5">云市场</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://partner.aliyun.com/management/v2" data-spm="d_menu_6">伙伴</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/service" data-spm="d_menu_7">服务</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/about" data-spm="d_menu_8">了解阿里云</a></nav></div><button class="e76910c82efe8556eb8a6ce6019c5d00_controller" data-spm="dscroll-right"><i class="ee52067fb65534cb06d3b35f654f5441_icon ddd10ed9ffa4788f54781e516c4c6560-button_right"></i></button></div><div class="_702422913dd5754f065139ec2d2def80_search-wrap " style="--left-width:0px;--right-width:0px"><div class="global-nav-search _626567c051250ffe2f303af907d3fc83_global-nav-search"><div class="global-search-container _626567c051250ffe2f303af907d3fc83_global-nav-search-desktop-container"><div class="ff4f4a96a12f52ffbdd0d6adbdb6a2b0_position-desktop-search-container"><div><div class="f6fd7e4d3293f0634b9ac54848c275b7_default-search-panel  f6fd7e4d3293f0634b9ac54848c275b7_hidden-default-search-panel"></div><div class="_3b4f5487091623b0b6852e2b46d2729e_search-recommend-panel  _3b4f5487091623b0b6852e2b46d2729e_hidden-search-recommend-panel"><button class="_4b65cdd64479a2fabe582b8c0789821e_search-no-content " type="button">查看 &quot;&quot; 全部搜索结果</button></div></div></div></div><div class="_626567c051250ffe2f303af907d3fc83_global-nav-search-mobile-container"><a class="_626567c051250ffe2f303af907d3fc83_search-button" href="https://www.aliyun.com/search?from=h5-global-nav-search"><span role="img" class="_9a1d73bbcd1a80626a31035a12410804_icon _626567c051250ffe2f303af907d3fc83_search-button-icon"><svg width="1em" height="1em" viewBox="0 0 32 32" focusable="false" color="currentColor" fill="currentColor" class="" data-icon="search"><g><g><path fill-opacity="1" fill-rule="evenodd" d="M14,4C15.3558,4,16.653399999999998,4.262105,17.8926,4.786314C19.089100000000002,5.29242,20.1486,6.00666,21.071,6.92905C21.9933,7.85144,22.7076,8.91087,23.2137,10.10735C23.7379,11.34664,24,12.64419,24,14C24,15.3558,23.7379,16.653399999999998,23.2137,17.892699999999998C22.8382,18.7803,22.3482,19.5925,21.7436,20.3293L27.7072,26.2928L26.293,27.7071L20.3294,21.7435C19.592599999999997,22.3481,18.7803,22.8382,17.8926,23.2137C16.653399999999998,23.7379,15.3558,24,14,24C12.64419,24,11.34664,23.7379,10.10735,23.2137C8.91087,22.7076,7.85144,21.9933,6.92905,21.0709C6.00666,20.1486,5.29242,19.089100000000002,4.786314,17.8926C4.262105,16.653399999999998,4,15.3558,4,14C4,12.64419,4.262105,11.34664,4.786314,10.10735C5.29242,8.91087,6.00666,7.85144,6.92905,6.92905C7.85144,6.00666,8.91087,5.29242,10.10735,4.786314C11.34664,4.262105,12.64419,4,14,4ZM14,6C11.79102,6,9.905439999999999,6.78109,8.34326,8.34326C6.78109,9.905439999999999,6,11.79102,6,14C6,16.209,6.78109,18.0946,8.34326,19.6567C9.905439999999999,21.2189,11.79102,22,14,22C16.209,22,18.0946,21.2189,19.6567,19.6567C21.2189,18.0946,22,16.209,22,14C22,11.79102,21.2189,9.905439999999999,19.6567,8.34326C18.0946,6.78109,16.209,6,14,6Z"></path></g></g></svg></span></a></div></div></div><div class="_174801eef2caf75aeaee91c72b19c09a_container"><a class="global-nav-ai-assistant _174801eef2caf75aeaee91c72b19c09a_item _2d3ef330b3f8055912d355b9a255bfcf_btn" href="https://www.aliyun.com/ai-assistant?displayMode=side" data-spm="dai_assistant" target="_blank"><div class="LogoStyled-aliyun-ai-assistant-rc-8096__sc-1qusfpt-0 cpJKij"><div class="ai-assistant-brand-logo-icon" style="background:no-repeat center/100%  url(https://img.alicdn.com/imgextra/i4/O1CN012X1Rxl1clAgB5waMK_!!6000000003640-2-tps-52-52.png)"><img src="https://img.alicdn.com/imgextra/i2/O1CN01bYc1m81RrcSAyOjMu_!!6000000002165-54-tps-60-60.apng" loading="lazy"/></div><div class="ai-assistant-brand-logo-tooltip "><div class="ai-assistant-logo-tooltip-content">AI 助理</div></div></div></a><button class="_174801eef2caf75aeaee91c72b19c09a_item c017bf0be22012eb313124a5a5408d0f_button"><i class="ee52067fb65534cb06d3b35f654f5441_icon ddd10ed9ffa4788f54781e516c4c6560-intl"></i></button><button class="_174801eef2caf75aeaee91c72b19c09a_item"><i class="ee52067fb65534cb06d3b35f654f5441_icon ddd10ed9ffa4788f54781e516c4c6560-contact f9c0581c7b0803efa9027b0f2d228294_icon"></i></button><a class="_174801eef2caf75aeaee91c72b19c09a_item" href="https://help.aliyun.com/" target="_blank" data-spm="d_quick_access_3">文档</a><a class="_174801eef2caf75aeaee91c72b19c09a_item" href="https://beian.aliyun.com/" target="_blank" data-spm="d_quick_access_4">备案</a><a class="_174801eef2caf75aeaee91c72b19c09a_item" href="https://home.console.aliyun.com/home/dashboard/ProductAndService" target="_blank" data-spm="d_quick_access_5" rel="nofollow">控制台</a><span class="f8312ad103723788906e97b238dccd8c_loading _174801eef2caf75aeaee91c72b19c09a_item"></span></div></header></div><div class="_3bd147f6948a20d6c528ac898ad4ba47_mobile de5ef2fee09ebcb2b1dcaf0c982523bc_theme _277ebb348812c9712fac6b680ad5e513_reset _277ebb348812c9712fac6b680ad5e513_aliyun-font-family"></div><div class="_18a32969382a277c44015217fbc5cb5a_box"></div></div></div></header>
+
+  <div id="app"><div class="MainLayout--mainContainer--FzmzeDI" id="docs-container"><div class="MainLayout--helpBodyHead--fFcCOhC"><div class="HelpBodyHead--helpBodyHeadBox--VWOHGv0 help-body-head" data-spm="help-sub-nav"><div class="HelpBodyHead--helpBodyHead--YgG0_RH help-body-head-content"><div class="HelpBodyHead--helpHeadDocName--eZC8orQ"><a href="/zh" data-spm="d_logo">官方文档</a></div><div class="help-tablist"></div><div class="HelpBodyHead--bodyHeadRight--mgSoj67"></div></div><div class="HelpBodyHead--productList--YJ9ism5" style="display:none"><div class="ProductList--allProducts--Z87vhzs"><div class="ProductList--allProductsHead--l2aMmm6"><div class="ProductList--allProductsSearchWrapper--PgTrGTl"><div class="ProductList--allProductsSearch--edTNjmr"><span role="img" class="Icon--icon--jErARdR ProductList--searchIcon--NrFYKki"><svg width="1em" height="1em" viewBox="0 0 32 32" focusable="false" color="currentColor" fill="currentColor" class="" data-icon="document-search"><g fill-rule="evenodd" stroke-width="1"><path d="M19,3 L27,11 L27,29 L5,29 L5,3 L19,3 Z M18,5 L7,5 L7,27 L25,27 L25,12 L18,12 L18,5 Z M20,6.82842636 L20,10 L23.1715736,10 L20,6.82842636 Z"></path><path d="M15.5,13.5 C16.8806419,13.5 18.0591358,13.9881726 19.0354815,14.9645178 C20.0118272,15.9408637 20.5,17.1193577 20.5,18.5 C20.5,19.5346034 20.2258676,20.4556918 19.6776028,21.2632651 L22.1636839,23.7493687 L20.749464,25.1635761 L18.2634125,22.6775026 C17.4558048,23.2258342 16.5346673,23.5 15.5,23.5 C14.1193581,23.5 12.9408642,23.0118272 11.9645183,22.0354815 C10.9881728,21.0591364 10.5,19.8806426 10.5,18.5 C10.5,17.1193576 10.9881728,15.9408636 11.9645183,14.9645181 C12.9408638,13.9881727 14.1193577,13.5 15.5,13.5 Z M15.5,15.5 C14.6716423,15.5 13.9645529,15.7929106 13.3787317,16.3787317 C12.7929106,16.9645527 12.5,17.6716421 12.5,18.5 C12.5,19.3283571 12.7929105,20.0354462 13.3787315,20.6212673 C13.964553,21.2070891 14.6716425,21.5 15.5,21.5 C16.3283577,21.5 17.0354471,21.2070891 17.6212683,20.6212673 C18.2070894,20.0354462 18.5,19.3283571 18.5,18.5 C18.5,17.6716421 18.2070894,16.9645526 17.6212683,16.3787315 C17.0354471,15.7929105 16.3283577,15.5 15.5,15.5 Z"></path></g></svg></span><input placeholder="输入文档关键字查找"></div></div></div><div class="ProductList--allProductsBody--jNYsZlh"></div></div></div></div></div><div class="PcLayout--docsContainer--pwbB9bE"><div class="PcLayout--mobileHelpBodyHead--g_YCRMg"><div class="HelpBodyHead--mobileHeadBlank--_hX8BWJ"></div></div><div class="PcLayout--aliyunAppLayout--_QE36ni"><nav class="aliyun-docs-menu" id="aliyun-docs-menu"><div class="Menu--helpMenuBox--WZ7MX3B" id="help-menu-box" style="width:300px"><div class="Menu--helpMenuInnerBox--kxSXymh aliyun-docs-toc-content" style="width:300px"><div class="Menu--helpMenuDrag--fs9WrRe help-menu-drag-box"></div><div class="Menu--helpMenu--reWzeMt"><div class="help-menu-subproduct"><div class="help-subproduct-container"></div></div><div class="MenuSearch--collapseActionBar--m98Zp_n"><div class="MenuSearch--searchContainer--yxqXL6w"><div class="MenuSearch--searchInputWrapper--xJnk941"><span role="img" class="Icon--icon--jErARdR MenuSearch--searchIcon--YWpGKq9"><svg width="1em" height="1em" viewBox="0 0 32 32" focusable="false" color="currentColor" fill="currentColor" class="" data-icon="document-search"><g fill-rule="evenodd" stroke-width="1"><path d="M19,3 L27,11 L27,29 L5,29 L5,3 L19,3 Z M18,5 L7,5 L7,27 L25,27 L25,12 L18,12 L18,5 Z M20,6.82842636 L20,10 L23.1715736,10 L20,6.82842636 Z"></path><path d="M15.5,13.5 C16.8806419,13.5 18.0591358,13.9881726 19.0354815,14.9645178 C20.0118272,15.9408637 20.5,17.1193577 20.5,18.5 C20.5,19.5346034 20.2258676,20.4556918 19.6776028,21.2632651 L22.1636839,23.7493687 L20.749464,25.1635761 L18.2634125,22.6775026 C17.4558048,23.2258342 16.5346673,23.5 15.5,23.5 C14.1193581,23.5 12.9408642,23.0118272 11.9645183,22.0354815 C10.9881728,21.0591364 10.5,19.8806426 10.5,18.5 C10.5,17.1193576 10.9881728,15.9408636 11.9645183,14.9645181 C12.9408638,13.9881727 14.1193577,13.5 15.5,13.5 Z M15.5,15.5 C14.6716423,15.5 13.9645529,15.7929106 13.3787317,16.3787317 C12.7929106,16.9645527 12.5,17.6716421 12.5,18.5 C12.5,19.3283571 12.7929105,20.0354462 13.3787315,20.6212673 C13.964553,21.2070891 14.6716425,21.5 15.5,21.5 C16.3283577,21.5 17.0354471,21.2070891 17.6212683,20.6212673 C18.2070894,20.0354462 18.5,19.3283571 18.5,18.5 C18.5,17.6716421 18.2070894,16.9645526 17.6212683,16.3787315 C17.0354471,15.7929105 16.3283577,15.5 15.5,15.5 Z"></path></g></svg></span><input placeholder="在目录中筛选" class="MenuSearch--searchInput--vYXA7NN"></div></div></div><div class="help-menu-scroll-container Menu--menuContent--f6GC88t" data-spm="help-menu-undefined"><ul id="common-menu-container">
+ <li id="3033349" class="Menu--level1--UN3zYr3">
+<a href="/zh/lingma/qodercli-cn/product-overview/">
+<i class="iconfont icon-close-arrow"></i>
+<span class="Menu--menuItemText--a6B4ZGH">产品概述</span>
+</a>
+</li>
+ <li id="3033319" class="Menu--level1--UN3zYr3">
+<a href="/zh/lingma/qodercli-cn/user-guide/">
+<i class="iconfont icon-close-arrow"></i>
+<span class="Menu--menuItemText--a6B4ZGH">操作指南</span>
+</a>
+</li>
+</ul></div></div></div></div></nav><main class="aliyun-docs-view" id="aliyun-docs-view"><div class="ProductDetail--contentWrapper--iCunrBZ"><section class="aliyun-docs-content" style="height:auto"><header class="aliyun-docs-view-header"><div class="Header--topBar--LXfTLL5"><div class="BreadCrumb--breadcrumb--s_Uzlex"><div class="help-header-breadcrumb"><a href="/zh">首页</a></div></div></div><div class="Header--title--iTk2tUo"><h1>插件</h1><div class="Header--actionBar--dvzFYrk"><div class="Header--left--x8TGxDL"><span class="Header--updateTime--YXGPhcZ">更新时间：</span></div><div class="Header--right--l4TSW1E"><span class="Header--copyButtonWrapper--LDbniON"><span class="CopyAsMarkdown--copyButton--SVGoWIG"><span role="img" class="Icon--icon--jErARdR"><svg width="1em" height="1em" viewBox="0 0 32 32" focusable="false" color="currentColor" fill="currentColor" class="" data-icon="copy"><g fill-rule="evenodd" stroke-width="1"><polygon fill-rule="nonzero" points="8 6.80000019 8 4 28 4 28 24 25 24 25 22 26 22 26 6 10 6 10 6.80000019"></polygon><path d="M24,8 L24,28 L4,28 L4,8 L24,8 Z M22,10 L6,10 L6,26 L22,26 L22,10 Z"></path></g></svg></span>复制 MD 格式</span></span><div class="Header--linkButton--LpCRs1O"><div class="OuterUrl--outUrl--ZFzJIhk"><a href="https://lingma.aliyun.com/" target="_blank" rel="noreferrer">产品详情</a></div></div><div class="Contact--contactButton--TBwTX5R"><span class="Contact--favoritesBtn--J8mRVBp" title="收藏本文档" data-spm-click="gostr=/aliyun;locaid=collect"><i class="help-iconfont help-icon-like"></i></span><a href="/my_favorites.html">我的收藏</a></div></div></div></div></header><div class="pc-markdown-container unionContainer" id="pc-markdown-container"><div class="markdown-body"><div lang="zh" class="icms-help-docs-content">
+
+  <main id="main-plugin">
+    
+    
+    <p id="p-shortdesc-plugin" data-tag="shortdesc" class="shortdesc">插件（Plugin）是 Qoder CN CLI 中将命令、子 Agent、Skill、Hook、MCP server 等扩展能力打包成一个目录，便于安装、启用与共享的机制。一个插件目录可以包含一个或多个扩展资源，安装后这些资源会被 CLI 自动发现并加载。</p>
+    <div id="body-plugin" data-tag="body" class="body">
+      <section id="sec-plugin-quickstart" class="section">
+        <h2 id="h2-plugin-quickstart">快速开始</h2>
+        <p id="p-plugin-qs-intro">下面创建一个仅包含一个 Skill 的最小插件，并以本地目录形式安装。</p>
+        <h3 id="h3-plugin-qs-1">1. 创建插件目录</h3><pre outputclass="nohighlight" data-tag="codeblock" code-type="xCode" id="7afa2580c4ye6" class="pre codeblock nohighlight"><code>mkdir -p ~/my-plugin/.qoder-plugin
+mkdir -p ~/my-plugin/skills/hello</code></pre>
+        <h3 id="h3-plugin-qs-2">2. 编写 manifest</h3>
+        <p id="p-plugin-qs-2-intro">推荐每个插件都声明 <code data-tag="inlineCode" id="4634f4dea8cgq" class="inlineCode">plugin.json</code>，至少包含 <code data-tag="inlineCode" id="88acd6ebf20v8" class="inlineCode">name</code> 字段，以获得稳定的元信息（详见后文 manifest 字段章节）：</p>
+        <p id="p-plugin-qs-2-path"><code data-tag="inlineCode" id="aad87fc121ov3" class="inlineCode">~/my-plugin/.qoder-plugin/plugin.json</code>：</p><pre outputclass="nohighlight" data-tag="codeblock" code-type="xCode" id="64e2c3821d47i" class="pre codeblock nohighlight"><code>{
+  "name": "my-plugin",
+  "version": "0.1.0",
+  "description": "我的第一个插件"
+}</code></pre>
+        <h3 id="h3-plugin-qs-3">3. 添加一个 Skill</h3>
+        <p id="p-plugin-qs-3-path"><code data-tag="inlineCode" id="6ba8e57c1d40x" class="inlineCode">~/my-plugin/skills/hello/SKILL.md</code>：</p><pre outputclass="nohighlight" data-tag="codeblock" code-type="xCode" id="006ad229db8fl" class="pre codeblock nohighlight"><code>---
+name: hello
+description: 打个招呼。当用户说"打招呼"时使用。
+---
+
+# Hello Skill
+
+向用户友好地打个招呼。</code></pre>
+        <h3 id="h3-plugin-qs-4">4. 安装</h3><pre outputclass="nohighlight" data-tag="codeblock" code-type="xCode" id="7c49630e40lia" class="pre codeblock nohighlight"><code>qoderclicn plugins install ~/my-plugin</code></pre>
+        <p id="p-plugin-qs-4-note">输出 <code data-tag="inlineCode" id="0583c61991ugw" class="inlineCode">Plugin "my-plugin@local" installed successfully. Run /plugins reload to apply.</code> 后，重启 CLI 或在 TUI 中执行 <code data-tag="inlineCode" id="ec24ba142epd2" class="inlineCode">/plugins reload</code>，即可使用插件提供的 Skill。</p>
+      </section>
+      <section id="sec-plugin-layout" class="section">
+        <h2 id="h2-plugin-layout">插件目录结构</h2>
+        <p id="p-plugin-layout-intro"><code data-tag="inlineCode" id="5133abfb90qfb" class="inlineCode">.qoder-plugin/plugin.json</code> 是 Qoder 推荐的 manifest 位置；如未声明，CLI 会按约定加载并把目录名作为插件名。约定目录<b>有则加载，无则忽略</b>。</p><pre outputclass="nohighlight" data-tag="codeblock" code-type="xCode" id="3b9266add5oez" class="pre codeblock nohighlight"><code>my-plugin/
+├── .qoder-plugin/
+│   └── plugin.json        # 推荐：manifest（声明 name/version 等元信息）
+├── commands/              # 自定义命令（.md 文件或子目录）
+├── agents/                # 自定义子 Agent
+├── skills/                # 自定义 Skill
+├── hooks/
+│   └── hooks.json         # Hook 配置
+├── output-styles/         # 输出样式
+├── bin/                   # 插件可执行文件
+└── .mcp.json              # 插件附带的 MCP server 声明</code></pre>
+        <p id="p-plugin-layout-outro">约定目录的行为说明：</p>
+        <table id="table-plugin-layout" tablewidth="799" tablecolswidth="266 533" autofit="false" class="table">
+          <colgroup colwidth="0.67*" style="width:33.29%"></colgroup>
+          <colgroup colwidth="1.34*" style="width:66.71%"></colgroup>
+          <tbody class="tbody">
+            <tr id="590bf696e6mt9">
+              <td id="a9ec5950dddxq" rowspan="1" colspan="1">
+                <p id="0ff0c99f07kod"><span style="background-color:rgb(229, 229, 229)">目录 / 文件</span></p>
+              </td>
+              <td id="881ef60a741za" rowspan="1" colspan="1">
+                <p id="6fbb78869bz2b"><span style="background-color:rgb(229, 229, 229)">用途</span></p>
+              </td>
+            </tr>
+            <tr id="f6538e4d8b5ee">
+              <td id="c57175b6b7g80" rowspan="1" colspan="1">
+                <p id="f1af705610fl2"><code data-tag="inlineCode" id="3aefd010e1bzo" class="inlineCode">commands/</code></p>
+              </td>
+              <td id="a084792d70c5a" rowspan="1" colspan="1">
+                <p id="7842b8a559iqa">注册自定义斜杠命令，结构与 <code data-tag="inlineCode" id="d2c2af13db1zb" class="inlineCode">~/.qoder-cn/commands/</code> 一致</p>
+              </td>
+            </tr>
+            <tr id="937f56f7f0w87">
+              <td id="71e95d99fdevc" rowspan="1" colspan="1">
+                <p id="7955c44280qx0"><code data-tag="inlineCode" id="cd98ce1136qrc" class="inlineCode">agents/</code></p>
+              </td>
+              <td id="882be80c80aq9" rowspan="1" colspan="1">
+                <p id="c487ce1a25sht">注册自定义子 Agent</p>
+              </td>
+            </tr>
+            <tr id="a6fb42578a688">
+              <td id="1dfa6a920bqa0" rowspan="1" colspan="1">
+                <p id="fc3571311ewh4"><code data-tag="inlineCode" id="c14d60f21318f" class="inlineCode">skills/</code></p>
+              </td>
+              <td id="ccd1db45e7lal" rowspan="1" colspan="1">
+                <p id="947c1b088bqxr">注册 Skill，结构与 <code data-tag="inlineCode" id="0057037ea58vo" class="inlineCode">~/.qoder-cn/skills/</code> 一致</p>
+              </td>
+            </tr>
+            <tr id="f5aac55660zf2">
+              <td id="c4af97625aksh" rowspan="1" colspan="1">
+                <p id="2eff8c682ezbw"><code data-tag="inlineCode" id="fd6ba777a1tqk" class="inlineCode">hooks/hooks.json</code></p>
+              </td>
+              <td id="1d92d8620eotj" rowspan="1" colspan="1">
+                <p id="bf057b0477ows">提供 Hook 配置；使用 <code data-tag="inlineCode" id="3dd14715cda7q" class="inlineCode">{ "hooks": ... }</code> 包裹格式，其中 <code data-tag="inlineCode" id="c635e479bc0fw" class="inlineCode">hooks</code> 字段的值与 <code data-tag="inlineCode" id="98a26c1736p42" class="inlineCode">settings.json</code> 的 <code data-tag="inlineCode" id="c421520ac6gue" class="inlineCode">hooks</code> 字段一致</p>
+              </td>
+            </tr>
+            <tr id="c73ffa252b1ms">
+              <td id="05328e9a883qa" rowspan="1" colspan="1">
+                <p id="a8e11faa025zi"><code data-tag="inlineCode" id="d9f0d1bd2a228" class="inlineCode">output-styles/</code></p>
+              </td>
+              <td id="5b98664dc1l0v" rowspan="1" colspan="1">
+                <p id="f28476953bic3">提供自定义输出样式</p>
+              </td>
+            </tr>
+            <tr id="9f975cb80b2k1">
+              <td id="88dadc2809glt" rowspan="1" colspan="1">
+                <p id="f98cb7a13c0th"><code data-tag="inlineCode" id="249110b971nwe" class="inlineCode">bin/</code></p>
+              </td>
+              <td id="59eca7cb6481n" rowspan="1" colspan="1">
+                <p id="e5fea97634ra6">插件提供的可执行文件</p>
+              </td>
+            </tr>
+            <tr id="2100d191fbrsm">
+              <td id="9ddde562dcpyy" rowspan="1" colspan="1">
+                <p id="13280d4864r0n"><code data-tag="inlineCode" id="bc8d03a240jp0" class="inlineCode">.mcp.json</code></p>
+              </td>
+              <td id="251707169cj7a" rowspan="1" colspan="1">
+                <p id="4d24947593jzt">插件附带的 MCP server 声明</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p id="p-plugin-layout-agent">插件里的 <code data-tag="inlineCode" id="a8d43d615easb" class="inlineCode">agents/</code> 也可以声明 <code data-tag="inlineCode" id="ef6175cd69cnl" class="inlineCode">isolation: worktree</code>，适合发布需要隔离执行的实现类 Subagent。</p>
+      </section>
+      <section id="sec-plugin-manifest" class="section">
+        <h2 id="h2-plugin-manifest">manifest 字段</h2>
+        <p id="p-plugin-manifest-intro"><code data-tag="inlineCode" id="eb0906ffcddcl" class="inlineCode">plugin.json</code> 仅 <code data-tag="inlineCode" id="ba333767ff5j4" class="inlineCode">name</code> 必填，其余字段均可省略。</p>
+        <table id="table-plugin-manifest" tablewidth="798" tablecolswidth="177 88 533" autofit="false" class="table">
+          <colgroup colwidth="0.67*" style="width:22.18%"></colgroup>
+          <colgroup colwidth="0.33*" style="width:11.03%"></colgroup>
+          <colgroup colwidth="2*" style="width:66.79%"></colgroup>
+          <tbody class="tbody">
+            <tr id="6bd0ee11e7jyo">
+              <td id="7c8b2fc96a4nl" rowspan="1" colspan="1">
+                <p id="bd6ccc2e5d2tn"><span style="background-color:rgb(229, 229, 229)">字段</span></p>
+              </td>
+              <td id="4aaab9f274110" rowspan="1" colspan="1">
+                <p id="93fcfc7533vxx"><span style="background-color:rgb(229, 229, 229)">必填</span></p>
+              </td>
+              <td id="365c7ad756dl9" rowspan="1" colspan="1">
+                <p id="5f9d33eb542us"><span style="background-color:rgb(229, 229, 229)">说明</span></p>
+              </td>
+            </tr>
+            <tr id="26f54de50coj3">
+              <td id="9ad8ccd0660ng" rowspan="1" colspan="1">
+                <p id="dd115ac80cuxp"><code data-tag="inlineCode" id="86c3175438mw3" class="inlineCode">name</code></p>
+              </td>
+              <td id="dbcc490ebf4ip" rowspan="1" colspan="1">
+                <p id="463e4829fd9ht">是</p>
+              </td>
+              <td id="61d4b02f6b66l" rowspan="1" colspan="1">
+                <p id="b11f8d01f9fuf">插件唯一标识；不能包含空格，建议使用 kebab-case（如 <code data-tag="inlineCode" id="0a62ddc2895f8" class="inlineCode">my-plugin</code>）</p>
+              </td>
+            </tr>
+            <tr id="06795549be4zt">
+              <td id="13930c53a8476" rowspan="1" colspan="1">
+                <p id="84d9e1053f4vx"><code data-tag="inlineCode" id="9dab84068djcw" class="inlineCode">version</code></p>
+              </td>
+              <td id="31c9dedfe9ksv" rowspan="1" colspan="1">
+                <p id="4c51bdf77drf9">否</p>
+              </td>
+              <td id="3565112c9ezpt" rowspan="1" colspan="1">
+                <p id="d4692acbb79hq">语义化版本号（如 <code data-tag="inlineCode" id="6fc1776d9fe9h" class="inlineCode">1.0.0</code>）</p>
+              </td>
+            </tr>
+            <tr id="06e746dfa9nsy">
+              <td id="8b8af619edbcx" rowspan="1" colspan="1">
+                <p id="eafd0a4fb4jfc"><code data-tag="inlineCode" id="b1901098617mc" class="inlineCode">description</code></p>
+              </td>
+              <td id="e1605b5c0d3tj" rowspan="1" colspan="1">
+                <p id="b5bc3bf5429sy">否</p>
+              </td>
+              <td id="5e3f294abcu65" rowspan="1" colspan="1">
+                <p id="b093be493daz2">简短描述</p>
+              </td>
+            </tr>
+            <tr id="b5cf371c01my6">
+              <td id="5744c0e234i9w" rowspan="1" colspan="1">
+                <p id="45165e481d0ir"><code data-tag="inlineCode" id="e5209af89f8bt" class="inlineCode">author</code></p>
+              </td>
+              <td id="dde0186beaqwe" rowspan="1" colspan="1">
+                <p id="7e1806c74abj9">否</p>
+              </td>
+              <td id="4d8c39842e3iv" rowspan="1" colspan="1">
+                <p id="1eae24da6blsn">作者信息</p>
+              </td>
+            </tr>
+            <tr id="7a95327af4vu2">
+              <td id="6254e598c7mm9" rowspan="1" colspan="1">
+                <p id="a93719125ejmb"><code data-tag="inlineCode" id="60bccd237aeyu" class="inlineCode">homepage</code></p>
+              </td>
+              <td id="2de9831aban4b" rowspan="1" colspan="1">
+                <p id="81a6a414687rz">否</p>
+              </td>
+              <td id="975bb09c46lz5" rowspan="1" colspan="1">
+                <p id="c9115be7018r3">文档或主页 URL</p>
+              </td>
+            </tr>
+            <tr id="8e0fa4a7b3z32">
+              <td id="4387358d9f7zh" rowspan="1" colspan="1">
+                <p id="535d29cc81gbi"><code data-tag="inlineCode" id="079d3cef78cvy" class="inlineCode">repository</code></p>
+              </td>
+              <td id="16ddfb56eb3we" rowspan="1" colspan="1">
+                <p id="b518323938oxn">否</p>
+              </td>
+              <td id="4e6e893ab4pgf" rowspan="1" colspan="1">
+                <p id="69353bc9cb3af">源码仓库 URL</p>
+              </td>
+            </tr>
+            <tr id="f53b4758c9wjy">
+              <td id="be40670ae5tqt" rowspan="1" colspan="1">
+                <p id="3bff2a2459mir"><code data-tag="inlineCode" id="80d6447ea0xpk" class="inlineCode">license</code></p>
+              </td>
+              <td id="31f3037d2dk7n" rowspan="1" colspan="1">
+                <p id="79eb403441geb">否</p>
+              </td>
+              <td id="cc95e44f8bkmt" rowspan="1" colspan="1">
+                <p id="77f0cf11f7an3">SPDX license 标识（如 <code data-tag="inlineCode" id="ec055f30aaxxr" class="inlineCode">MIT</code>）</p>
+              </td>
+            </tr>
+            <tr id="d8f6aed69bn5z">
+              <td id="977a2b15d8sl9" rowspan="1" colspan="1">
+                <p id="fe732a2590qkd"><code data-tag="inlineCode" id="eae4b34ca4wln" class="inlineCode">keywords</code></p>
+              </td>
+              <td id="24022a8902d5c" rowspan="1" colspan="1">
+                <p id="b4a03e43f8tb5">否</p>
+              </td>
+              <td id="5c658ba072phw" rowspan="1" colspan="1">
+                <p id="664600a2d2zth">用于发现和分类的标签数组</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p id="p-plugin-manifest-advanced">进阶：manifest 还支持显式声明 <code data-tag="inlineCode" id="bc98206be34s3" class="inlineCode">commands</code> / <code data-tag="inlineCode" id="6a0a582a4e0tr" class="inlineCode">agents</code> / <code data-tag="inlineCode" id="89fe279172hs2" class="inlineCode">skills</code> / <code data-tag="inlineCode" id="5649adccc562v" class="inlineCode">hooks</code> / <code data-tag="inlineCode" id="3ac3aa74c8p3a" class="inlineCode">outputStyles</code> 等字段，用于覆盖默认的目录约定或使用内联内容（注意 manifest 字段使用驼峰命名 <code data-tag="inlineCode" id="40380a7c9c57i" class="inlineCode">outputStyles</code>，对应的约定目录仍是 <code data-tag="inlineCode" id="9e6fc6829dmb5" class="inlineCode">output-styles/</code>）。如不显式声明，CLI 会按上一节的目录约定自动发现。</p>
+      </section>
+      <section id="sec-plugin-scope" class="section">
+        <h2 id="h2-plugin-scope">安装作用域</h2>
+        <p id="p-plugin-scope-intro">插件可以安装到三个作用域：</p>
+        <table id="table-plugin-scope" tablewidth="798" tablecolswidth="145 363 290" autofit="false" class="table">
+          <colgroup colwidth="0.55*" style="width:18.17%"></colgroup>
+          <colgroup colwidth="1.36*" style="width:45.49%"></colgroup>
+          <colgroup colwidth="1.09*" style="width:36.34%"></colgroup>
+          <tbody class="tbody">
+            <tr id="48137e72461ed">
+              <td id="f830574ac88kz" rowspan="1" colspan="1">
+                <p id="e5d4f510962r6"><span style="background-color:rgb(229, 229, 229)">作用域</span></p>
+              </td>
+              <td id="e0c8e7c1158oq" rowspan="1" colspan="1">
+                <p id="a95429758dhan"><span style="background-color:rgb(229, 229, 229)">说明</span></p>
+              </td>
+              <td id="a71ff7e142p30" rowspan="1" colspan="1">
+                <p id="01eebbae39a5e"><span style="background-color:rgb(229, 229, 229)">适用场景</span></p>
+              </td>
+            </tr>
+            <tr id="f6905fc834hxn">
+              <td id="3a694de847wn5" rowspan="1" colspan="1">
+                <p id="da87d569edhql"><code data-tag="inlineCode" id="4b3d30e58ewvn" class="inlineCode">user</code></p>
+              </td>
+              <td id="5644eab292krx" rowspan="1" colspan="1">
+                <p id="320bbba124qf9">全局可用，对当前用户的所有项目生效（默认）</p>
+              </td>
+              <td id="ab92acc9dbki4" rowspan="1" colspan="1">
+                <p id="2a2788bf8egun">个人常用插件</p>
+              </td>
+            </tr>
+            <tr id="001160e8a4f11">
+              <td id="4779334316tco" rowspan="1" colspan="1">
+                <p id="751787a7c5vbd"><code data-tag="inlineCode" id="287620a5abl0g" class="inlineCode">project</code></p>
+              </td>
+              <td id="0b1601e1628p0" rowspan="1" colspan="1">
+                <p id="dfa457378besx">仅在当前项目生效，配置写入项目级 <code data-tag="inlineCode" id="1c63bd7766xgo" class="inlineCode">settings.json</code>，可提交 git 与团队共享</p>
+              </td>
+              <td id="d0356950e7wud" rowspan="1" colspan="1">
+                <p id="6699af4f3adrb">团队共享的项目专属插件</p>
+              </td>
+            </tr>
+            <tr id="6b9ebdb417bu2">
+              <td id="1bf044ed922b8" rowspan="1" colspan="1">
+                <p id="000d1e4bde5bx"><code data-tag="inlineCode" id="d2d68ddcc6152" class="inlineCode">local</code></p>
+              </td>
+              <td id="1dfdea4f99o24" rowspan="1" colspan="1">
+                <p id="238d64a9e2z6d">仅在当前项目生效，配置写入项目级 <code data-tag="inlineCode" id="d3c1ac17f842b" class="inlineCode">settings.local.json</code>，建议加到 <code data-tag="inlineCode" id="71810d9b06tuq" class="inlineCode">.gitignore</code></p>
+              </td>
+              <td id="22ea019176ero" rowspan="1" colspan="1">
+                <p id="c38dbe0d98j09">本地实验性插件</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="sec-plugin-cmd" class="section">
+        <h2 id="h2-plugin-cmd">命令</h2>
+        <p id="p-plugin-cmd-intro">插件相关命令位于 <code data-tag="inlineCode" id="1f9caea519270" class="inlineCode">qoderclicn plugins</code> 子命令组下，别名为 <code data-tag="inlineCode" id="72e5c48eaajnm" class="inlineCode">plugin</code>。</p>
+        <h3 id="h3-plugin-cmd-install">安装：plugins install</h3>
+        <p id="p-plugin-cmd-install-intro">从本地目录路径安装插件：</p><pre outputclass="nohighlight" data-tag="codeblock" code-type="xCode" id="14ac378da4ure" class="pre codeblock nohighlight"><code>qoderclicn plugins install ~/my-plugin
+qoderclicn plugins install ./relative/path/to/plugin
+qoderclicn plugins install /abs/path/to/plugin --scope project</code></pre>
+        <table id="table-plugin-cmd-install" tablewidth="700" tablecolswidth="175 525" autofit="false" class="table">
+          <colgroup colwidth="0.5*" style="width:25.00%"></colgroup>
+          <colgroup colwidth="1.5*" style="width:75.00%"></colgroup>
+          <tbody class="tbody">
+            <tr id="32234b55a0cq3">
+              <td id="f9b2cd8b96h13" rowspan="1" colspan="1">
+                <p id="e7c7ead1eeue0"><span style="background-color:rgb(229, 229, 229)">参数 / 选项</span></p>
+              </td>
+              <td id="e7925505a2qbm" rowspan="1" colspan="1">
+                <p id="298efb6090v48"><span style="background-color:rgb(229, 229, 229)">说明</span></p>
+              </td>
+            </tr>
+            <tr id="b9242f4287549">
+              <td id="e200b7b0b5qj4" rowspan="1" colspan="1">
+                <p id="3629861913xtc"><code data-tag="inlineCode" id="7109a510d6lvg" class="inlineCode">&lt;plugin&gt;</code></p>
+              </td>
+              <td id="7e43cc058drbq" rowspan="1" colspan="1">
+                <p id="2de0ed7f17d29">本地插件目录路径（绝对路径、相对路径或 <code data-tag="inlineCode" id="a89d8e6738zui" class="inlineCode">~/...</code> 均可）</p>
+              </td>
+            </tr>
+            <tr id="0aafc0033adsg">
+              <td id="1830cc9606khw" rowspan="1" colspan="1">
+                <p id="4c4b3bd53eyub"><code data-tag="inlineCode" id="63e08ce7dd8cc" class="inlineCode">-s, --scope &lt;scope&gt;</code></p>
+              </td>
+              <td id="a75d90a3657yz" rowspan="1" colspan="1">
+                <p id="2a3f3aa548pum">安装作用域：<code data-tag="inlineCode" id="36766f2b3crkc" class="inlineCode">user</code>（默认）、<code data-tag="inlineCode" id="83f3179f3e7li" class="inlineCode">project</code>、<code data-tag="inlineCode" id="841d8816d5wo1" class="inlineCode">local</code></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p id="p-plugin-cmd-install-note">安装后建议重启 CLI 或在 TUI 中执行 <code data-tag="inlineCode" id="dd91585936hf0" class="inlineCode">/plugins reload</code> 让变更生效。</p>
+        <h3 id="h3-plugin-cmd-uninstall">卸载：plugins uninstall</h3><pre outputclass="nohighlight" data-tag="codeblock" code-type="xCode" id="77e7d7759dgug" class="pre codeblock nohighlight"><code>qoderclicn plugins uninstall my-plugin
+qoderclicn plugins uninstall my-plugin --scope project --keep-data</code></pre>
+        <p id="p-plugin-cmd-uninstall-alias">别名：<code data-tag="inlineCode" id="918081b96eb9c" class="inlineCode">remove</code> / <code data-tag="inlineCode" id="a8e911470ah0a" class="inlineCode">rm</code>。</p>
+        <table id="table-plugin-cmd-uninstall" tablewidth="700" tablecolswidth="175 525" autofit="false" class="table">
+          <colgroup colwidth="0.5*" style="width:25.00%"></colgroup>
+          <colgroup colwidth="1.5*" style="width:75.00%"></colgroup>
+          <tbody class="tbody">
+            <tr id="18f39909eaa8g">
+              <td id="c039b4475dxl2" rowspan="1" colspan="1">
+                <p id="3015da11ae3w1"><span style="background-color:rgb(229, 229, 229)">参数 / 选项</span></p>
+              </td>
+              <td id="cfaa088dearsk" rowspan="1" colspan="1">
+                <p id="052accabe06xy"><span style="background-color:rgb(229, 229, 229)">说明</span></p>
+              </td>
+            </tr>
+            <tr id="edcfa50a5f43n">
+              <td id="bfbbdbd9a1re6" rowspan="1" colspan="1">
+                <p id="01fc1792f6mj1"><code data-tag="inlineCode" id="a6445b9cacmts" class="inlineCode">&lt;plugin&gt;</code></p>
+              </td>
+              <td id="fffd46af9fl2q" rowspan="1" colspan="1">
+                <p id="f419f44d18d21">已安装插件名</p>
+              </td>
+            </tr>
+            <tr id="d13650c4a71ko">
+              <td id="297cd12efed98" rowspan="1" colspan="1">
+                <p id="54ec586a04mth"><code data-tag="inlineCode" id="01f3af40116f8" class="inlineCode">-s, --scope &lt;scope&gt;</code></p>
+              </td>
+              <td id="bfabd01ee33xz" rowspan="1" colspan="1">
+                <p id="43be799319ngm">卸载来源的作用域：<code data-tag="inlineCode" id="e605681a92nqg" class="inlineCode">user</code>（默认）、<code data-tag="inlineCode" id="d9c93a93a1t4j" class="inlineCode">project</code>、<code data-tag="inlineCode" id="68127a82525vr" class="inlineCode">local</code></p>
+              </td>
+            </tr>
+            <tr id="aa4fde20e3dtl">
+              <td id="20a4084901qke" rowspan="1" colspan="1">
+                <p id="8100842d05lo9"><code data-tag="inlineCode" id="8c3131fcf8tpl" class="inlineCode">--keep-data</code></p>
+              </td>
+              <td id="9e93e9f096qvn" rowspan="1" colspan="1">
+                <p id="e20a71570aiyd">保留插件的数据目录</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h3 id="h3-plugin-cmd-enable">启用 / 禁用：plugins enable / plugins disable</h3><pre outputclass="nohighlight" data-tag="codeblock" code-type="xCode" id="d957236c3cjvk" class="pre codeblock nohighlight"><code>qoderclicn plugins enable my-plugin
+qoderclicn plugins disable my-plugin
+qoderclicn plugins enable my-plugin --scope project
+qoderclicn plugins disable --all</code></pre>
+        <table id="table-plugin-cmd-enable" tablewidth="700" tablecolswidth="175 525" autofit="false" class="table">
+          <colgroup colwidth="0.5*" style="width:25.00%"></colgroup>
+          <colgroup colwidth="1.5*" style="width:75.00%"></colgroup>
+          <tbody class="tbody">
+            <tr id="929ba99b71xkw">
+              <td id="678bf1fdf0k3c" rowspan="1" colspan="1">
+                <p id="61860bc8fe3l0"><span style="background-color:rgb(229, 229, 229)">参数 / 选项</span></p>
+              </td>
+              <td id="dcd2c7e05drx9" rowspan="1" colspan="1">
+                <p id="422515822dcwp"><span style="background-color:rgb(229, 229, 229)">说明</span></p>
+              </td>
+            </tr>
+            <tr id="4492f560e2fpe">
+              <td id="050ba049b8jxl" rowspan="1" colspan="1">
+                <p id="8941f23020cjn"><code data-tag="inlineCode" id="a36c84c490s3p" class="inlineCode">&lt;plugin&gt;</code></p>
+              </td>
+              <td id="4972228276k84" rowspan="1" colspan="1">
+                <p id="34e11a6459ved">已安装插件名</p>
+              </td>
+            </tr>
+            <tr id="ebfba9cc0eq0m">
+              <td id="0897fb11873pv" rowspan="1" colspan="1">
+                <p id="60dbc7a220n0b"><code data-tag="inlineCode" id="1bb98ceabfhxd" class="inlineCode">-s, --scope &lt;scope&gt;</code></p>
+              </td>
+              <td id="76a69b1901zw8" rowspan="1" colspan="1">
+                <p id="4a20bbda1a686">写入哪个作用域；不填则自动选择</p>
+              </td>
+            </tr>
+            <tr id="73e1a0043f5bn">
+              <td id="5e65f48a06t83" rowspan="1" colspan="1">
+                <p id="5b034595c4fy0"><code data-tag="inlineCode" id="f1cb9c3cf88fk" class="inlineCode">-a, --all</code></p>
+              </td>
+              <td id="020b0aaabfx68" rowspan="1" colspan="1">
+                <p id="56460f4c4dqnw">（仅 <code data-tag="inlineCode" id="96121a2a54v3z" class="inlineCode">disable</code>）一键禁用作用域内所有已启用的插件</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p id="p-plugin-cmd-enable-note">启用 / 禁用通过修改对应作用域 <code data-tag="inlineCode" id="6056ed91c69ke" class="inlineCode">settings.json</code> 中的 <code data-tag="inlineCode" id="701683c53epjk" class="inlineCode">enabledPlugins</code> 字段实现。被禁用的插件不会在新会话中加载。</p>
+        <h3 id="h3-plugin-cmd-list">列出：plugins list</h3><pre outputclass="nohighlight" data-tag="codeblock" code-type="xCode" id="2c3f66a821kn1" class="pre codeblock nohighlight"><code>qoderclicn plugins list
+qoderclicn plugins list --json
+qoderclicn plugins list --plugin-dir ./local-plugins ./more-plugins</code></pre>
+        <table id="table-plugin-cmd-list" tablewidth="699" tablecolswidth="233 466" autofit="false" class="table">
+          <colgroup colwidth="0.67*" style="width:33.33%"></colgroup>
+          <colgroup colwidth="1.34*" style="width:66.67%"></colgroup>
+          <tbody class="tbody">
+            <tr id="b6448556136wc">
+              <td id="1d0fa23a14pcq" rowspan="1" colspan="1">
+                <p id="8f95e1ac3bhtj"><span style="background-color:rgb(229, 229, 229)">选项</span></p>
+              </td>
+              <td id="99025fb42dj6w" rowspan="1" colspan="1">
+                <p id="c0361f2be4c0d"><span style="background-color:rgb(229, 229, 229)">说明</span></p>
+              </td>
+            </tr>
+            <tr id="5fe8724ec9xbc">
+              <td id="63e6ea5d06uwr" rowspan="1" colspan="1">
+                <p id="0158b24542koe"><code data-tag="inlineCode" id="e48ab60bc49dp" class="inlineCode">--json</code></p>
+              </td>
+              <td id="27dd6f8e8b67u" rowspan="1" colspan="1">
+                <p id="d0819dd0ee05b">以 JSON 输出</p>
+              </td>
+            </tr>
+            <tr id="69b7aeee7ak0r">
+              <td id="515e10c26d3nw" rowspan="1" colspan="1">
+                <p id="6f1f1a2c35blr"><code data-tag="inlineCode" id="2add2578874vc" class="inlineCode">-o, --output-format &lt;format&gt;</code></p>
+              </td>
+              <td id="e4534a110deea" rowspan="1" colspan="1">
+                <p id="af17f97de5yxc"><code data-tag="inlineCode" id="0e37410e4ey2p" class="inlineCode">text</code> 或 <code data-tag="inlineCode" id="d2e9bbe8d2vzv" class="inlineCode">json</code>（与 <code data-tag="inlineCode" id="28389e7fd840u" class="inlineCode">--json</code> 等价）</p>
+              </td>
+            </tr>
+            <tr id="0de425de60ru5">
+              <td id="26c4833f68gjg" rowspan="1" colspan="1">
+                <p id="3dd4c8099dxus"><code data-tag="inlineCode" id="52aa8920a082w" class="inlineCode">--plugin-dir &lt;dirs...&gt;</code></p>
+              </td>
+              <td id="73ee9493ac08t" rowspan="1" colspan="1">
+                <p id="7636e7e731r3v">额外扫描这些目录中的插件并合并到列表中（不会自动安装）</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h3 id="h3-plugin-cmd-validate">校验：plugins validate</h3>
+        <p id="p-plugin-cmd-validate-intro">校验本地插件目录的结构是否符合约定，常用于开发期：</p><pre outputclass="nohighlight" data-tag="codeblock" code-type="xCode" id="262be7c60c06l" class="pre codeblock nohighlight"><code>qoderclicn plugins validate ~/my-plugin</code></pre>
+        <p id="p-plugin-cmd-validate-note">校验会列出发现的命令、Skill、Hook 等组件，并在目录下完全没有任何约定子目录时打印一条提示。注意：<code data-tag="inlineCode" id="0bc781eedfupg" class="inlineCode">validate</code> 本身不会因此失败，但 <code data-tag="inlineCode" id="a0b4873c84u6k" class="inlineCode">plugins install</code> 安装本地插件时要求至少包含一个可识别的组件或资源（约定目录或 manifest 中显式声明的资源均可）。</p>
+        <p id="p-plugin-cmd-validate-tip"><b>建议</b>：始终在 <code data-tag="inlineCode" id="c32cb8e642me2" class="inlineCode">.qoder-plugin/plugin.json</code> 中声明 <code data-tag="inlineCode" id="afa8cacc4d7xz" class="inlineCode">name</code>、<code data-tag="inlineCode" id="d1bb12231czof" class="inlineCode">version</code> 等元信息。这是 Qoder 推荐的插件组织方式——否则插件在 <code data-tag="inlineCode" id="984b92a71514c" class="inlineCode">plugins list</code>、<code data-tag="inlineCode" id="88d61856f08q0" class="inlineCode">enabledPlugins</code> 配置等位置只能用目录名作为标识，不利于跨环境识别和共享。</p>
+      </section>
+      <section id="sec-plugin-enabled" class="section">
+        <h2 id="h2-plugin-enabled">配置 enabledPlugins</h2>
+        <p id="p-plugin-enabled-intro">启用 / 禁用状态保存在 <code data-tag="inlineCode" id="86cd4eca18kon" class="inlineCode">settings.json</code> 的 <code data-tag="inlineCode" id="c4c5b914fb0ol" class="inlineCode">enabledPlugins</code> 字段中：</p><pre outputclass="nohighlight" data-tag="codeblock" code-type="xCode" id="71eeca1d71kxw" class="pre codeblock nohighlight"><code>{
+  "enabledPlugins": {
+    "my-plugin@local": true,
+    "another-plugin@local": false
+  }
+}</code></pre>
+        <ul id="ul-plugin-enabled">
+          <li id="d7a51b7f46bp4">
+            <p id="d3f03db591s6r">值为 <code data-tag="inlineCode" id="3a0ddfbc2190i" class="inlineCode">true</code>：启用该插件</p>
+          </li>
+          <li id="2c87ba20f3ipf">
+            <p id="47d6c39f4fjtz">值为 <code data-tag="inlineCode" id="5dff265b6dmr2" class="inlineCode">false</code>：显式禁用该插件</p>
+          </li>
+        </ul>
+        <p id="p-plugin-enabled-note">配置 key 必须与已安装的插件 ID 完全匹配（本地安装的插件 ID 形如 <code data-tag="inlineCode" id="3da8160ab40ri" class="inlineCode">name@local</code>）。可通过 <code data-tag="inlineCode" id="54b113367b03e" class="inlineCode">plugins list</code> 查看每个插件的标识。</p>
+        <p id="p-plugin-enabled-cmd">通过 <code data-tag="inlineCode" id="dde3f74193avq" class="inlineCode">plugins enable</code> / <code data-tag="inlineCode" id="5d14c12c6akfn" class="inlineCode">plugins disable</code> 修改该字段比手工编辑更可靠，因为命令会处理作用域选择、依赖关系等细节。</p>
+      </section>
+      <section id="sec-plugin-hook" class="section">
+        <h2 id="h2-plugin-hook">编写插件 Hook</h2>
+        <p id="p-plugin-hook-intro">插件可以在 <code data-tag="inlineCode" id="8845b0aab2tcn" class="inlineCode">hooks/hooks.json</code> 中声明自身的 Hook。文件使用<b>包裹格式</b>：顶层是一个对象，其中 <code data-tag="inlineCode" id="508328bf4f0vx" class="inlineCode">hooks</code> 字段的值与 <code data-tag="inlineCode" id="bdef158d37wfd" class="inlineCode">settings.json</code> 的 <code data-tag="inlineCode" id="8ad624674cxm1" class="inlineCode">hooks</code> 字段一致：</p><pre outputclass="nohighlight" data-tag="codeblock" code-type="xCode" id="9b33095b27fkv" class="pre codeblock nohighlight"><code>{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${QODER_PLUGIN_ROOT}\"/scripts/check.sh"
+          }
+        ]
+      }
+    ]
+  }
+}</code></pre>
+        <p id="p-plugin-hook-diff">这一点与 <code data-tag="inlineCode" id="e55b15bc56ood" class="inlineCode">settings.json</code> 不同：<code data-tag="inlineCode" id="6cd6f99ab4ehw" class="inlineCode">settings.json</code> 直接写 <code data-tag="inlineCode" id="493658361d8qz" class="inlineCode">hooks</code> 字段；插件的 <code data-tag="inlineCode" id="de8ec9b73daju" class="inlineCode">hooks/hooks.json</code> 需要外层多一层 <code data-tag="inlineCode" id="763bbfb54bqjf" class="inlineCode">{ "hooks": ... }</code> 包裹。</p>
+        <p id="p-plugin-hook-env">插件提供的 Hook 在执行时会额外得到两个环境变量：</p>
+        <table id="table-plugin-hook-env" tablewidth="699" tablecolswidth="233 466" autofit="false" class="table">
+          <colgroup colwidth="0.67*" style="width:33.33%"></colgroup>
+          <colgroup colwidth="1.34*" style="width:66.67%"></colgroup>
+          <tbody class="tbody">
+            <tr id="7ee07d2427ppw">
+              <td id="26c9e16207thd" rowspan="1" colspan="1">
+                <p id="d8095611602o8"><span style="background-color:rgb(229, 229, 229)">环境变量</span></p>
+              </td>
+              <td id="20cc717f613d9" rowspan="1" colspan="1">
+                <p id="fd0e5978473vk"><span style="background-color:rgb(229, 229, 229)">说明</span></p>
+              </td>
+            </tr>
+            <tr id="2923968c06dk4">
+              <td id="0f6995bc5dg0d" rowspan="1" colspan="1">
+                <p id="7a0d6db51f8ni"><code data-tag="inlineCode" id="60bc3ec53fg6g" class="inlineCode">QODER_PLUGIN_ROOT</code></p>
+              </td>
+              <td id="48f69ab540zjl" rowspan="1" colspan="1">
+                <p id="6440e82e59dk5">当前插件的安装根目录</p>
+              </td>
+            </tr>
+            <tr id="6373941f9af4w">
+              <td id="33b8a707feqdb" rowspan="1" colspan="1">
+                <p id="b45eb71dfc7nz"><code data-tag="inlineCode" id="9eaab4778a074" class="inlineCode">QODER_PLUGIN_DATA</code></p>
+              </td>
+              <td id="d8a4239e4c12r" rowspan="1" colspan="1">
+                <p id="cf50487a9djv3">当前插件的数据目录（独立于安装目录，便于跨升级保留状态）</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p id="p-plugin-hook-more">更多 Hook 编写细节见<a href="https://help.aliyun.com/zh/lingma/qodercli-cn/user-guide/hook" id="xref-plugin-hooks" title="" class="xref">钩子</a>。</p>
+      </section>
+    </div>
+  </main>
+
+
+
+
+</div></div><div class="aliyun-docs-pagination"><div class="NextPage--container--cfVcdEE"><span class="NextPage--paginationLeft--WTOmehr"><a href="/zh/lingma/qodercli-cn/user-guide/memory" data-spm-click="gostr=/aliyun;locaid=preDoc"><i class="iconfont icon-prev-arrow"></i>上一篇：记忆</a></span><span class="NextPage--paginationRight--TgS6P1r"><a href="/zh/lingma/qodercli-cn/user-guide/mcp-servers" data-spm-click="gostr=/aliyun;locaid=nextDoc">下一篇：MCP 服务<i class="iconfont icon-next-arrow"></i></a></span></div></div></div><div class="RecommendDoc--container--M1qVQax"></div><div class="FeedbackButton--feedbackContainer--njtB22l aliyun-docs-feedback" id="help-doc-feedback"><div class="FeedbackButton--feedbackHelpTip--JxaBwdy">该文章对您有帮助吗？</div><div class="FeedbackButton--feedbackButtonContainer--ujiXFNJ"><div class="FeedbackButton--feedbackButtonBox--GmY1Nor"><button class="FeedbackButton--iconButton--fx4Xcop"><i class="help-iconfont help-icon-tag-empty"></i></button><button class="FeedbackButton--iconButton--fx4Xcop"><i class="help-iconfont help-icon-tag-empty" style="display:inline-block;transform:rotateX(-180deg)"></i></button><button class="FeedbackButton--clickButton--YxH6n96"><i class="help-iconfont help-icon-bianji"></i>反馈</button></div></div></div></section><div class="aliyun-docs-side" id="aliyun-docs-side"><div id="aliyun-docs-side-content" class="aliyun-docs-side-content ProductDetail--rightBox--GGLE5sH"><ul class="Outline--synopsisBox--zm_HamD" id="outline-container"></ul></div><div id="aliyun-docs-side-blank" class="aliyun-docs-side-blank"></div></div></div></main></div></div><div id="aliyun-docs-selection-div"></div></div></div>
+  <footer><div id="d3f70824d5ebd653022a88a05724eff1"><div class="_18a32969382a277c44015217fbc5cb5a_box"><footer class="_49ada0cd752f65901c49f2eed0d6c3d5_container" aria-label="PC 端页尾"><div class="_49ada0cd752f65901c49f2eed0d6c3d5_inner"><div class="_296d5000d6fdcaff9d0bfd209c64fbbc_services"><nav class="_296d5000d6fdcaff9d0bfd209c64fbbc_homepage-footer-main-services" aria-label="页脚导航"><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">为什么选择阿里云</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/about/what-is-cloud-computing" target="_blank">什么是云计算</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://infrastructure.aliyun.com/" target="_blank">全球基础设施</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/why-us/leading-technology" target="_blank">技术领先</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/why-us/reliability" target="_blank">稳定可靠</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/why-us/security-compliance" target="_blank">安全合规</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/analyst-reports" target="_blank">分析师报告</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">大模型</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/product/tongyi" target="_blank">千问大模型</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://bailian.console.aliyun.com/?tab=model#/model-market" target="_blank" rel="nofollow">大模型服务</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://bailian.console.aliyun.com/app-center?tab=app#/app-center" target="_blank" rel="nofollow">AI应用构建</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">产品和定价</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/product/list" target="_blank">全部产品</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://free.aliyun.com/" target="_blank">免费试用</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/product/news/" target="_blank">产品动态</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/price/detail" target="_blank">产品定价</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/price/cpq/list" target="_blank">配置报价器</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/price/cost-management" target="_blank">云上成本管理</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">技术内容</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/solution/tech-solution" target="_blank">技术解决方案</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://help.aliyun.com/" target="_blank">帮助文档</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://developer.aliyun.com/" target="_blank">开发者社区</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://tianchi.aliyun.com/" target="_blank">天池大赛</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://edu.aliyun.com/" target="_blank">阿里云认证</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">权益</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://free.aliyun.com/" target="_blank">免费试用</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/solution/free" target="_blank">解决方案免费试用</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://university.aliyun.com/" target="_blank">高校计划</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://dashi.aliyun.com/?ambRef=shouYeDaoHang2&amp;pageCode=yunparterIndex" target="_blank">推荐返现计划</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">服务</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/service" target="_blank">基础服务</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/service/supportplans" target="_blank">企业增值服务</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/service/devopsimpl/devopsimpl_cloudmigration_public_cn" target="_blank">迁云服务</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/notice/" target="_blank">官网公告</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://status.aliyun.com/" target="_blank">健康看板</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://security.aliyun.com/trust-center" target="_blank">信任中心</a></section></nav><article class="_7b44142961778903dda8af3f769cd06c_focus"><h3 class="_7b44142961778903dda8af3f769cd06c_ali-main-services-title">关注阿里云</h3><p class="_7b44142961778903dda8af3f769cd06c_ali-main-services-desc">关注阿里云公众号或下载阿里云APP，关注云资讯，随时随地运维管控云服务</p><img alt="阿里云APP" src="https://img.alicdn.com/imgextra/i4/O1CN01XLesV31fkf7pYNATb_!!6000000004045-2-tps-400-400.png" class="_7b44142961778903dda8af3f769cd06c_ali-official-code" loading="lazy"/><img alt="阿里云微信" src="https://img.alicdn.com/tfs/TB1AOdINW6qK1RjSZFmXXX0PFXa-258-258.jpg" class="_7b44142961778903dda8af3f769cd06c_ali-official-code" loading="lazy"/><p class="_7b44142961778903dda8af3f769cd06c_consult-text">联系我们：4008013260</p></article></div><div class="_4598709a854bea355ceb6ef9f23f10d4_about-link-wrap"><a href="https://help.aliyun.com/product/67275.html" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">法律声明</a><a href="https://terms.alicdn.com/legal-agreement/terms/platform_service/20220906101446934/20220906101446934.html" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">Cookies 政策</a><a href="https://aliyun.jubao.alibaba.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">廉正举报</a><a href="https://report.aliyun.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">安全举报</a><a href="https://www.aliyun.com/contact" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">联系我们</a><a href="https://careers.aliyun.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">加入我们</a></div><section class="_4598709a854bea355ceb6ef9f23f10d4_friend-link-wrap"><h3 hidden="">友情链接</h3><a href="https://www.alibabagroup.com/cn/global/home" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里巴巴集团</a><a href="https://www.taobao.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">淘宝网</a><a href="https://www.tmall.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">天猫</a><a href="https://www.aliexpress.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">全球速卖通</a><a href="https://www.alibaba.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里巴巴国际交易市场</a><a href="https://www.1688.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">1688</a><a href="https://www.alimama.com/index.htm" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里妈妈</a><a href="https://www.fliggy.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">飞猪</a><a href="https://www.aliyun.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里云计算</a><a href="https://wanwang.aliyun.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">万网</a><a href="https://mobile.amap.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">高德</a><a href="https://www.uc.cn/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">UC</a><a href="https://www.umeng.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">友盟</a><a href="https://www.youku.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">优酷</a><a href="https://www.dingtalk.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">钉钉</a><a href="https://www.alipay.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">支付宝</a><a href="https://damo.alibaba.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">达摩院</a><a href="https://world.taobao.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">淘宝海外</a><a href="https://www.aliyundrive.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里云盘</a><a href="https://www.ele.me/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">淘宝闪购</a></section><p class="_4598709a854bea355ceb6ef9f23f10d4_ali-copyright-text">© 2009-现在 Aliyun.com 版权所有 增值电信业务经营许可证： <a href="http://beian.miit.gov.cn/" target="_blank">浙B2-20080101</a> 域名注册服务机构许可： <a href="https://domain.miit.gov.cn/域名注册服务机构/互联网域名/阿里云计算有限公司 " target="_blank">浙D3-20210002</a></p><p class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-wrap"><a href="https://zzlz.gsxt.gov.cn/businessCheck/verifKey.do?showType=p&amp;serial=91330106673959654P-SAIC_SHOW_10000091330106673959654P1782269316568&amp;signData=MEUCIQDTH78jfQrqhsr99oZZLEZ9bvrSnyF%20tsaiBM1kAscJ1AIgWUzC8x%20mPem4t8XfwhDOOOIaNULiW8MBaKLkRHa0eWw%3D" target="_blank" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link"><img src="//gw.alicdn.com/tfs/TB1GxwdSXXXXXa.aXXXXXXXXXXX-65-70.gif" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-img" alt="" loading="lazy"/></a><a href="http://www.beian.gov.cn/portal/registerSystemInfo" target="_blank" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link"><img src="//img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-img" alt="浙公网安备 33010602009975号" loading="lazy"/><span class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link-text">浙公网安备 33010602009975号</span></a><a href="https://beian.miit.gov.cn/" target="_blank" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link"><span class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link-text _4598709a854bea355ceb6ef9f23f10d4_ali-report-link-text-unique">浙B2-20080101-4</span></a></p></div></footer><footer class="_4b41e3343c851a7a8833c9165b249eb2_container" aria-label="移动端页尾"></footer></div></div></footer>
+
+
+
+<script>
+  var _performance_domEnd = window.performance && window.performance.now();
+</script>
+
+
+  <script>
+    window.ALIYUN_PERF && window.ALIYUN_PERF.getPCP().then(rst => {
+      var data = {
+        product: 'help.aliyun.com',
+        ua: navigator.userAgent,
+        device: 'pc',
+        page: 'index',
+        lang: 'zh',
+        cna: '',
+        url: window.location.href,
+        action: 'pcp',
+        userParams1: rst || 0,
+      };
+      let queryStr = Object.keys(data).map(key => data[key] &&
+        `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`).join('&');
+      fetch('https://help-new.cn-wulanchabu.log.aliyuncs.com/logstores/web-tracking/track?APIVersion=0.6.0&' +
+        queryStr);
+    });
+  </script>
+  
+
+  <script crossorigin="" src="https://g.alicdn.com/code/lib/??react/16.8.6/umd/react.production.min.js,react-dom/16.8.6/umd/react-dom.production.min.js"></script>
+  <script src="https://g.alicdn.com/code/lib/lodash.js/4.17.21/lodash.min.js" crossorigin="anonymous"></script>
+  <script>
+  window.resourceBaseUrl="https://g.alicdn.com/aliyun-help/help-portal-fe/0.12.51/"
+</script>
+<script defer="" src="https://g.alicdn.com/aliyun-help/help-portal-fe/0.12.51/js/index.js"></script>
+<script defer src="https://g.alicdn.com/aliyun-help/help-portal-fe/0.12.51/js/vendor.js"></script>
+  
+  <script async="" src="https://g.alicdn.com/dawn/assets-loader/scripts/fast-login.js?tenantName=help-new-aliyun-com"></script>
+  <script async="" src="https://g.alicdn.com/aliyun/perf/js/index.js"></script>
+  <script src="//cloud-assets.alicdn.com/website.js" crossorigin=""></script>
+  
+
+<script src="https://website.alyasset.com/npm.combo/@ali/biu-loader/0.1.9/~~index.js,plugins/global-react.js,plugins/ace-module.js"></script>
+<script src="https://website.alyasset.com/npm.combo/@ali/~~hmod-preact/0.0.1/index.js,hmod-preact-hooks/0.0.1/index.js,hmod-preact-compat/0.0.1/index.js,hmod-preact-bridge/0.1.4/index.js"></script>
+<script src="https://website.alyasset.com/code.combo/aliyun-com/~~lowcode-env-inject/0.1.0/aliyun.prod.pc.zh-CN.js,lowcode-engine/0.1.125/renderer/build/js/index.js"></script>
+<script src="https://g.alicdn.com/code/npm/@ali/??hmod-ace-2023-box/0.1.0/index.js,hmod-aliyun-com-floating-toolbar/0.2.4/index.js,hmod-aliyun-com-global-nav-search/0.8.5/index.js,hmod-aliyun-com-global-nav-search/0.8.5/locales/zh-CN.js,hmod-aliyun-com-global-nav/0.3.18/index.js,hmod-aliyun-com-global-nav/0.3.18/locales/zh-CN.js"></script>
+<script src="https://website.alyasset.com/lowcode/entry/prod/77597e3303f7f62742f8e02d3f883457.js"></script>
+<script src="https://g.alicdn.com/code/npm/@ali/??hmod-ace-2023-box/0.1.0/index.js,hmod-ace-2024-global-footer/0.2.1/index.js,hmod-ace-2024-global-footer/0.2.1/locales/zh-CN.js,hmod-lowcode-normal-page/0.1.0/index.js"></script>
+<script src="https://website.alyasset.com/lowcode/entry/prod/d3f70824d5ebd653022a88a05724eff1.js"></script>
+</body></html>

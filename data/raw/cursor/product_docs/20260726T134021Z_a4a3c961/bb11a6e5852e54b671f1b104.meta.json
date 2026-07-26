@@ -1,0 +1,54 @@
+{
+  "canonical_url": "https://cursor.com/docs/cli/installation",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": "W/\"5e711b3b9ab8a7685c229a86a6278bb6\"",
+  "fetched_at": "2026-07-26T13:43:13.354476Z",
+  "final_url": "https://cursor.com/docs/cli/installation",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "6cf407b93fcf68c115be7b8a6d57c89d060aebdfbc24e7c4fabb9ebf6abd8a36",
+  "payload_path": "cursor/product_docs/20260726T134021Z_a4a3c961/bb11a6e5852e54b671f1b104.html",
+  "published_at": null,
+  "raw_record_id": "bb11a6e5852e54b671f1b104",
+  "requested_url": "https://cursor.com/docs/cli/installation",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://cursor.com/docs/cli/installation",
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "discovery": {
+      "configured_sitemap_urls": [
+        "https://cursor.com/docs/sitemap.xml"
+      ],
+      "method": "sitemap"
+    },
+    "embedded_content": "cursor_next_rsc",
+    "embedded_content_supported": true,
+    "evidence_level": "A",
+    "format": "html",
+    "sitemap_discovery": {
+      "allowed_path_prefixes": [
+        "/docs/"
+      ],
+      "enabled": true,
+      "excluded_path_prefixes": [
+        "/docs-static/",
+        "/docs/page.mdx"
+      ],
+      "max_sitemaps": 2,
+      "max_urls": 200,
+      "urls": [
+        "https://cursor.com/docs/sitemap.xml"
+      ]
+    },
+    "visible_text_length": 30
+  },
+  "source_type": "product_docs"
+}

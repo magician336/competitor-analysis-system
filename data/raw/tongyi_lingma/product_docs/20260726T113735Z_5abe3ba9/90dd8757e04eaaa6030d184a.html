@@ -1,0 +1,725 @@
+
+<!DOCTYPE html><html lang="zh"><head>
+  <meta name="nav-disable" content="flex">
+  
+  <link rel="icon" href="https://img.alicdn.com/imgextra/i2/O1CN01TFs5Qw27uYvfA6gib_!!6000000007857-55-tps-32-32.svg" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="72x72" href="https://img.alicdn.com/imgextra/i4/O1CN01jlcNT71YBfZJJI7qY_!!6000000003021-2-tps-128-128.png">
+  
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="nav-config" content="footer=default">
+  <meta name="aplus-core" content="aplus.js">
+  <meta name="aplus-ajax" content="chksum">
+  <meta name="aplus-waiting" content="MAN">
+  <meta name="aplus-pvhash" content="1">
+  
+  <meta name="data-spm" content="a2c4g">
+  
+  <script>
+    window.pageStartTime = Date.now();
+  </script>
+
+  
+  <title>
+    Qoder CN CLI 钩子,Hooks,PreToolUse,PostToolUse,SessionStart-Qoder CN 系列(Lingma)-阿里云帮助中心
+  </title>
+  <link rel="canonical" href="https://help.aliyun.com/zh/lingma/qodercli-cn/user-guide/hook">
+  <meta name="keywords" content="钩子,Hooks,Hook事件,PreToolUse,PostToolUse,Stop,SessionStart,配置">
+  <meta name="description" content="Hooks 允许在 Qoder CN CLI 的关键节点接入 Agent 的主执行流，同时与 CLI 保持解耦。常见用途包括：工具执行前拦截危险操作、任务完成后发送桌面通知、写文件后自动跑 lint 等。">
+  <meta name="last-modified" content="2026-07-07T11:42:40+08:00">
+  <meta name="date" content="2026-05-19T10:51:32+08:00">
+  <meta property="og:title" content="钩子">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://help.aliyun.com/zh/lingma/qodercli-cn/user-guide/hook">
+  <meta property="og:image" content="https://img.alicdn.com/imgextra/i1/O1CN012QgtoH1c1Mu70xD3w_!!6000000003540-2-tps-640-640.png">
+  <meta property="og:description" content="Hooks 允许在 Qoder CN CLI 的关键节点接入 Agent 的主执行流，同时与 CLI 保持解耦。常见用途包括：工具执行前拦截危险操作、任务完成后发送桌面通知、写文件后自动跑 lint 等。">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://help.aliyun.com/zh/lingma/qodercli-cn/user-guide/hook",
+    "publisher": {
+      "@type": "Organization",
+      "name": "阿里云计算",
+      "url": "https://www.aliyun.com/",
+      "logo": "https://img.alicdn.com/imgextra/i1/O1CN01BEqugB1KebzCRyIJl_!!6000000001189-55-tps-48-48.svg"
+    }
+  }
+  </script>
+  
+
+  <link href="https://g.alicdn.com/aliyun-help/help-portal-fe/0.12.51/css/index.css" rel="stylesheet">
+  
+
+  <script>
+    window.globalData = {
+      nodeId: "3033421",
+      website: "cn",
+      language: "zh",
+    }
+    window.$ACE_TRACKER_CONFIG = {
+      "enableHistory": true,
+      "enableHash": false
+    }
+  </script>
+<script>
+    window.__ICE_SSR_ENABLED__=true;
+    window.__ICE_APP_DATA__={};
+window.__ICE_PAGE_PROPS__={"docDetailData":{"storeData":{"alias":"/lingma/qodercli-cn/user-guide/hook","nodeId":null,"data":{"website":"cn","lastModifiedTime":1783395760000,"keywords":"钩子,Hooks,Hook事件,PreToolUse,PostToolUse,Stop,SessionStart,配置","level":6,"docTitle":"钩子","language":"zh","nodeType":1,"seoTitle":"Qoder CN CLI 钩子,Hooks,PreToolUse,PostToolUse,SessionStart-Qoder CN 系列(Lingma)-阿里云帮助中心","title":"钩子","version":3,"content":"<div lang=\"zh\" class=\"icms-help-docs-content\">\n\n  <main id=\"main-hooks\">\n    \n    \n    <p id=\"p-shortdesc-hooks\" data-tag=\"shortdesc\" class=\"shortdesc\">Hooks 允许在 Qoder CN CLI 的关键节点接入 Agent 的主执行流，同时与 CLI 保持解耦。常见用途包括：工具执行前拦截危险操作、任务完成后发送桌面通知、写文件后自动跑 lint 等。</p>\n    <div id=\"body-hooks\" data-tag=\"body\" class=\"body\">\n      <p id=\"p-hooks-intro\">Hooks 通过 JSON 配置文件定义，不需要修改代码，编辑配置文件即可生效。</p>\n      <section id=\"sec-hooks-quickstart\" class=\"section\">\n        <h2 id=\"h2-hooks-quickstart\">快速开始</h2>\n        <p id=\"p-hooks-qs-intro\">以下示例演示如何用 Hook 拦截危险命令——当 Agent 尝试执行 <code data-tag=\"inlineCode\" id=\"ic-hooks-rmrf\" class=\"inlineCode\">rm -rf</code> 时自动阻止。</p>\n        <p id=\"p-hooks-qs-step1\"><b>第一步：创建脚本</b></p><pre outputclass=\"language-shell\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"cb-hooks-qs-script\" index=\"0\" class=\"pre codeblock language-shell\"><code>mkdir -p ~/.qoder-cn/hooks\n\ncat &gt; ~/.qoder-cn/hooks/block-rm.sh &lt;&lt; 'EOF'\n#!/bin/bash\ninput=$(cat)\ncommand=$(echo \"$input\" | jq -r '.tool_input.command')\nif echo \"$command\" | grep -q 'rm -rf'; then\n  echo \"危险命令已被阻止: $command\" &gt;&amp;2\n  exit 2\nfi\nexit 0\nEOF\n\nchmod +x ~/.qoder-cn/hooks/block-rm.sh</code></pre>\n        <p id=\"p-hooks-qs-step2\"><b>第二步：编辑配置文件</b></p>\n        <p id=\"p-hooks-qs-step2-desc\">在 <code data-tag=\"inlineCode\" id=\"ic-hooks-settings\" class=\"inlineCode\">~/.qoder-cn/settings.json</code> 中添加：</p><pre outputclass=\"language-json\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"cb-hooks-qs-config\" index=\"0\" class=\"pre codeblock language-json\"><code>{\n  \"hooks\": {\n    \"PreToolUse\": [\n      {\n        \"matcher\": \"Bash\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"~/.qoder-cn/hooks/block-rm.sh\"\n          }\n        ]\n      }\n    ]\n  }\n}</code></pre>\n        <p id=\"p-hooks-qs-step3\"><b>第三步：验证效果</b></p>\n        <p id=\"p-hooks-qs-step3-desc\">启动 Qoder CN CLI，让 Agent 执行包含 <code data-tag=\"inlineCode\" id=\"ic-hooks-qs-rmrf\" class=\"inlineCode\">rm -rf</code> 的命令，Hook 会阻止执行并提示 Agent。</p>\n      </section>\n      <section id=\"sec-hooks-config\" class=\"section\">\n        <h2 id=\"h2-hooks-config\">配置</h2>\n        <section id=\"sec-hooks-config-location\" class=\"section\">\n          <h3 id=\"h3-hooks-config-location\">配置文件位置</h3>\n          <p id=\"p-hooks-config-location\">Hook 配置从以下三个文件加载，三级配置会被<b>合并</b>执行：</p><pre outputclass=\"language-powershell\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"cb-hooks-config-location\" index=\"0\" class=\"pre codeblock language-powershell\"><code>~/.qoder-cn/settings.json                    # 用户级，对所有项目生效\n${project}/.qoder/settings.json           # 项目级，对当前项目生效，可提交 git 共享给团队\n${project}/.qoder/settings.local.json     # 项目级（本地），优先级最高，建议加到 .gitignore</code></pre>\n        </section>\n        <section id=\"sec-hooks-config-format\" class=\"section\">\n          <h3 id=\"h3-hooks-config-format\">配置格式</h3><pre outputclass=\"language-json\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"cb-hooks-config-format\" index=\"0\" class=\"pre codeblock language-json\"><code>{\n  \"hooks\": {\n    \"事件名\": [\n      {\n        \"matcher\": \"匹配条件\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"要执行的命令\",\n            \"timeout\": 60\n          }\n        ]\n      }\n    ]\n  }\n}</code></pre>\n          <p id=\"p-hooks-config-fields\">字段说明：</p>\n          <table id=\"table-hooks-config-fields\" tablewidth=\"648\" tablecolswidth=\"216 216 216\" autofit=\"false\" class=\"table\">\n            <colgroup colwidth=\"1*\" style=\"width:33.33%\"></colgroup>\n            <colgroup colwidth=\"1*\" style=\"width:33.33%\"></colgroup>\n            <colgroup colwidth=\"1*\" style=\"width:33.33%\"></colgroup>\n            <tbody class=\"tbody\">\n              <tr id=\"tr-hcf-header\">\n                <td id=\"td-hcf-h1\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hcf-h1\"><span style=\"background-color:rgb(229, 229, 229)\">字段</span></p>\n                </td>\n                <td id=\"td-hcf-h2\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hcf-h2\"><span style=\"background-color:rgb(229, 229, 229)\">必填</span></p>\n                </td>\n                <td id=\"td-hcf-h3\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hcf-h3\"><span style=\"background-color:rgb(229, 229, 229)\">说明</span></p>\n                </td>\n              </tr>\n              <tr id=\"tr-hcf-type\">\n                <td id=\"td-hcf-type-a\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hcf-type-a\"><code data-tag=\"inlineCode\" id=\"ic-hcf-type\" class=\"inlineCode\">type</code></p>\n                </td>\n                <td id=\"td-hcf-type-b\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hcf-type-b\">是</p>\n                </td>\n                <td id=\"td-hcf-type-c\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hcf-type-c\">固定为 <code data-tag=\"inlineCode\" id=\"ic-hcf-type-val\" class=\"inlineCode\">\"command\"</code></p>\n                </td>\n              </tr>\n              <tr id=\"tr-hcf-command\">\n                <td id=\"td-hcf-cmd-a\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hcf-cmd-a\"><code data-tag=\"inlineCode\" id=\"ic-hcf-cmd\" class=\"inlineCode\">command</code></p>\n                </td>\n                <td id=\"td-hcf-cmd-b\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hcf-cmd-b\">是</p>\n                </td>\n                <td id=\"td-hcf-cmd-c\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hcf-cmd-c\">要执行的 shell 命令</p>\n                </td>\n              </tr>\n              <tr id=\"tr-hcf-timeout\">\n                <td id=\"td-hcf-timeout-a\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hcf-timeout-a\"><code data-tag=\"inlineCode\" id=\"ic-hcf-timeout\" class=\"inlineCode\">timeout</code></p>\n                </td>\n                <td id=\"td-hcf-timeout-b\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hcf-timeout-b\">否</p>\n                </td>\n                <td id=\"td-hcf-timeout-c\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hcf-timeout-c\">超时时间（秒），默认 60</p>\n                </td>\n              </tr>\n              <tr id=\"tr-hcf-matcher\">\n                <td id=\"td-hcf-matcher-a\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hcf-matcher-a\"><code data-tag=\"inlineCode\" id=\"ic-hcf-matcher\" class=\"inlineCode\">matcher</code></p>\n                </td>\n                <td id=\"td-hcf-matcher-b\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hcf-matcher-b\">否</p>\n                </td>\n                <td id=\"td-hcf-matcher-c\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hcf-matcher-c\">匹配条件，不填则匹配所有</p>\n                </td>\n              </tr>\n            </tbody>\n          </table>\n          <p id=\"p-hooks-config-multi\">一个事件下可以配置多个 matcher 分组，每个分组可以包含多个 hook 命令。</p>\n        </section>\n        <section id=\"sec-hooks-matcher\" class=\"section\">\n          <h3 id=\"h3-hooks-matcher\">matcher 匹配规则</h3>\n          <p id=\"p-hooks-matcher-intro\"><code data-tag=\"inlineCode\" id=\"ic-hooks-matcher-field\" class=\"inlineCode\">matcher</code> 用于过滤 hook 的触发范围，不同事件匹配不同的字段（见各事件说明）。</p>\n          <table id=\"table-hooks-matcher\" tablewidth=\"648\" tablecolswidth=\"216 216 216\" autofit=\"false\" class=\"table\">\n            <colgroup colwidth=\"1*\" style=\"width:33.33%\"></colgroup>\n            <colgroup colwidth=\"1*\" style=\"width:33.33%\"></colgroup>\n            <colgroup colwidth=\"1*\" style=\"width:33.33%\"></colgroup>\n            <tbody class=\"tbody\">\n              <tr id=\"tr-hm-header\">\n                <td id=\"td-hm-h1\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hm-h1\"><span style=\"background-color:rgb(229, 229, 229)\">写法</span></p>\n                </td>\n                <td id=\"td-hm-h2\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hm-h2\"><span style=\"background-color:rgb(229, 229, 229)\">含义</span></p>\n                </td>\n                <td id=\"td-hm-h3\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hm-h3\"><span style=\"background-color:rgb(229, 229, 229)\">示例</span></p>\n                </td>\n              </tr>\n              <tr id=\"tr-hm-empty\">\n                <td id=\"td-hm-empty-a\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hm-empty-a\">不填或 <code data-tag=\"inlineCode\" id=\"ic-hm-star\" class=\"inlineCode\">\"*\"</code></p>\n                </td>\n                <td id=\"td-hm-empty-b\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hm-empty-b\">匹配所有</p>\n                </td>\n                <td id=\"td-hm-empty-c\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hm-empty-c\">所有工具都触发</p>\n                </td>\n              </tr>\n              <tr id=\"tr-hm-exact\">\n                <td id=\"td-hm-exact-a\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hm-exact-a\">精确值</p>\n                </td>\n                <td id=\"td-hm-exact-b\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hm-exact-b\">精确匹配</p>\n                </td>\n                <td id=\"td-hm-exact-c\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hm-exact-c\"><code data-tag=\"inlineCode\" id=\"ic-hm-bash\" class=\"inlineCode\">\"Bash\"</code> 只匹配 Bash 工具</p>\n                </td>\n              </tr>\n              <tr id=\"tr-hm-pipe\">\n                <td id=\"td-hm-pipe-a\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hm-pipe-a\"><code data-tag=\"inlineCode\" id=\"ic-hm-pipe\" class=\"inlineCode\">|</code> 分隔</p>\n                </td>\n                <td id=\"td-hm-pipe-b\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hm-pipe-b\">匹配多个值</p>\n                </td>\n                <td id=\"td-hm-pipe-c\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hm-pipe-c\"><code data-tag=\"inlineCode\" id=\"ic-hm-pipe-ex\" class=\"inlineCode\">\"Write|Edit\"</code> 匹配 Write 或 Edit</p>\n                </td>\n              </tr>\n              <tr id=\"tr-hm-regex\">\n                <td id=\"td-hm-regex-a\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hm-regex-a\">正则表达式</p>\n                </td>\n                <td id=\"td-hm-regex-b\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hm-regex-b\">正则匹配</p>\n                </td>\n                <td id=\"td-hm-regex-c\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hm-regex-c\"><code data-tag=\"inlineCode\" id=\"ic-hm-regex-ex\" class=\"inlineCode\">\"mcp__.*\"</code> 匹配所有 MCP 工具</p>\n                </td>\n              </tr>\n            </tbody>\n          </table>\n        </section>\n      </section>\n      <section id=\"sec-hooks-scripting\" class=\"section\">\n        <h2 id=\"h2-hooks-scripting\">Hook 脚本编写</h2>\n        <p id=\"p-hooks-scripting-intro\">Hook 脚本通过 stdin 接收 JSON 输入，通过 exit code 和 stdout 输出来控制行为。本节说明所有事件通用的输入输出格式，各事件的额外字段见\"支持的事件\"。</p>\n        <section id=\"sec-hooks-input\" class=\"section\">\n          <h3 id=\"h3-hooks-input\">输入</h3>\n          <p id=\"p-hooks-input-intro\">Hook 脚本通过 <b>stdin</b> 接收 JSON 数据。所有事件都包含以下通用字段：</p>\n          <table id=\"table-hooks-input\" tablewidth=\"650\" tablecolswidth=\"325 325\" autofit=\"false\" class=\"table\">\n            <colgroup colwidth=\"1*\" style=\"width:50.00%\"></colgroup>\n            <colgroup colwidth=\"1*\" style=\"width:50.00%\"></colgroup>\n            <tbody class=\"tbody\">\n              <tr id=\"tr-hi-header\">\n                <td id=\"td-hi-h1\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hi-h1\"><span style=\"background-color:rgb(229, 229, 229)\">字段</span></p>\n                </td>\n                <td id=\"td-hi-h2\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hi-h2\"><span style=\"background-color:rgb(229, 229, 229)\">说明</span></p>\n                </td>\n              </tr>\n              <tr id=\"tr-hi-session\">\n                <td id=\"td-hi-session-a\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hi-session-a\"><code data-tag=\"inlineCode\" id=\"ic-hi-session\" class=\"inlineCode\">session_id</code></p>\n                </td>\n                <td id=\"td-hi-session-b\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hi-session-b\">当前会话 ID</p>\n                </td>\n              </tr>\n              <tr id=\"tr-hi-cwd\">\n                <td id=\"td-hi-cwd-a\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hi-cwd-a\"><code data-tag=\"inlineCode\" id=\"ic-hi-cwd\" class=\"inlineCode\">cwd</code></p>\n                </td>\n                <td id=\"td-hi-cwd-b\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hi-cwd-b\">当前工作目录</p>\n                </td>\n              </tr>\n              <tr id=\"tr-hi-event\">\n                <td id=\"td-hi-event-a\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hi-event-a\"><code data-tag=\"inlineCode\" id=\"ic-hi-event\" class=\"inlineCode\">hook_event_name</code></p>\n                </td>\n                <td id=\"td-hi-event-b\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hi-event-b\">触发的事件名称</p>\n                </td>\n              </tr>\n            </tbody>\n          </table>\n          <p id=\"p-hooks-input-jq\">不同事件会在此基础上附加额外字段（见各事件说明）。用 <code data-tag=\"inlineCode\" id=\"ic-hooks-jq\" class=\"inlineCode\">jq</code> 解析输入：</p><pre outputclass=\"language-python\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"cb-hooks-input-jq\" index=\"0\" class=\"pre codeblock language-python\"><code>#!/bin/bash\ninput=$(cat)\ntool_name=$(echo \"$input\" | jq -r '.tool_name')</code></pre>\n        </section>\n        <section id=\"sec-hooks-output\" class=\"section\">\n          <h3 id=\"h3-hooks-output\">输出</h3>\n          <p id=\"p-hooks-output\">Hook 通过 exit code 和 stdout 控制行为。exit code 决定基本行为：0 成功，2 阻塞（stderr 内容注入对话，仅对支持阻塞的事件生效），其他值为非阻塞错误。stdout JSON（仅 exit 0 时解析）可为部分事件提供精细控制，具体支持的字段见各事件说明。exit 非 0 时 stdout 被忽略。</p>\n        </section>\n        <section id=\"sec-hooks-env\" class=\"section\">\n          <h3 id=\"h3-hooks-env\">环境变量</h3>\n          <p id=\"p-hooks-env-intro\">Hook 脚本执行时可以使用以下环境变量：</p>\n          <table id=\"table-hooks-env\" tablewidth=\"650\" tablecolswidth=\"325 325\" autofit=\"false\" class=\"table\">\n            <colgroup colwidth=\"1*\" style=\"width:50.00%\"></colgroup>\n            <colgroup colwidth=\"1*\" style=\"width:50.00%\"></colgroup>\n            <tbody class=\"tbody\">\n              <tr id=\"tr-he-header\">\n                <td id=\"td-he-h1\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-he-h1\"><span style=\"background-color:rgb(229, 229, 229)\">变量</span></p>\n                </td>\n                <td id=\"td-he-h2\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-he-h2\"><span style=\"background-color:rgb(229, 229, 229)\">说明</span></p>\n                </td>\n              </tr>\n              <tr id=\"tr-he-projdir\">\n                <td id=\"td-he-projdir-a\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-he-projdir-a\"><code data-tag=\"inlineCode\" id=\"ic-he-projdir\" class=\"inlineCode\">QODER_PROJECT_DIR</code></p>\n                </td>\n                <td id=\"td-he-projdir-b\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-he-projdir-b\">当前项目的工作目录</p>\n                </td>\n              </tr>\n            </tbody>\n          </table>\n        </section>\n      </section>\n      <section id=\"sec-hooks-events\" class=\"section\">\n        <h2 id=\"h2-hooks-events\">支持的事件</h2>\n        <p id=\"p-hooks-events-intro\">Qoder CN CLI 支持以下 Hook 事件，覆盖会话生命周期的各个阶段。</p>\n        <section id=\"sec-hooks-sessionstart\" class=\"section\">\n          <h3 id=\"h3-hooks-sessionstart\">SessionStart</h3>\n          <p id=\"p-hooks-sessionstart\">会话开始时触发。</p>\n          <p id=\"p-hooks-sessionstart-matcher\"><b>matcher 匹配：</b> 会话来源</p>\n          <table id=\"table-hooks-sessionstart\" tablewidth=\"650\" tablecolswidth=\"325 325\" autofit=\"false\" class=\"table\">\n            <colgroup colwidth=\"1*\" style=\"width:50.00%\"></colgroup>\n            <colgroup colwidth=\"1*\" style=\"width:50.00%\"></colgroup>\n            <tbody class=\"tbody\">\n              <tr id=\"tr-hss-header\">\n                <td id=\"td-hss-h1\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hss-h1\"><span style=\"background-color:rgb(229, 229, 229)\">matcher 值</span></p>\n                </td>\n                <td id=\"td-hss-h2\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hss-h2\"><span style=\"background-color:rgb(229, 229, 229)\">触发场景</span></p>\n                </td>\n              </tr>\n              <tr id=\"tr-hss-startup\">\n                <td id=\"td-hss-startup-a\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hss-startup-a\"><code data-tag=\"inlineCode\" id=\"ic-hss-startup\" class=\"inlineCode\">startup</code></p>\n                </td>\n                <td id=\"td-hss-startup-b\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hss-startup-b\">新会话启动</p>\n                </td>\n              </tr>\n              <tr id=\"tr-hss-resume\">\n                <td id=\"td-hss-resume-a\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hss-resume-a\"><code data-tag=\"inlineCode\" id=\"ic-hss-resume\" class=\"inlineCode\">resume</code></p>\n                </td>\n                <td id=\"td-hss-resume-b\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hss-resume-b\">恢复已有会话</p>\n                </td>\n              </tr>\n              <tr id=\"tr-hss-compact\">\n                <td id=\"td-hss-compact-a\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hss-compact-a\"><code data-tag=\"inlineCode\" id=\"ic-hss-compact\" class=\"inlineCode\">compact</code></p>\n                </td>\n                <td id=\"td-hss-compact-b\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hss-compact-b\">上下文压缩完成后</p>\n                </td>\n              </tr>\n            </tbody>\n          </table>\n          <p id=\"p-hooks-sessionstart-input\"><b>额外输入字段：</b></p><pre outputclass=\"language-json\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"cb-hooks-sessionstart\" index=\"0\" class=\"pre codeblock language-json\"><code>{\n  \"source\": \"startup\",\n  \"model\": \"Auto\"\n}</code></pre>\n        </section>\n        <section id=\"sec-hooks-sessionend\" class=\"section\">\n          <h3 id=\"h3-hooks-sessionend\">SessionEnd</h3>\n          <p id=\"p-hooks-sessionend\">会话结束时触发。</p>\n          <p id=\"p-hooks-sessionend-matcher\"><b>matcher 匹配：</b> 结束原因</p>\n          <table id=\"table-hooks-sessionend\" tablewidth=\"650\" tablecolswidth=\"325 325\" autofit=\"false\" class=\"table\">\n            <colgroup colwidth=\"1*\" style=\"width:50.00%\"></colgroup>\n            <colgroup colwidth=\"1*\" style=\"width:50.00%\"></colgroup>\n            <tbody class=\"tbody\">\n              <tr id=\"tr-hse-header\">\n                <td id=\"td-hse-h1\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hse-h1\"><span style=\"background-color:rgb(229, 229, 229)\">matcher 值</span></p>\n                </td>\n                <td id=\"td-hse-h2\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hse-h2\"><span style=\"background-color:rgb(229, 229, 229)\">触发场景</span></p>\n                </td>\n              </tr>\n              <tr id=\"tr-hse-exit\">\n                <td id=\"td-hse-exit-a\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hse-exit-a\"><code data-tag=\"inlineCode\" id=\"ic-hse-exit\" class=\"inlineCode\">prompt_input_exit</code></p>\n                </td>\n                <td id=\"td-hse-exit-b\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hse-exit-b\">用户退出输入（Ctrl+D 等）</p>\n                </td>\n              </tr>\n              <tr id=\"tr-hse-other\">\n                <td id=\"td-hse-other-a\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hse-other-a\"><code data-tag=\"inlineCode\" id=\"ic-hse-other\" class=\"inlineCode\">other</code></p>\n                </td>\n                <td id=\"td-hse-other-b\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hse-other-b\">其他原因</p>\n                </td>\n              </tr>\n            </tbody>\n          </table>\n          <p id=\"p-hooks-sessionend-input\"><b>额外输入字段：</b></p><pre outputclass=\"language-json\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"cb-hooks-sessionend\" index=\"0\" class=\"pre codeblock language-json\"><code>{\n  \"reason\": \"prompt_input_exit\"\n}</code></pre>\n        </section>\n        <section id=\"sec-hooks-userprompt\" class=\"section\">\n          <h3 id=\"h3-hooks-userprompt\">UserPromptSubmit</h3>\n          <p id=\"p-hooks-userprompt\">用户提交 Prompt 后、Agent 处理前触发。</p>\n          <p id=\"p-hooks-userprompt-input\"><b>额外输入字段：</b></p><pre outputclass=\"language-json\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"cb-hooks-userprompt\" index=\"0\" class=\"pre codeblock language-json\"><code>{\n  \"prompt\": \"帮我写一个排序函数\"\n}</code></pre>\n        </section>\n        <section id=\"sec-hooks-pretooluse\" class=\"section\">\n          <h3 id=\"h3-hooks-pretooluse\">PreToolUse</h3>\n          <p id=\"p-hooks-pretooluse\">工具执行前触发。可以阻止工具执行。</p>\n          <p id=\"p-hooks-pretooluse-matcher\"><b>matcher 匹配：</b> 工具名（如 <code data-tag=\"inlineCode\" id=\"ic-hooks-ptu-bash\" class=\"inlineCode\">Bash</code>、<code data-tag=\"inlineCode\" id=\"ic-hooks-ptu-write\" class=\"inlineCode\">Write</code>、<code data-tag=\"inlineCode\" id=\"ic-hooks-ptu-edit\" class=\"inlineCode\">Edit</code>、<code data-tag=\"inlineCode\" id=\"ic-hooks-ptu-read\" class=\"inlineCode\">Read</code>、<code data-tag=\"inlineCode\" id=\"ic-hooks-ptu-glob\" class=\"inlineCode\">Glob</code>、<code data-tag=\"inlineCode\" id=\"ic-hooks-ptu-grep\" class=\"inlineCode\">Grep</code>，MCP 工具名如 <code data-tag=\"inlineCode\" id=\"ic-hooks-ptu-mcp\" class=\"inlineCode\">mcp__server__tool</code>）</p>\n          <p id=\"p-hooks-pretooluse-input\"><b>额外输入字段：</b></p><pre outputclass=\"language-json\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"cb-hooks-pretooluse\" index=\"0\" class=\"pre codeblock language-json\"><code>{\n  \"tool_name\": \"Bash\",\n  \"tool_input\": {\"command\": \"rm -rf /tmp/build\"},\n  \"tool_use_id\": \"toolu_01ABC123\"\n}</code></pre>\n          <p id=\"p-hooks-pretooluse-block\"><b>阻止工具执行：</b> exit code 2，stderr 内容作为错误返回给 Agent。完整示例见\"快速开始\"。</p>\n        </section>\n        <section id=\"sec-hooks-posttooluse\" class=\"section\">\n          <h3 id=\"h3-hooks-posttooluse\">PostToolUse</h3>\n          <p id=\"p-hooks-posttooluse\">工具执行成功后触发。</p>\n          <p id=\"p-hooks-posttooluse-matcher\"><b>matcher 匹配：</b> 工具名</p>\n          <p id=\"p-hooks-posttooluse-input\"><b>额外输入字段：</b></p><pre outputclass=\"language-json\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"cb-hooks-posttooluse\" index=\"0\" class=\"pre codeblock language-json\"><code>{\n  \"tool_name\": \"Write\",\n  \"tool_input\": {\"file_path\": \"/path/to/file.ts\", \"content\": \"...\"},\n  \"tool_response\": \"File written successfully\",\n  \"tool_use_id\": \"toolu_01ABC123\"\n}</code></pre>\n        </section>\n        <section id=\"sec-hooks-posttoolusefailure\" class=\"section\">\n          <h3 id=\"h3-hooks-posttoolusefailure\">PostToolUseFailure</h3>\n          <p id=\"p-hooks-posttoolusefailure\">工具执行失败后触发。</p>\n          <p id=\"p-hooks-posttoolusefailure-matcher\"><b>matcher 匹配：</b> 工具名</p>\n          <p id=\"p-hooks-posttoolusefailure-input\"><b>额外输入字段：</b></p><pre outputclass=\"language-json\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"cb-hooks-posttoolusefailure\" index=\"0\" class=\"pre codeblock language-json\"><code>{\n  \"tool_name\": \"Bash\",\n  \"tool_input\": {\"command\": \"npm test\"},\n  \"tool_use_id\": \"toolu_01ABC123\",\n  \"error\": \"Command exited with non-zero status code 1\",\n  \"is_interrupt\": false\n}</code></pre>\n        </section>\n        <section id=\"sec-hooks-stop\" class=\"section\">\n          <h3 id=\"h3-hooks-stop\">Stop</h3>\n          <p id=\"p-hooks-stop\">Agent 完成响应后触发（主 Agent，无待执行的工具调用时）。可以阻止 Agent 停止，让其继续工作。</p>\n          <p id=\"p-hooks-stop-block\"><b>阻止 Agent 停止：</b> exit code 2，stderr 内容作为消息注入对话，Agent 继续工作。</p>\n        </section>\n        <section id=\"sec-hooks-subagent\" class=\"section\">\n          <h3 id=\"h3-hooks-subagent\">SubagentStart / SubagentStop</h3>\n          <p id=\"p-hooks-subagent\">子 Agent 启动和完成时触发。SubagentStop 与 Stop 类似，可以阻止子 Agent 停止。</p>\n          <p id=\"p-hooks-subagent-matcher\"><b>matcher 匹配：</b> Agent 类型名</p>\n          <p id=\"p-hooks-subagent-input\"><b>额外输入字段：</b></p><pre outputclass=\"language-json\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"cb-hooks-subagent\" index=\"0\" class=\"pre codeblock language-json\"><code>{\n  \"agent_id\": \"a1b2c3d4\",\n  \"agent_type\": \"task\"\n}</code></pre>\n        </section>\n        <section id=\"sec-hooks-precompact\" class=\"section\">\n          <h3 id=\"h3-hooks-precompact\">PreCompact</h3>\n          <p id=\"p-hooks-precompact\">上下文压缩前触发。</p>\n          <p id=\"p-hooks-precompact-matcher\"><b>matcher 匹配：</b> 触发方式</p>\n          <table id=\"table-hooks-precompact\" tablewidth=\"650\" tablecolswidth=\"325 325\" autofit=\"false\" class=\"table\">\n            <colgroup colwidth=\"1*\" style=\"width:50.00%\"></colgroup>\n            <colgroup colwidth=\"1*\" style=\"width:50.00%\"></colgroup>\n            <tbody class=\"tbody\">\n              <tr id=\"tr-hpc-header\">\n                <td id=\"td-hpc-h1\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hpc-h1\"><span style=\"background-color:rgb(229, 229, 229)\">matcher 值</span></p>\n                </td>\n                <td id=\"td-hpc-h2\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hpc-h2\"><span style=\"background-color:rgb(229, 229, 229)\">触发场景</span></p>\n                </td>\n              </tr>\n              <tr id=\"tr-hpc-manual\">\n                <td id=\"td-hpc-manual-a\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hpc-manual-a\"><code data-tag=\"inlineCode\" id=\"ic-hpc-manual\" class=\"inlineCode\">manual</code></p>\n                </td>\n                <td id=\"td-hpc-manual-b\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hpc-manual-b\">用户手动执行 /compact</p>\n                </td>\n              </tr>\n              <tr id=\"tr-hpc-auto\">\n                <td id=\"td-hpc-auto-a\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hpc-auto-a\"><code data-tag=\"inlineCode\" id=\"ic-hpc-auto\" class=\"inlineCode\">auto</code></p>\n                </td>\n                <td id=\"td-hpc-auto-b\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hpc-auto-b\">上下文窗口满时自动触发</p>\n                </td>\n              </tr>\n            </tbody>\n          </table>\n          <p id=\"p-hooks-precompact-input\"><b>额外输入字段：</b></p><pre outputclass=\"language-json\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"cb-hooks-precompact\" index=\"0\" class=\"pre codeblock language-json\"><code>{\n  \"trigger\": \"manual\",\n  \"custom_instructions\": \"保留所有工具调用结果\"\n}</code></pre>\n        </section>\n        <section id=\"sec-hooks-notification\" class=\"section\">\n          <h3 id=\"h3-hooks-notification\">Notification</h3>\n          <p id=\"p-hooks-notification\">通知事件触发（权限请求、任务完成等）。</p>\n          <p id=\"p-hooks-notification-matcher\"><b>matcher 匹配：</b> 通知类型</p>\n          <table id=\"table-hooks-notification\" tablewidth=\"650\" tablecolswidth=\"325 325\" autofit=\"false\" class=\"table\">\n            <colgroup colwidth=\"1*\" style=\"width:50.00%\"></colgroup>\n            <colgroup colwidth=\"1*\" style=\"width:50.00%\"></colgroup>\n            <tbody class=\"tbody\">\n              <tr id=\"tr-hn-header\">\n                <td id=\"td-hn-h1\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hn-h1\"><span style=\"background-color:rgb(229, 229, 229)\">matcher 值</span></p>\n                </td>\n                <td id=\"td-hn-h2\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hn-h2\"><span style=\"background-color:rgb(229, 229, 229)\">触发场景</span></p>\n                </td>\n              </tr>\n              <tr id=\"tr-hn-permission\">\n                <td id=\"td-hn-permission-a\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hn-permission-a\"><code data-tag=\"inlineCode\" id=\"ic-hn-permission\" class=\"inlineCode\">permission</code></p>\n                </td>\n                <td id=\"td-hn-permission-b\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hn-permission-b\">权限请求通知</p>\n                </td>\n              </tr>\n              <tr id=\"tr-hn-result\">\n                <td id=\"td-hn-result-a\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hn-result-a\"><code data-tag=\"inlineCode\" id=\"ic-hn-result\" class=\"inlineCode\">result</code></p>\n                </td>\n                <td id=\"td-hn-result-b\" rowspan=\"1\" colspan=\"1\">\n                  <p id=\"p-hn-result-b\">Agent 产出结果通知</p>\n                </td>\n              </tr>\n            </tbody>\n          </table>\n          <p id=\"p-hooks-notification-input\"><b>额外输入字段：</b></p><pre outputclass=\"language-json\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"cb-hooks-notification\" index=\"0\" class=\"pre codeblock language-json\"><code>{\n  \"message\": \"Agent is requesting permission to run: rm -rf node_modules\",\n  \"title\": \"Permission Required\",\n  \"notification_type\": \"permission\"\n}</code></pre>\n        </section>\n        <section id=\"sec-hooks-permrequest\" class=\"section\">\n          <h3 id=\"h3-hooks-permrequest\">PermissionRequest</h3>\n          <p id=\"p-hooks-permrequest\">工具执行需要用户授权时触发。</p>\n          <p id=\"p-hooks-permrequest-matcher\"><b>matcher 匹配：</b> 工具名</p>\n          <p id=\"p-hooks-permrequest-input\"><b>额外输入字段：</b></p><pre outputclass=\"language-json\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"cb-hooks-permrequest\" index=\"0\" class=\"pre codeblock language-json\"><code>{\n  \"tool_name\": \"Bash\",\n  \"tool_input\": {\"command\": \"rm -rf node_modules\"}\n}</code></pre>\n        </section>\n      </section>\n      <section id=\"sec-hooks-usecases\" class=\"section\">\n        <h2 id=\"h2-hooks-usecases\">实用场景</h2>\n        <section id=\"sec-hooks-uc-notify\" class=\"section\">\n          <h3 id=\"h3-hooks-uc-notify\">桌面通知提醒</h3>\n          <p id=\"p-hooks-uc-notify-intro\">当 Agent 完成任务或需要授权时，弹出桌面通知。脚本 <code data-tag=\"inlineCode\" id=\"ic-hooks-notify-path\" class=\"inlineCode\">~/.qoder-cn/hooks/notify.sh</code>（macOS）：</p><pre outputclass=\"language-python\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"cb-hooks-uc-notify\" index=\"0\" class=\"pre codeblock language-python\"><code>#!/bin/bash\ninput=$(cat)\nmessage=$(echo \"$input\" | jq -r '.message')\nif echo \"$message\" | grep -q \"^Agent\"; then\n  osascript -e 'display notification \"任务执行完成\" with title \"Qoder CN CLI\"'\nelse\n  osascript -e 'display notification \"任务需要授权\" with title \"Qoder CN CLI\"'\nfi\nexit 0</code></pre>\n          <p id=\"p-hooks-uc-notify-config\">配置：</p><pre outputclass=\"language-json\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"cb-hooks-uc-notify-config\" index=\"0\" class=\"pre codeblock language-json\"><code>{\n  \"hooks\": {\n    \"Notification\": [\n      {\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"~/.qoder-cn/hooks/notify.sh\"\n          }\n        ]\n      }\n    ]\n  }\n}</code></pre>\n        </section>\n        <section id=\"sec-hooks-uc-lint\" class=\"section\">\n          <h3 id=\"h3-hooks-uc-lint\">写文件后自动 Lint</h3>\n          <p id=\"p-hooks-uc-lint-intro\">每次 Agent 写入或编辑文件后，自动执行 lint 检查。脚本 <code data-tag=\"inlineCode\" id=\"ic-hooks-lint-path\" class=\"inlineCode\">${project}/.qoder/hooks/auto-lint.sh</code>：</p><pre outputclass=\"language-python\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"cb-hooks-uc-lint\" index=\"0\" class=\"pre codeblock language-python\"><code>#!/bin/bash\ninput=$(cat)\nfile_path=$(echo \"$input\" | jq -r '.tool_input.file_path')\n\n# 只检查 JS/TS 文件\ncase \"$file_path\" in\n  *.js|*.ts|*.jsx|*.tsx)\n    npx eslint \"$file_path\" --fix 2&gt;/dev/null\n    ;;\nesac\nexit 0</code></pre>\n          <p id=\"p-hooks-uc-lint-config\">配置：事件 <code data-tag=\"inlineCode\" id=\"ic-hooks-lint-event\" class=\"inlineCode\">PostToolUse</code>，matcher <code data-tag=\"inlineCode\" id=\"ic-hooks-lint-matcher\" class=\"inlineCode\">Write|Edit</code>，command <code data-tag=\"inlineCode\" id=\"ic-hooks-lint-cmd\" class=\"inlineCode\">.qoder/hooks/auto-lint.sh</code>。</p>\n        </section>\n        <section id=\"sec-hooks-uc-continue\" class=\"section\">\n          <h3 id=\"h3-hooks-uc-continue\">让 Agent 继续工作</h3>\n          <p id=\"p-hooks-uc-continue-intro\">在 Agent 停止时检查是否还有未完成的任务，如果有则注入消息让 Agent 继续。脚本 <code data-tag=\"inlineCode\" id=\"ic-hooks-continue-path\" class=\"inlineCode\">~/.qoder-cn/hooks/check-continue.sh</code>：</p><pre outputclass=\"language-python\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"cb-hooks-uc-continue\" index=\"0\" class=\"pre codeblock language-python\"><code>#!/bin/bash\n# 检查是否有未提交的 git 变更\nif [ -n \"$(git status --porcelain 2&gt;/dev/null)\" ]; then\n  echo \"检测到未提交的变更，请完成 git commit\" &gt;&amp;2\n  exit 2\nfi\nexit 0</code></pre>\n          <p id=\"p-hooks-uc-continue-config\">配置：事件 <code data-tag=\"inlineCode\" id=\"ic-hooks-continue-event\" class=\"inlineCode\">Stop</code>，command <code data-tag=\"inlineCode\" id=\"ic-hooks-continue-cmd\" class=\"inlineCode\">~/.qoder-cn/hooks/check-continue.sh</code>。</p>\n        </section>\n      </section>\n    </div>\n  </main>\n\n\n\n\n</div>","url":"/zh/lingma/qodercli-cn/user-guide/hook","tags":[{"value":"1","key":"accept","desc":"已承接"},{"value":false,"key":"autoTranslation","desc":"非自动翻译"},{"value":3033421,"key":"nodeId","desc":"文档ID"}],"userVO":{},"recommendDocs":[],"path":"https://help.aliyun.com/zh/lingma/qodercli-cn/user-guide/hook","productNodeVO":{"emptyNode":false,"level":3,"validDocument":true,"headNavEnable":false,"docTitle":"Qoder CN 系列","id":2804669,"title":"Qoder CN 系列","url":"/zh/lingma/"},"directoryPath":{"children":[{"children":[{"children":[{"emptyNode":false,"level":6,"validDocument":true,"headNavEnable":false,"docTitle":"钩子","id":3033421,"title":"钩子","url":"/zh/lingma/qodercli-cn/user-guide/hook"}],"emptyNode":false,"level":5,"validDocument":true,"headNavEnable":false,"docTitle":"操作指南","id":3033319,"title":"操作指南","url":"/zh/lingma/qodercli-cn/user-guide/"}],"emptyNode":false,"level":4,"validDocument":true,"headNavEnable":false,"docTitle":"Qoder CN CLI","id":3033311,"title":"Qoder CN CLI","url":"/zh/lingma/qodercli-cn/"}],"emptyNode":false,"level":3,"validDocument":true,"headNavEnable":false,"docTitle":"Qoder CN 系列","id":2804669,"title":"Qoder CN 系列","url":"/zh/lingma/"},"alias":"/lingma/qodercli-cn/user-guide/hook","showType":1,"productUrl":"https://lingma.aliyun.com/","nodeId":3033421,"taskStatus":"NO_TASK_AVAILABLE","desc":"Hooks 允许在 Qoder CN CLI 的关键节点接入 Agent 的主执行流，同时与 CLI 保持解耦。常见用途包括：工具执行前拦截危险操作、任务完成后发送桌面通知、写文件后自动跑 lint 等。"},"breadcrumb":[{"emptyNode":false,"level":3,"validDocument":true,"headNavEnable":false,"docTitle":"Qoder CN 系列","id":2804669,"title":"Qoder CN 系列","url":"/zh/lingma/"},{"emptyNode":false,"level":4,"validDocument":true,"headNavEnable":false,"docTitle":"Qoder CN CLI","id":3033311,"title":"Qoder CN CLI","url":"/zh/lingma/qodercli-cn/"},{"emptyNode":false,"level":5,"validDocument":true,"headNavEnable":false,"docTitle":"操作指南","id":3033319,"title":"操作指南","url":"/zh/lingma/qodercli-cn/user-guide/"},{"emptyNode":false,"level":6,"validDocument":true,"headNavEnable":false,"docTitle":"钩子","id":3033421,"title":"钩子","url":"/zh/lingma/qodercli-cn/user-guide/hook"}],"isMachineTranslation":false,"isNotFound":false,"helpResponseCode":200,"redirectUrl":"","helpDocVersion":1,"reloadFlag":true}}};
+  </script><link href="https://g.alicdn.com/code/npm/@ali/??hmod-ace-2023-box/0.1.0/index.css,hmod-aliyun-com-global-nav-search/0.8.5/index.css,hmod-aliyun-com-global-nav/0.3.18/index.css" rel="stylesheet"/>
+<link href="https://g.alicdn.com/code/npm/@ali/??hmod-ace-2023-box/0.1.0/index.css,hmod-ace-2024-global-footer/0.2.1/index.css" rel="stylesheet"/>
+</head>
+
+<body><script>
+with(document)with(body)with(insertBefore(createElement("script"),firstChild))setAttribute("exparams","category=&userid=&aplus&yunid=&&trid=215041d317850672012524535e3850&asid=AQAAAADB9mVqWJ9JGQAAAAAKDSNuVYSxHg==",id="tb-beacon-aplus",src=(location>"https"?"//g":"//g")+".alicdn.com/alilog/mlog/aplus_v2.js")
+</script>
+
+  <script>
+    var _performance_domStart = window.performance && window.performance.now();
+  </script>
+  <header><div id="77597e3303f7f62742f8e02d3f883457"><div class="_18a32969382a277c44015217fbc5cb5a_box"><div class="_3bd147f6948a20d6c528ac898ad4ba47_pc de5ef2fee09ebcb2b1dcaf0c982523bc_theme _277ebb348812c9712fac6b680ad5e513_reset _277ebb348812c9712fac6b680ad5e513_aliyun-font-family" data-ai-assistant-text-selection-tooltip="disabled"><header class="_702422913dd5754f065139ec2d2def80_container   "><button class="_17fcaf1a4ee37405e5ad5fbad24204b4_container _17fcaf1a4ee37405e5ad5fbad24204b4_loading" aria-label="打开菜单" data-spm="d_dashboard_trigger" data-tracker-exp="true"><span class="_17fcaf1a4ee37405e5ad5fbad24204b4_burger "><span class="_17fcaf1a4ee37405e5ad5fbad24204b4_middle"></span></span></button><a href="https://www.aliyun.com/" class="_3f46140aade30bc61f3012933357c477_logo _702422913dd5754f065139ec2d2def80_logo" data-tracker-content="LOGO" data-spm="d_logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4608 1024" fill="#ff6a00" width="80"><path d="M3266.56 773.12h327.68v-102.4h-327.68v-102.4H3584V35.84H2846.72v532.48h317.44v102.4h-327.68v102.4h327.68v112.64h-353.28v102.4h814.08v-102.4h-353.28v-112.64zM3276.8 138.24h215.04v112.64H3276.8V138.24z m0 215.04h215.04V460.8H3276.8V353.28zM3174.4 460.8h-215.04V353.28H3174.4V460.8z m0-209.92h-215.04V138.24H3174.4v112.64zM537.6 445.44H1075.2v122.88H537.6z"></path><path d="M1341.44 5.12h-353.28L1075.2 128l256 81.92c46.08 15.36 76.8 61.44 76.8 107.52v389.12c0 46.08-30.72 92.16-76.8 107.52l-256 81.92-87.04 122.88h353.28c148.48 0 266.24-117.76 266.24-266.24V276.48c0-148.48-117.76-271.36-266.24-271.36zM276.48 814.08c-46.08-15.36-76.8-61.44-76.8-107.52V317.44c0-46.08 30.72-92.16 76.8-107.52l256-81.92L619.52 5.12H266.24C117.76 5.12 0 128 0 276.48v471.04c0 148.48 117.76 266.24 266.24 266.24h353.28l-87.04-122.88-256-76.8zM2493.44 250.88h-261.12v537.6h261.12V250.88z m-107.52 430.08h-56.32V353.28h56.32v327.68zM1848.32 988.16h102.4V138.24h107.52L1996.8 419.84v102.4h61.44v225.28c0 15.36-10.24 25.6-25.6 25.6h-25.6v102.4h51.2c56.32 0 102.4-46.08 102.4-102.4v-358.4H2099.2l61.44-281.6v-102.4h-312.32v957.44z"></path><path d="M2206.72 138.24H2560v660.48c0 46.08-35.84 87.04-87.04 87.04h-76.8v102.4h107.52c87.04 0 163.84-71.68 163.84-163.84V138.24h35.84v-102.4h-496.64v102.4zM3763.2 40.96h737.28v102.4H3763.2zM4541.44 527.36v-102.4H3727.36v102.4h204.8l-163.84 358.4v102.4h691.2c30.72 0 51.2-25.6 51.2-51.2 0-10.24 0-15.36-5.12-20.48l-87.04-194.56h-112.64l76.8 163.84h-496.64l163.84-358.4h491.52z"></path></svg></a><div class="e76910c82efe8556eb8a6ce6019c5d00_container"><button class="e76910c82efe8556eb8a6ce6019c5d00_controller" data-spm="dscroll-left"><i class="ee52067fb65534cb06d3b35f654f5441_icon ddd10ed9ffa4788f54781e516c4c6560-button_left"></i></button><div class="e76910c82efe8556eb8a6ce6019c5d00_menu-warp"><nav class="_0b0e00051b37611378e027e6ac3a695a_menus"><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/product/tongyi" data-spm="d_menu_0">大模型</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/product/list" data-spm="d_menu_1">产品</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/solution/tech-solution/" data-spm="d_menu_2">解决方案</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/benefit" data-spm="d_menu_3">权益</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/price" data-spm="d_menu_4">定价</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://market.aliyun.com/" data-spm="d_menu_5">云市场</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://partner.aliyun.com/management/v2" data-spm="d_menu_6">伙伴</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/service" data-spm="d_menu_7">服务</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/about" data-spm="d_menu_8">了解阿里云</a></nav></div><button class="e76910c82efe8556eb8a6ce6019c5d00_controller" data-spm="dscroll-right"><i class="ee52067fb65534cb06d3b35f654f5441_icon ddd10ed9ffa4788f54781e516c4c6560-button_right"></i></button></div><div class="_702422913dd5754f065139ec2d2def80_search-wrap " style="--left-width:0px;--right-width:0px"><div class="global-nav-search _626567c051250ffe2f303af907d3fc83_global-nav-search"><div class="global-search-container _626567c051250ffe2f303af907d3fc83_global-nav-search-desktop-container"><div class="ff4f4a96a12f52ffbdd0d6adbdb6a2b0_position-desktop-search-container"><div><div class="f6fd7e4d3293f0634b9ac54848c275b7_default-search-panel  f6fd7e4d3293f0634b9ac54848c275b7_hidden-default-search-panel"></div><div class="_3b4f5487091623b0b6852e2b46d2729e_search-recommend-panel  _3b4f5487091623b0b6852e2b46d2729e_hidden-search-recommend-panel"><button class="_4b65cdd64479a2fabe582b8c0789821e_search-no-content " type="button">查看 &quot;&quot; 全部搜索结果</button></div></div></div></div><div class="_626567c051250ffe2f303af907d3fc83_global-nav-search-mobile-container"><a class="_626567c051250ffe2f303af907d3fc83_search-button" href="https://www.aliyun.com/search?from=h5-global-nav-search"><span role="img" class="_9a1d73bbcd1a80626a31035a12410804_icon _626567c051250ffe2f303af907d3fc83_search-button-icon"><svg width="1em" height="1em" viewBox="0 0 32 32" focusable="false" color="currentColor" fill="currentColor" class="" data-icon="search"><g><g><path fill-opacity="1" fill-rule="evenodd" d="M14,4C15.3558,4,16.653399999999998,4.262105,17.8926,4.786314C19.089100000000002,5.29242,20.1486,6.00666,21.071,6.92905C21.9933,7.85144,22.7076,8.91087,23.2137,10.10735C23.7379,11.34664,24,12.64419,24,14C24,15.3558,23.7379,16.653399999999998,23.2137,17.892699999999998C22.8382,18.7803,22.3482,19.5925,21.7436,20.3293L27.7072,26.2928L26.293,27.7071L20.3294,21.7435C19.592599999999997,22.3481,18.7803,22.8382,17.8926,23.2137C16.653399999999998,23.7379,15.3558,24,14,24C12.64419,24,11.34664,23.7379,10.10735,23.2137C8.91087,22.7076,7.85144,21.9933,6.92905,21.0709C6.00666,20.1486,5.29242,19.089100000000002,4.786314,17.8926C4.262105,16.653399999999998,4,15.3558,4,14C4,12.64419,4.262105,11.34664,4.786314,10.10735C5.29242,8.91087,6.00666,7.85144,6.92905,6.92905C7.85144,6.00666,8.91087,5.29242,10.10735,4.786314C11.34664,4.262105,12.64419,4,14,4ZM14,6C11.79102,6,9.905439999999999,6.78109,8.34326,8.34326C6.78109,9.905439999999999,6,11.79102,6,14C6,16.209,6.78109,18.0946,8.34326,19.6567C9.905439999999999,21.2189,11.79102,22,14,22C16.209,22,18.0946,21.2189,19.6567,19.6567C21.2189,18.0946,22,16.209,22,14C22,11.79102,21.2189,9.905439999999999,19.6567,8.34326C18.0946,6.78109,16.209,6,14,6Z"></path></g></g></svg></span></a></div></div></div><div class="_174801eef2caf75aeaee91c72b19c09a_container"><a class="global-nav-ai-assistant _174801eef2caf75aeaee91c72b19c09a_item _2d3ef330b3f8055912d355b9a255bfcf_btn" href="https://www.aliyun.com/ai-assistant?displayMode=side" data-spm="dai_assistant" target="_blank"><div class="LogoStyled-aliyun-ai-assistant-rc-8096__sc-1qusfpt-0 cpJKij"><div class="ai-assistant-brand-logo-icon" style="background:no-repeat center/100%  url(https://img.alicdn.com/imgextra/i4/O1CN012X1Rxl1clAgB5waMK_!!6000000003640-2-tps-52-52.png)"><img src="https://img.alicdn.com/imgextra/i2/O1CN01bYc1m81RrcSAyOjMu_!!6000000002165-54-tps-60-60.apng" loading="lazy"/></div><div class="ai-assistant-brand-logo-tooltip "><div class="ai-assistant-logo-tooltip-content">AI 助理</div></div></div></a><button class="_174801eef2caf75aeaee91c72b19c09a_item c017bf0be22012eb313124a5a5408d0f_button"><i class="ee52067fb65534cb06d3b35f654f5441_icon ddd10ed9ffa4788f54781e516c4c6560-intl"></i></button><button class="_174801eef2caf75aeaee91c72b19c09a_item"><i class="ee52067fb65534cb06d3b35f654f5441_icon ddd10ed9ffa4788f54781e516c4c6560-contact f9c0581c7b0803efa9027b0f2d228294_icon"></i></button><a class="_174801eef2caf75aeaee91c72b19c09a_item" href="https://help.aliyun.com/" target="_blank" data-spm="d_quick_access_3">文档</a><a class="_174801eef2caf75aeaee91c72b19c09a_item" href="https://beian.aliyun.com/" target="_blank" data-spm="d_quick_access_4">备案</a><a class="_174801eef2caf75aeaee91c72b19c09a_item" href="https://home.console.aliyun.com/home/dashboard/ProductAndService" target="_blank" data-spm="d_quick_access_5" rel="nofollow">控制台</a><span class="f8312ad103723788906e97b238dccd8c_loading _174801eef2caf75aeaee91c72b19c09a_item"></span></div></header></div><div class="_3bd147f6948a20d6c528ac898ad4ba47_mobile de5ef2fee09ebcb2b1dcaf0c982523bc_theme _277ebb348812c9712fac6b680ad5e513_reset _277ebb348812c9712fac6b680ad5e513_aliyun-font-family"></div><div class="_18a32969382a277c44015217fbc5cb5a_box"></div></div></div></header>
+
+  <div id="app"><div class="MainLayout--mainContainer--FzmzeDI" id="docs-container"><div class="MainLayout--helpBodyHead--fFcCOhC"><div class="HelpBodyHead--helpBodyHeadBox--VWOHGv0 help-body-head" data-spm="help-sub-nav"><div class="HelpBodyHead--helpBodyHead--YgG0_RH help-body-head-content"><div class="HelpBodyHead--helpHeadDocName--eZC8orQ"><a href="/zh" data-spm="d_logo">官方文档</a></div><div class="help-tablist"></div><div class="HelpBodyHead--bodyHeadRight--mgSoj67"></div></div><div class="HelpBodyHead--productList--YJ9ism5" style="display:none"><div class="ProductList--allProducts--Z87vhzs"><div class="ProductList--allProductsHead--l2aMmm6"><div class="ProductList--allProductsSearchWrapper--PgTrGTl"><div class="ProductList--allProductsSearch--edTNjmr"><span role="img" class="Icon--icon--jErARdR ProductList--searchIcon--NrFYKki"><svg width="1em" height="1em" viewBox="0 0 32 32" focusable="false" color="currentColor" fill="currentColor" class="" data-icon="document-search"><g fill-rule="evenodd" stroke-width="1"><path d="M19,3 L27,11 L27,29 L5,29 L5,3 L19,3 Z M18,5 L7,5 L7,27 L25,27 L25,12 L18,12 L18,5 Z M20,6.82842636 L20,10 L23.1715736,10 L20,6.82842636 Z"></path><path d="M15.5,13.5 C16.8806419,13.5 18.0591358,13.9881726 19.0354815,14.9645178 C20.0118272,15.9408637 20.5,17.1193577 20.5,18.5 C20.5,19.5346034 20.2258676,20.4556918 19.6776028,21.2632651 L22.1636839,23.7493687 L20.749464,25.1635761 L18.2634125,22.6775026 C17.4558048,23.2258342 16.5346673,23.5 15.5,23.5 C14.1193581,23.5 12.9408642,23.0118272 11.9645183,22.0354815 C10.9881728,21.0591364 10.5,19.8806426 10.5,18.5 C10.5,17.1193576 10.9881728,15.9408636 11.9645183,14.9645181 C12.9408638,13.9881727 14.1193577,13.5 15.5,13.5 Z M15.5,15.5 C14.6716423,15.5 13.9645529,15.7929106 13.3787317,16.3787317 C12.7929106,16.9645527 12.5,17.6716421 12.5,18.5 C12.5,19.3283571 12.7929105,20.0354462 13.3787315,20.6212673 C13.964553,21.2070891 14.6716425,21.5 15.5,21.5 C16.3283577,21.5 17.0354471,21.2070891 17.6212683,20.6212673 C18.2070894,20.0354462 18.5,19.3283571 18.5,18.5 C18.5,17.6716421 18.2070894,16.9645526 17.6212683,16.3787315 C17.0354471,15.7929105 16.3283577,15.5 15.5,15.5 Z"></path></g></svg></span><input placeholder="输入文档关键字查找"></div></div></div><div class="ProductList--allProductsBody--jNYsZlh"></div></div></div></div></div><div class="PcLayout--docsContainer--pwbB9bE"><div class="PcLayout--mobileHelpBodyHead--g_YCRMg"><div class="HelpBodyHead--mobileHeadBlank--_hX8BWJ"></div></div><div class="PcLayout--aliyunAppLayout--_QE36ni"><nav class="aliyun-docs-menu" id="aliyun-docs-menu"><div class="Menu--helpMenuBox--WZ7MX3B" id="help-menu-box" style="width:300px"><div class="Menu--helpMenuInnerBox--kxSXymh aliyun-docs-toc-content" style="width:300px"><div class="Menu--helpMenuDrag--fs9WrRe help-menu-drag-box"></div><div class="Menu--helpMenu--reWzeMt"><div class="help-menu-subproduct"><div class="help-subproduct-container"></div></div><div class="MenuSearch--collapseActionBar--m98Zp_n"><div class="MenuSearch--searchContainer--yxqXL6w"><div class="MenuSearch--searchInputWrapper--xJnk941"><span role="img" class="Icon--icon--jErARdR MenuSearch--searchIcon--YWpGKq9"><svg width="1em" height="1em" viewBox="0 0 32 32" focusable="false" color="currentColor" fill="currentColor" class="" data-icon="document-search"><g fill-rule="evenodd" stroke-width="1"><path d="M19,3 L27,11 L27,29 L5,29 L5,3 L19,3 Z M18,5 L7,5 L7,27 L25,27 L25,12 L18,12 L18,5 Z M20,6.82842636 L20,10 L23.1715736,10 L20,6.82842636 Z"></path><path d="M15.5,13.5 C16.8806419,13.5 18.0591358,13.9881726 19.0354815,14.9645178 C20.0118272,15.9408637 20.5,17.1193577 20.5,18.5 C20.5,19.5346034 20.2258676,20.4556918 19.6776028,21.2632651 L22.1636839,23.7493687 L20.749464,25.1635761 L18.2634125,22.6775026 C17.4558048,23.2258342 16.5346673,23.5 15.5,23.5 C14.1193581,23.5 12.9408642,23.0118272 11.9645183,22.0354815 C10.9881728,21.0591364 10.5,19.8806426 10.5,18.5 C10.5,17.1193576 10.9881728,15.9408636 11.9645183,14.9645181 C12.9408638,13.9881727 14.1193577,13.5 15.5,13.5 Z M15.5,15.5 C14.6716423,15.5 13.9645529,15.7929106 13.3787317,16.3787317 C12.7929106,16.9645527 12.5,17.6716421 12.5,18.5 C12.5,19.3283571 12.7929105,20.0354462 13.3787315,20.6212673 C13.964553,21.2070891 14.6716425,21.5 15.5,21.5 C16.3283577,21.5 17.0354471,21.2070891 17.6212683,20.6212673 C18.2070894,20.0354462 18.5,19.3283571 18.5,18.5 C18.5,17.6716421 18.2070894,16.9645526 17.6212683,16.3787315 C17.0354471,15.7929105 16.3283577,15.5 15.5,15.5 Z"></path></g></svg></span><input placeholder="在目录中筛选" class="MenuSearch--searchInput--vYXA7NN"></div></div></div><div class="help-menu-scroll-container Menu--menuContent--f6GC88t" data-spm="help-menu-undefined"><ul id="common-menu-container">
+ <li id="3033349" class="Menu--level1--UN3zYr3">
+<a href="/zh/lingma/qodercli-cn/product-overview/">
+<i class="iconfont icon-close-arrow"></i>
+<span class="Menu--menuItemText--a6B4ZGH">产品概述</span>
+</a>
+</li>
+ <li id="3033319" class="Menu--level1--UN3zYr3">
+<a href="/zh/lingma/qodercli-cn/user-guide/">
+<i class="iconfont icon-close-arrow"></i>
+<span class="Menu--menuItemText--a6B4ZGH">操作指南</span>
+</a>
+</li>
+</ul></div></div></div></div></nav><main class="aliyun-docs-view" id="aliyun-docs-view"><div class="ProductDetail--contentWrapper--iCunrBZ"><section class="aliyun-docs-content" style="height:auto"><header class="aliyun-docs-view-header"><div class="Header--topBar--LXfTLL5"><div class="BreadCrumb--breadcrumb--s_Uzlex"><div class="help-header-breadcrumb"><a href="/zh">首页</a></div></div></div><div class="Header--title--iTk2tUo"><h1>钩子</h1><div class="Header--actionBar--dvzFYrk"><div class="Header--left--x8TGxDL"><span class="Header--updateTime--YXGPhcZ">更新时间：</span></div><div class="Header--right--l4TSW1E"><span class="Header--copyButtonWrapper--LDbniON"><span class="CopyAsMarkdown--copyButton--SVGoWIG"><span role="img" class="Icon--icon--jErARdR"><svg width="1em" height="1em" viewBox="0 0 32 32" focusable="false" color="currentColor" fill="currentColor" class="" data-icon="copy"><g fill-rule="evenodd" stroke-width="1"><polygon fill-rule="nonzero" points="8 6.80000019 8 4 28 4 28 24 25 24 25 22 26 22 26 6 10 6 10 6.80000019"></polygon><path d="M24,8 L24,28 L4,28 L4,8 L24,8 Z M22,10 L6,10 L6,26 L22,26 L22,10 Z"></path></g></svg></span>复制 MD 格式</span></span><div class="Header--linkButton--LpCRs1O"><div class="OuterUrl--outUrl--ZFzJIhk"><a href="https://lingma.aliyun.com/" target="_blank" rel="noreferrer">产品详情</a></div></div><div class="Contact--contactButton--TBwTX5R"><span class="Contact--favoritesBtn--J8mRVBp" title="收藏本文档" data-spm-click="gostr=/aliyun;locaid=collect"><i class="help-iconfont help-icon-like"></i></span><a href="/my_favorites.html">我的收藏</a></div></div></div></div></header><div class="pc-markdown-container unionContainer" id="pc-markdown-container"><div class="markdown-body"><div lang="zh" class="icms-help-docs-content">
+
+  <main id="main-hooks">
+    
+    
+    <p id="p-shortdesc-hooks" data-tag="shortdesc" class="shortdesc">Hooks 允许在 Qoder CN CLI 的关键节点接入 Agent 的主执行流，同时与 CLI 保持解耦。常见用途包括：工具执行前拦截危险操作、任务完成后发送桌面通知、写文件后自动跑 lint 等。</p>
+    <div id="body-hooks" data-tag="body" class="body">
+      <p id="p-hooks-intro">Hooks 通过 JSON 配置文件定义，不需要修改代码，编辑配置文件即可生效。</p>
+      <section id="sec-hooks-quickstart" class="section">
+        <h2 id="h2-hooks-quickstart">快速开始</h2>
+        <p id="p-hooks-qs-intro">以下示例演示如何用 Hook 拦截危险命令——当 Agent 尝试执行 <code data-tag="inlineCode" id="ic-hooks-rmrf" class="inlineCode">rm -rf</code> 时自动阻止。</p>
+        <p id="p-hooks-qs-step1"><b>第一步：创建脚本</b></p><pre outputclass="language-shell" data-tag="codeblock" code-type="xCode" id="cb-hooks-qs-script" index="0" class="pre codeblock language-shell"><code>mkdir -p ~/.qoder-cn/hooks
+
+cat &gt; ~/.qoder-cn/hooks/block-rm.sh &lt;&lt; 'EOF'
+#!/bin/bash
+input=$(cat)
+command=$(echo "$input" | jq -r '.tool_input.command')
+if echo "$command" | grep -q 'rm -rf'; then
+  echo "危险命令已被阻止: $command" &gt;&amp;2
+  exit 2
+fi
+exit 0
+EOF
+
+chmod +x ~/.qoder-cn/hooks/block-rm.sh</code></pre>
+        <p id="p-hooks-qs-step2"><b>第二步：编辑配置文件</b></p>
+        <p id="p-hooks-qs-step2-desc">在 <code data-tag="inlineCode" id="ic-hooks-settings" class="inlineCode">~/.qoder-cn/settings.json</code> 中添加：</p><pre outputclass="language-json" data-tag="codeblock" code-type="xCode" id="cb-hooks-qs-config" index="0" class="pre codeblock language-json"><code>{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.qoder-cn/hooks/block-rm.sh"
+          }
+        ]
+      }
+    ]
+  }
+}</code></pre>
+        <p id="p-hooks-qs-step3"><b>第三步：验证效果</b></p>
+        <p id="p-hooks-qs-step3-desc">启动 Qoder CN CLI，让 Agent 执行包含 <code data-tag="inlineCode" id="ic-hooks-qs-rmrf" class="inlineCode">rm -rf</code> 的命令，Hook 会阻止执行并提示 Agent。</p>
+      </section>
+      <section id="sec-hooks-config" class="section">
+        <h2 id="h2-hooks-config">配置</h2>
+        <section id="sec-hooks-config-location" class="section">
+          <h3 id="h3-hooks-config-location">配置文件位置</h3>
+          <p id="p-hooks-config-location">Hook 配置从以下三个文件加载，三级配置会被<b>合并</b>执行：</p><pre outputclass="language-powershell" data-tag="codeblock" code-type="xCode" id="cb-hooks-config-location" index="0" class="pre codeblock language-powershell"><code>~/.qoder-cn/settings.json                    # 用户级，对所有项目生效
+${project}/.qoder/settings.json           # 项目级，对当前项目生效，可提交 git 共享给团队
+${project}/.qoder/settings.local.json     # 项目级（本地），优先级最高，建议加到 .gitignore</code></pre>
+        </section>
+        <section id="sec-hooks-config-format" class="section">
+          <h3 id="h3-hooks-config-format">配置格式</h3><pre outputclass="language-json" data-tag="codeblock" code-type="xCode" id="cb-hooks-config-format" index="0" class="pre codeblock language-json"><code>{
+  "hooks": {
+    "事件名": [
+      {
+        "matcher": "匹配条件",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "要执行的命令",
+            "timeout": 60
+          }
+        ]
+      }
+    ]
+  }
+}</code></pre>
+          <p id="p-hooks-config-fields">字段说明：</p>
+          <table id="table-hooks-config-fields" tablewidth="648" tablecolswidth="216 216 216" autofit="false" class="table">
+            <colgroup colwidth="1*" style="width:33.33%"></colgroup>
+            <colgroup colwidth="1*" style="width:33.33%"></colgroup>
+            <colgroup colwidth="1*" style="width:33.33%"></colgroup>
+            <tbody class="tbody">
+              <tr id="tr-hcf-header">
+                <td id="td-hcf-h1" rowspan="1" colspan="1">
+                  <p id="p-hcf-h1"><span style="background-color:rgb(229, 229, 229)">字段</span></p>
+                </td>
+                <td id="td-hcf-h2" rowspan="1" colspan="1">
+                  <p id="p-hcf-h2"><span style="background-color:rgb(229, 229, 229)">必填</span></p>
+                </td>
+                <td id="td-hcf-h3" rowspan="1" colspan="1">
+                  <p id="p-hcf-h3"><span style="background-color:rgb(229, 229, 229)">说明</span></p>
+                </td>
+              </tr>
+              <tr id="tr-hcf-type">
+                <td id="td-hcf-type-a" rowspan="1" colspan="1">
+                  <p id="p-hcf-type-a"><code data-tag="inlineCode" id="ic-hcf-type" class="inlineCode">type</code></p>
+                </td>
+                <td id="td-hcf-type-b" rowspan="1" colspan="1">
+                  <p id="p-hcf-type-b">是</p>
+                </td>
+                <td id="td-hcf-type-c" rowspan="1" colspan="1">
+                  <p id="p-hcf-type-c">固定为 <code data-tag="inlineCode" id="ic-hcf-type-val" class="inlineCode">"command"</code></p>
+                </td>
+              </tr>
+              <tr id="tr-hcf-command">
+                <td id="td-hcf-cmd-a" rowspan="1" colspan="1">
+                  <p id="p-hcf-cmd-a"><code data-tag="inlineCode" id="ic-hcf-cmd" class="inlineCode">command</code></p>
+                </td>
+                <td id="td-hcf-cmd-b" rowspan="1" colspan="1">
+                  <p id="p-hcf-cmd-b">是</p>
+                </td>
+                <td id="td-hcf-cmd-c" rowspan="1" colspan="1">
+                  <p id="p-hcf-cmd-c">要执行的 shell 命令</p>
+                </td>
+              </tr>
+              <tr id="tr-hcf-timeout">
+                <td id="td-hcf-timeout-a" rowspan="1" colspan="1">
+                  <p id="p-hcf-timeout-a"><code data-tag="inlineCode" id="ic-hcf-timeout" class="inlineCode">timeout</code></p>
+                </td>
+                <td id="td-hcf-timeout-b" rowspan="1" colspan="1">
+                  <p id="p-hcf-timeout-b">否</p>
+                </td>
+                <td id="td-hcf-timeout-c" rowspan="1" colspan="1">
+                  <p id="p-hcf-timeout-c">超时时间（秒），默认 60</p>
+                </td>
+              </tr>
+              <tr id="tr-hcf-matcher">
+                <td id="td-hcf-matcher-a" rowspan="1" colspan="1">
+                  <p id="p-hcf-matcher-a"><code data-tag="inlineCode" id="ic-hcf-matcher" class="inlineCode">matcher</code></p>
+                </td>
+                <td id="td-hcf-matcher-b" rowspan="1" colspan="1">
+                  <p id="p-hcf-matcher-b">否</p>
+                </td>
+                <td id="td-hcf-matcher-c" rowspan="1" colspan="1">
+                  <p id="p-hcf-matcher-c">匹配条件，不填则匹配所有</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p id="p-hooks-config-multi">一个事件下可以配置多个 matcher 分组，每个分组可以包含多个 hook 命令。</p>
+        </section>
+        <section id="sec-hooks-matcher" class="section">
+          <h3 id="h3-hooks-matcher">matcher 匹配规则</h3>
+          <p id="p-hooks-matcher-intro"><code data-tag="inlineCode" id="ic-hooks-matcher-field" class="inlineCode">matcher</code> 用于过滤 hook 的触发范围，不同事件匹配不同的字段（见各事件说明）。</p>
+          <table id="table-hooks-matcher" tablewidth="648" tablecolswidth="216 216 216" autofit="false" class="table">
+            <colgroup colwidth="1*" style="width:33.33%"></colgroup>
+            <colgroup colwidth="1*" style="width:33.33%"></colgroup>
+            <colgroup colwidth="1*" style="width:33.33%"></colgroup>
+            <tbody class="tbody">
+              <tr id="tr-hm-header">
+                <td id="td-hm-h1" rowspan="1" colspan="1">
+                  <p id="p-hm-h1"><span style="background-color:rgb(229, 229, 229)">写法</span></p>
+                </td>
+                <td id="td-hm-h2" rowspan="1" colspan="1">
+                  <p id="p-hm-h2"><span style="background-color:rgb(229, 229, 229)">含义</span></p>
+                </td>
+                <td id="td-hm-h3" rowspan="1" colspan="1">
+                  <p id="p-hm-h3"><span style="background-color:rgb(229, 229, 229)">示例</span></p>
+                </td>
+              </tr>
+              <tr id="tr-hm-empty">
+                <td id="td-hm-empty-a" rowspan="1" colspan="1">
+                  <p id="p-hm-empty-a">不填或 <code data-tag="inlineCode" id="ic-hm-star" class="inlineCode">"*"</code></p>
+                </td>
+                <td id="td-hm-empty-b" rowspan="1" colspan="1">
+                  <p id="p-hm-empty-b">匹配所有</p>
+                </td>
+                <td id="td-hm-empty-c" rowspan="1" colspan="1">
+                  <p id="p-hm-empty-c">所有工具都触发</p>
+                </td>
+              </tr>
+              <tr id="tr-hm-exact">
+                <td id="td-hm-exact-a" rowspan="1" colspan="1">
+                  <p id="p-hm-exact-a">精确值</p>
+                </td>
+                <td id="td-hm-exact-b" rowspan="1" colspan="1">
+                  <p id="p-hm-exact-b">精确匹配</p>
+                </td>
+                <td id="td-hm-exact-c" rowspan="1" colspan="1">
+                  <p id="p-hm-exact-c"><code data-tag="inlineCode" id="ic-hm-bash" class="inlineCode">"Bash"</code> 只匹配 Bash 工具</p>
+                </td>
+              </tr>
+              <tr id="tr-hm-pipe">
+                <td id="td-hm-pipe-a" rowspan="1" colspan="1">
+                  <p id="p-hm-pipe-a"><code data-tag="inlineCode" id="ic-hm-pipe" class="inlineCode">|</code> 分隔</p>
+                </td>
+                <td id="td-hm-pipe-b" rowspan="1" colspan="1">
+                  <p id="p-hm-pipe-b">匹配多个值</p>
+                </td>
+                <td id="td-hm-pipe-c" rowspan="1" colspan="1">
+                  <p id="p-hm-pipe-c"><code data-tag="inlineCode" id="ic-hm-pipe-ex" class="inlineCode">"Write|Edit"</code> 匹配 Write 或 Edit</p>
+                </td>
+              </tr>
+              <tr id="tr-hm-regex">
+                <td id="td-hm-regex-a" rowspan="1" colspan="1">
+                  <p id="p-hm-regex-a">正则表达式</p>
+                </td>
+                <td id="td-hm-regex-b" rowspan="1" colspan="1">
+                  <p id="p-hm-regex-b">正则匹配</p>
+                </td>
+                <td id="td-hm-regex-c" rowspan="1" colspan="1">
+                  <p id="p-hm-regex-c"><code data-tag="inlineCode" id="ic-hm-regex-ex" class="inlineCode">"mcp__.*"</code> 匹配所有 MCP 工具</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+      <section id="sec-hooks-scripting" class="section">
+        <h2 id="h2-hooks-scripting">Hook 脚本编写</h2>
+        <p id="p-hooks-scripting-intro">Hook 脚本通过 stdin 接收 JSON 输入，通过 exit code 和 stdout 输出来控制行为。本节说明所有事件通用的输入输出格式，各事件的额外字段见"支持的事件"。</p>
+        <section id="sec-hooks-input" class="section">
+          <h3 id="h3-hooks-input">输入</h3>
+          <p id="p-hooks-input-intro">Hook 脚本通过 <b>stdin</b> 接收 JSON 数据。所有事件都包含以下通用字段：</p>
+          <table id="table-hooks-input" tablewidth="650" tablecolswidth="325 325" autofit="false" class="table">
+            <colgroup colwidth="1*" style="width:50.00%"></colgroup>
+            <colgroup colwidth="1*" style="width:50.00%"></colgroup>
+            <tbody class="tbody">
+              <tr id="tr-hi-header">
+                <td id="td-hi-h1" rowspan="1" colspan="1">
+                  <p id="p-hi-h1"><span style="background-color:rgb(229, 229, 229)">字段</span></p>
+                </td>
+                <td id="td-hi-h2" rowspan="1" colspan="1">
+                  <p id="p-hi-h2"><span style="background-color:rgb(229, 229, 229)">说明</span></p>
+                </td>
+              </tr>
+              <tr id="tr-hi-session">
+                <td id="td-hi-session-a" rowspan="1" colspan="1">
+                  <p id="p-hi-session-a"><code data-tag="inlineCode" id="ic-hi-session" class="inlineCode">session_id</code></p>
+                </td>
+                <td id="td-hi-session-b" rowspan="1" colspan="1">
+                  <p id="p-hi-session-b">当前会话 ID</p>
+                </td>
+              </tr>
+              <tr id="tr-hi-cwd">
+                <td id="td-hi-cwd-a" rowspan="1" colspan="1">
+                  <p id="p-hi-cwd-a"><code data-tag="inlineCode" id="ic-hi-cwd" class="inlineCode">cwd</code></p>
+                </td>
+                <td id="td-hi-cwd-b" rowspan="1" colspan="1">
+                  <p id="p-hi-cwd-b">当前工作目录</p>
+                </td>
+              </tr>
+              <tr id="tr-hi-event">
+                <td id="td-hi-event-a" rowspan="1" colspan="1">
+                  <p id="p-hi-event-a"><code data-tag="inlineCode" id="ic-hi-event" class="inlineCode">hook_event_name</code></p>
+                </td>
+                <td id="td-hi-event-b" rowspan="1" colspan="1">
+                  <p id="p-hi-event-b">触发的事件名称</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p id="p-hooks-input-jq">不同事件会在此基础上附加额外字段（见各事件说明）。用 <code data-tag="inlineCode" id="ic-hooks-jq" class="inlineCode">jq</code> 解析输入：</p><pre outputclass="language-python" data-tag="codeblock" code-type="xCode" id="cb-hooks-input-jq" index="0" class="pre codeblock language-python"><code>#!/bin/bash
+input=$(cat)
+tool_name=$(echo "$input" | jq -r '.tool_name')</code></pre>
+        </section>
+        <section id="sec-hooks-output" class="section">
+          <h3 id="h3-hooks-output">输出</h3>
+          <p id="p-hooks-output">Hook 通过 exit code 和 stdout 控制行为。exit code 决定基本行为：0 成功，2 阻塞（stderr 内容注入对话，仅对支持阻塞的事件生效），其他值为非阻塞错误。stdout JSON（仅 exit 0 时解析）可为部分事件提供精细控制，具体支持的字段见各事件说明。exit 非 0 时 stdout 被忽略。</p>
+        </section>
+        <section id="sec-hooks-env" class="section">
+          <h3 id="h3-hooks-env">环境变量</h3>
+          <p id="p-hooks-env-intro">Hook 脚本执行时可以使用以下环境变量：</p>
+          <table id="table-hooks-env" tablewidth="650" tablecolswidth="325 325" autofit="false" class="table">
+            <colgroup colwidth="1*" style="width:50.00%"></colgroup>
+            <colgroup colwidth="1*" style="width:50.00%"></colgroup>
+            <tbody class="tbody">
+              <tr id="tr-he-header">
+                <td id="td-he-h1" rowspan="1" colspan="1">
+                  <p id="p-he-h1"><span style="background-color:rgb(229, 229, 229)">变量</span></p>
+                </td>
+                <td id="td-he-h2" rowspan="1" colspan="1">
+                  <p id="p-he-h2"><span style="background-color:rgb(229, 229, 229)">说明</span></p>
+                </td>
+              </tr>
+              <tr id="tr-he-projdir">
+                <td id="td-he-projdir-a" rowspan="1" colspan="1">
+                  <p id="p-he-projdir-a"><code data-tag="inlineCode" id="ic-he-projdir" class="inlineCode">QODER_PROJECT_DIR</code></p>
+                </td>
+                <td id="td-he-projdir-b" rowspan="1" colspan="1">
+                  <p id="p-he-projdir-b">当前项目的工作目录</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+      <section id="sec-hooks-events" class="section">
+        <h2 id="h2-hooks-events">支持的事件</h2>
+        <p id="p-hooks-events-intro">Qoder CN CLI 支持以下 Hook 事件，覆盖会话生命周期的各个阶段。</p>
+        <section id="sec-hooks-sessionstart" class="section">
+          <h3 id="h3-hooks-sessionstart">SessionStart</h3>
+          <p id="p-hooks-sessionstart">会话开始时触发。</p>
+          <p id="p-hooks-sessionstart-matcher"><b>matcher 匹配：</b> 会话来源</p>
+          <table id="table-hooks-sessionstart" tablewidth="650" tablecolswidth="325 325" autofit="false" class="table">
+            <colgroup colwidth="1*" style="width:50.00%"></colgroup>
+            <colgroup colwidth="1*" style="width:50.00%"></colgroup>
+            <tbody class="tbody">
+              <tr id="tr-hss-header">
+                <td id="td-hss-h1" rowspan="1" colspan="1">
+                  <p id="p-hss-h1"><span style="background-color:rgb(229, 229, 229)">matcher 值</span></p>
+                </td>
+                <td id="td-hss-h2" rowspan="1" colspan="1">
+                  <p id="p-hss-h2"><span style="background-color:rgb(229, 229, 229)">触发场景</span></p>
+                </td>
+              </tr>
+              <tr id="tr-hss-startup">
+                <td id="td-hss-startup-a" rowspan="1" colspan="1">
+                  <p id="p-hss-startup-a"><code data-tag="inlineCode" id="ic-hss-startup" class="inlineCode">startup</code></p>
+                </td>
+                <td id="td-hss-startup-b" rowspan="1" colspan="1">
+                  <p id="p-hss-startup-b">新会话启动</p>
+                </td>
+              </tr>
+              <tr id="tr-hss-resume">
+                <td id="td-hss-resume-a" rowspan="1" colspan="1">
+                  <p id="p-hss-resume-a"><code data-tag="inlineCode" id="ic-hss-resume" class="inlineCode">resume</code></p>
+                </td>
+                <td id="td-hss-resume-b" rowspan="1" colspan="1">
+                  <p id="p-hss-resume-b">恢复已有会话</p>
+                </td>
+              </tr>
+              <tr id="tr-hss-compact">
+                <td id="td-hss-compact-a" rowspan="1" colspan="1">
+                  <p id="p-hss-compact-a"><code data-tag="inlineCode" id="ic-hss-compact" class="inlineCode">compact</code></p>
+                </td>
+                <td id="td-hss-compact-b" rowspan="1" colspan="1">
+                  <p id="p-hss-compact-b">上下文压缩完成后</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p id="p-hooks-sessionstart-input"><b>额外输入字段：</b></p><pre outputclass="language-json" data-tag="codeblock" code-type="xCode" id="cb-hooks-sessionstart" index="0" class="pre codeblock language-json"><code>{
+  "source": "startup",
+  "model": "Auto"
+}</code></pre>
+        </section>
+        <section id="sec-hooks-sessionend" class="section">
+          <h3 id="h3-hooks-sessionend">SessionEnd</h3>
+          <p id="p-hooks-sessionend">会话结束时触发。</p>
+          <p id="p-hooks-sessionend-matcher"><b>matcher 匹配：</b> 结束原因</p>
+          <table id="table-hooks-sessionend" tablewidth="650" tablecolswidth="325 325" autofit="false" class="table">
+            <colgroup colwidth="1*" style="width:50.00%"></colgroup>
+            <colgroup colwidth="1*" style="width:50.00%"></colgroup>
+            <tbody class="tbody">
+              <tr id="tr-hse-header">
+                <td id="td-hse-h1" rowspan="1" colspan="1">
+                  <p id="p-hse-h1"><span style="background-color:rgb(229, 229, 229)">matcher 值</span></p>
+                </td>
+                <td id="td-hse-h2" rowspan="1" colspan="1">
+                  <p id="p-hse-h2"><span style="background-color:rgb(229, 229, 229)">触发场景</span></p>
+                </td>
+              </tr>
+              <tr id="tr-hse-exit">
+                <td id="td-hse-exit-a" rowspan="1" colspan="1">
+                  <p id="p-hse-exit-a"><code data-tag="inlineCode" id="ic-hse-exit" class="inlineCode">prompt_input_exit</code></p>
+                </td>
+                <td id="td-hse-exit-b" rowspan="1" colspan="1">
+                  <p id="p-hse-exit-b">用户退出输入（Ctrl+D 等）</p>
+                </td>
+              </tr>
+              <tr id="tr-hse-other">
+                <td id="td-hse-other-a" rowspan="1" colspan="1">
+                  <p id="p-hse-other-a"><code data-tag="inlineCode" id="ic-hse-other" class="inlineCode">other</code></p>
+                </td>
+                <td id="td-hse-other-b" rowspan="1" colspan="1">
+                  <p id="p-hse-other-b">其他原因</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p id="p-hooks-sessionend-input"><b>额外输入字段：</b></p><pre outputclass="language-json" data-tag="codeblock" code-type="xCode" id="cb-hooks-sessionend" index="0" class="pre codeblock language-json"><code>{
+  "reason": "prompt_input_exit"
+}</code></pre>
+        </section>
+        <section id="sec-hooks-userprompt" class="section">
+          <h3 id="h3-hooks-userprompt">UserPromptSubmit</h3>
+          <p id="p-hooks-userprompt">用户提交 Prompt 后、Agent 处理前触发。</p>
+          <p id="p-hooks-userprompt-input"><b>额外输入字段：</b></p><pre outputclass="language-json" data-tag="codeblock" code-type="xCode" id="cb-hooks-userprompt" index="0" class="pre codeblock language-json"><code>{
+  "prompt": "帮我写一个排序函数"
+}</code></pre>
+        </section>
+        <section id="sec-hooks-pretooluse" class="section">
+          <h3 id="h3-hooks-pretooluse">PreToolUse</h3>
+          <p id="p-hooks-pretooluse">工具执行前触发。可以阻止工具执行。</p>
+          <p id="p-hooks-pretooluse-matcher"><b>matcher 匹配：</b> 工具名（如 <code data-tag="inlineCode" id="ic-hooks-ptu-bash" class="inlineCode">Bash</code>、<code data-tag="inlineCode" id="ic-hooks-ptu-write" class="inlineCode">Write</code>、<code data-tag="inlineCode" id="ic-hooks-ptu-edit" class="inlineCode">Edit</code>、<code data-tag="inlineCode" id="ic-hooks-ptu-read" class="inlineCode">Read</code>、<code data-tag="inlineCode" id="ic-hooks-ptu-glob" class="inlineCode">Glob</code>、<code data-tag="inlineCode" id="ic-hooks-ptu-grep" class="inlineCode">Grep</code>，MCP 工具名如 <code data-tag="inlineCode" id="ic-hooks-ptu-mcp" class="inlineCode">mcp__server__tool</code>）</p>
+          <p id="p-hooks-pretooluse-input"><b>额外输入字段：</b></p><pre outputclass="language-json" data-tag="codeblock" code-type="xCode" id="cb-hooks-pretooluse" index="0" class="pre codeblock language-json"><code>{
+  "tool_name": "Bash",
+  "tool_input": {"command": "rm -rf /tmp/build"},
+  "tool_use_id": "toolu_01ABC123"
+}</code></pre>
+          <p id="p-hooks-pretooluse-block"><b>阻止工具执行：</b> exit code 2，stderr 内容作为错误返回给 Agent。完整示例见"快速开始"。</p>
+        </section>
+        <section id="sec-hooks-posttooluse" class="section">
+          <h3 id="h3-hooks-posttooluse">PostToolUse</h3>
+          <p id="p-hooks-posttooluse">工具执行成功后触发。</p>
+          <p id="p-hooks-posttooluse-matcher"><b>matcher 匹配：</b> 工具名</p>
+          <p id="p-hooks-posttooluse-input"><b>额外输入字段：</b></p><pre outputclass="language-json" data-tag="codeblock" code-type="xCode" id="cb-hooks-posttooluse" index="0" class="pre codeblock language-json"><code>{
+  "tool_name": "Write",
+  "tool_input": {"file_path": "/path/to/file.ts", "content": "..."},
+  "tool_response": "File written successfully",
+  "tool_use_id": "toolu_01ABC123"
+}</code></pre>
+        </section>
+        <section id="sec-hooks-posttoolusefailure" class="section">
+          <h3 id="h3-hooks-posttoolusefailure">PostToolUseFailure</h3>
+          <p id="p-hooks-posttoolusefailure">工具执行失败后触发。</p>
+          <p id="p-hooks-posttoolusefailure-matcher"><b>matcher 匹配：</b> 工具名</p>
+          <p id="p-hooks-posttoolusefailure-input"><b>额外输入字段：</b></p><pre outputclass="language-json" data-tag="codeblock" code-type="xCode" id="cb-hooks-posttoolusefailure" index="0" class="pre codeblock language-json"><code>{
+  "tool_name": "Bash",
+  "tool_input": {"command": "npm test"},
+  "tool_use_id": "toolu_01ABC123",
+  "error": "Command exited with non-zero status code 1",
+  "is_interrupt": false
+}</code></pre>
+        </section>
+        <section id="sec-hooks-stop" class="section">
+          <h3 id="h3-hooks-stop">Stop</h3>
+          <p id="p-hooks-stop">Agent 完成响应后触发（主 Agent，无待执行的工具调用时）。可以阻止 Agent 停止，让其继续工作。</p>
+          <p id="p-hooks-stop-block"><b>阻止 Agent 停止：</b> exit code 2，stderr 内容作为消息注入对话，Agent 继续工作。</p>
+        </section>
+        <section id="sec-hooks-subagent" class="section">
+          <h3 id="h3-hooks-subagent">SubagentStart / SubagentStop</h3>
+          <p id="p-hooks-subagent">子 Agent 启动和完成时触发。SubagentStop 与 Stop 类似，可以阻止子 Agent 停止。</p>
+          <p id="p-hooks-subagent-matcher"><b>matcher 匹配：</b> Agent 类型名</p>
+          <p id="p-hooks-subagent-input"><b>额外输入字段：</b></p><pre outputclass="language-json" data-tag="codeblock" code-type="xCode" id="cb-hooks-subagent" index="0" class="pre codeblock language-json"><code>{
+  "agent_id": "a1b2c3d4",
+  "agent_type": "task"
+}</code></pre>
+        </section>
+        <section id="sec-hooks-precompact" class="section">
+          <h3 id="h3-hooks-precompact">PreCompact</h3>
+          <p id="p-hooks-precompact">上下文压缩前触发。</p>
+          <p id="p-hooks-precompact-matcher"><b>matcher 匹配：</b> 触发方式</p>
+          <table id="table-hooks-precompact" tablewidth="650" tablecolswidth="325 325" autofit="false" class="table">
+            <colgroup colwidth="1*" style="width:50.00%"></colgroup>
+            <colgroup colwidth="1*" style="width:50.00%"></colgroup>
+            <tbody class="tbody">
+              <tr id="tr-hpc-header">
+                <td id="td-hpc-h1" rowspan="1" colspan="1">
+                  <p id="p-hpc-h1"><span style="background-color:rgb(229, 229, 229)">matcher 值</span></p>
+                </td>
+                <td id="td-hpc-h2" rowspan="1" colspan="1">
+                  <p id="p-hpc-h2"><span style="background-color:rgb(229, 229, 229)">触发场景</span></p>
+                </td>
+              </tr>
+              <tr id="tr-hpc-manual">
+                <td id="td-hpc-manual-a" rowspan="1" colspan="1">
+                  <p id="p-hpc-manual-a"><code data-tag="inlineCode" id="ic-hpc-manual" class="inlineCode">manual</code></p>
+                </td>
+                <td id="td-hpc-manual-b" rowspan="1" colspan="1">
+                  <p id="p-hpc-manual-b">用户手动执行 /compact</p>
+                </td>
+              </tr>
+              <tr id="tr-hpc-auto">
+                <td id="td-hpc-auto-a" rowspan="1" colspan="1">
+                  <p id="p-hpc-auto-a"><code data-tag="inlineCode" id="ic-hpc-auto" class="inlineCode">auto</code></p>
+                </td>
+                <td id="td-hpc-auto-b" rowspan="1" colspan="1">
+                  <p id="p-hpc-auto-b">上下文窗口满时自动触发</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p id="p-hooks-precompact-input"><b>额外输入字段：</b></p><pre outputclass="language-json" data-tag="codeblock" code-type="xCode" id="cb-hooks-precompact" index="0" class="pre codeblock language-json"><code>{
+  "trigger": "manual",
+  "custom_instructions": "保留所有工具调用结果"
+}</code></pre>
+        </section>
+        <section id="sec-hooks-notification" class="section">
+          <h3 id="h3-hooks-notification">Notification</h3>
+          <p id="p-hooks-notification">通知事件触发（权限请求、任务完成等）。</p>
+          <p id="p-hooks-notification-matcher"><b>matcher 匹配：</b> 通知类型</p>
+          <table id="table-hooks-notification" tablewidth="650" tablecolswidth="325 325" autofit="false" class="table">
+            <colgroup colwidth="1*" style="width:50.00%"></colgroup>
+            <colgroup colwidth="1*" style="width:50.00%"></colgroup>
+            <tbody class="tbody">
+              <tr id="tr-hn-header">
+                <td id="td-hn-h1" rowspan="1" colspan="1">
+                  <p id="p-hn-h1"><span style="background-color:rgb(229, 229, 229)">matcher 值</span></p>
+                </td>
+                <td id="td-hn-h2" rowspan="1" colspan="1">
+                  <p id="p-hn-h2"><span style="background-color:rgb(229, 229, 229)">触发场景</span></p>
+                </td>
+              </tr>
+              <tr id="tr-hn-permission">
+                <td id="td-hn-permission-a" rowspan="1" colspan="1">
+                  <p id="p-hn-permission-a"><code data-tag="inlineCode" id="ic-hn-permission" class="inlineCode">permission</code></p>
+                </td>
+                <td id="td-hn-permission-b" rowspan="1" colspan="1">
+                  <p id="p-hn-permission-b">权限请求通知</p>
+                </td>
+              </tr>
+              <tr id="tr-hn-result">
+                <td id="td-hn-result-a" rowspan="1" colspan="1">
+                  <p id="p-hn-result-a"><code data-tag="inlineCode" id="ic-hn-result" class="inlineCode">result</code></p>
+                </td>
+                <td id="td-hn-result-b" rowspan="1" colspan="1">
+                  <p id="p-hn-result-b">Agent 产出结果通知</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p id="p-hooks-notification-input"><b>额外输入字段：</b></p><pre outputclass="language-json" data-tag="codeblock" code-type="xCode" id="cb-hooks-notification" index="0" class="pre codeblock language-json"><code>{
+  "message": "Agent is requesting permission to run: rm -rf node_modules",
+  "title": "Permission Required",
+  "notification_type": "permission"
+}</code></pre>
+        </section>
+        <section id="sec-hooks-permrequest" class="section">
+          <h3 id="h3-hooks-permrequest">PermissionRequest</h3>
+          <p id="p-hooks-permrequest">工具执行需要用户授权时触发。</p>
+          <p id="p-hooks-permrequest-matcher"><b>matcher 匹配：</b> 工具名</p>
+          <p id="p-hooks-permrequest-input"><b>额外输入字段：</b></p><pre outputclass="language-json" data-tag="codeblock" code-type="xCode" id="cb-hooks-permrequest" index="0" class="pre codeblock language-json"><code>{
+  "tool_name": "Bash",
+  "tool_input": {"command": "rm -rf node_modules"}
+}</code></pre>
+        </section>
+      </section>
+      <section id="sec-hooks-usecases" class="section">
+        <h2 id="h2-hooks-usecases">实用场景</h2>
+        <section id="sec-hooks-uc-notify" class="section">
+          <h3 id="h3-hooks-uc-notify">桌面通知提醒</h3>
+          <p id="p-hooks-uc-notify-intro">当 Agent 完成任务或需要授权时，弹出桌面通知。脚本 <code data-tag="inlineCode" id="ic-hooks-notify-path" class="inlineCode">~/.qoder-cn/hooks/notify.sh</code>（macOS）：</p><pre outputclass="language-python" data-tag="codeblock" code-type="xCode" id="cb-hooks-uc-notify" index="0" class="pre codeblock language-python"><code>#!/bin/bash
+input=$(cat)
+message=$(echo "$input" | jq -r '.message')
+if echo "$message" | grep -q "^Agent"; then
+  osascript -e 'display notification "任务执行完成" with title "Qoder CN CLI"'
+else
+  osascript -e 'display notification "任务需要授权" with title "Qoder CN CLI"'
+fi
+exit 0</code></pre>
+          <p id="p-hooks-uc-notify-config">配置：</p><pre outputclass="language-json" data-tag="codeblock" code-type="xCode" id="cb-hooks-uc-notify-config" index="0" class="pre codeblock language-json"><code>{
+  "hooks": {
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.qoder-cn/hooks/notify.sh"
+          }
+        ]
+      }
+    ]
+  }
+}</code></pre>
+        </section>
+        <section id="sec-hooks-uc-lint" class="section">
+          <h3 id="h3-hooks-uc-lint">写文件后自动 Lint</h3>
+          <p id="p-hooks-uc-lint-intro">每次 Agent 写入或编辑文件后，自动执行 lint 检查。脚本 <code data-tag="inlineCode" id="ic-hooks-lint-path" class="inlineCode">${project}/.qoder/hooks/auto-lint.sh</code>：</p><pre outputclass="language-python" data-tag="codeblock" code-type="xCode" id="cb-hooks-uc-lint" index="0" class="pre codeblock language-python"><code>#!/bin/bash
+input=$(cat)
+file_path=$(echo "$input" | jq -r '.tool_input.file_path')
+
+# 只检查 JS/TS 文件
+case "$file_path" in
+  *.js|*.ts|*.jsx|*.tsx)
+    npx eslint "$file_path" --fix 2&gt;/dev/null
+    ;;
+esac
+exit 0</code></pre>
+          <p id="p-hooks-uc-lint-config">配置：事件 <code data-tag="inlineCode" id="ic-hooks-lint-event" class="inlineCode">PostToolUse</code>，matcher <code data-tag="inlineCode" id="ic-hooks-lint-matcher" class="inlineCode">Write|Edit</code>，command <code data-tag="inlineCode" id="ic-hooks-lint-cmd" class="inlineCode">.qoder/hooks/auto-lint.sh</code>。</p>
+        </section>
+        <section id="sec-hooks-uc-continue" class="section">
+          <h3 id="h3-hooks-uc-continue">让 Agent 继续工作</h3>
+          <p id="p-hooks-uc-continue-intro">在 Agent 停止时检查是否还有未完成的任务，如果有则注入消息让 Agent 继续。脚本 <code data-tag="inlineCode" id="ic-hooks-continue-path" class="inlineCode">~/.qoder-cn/hooks/check-continue.sh</code>：</p><pre outputclass="language-python" data-tag="codeblock" code-type="xCode" id="cb-hooks-uc-continue" index="0" class="pre codeblock language-python"><code>#!/bin/bash
+# 检查是否有未提交的 git 变更
+if [ -n "$(git status --porcelain 2&gt;/dev/null)" ]; then
+  echo "检测到未提交的变更，请完成 git commit" &gt;&amp;2
+  exit 2
+fi
+exit 0</code></pre>
+          <p id="p-hooks-uc-continue-config">配置：事件 <code data-tag="inlineCode" id="ic-hooks-continue-event" class="inlineCode">Stop</code>，command <code data-tag="inlineCode" id="ic-hooks-continue-cmd" class="inlineCode">~/.qoder-cn/hooks/check-continue.sh</code>。</p>
+        </section>
+      </section>
+    </div>
+  </main>
+
+
+
+
+</div></div><div class="aliyun-docs-pagination"><div class="NextPage--container--cfVcdEE"><span class="NextPage--paginationLeft--WTOmehr"><a href="/zh/lingma/qodercli-cn/user-guide/skills" data-spm-click="gostr=/aliyun;locaid=preDoc"><i class="iconfont icon-prev-arrow"></i>上一篇：技能</a></span><span class="NextPage--paginationRight--TgS6P1r"><a href="/zh/lingma/qodercli-cn/user-guide/remote-control" data-spm-click="gostr=/aliyun;locaid=nextDoc">下一篇：Remote Control<i class="iconfont icon-next-arrow"></i></a></span></div></div></div><div class="RecommendDoc--container--M1qVQax"></div><div class="FeedbackButton--feedbackContainer--njtB22l aliyun-docs-feedback" id="help-doc-feedback"><div class="FeedbackButton--feedbackHelpTip--JxaBwdy">该文章对您有帮助吗？</div><div class="FeedbackButton--feedbackButtonContainer--ujiXFNJ"><div class="FeedbackButton--feedbackButtonBox--GmY1Nor"><button class="FeedbackButton--iconButton--fx4Xcop"><i class="help-iconfont help-icon-tag-empty"></i></button><button class="FeedbackButton--iconButton--fx4Xcop"><i class="help-iconfont help-icon-tag-empty" style="display:inline-block;transform:rotateX(-180deg)"></i></button><button class="FeedbackButton--clickButton--YxH6n96"><i class="help-iconfont help-icon-bianji"></i>反馈</button></div></div></div></section><div class="aliyun-docs-side" id="aliyun-docs-side"><div id="aliyun-docs-side-content" class="aliyun-docs-side-content ProductDetail--rightBox--GGLE5sH"><ul class="Outline--synopsisBox--zm_HamD" id="outline-container"></ul></div><div id="aliyun-docs-side-blank" class="aliyun-docs-side-blank"></div></div></div></main></div></div><div id="aliyun-docs-selection-div"></div></div></div>
+  <footer><div id="d3f70824d5ebd653022a88a05724eff1"><div class="_18a32969382a277c44015217fbc5cb5a_box"><footer class="_49ada0cd752f65901c49f2eed0d6c3d5_container" aria-label="PC 端页尾"><div class="_49ada0cd752f65901c49f2eed0d6c3d5_inner"><div class="_296d5000d6fdcaff9d0bfd209c64fbbc_services"><nav class="_296d5000d6fdcaff9d0bfd209c64fbbc_homepage-footer-main-services" aria-label="页脚导航"><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">为什么选择阿里云</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/about/what-is-cloud-computing" target="_blank">什么是云计算</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://infrastructure.aliyun.com/" target="_blank">全球基础设施</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/why-us/leading-technology" target="_blank">技术领先</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/why-us/reliability" target="_blank">稳定可靠</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/why-us/security-compliance" target="_blank">安全合规</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/analyst-reports" target="_blank">分析师报告</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">大模型</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/product/tongyi" target="_blank">千问大模型</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://bailian.console.aliyun.com/?tab=model#/model-market" target="_blank" rel="nofollow">大模型服务</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://bailian.console.aliyun.com/app-center?tab=app#/app-center" target="_blank" rel="nofollow">AI应用构建</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">产品和定价</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/product/list" target="_blank">全部产品</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://free.aliyun.com/" target="_blank">免费试用</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/product/news/" target="_blank">产品动态</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/price/detail" target="_blank">产品定价</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/price/cpq/list" target="_blank">配置报价器</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/price/cost-management" target="_blank">云上成本管理</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">技术内容</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/solution/tech-solution" target="_blank">技术解决方案</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://help.aliyun.com/" target="_blank">帮助文档</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://developer.aliyun.com/" target="_blank">开发者社区</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://tianchi.aliyun.com/" target="_blank">天池大赛</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://edu.aliyun.com/" target="_blank">阿里云认证</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">权益</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://free.aliyun.com/" target="_blank">免费试用</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/solution/free" target="_blank">解决方案免费试用</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://university.aliyun.com/" target="_blank">高校计划</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://dashi.aliyun.com/?ambRef=shouYeDaoHang2&amp;pageCode=yunparterIndex" target="_blank">推荐返现计划</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">服务</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/service" target="_blank">基础服务</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/service/supportplans" target="_blank">企业增值服务</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/service/devopsimpl/devopsimpl_cloudmigration_public_cn" target="_blank">迁云服务</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/notice/" target="_blank">官网公告</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://status.aliyun.com/" target="_blank">健康看板</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://security.aliyun.com/trust-center" target="_blank">信任中心</a></section></nav><article class="_7b44142961778903dda8af3f769cd06c_focus"><h3 class="_7b44142961778903dda8af3f769cd06c_ali-main-services-title">关注阿里云</h3><p class="_7b44142961778903dda8af3f769cd06c_ali-main-services-desc">关注阿里云公众号或下载阿里云APP，关注云资讯，随时随地运维管控云服务</p><img alt="阿里云APP" src="https://img.alicdn.com/imgextra/i4/O1CN01XLesV31fkf7pYNATb_!!6000000004045-2-tps-400-400.png" class="_7b44142961778903dda8af3f769cd06c_ali-official-code" loading="lazy"/><img alt="阿里云微信" src="https://img.alicdn.com/tfs/TB1AOdINW6qK1RjSZFmXXX0PFXa-258-258.jpg" class="_7b44142961778903dda8af3f769cd06c_ali-official-code" loading="lazy"/><p class="_7b44142961778903dda8af3f769cd06c_consult-text">联系我们：4008013260</p></article></div><div class="_4598709a854bea355ceb6ef9f23f10d4_about-link-wrap"><a href="https://help.aliyun.com/product/67275.html" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">法律声明</a><a href="https://terms.alicdn.com/legal-agreement/terms/platform_service/20220906101446934/20220906101446934.html" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">Cookies 政策</a><a href="https://aliyun.jubao.alibaba.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">廉正举报</a><a href="https://report.aliyun.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">安全举报</a><a href="https://www.aliyun.com/contact" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">联系我们</a><a href="https://careers.aliyun.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">加入我们</a></div><section class="_4598709a854bea355ceb6ef9f23f10d4_friend-link-wrap"><h3 hidden="">友情链接</h3><a href="https://www.alibabagroup.com/cn/global/home" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里巴巴集团</a><a href="https://www.taobao.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">淘宝网</a><a href="https://www.tmall.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">天猫</a><a href="https://www.aliexpress.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">全球速卖通</a><a href="https://www.alibaba.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里巴巴国际交易市场</a><a href="https://www.1688.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">1688</a><a href="https://www.alimama.com/index.htm" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里妈妈</a><a href="https://www.fliggy.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">飞猪</a><a href="https://www.aliyun.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里云计算</a><a href="https://wanwang.aliyun.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">万网</a><a href="https://mobile.amap.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">高德</a><a href="https://www.uc.cn/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">UC</a><a href="https://www.umeng.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">友盟</a><a href="https://www.youku.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">优酷</a><a href="https://www.dingtalk.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">钉钉</a><a href="https://www.alipay.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">支付宝</a><a href="https://damo.alibaba.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">达摩院</a><a href="https://world.taobao.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">淘宝海外</a><a href="https://www.aliyundrive.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里云盘</a><a href="https://www.ele.me/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">淘宝闪购</a></section><p class="_4598709a854bea355ceb6ef9f23f10d4_ali-copyright-text">© 2009-现在 Aliyun.com 版权所有 增值电信业务经营许可证： <a href="http://beian.miit.gov.cn/" target="_blank">浙B2-20080101</a> 域名注册服务机构许可： <a href="https://domain.miit.gov.cn/域名注册服务机构/互联网域名/阿里云计算有限公司 " target="_blank">浙D3-20210002</a></p><p class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-wrap"><a href="https://zzlz.gsxt.gov.cn/businessCheck/verifKey.do?showType=p&amp;serial=91330106673959654P-SAIC_SHOW_10000091330106673959654P1782269316568&amp;signData=MEUCIQDTH78jfQrqhsr99oZZLEZ9bvrSnyF%20tsaiBM1kAscJ1AIgWUzC8x%20mPem4t8XfwhDOOOIaNULiW8MBaKLkRHa0eWw%3D" target="_blank" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link"><img src="//gw.alicdn.com/tfs/TB1GxwdSXXXXXa.aXXXXXXXXXXX-65-70.gif" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-img" alt="" loading="lazy"/></a><a href="http://www.beian.gov.cn/portal/registerSystemInfo" target="_blank" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link"><img src="//img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-img" alt="浙公网安备 33010602009975号" loading="lazy"/><span class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link-text">浙公网安备 33010602009975号</span></a><a href="https://beian.miit.gov.cn/" target="_blank" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link"><span class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link-text _4598709a854bea355ceb6ef9f23f10d4_ali-report-link-text-unique">浙B2-20080101-4</span></a></p></div></footer><footer class="_4b41e3343c851a7a8833c9165b249eb2_container" aria-label="移动端页尾"></footer></div></div></footer>
+
+
+
+<script>
+  var _performance_domEnd = window.performance && window.performance.now();
+</script>
+
+
+  <script>
+    window.ALIYUN_PERF && window.ALIYUN_PERF.getPCP().then(rst => {
+      var data = {
+        product: 'help.aliyun.com',
+        ua: navigator.userAgent,
+        device: 'pc',
+        page: 'index',
+        lang: 'zh',
+        cna: '',
+        url: window.location.href,
+        action: 'pcp',
+        userParams1: rst || 0,
+      };
+      let queryStr = Object.keys(data).map(key => data[key] &&
+        `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`).join('&');
+      fetch('https://help-new.cn-wulanchabu.log.aliyuncs.com/logstores/web-tracking/track?APIVersion=0.6.0&' +
+        queryStr);
+    });
+  </script>
+  
+
+  <script crossorigin="" src="https://g.alicdn.com/code/lib/??react/16.8.6/umd/react.production.min.js,react-dom/16.8.6/umd/react-dom.production.min.js"></script>
+  <script src="https://g.alicdn.com/code/lib/lodash.js/4.17.21/lodash.min.js" crossorigin="anonymous"></script>
+  <script>
+  window.resourceBaseUrl="https://g.alicdn.com/aliyun-help/help-portal-fe/0.12.51/"
+</script>
+<script defer="" src="https://g.alicdn.com/aliyun-help/help-portal-fe/0.12.51/js/index.js"></script>
+<script defer src="https://g.alicdn.com/aliyun-help/help-portal-fe/0.12.51/js/vendor.js"></script>
+  
+  <script async="" src="https://g.alicdn.com/dawn/assets-loader/scripts/fast-login.js?tenantName=help-new-aliyun-com"></script>
+  <script async="" src="https://g.alicdn.com/aliyun/perf/js/index.js"></script>
+  <script src="//cloud-assets.alicdn.com/website.js" crossorigin=""></script>
+  
+
+<script src="https://website.alyasset.com/npm.combo/@ali/biu-loader/0.1.9/~~index.js,plugins/global-react.js,plugins/ace-module.js"></script>
+<script src="https://website.alyasset.com/npm.combo/@ali/~~hmod-preact/0.0.1/index.js,hmod-preact-hooks/0.0.1/index.js,hmod-preact-compat/0.0.1/index.js,hmod-preact-bridge/0.1.4/index.js"></script>
+<script src="https://website.alyasset.com/code.combo/aliyun-com/~~lowcode-env-inject/0.1.0/aliyun.prod.pc.zh-CN.js,lowcode-engine/0.1.125/renderer/build/js/index.js"></script>
+<script src="https://g.alicdn.com/code/npm/@ali/??hmod-ace-2023-box/0.1.0/index.js,hmod-aliyun-com-floating-toolbar/0.2.4/index.js,hmod-aliyun-com-global-nav-search/0.8.5/index.js,hmod-aliyun-com-global-nav-search/0.8.5/locales/zh-CN.js,hmod-aliyun-com-global-nav/0.3.18/index.js,hmod-aliyun-com-global-nav/0.3.18/locales/zh-CN.js"></script>
+<script src="https://website.alyasset.com/lowcode/entry/prod/77597e3303f7f62742f8e02d3f883457.js"></script>
+<script src="https://g.alicdn.com/code/npm/@ali/??hmod-ace-2023-box/0.1.0/index.js,hmod-ace-2024-global-footer/0.2.1/index.js,hmod-ace-2024-global-footer/0.2.1/locales/zh-CN.js,hmod-lowcode-normal-page/0.1.0/index.js"></script>
+<script src="https://website.alyasset.com/lowcode/entry/prod/d3f70824d5ebd653022a88a05724eff1.js"></script>
+</body></html>

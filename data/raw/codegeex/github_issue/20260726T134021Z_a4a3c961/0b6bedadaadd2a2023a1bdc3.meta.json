@@ -1,0 +1,36 @@
+{
+  "canonical_url": "https://github.com/zai-org/CodeGeeX/issues/192",
+  "competitor": "codegeex",
+  "content_type": "application/json",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": "W/\"66081aa80fa15dc24256e0babea4d9fe26f5c9a74e3b616355eb2b1702d9e411\"",
+  "fetched_at": "2026-07-26T14:21:47.690971Z",
+  "final_url": "https://api.github.com/repositories/537827151/issues?state=all&sort=updated&direction=desc&per_page=100&page=2&since=2023-07-27T13%3A40%3A21.046700Z&after=Y3Vyc29yOnYyOpLPAAABilcYf9DOb_wbDQ%3D%3D",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "21b9efb518505bebfc22e228e23b355f7de1e1c83108d69eba9d7e0d45e861c4",
+  "payload_path": "codegeex/github_issue/20260726T134021Z_a4a3c961/0b6bedadaadd2a2023a1bdc3.json",
+  "published_at": "2023-08-02T08:19:01Z",
+  "raw_record_id": "0b6bedadaadd2a2023a1bdc3",
+  "requested_url": "https://api.github.com/repositories/537827151/issues?state=all&sort=updated&direction=desc&per_page=100&page=2&since=2023-07-27T13%3A40%3A21.046700Z&after=Y3Vyc29yOnYyOpLPAAABilcYf9DOb_wbDQ%3D%3D",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "collect_issues": true,
+    "collect_releases": false,
+    "comments_collected": 1,
+    "comments_error": null,
+    "competitor_aliases": [
+      "CodeGeeX4",
+      "CodeGeeX AI Coding Assistant"
+    ],
+    "competitor_name": "CodeGeeX",
+    "evidence_level": "B",
+    "issue_number": 192,
+    "note": "The official repositories currently publish Issues but no GitHub Releases.",
+    "repository": "zai-org/CodeGeeX",
+    "state": "open"
+  },
+  "source_type": "github_issue"
+}

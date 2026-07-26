@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2024-12-06-copilot-chat-now-has-a-64k-context-window-with-openai-gpt-4o/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:47:32.038873Z",
+  "final_url": "https://github.blog/changelog/2024-12-06-copilot-chat-now-has-a-64k-context-window-with-openai-gpt-4o/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "d06cbe4f4555cf421e46fc683361d1c581b1f6ca8a35e5cb43e5387d7ca337ba",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/51039d8798fcef7256395962.html",
+  "published_at": "2024-12-06T00:00:00Z",
+  "raw_record_id": "51039d8798fcef7256395962",
+  "requested_url": "https://github.blog/changelog/2024-12-06-copilot-chat-now-has-a-64k-context-window-with-openai-gpt-4o",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2024/?label=copilot",
+    "changelog_page_number": 3,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2024-12-06T00:00:00Z",
+    "listing_title": "Copilot Chat now has a 64k context window with OpenAI GPT-4o",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3251
+  },
+  "source_type": "changelog"
+}

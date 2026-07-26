@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2024-11-19-build-copilot-extensions-faster-with-skillsets/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:47:38.193577Z",
+  "final_url": "https://github.blog/changelog/2024-11-19-build-copilot-extensions-faster-with-skillsets/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "2cc0be0faed53b9aec6a32960c1d90fd97dc246e38986ee7bf8b18876f17f839",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/cf686bff2e6a4b9790bc9b25.html",
+  "published_at": "2024-11-19T00:00:00Z",
+  "raw_record_id": "cf686bff2e6a4b9790bc9b25",
+  "requested_url": "https://github.blog/changelog/2024-11-19-build-copilot-extensions-faster-with-skillsets",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2024/?label=copilot",
+    "changelog_page_number": 3,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2024-11-19T00:00:00Z",
+    "listing_title": "Build Copilot Extensions faster with skillsets",
+    "record_role": "changelog_entry",
+    "visible_text_length": 5468
+  },
+  "source_type": "changelog"
+}

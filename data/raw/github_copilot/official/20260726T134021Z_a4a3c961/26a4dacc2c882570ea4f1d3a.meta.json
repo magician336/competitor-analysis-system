@@ -1,0 +1,33 @@
+{
+  "canonical_url": "https://github.com/features/copilot/ai-code-editor",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": "W/\"d785d8c19a6707749c076dca7f956ee7\"",
+  "fetched_at": "2026-07-26T13:45:52.924620Z",
+  "final_url": "https://github.com/features/copilot/ai-code-editor",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "e03de24b53508c0b2b409df1d642f0e1ff06bbe6c9abf8f9f30c8f00dca8f2a5",
+  "payload_path": "github_copilot/official/20260726T134021Z_a4a3c961/26a4dacc2c882570ea4f1d3a.html",
+  "published_at": null,
+  "raw_record_id": "26a4dacc2c882570ea4f1d3a",
+  "requested_url": "https://github.com/features/copilot/ai-code-editor",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://github.com/features/copilot/ai-code-editor",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": 6864
+  },
+  "source_type": "official"
+}

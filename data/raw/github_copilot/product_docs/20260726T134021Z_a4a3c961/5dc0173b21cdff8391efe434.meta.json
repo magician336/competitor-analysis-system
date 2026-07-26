@@ -1,0 +1,46 @@
+{
+  "canonical_url": "https://docs.github.com/en/copilot/concepts/agents/github-copilot-app",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:48:32.043139Z",
+  "final_url": "https://docs.github.com/en/copilot/concepts/agents/github-copilot-app",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "88441de47b63a403e0dbd1765b0e70051642c1a362d7cbb4cd40d89c5b3743cf",
+  "payload_path": "github_copilot/product_docs/20260726T134021Z_a4a3c961/5dc0173b21cdff8391efe434.html",
+  "published_at": null,
+  "raw_record_id": "5dc0173b21cdff8391efe434",
+  "requested_url": "https://docs.github.com/en/copilot/concepts/agents/github-copilot-app",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://docs.github.com/en/copilot/concepts/agents/github-copilot-app",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "discovery": {
+      "depth": 1,
+      "max_depth": 1,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/en/copilot"
+      ],
+      "enabled": true,
+      "max_depth": 1,
+      "max_urls": 500
+    },
+    "visible_text_length": 17457
+  },
+  "source_type": "product_docs"
+}

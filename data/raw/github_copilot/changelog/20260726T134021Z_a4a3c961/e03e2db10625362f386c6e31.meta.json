@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2024-12-20-copilot-workspace-changelog-december-20th-2024/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:47:20.974282Z",
+  "final_url": "https://github.blog/changelog/2024-12-20-copilot-workspace-changelog-december-20th-2024/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "ac6d6dc55b812f320d8858c4593ec14f7c83ecf5eaa6cd508d778ed63a595474",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/e03e2db10625362f386c6e31.html",
+  "published_at": "2024-12-20T00:00:00Z",
+  "raw_record_id": "e03e2db10625362f386c6e31",
+  "requested_url": "https://github.blog/changelog/2024-12-20-copilot-workspace-changelog-december-20th-2024",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2024/?label=copilot",
+    "changelog_page_number": 3,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2024-12-20T00:00:00Z",
+    "listing_title": "Copilot Workspace Changelog (December 20th, 2024)",
+    "record_role": "changelog_entry",
+    "visible_text_length": 4989
+  },
+  "source_type": "changelog"
+}

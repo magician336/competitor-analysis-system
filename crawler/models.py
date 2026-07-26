@@ -35,6 +35,7 @@ class SourceType(str, Enum):
     REVIEW = "review"
     SECURITY_PRIVACY = "security_privacy"
     BENCHMARK = "benchmark"
+    RSS = "rss"
 
     @classmethod
     def parse(cls, value: "SourceType | str") -> "SourceType":
@@ -60,6 +61,8 @@ class SourceType(str, Enum):
             "privacy": cls.SECURITY_PRIVACY,
             "trust_center": cls.SECURITY_PRIVACY,
             "benchmarks": cls.BENCHMARK,
+            "feed": cls.RSS,
+            "atom": cls.RSS,
         }
         if normalized in aliases:
             return aliases[normalized]

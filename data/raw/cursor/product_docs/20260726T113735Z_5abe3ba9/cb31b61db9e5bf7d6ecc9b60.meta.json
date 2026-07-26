@@ -1,0 +1,50 @@
+{
+  "canonical_url": "https://cursor.com/docs/page.mdx",
+  "competitor": "cursor",
+  "content_type": null,
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": "HTTP 404",
+  "etag": null,
+  "fetched_at": "2026-07-26T11:40:15.359062Z",
+  "final_url": "https://cursor.com/docs/page.mdx",
+  "http_status": 404,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": null,
+  "payload_path": null,
+  "published_at": null,
+  "raw_record_id": "cb31b61db9e5bf7d6ecc9b60",
+  "requested_url": "https://cursor.com/docs/page.mdx",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://cursor.com/docs/page.mdx",
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "discovery": {
+      "configured_sitemap_urls": [
+        "https://cursor.com/docs/sitemap.xml"
+      ],
+      "method": "sitemap"
+    },
+    "embedded_content": "cursor_next_rsc",
+    "evidence_level": "A",
+    "sitemap_discovery": {
+      "allowed_path_prefixes": [
+        "/docs/"
+      ],
+      "enabled": true,
+      "excluded_path_prefixes": [
+        "/docs-static/"
+      ],
+      "max_sitemaps": 2,
+      "max_urls": 200,
+      "urls": [
+        "https://cursor.com/docs/sitemap.xml"
+      ]
+    }
+  },
+  "source_type": "product_docs"
+}

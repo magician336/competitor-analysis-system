@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2024-12-18-announcing-github-copilot-free/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:47:24.612245Z",
+  "final_url": "https://github.blog/changelog/2024-12-18-announcing-github-copilot-free/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "fbc14fb19cd04bea4c9751837c3e2ad4264652413ab35e0bd251ff4d8e1bf8fc",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/ac970e917e10837f1e16b779.html",
+  "published_at": "2024-12-18T00:00:00Z",
+  "raw_record_id": "ac970e917e10837f1e16b779",
+  "requested_url": "https://github.blog/changelog/2024-12-18-announcing-github-copilot-free",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2024/?label=copilot",
+    "changelog_page_number": 3,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2024-12-18T00:00:00Z",
+    "listing_title": "Announcing GitHub Copilot Free",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3053
+  },
+  "source_type": "changelog"
+}

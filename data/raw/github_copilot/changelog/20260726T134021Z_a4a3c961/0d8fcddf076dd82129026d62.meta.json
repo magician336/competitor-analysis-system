@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2026-07-07-per-user-budgets-for-cost-centers-in-the-billing-ui/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:46:24.470546Z",
+  "final_url": "https://github.blog/changelog/2026-07-07-per-user-budgets-for-cost-centers-in-the-billing-ui/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "6f9048a9e901d4bb283c707f7609c1771801c65d281ed1e6505885bd6611790f",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/0d8fcddf076dd82129026d62.html",
+  "published_at": "2026-07-07T00:00:00Z",
+  "raw_record_id": "0d8fcddf076dd82129026d62",
+  "requested_url": "https://github.blog/changelog/2026-07-07-per-user-budgets-for-cost-centers-in-the-billing-ui",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/label/copilot/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-07-07T00:00:00Z",
+    "listing_title": "Per-user budgets for cost centers in the billing UI",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3045
+  },
+  "source_type": "changelog"
+}

@@ -1,0 +1,46 @@
+{
+  "canonical_url": "https://docs.github.com/en/copilot/tutorials/customization-library/custom-instructions/github-actions-helper",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T11:49:39.651648Z",
+  "final_url": "https://docs.github.com/en/copilot/tutorials/customization-library/custom-instructions/github-actions-helper",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "46075efcb76abdc7c89c996897f42fd53f43e912807f77427dcb875dc9c89927",
+  "payload_path": "github_copilot/product_docs/20260726T113735Z_5abe3ba9/d5aaf3ae6e69d94149513191.html",
+  "published_at": null,
+  "raw_record_id": "d5aaf3ae6e69d94149513191",
+  "requested_url": "https://docs.github.com/en/copilot/tutorials/customization-library/custom-instructions/github-actions-helper",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://docs.github.com/en/copilot/tutorials/customization-library/custom-instructions/github-actions-helper",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "discovery": {
+      "depth": 1,
+      "max_depth": 1,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/en/copilot"
+      ],
+      "enabled": true,
+      "max_depth": 1,
+      "max_urls": 500
+    },
+    "visible_text_length": 15119
+  },
+  "source_type": "product_docs"
+}

@@ -1,0 +1,33 @@
+{
+  "canonical_url": "https://github.com/features/copilot/copilot-business",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": "W/\"e2222e86698971a86bde5f7af3f22d8b\"",
+  "fetched_at": "2026-07-26T13:45:54.954080Z",
+  "final_url": "https://github.com/features/copilot/copilot-business",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "cf27655a7e0926d7f2f285908e0fe73e486817e417fe1a564bb5d3d696c0e118",
+  "payload_path": "github_copilot/official/20260726T134021Z_a4a3c961/80888dd005049c8be1390d20.html",
+  "published_at": null,
+  "raw_record_id": "80888dd005049c8be1390d20",
+  "requested_url": "https://github.com/features/copilot/copilot-business",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://github.com/features/copilot/copilot-business",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": 8368
+  },
+  "source_type": "official"
+}

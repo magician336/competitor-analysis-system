@@ -13,7 +13,7 @@ import yaml
 
 from .base import ConfiguredPageCollector
 from .browser_renderer import PlaywrightBrowserRenderer
-from .crawl_changelog import ChangelogCollector
+from .crawl_changelog import ChangelogCollector, RSSCollector
 from .crawl_github import GitHubCollector
 from .crawl_official import OfficialCollector
 from .crawl_pricing import PricingCollector
@@ -41,6 +41,7 @@ _TASK_SOURCES = {
     SourceType.REVIEW,
     SourceType.SECURITY_PRIVACY,
     SourceType.BENCHMARK,
+    SourceType.RSS,
 }
 
 _GENERIC_PAGE_SOURCES = _TASK_SOURCES - {
@@ -48,6 +49,7 @@ _GENERIC_PAGE_SOURCES = _TASK_SOURCES - {
     SourceType.CHANGELOG,
     SourceType.PRICING,
     SourceType.GITHUB,
+    SourceType.RSS,
 }
 
 
@@ -342,6 +344,7 @@ class CrawlOrchestrator:
             SourceType.GITHUB: GitHubCollector(
                 self.client, writer, token=self.github_token
             ),
+            SourceType.RSS: RSSCollector(self.client, writer),
             **{
                 source_type: ConfiguredPageCollector(
                     self.client,

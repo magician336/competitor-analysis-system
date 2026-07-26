@@ -1,0 +1,46 @@
+{
+  "canonical_url": "https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/measure-success",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:55:03.675156Z",
+  "final_url": "https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/measure-success",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "fccec96c0fd675cc997b2ec689afc5871669ec41f4392806babcc7e67e3d229f",
+  "payload_path": "github_copilot/product_docs/20260726T134021Z_a4a3c961/05d7ce5d4c65ea1b1b5a4ec4.html",
+  "published_at": null,
+  "raw_record_id": "05d7ce5d4c65ea1b1b5a4ec4",
+  "requested_url": "https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/measure-success",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/measure-success",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "discovery": {
+      "depth": 1,
+      "max_depth": 1,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/en/copilot"
+      ],
+      "enabled": true,
+      "max_depth": 1,
+      "max_urls": 500
+    },
+    "visible_text_length": 19651
+  },
+  "source_type": "product_docs"
+}

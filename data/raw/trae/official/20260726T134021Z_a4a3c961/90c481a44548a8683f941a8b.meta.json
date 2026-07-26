@@ -1,0 +1,40 @@
+{
+  "canonical_url": "https://www.trae.ai/download",
+  "competitor": "trae",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T14:04:07.157104Z",
+  "final_url": "https://www.trae.ai/download",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "81e1a071273db190269ce2e0ad9afa7580a5bb4796c49bc487d1ce4692ac221f",
+  "payload_path": "trae/official/20260726T134021Z_a4a3c961/90c481a44548a8683f941a8b.html",
+  "published_at": null,
+  "raw_record_id": "90c481a44548a8683f941a8b",
+  "requested_url": "https://www.trae.ai/download",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://www.trae.ai/download",
+    "browser_fallback": {
+      "enabled": true,
+      "minimum_text_characters": 500,
+      "settle_milliseconds": 1500,
+      "timeout_seconds": 30,
+      "wait_selector": "#root"
+    },
+    "competitor_aliases": [
+      "TRAE",
+      "TRAE IDE"
+    ],
+    "competitor_name": "Trae",
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": 670
+  },
+  "source_type": "official"
+}

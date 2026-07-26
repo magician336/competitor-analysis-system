@@ -1,0 +1,34 @@
+{
+  "canonical_url": "https://help.aliyun.com/zh/lingma/service-agreement-and-privacy-policy",
+  "competitor": "tongyi_lingma",
+  "content_type": "text/html;charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T14:20:54.070668Z",
+  "final_url": "https://help.aliyun.com/zh/lingma/service-agreement-and-privacy-policy",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "9f8fe6c6af42ecec7b784c15883932f081306f451e021b2657e7a04072fe5f77",
+  "payload_path": "tongyi_lingma/security_privacy/20260726T134021Z_a4a3c961/99832bb376b81be39f221f5f.html",
+  "published_at": null,
+  "raw_record_id": "99832bb376b81be39f221f5f",
+  "requested_url": "https://help.aliyun.com/zh/lingma/service-agreement-and-privacy-policy",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://help.aliyun.com/zh/lingma/service-agreement-and-privacy-policy",
+    "competitor_aliases": [
+      "Lingma",
+      "Qoder CN",
+      "智能编码助手通义灵码"
+    ],
+    "competitor_name": "通义灵码",
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": 718
+  },
+  "source_type": "security_privacy"
+}

@@ -15,6 +15,7 @@ from .cleaners import CleanedItem, extract_items, read_payload
 from .labeling import RuleLabeler
 from .normalizers import (
     detect_language,
+    normalize_datetime,
     normalize_text,
     normalize_url,
     sha256_bytes,
@@ -125,6 +126,8 @@ class ProcessingPipeline:
         if record.source_metadata.get("record_role") in {
             "changelog_index",
             "changelog_candidate",
+            "discovery_sitemap",
+            "feed_empty",
         }:
             return False
         if record.error:
@@ -191,15 +194,23 @@ class ProcessingPipeline:
                 "needs_browser": record.needs_browser,
             }
         )
-        publish_time = item.publish_time or record.published_at
+        configured_effective_at = normalize_datetime(
+            record.source_metadata.get("event_effective_at")
+        )
+        publish_time = configured_effective_at or item.publish_time or record.published_at
+        if configured_effective_at is not None:
+            source_metadata["publish_time_basis"] = "configured_event_effective_at"
         valid_from = (
             publish_time
-            if record.source_type
-            in {
-                SourceType.OFFICIAL_CHANGELOG,
-                SourceType.GITHUB_RELEASE,
-                SourceType.RSS,
-            }
+            if (
+                configured_effective_at is not None
+                or record.source_type
+                in {
+                    SourceType.OFFICIAL_CHANGELOG,
+                    SourceType.GITHUB_RELEASE,
+                    SourceType.RSS,
+                }
+            )
             and publish_time is not None
             else record.fetched_at
         )
@@ -296,7 +307,12 @@ class ProcessingPipeline:
                     skipped += 1
                     expected_skip = (
                         record.source_metadata.get("record_role")
-                        in {"changelog_index", "changelog_candidate"}
+                        in {
+                            "changelog_index",
+                            "changelog_candidate",
+                            "discovery_sitemap",
+                            "feed_empty",
+                        }
                         or record.http_status == 304
                     )
                     acquisition_failure = bool(record.error) or (

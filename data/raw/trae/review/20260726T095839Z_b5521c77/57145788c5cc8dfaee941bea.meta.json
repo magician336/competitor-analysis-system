@@ -1,0 +1,34 @@
+{
+  "canonical_url": "https://vibecoding.app/blog/trae-review",
+  "competitor": "trae",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T095839Z_b5521c77",
+  "error": null,
+  "etag": "W/\"54fba67202aebcac312fc8b67d61abc2\"",
+  "fetched_at": "2026-07-26T09:58:49.864572Z",
+  "final_url": "https://vibecoding.app/blog/trae-review",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "9facef3fec2f952e8cf3094a0ef7fb7d94d8737bd2b89acb7e10a50887b852c2",
+  "payload_path": "trae/review/20260726T095839Z_b5521c77/57145788c5cc8dfaee941bea.html",
+  "published_at": null,
+  "raw_record_id": "57145788c5cc8dfaee941bea",
+  "requested_url": "https://vibecoding.app/blog/trae-review",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://vibecoding.app/blog/trae-review",
+    "competitor_aliases": [
+      "TRAE",
+      "TRAE IDE"
+    ],
+    "competitor_name": "Trae",
+    "embedded_content_supported": false,
+    "evidence_level": "C",
+    "format": "html",
+    "note": "URLs form the curated public review allowlist for TRAE.",
+    "visible_text_length": 17885
+  },
+  "source_type": "review"
+}

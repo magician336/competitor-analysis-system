@@ -1,0 +1,32 @@
+{
+  "canonical_url": "https://trae.ai/blog/solo_tutorial_1112",
+  "competitor": "trae",
+  "content_type": "application/json",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T11:52:34.931299Z",
+  "final_url": "https://www.trae.ai/rss.xml",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "27d72fe6cfc981206feb56fc4755a410a4db0d114e8f6b576d469647a71d578e",
+  "payload_path": "trae/rss/20260726T113735Z_5abe3ba9/ee7f28b7f6447105d3a2c799.json",
+  "published_at": "2025-11-08T16:00:00Z",
+  "raw_record_id": "ee7f28b7f6447105d3a2c799",
+  "requested_url": "https://www.trae.ai/rss.xml",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "competitor_aliases": [
+      "TRAE",
+      "TRAE IDE"
+    ],
+    "competitor_name": "Trae",
+    "entry_id": "solo_tutorial_1112",
+    "evidence_level": "A",
+    "format": "feed_entry",
+    "original_content_type": "application/xml",
+    "record_role": "rss_entry"
+  },
+  "source_type": "rss"
+}

@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2026-07-01-browser-tools-for-github-copilot-in-vs-code-are-generally-available/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:46:41.856670Z",
+  "final_url": "https://github.blog/changelog/2026-07-01-browser-tools-for-github-copilot-in-vs-code-are-generally-available/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "46275b97549e6a912251e4f8f6971743e6498d9481521c6144661469492750fd",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/99d5eadfe3189eba0c3106a5.html",
+  "published_at": "2026-07-01T00:00:00Z",
+  "raw_record_id": "99d5eadfe3189eba0c3106a5",
+  "requested_url": "https://github.blog/changelog/2026-07-01-browser-tools-for-github-copilot-in-vs-code-are-generally-available",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/label/copilot/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-07-01T00:00:00Z",
+    "listing_title": "Browser tools for GitHub Copilot in VS Code are generally available",
+    "record_role": "changelog_entry",
+    "visible_text_length": 5267
+  },
+  "source_type": "changelog"
+}

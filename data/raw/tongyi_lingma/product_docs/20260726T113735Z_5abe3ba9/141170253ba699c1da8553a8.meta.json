@@ -1,0 +1,47 @@
+{
+  "canonical_url": "https://help.aliyun.com/zh/lingma/qoder-cn/user-guide/lingma-quest-vibe",
+  "competitor": "tongyi_lingma",
+  "content_type": "text/html;charset=UTF-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T12:00:21.345322Z",
+  "final_url": "https://help.aliyun.com/zh/lingma/qoder-cn/user-guide/lingma-quest-vibe",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "e953284d4ef45329c52bf7e30e897a39b55c7ed4f75eceaff7e41f93c097113c",
+  "payload_path": "tongyi_lingma/product_docs/20260726T113735Z_5abe3ba9/141170253ba699c1da8553a8.html",
+  "published_at": null,
+  "raw_record_id": "141170253ba699c1da8553a8",
+  "requested_url": "https://help.aliyun.com/zh/lingma/qoder-cn/user-guide/lingma-quest-vibe",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://help.aliyun.com/zh/lingma/qoder-cn/user-guide/lingma-quest-vibe",
+    "competitor_aliases": [
+      "Lingma",
+      "Qoder CN",
+      "智能编码助手通义灵码"
+    ],
+    "competitor_name": "通义灵码",
+    "discovery": {
+      "depth": 3,
+      "max_depth": 3,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/zh/lingma/"
+      ],
+      "enabled": true,
+      "max_depth": 3,
+      "max_urls": 300
+    },
+    "visible_text_length": 1036
+  },
+  "source_type": "product_docs"
+}

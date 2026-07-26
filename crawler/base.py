@@ -2,17 +2,23 @@
 
 from __future__ import annotations
 
+import hashlib
 import html
+import json
 import logging
 import re
 from abc import ABC, abstractmethod
+from dataclasses import replace
 from typing import Any, Mapping
+from urllib.parse import urljoin, urlsplit
 
 import requests
 
 from .browser_renderer import BrowserRenderer
 from .http_client import HttpClient, RobotsDeniedError
-from .models import CollectorResult, CollectorTask, SourceType
+from .models import CollectorResult, CollectorTask, RawRecord, SourceType
+from .page_discovery import LinkDiscoverySettings, discover_page_urls
+from .sitemap_loader import SitemapDiscoverySettings, SitemapLoader
 from .storage import RawWriter
 
 
@@ -27,6 +33,34 @@ _SUPPORTED_EMBEDDED_MARKERS = {
     "cursor_next_rsc": b"self.__next_f.push",
     "trae_router_document": b"window._ROUTER_DATA",
 }
+_ALLOWED_FINAL_ORIGINS_KEY = "_link_discovery_allowed_final_origins"
+_REDIRECT_STATUSES = frozenset({301, 302, 303, 307, 308})
+_MAX_SAME_ORIGIN_REDIRECTS = 5
+
+
+def _http_origin(url: object) -> str | None:
+    """Return a normalized HTTP origin, including its effective port."""
+
+    try:
+        parts = urlsplit(str(url or ""))
+        port = parts.port
+    except ValueError:
+        return None
+    scheme = parts.scheme.lower()
+    if (
+        scheme not in {"http", "https"}
+        or not parts.hostname
+        or parts.username is not None
+        or parts.password is not None
+    ):
+        return None
+    hostname = parts.hostname.rstrip(".").lower()
+    try:
+        hostname = hostname.encode("idna").decode("ascii")
+    except UnicodeError:
+        return None
+    effective_port = port if port is not None else (443 if scheme == "https" else 80)
+    return f"{scheme}://{hostname}:{effective_port}"
 
 
 def visible_text_length(payload: bytes, encoding: str = "utf-8") -> int:
@@ -165,6 +199,22 @@ class PageCollector(BaseCollector):
         value = overrides.get(public_url, {})
         return value if isinstance(value, Mapping) else {}
 
+    @classmethod
+    def _response_metadata(
+        cls,
+        task: CollectorTask,
+        public_url: str,
+    ) -> dict[str, Any]:
+        """Merge URL-specific extraction metadata over task-level metadata."""
+
+        metadata = dict(task.metadata)
+        metadata.pop(_ALLOWED_FINAL_ORIGINS_KEY, None)
+        override = cls._request_override(task, public_url)
+        override_metadata = override.get("source_metadata")
+        if isinstance(override_metadata, Mapping):
+            metadata.update(override_metadata)
+        return metadata
+
     def _fetch(
         self,
         task: CollectorTask,
@@ -176,12 +226,60 @@ class PageCollector(BaseCollector):
         params = override.get("params")
         headers = override.get("headers")
         if method == "GET":
-            response = self.client.get(
-                acquisition_url,
-                params=params if isinstance(params, Mapping) else None,
-                headers=headers if isinstance(headers, Mapping) else None,
-                force=task.force,
+            raw_allowed_origins = task.metadata.get(_ALLOWED_FINAL_ORIGINS_KEY)
+            allowed_origins = (
+                {str(value) for value in raw_allowed_origins}
+                if isinstance(raw_allowed_origins, (list, tuple, set, frozenset))
+                else set()
             )
+            if allowed_origins:
+                current_url = acquisition_url
+                current_params = params if isinstance(params, Mapping) else None
+                redirect_count = 0
+                while True:
+                    current_origin = _http_origin(current_url)
+                    if current_origin not in allowed_origins:
+                        raise ValueError(
+                            "redirect target is outside configured "
+                            f"link-discovery seed origins: {current_url}"
+                        )
+                    response = self.client.get(
+                        current_url,
+                        params=current_params,
+                        headers=headers if isinstance(headers, Mapping) else None,
+                        force=task.force,
+                        allow_redirects=False,
+                    )
+                    location = response.headers.get("Location")
+                    if (
+                        response.status_code not in _REDIRECT_STATUSES
+                        or not location
+                    ):
+                        break
+                    if redirect_count >= _MAX_SAME_ORIGIN_REDIRECTS:
+                        raise ValueError(
+                            "link-discovery page exceeded the maximum of "
+                            f"{_MAX_SAME_ORIGIN_REDIRECTS} same-origin redirects"
+                        )
+                    next_url = urljoin(
+                        response.url or current_url,
+                        str(location).strip(),
+                    )
+                    if _http_origin(next_url) not in allowed_origins:
+                        raise ValueError(
+                            "redirect target is outside configured "
+                            f"link-discovery seed origins: {next_url}"
+                        )
+                    redirect_count += 1
+                    current_url = next_url
+                    current_params = None
+            else:
+                response = self.client.get(
+                    acquisition_url,
+                    params=params if isinstance(params, Mapping) else None,
+                    headers=headers if isinstance(headers, Mapping) else None,
+                    force=task.force,
+                )
         elif method == "POST":
             json_body = override.get("json")
             form_data = override.get("data")
@@ -208,16 +306,34 @@ class PageCollector(BaseCollector):
             return result
 
         for url in task.urls:
+            metadata = self._response_metadata(task, url)
             try:
                 response, acquisition_url, method = self._fetch(task, url)
             except (requests.RequestException, RobotsDeniedError) as exc:
-                self._error_record(result, task, url, exc)
+                self._error_record(result, task, url, exc, metadata=metadata)
                 continue
             except ValueError as exc:
-                self._error_record(result, task, url, exc)
+                self._error_record(result, task, url, exc, metadata=metadata)
                 continue
 
-            metadata = dict(task.metadata)
+            raw_allowed_origins = task.metadata.get(_ALLOWED_FINAL_ORIGINS_KEY)
+            allowed_origins = (
+                {str(value) for value in raw_allowed_origins}
+                if isinstance(raw_allowed_origins, (list, tuple, set, frozenset))
+                else set()
+            )
+            final_origin = _http_origin(response.url or acquisition_url)
+            if allowed_origins and final_origin not in allowed_origins:
+                self._error_record(
+                    result,
+                    task,
+                    url,
+                    "redirected outside configured link-discovery seed origins",
+                    response=response,
+                    metadata=metadata,
+                )
+                continue
+
             metadata.update(
                 {
                     "acquisition_url": acquisition_url,
@@ -244,6 +360,7 @@ class PageCollector(BaseCollector):
                     url,
                     f"HTTP {response.status_code}",
                     response=response,
+                    metadata=metadata,
                 )
                 continue
 
@@ -262,6 +379,17 @@ class PageCollector(BaseCollector):
                     metadata,
                 )
                 content_type = response.headers.get("Content-Type", "").lower()
+                final_origin = _http_origin(response.url or acquisition_url)
+                if allowed_origins and final_origin not in allowed_origins:
+                    self._error_record(
+                        result,
+                        task,
+                        url,
+                        "browser rendering left configured link-discovery seed origins",
+                        response=response,
+                        metadata=metadata,
+                    )
+                    continue
             embedded_mode = str(task.metadata.get("embedded_content") or "")
             embedded_marker = _SUPPORTED_EMBEDDED_MARKERS.get(embedded_mode)
             embedded_supported = bool(
@@ -314,3 +442,353 @@ class ConfiguredPageCollector(PageCollector):
             browser_renderer=browser_renderer,
         )
         self.source_type = SourceType.parse(source_type)
+        self.sitemap_loader = SitemapLoader(client, writer, self.source_type)
+
+    @staticmethod
+    def _merge_result(
+        target: CollectorResult,
+        source: CollectorResult,
+    ) -> None:
+        target.records.extend(source.records)
+        target.errors.extend(source.errors)
+        target.skipped.extend(source.skipped)
+
+    @staticmethod
+    def _discovery_url_identity(
+        value: object,
+        settings: LinkDiscoverySettings,
+    ) -> str | None:
+        """Canonicalize one URL through the same rules used for discovered links."""
+
+        raw = str(value or "").strip()
+        if not raw:
+            return None
+        escaped = html.escape(raw, quote=True)
+        urls = discover_page_urls(
+            f'<a href="{escaped}"></a>',
+            page_url=raw,
+            query_params=settings.query_params,
+            max_urls=1,
+        )
+        return urls[0] if urls else None
+
+    def _verified_payload(self, record: RawRecord) -> bytes | None:
+        """Read a raw payload only when its path and digest remain trustworthy."""
+
+        if not record.payload_path or not record.payload_hash:
+            return None
+        raw_root = self.writer.raw_root.resolve()
+        try:
+            payload_path = (raw_root / record.payload_path).resolve()
+            payload_path.relative_to(raw_root)
+            payload = payload_path.read_bytes()
+        except (OSError, ValueError):
+            return None
+        if hashlib.sha256(payload).hexdigest() != record.payload_hash:
+            return None
+        return payload
+
+    def _historical_payload_index(
+        self,
+        task: CollectorTask,
+        settings: LinkDiscoverySettings,
+    ) -> dict[str, list[RawRecord]]:
+        """Index prior successful payloads by canonical discovery URL."""
+
+        indexed: dict[str, list[RawRecord]] = {}
+        indexed_record_ids: dict[str, set[tuple[str, str]]] = {}
+        for metadata_path in self.writer.raw_root.rglob("*.meta.json"):
+            try:
+                raw = json.loads(metadata_path.read_text(encoding="utf-8"))
+                if (
+                    not isinstance(raw, Mapping)
+                    or raw.get("competitor") != task.competitor
+                    or SourceType.parse(raw.get("source_type")) is not self.source_type
+                ):
+                    continue
+                record = RawRecord.from_dict(raw)
+            except (OSError, TypeError, ValueError, json.JSONDecodeError):
+                continue
+            if (
+                record.error
+                or record.http_status is None
+                or not 200 <= record.http_status < 300
+                or record.http_status == 304
+                or not record.payload_path
+                or not record.payload_hash
+            ):
+                continue
+            record_key = (record.crawl_run_id, record.raw_record_id)
+            for candidate_url in (record.requested_url, record.canonical_url):
+                identity = self._discovery_url_identity(candidate_url, settings)
+                if identity is None:
+                    continue
+                known = indexed_record_ids.setdefault(identity, set())
+                if record_key in known:
+                    continue
+                known.add(record_key)
+                indexed.setdefault(identity, []).append(record)
+        for records in indexed.values():
+            records.sort(key=lambda item: item.fetched_at, reverse=True)
+        return indexed
+
+    def _payload_for_discovery(
+        self,
+        result: CollectorResult,
+        parent: RawRecord,
+        settings: LinkDiscoverySettings,
+        seed_origins: set[str],
+        historical_index: dict[str, list[RawRecord]] | None,
+    ) -> tuple[bytes, str] | None:
+        """Resolve a current or verified historical payload for link parsing."""
+
+        if parent.http_status != 304:
+            payload = self._verified_payload(parent)
+            page_url = self._discovery_url_identity(
+                parent.final_url or parent.canonical_url,
+                settings,
+            )
+            if payload is None:
+                result.errors.append(
+                    f"{parent.canonical_url}: link discovery stopped: "
+                    "current raw payload is missing or failed integrity verification"
+                )
+                return None
+            if page_url is None or _http_origin(page_url) not in seed_origins:
+                result.errors.append(
+                    f"{parent.canonical_url}: link discovery stopped: "
+                    "final URL is outside configured seed origins"
+                )
+                return None
+            return payload, page_url
+
+        identity = self._discovery_url_identity(
+            parent.requested_url or parent.canonical_url,
+            settings,
+        )
+        for historical in (historical_index or {}).get(identity or "", []):
+            if historical.fetched_at > parent.fetched_at:
+                continue
+            page_url = self._discovery_url_identity(
+                historical.final_url or historical.canonical_url,
+                settings,
+            )
+            if page_url is None or _http_origin(page_url) not in seed_origins:
+                continue
+            payload = self._verified_payload(historical)
+            if payload is not None:
+                return payload, page_url
+        result.errors.append(
+            f"{parent.canonical_url}: link discovery stopped after HTTP 304: "
+            "no verified historical raw payload is available"
+        )
+        return None
+
+    def _collect_discovered_links(
+        self,
+        result: CollectorResult,
+        task: CollectorTask,
+        seed_records: list[RawRecord],
+        settings: LinkDiscoverySettings,
+    ) -> None:
+        if not settings.enabled or settings.max_depth == 0 or settings.max_urls == 0:
+            return
+
+        seed_identities = {
+            identity
+            for url in task.urls
+            if (identity := self._discovery_url_identity(url, settings))
+        }
+        seed_origins = {
+            origin
+            for identity in seed_identities
+            if (origin := _http_origin(identity))
+        }
+        if not seed_origins:
+            result.errors.append(
+                "link discovery stopped: no valid HTTP(S) seed origin is configured"
+            )
+            return
+        seen_urls = set(seed_identities)
+        for record in result.records:
+            for value in (
+                record.requested_url,
+                record.canonical_url,
+                record.final_url,
+            ):
+                identity = self._discovery_url_identity(value, settings)
+                if identity and _http_origin(identity) in seed_origins:
+                    seen_urls.add(identity)
+        frontier = [
+            record
+            for record in seed_records
+            if record.error is None
+            and (record.http_status == 304 or record.payload_path)
+        ]
+        discovered_count = 0
+        historical_index: dict[str, list[RawRecord]] | None = None
+        embedded_mode = (
+            settings.embedded_mode
+            or str(task.metadata.get("embedded_content") or "").strip()
+            or None
+        )
+
+        for depth in range(1, settings.max_depth + 1):
+            if not frontier or discovered_count >= settings.max_urls:
+                break
+            discovered_urls: list[str] = []
+            for parent in frontier:
+                if discovered_count + len(discovered_urls) >= settings.max_urls:
+                    break
+                try:
+                    if parent.http_status == 304 and historical_index is None:
+                        historical_index = self._historical_payload_index(
+                            task,
+                            settings,
+                        )
+                    resolved = self._payload_for_discovery(
+                        result,
+                        parent,
+                        settings,
+                        seed_origins,
+                        historical_index,
+                    )
+                    if resolved is None:
+                        continue
+                    payload, page_url = resolved
+                    page_urls = discover_page_urls(
+                        payload,
+                        page_url=page_url,
+                        allowed_path_prefixes=settings.allowed_path_prefixes,
+                        excluded_path_prefixes=settings.excluded_path_prefixes,
+                        include_patterns=settings.include_patterns,
+                        exclude_patterns=settings.exclude_patterns,
+                        query_params=settings.query_params,
+                        embedded_mode=embedded_mode,
+                        max_urls=(
+                            settings.max_urls
+                            - discovered_count
+                            - len(discovered_urls)
+                        ),
+                    )
+                except (OSError, TypeError, ValueError, re.error) as exc:
+                    result.errors.append(
+                        f"{parent.canonical_url}: link discovery failed: {exc}"
+                    )
+                    continue
+                for url in page_urls:
+                    if url in seen_urls:
+                        continue
+                    seen_urls.add(url)
+                    discovered_urls.append(url)
+                    if discovered_count + len(discovered_urls) >= settings.max_urls:
+                        break
+
+            if not discovered_urls:
+                break
+            discovered_metadata = dict(task.metadata)
+            discovered_metadata["discovery"] = {
+                "method": "same_origin_links",
+                "depth": depth,
+                "max_depth": settings.max_depth,
+            }
+            discovered_metadata[_ALLOWED_FINAL_ORIGINS_KEY] = sorted(seed_origins)
+            page_result = super().collect(
+                replace(
+                    task,
+                    urls=tuple(discovered_urls),
+                    metadata=discovered_metadata,
+                )
+            )
+            self._merge_result(result, page_result)
+            discovered_count += len(discovered_urls)
+            frontier = [
+                record
+                for record in page_result.records
+                if record.error is None
+                and (record.http_status == 304 or record.payload_path)
+            ]
+
+    def collect(self, task: CollectorTask) -> CollectorResult:
+        """Collect seeds, then bounded sitemap and same-origin link discoveries."""
+
+        raw_link_settings = task.metadata.get("link_discovery")
+        link_settings: LinkDiscoverySettings | None = None
+        link_settings_error: str | None = None
+        if raw_link_settings is not None:
+            if not isinstance(raw_link_settings, Mapping):
+                link_settings_error = "link_discovery must be a mapping"
+            else:
+                try:
+                    link_settings = LinkDiscoverySettings.from_mapping(
+                        raw_link_settings
+                    )
+                except (ValueError, re.error) as exc:
+                    link_settings_error = str(exc)
+
+        seed_task = task
+        if link_settings is not None and link_settings.enabled:
+            seed_origins = {
+                origin
+                for url in task.urls
+                if (
+                    identity := self._discovery_url_identity(
+                        url,
+                        link_settings,
+                    )
+                )
+                and (origin := _http_origin(identity))
+            }
+            if seed_origins:
+                seed_metadata = dict(task.metadata)
+                seed_metadata[_ALLOWED_FINAL_ORIGINS_KEY] = sorted(seed_origins)
+                seed_task = replace(task, metadata=seed_metadata)
+
+        result = super().collect(seed_task)
+        seed_records = list(result.records)
+        if not task.enabled or not task.urls:
+            return result
+        raw_settings = task.metadata.get("sitemap_discovery")
+        if raw_settings is not None:
+            if not isinstance(raw_settings, Mapping):
+                result.errors.append("sitemap_discovery must be a mapping")
+            else:
+                try:
+                    settings = SitemapDiscoverySettings.from_mapping(raw_settings)
+                except ValueError as exc:
+                    result.errors.append(str(exc))
+                else:
+                    if settings.enabled:
+                        discovery = self.sitemap_loader.discover(task, settings)
+                        result.records.extend(discovery.records)
+                        result.errors.extend(discovery.errors)
+                        if discovery.urls:
+                            discovered_metadata = dict(task.metadata)
+                            discovered_metadata["discovery"] = {
+                                "method": "sitemap",
+                                "configured_sitemap_urls": list(settings.urls),
+                            }
+                            discovered_task = replace(
+                                task,
+                                urls=tuple(discovery.urls),
+                                metadata=discovered_metadata,
+                            )
+                            self._merge_result(
+                                result,
+                                super().collect(discovered_task),
+                            )
+
+        if raw_link_settings is None:
+            return result
+        if link_settings_error is not None:
+            result.errors.append(link_settings_error)
+            return result
+        if link_settings is None:
+            return result
+        self._collect_discovered_links(
+            result,
+            task,
+            seed_records,
+            link_settings,
+        )
+        return result

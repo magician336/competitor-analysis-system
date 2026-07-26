@@ -9,7 +9,7 @@ from datetime import datetime, timezone
 from html import unescape
 from pathlib import Path
 from typing import Any, Iterable, Mapping
-from urllib.parse import urljoin, urlparse
+from urllib.parse import quote, urljoin, urlparse
 from xml.etree import ElementTree
 
 from bs4 import BeautifulSoup, Comment, UnicodeDammit
@@ -574,26 +574,39 @@ def _rss_entries(payload: str | bytes) -> list[CleanedItem]:
     output: list[CleanedItem] = []
     for entry in entries:
         title = _child_text(entry, {"title"}) or "Untitled feed entry"
-        link = _child_text(entry, {"link", "id"})
-        if not link:
-            for child in entry.iter():
-                if _local_name(child.tag) == "link" and child.attrib.get("href"):
-                    link = child.attrib["href"]
-                    break
+        link_candidates: list[tuple[int, str]] = []
+        for child in entry.iter():
+            if _local_name(child.tag) != "link":
+                continue
+            candidate = child.attrib.get("href") or "".join(child.itertext()).strip()
+            if candidate:
+                relation = str(child.attrib.get("rel") or "").strip().lower()
+                media_type = str(child.attrib.get("type") or "").strip().lower()
+                is_alternate = relation in {"", "alternate"}
+                is_html = not media_type or "html" in media_type
+                priority = 0 if is_alternate and is_html else (1 if is_alternate else 2)
+                link_candidates.append((priority, candidate))
+        link = min(link_candidates, default=(3, ""))[1] or None
+        entry_id = _child_text(entry, {"guid", "id"})
         body = _child_text(entry, {"content", "encoded", "description", "summary"}) or ""
         body = clean_html(body) if "<" in body and ">" in body else normalize_text(body)
         author = _child_text(entry, {"author", "creator", "name"})
         published = _child_text(entry, {"published", "updated", "pubdate", "date"})
         raw_version, product_version = extract_version(title, body)
+        identity = entry_id or link or f"{published or ''}:{title}"
         output.append(
             CleanedItem(
                 title=normalize_text(title, preserve_lines=False),
                 content=body,
-                url=normalize_url(link or "") or None,
+                url=link,
                 publish_time=normalize_datetime(published),
                 author=normalize_text(author, preserve_lines=False) if author else None,
                 raw_version=raw_version,
                 product_version=product_version,
+                source_metadata={
+                    "feed_entry_id": entry_id,
+                    "identity_key": f"feed-entry:{identity}",
+                },
             )
         )
     return output
@@ -1239,6 +1252,14 @@ def _changelog_json_item(record: RawRecord, envelope: dict[str, Any]) -> Cleaned
             "feed_url": envelope.get("feed_url"),
             "feed_entry_id": entry.get("id"),
             "feed_tags": entry.get("tags") or [],
+            "identity_key": (
+                "feed-entry:"
+                + str(
+                    entry.get("id")
+                    or entry.get("link")
+                    or f"{entry.get('published_at') or entry.get('updated_at') or ''}:{title}"
+                )
+            ),
         },
     )
 
@@ -1248,10 +1269,195 @@ def _json_path(value: Any, path: str | None) -> Any:
     if not path:
         return current
     for part in str(path).split("."):
-        if not isinstance(current, dict) or part not in current:
-            return None
-        current = current[part]
+        if isinstance(current, Mapping):
+            if part not in current:
+                return None
+            current = current[part]
+            continue
+        if isinstance(current, (list, tuple)) and part.isdigit():
+            index = int(part)
+            if index >= len(current):
+                return None
+            current = current[index]
+            continue
+        return None
     return current
+
+
+_JSON_TEMPLATE_FIELD = re.compile(r"\{(?P<path>[A-Za-z0-9_.-]+)\}")
+
+
+def _configured_json_template(
+    document: Mapping[str, Any],
+    template: object,
+    *,
+    encode_fields: bool = False,
+) -> str | None:
+    """Expand a trusted config template from scalar JSON fields."""
+
+    raw_template = str(template or "").strip()
+    if not raw_template:
+        return None
+    missing = False
+
+    def replace(match: re.Match[str]) -> str:
+        nonlocal missing
+        value = _json_path(document, match.group("path"))
+        if value is None or isinstance(value, (dict, list, tuple)):
+            missing = True
+            return ""
+        rendered_value = str(value).strip()
+        if not rendered_value or (
+            encode_fields and rendered_value in {".", ".."}
+        ):
+            missing = True
+            return ""
+        return (
+            quote(rendered_value, safe="-._~")
+            if encode_fields
+            else rendered_value
+        )
+
+    rendered = _JSON_TEMPLATE_FIELD.sub(replace, raw_template)
+    return None if missing or not rendered.strip() else rendered.strip()
+
+
+def _configured_json_url(url_base: str, url_value: object | None) -> str | None:
+    """Resolve one publisher-provided URL while keeping it on the configured origin."""
+
+    try:
+        raw_base = str(url_base or "").strip()
+        raw_candidate = (
+            urljoin(raw_base, str(url_value))
+            if url_value is not None
+            else raw_base
+        )
+        base = normalize_url(raw_base)
+        candidate = normalize_url(raw_candidate)
+        base_parts = urlparse(base)
+        candidate_parts = urlparse(candidate)
+        base_port = base_parts.port
+        candidate_port = candidate_parts.port
+    except (TypeError, UnicodeError, ValueError):
+        return None
+    if (
+        base_parts.scheme not in {"http", "https"}
+        or candidate_parts.scheme not in {"http", "https"}
+        or not base_parts.hostname
+        or not candidate_parts.hostname
+        or base_parts.username
+        or base_parts.password
+        or candidate_parts.username
+        or candidate_parts.password
+    ):
+        return None
+
+    def origin(
+        scheme: str,
+        hostname: str,
+        port: int | None,
+    ) -> tuple[str, str, int]:
+        effective_port = port or (443 if scheme == "https" else 80)
+        return scheme, hostname.casefold(), effective_port
+
+    if origin(base_parts.scheme, base_parts.hostname, base_port) != origin(
+        candidate_parts.scheme,
+        candidate_parts.hostname,
+        candidate_port,
+    ):
+        return None
+    return candidate
+
+
+def _allowed_feed_item_url(
+    record: RawRecord,
+    value: object,
+) -> str | None:
+    """Resolve one feed item URL against an explicit same-origin allowlist."""
+
+    base = str(record.canonical_url or record.requested_url or "").strip()
+    raw_allowed = record.source_metadata.get("allowed_item_origins")
+    if isinstance(raw_allowed, str):
+        configured_origins = [raw_allowed]
+    elif isinstance(raw_allowed, (list, tuple, set)):
+        configured_origins = list(raw_allowed)
+    else:
+        configured_origins = []
+    try:
+        candidate = normalize_url(urljoin(base, str(value or "")))
+        candidate_parts = urlparse(candidate)
+        candidate_port = candidate_parts.port
+        if (
+            candidate_parts.scheme not in {"http", "https"}
+            or not candidate_parts.hostname
+            or candidate_parts.username
+            or candidate_parts.password
+        ):
+            return None
+
+        def origin(parts: Any, port: int | None) -> tuple[str, str, int]:
+            return (
+                parts.scheme,
+                str(parts.hostname).casefold(),
+                port or (443 if parts.scheme == "https" else 80),
+            )
+
+        allowed_origins: set[tuple[str, str, int]] = set()
+        for allowed in [base, *configured_origins]:
+            normalized_allowed = normalize_url(str(allowed))
+            parts = urlparse(normalized_allowed)
+            port = parts.port
+            if (
+                parts.scheme not in {"http", "https"}
+                or not parts.hostname
+                or parts.username
+                or parts.password
+            ):
+                continue
+            allowed_origins.add(origin(parts, port))
+        if origin(candidate_parts, candidate_port) not in allowed_origins:
+            return None
+        return candidate
+    except (TypeError, UnicodeError, ValueError):
+        return None
+
+
+def _discourse_topic_identity(
+    url: str,
+    configured_identity: object | None = None,
+) -> str | None:
+    """Return a slug-independent identity for a validated Discourse topic URL."""
+
+    try:
+        parts = urlparse(url)
+        path_parts = [part for part in parts.path.split("/") if part]
+        if (
+            parts.scheme not in {"http", "https"}
+            or not parts.hostname
+            or len(path_parts) < 3
+            or path_parts[0] != "t"
+            or not path_parts[-1].isdigit()
+        ):
+            return None
+        topic_id = path_parts[-1]
+        if configured_identity is not None:
+            configured_match = re.search(
+                r"(?:^|:)(?P<id>\d+)$",
+                str(configured_identity).strip(),
+            )
+            if (
+                configured_match is None
+                or configured_match.group("id") != topic_id
+            ):
+                return None
+        port = parts.port
+        default_port = 443 if parts.scheme == "https" else 80
+        authority = parts.hostname.casefold()
+        if port and port != default_port:
+            authority = f"{authority}:{port}"
+        return f"discourse-topic:{parts.scheme}://{authority}:{topic_id}"
+    except (TypeError, UnicodeError, ValueError):
+        return None
 
 
 def _configured_json_document_item(
@@ -1303,11 +1509,64 @@ def _configured_json_document_item(
         document,
         str(configuration.get("author_field") or ""),
     )
+    url_template = configuration.get("url_template")
+    url_field = str(configuration.get("url_field") or "")
+    url_value = (
+        _configured_json_template(document, url_template, encode_fields=True)
+        if url_template
+        else (_json_path(document, url_field) if url_field else None)
+    )
+    if url_template and url_value is None:
+        return None
+    url_base = str(
+        configuration.get("url_base")
+        or record.canonical_url
+        or record.requested_url
+    )
+    url = _configured_json_url(url_base, url_value)
+    if url is None:
+        return None
+    identity_field = str(
+        configuration.get("identity_field")
+        or configuration.get("url_field")
+        or ""
+    )
+    identity_template = configuration.get("identity_template")
+    identity_value = (
+        _configured_json_template(document, identity_template)
+        if identity_template
+        else (_json_path(document, identity_field) if identity_field else None)
+    )
+    if identity_template and identity_value is None:
+        return None
+    identity_mode = str(configuration.get("identity_mode") or "").strip().lower()
+    if not identity_mode:
+        identity_mode = (
+            "configured"
+            if identity_value is not None
+            else ("canonical_url" if url_value is not None else "")
+        )
+    if identity_mode not in {"", "configured", "canonical_url"}:
+        return None
+    if identity_mode == "configured":
+        if identity_value is None:
+            return None
+        identity_key = (
+            _discourse_topic_identity(url, identity_value)
+            or f"configured-json:{identity_value}"
+        )
+    elif identity_mode == "canonical_url":
+        identity_key = f"canonical-url:{url}"
+    else:
+        identity_key = None
     raw_version, product_version = extract_version(title, content[:1_000])
+    if raw_version is None and _BARE_VERSION_PATTERN.fullmatch(title):
+        raw_version = title
+        product_version = normalize_version(title)
     return CleanedItem(
         title=title,
         content=content,
-        url=normalize_url(record.canonical_url or record.requested_url),
+        url=normalize_url(url),
         publish_time=publish_time or record.published_at,
         author=(
             normalize_text(author_value, preserve_lines=False)
@@ -1316,7 +1575,16 @@ def _configured_json_document_item(
         ),
         raw_version=raw_version,
         product_version=product_version,
-        source_metadata={"structured_json_extraction": True},
+        source_metadata={
+            "structured_json_extraction": True,
+            **({"identity_key": identity_key} if identity_key else {}),
+            **({"identity_mode": identity_mode} if identity_mode else {}),
+            **(
+                {"configured_identity": str(identity_value)}
+                if identity_value is not None
+                else {}
+            ),
+        },
     )
 
 
@@ -1326,7 +1594,13 @@ def extract_items(record: RawRecord, payload: str | bytes | dict[str, Any] | lis
     content_type = (record.content_type or "").lower()
     raw_path = (record.payload_path or "").lower()
     is_json = "json" in content_type or raw_path.endswith(".json")
-    is_feed = any(token in content_type for token in ("rss", "atom", "xml")) or raw_path.endswith((".rss", ".xml"))
+    configured_format = str(record.source_metadata.get("format") or "").strip().lower()
+    is_feed = (
+        record.source_type == SourceType.RSS
+        or configured_format in {"rss", "atom", "feed", "xml"}
+        or any(token in content_type for token in ("rss", "atom", "xml"))
+        or raw_path.endswith((".rss", ".xml"))
+    )
 
     if record.source_type in {SourceType.GITHUB_RELEASE, SourceType.GITHUB_ISSUE} or is_json:
         value = payload
@@ -1345,13 +1619,33 @@ def extract_items(record: RawRecord, payload: str | bytes | dict[str, Any] | lis
                 json_document,
             )
             return [configured] if configured is not None else []
+        json_items = record.source_metadata.get("json_items")
+        if isinstance(json_items, Mapping):
+            item_configuration = dict(json_items)
+            result_path = str(item_configuration.pop("result_path", "") or "")
+            configured_values = _json_path(value, result_path)
+            if not isinstance(configured_values, list):
+                configured_values = [configured_values]
+            return [
+                configured
+                for item in configured_values
+                if (
+                    configured := _configured_json_document_item(
+                        record,
+                        item,
+                        item_configuration,
+                    )
+                )
+                is not None
+            ]
         values = value if isinstance(value, list) else [value]
         items: list[CleanedItem] = []
         for index, item in enumerate(values):
             if (
-                record.source_type == SourceType.OFFICIAL_CHANGELOG
+                record.source_type
+                in {SourceType.OFFICIAL_CHANGELOG, SourceType.RSS}
                 and isinstance(item, dict)
-                and item.get("kind") == "changelog_entry"
+                and item.get("kind") in {"changelog_entry", "rss_entry"}
             ):
                 items.append(_changelog_json_item(record, item))
                 continue
@@ -1373,8 +1667,22 @@ def extract_items(record: RawRecord, payload: str | bytes | dict[str, Any] | lis
     if is_feed:
         entries = _rss_entries(payload)
         base_url = record.canonical_url or record.requested_url
+        normalized_base_url = normalize_url(base_url)
         for item in entries:
-            item.url = normalize_url(urljoin(base_url, item.url or base_url))
+            allowed_item_url = (
+                _allowed_feed_item_url(record, item.url)
+                if item.url
+                else None
+            )
+            item.url = allowed_item_url or normalized_base_url
+            if (
+                allowed_item_url
+                and item.url != normalized_base_url
+            ):
+                item.source_metadata["identity_key"] = (
+                    _discourse_topic_identity(item.url)
+                    or f"canonical-url:{item.url}"
+                )
         return entries
 
     html = _decode_html(payload, content_type) if isinstance(payload, bytes) else str(payload)
@@ -1388,7 +1696,7 @@ def extract_items(record: RawRecord, payload: str | bytes | dict[str, Any] | lis
     if embedded_mode == "trae_router_document":
         embedded_item = _trae_router_document(
             html,
-            record.canonical_url or record.requested_url,
+            record.final_url or record.canonical_url or record.requested_url,
         )
         if embedded_item is not None:
             return [embedded_item]

@@ -1,0 +1,34 @@
+{
+  "canonical_url": "https://cursor.com/changelog/microsoft-teams",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:40:54.925151Z",
+  "final_url": "https://cursor.com/changelog/microsoft-teams",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "0aebb3fd5fb1486935a77f014759246c71c17cc81ad4f4de68e5efebc23b21fb",
+  "payload_path": "cursor/changelog/20260726T134021Z_a4a3c961/7d248a20b9498182ebdb70b6.html",
+  "published_at": "2026-05-11T23:59:00Z",
+  "raw_record_id": "7d248a20b9498182ebdb70b6",
+  "requested_url": "https://cursor.com/changelog/microsoft-teams",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://cursor.com/changelog/page/5",
+    "changelog_page_number": 5,
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-05-11T23:59:00Z",
+    "listing_title": "May 11, 2026",
+    "record_role": "changelog_entry",
+    "visible_text_length": 2702
+  },
+  "source_type": "changelog"
+}

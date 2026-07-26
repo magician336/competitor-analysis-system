@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2026-07-01-copilot-vision-is-generally-available/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:46:39.169114Z",
+  "final_url": "https://github.blog/changelog/2026-07-01-copilot-vision-is-generally-available/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "528513e3648e9be66a80d08027a70a7eb6ff048564c0a7e3d15ad24d448f0783",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/a4a931b69b6f5c1763e1362d.html",
+  "published_at": "2026-07-01T00:00:00Z",
+  "raw_record_id": "a4a931b69b6f5c1763e1362d",
+  "requested_url": "https://github.blog/changelog/2026-07-01-copilot-vision-is-generally-available",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/label/copilot/",
+    "changelog_page_number": 1,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2026-07-01T00:00:00Z",
+    "listing_title": "Copilot vision is generally available",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3906
+  },
+  "source_type": "changelog"
+}

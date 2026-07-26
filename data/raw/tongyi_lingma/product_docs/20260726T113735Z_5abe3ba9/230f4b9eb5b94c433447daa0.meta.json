@@ -1,0 +1,47 @@
+{
+  "canonical_url": "https://help.aliyun.com/zh/lingma/qoder-cn/user-guide/business-edition-login-lingma",
+  "competitor": "tongyi_lingma",
+  "content_type": "text/html;charset=UTF-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T11:57:17.624191Z",
+  "final_url": "https://help.aliyun.com/zh/lingma/qoder-cn/user-guide/business-edition-login-lingma",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "9a827648bb50905a76e860d49017587f74ccadbf4349cdafe713cae28bcef5a6",
+  "payload_path": "tongyi_lingma/product_docs/20260726T113735Z_5abe3ba9/230f4b9eb5b94c433447daa0.html",
+  "published_at": null,
+  "raw_record_id": "230f4b9eb5b94c433447daa0",
+  "requested_url": "https://help.aliyun.com/zh/lingma/qoder-cn/user-guide/business-edition-login-lingma",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://help.aliyun.com/zh/lingma/qoder-cn/user-guide/business-edition-login-lingma",
+    "competitor_aliases": [
+      "Lingma",
+      "Qoder CN",
+      "智能编码助手通义灵码"
+    ],
+    "competitor_name": "通义灵码",
+    "discovery": {
+      "depth": 2,
+      "max_depth": 3,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/zh/lingma/"
+      ],
+      "enabled": true,
+      "max_depth": 3,
+      "max_urls": 300
+    },
+    "visible_text_length": 3236
+  },
+  "source_type": "product_docs"
+}

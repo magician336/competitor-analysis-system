@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <title>内网白名单部署 Trae IDE / Solo Worker 的数据隔离与安全性咨询 - 帮助与支持 - TRAE 官方中文社区</title>
+    <meta name="description" content="我们计划把 Trae 相关域名设为内网白名单，使内网用户仅使用 Trae IDE 及 Solo（Worker）工具进行开发。在此之前，希望就以下安全隐患进行确认： 
+
+
+历史对话跨设备同步 Trae IDE 是否会将对话历史、输入提示词（p&amp;hellip;">
+    <meta name="generator" content="Discourse 2026.3.0-latest - https://github.com/discourse/discourse version 6bfaa4d894670e4f812a3c7fa77415f83b276a50">
+<link rel="icon" type="image/png" href="https://trae-forum-cdn.trae.com.cn/prod/optimized/1X/d9765b8b97a534fd27692b53d6a606609b015051_2_32x32.png">
+<link rel="apple-touch-icon" type="image/png" href="https://trae-forum-cdn.trae.com.cn/prod/optimized/1X/d9765b8b97a534fd27692b53d6a606609b015051_2_180x180.png">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#1A1B1D">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1A1B1D">
+
+<meta name="color-scheme" content="light dark">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+<link rel="canonical" href="https://forum.trae.cn/t/topic/21798" />
+
+
+<link rel="search" type="application/opensearchdescription+xml" href="https://forum.trae.cn/opensearch.xml" title="TRAE 官方中文社区 Search">
+
+    
+    <link href="/stylesheets/color_definitions_scheme_21_-1_fe12ee149c6bd8baa542acc9d7120fa181617eb0.css?__ws=forum.trae.cn" media="all" rel="stylesheet" class="light-scheme" data-scheme-id="21"/>
+
+<link href="/stylesheets/common_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="all" rel="stylesheet" data-target="common"  />
+
+  <link href="/stylesheets/mobile_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="mobile"  />
+  <link href="/stylesheets/desktop_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="(min-width: 40rem)" rel="stylesheet" data-target="desktop"  />
+
+
+
+    <link href="/stylesheets/chat_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="all" rel="stylesheet" data-target="chat"  />
+    <link href="/stylesheets/checklist_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="all" rel="stylesheet" data-target="checklist"  />
+    <link href="/stylesheets/discourse-ai_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="all" rel="stylesheet" data-target="discourse-ai"  />
+    <link href="/stylesheets/discourse-data-explorer_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="all" rel="stylesheet" data-target="discourse-data-explorer"  />
+    <link href="/stylesheets/discourse-details_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="all" rel="stylesheet" data-target="discourse-details"  />
+    <link href="/stylesheets/discourse-gamification_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="all" rel="stylesheet" data-target="discourse-gamification"  />
+    <link href="/stylesheets/discourse-lazy-videos_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="all" rel="stylesheet" data-target="discourse-lazy-videos"  />
+    <link href="/stylesheets/discourse-local-dates_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="all" rel="stylesheet" data-target="discourse-local-dates"  />
+    <link href="/stylesheets/discourse-narrative-bot_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="all" rel="stylesheet" data-target="discourse-narrative-bot"  />
+    <link href="/stylesheets/discourse-presence_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="all" rel="stylesheet" data-target="discourse-presence"  />
+    <link href="/stylesheets/discourse-solved_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="all" rel="stylesheet" data-target="discourse-solved"  />
+    <link href="/stylesheets/discourse-templates_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="all" rel="stylesheet" data-target="discourse-templates"  />
+    <link href="/stylesheets/discourse-topic-voting_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="all" rel="stylesheet" data-target="discourse-topic-voting"  />
+    <link href="/stylesheets/footnote_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="all" rel="stylesheet" data-target="footnote"  />
+    <link href="/stylesheets/poll_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="all" rel="stylesheet" data-target="poll"  />
+    <link href="/stylesheets/spoiler-alert_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="all" rel="stylesheet" data-target="spoiler-alert"  />
+    <link href="/stylesheets/chat_mobile_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="chat_mobile"  />
+    <link href="/stylesheets/discourse-ai_mobile_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="discourse-ai_mobile"  />
+    <link href="/stylesheets/discourse-gamification_mobile_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="discourse-gamification_mobile"  />
+    <link href="/stylesheets/discourse-solved_mobile_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="discourse-solved_mobile"  />
+    <link href="/stylesheets/discourse-topic-voting_mobile_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="discourse-topic-voting_mobile"  />
+    <link href="/stylesheets/chat_desktop_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="(min-width: 40rem)" rel="stylesheet" data-target="chat_desktop"  />
+    <link href="/stylesheets/discourse-ai_desktop_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="(min-width: 40rem)" rel="stylesheet" data-target="discourse-ai_desktop"  />
+    <link href="/stylesheets/discourse-gamification_desktop_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="(min-width: 40rem)" rel="stylesheet" data-target="discourse-gamification_desktop"  />
+    <link href="/stylesheets/discourse-topic-voting_desktop_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="(min-width: 40rem)" rel="stylesheet" data-target="discourse-topic-voting_desktop"  />
+    <link href="/stylesheets/poll_desktop_a31d43aad678be86519da59bd28460f14da56557.css?__ws=forum.trae.cn" media="(min-width: 40rem)" rel="stylesheet" data-target="poll_desktop"  />
+
+  <link href="/stylesheets/common_theme_15_6b9ed181652b384009c458ce168bdd276a92da1a.css?__ws=forum.trae.cn" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="15" data-theme-name="featured topics_阴影"/>
+<link href="/stylesheets/common_theme_1_f67339311434974b5e50c4f72656ec7ca754054f.css?__ws=forum.trae.cn" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="1" data-theme-name="hide_email"/>
+<link href="/stylesheets/common_theme_17_82b4f16d9cc7a98cb45ffbe506f3f12ea24ed9d5.css?__ws=forum.trae.cn" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="17" data-theme-name="trae chat entry"/>
+<link href="/stylesheets/common_theme_3_c04c745a9c3b6e1873ebf29c0907115d783b1bb4.css?__ws=forum.trae.cn" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="3" data-theme-name="versatile banner"/>
+    <link href="/stylesheets/mobile_theme_15_422dd708b3db606ddc11e6a8e1c178797ef5f745.css?__ws=forum.trae.cn" media="(max-width: 39.99999rem)" rel="stylesheet" data-target="mobile_theme" data-theme-id="15" data-theme-name="featured topics_阴影"/>
+    
+
+    
+    
+        <link rel="alternate nofollow" type="application/rss+xml" title="&#39;内网白名单部署 Trae IDE / Solo Worker 的数据隔离与安全性咨询&#39; 的 RSS Feed" href="https://forum.trae.cn/t/topic/21798.rss" />
+    <meta property="og:site_name" content="TRAE 官方中文社区" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="https://trae-forum-cdn.trae.com.cn/prod/original/1X/d9765b8b97a534fd27692b53d6a606609b015051.png" />
+<meta property="og:image" content="https://trae-forum-cdn.trae.com.cn/prod/original/1X/d9765b8b97a534fd27692b53d6a606609b015051.png" />
+<meta property="og:url" content="https://forum.trae.cn/t/topic/21798" />
+<meta name="twitter:url" content="https://forum.trae.cn/t/topic/21798" />
+<meta property="og:title" content="内网白名单部署 Trae IDE / Solo Worker 的数据隔离与安全性咨询" />
+<meta name="twitter:title" content="内网白名单部署 Trae IDE / Solo Worker 的数据隔离与安全性咨询" />
+<meta property="og:description" content="我们计划把 Trae 相关域名设为内网白名单，使内网用户仅使用 Trae IDE 及 Solo（Worker）工具进行开发。在此之前，希望就以下安全隐患进行确认：    历史对话跨设备同步 Trae IDE 是否会将对话历史、输入提示词（prompt）或 AI 回复内容上传至任何云端存储（如跨设备同步服务）？如果会，是否可以在配置中完全关闭此功能，确保对话数据仅保留在本地？    文件与代码共享机制 Solo Worker 在工作时是否会向 Trae 服务端上传或缓存项目代码？Worker 之间是否存在任何形式的文件共享通道？代码文件是否会通过中间服务器中转？    数据传输路径 Trae IDE 与 AI 模型服务、Solo Worker 之间的通信是否全部采用端到端加密？是否有任何环节会将项目代码、对话数据持久化存储在服务端，即使在任务完成后？    数据外泄风险 在内网仅开放特定 Trae 域名的前提下，是否存在已知的数据外泄途径（如日志上传、遥测数据、崩溃报告等），将本地代码或对话内容发送到白名单之外的地址？    管理员控制能力 是否提供企业级配置选项（如配置文件、环境变量、..." />
+<meta name="twitter:description" content="我们计划把 Trae 相关域名设为内网白名单，使内网用户仅使用 Trae IDE 及 Solo（Worker）工具进行开发。在此之前，希望就以下安全隐患进行确认：    历史对话跨设备同步 Trae IDE 是否会将对话历史、输入提示词（prompt）或 AI 回复内容上传至任何云端存储（如跨设备同步服务）？如果会，是否可以在配置中完全关闭此功能，确保对话数据仅保留在本地？    文件与代码共享机制 Solo Worker 在工作时是否会向 Trae 服务端上传或缓存项目代码？Worker 之间是否存在任何形式的文件共享通道？代码文件是否会通过中间服务器中转？    数据传输路径 Trae IDE 与 AI 模型服务、Solo Worker 之间的通信是否全部采用端到端加密？是否有任何环节会将项目代码、对话数据持久化存储在服务端，即使在任务完成后？    数据外泄风险 在内网仅开放特定 Trae 域名的前提下，是否存在已知的数据外泄途径（如日志上传、遥测数据、崩溃报告等），将本地代码或对话内容发送到白名单之外的地址？    管理员控制能力 是否提供企业级配置选项（如配置文件、环境变量、..." />
+<meta property="og:article:section" content="帮助与支持" />
+<meta property="og:article:section:color" content="3AB54A" />
+<meta property="og:article:tag" content="基础技巧" />
+<meta property="article:published_time" content="2026-06-10T07:29:58+00:00" />
+<meta property="og:ignore_canonical" content="true" />
+
+
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"QAPage","name":"内网白名单部署 Trae IDE / Solo Worker 的数据隔离与安全性咨询","mainEntity":{"@type":"Question","name":"内网白名单部署 Trae IDE / Solo Worker 的数据隔离与安全性咨询","text":"我们计划把 Trae 相关域名设为内网白名单，使内网用户仅使用 Trae IDE 及 Solo（Worker）工具进行开发。在此之前，希望就以下安全隐患进行确认：\n\n历史对话跨设备同步 Trae IDE 是否会将对话历史、输入提示词（p&hellip;","upvoteCount":0,"answerCount":1,"datePublished":"2026-06-10T07:29:58.717Z","author":{"@type":"Person","name":"少华","url":"https://forum.trae.cn/u/%E5%B0%91%E5%8D%8E"},"acceptedAnswer":{"@type":"Answer","text":"少华你好～\n\n对话历史是存在本地的，不会上传云端，如果你担心可以开启隐私模式，参考下图\n\n<a class=\"lightbox\" href=\"https://trae-forum-cdn.trae.com.cn/prod/original/3X/c/e/ce265ef051e4e9451eed67d1d35d705b22d6518b.png\" data-download-href=\"/uploads/short-url/tpGzdJxvV5ZZ8nEi4MhRV7UkyhB.png?dl=1\" title=\"image\">[image]<\/a>\n\n你的需求推荐你们可以去考虑下TRAE企业版哦，看下这个链接<a href=\"https://www.trae.cn/enterprise\">https://www.trae.cn/enterprise<\/a>","upvoteCount":0,"datePublished":"2026-06-10T08:02:06.341Z","url":"https://forum.trae.cn/t/topic/21798/5","author":{"@type":"Person","name":"TRAE技术支持-麻辣鸡腿堡","url":"https://forum.trae.cn/u/TRAE%E6%8A%80%E6%9C%AF%E6%94%AF%E6%8C%81-%E9%BA%BB%E8%BE%A3%E9%B8%A1%E8%85%BF%E5%A0%A1"}}}}</script>
+  </head>
+  <body class="crawler ">
+    
+    <header>
+  <a href="/">TRAE 官方中文社区</a>
+</header>
+
+    <div id="main-outlet" class="wrap" role="main">
+        <div id="topic-title">
+    <h1>
+      <a href="/t/topic/21798">内网白名单部署 Trae IDE / Solo Worker 的数据隔离与安全性咨询</a>
+    </h1>
+
+      <div class="topic-category" itemscope itemtype="http://schema.org/BreadcrumbList">
+          <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a href="/c/7-category/7" class="badge-wrapper bullet" itemprop="item">
+              <span class='badge-category-bg' style='background-color: #3AB54A'></span>
+              <span class='badge-category clear-badge'>
+                <span class='category-name' itemprop='name'>帮助与支持</span>
+              </span>
+            </a>
+            <meta itemprop="position" content="1" />
+          </span>
+      </div>
+
+      <div class="topic-category">
+        <div class='discourse-tags list-tags'>
+            <a href='https://forum.trae.cn/tag/基础技巧' class='discourse-tag' rel="tag">基础技巧</a>
+        </div>
+      </div>
+  </div>
+
+  
+
+    <div itemscope itemtype='http://schema.org/DiscussionForumPosting'>
+      <meta itemprop='headline' content='内网白名单部署 Trae IDE / Solo Worker 的数据隔离与安全性咨询'>
+      <link itemprop='url' href='https://forum.trae.cn/t/topic/21798'>
+      <meta itemprop='datePublished' content='2026-06-10T07:29:58Z'>
+        <meta itemprop='articleSection' content='帮助与支持'>
+      <meta itemprop='keywords' content='基础技巧'>
+      <div itemprop='publisher' itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop='name' content='TRAE 官方中文社区'>
+          <div itemprop='logo' itemscope itemtype="http://schema.org/ImageObject">
+            <meta itemprop='url' content='https://trae-forum-cdn.trae.com.cn/prod/original/1X/01bd4a3b72205b995bdb9a553ec95fe74e1badcd.png'>
+          </div>
+      </div>
+
+
+          <div id='post_1'  class='topic-body crawler-post'>
+            <div class='crawler-post-meta'>
+              <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <a itemprop="url" rel='nofollow' href='https://forum.trae.cn/u/少华'><span itemprop='name'>少华</span></a>
+                
+              </span>
+
+                <link itemprop="mainEntityOfPage" href="https://forum.trae.cn/t/topic/21798">
+
+
+              <span class="crawler-post-infos">
+                  <time  datetime='2026-06-10T07:29:58Z' class='post-time'>
+                    2026 年6 月 10 日 07:29
+                  </time>
+                  <meta itemprop='dateModified' content='2026-06-10T07:29:58Z'>
+              <span itemprop='position'>1</span>
+              </span>
+            </div>
+            <div class='post' itemprop='text'>
+              <p>我们计划把 Trae 相关域名设为内网白名单，使内网用户仅使用 Trae IDE 及 Solo（Worker）工具进行开发。在此之前，希望就以下安全隐患进行确认：</p>
+<ol>
+<li>
+<p>历史对话跨设备同步 Trae IDE 是否会将对话历史、输入提示词（prompt）或 AI 回复内容上传至任何云端存储（如跨设备同步服务）？如果会，是否可以在配置中完全关闭此功能，确保对话数据仅保留在本地？</p>
+</li>
+<li>
+<p>文件与代码共享机制 Solo Worker 在工作时是否会向 Trae 服务端上传或缓存项目代码？Worker 之间是否存在任何形式的文件共享通道？代码文件是否会通过中间服务器中转？</p>
+</li>
+<li>
+<p>数据传输路径 Trae IDE 与 AI 模型服务、Solo Worker 之间的通信是否全部采用端到端加密？是否有任何环节会将项目代码、对话数据持久化存储在服务端，即使在任务完成后？</p>
+</li>
+<li>
+<p>数据外泄风险 在内网仅开放特定 Trae 域名的前提下，是否存在已知的数据外泄途径（如日志上传、遥测数据、崩溃报告等），将本地代码或对话内容发送到白名单之外的地址？</p>
+</li>
+<li>
+<p>管理员控制能力 是否提供企业级配置选项（如配置文件、环境变量、组策略等），允许管理员全局禁用对话同步、文件共享、遥测等功能，以符合内网安全策略？</p>
+</li>
+</ol>
+<p>我们希望确保在满足内网合规要求的前提下使用 Trae 工具，杜绝任何数据外泄的可能性。如有内部架构文档或安全白皮书，也欢迎分享。</p>
+<p>谢谢！</p>
+            </div>
+
+            <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+              <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+              <meta itemprop="userInteractionCount" content="0" />
+              <span class='post-likes'></span>
+            </div>
+
+
+            
+          </div>
+          <div id='post_2' itemprop='comment' itemscope itemtype='http://schema.org/Comment' class='topic-body crawler-post'>
+            <div class='crawler-post-meta'>
+              <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <a itemprop="url" rel='nofollow' href='https://forum.trae.cn/u/TRAE宝'><span itemprop='name'>TRAE宝</span></a>
+                
+              </span>
+
+
+
+              <span class="crawler-post-infos">
+                  <time itemprop='datePublished' datetime='2026-06-10T07:30:31Z' class='post-time'>
+                    2026 年6 月 10 日 07:30
+                  </time>
+                  <meta itemprop='dateModified' content='2026-06-10T07:30:31Z'>
+              <span itemprop='position'>2</span>
+              </span>
+            </div>
+            <div class='post' itemprop='text'>
+              <p>少华你好～关于内网部署和数据隔离，这确实是企业级使用的核心关注点。我帮你查阅了知识库，先同步一下目前明确的安全机制：</p>
+<ol>
+<li><strong>代码与数据留存</strong>：对于 TRAE IDE 和 SOLO 桌面版，代码库文件始终保存在本地设备上。在进行代码库索引时，会临时上传代码计算嵌入向量，计算完成后明文代码会被<strong>永久删除</strong>。如果使用的是云端服务（如 SOLO 网页版），代码才会在云端处理并留存。</li>
+<li><strong>隐私模式</strong>：开启后，你的对话内容、代码片段及 AI 生成的输出绝不会被用于数据分析、产品优化或模型训练。</li>
+</ol>
+<p>至于你提到的**对话跨设备同步控制、端到端加密传输、遥测和日志外泄风险，以及管理员全局管控（如组策略、环境变量等）**等深度的架构细节，这个我在知识库里暂时没翻到准确的说明，不太敢给你拍脑袋的结论。</p>
+<p>建议查 <a href="http://docs.trae.cn">docs.trae.cn</a> 或发邮件到 <strong>feedback@mail.trae.ai</strong> 跟客服确认下，也可以通过官方企业版入口（<a href="https://www.trae.cn/enterprise%EF%BC%89%E8%81%94%E7%B3%BB%E5%9B%A2%E9%98%9F%EF%BC%8C%E8%8E%B7%E5%8F%96%E4%B8%93%E9%97%A8%E7%9A%84%E5%AE%89%E5%85%A8%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0%E5%92%8C%E7%99%BD%E7%9A%AE%E4%B9%A6%E6%94%AF%E6%8C%81%EF%BD%9E">https://www.trae.cn/enterprise）联系团队，获取专门的安全架构评估和白皮书支持～</a></p>
+<p>有其他具体的使用问题随时问我 <img src="https://forum.trae.cn/images/emoji/twitter/blush.png?v=15" title=":blush:" class="emoji" alt=":blush:" loading="lazy" width="20" height="20"></p>
+            </div>
+
+            <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+              <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+              <meta itemprop="userInteractionCount" content="0" />
+              <span class='post-likes'></span>
+            </div>
+
+
+            
+          </div>
+          <div id='post_3' itemprop='comment' itemscope itemtype='http://schema.org/Comment' class='topic-body crawler-post'>
+            <div class='crawler-post-meta'>
+              <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <a itemprop="url" rel='nofollow' href='https://forum.trae.cn/u/TRAE宝'><span itemprop='name'>TRAE宝</span></a>
+                
+              </span>
+
+
+
+              <span class="crawler-post-infos">
+                  <time itemprop='datePublished' datetime='2026-06-10T07:31:26Z' class='post-time'>
+                    2026 年6 月 10 日 07:31
+                  </time>
+                  <meta itemprop='dateModified' content='2026-06-10T07:31:26Z'>
+              <span itemprop='position'>3</span>
+              </span>
+            </div>
+            <div class='post' itemprop='text'>
+              <p>你好呀～关于内网白名单部署、端到端加密、全局配置等深度的安全架构问题，这个我在知识库里暂时没翻到准确的说明，不太敢给你拍脑袋的数字 / 步骤。建议查 <a href="http://docs.trae.cn">docs.trae.cn</a> 或邮件 feedback@mail.trae.ai 跟客服确认下~</p>
+<p>目前能为你确认的几点基础安全机制如下：</p>
+<ol>
+<li><strong>数据隐私</strong>：TRAE 绝不会将代码库或对话用于模型训练或数据分析。本地运行时的代码，仅在建立索引时临时上传计算向量，完成后明文会被永久删除。</li>
+<li><strong>网络管控</strong>：TRAE 的沙箱环境支持自定义网络访问配置，可通过配置白名单/黑名单来严格限制网络请求，防止数据发往未知地址。</li>
+<li><strong>企业支持</strong>：Trae CN 提供专门的企业版/团队版，以满足企业的安全与管理需求。</li>
+</ol>
+<p>关于更详细的企业级部署方案和安全白皮书，建议直接发邮件联系官方获取哦。如果还有其他产品使用上的问题，随时来找我探讨 <img src="https://forum.trae.cn/images/emoji/twitter/blush.png?v=15" title=":blush:" class="emoji" alt=":blush:" loading="lazy" width="20" height="20"></p>
+            </div>
+
+            <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+              <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+              <meta itemprop="userInteractionCount" content="0" />
+              <span class='post-likes'></span>
+            </div>
+
+
+            
+          </div>
+          <div id='post_4' itemprop='comment' itemscope itemtype='http://schema.org/Comment' class='topic-body crawler-post'>
+            <div class='crawler-post-meta'>
+              <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <a itemprop="url" rel='nofollow' href='https://forum.trae.cn/u/TRAE宝'><span itemprop='name'>TRAE宝</span></a>
+                
+              </span>
+
+
+
+              <span class="crawler-post-infos">
+                  <time itemprop='datePublished' datetime='2026-06-10T07:31:32Z' class='post-time'>
+                    2026 年6 月 10 日 07:31
+                  </time>
+                  <meta itemprop='dateModified' content='2026-06-10T07:31:32Z'>
+              <span itemprop='position'>4</span>
+              </span>
+            </div>
+            <div class='post' itemprop='text'>
+              <p>你好！关于内网白名单部署、端到端加密以及企业级全局配置等深度安全问题，这块的具体规则我这边暂时没在文档里找到准确说法，不太敢给你拍脑袋的数字。建议你查 <strong><a href="http://docs.trae.cn">docs.trae.cn</a></strong> 或发邮件到 <strong>feedback@mail.trae.ai</strong> 跟客服确认下～</p>
+<p>不过根据现有官方文档，有几个基础的安全与合规机制可以先供你参考：</p>
+<ol>
+<li><strong>企业版数据隔离</strong>：针对企业内网和极高安全需求，TRAE 企业版支持客户数据（代码、文档、模型）100% 留存在客户自有服务器，并具备等保三级、ISO 27001 等信息安全认证。</li>
+<li><strong>隐私模式与代码处理</strong>：在标准版中开启隐私模式后，TRAE 不会将对话和代码用于模型训练。使用本地运行的 TRAE SOLO 桌面版时，代码文件保存在本地，但在建立代码库索引时，会临时上传代码计算嵌入向量，计算完成后明文会被永久删除。</li>
+<li><strong>遥测数据</strong>：针对数据外泄风险，VSCode 原生的 telemetry 遥测上报在 TRAE 中已被覆盖并默认关闭。</li>
+</ol>
+<p>关于完整的内部架构文档和安全白皮书，建议通过邮件联系企业支持团队获取最准确的说明。</p>
+<p>其他使用或 bug 问题继续问我 <img src="https://forum.trae.cn/images/emoji/twitter/blush.png?v=15" title=":blush:" class="emoji" alt=":blush:" loading="lazy" width="20" height="20"></p>
+<p><img src="https://forum.trae.cn/images/emoji/twitter/paperclip.png?v=15" title=":paperclip:" class="emoji" alt=":paperclip:" loading="lazy" width="20" height="20"> 参考文档：</p>
+<ul>
+<li><a href="https://docs.trae.cn/enterprise/security-compliance-and-governance">企业版：安全合规与治理</a></li>
+<li><a href="https://docs.trae.cn/ide/privacy-mode">IDE 隐私模式</a></li>
+<li><a href="https://docs.trae.cn/solo/privacy-mode">SOLO 隐私模式</a></li>
+</ul>
+            </div>
+
+            <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+              <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+              <meta itemprop="userInteractionCount" content="0" />
+              <span class='post-likes'></span>
+            </div>
+
+
+            
+          </div>
+          <div id='post_5' itemprop='comment' itemscope itemtype='http://schema.org/Comment' class='topic-body crawler-post'>
+            <div class='crawler-post-meta'>
+              <span class="creator" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <a itemprop="url" rel='nofollow' href='https://forum.trae.cn/u/TRAE技术支持-麻辣鸡腿堡'><span itemprop='name'>TRAE技术支持-麻辣鸡腿堡</span></a>
+                
+              </span>
+
+
+                <link itemprop="image" href="https://trae-forum-cdn.trae.com.cn/prod/original/3X/c/e/ce265ef051e4e9451eed67d1d35d705b22d6518b.png">
+
+              <span class="crawler-post-infos">
+                  <time itemprop='datePublished' datetime='2026-06-10T08:02:06Z' class='post-time'>
+                    2026 年6 月 10 日 08:02
+                  </time>
+                  <meta itemprop='dateModified' content='2026-06-10T08:02:06Z'>
+              <span itemprop='position'>5</span>
+              </span>
+            </div>
+            <div class='post' itemprop='text'>
+              <p>少华你好～</p>
+<p>对话历史是存在本地的，不会上传云端，如果你担心可以开启隐私模式，参考下图<br>
+<div class="lightbox-wrapper"><a class="lightbox" href="https://trae-forum-cdn.trae.com.cn/prod/original/3X/c/e/ce265ef051e4e9451eed67d1d35d705b22d6518b.png" data-download-href="/uploads/short-url/tpGzdJxvV5ZZ8nEi4MhRV7UkyhB.png?dl=1" title="image"><img src="https://trae-forum-cdn.trae.com.cn/prod/optimized/3X/c/e/ce265ef051e4e9451eed67d1d35d705b22d6518b_2_630x500.png" alt="image" data-base62-sha1="tpGzdJxvV5ZZ8nEi4MhRV7UkyhB" width="630" height="500" srcset="https://trae-forum-cdn.trae.com.cn/prod/optimized/3X/c/e/ce265ef051e4e9451eed67d1d35d705b22d6518b_2_630x500.png, https://trae-forum-cdn.trae.com.cn/prod/optimized/3X/c/e/ce265ef051e4e9451eed67d1d35d705b22d6518b_2_945x750.png 1.5x, https://trae-forum-cdn.trae.com.cn/prod/original/3X/c/e/ce265ef051e4e9451eed67d1d35d705b22d6518b.png 2x" data-dominant-color="F8F8F8"><div class="meta"><svg class="fa d-icon d-icon-far-image svg-icon" aria-hidden="true"><use href="#far-image"></use></svg><span class="filename">image</span><span class="informations">1180×936 60.6 KB</span><svg class="fa d-icon d-icon-discourse-expand svg-icon" aria-hidden="true"><use href="#discourse-expand"></use></svg></div></a></div></p>
+<p>你的需求推荐你们可以去考虑下TRAE企业版哦，看下这个链接<a href="https://www.trae.cn/enterprise">https://www.trae.cn/enterprise</a></p>
+            </div>
+
+            <div itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
+              <meta itemprop="interactionType" content="http://schema.org/LikeAction"/>
+              <meta itemprop="userInteractionCount" content="0" />
+              <span class='post-likes'></span>
+            </div>
+
+
+            
+          </div>
+    </div>
+
+
+    
+
+
+
+
+    </div>
+    <footer class="container wrap">
+  <nav class='crawler-nav'>
+    <ul>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='/' itemprop="url">首页 </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='/categories' itemprop="url">类别 </a>
+        </span>
+      </li>
+      <li itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <span itemprop='name'>
+          <a href='/guidelines' itemprop="url">准则 </a>
+        </span>
+      </li>
+    </ul>
+  </nav>
+  <p class='powered-by-link'>由 <a href="https://www.discourse.org">Discourse</a> 提供技术支持，启用 JavaScript 以获得最佳体验</p>
+</footer>
+
+    
+    
+  </body>
+  
+</html>

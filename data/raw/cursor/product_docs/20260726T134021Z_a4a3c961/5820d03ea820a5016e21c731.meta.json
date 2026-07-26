@@ -1,0 +1,54 @@
+{
+  "canonical_url": "https://cursor.com/docs/account/enterprise/service-accounts",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": "W/\"8dff8ff8ae89a3a2003814d4e6c7b677\"",
+  "fetched_at": "2026-07-26T13:42:39.261707Z",
+  "final_url": "https://cursor.com/docs/account/enterprise/service-accounts",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "ec0146656c8d83b237aec461cfe69a6299c9237027286ed252588f5f23bd7bcf",
+  "payload_path": "cursor/product_docs/20260726T134021Z_a4a3c961/5820d03ea820a5016e21c731.html",
+  "published_at": null,
+  "raw_record_id": "5820d03ea820a5016e21c731",
+  "requested_url": "https://cursor.com/docs/account/enterprise/service-accounts",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://cursor.com/docs/account/enterprise/service-accounts",
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "discovery": {
+      "configured_sitemap_urls": [
+        "https://cursor.com/docs/sitemap.xml"
+      ],
+      "method": "sitemap"
+    },
+    "embedded_content": "cursor_next_rsc",
+    "embedded_content_supported": true,
+    "evidence_level": "A",
+    "format": "html",
+    "sitemap_discovery": {
+      "allowed_path_prefixes": [
+        "/docs/"
+      ],
+      "enabled": true,
+      "excluded_path_prefixes": [
+        "/docs-static/",
+        "/docs/page.mdx"
+      ],
+      "max_sitemaps": 2,
+      "max_urls": 200,
+      "urls": [
+        "https://cursor.com/docs/sitemap.xml"
+      ]
+    },
+    "visible_text_length": 30
+  },
+  "source_type": "product_docs"
+}

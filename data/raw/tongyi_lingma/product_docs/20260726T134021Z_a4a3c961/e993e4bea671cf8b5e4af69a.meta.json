@@ -1,0 +1,47 @@
+{
+  "canonical_url": "https://help.aliyun.com/zh/lingma/qodercli-cn/product-overview/what-is-qoder-cli-cn?spm=a2c4g.11186623.0.i5",
+  "competitor": "tongyi_lingma",
+  "content_type": "text/html;charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T14:14:26.985560Z",
+  "final_url": "https://help.aliyun.com/zh/lingma/qodercli-cn/product-overview/what-is-qoder-cli-cn?spm=a2c4g.11186623.0.i5",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "733fee5ff640e2724ca6f12e6f2ba1b76a7dc7f24e01613d5371a077c459b9e7",
+  "payload_path": "tongyi_lingma/product_docs/20260726T134021Z_a4a3c961/e993e4bea671cf8b5e4af69a.html",
+  "published_at": null,
+  "raw_record_id": "e993e4bea671cf8b5e4af69a",
+  "requested_url": "https://help.aliyun.com/zh/lingma/qodercli-cn/product-overview/what-is-qoder-cli-cn?spm=a2c4g.11186623.0.i5",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://help.aliyun.com/zh/lingma/qodercli-cn/product-overview/what-is-qoder-cli-cn?spm=a2c4g.11186623.0.i5",
+    "competitor_aliases": [
+      "Lingma",
+      "Qoder CN",
+      "智能编码助手通义灵码"
+    ],
+    "competitor_name": "通义灵码",
+    "discovery": {
+      "depth": 1,
+      "max_depth": 3,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/zh/lingma/"
+      ],
+      "enabled": true,
+      "max_depth": 3,
+      "max_urls": 300
+    },
+    "visible_text_length": 1531
+  },
+  "source_type": "product_docs"
+}

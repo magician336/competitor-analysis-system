@@ -1,0 +1,46 @@
+{
+  "canonical_url": "https://docs.github.com/en/copilot/concepts/agents/copilot-cli/research",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T11:41:33.449553Z",
+  "final_url": "https://docs.github.com/en/copilot/concepts/agents/copilot-cli/research",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "31fb56b9b6a5067cdaca8a13ea12a684954abea68eb7523b87b47fbb61c135c9",
+  "payload_path": "github_copilot/product_docs/20260726T113735Z_5abe3ba9/8f1b4658f73b02892fee9683.html",
+  "published_at": null,
+  "raw_record_id": "8f1b4658f73b02892fee9683",
+  "requested_url": "https://docs.github.com/en/copilot/concepts/agents/copilot-cli/research",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://docs.github.com/en/copilot/concepts/agents/copilot-cli/research",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "discovery": {
+      "depth": 1,
+      "max_depth": 1,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/en/copilot"
+      ],
+      "enabled": true,
+      "max_depth": 1,
+      "max_urls": 500
+    },
+    "visible_text_length": 20900
+  },
+  "source_type": "product_docs"
+}

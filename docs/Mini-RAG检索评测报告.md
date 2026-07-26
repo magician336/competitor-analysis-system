@@ -61,11 +61,33 @@ Recall@K 表示前 K 条结果覆盖相关证据的比例；MRR 指平均倒数�
 
 该表说明 Cross-Encoder 对首位排序质量的贡献最明显，同时引入秒级延迟。E 与 F 在当前候选集上的召回和 nDCG 相同；时间、版本和证据排序的价值仍需在人工确认标签和包含更多冲突、历史版本案例的数据集上继续验证。
 
-## 5. 当前数据与评测制品关系
+## 5. 当前结构化数据、覆盖与评测制品关系
 
-当前 `data/cleaned/documents.jsonl` 包含 1,003 个文档版本，其 SHA-256 为 `47054cd2dd016c8101eccf9e2e8c0e4c3dc05d2b662a404738050c184e31f284`。保存的正式评测和消融结果基于 2026-07-17 的物理索引与候选评测集。它们没有记录当前结构化数据哈希，不能视为最新 1,003 个文档版本的评测结果。
+当前 `data/cleaned/documents.jsonl` 包含 1,077 个文档版本，其中当前版本 1,067 个、历史版本 10 个，245 个版本带有 `needs_review=true`。文件大小为 4,412,343 字节，SHA-256 为 `0893637a61c62b55dcba8bb40d11bb0f38e6a7dd20eaf227eb4e8bb561c57c5f`。下表给出当前文档版本的来源分布，其中 `rss` 表示 RSS（Really Simple Syndication，简易信息聚合）来源。
 
-当前服务读取别名指向 2,688-Chunk Hash Embedding 索引，另有 3,337-Chunk Hash Embedding 物理索引未被别名引用。正式评测使用 BGE-M3 物理索引。三个索引状态对应不同运行目的，指标不可跨模型或跨数据版本直接比较。
+| 来源类型 | 文档版本数 |
+| --- | ---: |
+| `benchmark` | 4 |
+| `community` | 61 |
+| `github_issue` | 188 |
+| `github_release` | 375 |
+| `official_changelog` | 322 |
+| `official_page` | 6 |
+| `plugin_marketplace` | 6 |
+| `pricing` | 8 |
+| `product_docs` | 11 |
+| `review` | 15 |
+| `rss` | 21 |
+| `security_privacy` | 8 |
+| `status_page` | 52 |
+
+以 2026-07-26 为截止时间的 90 日覆盖审计检查五个竞品与三类事件，共 15 个组合，其中 14 个为 `covered`。唯一缺口是 CodeGeeX 的 `product_release`：结构化数据包含 8 条由 JetBrains Marketplace 版本接口生成的 `official_changelog` 文档，但其发布时间均早于 90 日窗口。
+
+当前代码的离线回归结果为 258 项通过、1 项网络测试未选择、4 条 `feedparser` 弃用警告。该结果验证 Mini-RAG 数据加载、来源感知切分、索引生命周期、检索、排序、证据和评测实现，但不表示当前结构化数据已经写入 Elasticsearch。
+
+当前没有与数据 SHA-256 `0893637a61c62b55dcba8bb40d11bb0f38e6a7dd20eaf227eb4e8bb561c57c5f` 对应的 Mini-RAG 索引或评测制品，该数据尚未进入读取别名。保存的索引状态记录包含一个由 `coderadar_chunks_current` 指向的 2,688-Chunk Hash Embedding 索引，以及一个未被该别名引用的 3,337-Chunk Hash Embedding 物理索引。当前 API（Application Programming Interface，应用程序编程接口）和 Elasticsearch 端口未响应，在线索引状态不可用。
+
+保存的正式评测和消融结果基于物理索引 `coderadar_chunks_v20260717032357564091`、BGE-M3 嵌入和固定候选评测集。该评测制品没有记录当前结构化数据哈希，因此第 3 节和第 4 节的指标不能作为当前 1,077 个文档版本的评测结果，也不能与 Hash Embedding 索引指标直接比较。
 
 ## 6. 评测流程
 
@@ -89,6 +111,15 @@ flowchart LR
 ```powershell
 Set-Location D:\26Spring\project\CodeRadar
 
+& .\.venv\Scripts\python.exe -m scripts.audit_documents
+Get-FileHash .\data\cleaned\documents.jsonl -Algorithm SHA256
+
+& .\.venv\Scripts\python.exe -m scripts.audit_evidence_coverage `
+  --competitors all `
+  --event-types product_release,pricing_change,risk_experience `
+  --as-of 2026-07-26 `
+  --window-days 90
+
 & .\.venv\Scripts\python.exe -m scripts.validate_evaluation_set
 & .\.venv\Scripts\python.exe -m scripts.build_index `
   --config config\mini_rag.formal.yaml
@@ -104,4 +135,4 @@ Set-Location D:\26Spring\project\CodeRadar
   --output data\runtime\mini_rag_ablations.run1.json
 ```
 
-人工复核完成后，应重新冻结评测集、构建对应索引并重复三次消融。报告中只使用同一不变量集合生成的运行结果。
+人工复核完成后，需要以当前结构化数据重新冻结评测集、构建对应物理索引并重复三次消融。新的报告结果必须同时记录数据 SHA-256、评测集 SHA-256、配置哈希、物理索引、嵌入模型和重排序模型。

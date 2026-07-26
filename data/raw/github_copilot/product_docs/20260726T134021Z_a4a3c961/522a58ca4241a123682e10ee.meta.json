@@ -1,0 +1,46 @@
+{
+  "canonical_url": "https://docs.github.com/en/copilot/how-tos/set-up/install-copilot-extension",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:49:50.731017Z",
+  "final_url": "https://docs.github.com/en/copilot/how-tos/set-up/install-copilot-extension",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "64520ee37e6a5ab32b38f923d615c7cdeca955d2c5d7ec0d131682470e3c8c97",
+  "payload_path": "github_copilot/product_docs/20260726T134021Z_a4a3c961/522a58ca4241a123682e10ee.html",
+  "published_at": null,
+  "raw_record_id": "522a58ca4241a123682e10ee",
+  "requested_url": "https://docs.github.com/en/copilot/how-tos/set-up/install-copilot-extension",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://docs.github.com/en/copilot/how-tos/set-up/install-copilot-extension",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "discovery": {
+      "depth": 1,
+      "max_depth": 1,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/en/copilot"
+      ],
+      "enabled": true,
+      "max_depth": 1,
+      "max_urls": 500
+    },
+    "visible_text_length": 26219
+  },
+  "source_type": "product_docs"
+}

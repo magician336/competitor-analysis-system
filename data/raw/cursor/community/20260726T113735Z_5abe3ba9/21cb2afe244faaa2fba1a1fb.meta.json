@@ -1,0 +1,50 @@
+{
+  "canonical_url": "https://forum.cursor.com/latest.json?page=13",
+  "competitor": "cursor",
+  "content_type": "application/json; charset=utf-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T11:40:46.843036Z",
+  "final_url": "https://forum.cursor.com/latest.json?page=13",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "9fcd88beb79211f6e593d0e0a7eb50a16e6fdcaf9ff400d40f7fbd37c2c14fff",
+  "payload_path": "cursor/community/20260726T113735Z_5abe3ba9/21cb2afe244faaa2fba1a1fb.json",
+  "published_at": null,
+  "raw_record_id": "21cb2afe244faaa2fba1a1fb",
+  "requested_url": "https://forum.cursor.com/latest.json?page=13",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://forum.cursor.com/latest.json?page=13",
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "embedded_content_supported": false,
+    "evidence_level": "C",
+    "format": "html",
+    "json_items": {
+      "author_field": "posters.0.user_id",
+      "content_fields": [
+        "excerpt",
+        "tags",
+        "posts_count",
+        "reply_count",
+        "views",
+        "like_count",
+        "last_posted_at"
+      ],
+      "identity_template": "topic:{id}",
+      "publish_time_field": "created_at",
+      "result_path": "topic_list.topics",
+      "title_field": "fancy_title",
+      "url_base": "https://forum.cursor.com",
+      "url_template": "/t/{slug}/{id}"
+    },
+    "visible_text_length": null
+  },
+  "source_type": "community"
+}

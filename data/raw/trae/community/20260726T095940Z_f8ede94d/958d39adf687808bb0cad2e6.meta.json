@@ -1,0 +1,34 @@
+{
+  "canonical_url": "https://forum.trae.cn/t/topic/11921",
+  "competitor": "trae",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T095940Z_f8ede94d",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T09:59:43.115592Z",
+  "final_url": "https://forum.trae.cn/t/topic/11921",
+  "http_status": 200,
+  "last_modified": "Fri, 24 Apr 2026 06:04:19 GMT",
+  "needs_browser": false,
+  "payload_hash": "8714b53014e2c5694545e59187c520f121b2e955a61f8d19856ad4dbc1ab3f0d",
+  "payload_path": "trae/community/20260726T095940Z_f8ede94d/958d39adf687808bb0cad2e6.html",
+  "published_at": null,
+  "raw_record_id": "958d39adf687808bb0cad2e6",
+  "requested_url": "https://forum.trae.cn/t/topic/11921",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://forum.trae.cn/t/topic/11921",
+    "competitor_aliases": [
+      "TRAE",
+      "TRAE IDE"
+    ],
+    "competitor_name": "Trae",
+    "embedded_content_supported": false,
+    "evidence_level": "C",
+    "format": "html",
+    "note": "Public GitHub Discussions and TRAE forum topics provide machine-readable or server-rendered community evidence.",
+    "visible_text_length": 4888
+  },
+  "source_type": "community"
+}

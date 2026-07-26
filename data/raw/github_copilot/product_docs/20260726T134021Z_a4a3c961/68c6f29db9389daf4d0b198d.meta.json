@@ -1,0 +1,46 @@
+{
+  "canonical_url": "https://docs.github.com/en/copilot/concepts/agents/about-plugins",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:48:38.204976Z",
+  "final_url": "https://docs.github.com/en/copilot/concepts/agents/about-plugins",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "d4c9b690376aff62aa7d3750826bd0230ff334ef8fbb21949eb6dbcda7ba5eab",
+  "payload_path": "github_copilot/product_docs/20260726T134021Z_a4a3c961/68c6f29db9389daf4d0b198d.html",
+  "published_at": null,
+  "raw_record_id": "68c6f29db9389daf4d0b198d",
+  "requested_url": "https://docs.github.com/en/copilot/concepts/agents/about-plugins",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://docs.github.com/en/copilot/concepts/agents/about-plugins",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "discovery": {
+      "depth": 1,
+      "max_depth": 1,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/en/copilot"
+      ],
+      "enabled": true,
+      "max_depth": 1,
+      "max_urls": 500
+    },
+    "visible_text_length": 17435
+  },
+  "source_type": "product_docs"
+}

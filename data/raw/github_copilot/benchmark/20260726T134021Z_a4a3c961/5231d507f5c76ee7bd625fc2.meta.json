@@ -1,0 +1,33 @@
+{
+  "canonical_url": "https://github.blog/news-insights/research/does-github-copilot-improve-code-quality-heres-what-the-data-says/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T14:03:45.931858Z",
+  "final_url": "https://github.blog/news-insights/research/does-github-copilot-improve-code-quality-heres-what-the-data-says/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "a6451a4d70dab8c6031f5420e38e7cb6fc0747b89e09bd9cd32c4c0f00028944",
+  "payload_path": "github_copilot/benchmark/20260726T134021Z_a4a3c961/5231d507f5c76ee7bd625fc2.html",
+  "published_at": null,
+  "raw_record_id": "5231d507f5c76ee7bd625fc2",
+  "requested_url": "https://github.blog/news-insights/research/does-github-copilot-improve-code-quality-heres-what-the-data-says/",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://github.blog/news-insights/research/does-github-copilot-improve-code-quality-heres-what-the-data-says/",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "embedded_content_supported": false,
+    "evidence_level": "B",
+    "format": "html",
+    "visible_text_length": 21006
+  },
+  "source_type": "benchmark"
+}

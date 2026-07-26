@@ -1,0 +1,32 @@
+{
+  "canonical_url": "https://cursor.com/privacy",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:45:48.525952Z",
+  "final_url": "https://cursor.com/privacy",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "c0306c350b0eaeb17eeafee7e11d17d0860f58f861e707b33b9e4d45f491dc60",
+  "payload_path": "cursor/security_privacy/20260726T134021Z_a4a3c961/5aefdcb38473eb6a3b46dcc9.html",
+  "published_at": null,
+  "raw_record_id": "5aefdcb38473eb6a3b46dcc9",
+  "requested_url": "https://cursor.com/privacy",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://cursor.com/privacy",
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": 33085
+  },
+  "source_type": "security_privacy"
+}

@@ -1,0 +1,34 @@
+{
+  "canonical_url": "https://vibecoding.app/blog/codegeex-review",
+  "competitor": "codegeex",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": "W/\"1c7b6929becfb13097a61f5a46af52c7\"",
+  "fetched_at": "2026-07-26T14:23:25.107827Z",
+  "final_url": "https://vibecoding.app/blog/codegeex-review",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "04649128a4602d08ef53c90308d76ec5ccb8a1c5e20d8088fad669da9045eea2",
+  "payload_path": "codegeex/review/20260726T134021Z_a4a3c961/db9fbe2ce1086bcba7d5de78.html",
+  "published_at": null,
+  "raw_record_id": "db9fbe2ce1086bcba7d5de78",
+  "requested_url": "https://vibecoding.app/blog/codegeex-review",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://vibecoding.app/blog/codegeex-review",
+    "competitor_aliases": [
+      "CodeGeeX4",
+      "CodeGeeX AI Coding Assistant"
+    ],
+    "competitor_name": "CodeGeeX",
+    "embedded_content_supported": false,
+    "evidence_level": "C",
+    "format": "html",
+    "note": "URLs form the curated public review and security-analysis allowlist for CodeGeeX.",
+    "visible_text_length": 15233
+  },
+  "source_type": "review"
+}

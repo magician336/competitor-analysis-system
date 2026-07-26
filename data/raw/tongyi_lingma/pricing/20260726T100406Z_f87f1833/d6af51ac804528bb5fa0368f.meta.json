@@ -1,0 +1,36 @@
+{
+  "canonical_url": "https://help.aliyun.com/zh/lingma/product-overview/billing-description",
+  "competitor": "tongyi_lingma",
+  "content_type": "text/html;charset=UTF-8",
+  "crawl_run_id": "20260726T100406Z_f87f1833",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T10:04:07.859134Z",
+  "final_url": "https://help.aliyun.com/zh/lingma/billing-description",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "c190db210a1b6bdc1d034d624500c244c248f6e7625578ccb44781d4c703693c",
+  "payload_path": "tongyi_lingma/pricing/20260726T100406Z_f87f1833/d6af51ac804528bb5fa0368f.html",
+  "published_at": null,
+  "raw_record_id": "d6af51ac804528bb5fa0368f",
+  "requested_url": "https://help.aliyun.com/zh/lingma/product-overview/billing-description",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://help.aliyun.com/zh/lingma/product-overview/billing-description",
+    "competitor_aliases": [
+      "Lingma",
+      "Qoder CN",
+      "智能编码助手通义灵码"
+    ],
+    "competitor_name": "通义灵码",
+    "embedded_content_supported": false,
+    "event_effective_at": "2026-05-20T23:00:00+08:00",
+    "event_effective_at_basis": "The page states that the new Qoder CN pricing plan took effect at this time.",
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": 6960
+  },
+  "source_type": "pricing"
+}

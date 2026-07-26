@@ -1,0 +1,53 @@
+{
+  "canonical_url": "https://cursor.com/docs/cloud-agent/automations",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": "W/\"ddce2ac5b5891f6d546d8647f9259c2f\"",
+  "fetched_at": "2026-07-26T11:38:38.140847Z",
+  "final_url": "https://cursor.com/docs/cloud-agent/automations",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "f64e6f121bbbf2cca8b09d67c0562227c5575fc4e3843e3fcaf1376c70019375",
+  "payload_path": "cursor/product_docs/20260726T113735Z_5abe3ba9/eeac3a714c1b40cfafb9544e.html",
+  "published_at": null,
+  "raw_record_id": "eeac3a714c1b40cfafb9544e",
+  "requested_url": "https://cursor.com/docs/cloud-agent/automations",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://cursor.com/docs/cloud-agent/automations",
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "discovery": {
+      "configured_sitemap_urls": [
+        "https://cursor.com/docs/sitemap.xml"
+      ],
+      "method": "sitemap"
+    },
+    "embedded_content": "cursor_next_rsc",
+    "embedded_content_supported": true,
+    "evidence_level": "A",
+    "format": "html",
+    "sitemap_discovery": {
+      "allowed_path_prefixes": [
+        "/docs/"
+      ],
+      "enabled": true,
+      "excluded_path_prefixes": [
+        "/docs-static/"
+      ],
+      "max_sitemaps": 2,
+      "max_urls": 200,
+      "urls": [
+        "https://cursor.com/docs/sitemap.xml"
+      ]
+    },
+    "visible_text_length": 25
+  },
+  "source_type": "product_docs"
+}

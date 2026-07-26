@@ -1,4 +1,4 @@
-version: 1
+version: 2
 
 defaults:
   request_timeout_seconds: 15
@@ -19,11 +19,23 @@ competitors:
         evidence_level: A
         urls:
           - https://cursor.com/
+          - https://cursor.com/product
+          - https://cursor.com/cloud
+          - https://cursor.com/bugbot
+          - https://cursor.com/enterprise
+          - https://cursor.com/students
+          - https://cursor.com/education
       changelog:
         enabled: true
         evidence_level: A
         urls:
           - https://cursor.com/changelog
+      rss:
+        enabled: false
+        evidence_level: B
+        format: rss
+        urls: []
+        note: Cursor does not expose a verified current official RSS or Atom feed.
       pricing:
         enabled: true
         evidence_level: A
@@ -33,6 +45,17 @@ competitors:
         enabled: true
         evidence_level: A
         embedded_content: cursor_next_rsc
+        sitemap_discovery:
+          enabled: true
+          urls:
+            - https://cursor.com/docs/sitemap.xml
+          allowed_path_prefixes:
+            - /docs/
+          excluded_path_prefixes:
+            - /docs-static/
+            - /docs/page.mdx
+          max_urls: 200
+          max_sitemaps: 2
         urls:
           - https://cursor.com/docs
           - https://cursor.com/docs/models-and-pricing
@@ -59,11 +82,51 @@ competitors:
         urls:
           - https://forum.cursor.com/
           - https://forum.cursor.com/latest.rss
+          - https://forum.cursor.com/latest.json?page=0
+          - https://forum.cursor.com/latest.json?page=1
+          - https://forum.cursor.com/latest.json?page=2
+          - https://forum.cursor.com/latest.json?page=3
+          - https://forum.cursor.com/latest.json?page=4
+          - https://forum.cursor.com/latest.json?page=5
+          - https://forum.cursor.com/latest.json?page=6
+          - https://forum.cursor.com/latest.json?page=7
+          - https://forum.cursor.com/latest.json?page=8
+          - https://forum.cursor.com/latest.json?page=9
+          - https://forum.cursor.com/latest.json?page=10
+          - https://forum.cursor.com/latest.json?page=11
+          - https://forum.cursor.com/latest.json?page=12
+          - https://forum.cursor.com/latest.json?page=13
+          - https://forum.cursor.com/latest.json?page=14
+          - https://forum.cursor.com/latest.json?page=15
+          - https://forum.cursor.com/latest.json?page=16
+          - https://forum.cursor.com/latest.json?page=17
+          - https://forum.cursor.com/latest.json?page=18
+          - https://forum.cursor.com/latest.json?page=19
+        json_items:
+          result_path: topic_list.topics
+          title_field: fancy_title
+          content_fields:
+            - excerpt
+            - tags
+            - posts_count
+            - reply_count
+            - views
+            - like_count
+            - last_posted_at
+          url_template: /t/{slug}/{id}
+          url_base: https://forum.cursor.com
+          publish_time_field: created_at
+          author_field: posters.0.user_id
+          identity_template: topic:{id}
+          identity_mode: configured
       review:
-        enabled: false
+        enabled: true
         evidence_level: C
-        urls: []
-        note: Third-party video and review URLs require a curated allowlist before collection.
+        urls:
+          - https://devtoolsreview.com/reviews/cursor-review/
+          - https://www.techradar.com/pro/security/top-ai-coding-agents-can-be-easy-victims-to-sandbox-escapes-showing-they-arent-as-secure-as-they-claim-to-be
+          - https://aitoolgrade.com/review/cursor.html
+        note: URLs form the curated public review allowlist for Cursor.
       security_privacy:
         enabled: true
         evidence_level: A
@@ -85,11 +148,23 @@ competitors:
         evidence_level: A
         urls:
           - https://github.com/features/copilot
+          - https://github.com/features/copilot/agents
+          - https://github.com/features/copilot/ai-code-editor
+          - https://github.com/features/copilot/cli
+          - https://github.com/features/copilot/copilot-business
+          - https://github.com/features/copilot/whats-new
       changelog:
         enabled: true
         evidence_level: A
         urls:
           - https://github.blog/changelog/label/copilot/
+      rss:
+        enabled: false
+        evidence_level: B
+        format: rss
+        urls:
+          - https://github.blog/changelog/label/copilot/feed/
+        note: The feed duplicates the enabled official changelog source and remains disabled to avoid duplicate evidence.
       pricing:
         enabled: true
         evidence_level: A
@@ -98,6 +173,12 @@ competitors:
       product_docs:
         enabled: true
         evidence_level: A
+        link_discovery:
+          enabled: true
+          allowed_path_prefixes:
+            - /en/copilot
+          max_depth: 1
+          max_urls: 500
         urls:
           - https://docs.github.com/en/copilot
           - https://docs.github.com/en/copilot/get-started
@@ -112,6 +193,7 @@ competitors:
         enabled: true
         evidence_level: B
         repositories:
+          - microsoft/vscode-copilot-release
           - microsoft/vscode-copilot-chat
       plugin_marketplace:
         enabled: true
@@ -123,11 +205,15 @@ competitors:
         evidence_level: C
         urls:
           - https://github.com/orgs/community/discussions/categories/copilot
+          - https://github.com/orgs/community/discussions/categories/copilot-conversations.atom
       review:
-        enabled: false
+        enabled: true
         evidence_level: C
-        urls: []
-        note: Third-party video and review URLs require a curated allowlist before collection.
+        urls:
+          - https://www.bitsminds.com/reviews/github-copilot-review
+          - https://www.techradar.com/pro/that-is-unacceptable-in-a-professional-development-workflow-microsoft-acts-after-vs-code-gives-copilot-credit-for-work-a-human-developer-did
+          - https://dynalord.com/blog/github-copilot-review
+        note: URLs form the curated public review allowlist for GitHub Copilot.
       security_privacy:
         enabled: true
         evidence_level: A
@@ -155,6 +241,9 @@ competitors:
           settle_milliseconds: 1500
         urls:
           - https://www.trae.ai/
+          - https://www.trae.ai/work
+          - https://www.trae.ai/enterprise
+          - https://www.trae.ai/download
       changelog:
         enabled: true
         evidence_level: A
@@ -162,6 +251,15 @@ competitors:
           - No update record yet.
         urls:
           - https://www.trae.ai/changelog
+      rss:
+        enabled: true
+        evidence_level: A
+        format: rss
+        allowed_item_origins:
+          - https://www.trae.ai
+          - https://trae.ai
+        urls:
+          - https://www.trae.ai/rss.xml
       pricing:
         enabled: true
         evidence_level: A
@@ -171,8 +269,18 @@ competitors:
         enabled: true
         evidence_level: A
         embedded_content: trae_router_document
+        link_discovery:
+          enabled: true
+          allowed_path_prefixes:
+            - /ide/
+          max_depth: 1
+          max_urls: 120
+          query_params:
+            _lang: en
         urls:
           - https://docs.trae.ai/ide/what-is-trae?_lang=en
+          - https://docs.trae.ai/ide/new-plans-and-billing?_lang=en
+          - https://docs.trae.ai/ide/privacy-mode?_lang=en
       status_page:
         enabled: false
         evidence_level: A
@@ -192,15 +300,58 @@ competitors:
         urls:
           - https://marketplace.visualstudio.com/items?itemName=MarsCode.marscode-extension
       community:
-        enabled: false
+        enabled: true
         evidence_level: C
-        urls: []
-        note: TRAE community links point to interactive Discord channels; GitHub Issues provide the machine-readable feedback source.
+        urls:
+          - https://github.com/Trae-AI/TRAE/discussions.atom
+          - https://forum.trae.cn/t/topic/11921
+          - https://forum.trae.cn/t/topic/21798
+          - https://forum.trae.cn/latest.json?page=0
+          - https://forum.trae.cn/latest.json?page=1
+          - https://forum.trae.cn/latest.json?page=2
+          - https://forum.trae.cn/latest.json?page=3
+          - https://forum.trae.cn/latest.json?page=4
+          - https://forum.trae.cn/latest.json?page=5
+          - https://forum.trae.cn/latest.json?page=6
+          - https://forum.trae.cn/latest.json?page=7
+          - https://forum.trae.cn/latest.json?page=8
+          - https://forum.trae.cn/latest.json?page=9
+          - https://forum.trae.cn/latest.json?page=10
+          - https://forum.trae.cn/latest.json?page=11
+          - https://forum.trae.cn/latest.json?page=12
+          - https://forum.trae.cn/latest.json?page=13
+          - https://forum.trae.cn/latest.json?page=14
+          - https://forum.trae.cn/latest.json?page=15
+          - https://forum.trae.cn/latest.json?page=16
+          - https://forum.trae.cn/latest.json?page=17
+          - https://forum.trae.cn/latest.json?page=18
+          - https://forum.trae.cn/latest.json?page=19
+        json_items:
+          result_path: topic_list.topics
+          title_field: fancy_title
+          content_fields:
+            - excerpt
+            - tags
+            - posts_count
+            - reply_count
+            - views
+            - like_count
+            - last_posted_at
+          url_template: /t/{slug}/{id}
+          url_base: https://forum.trae.cn
+          publish_time_field: created_at
+          author_field: posters.0.user_id
+          identity_template: topic:{id}
+          identity_mode: configured
+        note: Public GitHub Discussions and TRAE forum topics provide machine-readable or server-rendered community evidence.
       review:
-        enabled: false
+        enabled: true
         evidence_level: C
-        urls: []
-        note: Third-party video and review URLs require a curated allowlist before collection.
+        urls:
+          - https://diyai.io/ai-tools/code-generation/reviews/trae-ai-review/
+          - https://www.techradar.com/pro/security/bytedance-ai-tool-caught-spying-on-users
+          - https://vibecoding.app/blog/trae-review
+        note: URLs form the curated public review allowlist for TRAE.
       security_privacy:
         enabled: true
         evidence_level: A
@@ -246,6 +397,7 @@ competitors:
         evidence_level: A
         urls:
           - https://lingma.aliyun.com/
+          - https://lingma.aliyun.com/download
       changelog:
         enabled: true
         evidence_level: A
@@ -258,14 +410,28 @@ competitors:
         undated_detail_root_selector: ".aliyun-docs-content .markdown-body"
         urls:
           - https://help.aliyun.com/zh/lingma/product-overview/dynamics-and-announcements/
+      rss:
+        enabled: false
+        evidence_level: B
+        format: rss
+        urls: []
+        note: No verified product-specific public RSS or Atom feed is available for 通义灵码.
       pricing:
         enabled: true
         evidence_level: A
+        event_effective_at: "2026-05-20T23:00:00+08:00"
+        event_effective_at_basis: The page states that the new Qoder CN pricing plan took effect at this time.
         urls:
           - https://help.aliyun.com/zh/lingma/product-overview/billing-description
       product_docs:
         enabled: true
         evidence_level: A
+        link_discovery:
+          enabled: true
+          allowed_path_prefixes:
+            - /zh/lingma/
+          max_depth: 3
+          max_urls: 300
         urls:
           - https://help.aliyun.com/zh/lingma/
           - https://help.aliyun.com/zh/lingma/user-guide/overview-of-chat
@@ -286,15 +452,21 @@ competitors:
         urls:
           - https://marketplace.visualstudio.com/items?itemName=Alibaba-Cloud.tongyi-lingma
       community:
-        enabled: false
+        enabled: true
         evidence_level: C
-        urls: []
-        note: Product feedback is handled through DingTalk and in-product forms without a stable public listing page.
+        urls:
+          - https://developer.aliyun.com/ask/697463
+          - https://developer.aliyun.com/ask/704566
+          - https://developer.aliyun.com/ask/660994
+        note: Public Alibaba Cloud developer questions provide stable community evidence pages.
       review:
-        enabled: false
+        enabled: true
         evidence_level: C
-        urls: []
-        note: Third-party video and review URLs require a curated allowlist before collection.
+        urls:
+          - https://developer.aliyun.com/article/1740815
+          - https://developer.aliyun.com/article/1666660
+          - https://developer.aliyun.com/article/1543945
+        note: URLs form the curated public review allowlist for 通义灵码.
       security_privacy:
         enabled: true
         evidence_level: A
@@ -322,15 +494,32 @@ competitors:
         urls:
           - https://www.codegeex.cn/
       changelog:
+        enabled: true
+        evidence_level: B
+        format: json
+        urls:
+          - https://plugins.jetbrains.com/api/plugins/20587/updates
+        json_items:
+          title_field: version
+          content_fields: [notes, sinceUntil]
+          url_field: link
+          url_base: https://plugins.jetbrains.com
+          publish_time_field: cdate
+          author_field: author.name
+          identity_field: id
+        note: The verified JetBrains Marketplace updates API is the public product-update source.
+      rss:
         enabled: false
-        evidence_level: A
+        evidence_level: B
+        format: rss
         urls: []
-        note: Product updates are collected from GitHub releases.
+        note: No verified product-specific public RSS or Atom feed is available for CodeGeeX.
       pricing:
-        enabled: false
-        evidence_level: A
-        urls: []
-        note: The public product site presents the assistant as free and has no standalone pricing page.
+        enabled: true
+        evidence_level: B
+        urls:
+          - https://github.com/zai-org/CodeGeeX
+        note: The official repository states that the public VS Code extension is available for free; content snapshots track future changes.
       product_docs:
         enabled: true
         evidence_level: A
@@ -349,6 +538,7 @@ competitors:
         repositories:
           - zai-org/CodeGeeX
           - zai-org/CodeGeeX4
+          - CodeGeeX/codegeex-vscode-extension
         note: The official repositories currently publish Issues but no GitHub Releases.
       plugin_marketplace:
         enabled: true
@@ -366,20 +556,25 @@ competitors:
           publish_time_field: cdate
           author_field: vendor.publicName
       community:
-        enabled: false
+        enabled: true
         evidence_level: C
-        urls: []
-        note: Public user feedback is collected from the configured GitHub repositories.
+        urls:
+          - https://github.com/zai-org/CodeGeeX/discussions.atom
+        note: The official repository Discussions feed provides public community evidence.
       review:
-        enabled: false
+        enabled: true
         evidence_level: C
-        urls: []
-        note: Third-party video and review URLs require a curated allowlist before collection.
+        urls:
+          - https://dex.koi.security/reports/jet/20587/2.21.2-211
+          - https://vibecoding.app/blog/codegeex-review
+          - https://aistacknav.com/codegeex-review-2026-2/
+        note: URLs form the curated public review and security-analysis allowlist for CodeGeeX.
       security_privacy:
-        enabled: false
+        enabled: true
         evidence_level: A
-        urls: []
-        note: No verified product-specific public security or privacy page is available.
+        urls:
+          - https://github.com/CodeGeeX/codegeex-vscode-extension#privacy
+        note: The official extension repository documents how source code and generated code are handled.
       benchmark:
         enabled: true
         evidence_level: B

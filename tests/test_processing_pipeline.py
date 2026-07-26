@@ -102,6 +102,239 @@ def test_extended_page_sources_survive_processing_with_source_policy(
     assert document.event_type is event
 
 
+def test_rss_source_survives_processing_as_product_release(tmp_path) -> None:
+    raw_root = tmp_path / "data" / "raw"
+    record = RawWriter(raw_root, "run-rss").write_json(
+        competitor="trae",
+        source_type="rss",
+        requested_url="https://example.test/rss.xml",
+        canonical_url="https://example.test/blog/work-update",
+        payload={
+            "kind": "rss_entry",
+            "feed_url": "https://example.test/rss.xml",
+            "entry": {
+                "id": "trae-work-2026-07-01",
+                "title": "TRAE Work update",
+                "link": "https://example.test/blog/work-update",
+                "published_at": "2026-07-01T16:00:00Z",
+                "updated_at": None,
+                "author": "TRAE Team",
+                "summary": (
+                    "The coding agent adds repository context and IDE support."
+                ),
+                "content": [],
+                "tags": ["product"],
+            },
+        },
+        source_metadata={"evidence_level": "B", "format": "feed_entry"},
+    )
+
+    result = ProcessingPipeline(project_root=tmp_path).process(
+        [_meta_path(raw_root, record.raw_record_id)]
+    )
+
+    [document] = _version_rows(result.output_path)
+    assert document.source_type is SourceType.RSS
+    assert document.evidence_level is EvidenceLevel.B
+    assert document.event_type is EventType.PRODUCT_RELEASE
+    assert document.publish_time == datetime(2026, 7, 1, 16, tzinfo=timezone.utc)
+    assert (
+        document.source_metadata["identity_key"]
+        == "feed-entry:trae-work-2026-07-01"
+    )
+
+
+def test_community_feed_and_json_topic_share_one_document_identity(tmp_path) -> None:
+    raw_root = tmp_path / "data" / "raw"
+    writer = RawWriter(raw_root, "run-community")
+    feed = writer.write_bytes(
+        competitor="cursor",
+        source_type="community",
+        requested_url="https://forum.cursor.com/latest.rss",
+        canonical_url="https://forum.cursor.com/latest.rss",
+        payload=(
+            "<rss><channel><item><guid>topic-42</guid>"
+            "<title>Agent debugging</title>"
+            "<link>https://forum.cursor.com/t/agent-debugging/42</link>"
+            "<pubDate>Sun, 20 Jul 2026 08:30:00 GMT</pubDate>"
+            "<description>Agent stops after a tool call.</description>"
+            "</item></channel></rss>"
+        ).encode(),
+        content_type="application/rss+xml",
+    )
+    json_page = writer.write_json(
+        competitor="cursor",
+        source_type="community",
+        requested_url="https://forum.cursor.com/latest.json?page=0",
+        canonical_url="https://forum.cursor.com/latest.json?page=0",
+        payload={
+            "topic_list": {
+                "topics": [
+                    {
+                        "id": 42,
+                        "slug": "agent-debugging",
+                        "fancy_title": "Agent debugging",
+                        "excerpt": "Agent stops after a tool call.",
+                        "created_at": "2026-07-20T08:30:00Z",
+                    }
+                ]
+            }
+        },
+        source_metadata={
+            "format": "json",
+            "json_items": {
+                "result_path": "topic_list.topics",
+                "title_field": "fancy_title",
+                "content_fields": ["excerpt"],
+                "url_template": "/t/{slug}/{id}",
+                "url_base": "https://forum.cursor.com",
+                "publish_time_field": "created_at",
+                "identity_template": "topic:{id}",
+                "identity_mode": "configured",
+            },
+        },
+    )
+
+    result = ProcessingPipeline(project_root=tmp_path).process(
+        [
+            _meta_path(raw_root, feed.raw_record_id),
+            _meta_path(raw_root, json_page.raw_record_id),
+        ]
+    )
+
+    [document] = _version_rows(result.output_path)
+    assert result.generated_documents == 2
+    assert document.url == "https://forum.cursor.com/t/agent-debugging/42"
+    assert document.source_metadata["identity_key"] == (
+        "discourse-topic:https://forum.cursor.com:42"
+    )
+
+
+def test_configured_event_effective_time_overrides_page_publish_metadata(
+    tmp_path,
+) -> None:
+    raw_root = tmp_path / "data" / "raw"
+    effective_at = "2026-05-20T23:00:00+08:00"
+    record = RawWriter(raw_root, "run-pricing").write_bytes(
+        competitor="tongyi_lingma",
+        source_type="pricing",
+        requested_url="https://example.test/pricing",
+        canonical_url="https://example.test/pricing",
+        payload=(
+            "<html><head><meta property='article:published_time' "
+            "content='2024-06-07T01:50:00Z'><title>计费说明</title></head>"
+            "<body><main><h1>计费说明</h1><p>新定价方案自 2026 年 5 月 20 日起生效，"
+            "专业版按月订阅并使用 Credits 额度。</p></main></body></html>"
+        ).encode(),
+        content_type="text/html",
+        source_metadata={
+            "evidence_level": "A",
+            "event_effective_at": effective_at,
+            "event_effective_at_basis": "Published pricing-page statement.",
+        },
+    )
+
+    result = ProcessingPipeline(project_root=tmp_path).process(
+        [_meta_path(raw_root, record.raw_record_id)]
+    )
+
+    [document] = _version_rows(result.output_path)
+    expected = datetime(2026, 5, 20, 15, tzinfo=timezone.utc)
+    assert document.event_type is EventType.PRICING_CHANGE
+    assert document.publish_time == expected
+    assert document.valid_from == expected
+    assert (
+        document.source_metadata["publish_time_basis"]
+        == "configured_event_effective_at"
+    )
+
+
+def test_empty_feed_is_an_expected_processing_skip(tmp_path) -> None:
+    raw_root = tmp_path / "data" / "raw"
+    record = RawWriter(raw_root, "run-empty-feed").write_bytes(
+        competitor="trae",
+        source_type="rss",
+        requested_url="https://example.test/rss.xml",
+        canonical_url="https://example.test/rss.xml",
+        payload=b"<rss><channel></channel></rss>",
+        content_type="application/rss+xml",
+        source_metadata={
+            "format": "feed",
+            "record_role": "feed_empty",
+            "entry_count": 0,
+        },
+    )
+
+    result = ProcessingPipeline(project_root=tmp_path).process(
+        [_meta_path(raw_root, record.raw_record_id)]
+    )
+
+    assert result.succeeded is True
+    assert result.skipped == 1
+    assert result.generated_documents == 0
+
+
+def test_configured_json_item_list_materializes_marketplace_releases(
+    tmp_path,
+) -> None:
+    raw_root = tmp_path / "data" / "raw"
+    record = RawWriter(raw_root, "run-json-releases").write_json(
+        competitor="codegeex",
+        source_type="changelog",
+        requested_url="https://plugins.jetbrains.com/api/plugins/20587/updates",
+        canonical_url="https://plugins.jetbrains.com/api/plugins/20587/updates",
+        payload=[
+            {
+                "id": 910732,
+                "link": (
+                    "/plugin/20587-codegeex-ai-coding-assistant/"
+                    "versions/stable/910732"
+                ),
+                "version": "2.27.4-223",
+                "cdate": "1765426803000",
+                "notes": "<ul><li>Add agent.</li></ul>",
+                "sinceUntil": "223.0 — 253.*",
+                "author": {"name": "codegeex team"},
+            }
+        ],
+        source_metadata={
+            "evidence_level": "B",
+            "format": "json",
+            "json_items": {
+                "title_field": "version",
+                "content_fields": ["notes", "sinceUntil"],
+                "url_field": "link",
+                "url_base": "https://plugins.jetbrains.com",
+                "publish_time_field": "cdate",
+                "author_field": "author.name",
+                "identity_field": "id",
+            },
+        },
+    )
+
+    result = ProcessingPipeline(project_root=tmp_path).process(
+        [_meta_path(raw_root, record.raw_record_id)]
+    )
+
+    [document] = _version_rows(result.output_path)
+    assert document.source_type is SourceType.OFFICIAL_CHANGELOG
+    assert document.event_type is EventType.PRODUCT_RELEASE
+    assert document.product_version == "2.27.4-223"
+    assert document.url.endswith("/versions/stable/910732")
+    assert document.publish_time == datetime(
+        2025,
+        12,
+        11,
+        4,
+        20,
+        3,
+        tzinfo=timezone.utc,
+    )
+    assert document.author == "codegeex team"
+    assert document.source_metadata["identity_key"] == "configured-json:910732"
+    assert document.source_metadata["configured_identity"] == "910732"
+
+
 def test_pipeline_uses_configured_name_evidence_and_dimension_rules(
     tmp_path,
 ) -> None:

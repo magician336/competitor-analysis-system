@@ -3,6 +3,8 @@ from __future__ import annotations
 import json
 from datetime import datetime, timezone
 
+import pytest
+
 from processing.cleaners import clean_html, clean_json, clean_rss, extract_items
 from schemas.document import RawRecord, SourceType
 
@@ -148,6 +150,7 @@ def test_extract_trae_router_document_from_embedded_payload() -> None:
         path="trae/product_docs/run/overview.html",
     )
     record.source_metadata = {"embedded_content": "trae_router_document"}
+    record.final_url = "https://example.test/ide/what-is-trae"
     router_data = {
         "loaderData": {
             "layout": {
@@ -186,6 +189,7 @@ def test_extract_trae_router_document_from_embedded_payload() -> None:
     assert item.content.startswith("# What is TRAE IDE?")
     assert "agent workflows" in item.content
     assert item.publish_time == datetime(2026, 7, 1, 8, 30, tzinfo=timezone.utc)
+    assert item.url == "https://example.test/ide/what-is-trae"
     assert item.source_metadata["publisher_document_id"] == "doc-1"
 
 
@@ -218,6 +222,256 @@ def test_extract_configured_json_document_uses_public_canonical_url() -> None:
     assert item.url == "https://example.test/source"
     assert item.publish_time == datetime(2026, 6, 30, tzinfo=timezone.utc)
     assert item.source_metadata["structured_json_extraction"] is True
+
+
+def test_extract_configured_json_items_supports_paths_and_url_templates() -> None:
+    record = _raw_record(
+        "community",
+        content_type="application/json",
+        path="cursor/community/run/latest.json",
+    )
+    record.source_metadata = {
+        "json_items": {
+            "result_path": "topic_list.topics",
+            "title_field": "fancy_title",
+            "content_fields": ["excerpt", "tags"],
+            "url_template": "/t/{slug}/{id}",
+            "url_base": "https://forum.cursor.com",
+            "publish_time_field": "created_at",
+            "author_field": "posters.0.user_id",
+            "identity_template": "topic:{id}",
+            "identity_mode": "configured",
+        }
+    }
+    payload = {
+        "topic_list": {
+            "topics": [
+                {
+                    "id": 42,
+                    "slug": "agent-debugging",
+                    "fancy_title": "Agent debugging",
+                    "excerpt": "<p>The agent stops after a tool call.</p>",
+                    "tags": ["agent", "debugging"],
+                    "created_at": "2026-07-20T08:30:00Z",
+                    "posters": [{"user_id": 7}],
+                }
+            ]
+        }
+    }
+
+    [item] = extract_items(record, payload)
+
+    assert item.url == "https://forum.cursor.com/t/agent-debugging/42"
+    assert item.author == "7"
+    assert item.publish_time == datetime(2026, 7, 20, 8, 30, tzinfo=timezone.utc)
+    assert (
+        item.source_metadata["identity_key"]
+        == "discourse-topic:https://forum.cursor.com:42"
+    )
+    assert item.source_metadata["configured_identity"] == "topic:42"
+
+
+def test_configured_json_url_template_escapes_untrusted_fields() -> None:
+    record = _raw_record(
+        "community",
+        content_type="application/json",
+        path="cursor/community/run/latest.json",
+    )
+    record.source_metadata = {
+        "json_items": {
+            "result_path": "topics",
+            "title_field": "title",
+            "content_fields": ["excerpt"],
+            "url_template": "/t/{slug}/{id}",
+            "url_base": "https://forum.cursor.com",
+        }
+    }
+    payload = {
+        "topics": [
+            {
+                "id": 42,
+                "slug": "../../admin?next=https://evil.test/#fragment",
+                "title": "Escaped topic",
+                "excerpt": "Safe evidence text.",
+            }
+        ]
+    }
+
+    [item] = extract_items(record, payload)
+
+    assert item.url == (
+        "https://forum.cursor.com/t/"
+        "..%2F..%2Fadmin%3Fnext%3Dhttps%3A%2F%2Fevil.test%2F%23fragment/42"
+    )
+    assert item.source_metadata["identity_key"] == f"canonical-url:{item.url}"
+
+
+def test_configured_json_url_field_rejects_external_origin() -> None:
+    record = _raw_record(
+        "community",
+        content_type="application/json",
+        path="cursor/community/run/latest.json",
+    )
+    record.source_metadata = {
+        "json_items": {
+            "result_path": "topics",
+            "title_field": "title",
+            "content_fields": ["excerpt"],
+            "url_field": "url",
+            "url_base": "https://forum.cursor.com",
+        }
+    }
+    payload = {
+        "topics": [
+            {
+                "title": "External topic",
+                "excerpt": "Untrusted redirect target.",
+                "url": "https://evil.test/topic",
+            }
+        ]
+    }
+
+    assert extract_items(record, payload) == []
+
+
+@pytest.mark.parametrize(
+    "unsafe_url",
+    [
+        "https://forum.cursor.com:bad/topic",
+        "https://forum.cursor.com:99999/topic",
+        "https://[::1/topic",
+    ],
+)
+def test_configured_json_url_field_rejects_malformed_url(
+    unsafe_url: str,
+) -> None:
+    record = _raw_record(
+        "community",
+        content_type="application/json",
+        path="cursor/community/run/latest.json",
+    )
+    record.source_metadata = {
+        "json_items": {
+            "result_path": "topics",
+            "title_field": "title",
+            "content_fields": ["excerpt"],
+            "url_field": "url",
+            "url_base": "https://forum.cursor.com",
+        }
+    }
+
+    assert extract_items(
+        record,
+        {
+            "topics": [
+                {
+                    "title": "Malformed topic",
+                    "excerpt": "Evidence text.",
+                    "url": unsafe_url,
+                }
+            ]
+        },
+    ) == []
+
+
+def test_configured_json_url_preserves_directory_base() -> None:
+    record = _raw_record(
+        "changelog",
+        content_type="application/json",
+        path="codegeex/changelog/run/releases.json",
+    )
+    record.source_metadata = {
+        "json_items": {
+            "result_path": "items",
+            "title_field": "title",
+            "content_fields": ["notes"],
+            "url_field": "link",
+            "url_base": "https://example.test/api/plugins/",
+            "identity_field": "id",
+        }
+    }
+
+    [item] = extract_items(
+        record,
+        {
+            "items": [
+                {
+                    "id": 1,
+                    "title": "1.0",
+                    "notes": "Release evidence.",
+                    "link": "versions/1",
+                }
+            ]
+        },
+    )
+
+    assert item.url == "https://example.test/api/plugins/versions/1"
+
+
+def test_configured_json_url_template_rejects_exact_dot_segment() -> None:
+    record = _raw_record(
+        "community",
+        content_type="application/json",
+        path="cursor/community/run/latest.json",
+    )
+    record.source_metadata = {
+        "json_items": {
+            "result_path": "topics",
+            "title_field": "title",
+            "content_fields": ["excerpt"],
+            "url_template": "/t/{slug}/{id}",
+            "url_base": "https://forum.cursor.com",
+        }
+    }
+
+    assert extract_items(
+        record,
+        {
+            "topics": [
+                {
+                    "id": 42,
+                    "slug": "..",
+                    "title": "Dot segment",
+                    "excerpt": "Evidence text.",
+                }
+            ]
+        },
+    ) == []
+
+
+def test_configured_identity_is_stable_across_url_changes_and_separates_ids() -> None:
+    record = _raw_record(
+        "community",
+        content_type="application/json",
+        path="cursor/community/run/latest.json",
+    )
+    record.source_metadata = {
+        "json_items": {
+            "result_path": "topics",
+            "title_field": "title",
+            "content_fields": ["excerpt"],
+            "url_template": "/t/{slug}",
+            "url_base": "https://forum.cursor.com",
+            "identity_field": "id",
+        }
+    }
+
+    first, second, third = extract_items(
+        record,
+        {
+            "topics": [
+                {"id": 1, "slug": "old", "title": "First", "excerpt": "One"},
+                {"id": 1, "slug": "new", "title": "First", "excerpt": "Two"},
+                {"id": 2, "slug": "new", "title": "Second", "excerpt": "Three"},
+            ]
+        },
+    )
+
+    assert first.source_metadata["identity_key"] == "configured-json:1"
+    assert second.source_metadata["identity_key"] == "configured-json:1"
+    assert third.source_metadata["identity_key"] == "configured-json:2"
+    assert first.url != second.url
+    assert second.url == third.url
 
 
 def test_clean_html_falls_back_when_empty_main_precedes_streamed_content() -> None:
@@ -400,6 +654,128 @@ def test_extract_rss_items_preserves_entry_url_and_publish_time(fixture_text) ->
     assert item.url == "https://example.test/changelog/copilot-agent"
     assert item.publish_time == datetime(2026, 7, 1, 8, 30, tzinfo=timezone.utc)
     assert item.content == "The coding agent can now edit multiple files."
+
+
+def test_extract_rss_source_uses_configured_format_when_server_mislabels_content(
+    fixture_text,
+) -> None:
+    record = _raw_record(
+        "rss",
+        content_type="text/plain",
+        path="trae/rss/run/feed.txt",
+    )
+    record.source_metadata["format"] = "rss"
+
+    [item] = extract_items(record, fixture_text("feeds/changelog.xml"))
+
+    assert item.title == "Copilot coding agent update"
+    assert item.url == "https://example.test/changelog/copilot-agent"
+    assert item.publish_time == datetime(2026, 7, 1, 8, 30, tzinfo=timezone.utc)
+    assert (
+        item.source_metadata["identity_key"]
+        == "canonical-url:https://example.test/changelog/copilot-agent"
+    )
+
+
+def test_extract_atom_prefers_link_href_over_opaque_entry_id() -> None:
+    record = _raw_record(
+        "community",
+        content_type="application/atom+xml",
+        path="trae/community/run/discussions.atom",
+    )
+    record.requested_url = "https://github.com/org/repo/discussions.atom"
+    record.canonical_url = "https://github.com/org/repo/discussions.atom"
+    payload = (
+        "<feed xmlns='http://www.w3.org/2005/Atom'><entry>"
+        "<id>tag:github.com,2008:Discussion/123</id>"
+        "<title>Repository feedback</title>"
+        "<link rel='alternate' href='https://github.com/org/repo/discussions/123'/>"
+        "<updated>2026-07-01T08:30:00Z</updated>"
+        "<content>Agent feedback from a public discussion.</content>"
+        "</entry></feed>"
+    )
+
+    [item] = extract_items(record, payload)
+
+    assert item.url == "https://github.com/org/repo/discussions/123"
+    assert item.source_metadata["feed_entry_id"] == "tag:github.com,2008:Discussion/123"
+    assert (
+        item.source_metadata["identity_key"]
+        == "canonical-url:https://github.com/org/repo/discussions/123"
+    )
+
+
+def test_extract_atom_prefers_html_alternate_link() -> None:
+    record = _raw_record(
+        "community",
+        content_type="application/atom+xml",
+        path="cursor/community/run/latest.atom",
+    )
+    payload = (
+        "<feed xmlns='http://www.w3.org/2005/Atom'><entry>"
+        "<id>topic-1</id><title>Topic</title>"
+        "<link rel='self' type='application/atom+xml' "
+        "href='https://example.test/api/topic-1.xml'/>"
+        "<link rel='alternate' type='text/html' "
+        "href='https://example.test/t/topic/1'/>"
+        "<content>Evidence text.</content>"
+        "</entry></feed>"
+    )
+
+    [item] = extract_items(record, payload)
+
+    assert item.url == "https://example.test/t/topic/1"
+
+
+@pytest.mark.parametrize(
+    "unsafe_link",
+    [
+        "javascript:alert(1)",
+        "data:text/html,boom",
+        "//evil.test/topic",
+        "https://evil.test/topic",
+    ],
+)
+def test_feed_item_rejects_unsafe_or_unlisted_origin(unsafe_link: str) -> None:
+    record = _raw_record(
+        "community",
+        content_type="application/atom+xml",
+        path="cursor/community/run/latest.atom",
+    )
+    payload = (
+        "<feed xmlns='http://www.w3.org/2005/Atom'><entry>"
+        "<id>topic-1</id><title>Topic</title>"
+        f"<link rel='alternate' href='{unsafe_link}'/>"
+        "<content>Evidence text.</content>"
+        "</entry></feed>"
+    )
+
+    [item] = extract_items(record, payload)
+
+    assert item.url == "https://example.test/source"
+    assert item.source_metadata["identity_key"] == "feed-entry:topic-1"
+
+
+def test_feed_item_accepts_explicit_allowed_origin() -> None:
+    record = _raw_record(
+        "rss",
+        content_type="application/rss+xml",
+        path="trae/rss/run/feed.xml",
+    )
+    record.source_metadata["allowed_item_origins"] = ["https://trae.ai"]
+    payload = (
+        "<rss><channel><item><guid>post-1</guid><title>TRAE update</title>"
+        "<link>https://trae.ai/blog/post-1</link>"
+        "<description>Product evidence.</description>"
+        "</item></channel></rss>"
+    )
+
+    [item] = extract_items(record, payload)
+
+    assert item.url == "https://trae.ai/blog/post-1"
+    assert item.source_metadata["identity_key"] == (
+        "canonical-url:https://trae.ai/blog/post-1"
+    )
 
 
 def test_extract_github_release_envelope_normalizes_version(fixture_json) -> None:

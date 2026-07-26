@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en-US">
+  <id>tag:github.com,2008:/orgs/community/discussions/categories/copilot-conversations</id>
+  <link type="text/html" rel="alternate" href="https://github.com/orgs/community/discussions/categories/copilot-conversations"/>
+  <link type="application/atom+xml" rel="self" href="https://github.com/orgs/community/discussions/categories/copilot-conversations.atom"/>
+  <title>Recent discussions in community/community, category: copilot-conversations</title>
+  <updated>2026-07-26T13:36:38+00:00</updated>
+  <entry>
+    <id>tag:github.com,2008:10498942</id>
+    <link type="text/html" rel="alternate" href="https://github.com/orgs/community/discussions/203016"/>
+    <title>
+      Double charges
+    </title>
+    <published>2026-07-26T13:36:38+00:00</published>
+    <updated>2026-07-26T13:36:38+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/32572393?s=30&amp;v=4"/>
+    <author>
+      <name>kvzsolt</name>
+      <uri>https://github.com/kvzsolt</uri>
+    </author>
+    <content type="html">
+      &lt;h3 dir=&quot;auto&quot;&gt;🏷️ Discussion Type&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Question&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;💬 Feature/Topic Area&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Account Related&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Body&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Github charged me twice this month after I switched from Copilot Pro to Max. Once for $90 to cover the difference- the invoice shows one day of service- and then another charge came in the afternoon for $100 for the original period. How long will it take for support to respond? I opened the ticket three weeks ago. Am i wrong, or the billing system totally broken?&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:10485929</id>
+    <link type="text/html" rel="alternate" href="https://github.com/orgs/community/discussions/202783"/>
+    <title>
+      Copilot is maddening in it&#39;s incoherence
+    </title>
+    <published>2026-07-23T21:37:54+00:00</published>
+    <updated>2026-07-26T12:42:51+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/1398909?s=30&amp;v=4"/>
+    <author>
+      <name>attrib75</name>
+      <uri>https://github.com/attrib75</uri>
+    </author>
+    <content type="html">
+      &lt;h3 dir=&quot;auto&quot;&gt;🏷️ Discussion Type&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Product Feedback&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;💬 Feature/Topic Area&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;VS Code&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Body&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Using a number of models, I get really weird results when using code changes.  I&#39;m hoping this is not expected or normal.  It makes me want to pull my hair out, almost as if it&#39;s designed to drive humans crazy.  Here&#39;s a summary:&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Me:  Let&#39;s make some code changes&lt;br&gt;
+Copilot/Me:  discussion, make changes&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Me: You made an error here, here and here&lt;br&gt;
+Copilot:  Oh yeah you&#39;re right let me fix that&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Me:  What are you doing?  By fixing it you went off course and actually made more errors?&lt;br&gt;
+Copilot:  Oh yeah you&#39;re right let me fix that&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Me:  Ok let&#39;s make more changes now that it&#39;s fixed&lt;br&gt;
+Copilot makes more errors&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;I say how can I trust you now?  I can&#39;t trust anything, we&#39;re at the point where it would take less time for me to write the code myself, you&#39;ve been making so many stupid errors.  I thought we&#39;re paying you to save time&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Copilot:  Oh you&#39;re right my bad. I will get it right now&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;CREATES ANOHTER ERORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:10498288</id>
+    <link type="text/html" rel="alternate" href="https://github.com/orgs/community/discussions/203002"/>
+    <title>
+      Remote mode solution is not very robust
+    </title>
+    <published>2026-07-26T10:03:25+00:00</published>
+    <updated>2026-07-26T10:04:02+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/1821382?s=30&amp;v=4"/>
+    <author>
+      <name>linuxwolf6</name>
+      <uri>https://github.com/linuxwolf6</uri>
+    </author>
+    <content type="html">
+      &lt;h3 dir=&quot;auto&quot;&gt;🏷️ Discussion Type&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Product Feedback&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;💬 Feature/Topic Area&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Copilot in GitHub&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Body&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;While remote mode does work, I found the experience fairly janky and not polished. I will not be using it again in its current state.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;I would suggest an enhancement to the way the feature works. You could provide a direct method over LAN to connect other devices to the running instance of GitHub Copilot. That is, provide a toggle to enable this direct communication path. If enabled, the cloud is not involved at all in the remote interactions between the other device and the host PC running GitLab Copilot.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Is it so difficult to spawn a small service inside the GitHub Copilot application? Thanks.&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:10498269</id>
+    <link type="text/html" rel="alternate" href="https://github.com/orgs/community/discussions/202999"/>
+    <title>
+      Nested sessions always use master by default?
+    </title>
+    <published>2026-07-26T09:56:30+00:00</published>
+    <updated>2026-07-26T09:57:06+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/1821382?s=30&amp;v=4"/>
+    <author>
+      <name>linuxwolf6</name>
+      <uri>https://github.com/linuxwolf6</uri>
+    </author>
+    <content type="html">
+      &lt;h3 dir=&quot;auto&quot;&gt;🏷️ Discussion Type&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Product Feedback&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;💬 Feature/Topic Area&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Copilot in GitHub&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Body&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;The way nested sessions work is not as i would have expected. Why can it not be treated like any other session just with a different target branch at the merge step?&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;In any case, there was no way I could change the branch off master for the nested session i created. The parent session in my use case is not master of course. So I dont know how this feature actually works in practice.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Is it broken by design?&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;I am enjoying GitHub Copilot for vibe coding but I will manage my nested sessions outside of this tool until it is implemented properly. Thanks.&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:10198082</id>
+    <link type="text/html" rel="alternate" href="https://github.com/orgs/community/discussions/198015"/>
+    <title>
+      GitHub Copilot AI Credits Are Unfair, Expensive, and Killing Real Development Workflows
+    </title>
+    <published>2026-06-04T13:52:12+00:00</published>
+    <updated>2026-07-26T08:29:50+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/217669516?s=30&amp;v=4"/>
+    <author>
+      <name>KarimWajihKMW</name>
+      <uri>https://github.com/KarimWajihKMW</uri>
+    </author>
+    <content type="html">
+      &lt;h3 dir=&quot;auto&quot;&gt;🏷️ Discussion Type&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Product Feedback&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;💬 Feature/Topic Area&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Copilot in GitHub&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Body&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;I am very disappointed with the new GitHub Copilot AI Credits pricing model.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Since the June 1 update, Copilot has become unpredictable and much more expensive. Credits are consumed too quickly, especially when using agent mode, code review, debugging, or repository-related tasks.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;The biggest problem is that users cannot clearly know how much a task will cost before running it. One task can burn a large amount of credits without enough warning or transparency.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;This is unfair for developers, freelancers, and small businesses who trusted Copilot as an affordable coding assistant.&lt;br&gt;
+I used 100% of copilot pro+ in just 2 days of normal work which I used to do months and years ago.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;GitHub should seriously reconsider this pricing model, increase the included credits, add clear cost warnings before each task, and give users better control over credit spending.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;The current system makes Copilot feel risky to use instead of helpful.&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:10497991</id>
+    <link type="text/html" rel="alternate" href="https://github.com/orgs/community/discussions/202994"/>
+    <title>
+      nv
+    </title>
+    <published>2026-07-26T08:15:35+00:00</published>
+    <updated>2026-07-26T08:16:12+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/246956874?s=30&amp;v=4"/>
+    <author>
+      <name>g1435r-svg</name>
+      <uri>https://github.com/g1435r-svg</uri>
+    </author>
+    <content type="html">
+      &lt;h3 dir=&quot;auto&quot;&gt;🏷️ Discussion Type&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Bug&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;💬 Feature/Topic Area&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Copilot in GitHub&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Body&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;מה אתה יכול לעזור לי&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:10497962</id>
+    <link type="text/html" rel="alternate" href="https://github.com/orgs/community/discussions/202992"/>
+    <title>
+      Nested sessions default to master
+    </title>
+    <published>2026-07-26T08:03:26+00:00</published>
+    <updated>2026-07-26T08:03:35+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/1821382?s=30&amp;v=4"/>
+    <author>
+      <name>linuxwolf6</name>
+      <uri>https://github.com/linuxwolf6</uri>
+    </author>
+    <content type="html">
+      &lt;p dir=&quot;auto&quot;&gt;The way nested sessions work is not as i would have expected. Why can it not be treated like any other session just with a different target branch at the merge step?&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;In any case, there was no way I could change the branch off master for the nested session i created. The parent session in my use case is not master of course. So I dont know how this feature actually works in practice.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Is it broken by design?&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;I am enjoying GitHub Copilot for vibe coding but I will manage my nested sessions outside of this tool until it is implemented properly. Thanks.&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:10497602</id>
+    <link type="text/html" rel="alternate" href="https://github.com/orgs/community/discussions/202977"/>
+    <title>
+      Hdhhs
+    </title>
+    <published>2026-07-26T05:53:21+00:00</published>
+    <updated>2026-07-26T06:52:05+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/269413175?s=30&amp;v=4"/>
+    <author>
+      <name>mohammedijas23456-spec</name>
+      <uri>https://github.com/mohammedijas23456-spec</uri>
+    </author>
+    <content type="html">
+      &lt;h3 dir=&quot;auto&quot;&gt;🏷️ Discussion Type&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Bug&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;💬 Feature/Topic Area&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Copilot in GitHub&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Body&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Ueyehw&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:10143605</id>
+    <link type="text/html" rel="alternate" href="https://github.com/orgs/community/discussions/197089"/>
+    <title>
+      All GitHub Copilot plans are now on usage-based billing [FAQ]
+    </title>
+    <published>2026-05-27T16:07:49+00:00</published>
+    <updated>2026-07-26T06:14:02+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/164093511?s=30&amp;v=4"/>
+    <author>
+      <name>ebndev</name>
+      <uri>https://github.com/ebndev</uri>
+    </author>
+    <content type="html">
+      &lt;p dir=&quot;auto&quot;&gt;Hello GitHub Community,&lt;/p&gt;
+&lt;div class=&quot;markdown-alert markdown-alert-important&quot; dir=&quot;auto&quot;&gt;&lt;p class=&quot;markdown-alert-title&quot; dir=&quot;auto&quot;&gt;&lt;svg data-component=&quot;Octicon&quot; class=&quot;octicon octicon-report mr-2&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;Important&lt;/p&gt;&lt;p dir=&quot;auto&quot;&gt;&lt;em&gt;Effective June 16, 2026:&lt;/em&gt; We&#39;re reopening sign-ups for GitHub Copilot Student, Pro, Pro+, and Max plans gradually over the next couple of weeks for new subscribers. If you&#39;ve been waiting to get started with Copilot, select the &lt;a href=&quot;https://github.com/features/copilot/plans?cft=copilot_lo.features_copilot&amp;amp;utm_campaign=Enterprise&amp;amp;utm_medium=referral&amp;amp;utm_source=github&quot;&gt;plan&lt;/a&gt; that fits your needs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p dir=&quot;auto&quot;&gt;If you find that you&#39;re using more than what&#39;s included in your current plan, we&#39;ve made some updates to help you get the best experience:&lt;/p&gt;
+&lt;ul dir=&quot;auto&quot;&gt;
+&lt;li&gt;
+&lt;p dir=&quot;auto&quot;&gt;&lt;strong&gt;Upgrade to unlock more included usage:&lt;/strong&gt; When approaching your included and additional usage limits, you&#39;ll see prompts to upgrade to the next tier. You only pay the price difference between plans. Upon upgrading, you immediately get access to the new plan&#39;s total included usage, minus what you&#39;ve already used this month.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p dir=&quot;auto&quot;&gt;&lt;strong&gt;Pay as you go and stay on your current plan:&lt;/strong&gt; You don&#39;t need to switch plans to keep going. If you&#39;ve exhausted your included credits and hit your additional spending limit, you can pay for the additional usage you&#39;ve already consumed, giving you continued access without switching plans.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p dir=&quot;auto&quot;&gt;If your preferred option isn&#39;t available yet, check back soon &amp;amp; review the FAQ below for additional answers.&lt;/p&gt;
+&lt;h2 dir=&quot;auto&quot;&gt;📍 Frequently Asked Questions&lt;/h2&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Why can’t I sign up right now?&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;New sign-ups are opening gradually as we put safeguards in place to address abuse patterns we saw under the previous billing model. This allows us to ensure Copilot remains a reliable, high-quality experience for all users.&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;What options do I have to continue using Copilot once I&#39;ve hit my additional usage spending limit?&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;You have two options:&lt;/p&gt;
+&lt;ul dir=&quot;auto&quot;&gt;
+&lt;li&gt;Upgrade to the next plan – Pay a flat upgrade fee and receive the higher plan&#39;s included AI Credits (minus what you&#39;ve already consumed). For example, upgrading from Pro to Pro+ costs $29 and gives you access to the Pro+ tier&#39;s $70 in included AI credits, minus your prior consumption.&lt;/li&gt;
+&lt;li&gt;Pay as you go – Pay for your accrued additional usage immediately to unlock continued usage on your current plan without upgrading. This gives you the flexibility to remain on your current plan while continuing to use Copilot.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;What does it look like in practice to upgrade? Can you give an example of what the flow looks like?&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;When you hit your additional usage spending limit on Copilot Pro, you&#39;ll see options to either pay as you go (settle your $29 in accrued additional usage to continue on Pro) or upgrade to Pro+ (pay a $29 upgrade fee, and receive the $70 Pro+ credits minus your total current usage). The upgrade fee is designed so your total spend matches what a new Pro+ signup would pay.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;For example: Mona has a Copilot Pro subscription and has hit their spending limit after $5.00 USD in additional usage. Mona can either choose to pay down the $5 in additional usage or can upgrade to Pro+. If Mona upgrades to Pro+, Mona will be charged $29.00 USD to upgrade and receive $50 (70 AI Credits from Pro+ - ($15 AI Credits from Pro + $5 of additional usage) in AI Credits to use for the remaining month.&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Will we always have to upgrade to a more expensive plan?&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;No. We are rolling out a Pay as you Go option that allows you to pay for additional usage on your current plan without upgrading. When you hit your additional usage spending limit, you&#39;ll be presented with both options: upgrade to the next plan for more included usage, or pay as you go to continue on your current plan. The upgrade path offers better per-dollar value through included credits, while pay as you go gives you flexibility to stay on your current plan.&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Why do I have to pay first? Why can’t I just continue to use Copilot and pay when the month is over?&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Pay as you Go helps protect against unpredictable costs. Postpaid billing can lead to unexpectedly large bills at the end of the month, and requiring payment upfront—combined with spending limits and the usage dashboard—helps avoid that. You can also upgrade to the next plan tier for higher included usage and spending limits.&lt;/p&gt;
+&lt;h2 dir=&quot;auto&quot;&gt;📍Usage-based billing&lt;/h2&gt;
+&lt;p dir=&quot;auto&quot;&gt;&lt;em&gt;Effective June 1, 2026:&lt;/em&gt; Usage-based billing is now in effect for all GitHub Copilot plans. Please refer to our &lt;a href=&quot;https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/&quot; rel=&quot;nofollow&quot;&gt;initial announcement&lt;/a&gt; and today’s &lt;a href=&quot;https://github.blog/changelog/2026-05-29-updates-to-github-copilot-billing-and-plans&quot; rel=&quot;nofollow&quot;&gt;changelog&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;What are the additional usage limits? How much additional usage can users purchase?&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;The limits increase by plan, so the limits for users on a Pro+ plan will generally be higher than those for users on a Pro plan. They also vary depending on a user’s usage patterns, billing history, and verification states for their GitHub account. These limits are subject to change, and you’ll see an in-product notification when you hit a limit.&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;How will we know when we hit an additional usage spending limit?&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;You will get an in-product notification when you hit the additional usage spending limit.&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Why do the spending limits vary? Why are some users treated differently?&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Limits vary by plan tier and account signals, including usage patterns, billing history, and verification state, to protect service reliability and prevent abuse.&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;How exactly are you determining the amount of a user’s additional usage spending limit? What&#39;s the specific criteria?&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;We look at a variety of factors, including usage and payment history with GitHub. We can’t disclose specifics, as it would give bad actors more details to work with to circumvent our safeguards.&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;If I upgrade to a more expensive plan but then decide to downgrade, what does that look like? Are there any restrictions on when I can downgrade?&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;You can downgrade at any point. The downgrade will be a “delayed downgrade” where you will stay in the current, more expensive plan until your next billing cycle. Then you will be charged for the downgraded plan and the lower included usage will take effect the next calendar month.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Please note that if you upgrade from a Student plan to a paid plan, downgrading will take you to a Free plan and you will need to reapply for Student plan.&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;You said you’d loosen restrictions once usage-based billing is in effect, but sign-ups for new users are still paused. What’s going on?&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;We understand the frustration. Usage-based billing is now in effect, but we’ve needed additional time to put safeguards in place to ensure a reliable experience for all users. We plan to re-enable new sign-ups for all Copilot plans in the coming weeks.&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Will you continue to offer flex AI Credits after the current promotion ends?&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Flex allotments may vary from month to month. They’re designed to adapt as the economics of AI evolve, including model pricing, new models, and improvements in efficiency.&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;How can I use the enhanced model capabilities like the 1M context window?&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;These will be available in Copilot CLI and VS Code. In Copilot CLI, once you select a model you’ll be asked if you want default or long context. Select long context for the 1M context window. In VS Code, you can configure this through a separate context size dropdown menu.&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Why should I pay GitHub API prices when I can just go pay the model provider directly?&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Copilot gives you a single subscription across every model family we support, including OpenAI, Anthropic, Google, xAI , with model availability varying by plan— without managing separate API keys, billing relationships, or rate limits with each provider. You get one bill, one set of usage controls, and access to all of it across VS Code, the Copilot CLI, the Copilot SDK, Copilot Code Review, and tools like OpenCode — without configuring each one separately.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;For a lot of developers, the value isn&#39;t just &quot;access to a model.&quot; It&#39;s that Copilot is deeply integrated into the tools they already use: pull requests, code review, the editor, the terminal. That integration work, including the context from your repo, your PR diff, your open files, and more, is what turns a model call into something more useful.&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Will users continue to see the same level of restrictive rate limiting we’ve seen over the past few months?&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;We’ve loosened rate limits considerably, and users should not experience them with normal use.&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Can I set up budgets at the user-level for my organization?&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Yes, admins can now set a universal budget for users or override for specific sets of users. As users approach their budgets, admins will receive email notifications and can adjust budgets anytime from their billing settings. See our budget management &lt;a href=&quot;&quot;&gt;documentation&lt;/a&gt; for details.&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:10497195</id>
+    <link type="text/html" rel="alternate" href="https://github.com/orgs/community/discussions/202973"/>
+    <title>
+      Cross-device sessions reset the selected model to Auto
+    </title>
+    <published>2026-07-26T02:41:35+00:00</published>
+    <updated>2026-07-26T02:42:12+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/124802036?s=30&amp;v=4"/>
+    <author>
+      <name>picheng86</name>
+      <uri>https://github.com/picheng86</uri>
+    </author>
+    <content type="html">
+      &lt;h3 dir=&quot;auto&quot;&gt;🏷️ Discussion Type&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Bug&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;💬 Feature/Topic Area&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Copilot in GitHub&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Body&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;When I create a GitHub Copilot session on mobile or desktop using a Claude model, then continue the same session on another device, the model selector incorrectly resets to Auto instead of preserving the original model. If I switch it back to Claude Opus 5, I receive this error: “The Claude Opus 5 model currently doesn’t support external context from ongoing conversations. Start a new conversation to chat with this model.”&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;As a result, I cannot continue the same conversation with the originally selected model across devices. Please preserve the session’s model selection across clients and allow the same Claude model to continue the conversation. I am a Copilot Max subscriber, and this issue is severely disrupting my workflow. Please prioritize a fix; if it cannot be resolved soon, I will have to consider canceling my subscription.&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:10356636</id>
+    <link type="text/html" rel="alternate" href="https://github.com/orgs/community/discussions/200720"/>
+    <title>
+      Unable to Subscribe to GitHub Copilot Pro – Payment Failed
+    </title>
+    <published>2026-07-02T06:01:48+00:00</published>
+    <updated>2026-07-25T20:50:26+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/265777445?s=30&amp;v=4"/>
+    <author>
+      <name>Javiththaslim</name>
+      <uri>https://github.com/Javiththaslim</uri>
+    </author>
+    <content type="html">
+      &lt;h3 dir=&quot;auto&quot;&gt;🏷️ Discussion Type&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Question&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;💬 Feature/Topic Area&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Copilot in GitHub&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Body&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Hello everyone,&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;I&#39;m trying to subscribe to GitHub Copilot Pro, but I&#39;m unable to complete the payment.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Every time I attempt to subscribe, I receive the following error:&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;&quot;Payment didn&#39;t go through. We couldn&#39;t process your payment. Please try again.&quot;&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Here&#39;s what I&#39;ve already tried:&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Enabled international transactions on my cards.&lt;br&gt;
+Tried both a credit card and a debit card from different banks.&lt;br&gt;
+Retried the payment multiple times over the past two days.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Additionally, a temporary verification amount of ₹94 was debited from both cards, but the subscription was not activated.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Has anyone experienced this issue before? Is there anything else I should try, or could this be an issue with my GitHub account or the payment processor?&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Any help or suggestions would be greatly appreciated. Thank you!&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:9949799</id>
+    <link type="text/html" rel="alternate" href="https://github.com/orgs/community/discussions/193959"/>
+    <title>
+      Copilot is not working - Stays on &quot;Preparing&quot;,&quot;Loading&quot;,&quot;Working&quot;.
+    </title>
+    <published>2026-04-25T20:53:46+00:00</published>
+    <updated>2026-07-25T19:18:11+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/256672871?s=30&amp;v=4"/>
+    <author>
+      <name>nicolasrodriguezco</name>
+      <uri>https://github.com/nicolasrodriguezco</uri>
+    </author>
+    <content type="html">
+      &lt;h3 dir=&quot;auto&quot;&gt;Discussion Type&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Product Feedback&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Discussion Content&lt;/h3&gt;
+&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://private-user-images.githubusercontent.com/256672871/583808601-25afb63c-d8f4-4365-80ec-4632ec66746b.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODUwNzQ5MTgsIm5iZiI6MTc4NTA3NDYxOCwicGF0aCI6Ii8yNTY2NzI4NzEvNTgzODA4NjAxLTI1YWZiNjNjLWQ4ZjQtNDM2NS04MGVjLTQ2MzJlYzY2NzQ2Yi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzI2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcyNlQxNDAzMzhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kYTdkN2JhMGU2YTFkNGM5YmI0MTlhZmUxODNjYzJhZWUzMjQxNWRjYTVkNWZmZmRiZGVhODE0OGI4ODY3MDQxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.a3LtEoziY9py9VWuTMKh0NkwarGMYvoGekUAoACOXeA&quot;&gt;&lt;img width=&quot;341&quot; height=&quot;127&quot; alt=&quot;image&quot; src=&quot;https://private-user-images.githubusercontent.com/256672871/583808601-25afb63c-d8f4-4365-80ec-4632ec66746b.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODUwNzQ5MTgsIm5iZiI6MTc4NTA3NDYxOCwicGF0aCI6Ii8yNTY2NzI4NzEvNTgzODA4NjAxLTI1YWZiNjNjLWQ4ZjQtNDM2NS04MGVjLTQ2MzJlYzY2NzQ2Yi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzI2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcyNlQxNDAzMzhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kYTdkN2JhMGU2YTFkNGM5YmI0MTlhZmUxODNjYzJhZWUzMjQxNWRjYTVkNWZmZmRiZGVhODE0OGI4ODY3MDQxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.a3LtEoziY9py9VWuTMKh0NkwarGMYvoGekUAoACOXeA&quot; style=&quot;max-width: 100%; height: auto; max-height: 127px;; aspect-ratio: 341 / 127; background-color: var(--bgColor-muted); border-radius: 6px&quot; class=&quot;js-gh-image-fallback&quot;&gt;&lt;/a&gt;
+&lt;p dir=&quot;auto&quot;&gt;Today, i&#39;ve tried to use the copilot chat after it reseted last night, and now is not working. It stays like this to even simple prompts.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Do you know how can I fix this? I have a Github Education access to the advanced models.&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:10494571</id>
+    <link type="text/html" rel="alternate" href="https://github.com/orgs/community/discussions/202929"/>
+    <title>
+      Account locked for 2+ weeks over a failed (never-charged) Copilot payment — support ticket #4560011 unanswered
+    </title>
+    <published>2026-07-25T11:38:34+00:00</published>
+    <updated>2026-07-25T19:16:55+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/78731609?s=30&amp;v=4"/>
+    <author>
+      <name>Friskes</name>
+      <uri>https://github.com/Friskes</uri>
+    </author>
+    <content type="html">
+      &lt;h3 dir=&quot;auto&quot;&gt;🏷️ Discussion Type&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Question&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;💬 Feature/Topic Area&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Copilot in GitHub&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Body&lt;/h3&gt;
+&lt;h2 dir=&quot;auto&quot;&gt;What happened&lt;/h2&gt;
+&lt;p dir=&quot;auto&quot;&gt;My personal account (&lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/Friskes/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/Friskes&quot;&gt;@Friskes&lt;/a&gt;) is locked due to a billing issue. Every GitHub Actions job in all of my repositories — including public ones — fails immediately with:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p dir=&quot;auto&quot;&gt;The job was not started because your account is locked due to a billing issue.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p dir=&quot;auto&quot;&gt;The outstanding balance comes from a &lt;strong&gt;Copilot Pro+ charge that never succeeded&lt;/strong&gt; — my payment method could not process it, so &lt;strong&gt;no money was ever taken&lt;/strong&gt;. I was not using Copilot; the subscription is already cancelled and the payment method removed.&lt;/p&gt;
+&lt;h2 dir=&quot;auto&quot;&gt;What I have already done&lt;/h2&gt;
+&lt;ul dir=&quot;auto&quot;&gt;
+&lt;li&gt;Cancelled the Copilot subscription (Settings → Billing &amp;amp; licensing).&lt;/li&gt;
+&lt;li&gt;Removed the payment method.&lt;/li&gt;
+&lt;li&gt;Opened support ticket &lt;strong&gt;#4560011&lt;/strong&gt; (Billing and payments) — &lt;strong&gt;2 weeks ago&lt;/strong&gt;. It is still in &lt;strong&gt;Open&lt;/strong&gt; status with no reply, including after a bump comment.&lt;/li&gt;
+&lt;li&gt;Re-checked today: Actions jobs still fail with the same lock message.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 dir=&quot;auto&quot;&gt;The problem&lt;/h2&gt;
+&lt;p dir=&quot;auto&quot;&gt;I cannot use the documented self-service unlock path (retry the payment), because paying is not possible with my payment methods — and there is nothing to refund, since the charge never went through. The docs say charge-void requests can only be handled by Support, but the ticket has been sitting unanswered for two weeks while CI is blocked for all my repositories.&lt;/p&gt;
+&lt;h2 dir=&quot;auto&quot;&gt;What I am asking&lt;/h2&gt;
+&lt;p dir=&quot;auto&quot;&gt;Could someone from GitHub staff take a look at ticket &lt;strong&gt;#4560011&lt;/strong&gt;? All I need is the never-succeeded charge voided and the account unlocked.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Thank you!&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:10483680</id>
+    <link type="text/html" rel="alternate" href="https://github.com/orgs/community/discussions/202740"/>
+    <title>
+      Can&#39;t activate copilot after associating my organization with an enterprise
+    </title>
+    <published>2026-07-23T14:41:50+00:00</published>
+    <updated>2026-07-25T14:46:03+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/37875455?s=30&amp;v=4"/>
+    <author>
+      <name>ZainAlabdin878</name>
+      <uri>https://github.com/ZainAlabdin878</uri>
+    </author>
+    <content type="html">
+      &lt;h3 dir=&quot;auto&quot;&gt;🏷️ Discussion Type&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Bug&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;💬 Feature/Topic Area&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Account Related&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Body&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;I used to have Copilot Business working fine for my organization. Then I activated a startup offer that gives Enterprise license and created an enterprise which my organization became part of. However I copilot access was removed and I can&#39;t renable it. I removed the organization from the Enterprise but that didn&#39;t help.&lt;br&gt;
+I created a support ticket but didn&#39;t get a reply.&lt;br&gt;
+How can I get Copilot Business back?&lt;br&gt;
+Thank you&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:10493859</id>
+    <link type="text/html" rel="alternate" href="https://github.com/orgs/community/discussions/202918"/>
+    <title>
+      GitHub account shows Copilot Pro active, but model selection is unavailable in VS Code
+    </title>
+    <published>2026-07-25T07:52:29+00:00</published>
+    <updated>2026-07-25T14:08:52+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/185514081?s=30&amp;v=4"/>
+    <author>
+      <name>juyong0129</name>
+      <uri>https://github.com/juyong0129</uri>
+    </author>
+    <content type="html">
+      &lt;h3 dir=&quot;auto&quot;&gt;🏷️ Discussion Type&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Bug&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;💬 Feature/Topic Area&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;VS Code&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Body&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Hello,&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;I am writing because my GitHub Copilot is not working correctly.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;My account page on GitHub clearly shows that my subscription is active (Pro status / credits available), and I was using the model selection feature in VS Code without any issues until last month. However, I can no longer select models in my IDE.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;This is definitely an issue with my specific account configuration or synchronization rather than normal behavior, as it worked fine previously.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Please check my account backend, verify my entitlement, and fix this issue so I can use Copilot properly.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Thank you.&lt;br&gt;
+&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://private-user-images.githubusercontent.com/185514081/626641349-c379bd40-961d-41c2-a31a-ad2eaa3eb721.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODUwNzQ5MTgsIm5iZiI6MTc4NTA3NDYxOCwicGF0aCI6Ii8xODU1MTQwODEvNjI2NjQxMzQ5LWMzNzliZDQwLTk2MWQtNDFjMi1hMzFhLWFkMmVhYTNlYjcyMS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzI2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcyNlQxNDAzMzhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jZDdkMDc1ZGM3MGIwMzRhYThiMzE1Yzc5OWQwZGQzNGNmMjY2OGE2M2I2ODc5NGU1OTZkNzM0NTcxYzQ3MmQ5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.a3qdKvNxusUPfIYvIfG5RTnwLgJ7Owx8khUM5ToeUGk&quot;&gt;&lt;img width=&quot;580&quot; height=&quot;368&quot; alt=&quot;image&quot; src=&quot;https://private-user-images.githubusercontent.com/185514081/626641349-c379bd40-961d-41c2-a31a-ad2eaa3eb721.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODUwNzQ5MTgsIm5iZiI6MTc4NTA3NDYxOCwicGF0aCI6Ii8xODU1MTQwODEvNjI2NjQxMzQ5LWMzNzliZDQwLTk2MWQtNDFjMi1hMzFhLWFkMmVhYTNlYjcyMS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzI2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcyNlQxNDAzMzhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jZDdkMDc1ZGM3MGIwMzRhYThiMzE1Yzc5OWQwZGQzNGNmMjY2OGE2M2I2ODc5NGU1OTZkNzM0NTcxYzQ3MmQ5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.a3qdKvNxusUPfIYvIfG5RTnwLgJ7Owx8khUM5ToeUGk&quot; style=&quot;max-width: 100%; height: auto; max-height: 368px;; aspect-ratio: 580 / 368; background-color: var(--bgColor-muted); border-radius: 6px&quot; class=&quot;js-gh-image-fallback&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://private-user-images.githubusercontent.com/185514081/626641224-6b435a66-fa1f-43c5-b80a-db521237f674.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODUwNzQ5MTgsIm5iZiI6MTc4NTA3NDYxOCwicGF0aCI6Ii8xODU1MTQwODEvNjI2NjQxMjI0LTZiNDM1YTY2LWZhMWYtNDNjNS1iODBhLWRiNTIxMjM3ZjY3NC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzI2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcyNlQxNDAzMzhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hMDk4Y2RlMWZkNTFiNDdkOWU0ZjUwZWY2ZDQ2MGY0MDU4ZjgwZGMxNGRiNjViNWQwYWNjNjc5MzBmYzQ2MDk3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.WX8H070hRdGvhgG-g83F64B2IekhC5hGkwr8t6uJQo8&quot;&gt;&lt;img width=&quot;176&quot; height=&quot;130&quot; alt=&quot;image&quot; src=&quot;https://private-user-images.githubusercontent.com/185514081/626641224-6b435a66-fa1f-43c5-b80a-db521237f674.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODUwNzQ5MTgsIm5iZiI6MTc4NTA3NDYxOCwicGF0aCI6Ii8xODU1MTQwODEvNjI2NjQxMjI0LTZiNDM1YTY2LWZhMWYtNDNjNS1iODBhLWRiNTIxMjM3ZjY3NC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzI2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcyNlQxNDAzMzhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hMDk4Y2RlMWZkNTFiNDdkOWU0ZjUwZWY2ZDQ2MGY0MDU4ZjgwZGMxNGRiNjViNWQwYWNjNjc5MzBmYzQ2MDk3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.WX8H070hRdGvhgG-g83F64B2IekhC5hGkwr8t6uJQo8&quot; style=&quot;max-width: 100%; height: auto; max-height: 130px;; aspect-ratio: 176 / 130; background-color: var(--bgColor-muted); border-radius: 6px&quot; class=&quot;js-gh-image-fallback&quot;&gt;&lt;/a&gt;
+&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://private-user-images.githubusercontent.com/185514081/626641383-3f70b72c-f2f9-41b7-b516-6de8b6c6edf0.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODUwNzQ5MTgsIm5iZiI6MTc4NTA3NDYxOCwicGF0aCI6Ii8xODU1MTQwODEvNjI2NjQxMzgzLTNmNzBiNzJjLWYyZjktNDFiNy1iNTE2LTZkZThiNmM2ZWRmMC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzI2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcyNlQxNDAzMzhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05YjhiNDIyNzgwYTlhMWE1OWY5MzJlOWZkZDQyYTc2OGVkNmYxOWE5NWE0YjUyMmUxMTE3NWI2ZDU4N2M0ZjYzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.hykFQFb2WEcij2M7-OCP46ROJLZwWfCiU93lj0Ak4Ic&quot;&gt;&lt;img width=&quot;362&quot; height=&quot;98&quot; alt=&quot;image&quot; src=&quot;https://private-user-images.githubusercontent.com/185514081/626641383-3f70b72c-f2f9-41b7-b516-6de8b6c6edf0.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODUwNzQ5MTgsIm5iZiI6MTc4NTA3NDYxOCwicGF0aCI6Ii8xODU1MTQwODEvNjI2NjQxMzgzLTNmNzBiNzJjLWYyZjktNDFiNy1iNTE2LTZkZThiNmM2ZWRmMC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzI2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcyNlQxNDAzMzhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05YjhiNDIyNzgwYTlhMWE1OWY5MzJlOWZkZDQyYTc2OGVkNmYxOWE5NWE0YjUyMmUxMTE3NWI2ZDU4N2M0ZjYzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.hykFQFb2WEcij2M7-OCP46ROJLZwWfCiU93lj0Ak4Ic&quot; style=&quot;max-width: 100%; height: auto; max-height: 98px;; aspect-ratio: 362 / 98; background-color: var(--bgColor-muted); border-radius: 6px&quot; class=&quot;js-gh-image-fallback&quot;&gt;&lt;/a&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:10195049</id>
+    <link type="text/html" rel="alternate" href="https://github.com/orgs/community/discussions/197960"/>
+    <title>
+      Github Copilot is a complete scam
+    </title>
+    <published>2026-06-04T03:40:19+00:00</published>
+    <updated>2026-07-25T13:46:09+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/6278773?s=30&amp;v=4"/>
+    <author>
+      <name>andresrogers</name>
+      <uri>https://github.com/andresrogers</uri>
+    </author>
+    <content type="html">
+      &lt;h3 dir=&quot;auto&quot;&gt;🏷️ Discussion Type&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Product Feedback&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;💬 Feature/Topic Area&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Copilot in GitHub&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Body&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Last month used 80% during the whole month, now 98% in only 3 days.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;These changes are completely illegal that&#39;s not the plan i purchased for one year, it&#39;s a unilateral change in the conditions of the contract, the credit usage as well as the credits charged per model can&#39;t just change 6x like that when the plan was for a whole year in those conditions. I don&#39;t care about the legalese BS excuses they try to gas-light us, it&#39;s just deceitful marketing and scamming&lt;br&gt;
+&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://private-user-images.githubusercontent.com/6278773/602594684-018a6924-a368-4821-8326-f7eaec0ad746.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODUwNzQ5MTgsIm5iZiI6MTc4NTA3NDYxOCwicGF0aCI6Ii82Mjc4NzczLzYwMjU5NDY4NC0wMThhNjkyNC1hMzY4LTQ4MjEtODMyNi1mN2VhZWMwYWQ3NDYucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI2MDcyNiUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNjA3MjZUMTQwMzM4WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9NWZkNTAzYWMzNDVkNDZmYjBkNTJmMjQ5NmY5ZGQwZTZlNjlkZWYwZmM5N2ZkN2VhNzQ4MGYxYmNmNzIyYzM4ZiZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmcmVzcG9uc2UtY29udGVudC10eXBlPWltYWdlJTJGcG5nIn0.qcP4OzjNVgyIFBGffhsMQOrp48YElKUTMlaj_tv1pTc&quot;&gt;&lt;img width=&quot;427&quot; height=&quot;524&quot; alt=&quot;Captura de pantalla 2026-06-03 233145&quot; src=&quot;https://private-user-images.githubusercontent.com/6278773/602594684-018a6924-a368-4821-8326-f7eaec0ad746.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODUwNzQ5MTgsIm5iZiI6MTc4NTA3NDYxOCwicGF0aCI6Ii82Mjc4NzczLzYwMjU5NDY4NC0wMThhNjkyNC1hMzY4LTQ4MjEtODMyNi1mN2VhZWMwYWQ3NDYucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI2MDcyNiUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNjA3MjZUMTQwMzM4WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9NWZkNTAzYWMzNDVkNDZmYjBkNTJmMjQ5NmY5ZGQwZTZlNjlkZWYwZmM5N2ZkN2VhNzQ4MGYxYmNmNzIyYzM4ZiZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmcmVzcG9uc2UtY29udGVudC10eXBlPWltYWdlJTJGcG5nIn0.qcP4OzjNVgyIFBGffhsMQOrp48YElKUTMlaj_tv1pTc&quot; style=&quot;max-width: 100%; height: auto; max-height: 524px;; aspect-ratio: 427 / 524; background-color: var(--bgColor-muted); border-radius: 6px&quot; class=&quot;js-gh-image-fallback&quot;&gt;&lt;/a&gt;&lt;br&gt;
+.&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:9921487</id>
+    <link type="text/html" rel="alternate" href="https://github.com/orgs/community/discussions/193258"/>
+    <title>
+      Converting GitHub Copilot subscription from Google Play to credit card billing
+    </title>
+    <published>2026-04-21T06:12:22+00:00</published>
+    <updated>2026-07-25T11:47:44+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/14961568?s=30&amp;v=4"/>
+    <author>
+      <name>rafalkwol</name>
+      <uri>https://github.com/rafalkwol</uri>
+    </author>
+    <content type="html">
+      &lt;h3 dir=&quot;auto&quot;&gt;🏷️ Discussion Type&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Question&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;💬 Feature/Topic Area&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Copilot in GitHub&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Body&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Hello,&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Does anyone have experience with switching your GitHub Copilot billing from Google Play to credit card? I started my subscription in GitHub Mobile which seems to bill me via Google Play, but I want to pay for it using my credit card, but no matter where I look there doesn&#39;t seem to be an option to change it. Anyone did something like this? If so how did you do it?&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:10490624</id>
+    <link type="text/html" rel="alternate" href="https://github.com/orgs/community/discussions/202848"/>
+    <title>
+      para que tu por el pueblo.  ayer a las 6:00 de la tarde    Bueno, bueno. Ya lo   Tú Es   Tagle recogiste  una bolsa   Es una   Tú Sí   A ver   Tú ¿De   Tagle El   Tú qué es   Tagle donde   Tú la paquetería   es el dano   Tú De qué era la paquetería   No, no me acuerdo. Pero ya llegó un   Tú Sí,   paquete.   Tú de Chain.   Tagle No sé si sea de Shane, déjame ahorita checo el de este porque también llegaba hoy eso.   Tú Sí, este es   Esa esa que es   Tú Son las cosillas   Dando foto,  mi foto y me la mandas   Tú Como unos palitos   Ah, son los abanicos, se me hacen Bueno, tómale foto me lo   Tú Muy   Tagle mandas Y ahí te veo ahorita déjame te busco la fecha del otro
+    </title>
+    <published>2026-07-24T15:32:40+00:00</published>
+    <updated>2026-07-25T07:28:24+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/302732939?s=30&amp;v=4"/>
+    <author>
+      <name>luna170415-art</name>
+      <uri>https://github.com/luna170415-art</uri>
+    </author>
+    <content type="html">
+      &lt;p dir=&quot;auto&quot;&gt;Mejorar conversación&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:10492273</id>
+    <link type="text/html" rel="alternate" href="https://github.com/orgs/community/discussions/202892"/>
+    <title>
+      Org admins need a way to avoid manually reviewing Copilot model availability every time GitHub adds new models.
+    </title>
+    <published>2026-07-24T22:13:47+00:00</published>
+    <updated>2026-07-24T22:14:20+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/278833324?s=30&amp;v=4"/>
+    <author>
+      <name>avenue-marcus</name>
+      <uri>https://github.com/avenue-marcus</uri>
+    </author>
+    <content type="html">
+      &lt;h3 dir=&quot;auto&quot;&gt;🏷️ Discussion Type&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Product Feedback&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;💬 Feature/Topic Area&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Copilot in GitHub&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Body&lt;/h3&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Problem&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Today, orgs can remain on older AI models indefinitely unless an admin notices that new models were added and manually revisits settings. This creates operational overhead and inconsistent adoption across organizations.&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Suggestions&lt;/h3&gt;
+&lt;ul dir=&quot;auto&quot;&gt;
+&lt;li&gt;Optional setting to automatically enable newly released models when they supersede existing enabled models with similar usage characteristics&lt;/li&gt;
+&lt;li&gt;Optional setting to automatically disable or deprecate older models when newer recommended replacements exist&lt;/li&gt;
+&lt;li&gt;Clear indicators for newly added models in the admin UI&lt;/li&gt;
+&lt;li&gt;Meaningful sorting and filtering on the model settings page&lt;/li&gt;
+&lt;li&gt;Side-by-side comparison for strengths, intended use cases, and admin-relevant tradeoffs&lt;/li&gt;
+&lt;/ul&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:10491578</id>
+    <link type="text/html" rel="alternate" href="https://github.com/orgs/community/discussions/202873"/>
+    <title>
+      Will the copilot always run after every commit to origin?
+    </title>
+    <published>2026-07-24T19:20:32+00:00</published>
+    <updated>2026-07-24T21:56:16+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/127354181?s=30&amp;v=4"/>
+    <author>
+      <name>Rod-at-DOH</name>
+      <uri>https://github.com/Rod-at-DOH</uri>
+    </author>
+    <content type="html">
+      &lt;h3 dir=&quot;auto&quot;&gt;🏷️ Discussion Type&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Question&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;💬 Feature/Topic Area&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Copilot in GitHub&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Body&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;I&#39;m reading through the GitHub Copilot documentation pages, learning more about how to use this fascinating new tool! Right now, I&#39;m reading through the pages dealing with &lt;code class=&quot;notranslate&quot;&gt;.github/copilot-instructions.md&lt;/code&gt;. Very interesting, but some details are left out so I&#39;m asking here.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;First, I conclude that the GitHub Copilots will run after every commit to the remote repo. Am I correct about that?&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Second, assuming the answer to my first question is yes, then how can I prevent that from happening after every push to remote? When I am working alone, I tend to perform frequent commits to my local repo and then pushes to remote. I do this so that I have a clear view of how my thinking has progressed over time. But I don&#39;t want every push to remote to trigger Copilot to run. That would just burn through my tokens quicker than I care for that to happen.&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:10491878</id>
+    <link type="text/html" rel="alternate" href="https://github.com/orgs/community/discussions/202886"/>
+    <title>
+      I would like to suggest that a feature similar to enabling/disabling workflows be implemented for Copilot instructions
+    </title>
+    <published>2026-07-24T20:22:59+00:00</published>
+    <updated>2026-07-24T20:23:36+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/127354181?s=30&amp;v=4"/>
+    <author>
+      <name>Rod-at-DOH</name>
+      <uri>https://github.com/Rod-at-DOH</uri>
+    </author>
+    <content type="html">
+      &lt;h3 dir=&quot;auto&quot;&gt;🏷️ Discussion Type&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Product Feedback&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;💬 Feature/Topic Area&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Copilot in GitHub&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Body&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;I&#39;m learning how to use GitHub Copilot and the new instruction files to assist with directing Copilot more efficiently. This has a lot of potential, and I want to take advantage of it. However, I do have a serious restriction. I am restricted to only using the Copilot Free version, which has limited use of tokens. However, I love the ability of having unlimited code completion help, which I use extensively. I have learned that if I use Copilot with code completion help and I have some files like that &lt;code class=&quot;notranslate&quot;&gt;.github/copilot-instructions.md&lt;/code&gt; and similar files, then it will cause me to burn tokens, whereas before that wouldn&#39;t happen.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Therefore, I would like to suggest that you implement a feature similar to what&#39;s use with GitHub Workflows in GitHub.com. One can go to the GitHub Actions, where they can see all the workflows they have. And from there they can select a workflow and disable its being used. And only when they are ready to have that workflow invoked, will they re-enable it. This feature would really be helpful with Copilot instruction files, especially for people who are restricted to only use Copilot Free.&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:8202511</id>
+    <link type="text/html" rel="alternate" href="https://github.com/orgs/community/discussions/156686"/>
+    <title>
+      Issue with GitHub Copilot Chat in Visual Studio Code
+    </title>
+    <published>2025-04-14T21:09:43+00:00</published>
+    <updated>2026-07-24T18:28:22+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/161087841?s=30&amp;v=4"/>
+    <author>
+      <name>VincenzoLis</name>
+      <uri>https://github.com/VincenzoLis</uri>
+    </author>
+    <content type="html">
+      &lt;p dir=&quot;auto&quot;&gt;Subject: Issue with GitHub Copilot Chat in Visual Studio Code&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Problem Description: I&#39;m experiencing an issue with the GitHub Copilot Chat functionality in Visual Studio Code. While inline suggestions work correctly, the chat does not function as expected. When I send a message, Copilot briefly appears to respond but then the response disappears immediately. Additionally, my name or photo icon does not appear next to the messages I send.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;I am currently in the trial version of GitHub Copilot and have already provided my payment details for the subscription, which will begin in 14 days. I wonder if this issue could be related to my trial status or if it’s a technical problem.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;I have already tried the following steps without success:&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Uninstalling and reinstalling Visual Studio Code (I did this twice).&lt;br&gt;
+Signing out and signing back into my GitHub account.&lt;br&gt;
+Reloading the Visual Studio Code window (Reload Window).&lt;br&gt;
+Ensuring the &quot;GitHub Copilot Chat&quot; extension is installed and up to date.&lt;br&gt;
+Tried opening new projects or folders to check if it was a project-specific issue.&lt;br&gt;
+Steps to Reproduce the Issue:&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Open Visual Studio Code.&lt;br&gt;
+Access the GitHub Copilot Chat functionality.&lt;br&gt;
+Send a message.&lt;br&gt;
+Observe that the response disappears shortly after appearing.&lt;br&gt;
+Additional Information:&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;Operating System: Windows 11&lt;br&gt;
+Visual Studio Code Version: [insert the exact version of VS Code]&lt;br&gt;
+GitHub Copilot Chat Extension Version: [insert the exact version of the extension]&lt;br&gt;
+I have a stable Internet connection.&lt;br&gt;
+I also wonder if the issue could be related to GitHub Copilot&#39;s servers.&lt;br&gt;
+Can you help me resolve this issue? Thank you very much!&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:10491088</id>
+    <link type="text/html" rel="alternate" href="https://github.com/orgs/community/discussions/202854"/>
+    <title>
+      Edition d&#39;un message precedent avec annulation des modifications impossible sur Visual Studio Code
+    </title>
+    <published>2026-07-24T17:15:30+00:00</published>
+    <updated>2026-07-24T17:16:14+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/161984827?s=30&amp;v=4"/>
+    <author>
+      <name>METADIDOMIOFFICIEL</name>
+      <uri>https://github.com/METADIDOMIOFFICIEL</uri>
+    </author>
+    <content type="html">
+      &lt;h3 dir=&quot;auto&quot;&gt;🏷️ Discussion Type&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Bug&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;💬 Feature/Topic Area&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;VS Code&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Body&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Lorsqu&#39;on edite un message precedent, l&#39;edition se bloque avec une erreur &lt;strong&gt;Cannot read properties of undefined (reading &#39;toString&#39;)&lt;/strong&gt;, il faut  faire un double clic sur &lt;strong&gt;ENTER&lt;/strong&gt; pour que sa passe et le champ de saisi de texte disparait.&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:10486477</id>
+    <link type="text/html" rel="alternate" href="https://github.com/orgs/community/discussions/202788"/>
+    <title>
+      Android Studio is stuck &quot;Waiting for Github Authentication&quot;
+    </title>
+    <published>2026-07-24T00:06:50+00:00</published>
+    <updated>2026-07-24T15:18:26+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/173819084?s=30&amp;v=4"/>
+    <author>
+      <name>peterwilliams221</name>
+      <uri>https://github.com/peterwilliams221</uri>
+    </author>
+    <content type="html">
+      &lt;h3 dir=&quot;auto&quot;&gt;🏷️ Discussion Type&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Bug&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;💬 Feature/Topic Area&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Copilot in GitHub&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Body&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;I have a GitHub Copilot subscription but can&#39;t use any of the GitHub Copilot plugins. I&#39;m on the latest version of Android Studio &lt;code class=&quot;notranslate&quot;&gt;2026.1.2&lt;/code&gt; in Windows and I have GitHub Copilot verison &lt;code class=&quot;notranslate&quot;&gt;1.6.1-243&lt;/code&gt; installed. I installed this older version of the plugin because it&#39;s the only version so far that&#39;s let me get past the &quot;Initializing GitHub Copilot...&quot; screen and has the &quot;Continue with Github&quot; button to authenticate through GitHub. I am already logged in to GitHub on Android Studio but the IDE stays stuck on the &quot;Waiting for GitHub Authorization...&quot; message.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;I&#39;ve tried several other steps like Android Studio&#39;s common &quot;Invalidate caches and restart&quot; option, manually going into the Windows Android Studio directory and clearing the GitHub Copilot caches, and getting a personal access token from Github to login to Android Studio. Nothing so far has worked. Is anyone using the latest version of Android Studio together with GitHub Copilot successfully on Windows?&lt;/p&gt;
+&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://private-user-images.githubusercontent.com/173819084/626014388-bec0ee96-c6db-4fa7-a52d-3688e7c124a8.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODUwNzQ5MTgsIm5iZiI6MTc4NTA3NDYxOCwicGF0aCI6Ii8xNzM4MTkwODQvNjI2MDE0Mzg4LWJlYzBlZTk2LWM2ZGItNGZhNy1hNTJkLTM2ODhlN2MxMjRhOC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzI2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcyNlQxNDAzMzhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hZjEyYjNkZjMyZjE0ZTc5MTcxYTUxYWJmMzkyMDMzMmY4MjljODEzMjNiZGJhYmFiY2Y2NTJlODJiMzMyNGMxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.sFvljvLWgTCI5_WMv6BdlrYh8bhwd24rR0nk47D87IQ&quot;&gt;&lt;img width=&quot;426&quot; height=&quot;78&quot; alt=&quot;github_waiting_authorization&quot; src=&quot;https://private-user-images.githubusercontent.com/173819084/626014388-bec0ee96-c6db-4fa7-a52d-3688e7c124a8.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODUwNzQ5MTgsIm5iZiI6MTc4NTA3NDYxOCwicGF0aCI6Ii8xNzM4MTkwODQvNjI2MDE0Mzg4LWJlYzBlZTk2LWM2ZGItNGZhNy1hNTJkLTM2ODhlN2MxMjRhOC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNzI2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDcyNlQxNDAzMzhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hZjEyYjNkZjMyZjE0ZTc5MTcxYTUxYWJmMzkyMDMzMmY4MjljODEzMjNiZGJhYmFiY2Y2NTJlODJiMzMyNGMxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.sFvljvLWgTCI5_WMv6BdlrYh8bhwd24rR0nk47D87IQ&quot; style=&quot;max-width: 100%; height: auto; max-height: 78px;; aspect-ratio: 426 / 78; background-color: var(--bgColor-muted); border-radius: 6px&quot; class=&quot;js-gh-image-fallback&quot;&gt;&lt;/a&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:10461449</id>
+    <link type="text/html" rel="alternate" href="https://github.com/orgs/community/discussions/202413"/>
+    <title>
+      How can a GitHub Team organization purchase Copilot Business for 4 members when the Copilot settings are missing?
+    </title>
+    <published>2026-07-20T11:29:33+00:00</published>
+    <updated>2026-07-24T12:58:20+00:00</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/91228595?s=30&amp;v=4"/>
+    <author>
+      <name>Varatharajan-Raja</name>
+      <uri>https://github.com/Varatharajan-Raja</uri>
+    </author>
+    <content type="html">
+      &lt;h3 dir=&quot;auto&quot;&gt;🏷️ Discussion Type&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Question&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;💬 Feature/Topic Area&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;Copilot in GitHub&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Body&lt;/h3&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Question&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;I am an owner of a GitHub organization that is currently on the GitHub Team plan. The organization has four members, and we want to purchase GitHub Copilot Business for all four users.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;However, I cannot find any Copilot section or purchase option in the organization settings. I checked the organization settings, including the &quot;Code, planning, and automation&quot; section, but there is no Copilot or Copilot Access menu.&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Current setup&lt;/h3&gt;
+&lt;ul dir=&quot;auto&quot;&gt;
+&lt;li&gt;Organization plan: GitHub Team&lt;/li&gt;
+&lt;li&gt;Number of organization members: 4&lt;/li&gt;
+&lt;li&gt;Desired product: GitHub Copilot Business&lt;/li&gt;
+&lt;li&gt;Desired number of licenses: 4&lt;/li&gt;
+&lt;li&gt;I am an owner of the organization&lt;/li&gt;
+&lt;li&gt;The organization should remain on GitHub Team unless an Enterprise upgrade is genuinely required&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;What I found in the documentation&lt;/h3&gt;
+&lt;p dir=&quot;auto&quot;&gt;GitHub&#39;s documentation says that new self-service Copilot Business sign-ups for organizations on GitHub Free and GitHub Team have been temporarily paused since April 22, 2026.&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;The documentation also describes using a dedicated enterprise account to manage Copilot Business licenses without adopting or paying for GitHub Enterprise licenses. It appears that users can be added directly to that enterprise and assigned Copilot Business licenses.&lt;/p&gt;
+&lt;h3 dir=&quot;auto&quot;&gt;Questions&lt;/h3&gt;
+&lt;ol dir=&quot;auto&quot;&gt;
+&lt;li&gt;
+&lt;p dir=&quot;auto&quot;&gt;Is contacting GitHub Sales and requesting a dedicated Copilot-only enterprise account currently the only supported way for a GitHub Team organization to purchase new Copilot Business licenses?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p dir=&quot;auto&quot;&gt;Can we keep our repositories and existing organization on GitHub Team while assigning Copilot Business licenses directly to the same four users?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p dir=&quot;auto&quot;&gt;Should our existing GitHub Team organization remain separate from the dedicated enterprise account, with only the users added directly to the enterprise?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p dir=&quot;auto&quot;&gt;Can our existing organization be connected to the dedicated enterprise without causing us to be charged for GitHub Enterprise licenses?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p dir=&quot;auto&quot;&gt;Is there another self-service or support-assisted purchasing method for a small organization that only needs four Copilot Business seats?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p dir=&quot;auto&quot;&gt;Is there an announced date for self-service Copilot Business purchasing to become available again for GitHub Team organizations?&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+    </content>
+  </entry>
+</feed>

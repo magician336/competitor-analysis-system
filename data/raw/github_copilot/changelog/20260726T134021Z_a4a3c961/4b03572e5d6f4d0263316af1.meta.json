@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2025-12-01-copilot-spaces-public-spaces-and-code-view-support/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:47:17.478345Z",
+  "final_url": "https://github.blog/changelog/2025-12-01-copilot-spaces-public-spaces-and-code-view-support/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "fe0ca9bd78e416b69e731c864b885aa345009c7e687a617202365310dc057cc7",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/4b03572e5d6f4d0263316af1.html",
+  "published_at": "2025-12-01T00:00:00Z",
+  "raw_record_id": "4b03572e5d6f4d0263316af1",
+  "requested_url": "https://github.blog/changelog/2025-12-01-copilot-spaces-public-spaces-and-code-view-support",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2025/?label=copilot",
+    "changelog_page_number": 2,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2025-12-01T00:00:00Z",
+    "listing_title": "Copilot Spaces: Public spaces and code view support",
+    "record_role": "changelog_entry",
+    "visible_text_length": 5012
+  },
+  "source_type": "changelog"
+}

@@ -1,0 +1,47 @@
+{
+  "canonical_url": "https://help.aliyun.com/zh/lingma/product-overview/refund-description",
+  "competitor": "tongyi_lingma",
+  "content_type": "text/html;charset=UTF-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T11:57:04.565995Z",
+  "final_url": "https://help.aliyun.com/zh/lingma/product-overview/refund-description",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "6c586d651bde0b24335f42ff91ac4fe76d9aa8cf54fa47f01f821ed453f35965",
+  "payload_path": "tongyi_lingma/product_docs/20260726T113735Z_5abe3ba9/e2506b975e0dc2e0a36a01cd.html",
+  "published_at": null,
+  "raw_record_id": "e2506b975e0dc2e0a36a01cd",
+  "requested_url": "https://help.aliyun.com/zh/lingma/product-overview/refund-description",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://help.aliyun.com/zh/lingma/product-overview/refund-description",
+    "competitor_aliases": [
+      "Lingma",
+      "Qoder CN",
+      "智能编码助手通义灵码"
+    ],
+    "competitor_name": "通义灵码",
+    "discovery": {
+      "depth": 2,
+      "max_depth": 3,
+      "method": "same_origin_links"
+    },
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/zh/lingma/"
+      ],
+      "enabled": true,
+      "max_depth": 3,
+      "max_urls": 300
+    },
+    "visible_text_length": 914
+  },
+  "source_type": "product_docs"
+}

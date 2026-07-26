@@ -8,7 +8,7 @@ import requests
 import responses
 
 from crawler.browser_renderer import BrowserRenderError, RenderedPage
-from crawler.crawl_changelog import ChangelogCollector
+from crawler.crawl_changelog import ChangelogCollector, RSSCollector
 from crawler.crawl_github import GitHubCollector
 from crawler.crawl_official import OfficialCollector
 from crawler.crawl_pricing import PricingCollector
@@ -292,6 +292,39 @@ def test_rss_changelog_collector_materializes_entry_json(tmp_path, fixture_text)
 
 
 @responses.activate
+def test_rss_collector_materializes_rss_entry_with_rss_source(
+    tmp_path,
+    fixture_text,
+) -> None:
+    url = "https://example.test/product.xml"
+    responses.add(
+        responses.GET,
+        url,
+        status=200,
+        body=fixture_text("feeds/changelog.xml"),
+        content_type="application/rss+xml",
+    )
+    writer = RawWriter(tmp_path / "raw", "run-rss")
+
+    result = RSSCollector(_client(), writer).collect(
+        CollectorTask(
+            "TRAE",
+            "rss",
+            urls=(url,),
+            format="rss",
+            since=datetime(2026, 6, 1, tzinfo=timezone.utc),
+        )
+    )
+
+    assert result.success_count == 1
+    [record] = result.records
+    envelope = json.loads(_payload(writer, record))
+    assert record.source_type is SourceType.RSS
+    assert envelope["kind"] == "rss_entry"
+    assert record.source_metadata["record_role"] == "rss_entry"
+
+
+@responses.activate
 def test_rss_changelog_respects_since_cutoff(tmp_path, fixture_text) -> None:
     url = "https://example.test/changelog.xml"
     responses.add(
@@ -351,6 +384,7 @@ def test_malformed_rss_does_not_block_next_feed_url(tmp_path, fixture_text) -> N
     malformed, healthy = result.records
     assert malformed.source_metadata["parse_warning"] == "no feed entries found"
     assert malformed.source_metadata["entry_count"] == 0
+    assert malformed.source_metadata["record_role"] == "feed_empty"
     assert json.loads(_payload(writer, healthy))["kind"] == "changelog_entry"
 
 

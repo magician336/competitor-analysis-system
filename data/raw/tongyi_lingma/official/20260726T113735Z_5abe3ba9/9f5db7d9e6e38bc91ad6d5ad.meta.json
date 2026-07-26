@@ -1,0 +1,34 @@
+{
+  "canonical_url": "https://lingma.aliyun.com/download",
+  "competitor": "tongyi_lingma",
+  "content_type": "text/html;charset=UTF-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T11:55:03.164451Z",
+  "final_url": "https://lingma.aliyun.com/download",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "524ce866786972f062ba1f1f5be559e59d9eab10913a78bc838bbc161c83e602",
+  "payload_path": "tongyi_lingma/official/20260726T113735Z_5abe3ba9/9f5db7d9e6e38bc91ad6d5ad.html",
+  "published_at": null,
+  "raw_record_id": "9f5db7d9e6e38bc91ad6d5ad",
+  "requested_url": "https://lingma.aliyun.com/download",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://lingma.aliyun.com/download",
+    "competitor_aliases": [
+      "Lingma",
+      "Qoder CN",
+      "智能编码助手通义灵码"
+    ],
+    "competitor_name": "通义灵码",
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": 990
+  },
+  "source_type": "official"
+}

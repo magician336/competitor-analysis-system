@@ -1,0 +1,53 @@
+{
+  "canonical_url": "https://cursor.com/docs/account/teams/analytics-api",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T113735Z_5abe3ba9",
+  "error": null,
+  "etag": "W/\"70d165886e39843ddce2dae501696294\"",
+  "fetched_at": "2026-07-26T11:37:57.077459Z",
+  "final_url": "https://cursor.com/docs/account/teams/analytics-api",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "dbecd904498b45f8a8e4db1f52dc43c6e273fdc220e731e86f9f129812f3c98a",
+  "payload_path": "cursor/product_docs/20260726T113735Z_5abe3ba9/34cf6b8f0765f8c1286f35ab.html",
+  "published_at": null,
+  "raw_record_id": "34cf6b8f0765f8c1286f35ab",
+  "requested_url": "https://cursor.com/docs/account/teams/analytics-api",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://cursor.com/docs/account/teams/analytics-api",
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "discovery": {
+      "configured_sitemap_urls": [
+        "https://cursor.com/docs/sitemap.xml"
+      ],
+      "method": "sitemap"
+    },
+    "embedded_content": "cursor_next_rsc",
+    "embedded_content_supported": true,
+    "evidence_level": "A",
+    "format": "html",
+    "sitemap_discovery": {
+      "allowed_path_prefixes": [
+        "/docs/"
+      ],
+      "enabled": true,
+      "excluded_path_prefixes": [
+        "/docs-static/"
+      ],
+      "max_sitemaps": 2,
+      "max_urls": 200,
+      "urls": [
+        "https://cursor.com/docs/sitemap.xml"
+      ]
+    },
+    "visible_text_length": 27
+  },
+  "source_type": "product_docs"
+}

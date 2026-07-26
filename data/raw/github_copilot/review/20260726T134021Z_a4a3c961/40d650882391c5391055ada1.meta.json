@@ -1,0 +1,34 @@
+{
+  "canonical_url": "https://www.techradar.com/pro/that-is-unacceptable-in-a-professional-development-workflow-microsoft-acts-after-vs-code-gives-copilot-credit-for-work-a-human-developer-did",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T14:03:42.385911Z",
+  "final_url": "https://www.techradar.com/pro/that-is-unacceptable-in-a-professional-development-workflow-microsoft-acts-after-vs-code-gives-copilot-credit-for-work-a-human-developer-did",
+  "http_status": 200,
+  "last_modified": "Fri, 24 Jul 2026 04:47:05 GMT",
+  "needs_browser": false,
+  "payload_hash": "5426133d2f7ec08f243cd77343ab99777a71beecabae5d1e2ef82027a0c8af06",
+  "payload_path": "github_copilot/review/20260726T134021Z_a4a3c961/40d650882391c5391055ada1.html",
+  "published_at": null,
+  "raw_record_id": "40d650882391c5391055ada1",
+  "requested_url": "https://www.techradar.com/pro/that-is-unacceptable-in-a-professional-development-workflow-microsoft-acts-after-vs-code-gives-copilot-credit-for-work-a-human-developer-did",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://www.techradar.com/pro/that-is-unacceptable-in-a-professional-development-workflow-microsoft-acts-after-vs-code-gives-copilot-credit-for-work-a-human-developer-did",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "embedded_content_supported": false,
+    "evidence_level": "C",
+    "format": "html",
+    "note": "URLs form the curated public review allowlist for GitHub Copilot.",
+    "visible_text_length": 10452
+  },
+  "source_type": "review"
+}

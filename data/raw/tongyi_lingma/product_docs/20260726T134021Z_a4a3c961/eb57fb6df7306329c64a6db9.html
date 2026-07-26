@@ -1,0 +1,396 @@
+
+<!DOCTYPE html><html lang="zh"><head>
+  <meta name="nav-disable" content="flex">
+  
+  <link rel="icon" href="https://img.alicdn.com/imgextra/i2/O1CN01TFs5Qw27uYvfA6gib_!!6000000007857-55-tps-32-32.svg" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="72x72" href="https://img.alicdn.com/imgextra/i4/O1CN01jlcNT71YBfZJJI7qY_!!6000000003021-2-tps-128-128.png">
+  
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="nav-config" content="footer=default">
+  <meta name="aplus-core" content="aplus.js">
+  <meta name="aplus-ajax" content="chksum">
+  <meta name="aplus-waiting" content="MAN">
+  <meta name="aplus-pvhash" content="1">
+  
+  <meta name="data-spm" content="a2c4g">
+  
+  <script>
+    window.pageStartTime = Date.now();
+  </script>
+
+  
+  <title>
+    Qoder CN CLI 动态工作流,workflow,agent,parallel,pipeline-Qoder CN 系列(Lingma)-阿里云帮助中心
+  </title>
+  <link rel="canonical" href="https://help.aliyun.com/zh/lingma/qodercli-cn/user-guide/workflows">
+  <meta name="keywords" content="动态工作流,workflow,dynamic workflow,agent,parallel,pipeline,phase">
+  <meta name="description" content="动态工作流让 Qoder CN CLI 可以在后台运行结构化的多 Agent 流程。它适合需要分阶段执行、大规模并发、交叉验证，或需要复用固定流程的任务。">
+  <meta name="last-modified" content="2026-07-07T11:43:40+08:00">
+  <meta name="date" content="2026-07-07T11:43:40+08:00">
+  <meta property="og:title" content="动态工作流">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://help.aliyun.com/zh/lingma/qodercli-cn/user-guide/workflows">
+  <meta property="og:image" content="https://img.alicdn.com/imgextra/i1/O1CN012QgtoH1c1Mu70xD3w_!!6000000003540-2-tps-640-640.png">
+  <meta property="og:description" content="动态工作流让 Qoder CN CLI 可以在后台运行结构化的多 Agent 流程。它适合需要分阶段执行、大规模并发、交叉验证，或需要复用固定流程的任务。">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://help.aliyun.com/zh/lingma/qodercli-cn/user-guide/workflows",
+    "publisher": {
+      "@type": "Organization",
+      "name": "阿里云计算",
+      "url": "https://www.aliyun.com/",
+      "logo": "https://img.alicdn.com/imgextra/i1/O1CN01BEqugB1KebzCRyIJl_!!6000000001189-55-tps-48-48.svg"
+    }
+  }
+  </script>
+  
+
+  <link href="https://g.alicdn.com/aliyun-help/help-portal-fe/0.12.51/css/index.css" rel="stylesheet">
+  
+
+  <script>
+    window.globalData = {
+      nodeId: "3044445",
+      website: "cn",
+      language: "zh",
+    }
+    window.$ACE_TRACKER_CONFIG = {
+      "enableHistory": true,
+      "enableHash": false
+    }
+  </script>
+<script>
+    window.__ICE_SSR_ENABLED__=true;
+    window.__ICE_APP_DATA__={};
+window.__ICE_PAGE_PROPS__={"docDetailData":{"storeData":{"alias":"/lingma/qodercli-cn/user-guide/workflows","nodeId":null,"data":{"website":"cn","lastModifiedTime":1783395820000,"keywords":"动态工作流,workflow,dynamic workflow,agent,parallel,pipeline,phase","level":6,"docTitle":"动态工作流","language":"zh","nodeType":1,"seoTitle":"Qoder CN CLI 动态工作流,workflow,agent,parallel,pipeline-Qoder CN 系列(Lingma)-阿里云帮助中心","title":"动态工作流","version":1,"content":"<div lang=\"zh\" class=\"icms-help-docs-content\">\n\n  <main id=\"main-wf\">\n    \n    \n    <p id=\"p-shortdesc-wf\" data-tag=\"shortdesc\" class=\"shortdesc\">动态工作流让 Qoder CN CLI 可以在后台运行结构化的多 Agent 流程。它适合需要分阶段执行、大规模并发、交叉验证，或需要复用固定流程的任务。</p>\n    <div id=\"body-wf\" data-tag=\"body\" class=\"body\">\n      <p id=\"p-wf-intro\">动态工作流会把编排计划放到一段 JavaScript 脚本里。脚本决定启动哪些子 Agent、如何划分阶段、如何合并中间结果，以及最终把什么结果返回到当前会话。</p>\n      <section id=\"sec-wf-when\" class=\"section\">\n        <h2 id=\"h2-wf-when\">什么时候使用动态工作流</h2>\n        <table id=\"table-wf-when\" tablewidth=\"800\" tablecolswidth=\"200 600\" autofit=\"false\" class=\"table\">\n          <colgroup colwidth=\"0.5*\" style=\"width:25.00%\"></colgroup>\n          <colgroup colwidth=\"1.5*\" style=\"width:75.00%\"></colgroup>\n          <tbody class=\"tbody\">\n            <tr id=\"27b6f28079dpk\">\n              <td id=\"f642f3010duaf\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"aab0cfd879foz\"><span style=\"background-color:rgb(229, 229, 229)\">使用方式</span></p>\n              </td>\n              <td id=\"4e5c3fbdd0d8q\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"733ace1015zhp\"><span style=\"background-color:rgb(229, 229, 229)\">适合场景</span></p>\n              </td>\n            </tr>\n            <tr id=\"f464c85aa193f\">\n              <td id=\"609d9692eftv2\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"e086808261znc\">Subagent</p>\n              </td>\n              <td id=\"60df2befa3zud\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"510e0af45b1vi\">单个聚焦子任务，只需要把总结返回主会话。</p>\n              </td>\n            </tr>\n            <tr id=\"9888dbeeb3hzp\">\n              <td id=\"d61aa10029ufa\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"0637b1af6cwwg\">Skill</p>\n              </td>\n              <td id=\"c195a137847nt\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"ec81478532kdh\">可复用的说明、领域知识，或主 Agent 应该遵循的流程。</p>\n              </td>\n            </tr>\n            <tr id=\"49f552da662e0\">\n              <td id=\"49d69848e9luh\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"c1b355f2d70mj\">动态工作流</p>\n              </td>\n              <td id=\"f56e29d689ser\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"598aa60323pwm\">需要多个子 Agent、多个阶段、并行分支或验证轮次的可复用编排。</p>\n              </td>\n            </tr>\n          </tbody>\n        </table>\n        <p id=\"p-wf-when-outro\">当任务明显大于一次 Agent 调用时，可以使用动态工作流：仓库审计、深度研究、迁移规划、发版检查、跨文件扫描，或需要多个独立视角后再汇总的评审流程。</p>\n      </section>\n      <section id=\"sec-wf-what\" class=\"section\">\n        <h2 id=\"h2-wf-what\">动态工作流能做什么</h2>\n        <table id=\"table-wf-what\" tablewidth=\"800\" tablecolswidth=\"200 600\" autofit=\"false\" class=\"table\">\n          <colgroup colwidth=\"0.5*\" style=\"width:25.00%\"></colgroup>\n          <colgroup colwidth=\"1.5*\" style=\"width:75.00%\"></colgroup>\n          <tbody class=\"tbody\">\n            <tr id=\"800944e1630ag\">\n              <td id=\"e7ed99ab73khg\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"2ed1fcc46bdnw\"><span style=\"background-color:rgb(229, 229, 229)\">能力</span></p>\n              </td>\n              <td id=\"d76a7ec97dkh4\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"28ea38192comt\"><span style=\"background-color:rgb(229, 229, 229)\">说明</span></p>\n              </td>\n            </tr>\n            <tr id=\"0728e2c7cbmd8\">\n              <td id=\"c927d8492b2lt\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"ecfaad9053msq\">脚本化编排</p>\n              </td>\n              <td id=\"d01e40b489maf\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"b28ba438ffhsa\">将循环、分支、阶段和中间状态保存在动态工作流脚本中。</p>\n              </td>\n            </tr>\n            <tr id=\"5bc6b501f2su5\">\n              <td id=\"1a60db495c20n\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"f9a60459eaxak\">多 Agent 分发</p>\n              </td>\n              <td id=\"f1c89061ce1sc\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"6eadcfc269kbe\">为相互独立的工作切片启动多个子 Agent。</p>\n              </td>\n            </tr>\n            <tr id=\"c2b5a459eek5b\">\n              <td id=\"a8f4f81de23jf\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"ca43507b06yxa\">分阶段执行</p>\n              </td>\n              <td id=\"36bcc7d28aiq1\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"e399ea3de14dp\">用扫描、分析、验证、总结等命名阶段展示进度。</p>\n              </td>\n            </tr>\n            <tr id=\"8f19fd2a3a5fa\">\n              <td id=\"556a9a56dbv1z\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"b4a1cb80b0vq9\">并行或流水线处理</p>\n              </td>\n              <td id=\"a6249acbbacry\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"4b7d448ba4kmb\">并发运行独立分支，或让每个条目依次经过多个处理阶段。</p>\n              </td>\n            </tr>\n            <tr id=\"a9cf380876vyx\">\n              <td id=\"db6423094ag3v\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"a4e35504213rn\">后台运行</p>\n              </td>\n              <td id=\"ee118cc49872h\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"595539f2b0bl8\">启动动态工作流后，可以继续使用 Qoder CN CLI。</p>\n              </td>\n            </tr>\n            <tr id=\"941c322d4atib\">\n              <td id=\"bb92136cedr14\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"9a500f1144qyl\">流程复用</p>\n              </td>\n              <td id=\"2bf72f332a0o0\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"b53d919270yjq\">将常用流程保存为项目级、用户级、插件级或内置动态工作流。</p>\n              </td>\n            </tr>\n          </tbody>\n        </table>\n      </section>\n      <section id=\"sec-wf-run\" class=\"section\">\n        <h2 id=\"h2-wf-run\">运行动态工作流</h2>\n        <p id=\"p-wf-run-intro\">你可以用自然语言让 Qoder CN CLI 使用动态工作流：</p><pre outputclass=\"nohighlight\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"cc41563df5aj9\" class=\"pre codeblock nohighlight\"><code>使用动态工作流审查这个仓库的安全风险，并总结发现。</code></pre>\n        <p id=\"p-wf-run-name\">也可以直接按名称调用已保存或内置的动态工作流：</p><pre outputclass=\"nohighlight\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"ff4967d8a3yhs\" class=\"pre codeblock nohighlight\"><code>使用 deep-research 动态工作流调研这个架构决策的取舍。</code></pre>\n        <p id=\"p-wf-run-note\">Qoder CN CLI 可能会为当前请求创建一个动态工作流，也可能在已有动态工作流与任务匹配时直接使用它。动态生成的工作流在执行前会展示计划；你可以运行、查看原始脚本、带反馈拒绝，或取消。</p>\n        <p id=\"p-wf-run-bg\">动态工作流会作为后台任务运行。启动后，Qoder CN CLI 会返回运行 ID，并在任务界面中持续展示执行进度。</p>\n      </section>\n      <section id=\"sec-wf-monitor\" class=\"section\">\n        <h2 id=\"h2-wf-monitor\">查看动态工作流</h2>\n        <p id=\"p-wf-monitor-intro\">在 TUI 中使用 <code data-tag=\"inlineCode\" id=\"c8265f817b3n7\" class=\"inlineCode\">/workflows</code> 打开动态工作流任务面板。</p><pre outputclass=\"nohighlight\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"f826c021be7wr\" class=\"pre codeblock nohighlight\"><code>/workflows</code></pre>\n        <p id=\"p-wf-monitor-panel\">你可以在面板中查看运行中和已完成的动态工作流，检查状态、阶段、Agent、日志、输出路径、错误和最终结果。<code data-tag=\"inlineCode\" id=\"e4791289327dw\" class=\"inlineCode\">/tasks</code> 也会和其他后台任务一起显示动态工作流任务。</p>\n        <p id=\"p-wf-monitor-agent\">动态工作流运行时，可以在详情页查看单个 Agent。如果某个 Agent 仍可控制，可以在详情页跳过或重试这个 Agent。</p>\n      </section>\n      <section id=\"sec-wf-saved\" class=\"section\">\n        <h2 id=\"h2-wf-saved\">保存动态工作流</h2>\n        <p id=\"p-wf-saved-intro\">保存后的动态工作流可以通过名称复用。Qoder CN CLI 会从以下位置发现动态工作流：</p>\n        <table id=\"table-wf-saved\" tablewidth=\"798\" tablecolswidth=\"177 266 355\" autofit=\"false\" class=\"table\">\n          <colgroup colwidth=\"0.67*\" style=\"width:22.18%\"></colgroup>\n          <colgroup colwidth=\"1*\" style=\"width:33.33%\"></colgroup>\n          <colgroup colwidth=\"1.33*\" style=\"width:44.49%\"></colgroup>\n          <tbody class=\"tbody\">\n            <tr id=\"989e5437d0jmd\">\n              <td id=\"460dbdaabc2hi\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"2158e1a870g7a\"><span style=\"background-color:rgb(229, 229, 229)\">范围</span></p>\n              </td>\n              <td id=\"9e5d0a4781yvd\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"ad351a09e475m\"><span style=\"background-color:rgb(229, 229, 229)\">位置</span></p>\n              </td>\n              <td id=\"751b0e2007adk\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"1ba7648adbn9v\"><span style=\"background-color:rgb(229, 229, 229)\">使用场景</span></p>\n              </td>\n            </tr>\n            <tr id=\"2ccf0ceee7djn\">\n              <td id=\"5deacca0b52pa\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"f56939701dyo8\">项目级</p>\n              </td>\n              <td id=\"a935a2693d4ca\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"0a28be8ae420q\"><code data-tag=\"inlineCode\" id=\"0183c0fa6d8dc\" class=\"inlineCode\">.qoder/workflows</code></p>\n              </td>\n              <td id=\"40d15fd27anhw\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"4da603440dn1w\">动态工作流属于当前仓库或团队。</p>\n              </td>\n            </tr>\n            <tr id=\"325e161bb3ri2\">\n              <td id=\"dce14bc7d5lm1\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"c9aaefa295ado\">用户级</p>\n              </td>\n              <td id=\"e18278f4d9txy\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"fdb08732fbg4c\"><code data-tag=\"inlineCode\" id=\"afccaf178clev\" class=\"inlineCode\">~/.qoder-cn/workflows</code></p>\n              </td>\n              <td id=\"cf83737f53xiy\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"ba63b5521boxj\">个人动态工作流，需要跨项目使用。</p>\n              </td>\n            </tr>\n            <tr id=\"f856a02109igy\">\n              <td id=\"b8ddeb1c2bx4k\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"a8e21ab8d1z28\">Plugin</p>\n              </td>\n              <td id=\"c1cb61bca6spe\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"d58bd8101ffmo\">Plugin 提供的动态工作流</p>\n              </td>\n              <td id=\"7afffcab6eyln\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"180885ef43w01\">动态工作流随插件分发。</p>\n              </td>\n            </tr>\n            <tr id=\"d573bce332piz\">\n              <td id=\"a1f994a853rfc\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"7a6946d2eeme3\">内置</p>\n              </td>\n              <td id=\"1aab012064r1v\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"e1b1bf028blf1\">Qoder CN CLI 内置动态工作流</p>\n              </td>\n              <td id=\"fe8f0639870f8\" rowspan=\"1\" colspan=\"1\">\n                <p id=\"700c8a2cc9qop\">动态工作流由 Qoder CN CLI 提供。</p>\n              </td>\n            </tr>\n          </tbody>\n        </table>\n        <p id=\"p-wf-saved-priority\">当名称冲突时，项目级动态工作流的优先级高于插件级和内置动态工作流。团队共享流程适合放在项目级目录；不应该提交到仓库的个人流程适合放在用户级目录。</p>\n        <p id=\"p-wf-saved-meta\">保存的动态工作流是一个以 <code data-tag=\"inlineCode\" id=\"e0ffdbd0c3ph6\" class=\"inlineCode\">meta</code> 导出对象开头的 JavaScript 文件。元信息用于告诉 Qoder CN CLI 动态工作流的名称、说明、阶段，以及可选的使用场景或输入 schema。</p><pre outputclass=\"nohighlight\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"c963fe6e40ano\" class=\"pre codeblock nohighlight\"><code>export const meta = {\n  name: \"repo-audit\",\n  description: \"Audit a repository area and summarize risks\",\n  whenToUse: \"Use when the user asks for a structured repository audit\",\n  phases: [\n    { title: \"Scan\", detail: \"Find relevant files and areas\" },\n    { title: \"Analyze\", detail: \"Run focused analysis agents\" },\n    { title: \"Summarize\", detail: \"Merge findings into a final report\" }\n  ]\n};</code></pre>\n        <p id=\"p-wf-saved-use\">保存到 <code data-tag=\"inlineCode\" id=\"f7280bbf93y8f\" class=\"inlineCode\">.qoder/workflows/repo-audit.js</code> 后，可以这样让 Qoder CN CLI 使用它：</p><pre outputclass=\"nohighlight\" data-tag=\"codeblock\" code-type=\"xCode\" id=\"30b29afa16z0g\" class=\"pre codeblock nohighlight\"><code>运行 repo-audit 动态工作流，目标是 authentication 模块。</code></pre>\n        <p id=\"p-wf-saved-args\">保存的动态工作流可以通过 <code data-tag=\"inlineCode\" id=\"59e845150dwt2\" class=\"inlineCode\">args</code> 接收输入。目标路径、issue ID、研究问题、选项，或任何每次运行不同但不应该修改脚本的值，都适合通过 <code data-tag=\"inlineCode\" id=\"2be1f09416wy1\" class=\"inlineCode\">args</code> 传入。</p>\n      </section>\n      <section id=\"sec-wf-how\" class=\"section\">\n        <h2 id=\"h2-wf-how\">动态工作流如何运行</h2>\n        <p id=\"p-wf-how-intro\">动态工作流脚本是普通 JavaScript。脚本可以使用 <code data-tag=\"inlineCode\" id=\"ecf340fffbj89\" class=\"inlineCode\">agent()</code>、<code data-tag=\"inlineCode\" id=\"ee3d028bc2oml\" class=\"inlineCode\">parallel()</code>、<code data-tag=\"inlineCode\" id=\"0412c3190bd9m\" class=\"inlineCode\">pipeline()</code>、<code data-tag=\"inlineCode\" id=\"db738b889d24j\" class=\"inlineCode\">phase()</code>、<code data-tag=\"inlineCode\" id=\"03fdbc7ccc4b8\" class=\"inlineCode\">log()</code>、<code data-tag=\"inlineCode\" id=\"3a3169dffaghx\" class=\"inlineCode\">workflow()</code>、<code data-tag=\"inlineCode\" id=\"691ca3cf34kdk\" class=\"inlineCode\">args</code> 和 <code data-tag=\"inlineCode\" id=\"fafe2433b0xkx\" class=\"inlineCode\">budget</code> 等辅助函数。</p>\n        <ol id=\"ol-wf-how\">\n          <li id=\"e9b1a9c5639mr\">\n            <p id=\"74bdd64f23lfj\">Qoder CN CLI 为任务选择已保存的动态工作流，或创建新的动态工作流。</p>\n          </li>\n          <li id=\"8c1b5592dccds\">\n            <p id=\"4c714c22d0sf7\">如果需要审查，Qoder CN CLI 会展示动态工作流名称、阶段、脚本和运行选项。</p>\n          </li>\n          <li id=\"b55970de22l68\">\n            <p id=\"83dfa3904fi79\">动态工作流作为后台任务启动。</p>\n          </li>\n          <li id=\"b5f9d0413211e\">\n            <p id=\"40dd950745xj3\">脚本启动子 Agent，并把它们归入不同阶段。</p>\n          </li>\n          <li id=\"16bd43c20fbh6\">\n            <p id=\"5d978c9b9e41o\">中间结果保存在动态工作流运行时中，不会填满主会话上下文。</p>\n          </li>\n          <li id=\"d432a76f98alx\">\n            <p id=\"624d66acf6t5j\">最终结果写入动态工作流运行输出，并回到当前会话中总结。</p>\n          </li>\n        </ol>\n        <p id=\"p-wf-how-storage\">动态工作流运行过程中的脚本、manifest、journal、transcript 和输出会写入 <code data-tag=\"inlineCode\" id=\"b4585a7e15ar4\" class=\"inlineCode\">.qoder/sessions</code> 下的当前会话目录。</p>\n      </section>\n      <section id=\"sec-wf-safety\" class=\"section\">\n        <h2 id=\"h2-wf-safety\">权限与安全</h2>\n        <p id=\"p-wf-safety-1\">动态工作流可能会运行多个子 Agent，并较快消耗 token。验证大型或高成本动态工作流时，建议先从较小范围开始。</p>\n        <p id=\"p-wf-safety-2\">动态工作流脚本不能直接访问 shell、文件系统、网络、Node.js API 或 MCP 服务。所有副作用都通过子 Agent 发生，而子 Agent 仍然会经过 Qoder CN CLI 的工具、权限、Hooks 和沙箱设置。</p>\n        <p id=\"p-wf-safety-3\">使用 <a href=\"https://help.aliyun.com/zh/lingma/qodercli-cn/user-guide/permissions\" id=\"xref-wf-perm\" title=\"\" class=\"xref\">权限</a>控制动态工作流子 Agent 能做什么；使用 <a href=\"https://help.aliyun.com/zh/lingma/qodercli-cn/user-guide/hook\" id=\"xref-wf-hooks\" title=\"\" class=\"xref\">钩子</a>在工具调用前后执行组织级策略。</p>\n      </section>\n    </div>\n  </main>\n\n\n\n\n</div>","url":"/zh/lingma/qodercli-cn/user-guide/workflows","tags":[{"value":false,"key":"autoTranslation","desc":"非自动翻译"},{"value":3044445,"key":"nodeId","desc":"文档ID"}],"userVO":{},"recommendDocs":[],"path":"https://help.aliyun.com/zh/lingma/qodercli-cn/user-guide/workflows","productNodeVO":{"emptyNode":false,"level":3,"validDocument":true,"headNavEnable":false,"docTitle":"Qoder CN 系列","id":2804669,"title":"Qoder CN 系列","url":"/zh/lingma/"},"directoryPath":{"children":[{"children":[{"children":[{"emptyNode":false,"level":6,"validDocument":true,"headNavEnable":false,"docTitle":"动态工作流","id":3044445,"title":"动态工作流","url":"/zh/lingma/qodercli-cn/user-guide/workflows"}],"emptyNode":false,"level":5,"validDocument":true,"headNavEnable":false,"docTitle":"操作指南","id":3033319,"title":"操作指南","url":"/zh/lingma/qodercli-cn/user-guide/"}],"emptyNode":false,"level":4,"validDocument":true,"headNavEnable":false,"docTitle":"Qoder CN CLI","id":3033311,"title":"Qoder CN CLI","url":"/zh/lingma/qodercli-cn/"}],"emptyNode":false,"level":3,"validDocument":true,"headNavEnable":false,"docTitle":"Qoder CN 系列","id":2804669,"title":"Qoder CN 系列","url":"/zh/lingma/"},"alias":"/lingma/qodercli-cn/user-guide/workflows","showType":1,"productUrl":"https://lingma.aliyun.com/","nodeId":3044445,"taskStatus":"NO_TASK_AVAILABLE","desc":"动态工作流让 Qoder CN CLI 可以在后台运行结构化的多 Agent 流程。它适合需要分阶段执行、大规模并发、交叉验证，或需要复用固定流程的任务。"},"breadcrumb":[{"emptyNode":false,"level":3,"validDocument":true,"headNavEnable":false,"docTitle":"Qoder CN 系列","id":2804669,"title":"Qoder CN 系列","url":"/zh/lingma/"},{"emptyNode":false,"level":4,"validDocument":true,"headNavEnable":false,"docTitle":"Qoder CN CLI","id":3033311,"title":"Qoder CN CLI","url":"/zh/lingma/qodercli-cn/"},{"emptyNode":false,"level":5,"validDocument":true,"headNavEnable":false,"docTitle":"操作指南","id":3033319,"title":"操作指南","url":"/zh/lingma/qodercli-cn/user-guide/"},{"emptyNode":false,"level":6,"validDocument":true,"headNavEnable":false,"docTitle":"动态工作流","id":3044445,"title":"动态工作流","url":"/zh/lingma/qodercli-cn/user-guide/workflows"}],"isMachineTranslation":false,"isNotFound":false,"helpResponseCode":200,"redirectUrl":"","helpDocVersion":1,"reloadFlag":true}}};
+  </script><link href="https://g.alicdn.com/code/npm/@ali/??hmod-ace-2023-box/0.1.0/index.css,hmod-aliyun-com-global-nav-search/0.8.5/index.css,hmod-aliyun-com-global-nav/0.3.18/index.css" rel="stylesheet"/>
+<link href="https://g.alicdn.com/code/npm/@ali/??hmod-ace-2023-box/0.1.0/index.css,hmod-ace-2024-global-footer/0.2.1/index.css" rel="stylesheet"/>
+</head>
+
+<body><script>
+with(document)with(body)with(insertBefore(createElement("script"),firstChild))setAttribute("exparams","category=&userid=&aplus&yunid=&&trid=215041d317850756016155710e385b&asid=AQAAAACRF2Zqb3W1GwAAAADlPd7EbJlWbw==",id="tb-beacon-aplus",src=(location>"https"?"//g":"//g")+".alicdn.com/alilog/mlog/aplus_v2.js")
+</script>
+
+  <script>
+    var _performance_domStart = window.performance && window.performance.now();
+  </script>
+  <header><div id="77597e3303f7f62742f8e02d3f883457"><div class="_18a32969382a277c44015217fbc5cb5a_box"><div class="_3bd147f6948a20d6c528ac898ad4ba47_pc de5ef2fee09ebcb2b1dcaf0c982523bc_theme _277ebb348812c9712fac6b680ad5e513_reset _277ebb348812c9712fac6b680ad5e513_aliyun-font-family" data-ai-assistant-text-selection-tooltip="disabled"><header class="_702422913dd5754f065139ec2d2def80_container   "><button class="_17fcaf1a4ee37405e5ad5fbad24204b4_container _17fcaf1a4ee37405e5ad5fbad24204b4_loading" aria-label="打开菜单" data-spm="d_dashboard_trigger" data-tracker-exp="true"><span class="_17fcaf1a4ee37405e5ad5fbad24204b4_burger "><span class="_17fcaf1a4ee37405e5ad5fbad24204b4_middle"></span></span></button><a href="https://www.aliyun.com/" class="_3f46140aade30bc61f3012933357c477_logo _702422913dd5754f065139ec2d2def80_logo" data-tracker-content="LOGO" data-spm="d_logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4608 1024" fill="#ff6a00" width="80"><path d="M3266.56 773.12h327.68v-102.4h-327.68v-102.4H3584V35.84H2846.72v532.48h317.44v102.4h-327.68v102.4h327.68v112.64h-353.28v102.4h814.08v-102.4h-353.28v-112.64zM3276.8 138.24h215.04v112.64H3276.8V138.24z m0 215.04h215.04V460.8H3276.8V353.28zM3174.4 460.8h-215.04V353.28H3174.4V460.8z m0-209.92h-215.04V138.24H3174.4v112.64zM537.6 445.44H1075.2v122.88H537.6z"></path><path d="M1341.44 5.12h-353.28L1075.2 128l256 81.92c46.08 15.36 76.8 61.44 76.8 107.52v389.12c0 46.08-30.72 92.16-76.8 107.52l-256 81.92-87.04 122.88h353.28c148.48 0 266.24-117.76 266.24-266.24V276.48c0-148.48-117.76-271.36-266.24-271.36zM276.48 814.08c-46.08-15.36-76.8-61.44-76.8-107.52V317.44c0-46.08 30.72-92.16 76.8-107.52l256-81.92L619.52 5.12H266.24C117.76 5.12 0 128 0 276.48v471.04c0 148.48 117.76 266.24 266.24 266.24h353.28l-87.04-122.88-256-76.8zM2493.44 250.88h-261.12v537.6h261.12V250.88z m-107.52 430.08h-56.32V353.28h56.32v327.68zM1848.32 988.16h102.4V138.24h107.52L1996.8 419.84v102.4h61.44v225.28c0 15.36-10.24 25.6-25.6 25.6h-25.6v102.4h51.2c56.32 0 102.4-46.08 102.4-102.4v-358.4H2099.2l61.44-281.6v-102.4h-312.32v957.44z"></path><path d="M2206.72 138.24H2560v660.48c0 46.08-35.84 87.04-87.04 87.04h-76.8v102.4h107.52c87.04 0 163.84-71.68 163.84-163.84V138.24h35.84v-102.4h-496.64v102.4zM3763.2 40.96h737.28v102.4H3763.2zM4541.44 527.36v-102.4H3727.36v102.4h204.8l-163.84 358.4v102.4h691.2c30.72 0 51.2-25.6 51.2-51.2 0-10.24 0-15.36-5.12-20.48l-87.04-194.56h-112.64l76.8 163.84h-496.64l163.84-358.4h491.52z"></path></svg></a><div class="e76910c82efe8556eb8a6ce6019c5d00_container"><button class="e76910c82efe8556eb8a6ce6019c5d00_controller" data-spm="dscroll-left"><i class="ee52067fb65534cb06d3b35f654f5441_icon ddd10ed9ffa4788f54781e516c4c6560-button_left"></i></button><div class="e76910c82efe8556eb8a6ce6019c5d00_menu-warp"><nav class="_0b0e00051b37611378e027e6ac3a695a_menus"><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/product/tongyi" data-spm="d_menu_0">大模型</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/product/list" data-spm="d_menu_1">产品</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/solution/tech-solution/" data-spm="d_menu_2">解决方案</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/benefit" data-spm="d_menu_3">权益</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/price" data-spm="d_menu_4">定价</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://market.aliyun.com/" data-spm="d_menu_5">云市场</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://partner.aliyun.com/management/v2" data-spm="d_menu_6">伙伴</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/service" data-spm="d_menu_7">服务</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/about" data-spm="d_menu_8">了解阿里云</a></nav></div><button class="e76910c82efe8556eb8a6ce6019c5d00_controller" data-spm="dscroll-right"><i class="ee52067fb65534cb06d3b35f654f5441_icon ddd10ed9ffa4788f54781e516c4c6560-button_right"></i></button></div><div class="_702422913dd5754f065139ec2d2def80_search-wrap " style="--left-width:0px;--right-width:0px"><div class="global-nav-search _626567c051250ffe2f303af907d3fc83_global-nav-search"><div class="global-search-container _626567c051250ffe2f303af907d3fc83_global-nav-search-desktop-container"><div class="ff4f4a96a12f52ffbdd0d6adbdb6a2b0_position-desktop-search-container"><div><div class="f6fd7e4d3293f0634b9ac54848c275b7_default-search-panel  f6fd7e4d3293f0634b9ac54848c275b7_hidden-default-search-panel"></div><div class="_3b4f5487091623b0b6852e2b46d2729e_search-recommend-panel  _3b4f5487091623b0b6852e2b46d2729e_hidden-search-recommend-panel"><button class="_4b65cdd64479a2fabe582b8c0789821e_search-no-content " type="button">查看 &quot;&quot; 全部搜索结果</button></div></div></div></div><div class="_626567c051250ffe2f303af907d3fc83_global-nav-search-mobile-container"><a class="_626567c051250ffe2f303af907d3fc83_search-button" href="https://www.aliyun.com/search?from=h5-global-nav-search"><span role="img" class="_9a1d73bbcd1a80626a31035a12410804_icon _626567c051250ffe2f303af907d3fc83_search-button-icon"><svg width="1em" height="1em" viewBox="0 0 32 32" focusable="false" color="currentColor" fill="currentColor" class="" data-icon="search"><g><g><path fill-opacity="1" fill-rule="evenodd" d="M14,4C15.3558,4,16.653399999999998,4.262105,17.8926,4.786314C19.089100000000002,5.29242,20.1486,6.00666,21.071,6.92905C21.9933,7.85144,22.7076,8.91087,23.2137,10.10735C23.7379,11.34664,24,12.64419,24,14C24,15.3558,23.7379,16.653399999999998,23.2137,17.892699999999998C22.8382,18.7803,22.3482,19.5925,21.7436,20.3293L27.7072,26.2928L26.293,27.7071L20.3294,21.7435C19.592599999999997,22.3481,18.7803,22.8382,17.8926,23.2137C16.653399999999998,23.7379,15.3558,24,14,24C12.64419,24,11.34664,23.7379,10.10735,23.2137C8.91087,22.7076,7.85144,21.9933,6.92905,21.0709C6.00666,20.1486,5.29242,19.089100000000002,4.786314,17.8926C4.262105,16.653399999999998,4,15.3558,4,14C4,12.64419,4.262105,11.34664,4.786314,10.10735C5.29242,8.91087,6.00666,7.85144,6.92905,6.92905C7.85144,6.00666,8.91087,5.29242,10.10735,4.786314C11.34664,4.262105,12.64419,4,14,4ZM14,6C11.79102,6,9.905439999999999,6.78109,8.34326,8.34326C6.78109,9.905439999999999,6,11.79102,6,14C6,16.209,6.78109,18.0946,8.34326,19.6567C9.905439999999999,21.2189,11.79102,22,14,22C16.209,22,18.0946,21.2189,19.6567,19.6567C21.2189,18.0946,22,16.209,22,14C22,11.79102,21.2189,9.905439999999999,19.6567,8.34326C18.0946,6.78109,16.209,6,14,6Z"></path></g></g></svg></span></a></div></div></div><div class="_174801eef2caf75aeaee91c72b19c09a_container"><a class="global-nav-ai-assistant _174801eef2caf75aeaee91c72b19c09a_item _2d3ef330b3f8055912d355b9a255bfcf_btn" href="https://www.aliyun.com/ai-assistant?displayMode=side" data-spm="dai_assistant" target="_blank"><div class="LogoStyled-aliyun-ai-assistant-rc-8096__sc-1qusfpt-0 cpJKij"><div class="ai-assistant-brand-logo-icon" style="background:no-repeat center/100%  url(https://img.alicdn.com/imgextra/i4/O1CN012X1Rxl1clAgB5waMK_!!6000000003640-2-tps-52-52.png)"><img src="https://img.alicdn.com/imgextra/i2/O1CN01bYc1m81RrcSAyOjMu_!!6000000002165-54-tps-60-60.apng" loading="lazy"/></div><div class="ai-assistant-brand-logo-tooltip "><div class="ai-assistant-logo-tooltip-content">AI 助理</div></div></div></a><button class="_174801eef2caf75aeaee91c72b19c09a_item c017bf0be22012eb313124a5a5408d0f_button"><i class="ee52067fb65534cb06d3b35f654f5441_icon ddd10ed9ffa4788f54781e516c4c6560-intl"></i></button><button class="_174801eef2caf75aeaee91c72b19c09a_item"><i class="ee52067fb65534cb06d3b35f654f5441_icon ddd10ed9ffa4788f54781e516c4c6560-contact f9c0581c7b0803efa9027b0f2d228294_icon"></i></button><a class="_174801eef2caf75aeaee91c72b19c09a_item" href="https://help.aliyun.com/" target="_blank" data-spm="d_quick_access_3">文档</a><a class="_174801eef2caf75aeaee91c72b19c09a_item" href="https://beian.aliyun.com/" target="_blank" data-spm="d_quick_access_4">备案</a><a class="_174801eef2caf75aeaee91c72b19c09a_item" href="https://home.console.aliyun.com/home/dashboard/ProductAndService" target="_blank" data-spm="d_quick_access_5" rel="nofollow">控制台</a><span class="f8312ad103723788906e97b238dccd8c_loading _174801eef2caf75aeaee91c72b19c09a_item"></span></div></header></div><div class="_3bd147f6948a20d6c528ac898ad4ba47_mobile de5ef2fee09ebcb2b1dcaf0c982523bc_theme _277ebb348812c9712fac6b680ad5e513_reset _277ebb348812c9712fac6b680ad5e513_aliyun-font-family"></div><div class="_18a32969382a277c44015217fbc5cb5a_box"></div></div></div></header>
+
+  <div id="app"><div class="MainLayout--mainContainer--FzmzeDI" id="docs-container"><div class="MainLayout--helpBodyHead--fFcCOhC"><div class="HelpBodyHead--helpBodyHeadBox--VWOHGv0 help-body-head" data-spm="help-sub-nav"><div class="HelpBodyHead--helpBodyHead--YgG0_RH help-body-head-content"><div class="HelpBodyHead--helpHeadDocName--eZC8orQ"><a href="/zh" data-spm="d_logo">官方文档</a></div><div class="help-tablist"></div><div class="HelpBodyHead--bodyHeadRight--mgSoj67"></div></div><div class="HelpBodyHead--productList--YJ9ism5" style="display:none"><div class="ProductList--allProducts--Z87vhzs"><div class="ProductList--allProductsHead--l2aMmm6"><div class="ProductList--allProductsSearchWrapper--PgTrGTl"><div class="ProductList--allProductsSearch--edTNjmr"><span role="img" class="Icon--icon--jErARdR ProductList--searchIcon--NrFYKki"><svg width="1em" height="1em" viewBox="0 0 32 32" focusable="false" color="currentColor" fill="currentColor" class="" data-icon="document-search"><g fill-rule="evenodd" stroke-width="1"><path d="M19,3 L27,11 L27,29 L5,29 L5,3 L19,3 Z M18,5 L7,5 L7,27 L25,27 L25,12 L18,12 L18,5 Z M20,6.82842636 L20,10 L23.1715736,10 L20,6.82842636 Z"></path><path d="M15.5,13.5 C16.8806419,13.5 18.0591358,13.9881726 19.0354815,14.9645178 C20.0118272,15.9408637 20.5,17.1193577 20.5,18.5 C20.5,19.5346034 20.2258676,20.4556918 19.6776028,21.2632651 L22.1636839,23.7493687 L20.749464,25.1635761 L18.2634125,22.6775026 C17.4558048,23.2258342 16.5346673,23.5 15.5,23.5 C14.1193581,23.5 12.9408642,23.0118272 11.9645183,22.0354815 C10.9881728,21.0591364 10.5,19.8806426 10.5,18.5 C10.5,17.1193576 10.9881728,15.9408636 11.9645183,14.9645181 C12.9408638,13.9881727 14.1193577,13.5 15.5,13.5 Z M15.5,15.5 C14.6716423,15.5 13.9645529,15.7929106 13.3787317,16.3787317 C12.7929106,16.9645527 12.5,17.6716421 12.5,18.5 C12.5,19.3283571 12.7929105,20.0354462 13.3787315,20.6212673 C13.964553,21.2070891 14.6716425,21.5 15.5,21.5 C16.3283577,21.5 17.0354471,21.2070891 17.6212683,20.6212673 C18.2070894,20.0354462 18.5,19.3283571 18.5,18.5 C18.5,17.6716421 18.2070894,16.9645526 17.6212683,16.3787315 C17.0354471,15.7929105 16.3283577,15.5 15.5,15.5 Z"></path></g></svg></span><input placeholder="输入文档关键字查找"></div></div></div><div class="ProductList--allProductsBody--jNYsZlh"></div></div></div></div></div><div class="PcLayout--docsContainer--pwbB9bE"><div class="PcLayout--mobileHelpBodyHead--g_YCRMg"><div class="HelpBodyHead--mobileHeadBlank--_hX8BWJ"></div></div><div class="PcLayout--aliyunAppLayout--_QE36ni"><nav class="aliyun-docs-menu" id="aliyun-docs-menu"><div class="Menu--helpMenuBox--WZ7MX3B" id="help-menu-box" style="width:300px"><div class="Menu--helpMenuInnerBox--kxSXymh aliyun-docs-toc-content" style="width:300px"><div class="Menu--helpMenuDrag--fs9WrRe help-menu-drag-box"></div><div class="Menu--helpMenu--reWzeMt"><div class="help-menu-subproduct"><div class="help-subproduct-container"></div></div><div class="MenuSearch--collapseActionBar--m98Zp_n"><div class="MenuSearch--searchContainer--yxqXL6w"><div class="MenuSearch--searchInputWrapper--xJnk941"><span role="img" class="Icon--icon--jErARdR MenuSearch--searchIcon--YWpGKq9"><svg width="1em" height="1em" viewBox="0 0 32 32" focusable="false" color="currentColor" fill="currentColor" class="" data-icon="document-search"><g fill-rule="evenodd" stroke-width="1"><path d="M19,3 L27,11 L27,29 L5,29 L5,3 L19,3 Z M18,5 L7,5 L7,27 L25,27 L25,12 L18,12 L18,5 Z M20,6.82842636 L20,10 L23.1715736,10 L20,6.82842636 Z"></path><path d="M15.5,13.5 C16.8806419,13.5 18.0591358,13.9881726 19.0354815,14.9645178 C20.0118272,15.9408637 20.5,17.1193577 20.5,18.5 C20.5,19.5346034 20.2258676,20.4556918 19.6776028,21.2632651 L22.1636839,23.7493687 L20.749464,25.1635761 L18.2634125,22.6775026 C17.4558048,23.2258342 16.5346673,23.5 15.5,23.5 C14.1193581,23.5 12.9408642,23.0118272 11.9645183,22.0354815 C10.9881728,21.0591364 10.5,19.8806426 10.5,18.5 C10.5,17.1193576 10.9881728,15.9408636 11.9645183,14.9645181 C12.9408638,13.9881727 14.1193577,13.5 15.5,13.5 Z M15.5,15.5 C14.6716423,15.5 13.9645529,15.7929106 13.3787317,16.3787317 C12.7929106,16.9645527 12.5,17.6716421 12.5,18.5 C12.5,19.3283571 12.7929105,20.0354462 13.3787315,20.6212673 C13.964553,21.2070891 14.6716425,21.5 15.5,21.5 C16.3283577,21.5 17.0354471,21.2070891 17.6212683,20.6212673 C18.2070894,20.0354462 18.5,19.3283571 18.5,18.5 C18.5,17.6716421 18.2070894,16.9645526 17.6212683,16.3787315 C17.0354471,15.7929105 16.3283577,15.5 15.5,15.5 Z"></path></g></svg></span><input placeholder="在目录中筛选" class="MenuSearch--searchInput--vYXA7NN"></div></div></div><div class="help-menu-scroll-container Menu--menuContent--f6GC88t" data-spm="help-menu-undefined"><ul id="common-menu-container">
+ <li id="3033349" class="Menu--level1--UN3zYr3">
+<a href="/zh/lingma/qodercli-cn/product-overview/">
+<i class="iconfont icon-close-arrow"></i>
+<span class="Menu--menuItemText--a6B4ZGH">产品概述</span>
+</a>
+</li>
+ <li id="3033319" class="Menu--level1--UN3zYr3">
+<a href="/zh/lingma/qodercli-cn/user-guide/">
+<i class="iconfont icon-close-arrow"></i>
+<span class="Menu--menuItemText--a6B4ZGH">操作指南</span>
+</a>
+</li>
+</ul></div></div></div></div></nav><main class="aliyun-docs-view" id="aliyun-docs-view"><div class="ProductDetail--contentWrapper--iCunrBZ"><section class="aliyun-docs-content" style="height:auto"><header class="aliyun-docs-view-header"><div class="Header--topBar--LXfTLL5"><div class="BreadCrumb--breadcrumb--s_Uzlex"><div class="help-header-breadcrumb"><a href="/zh">首页</a></div></div></div><div class="Header--title--iTk2tUo"><h1>动态工作流</h1><div class="Header--actionBar--dvzFYrk"><div class="Header--left--x8TGxDL"><span class="Header--updateTime--YXGPhcZ">更新时间：</span></div><div class="Header--right--l4TSW1E"><span class="Header--copyButtonWrapper--LDbniON"><span class="CopyAsMarkdown--copyButton--SVGoWIG"><span role="img" class="Icon--icon--jErARdR"><svg width="1em" height="1em" viewBox="0 0 32 32" focusable="false" color="currentColor" fill="currentColor" class="" data-icon="copy"><g fill-rule="evenodd" stroke-width="1"><polygon fill-rule="nonzero" points="8 6.80000019 8 4 28 4 28 24 25 24 25 22 26 22 26 6 10 6 10 6.80000019"></polygon><path d="M24,8 L24,28 L4,28 L4,8 L24,8 Z M22,10 L6,10 L6,26 L22,26 L22,10 Z"></path></g></svg></span>复制 MD 格式</span></span><div class="Header--linkButton--LpCRs1O"><div class="OuterUrl--outUrl--ZFzJIhk"><a href="https://lingma.aliyun.com/" target="_blank" rel="noreferrer">产品详情</a></div></div><div class="Contact--contactButton--TBwTX5R"><span class="Contact--favoritesBtn--J8mRVBp" title="收藏本文档" data-spm-click="gostr=/aliyun;locaid=collect"><i class="help-iconfont help-icon-like"></i></span><a href="/my_favorites.html">我的收藏</a></div></div></div></div></header><div class="pc-markdown-container unionContainer" id="pc-markdown-container"><div class="markdown-body"><div lang="zh" class="icms-help-docs-content">
+
+  <main id="main-wf">
+    
+    
+    <p id="p-shortdesc-wf" data-tag="shortdesc" class="shortdesc">动态工作流让 Qoder CN CLI 可以在后台运行结构化的多 Agent 流程。它适合需要分阶段执行、大规模并发、交叉验证，或需要复用固定流程的任务。</p>
+    <div id="body-wf" data-tag="body" class="body">
+      <p id="p-wf-intro">动态工作流会把编排计划放到一段 JavaScript 脚本里。脚本决定启动哪些子 Agent、如何划分阶段、如何合并中间结果，以及最终把什么结果返回到当前会话。</p>
+      <section id="sec-wf-when" class="section">
+        <h2 id="h2-wf-when">什么时候使用动态工作流</h2>
+        <table id="table-wf-when" tablewidth="800" tablecolswidth="200 600" autofit="false" class="table">
+          <colgroup colwidth="0.5*" style="width:25.00%"></colgroup>
+          <colgroup colwidth="1.5*" style="width:75.00%"></colgroup>
+          <tbody class="tbody">
+            <tr id="27b6f28079dpk">
+              <td id="f642f3010duaf" rowspan="1" colspan="1">
+                <p id="aab0cfd879foz"><span style="background-color:rgb(229, 229, 229)">使用方式</span></p>
+              </td>
+              <td id="4e5c3fbdd0d8q" rowspan="1" colspan="1">
+                <p id="733ace1015zhp"><span style="background-color:rgb(229, 229, 229)">适合场景</span></p>
+              </td>
+            </tr>
+            <tr id="f464c85aa193f">
+              <td id="609d9692eftv2" rowspan="1" colspan="1">
+                <p id="e086808261znc">Subagent</p>
+              </td>
+              <td id="60df2befa3zud" rowspan="1" colspan="1">
+                <p id="510e0af45b1vi">单个聚焦子任务，只需要把总结返回主会话。</p>
+              </td>
+            </tr>
+            <tr id="9888dbeeb3hzp">
+              <td id="d61aa10029ufa" rowspan="1" colspan="1">
+                <p id="0637b1af6cwwg">Skill</p>
+              </td>
+              <td id="c195a137847nt" rowspan="1" colspan="1">
+                <p id="ec81478532kdh">可复用的说明、领域知识，或主 Agent 应该遵循的流程。</p>
+              </td>
+            </tr>
+            <tr id="49f552da662e0">
+              <td id="49d69848e9luh" rowspan="1" colspan="1">
+                <p id="c1b355f2d70mj">动态工作流</p>
+              </td>
+              <td id="f56e29d689ser" rowspan="1" colspan="1">
+                <p id="598aa60323pwm">需要多个子 Agent、多个阶段、并行分支或验证轮次的可复用编排。</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p id="p-wf-when-outro">当任务明显大于一次 Agent 调用时，可以使用动态工作流：仓库审计、深度研究、迁移规划、发版检查、跨文件扫描，或需要多个独立视角后再汇总的评审流程。</p>
+      </section>
+      <section id="sec-wf-what" class="section">
+        <h2 id="h2-wf-what">动态工作流能做什么</h2>
+        <table id="table-wf-what" tablewidth="800" tablecolswidth="200 600" autofit="false" class="table">
+          <colgroup colwidth="0.5*" style="width:25.00%"></colgroup>
+          <colgroup colwidth="1.5*" style="width:75.00%"></colgroup>
+          <tbody class="tbody">
+            <tr id="800944e1630ag">
+              <td id="e7ed99ab73khg" rowspan="1" colspan="1">
+                <p id="2ed1fcc46bdnw"><span style="background-color:rgb(229, 229, 229)">能力</span></p>
+              </td>
+              <td id="d76a7ec97dkh4" rowspan="1" colspan="1">
+                <p id="28ea38192comt"><span style="background-color:rgb(229, 229, 229)">说明</span></p>
+              </td>
+            </tr>
+            <tr id="0728e2c7cbmd8">
+              <td id="c927d8492b2lt" rowspan="1" colspan="1">
+                <p id="ecfaad9053msq">脚本化编排</p>
+              </td>
+              <td id="d01e40b489maf" rowspan="1" colspan="1">
+                <p id="b28ba438ffhsa">将循环、分支、阶段和中间状态保存在动态工作流脚本中。</p>
+              </td>
+            </tr>
+            <tr id="5bc6b501f2su5">
+              <td id="1a60db495c20n" rowspan="1" colspan="1">
+                <p id="f9a60459eaxak">多 Agent 分发</p>
+              </td>
+              <td id="f1c89061ce1sc" rowspan="1" colspan="1">
+                <p id="6eadcfc269kbe">为相互独立的工作切片启动多个子 Agent。</p>
+              </td>
+            </tr>
+            <tr id="c2b5a459eek5b">
+              <td id="a8f4f81de23jf" rowspan="1" colspan="1">
+                <p id="ca43507b06yxa">分阶段执行</p>
+              </td>
+              <td id="36bcc7d28aiq1" rowspan="1" colspan="1">
+                <p id="e399ea3de14dp">用扫描、分析、验证、总结等命名阶段展示进度。</p>
+              </td>
+            </tr>
+            <tr id="8f19fd2a3a5fa">
+              <td id="556a9a56dbv1z" rowspan="1" colspan="1">
+                <p id="b4a1cb80b0vq9">并行或流水线处理</p>
+              </td>
+              <td id="a6249acbbacry" rowspan="1" colspan="1">
+                <p id="4b7d448ba4kmb">并发运行独立分支，或让每个条目依次经过多个处理阶段。</p>
+              </td>
+            </tr>
+            <tr id="a9cf380876vyx">
+              <td id="db6423094ag3v" rowspan="1" colspan="1">
+                <p id="a4e35504213rn">后台运行</p>
+              </td>
+              <td id="ee118cc49872h" rowspan="1" colspan="1">
+                <p id="595539f2b0bl8">启动动态工作流后，可以继续使用 Qoder CN CLI。</p>
+              </td>
+            </tr>
+            <tr id="941c322d4atib">
+              <td id="bb92136cedr14" rowspan="1" colspan="1">
+                <p id="9a500f1144qyl">流程复用</p>
+              </td>
+              <td id="2bf72f332a0o0" rowspan="1" colspan="1">
+                <p id="b53d919270yjq">将常用流程保存为项目级、用户级、插件级或内置动态工作流。</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="sec-wf-run" class="section">
+        <h2 id="h2-wf-run">运行动态工作流</h2>
+        <p id="p-wf-run-intro">你可以用自然语言让 Qoder CN CLI 使用动态工作流：</p><pre outputclass="nohighlight" data-tag="codeblock" code-type="xCode" id="cc41563df5aj9" class="pre codeblock nohighlight"><code>使用动态工作流审查这个仓库的安全风险，并总结发现。</code></pre>
+        <p id="p-wf-run-name">也可以直接按名称调用已保存或内置的动态工作流：</p><pre outputclass="nohighlight" data-tag="codeblock" code-type="xCode" id="ff4967d8a3yhs" class="pre codeblock nohighlight"><code>使用 deep-research 动态工作流调研这个架构决策的取舍。</code></pre>
+        <p id="p-wf-run-note">Qoder CN CLI 可能会为当前请求创建一个动态工作流，也可能在已有动态工作流与任务匹配时直接使用它。动态生成的工作流在执行前会展示计划；你可以运行、查看原始脚本、带反馈拒绝，或取消。</p>
+        <p id="p-wf-run-bg">动态工作流会作为后台任务运行。启动后，Qoder CN CLI 会返回运行 ID，并在任务界面中持续展示执行进度。</p>
+      </section>
+      <section id="sec-wf-monitor" class="section">
+        <h2 id="h2-wf-monitor">查看动态工作流</h2>
+        <p id="p-wf-monitor-intro">在 TUI 中使用 <code data-tag="inlineCode" id="c8265f817b3n7" class="inlineCode">/workflows</code> 打开动态工作流任务面板。</p><pre outputclass="nohighlight" data-tag="codeblock" code-type="xCode" id="f826c021be7wr" class="pre codeblock nohighlight"><code>/workflows</code></pre>
+        <p id="p-wf-monitor-panel">你可以在面板中查看运行中和已完成的动态工作流，检查状态、阶段、Agent、日志、输出路径、错误和最终结果。<code data-tag="inlineCode" id="e4791289327dw" class="inlineCode">/tasks</code> 也会和其他后台任务一起显示动态工作流任务。</p>
+        <p id="p-wf-monitor-agent">动态工作流运行时，可以在详情页查看单个 Agent。如果某个 Agent 仍可控制，可以在详情页跳过或重试这个 Agent。</p>
+      </section>
+      <section id="sec-wf-saved" class="section">
+        <h2 id="h2-wf-saved">保存动态工作流</h2>
+        <p id="p-wf-saved-intro">保存后的动态工作流可以通过名称复用。Qoder CN CLI 会从以下位置发现动态工作流：</p>
+        <table id="table-wf-saved" tablewidth="798" tablecolswidth="177 266 355" autofit="false" class="table">
+          <colgroup colwidth="0.67*" style="width:22.18%"></colgroup>
+          <colgroup colwidth="1*" style="width:33.33%"></colgroup>
+          <colgroup colwidth="1.33*" style="width:44.49%"></colgroup>
+          <tbody class="tbody">
+            <tr id="989e5437d0jmd">
+              <td id="460dbdaabc2hi" rowspan="1" colspan="1">
+                <p id="2158e1a870g7a"><span style="background-color:rgb(229, 229, 229)">范围</span></p>
+              </td>
+              <td id="9e5d0a4781yvd" rowspan="1" colspan="1">
+                <p id="ad351a09e475m"><span style="background-color:rgb(229, 229, 229)">位置</span></p>
+              </td>
+              <td id="751b0e2007adk" rowspan="1" colspan="1">
+                <p id="1ba7648adbn9v"><span style="background-color:rgb(229, 229, 229)">使用场景</span></p>
+              </td>
+            </tr>
+            <tr id="2ccf0ceee7djn">
+              <td id="5deacca0b52pa" rowspan="1" colspan="1">
+                <p id="f56939701dyo8">项目级</p>
+              </td>
+              <td id="a935a2693d4ca" rowspan="1" colspan="1">
+                <p id="0a28be8ae420q"><code data-tag="inlineCode" id="0183c0fa6d8dc" class="inlineCode">.qoder/workflows</code></p>
+              </td>
+              <td id="40d15fd27anhw" rowspan="1" colspan="1">
+                <p id="4da603440dn1w">动态工作流属于当前仓库或团队。</p>
+              </td>
+            </tr>
+            <tr id="325e161bb3ri2">
+              <td id="dce14bc7d5lm1" rowspan="1" colspan="1">
+                <p id="c9aaefa295ado">用户级</p>
+              </td>
+              <td id="e18278f4d9txy" rowspan="1" colspan="1">
+                <p id="fdb08732fbg4c"><code data-tag="inlineCode" id="afccaf178clev" class="inlineCode">~/.qoder-cn/workflows</code></p>
+              </td>
+              <td id="cf83737f53xiy" rowspan="1" colspan="1">
+                <p id="ba63b5521boxj">个人动态工作流，需要跨项目使用。</p>
+              </td>
+            </tr>
+            <tr id="f856a02109igy">
+              <td id="b8ddeb1c2bx4k" rowspan="1" colspan="1">
+                <p id="a8e21ab8d1z28">Plugin</p>
+              </td>
+              <td id="c1cb61bca6spe" rowspan="1" colspan="1">
+                <p id="d58bd8101ffmo">Plugin 提供的动态工作流</p>
+              </td>
+              <td id="7afffcab6eyln" rowspan="1" colspan="1">
+                <p id="180885ef43w01">动态工作流随插件分发。</p>
+              </td>
+            </tr>
+            <tr id="d573bce332piz">
+              <td id="a1f994a853rfc" rowspan="1" colspan="1">
+                <p id="7a6946d2eeme3">内置</p>
+              </td>
+              <td id="1aab012064r1v" rowspan="1" colspan="1">
+                <p id="e1b1bf028blf1">Qoder CN CLI 内置动态工作流</p>
+              </td>
+              <td id="fe8f0639870f8" rowspan="1" colspan="1">
+                <p id="700c8a2cc9qop">动态工作流由 Qoder CN CLI 提供。</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p id="p-wf-saved-priority">当名称冲突时，项目级动态工作流的优先级高于插件级和内置动态工作流。团队共享流程适合放在项目级目录；不应该提交到仓库的个人流程适合放在用户级目录。</p>
+        <p id="p-wf-saved-meta">保存的动态工作流是一个以 <code data-tag="inlineCode" id="e0ffdbd0c3ph6" class="inlineCode">meta</code> 导出对象开头的 JavaScript 文件。元信息用于告诉 Qoder CN CLI 动态工作流的名称、说明、阶段，以及可选的使用场景或输入 schema。</p><pre outputclass="nohighlight" data-tag="codeblock" code-type="xCode" id="c963fe6e40ano" class="pre codeblock nohighlight"><code>export const meta = {
+  name: "repo-audit",
+  description: "Audit a repository area and summarize risks",
+  whenToUse: "Use when the user asks for a structured repository audit",
+  phases: [
+    { title: "Scan", detail: "Find relevant files and areas" },
+    { title: "Analyze", detail: "Run focused analysis agents" },
+    { title: "Summarize", detail: "Merge findings into a final report" }
+  ]
+};</code></pre>
+        <p id="p-wf-saved-use">保存到 <code data-tag="inlineCode" id="f7280bbf93y8f" class="inlineCode">.qoder/workflows/repo-audit.js</code> 后，可以这样让 Qoder CN CLI 使用它：</p><pre outputclass="nohighlight" data-tag="codeblock" code-type="xCode" id="30b29afa16z0g" class="pre codeblock nohighlight"><code>运行 repo-audit 动态工作流，目标是 authentication 模块。</code></pre>
+        <p id="p-wf-saved-args">保存的动态工作流可以通过 <code data-tag="inlineCode" id="59e845150dwt2" class="inlineCode">args</code> 接收输入。目标路径、issue ID、研究问题、选项，或任何每次运行不同但不应该修改脚本的值，都适合通过 <code data-tag="inlineCode" id="2be1f09416wy1" class="inlineCode">args</code> 传入。</p>
+      </section>
+      <section id="sec-wf-how" class="section">
+        <h2 id="h2-wf-how">动态工作流如何运行</h2>
+        <p id="p-wf-how-intro">动态工作流脚本是普通 JavaScript。脚本可以使用 <code data-tag="inlineCode" id="ecf340fffbj89" class="inlineCode">agent()</code>、<code data-tag="inlineCode" id="ee3d028bc2oml" class="inlineCode">parallel()</code>、<code data-tag="inlineCode" id="0412c3190bd9m" class="inlineCode">pipeline()</code>、<code data-tag="inlineCode" id="db738b889d24j" class="inlineCode">phase()</code>、<code data-tag="inlineCode" id="03fdbc7ccc4b8" class="inlineCode">log()</code>、<code data-tag="inlineCode" id="3a3169dffaghx" class="inlineCode">workflow()</code>、<code data-tag="inlineCode" id="691ca3cf34kdk" class="inlineCode">args</code> 和 <code data-tag="inlineCode" id="fafe2433b0xkx" class="inlineCode">budget</code> 等辅助函数。</p>
+        <ol id="ol-wf-how">
+          <li id="e9b1a9c5639mr">
+            <p id="74bdd64f23lfj">Qoder CN CLI 为任务选择已保存的动态工作流，或创建新的动态工作流。</p>
+          </li>
+          <li id="8c1b5592dccds">
+            <p id="4c714c22d0sf7">如果需要审查，Qoder CN CLI 会展示动态工作流名称、阶段、脚本和运行选项。</p>
+          </li>
+          <li id="b55970de22l68">
+            <p id="83dfa3904fi79">动态工作流作为后台任务启动。</p>
+          </li>
+          <li id="b5f9d0413211e">
+            <p id="40dd950745xj3">脚本启动子 Agent，并把它们归入不同阶段。</p>
+          </li>
+          <li id="16bd43c20fbh6">
+            <p id="5d978c9b9e41o">中间结果保存在动态工作流运行时中，不会填满主会话上下文。</p>
+          </li>
+          <li id="d432a76f98alx">
+            <p id="624d66acf6t5j">最终结果写入动态工作流运行输出，并回到当前会话中总结。</p>
+          </li>
+        </ol>
+        <p id="p-wf-how-storage">动态工作流运行过程中的脚本、manifest、journal、transcript 和输出会写入 <code data-tag="inlineCode" id="b4585a7e15ar4" class="inlineCode">.qoder/sessions</code> 下的当前会话目录。</p>
+      </section>
+      <section id="sec-wf-safety" class="section">
+        <h2 id="h2-wf-safety">权限与安全</h2>
+        <p id="p-wf-safety-1">动态工作流可能会运行多个子 Agent，并较快消耗 token。验证大型或高成本动态工作流时，建议先从较小范围开始。</p>
+        <p id="p-wf-safety-2">动态工作流脚本不能直接访问 shell、文件系统、网络、Node.js API 或 MCP 服务。所有副作用都通过子 Agent 发生，而子 Agent 仍然会经过 Qoder CN CLI 的工具、权限、Hooks 和沙箱设置。</p>
+        <p id="p-wf-safety-3">使用 <a href="https://help.aliyun.com/zh/lingma/qodercli-cn/user-guide/permissions" id="xref-wf-perm" title="" class="xref">权限</a>控制动态工作流子 Agent 能做什么；使用 <a href="https://help.aliyun.com/zh/lingma/qodercli-cn/user-guide/hook" id="xref-wf-hooks" title="" class="xref">钩子</a>在工具调用前后执行组织级策略。</p>
+      </section>
+    </div>
+  </main>
+
+
+
+
+</div></div><div class="aliyun-docs-pagination"><div class="NextPage--container--cfVcdEE"><span class="NextPage--paginationLeft--WTOmehr"><a href="/zh/lingma/qodercli-cn/user-guide/subagent" data-spm-click="gostr=/aliyun;locaid=preDoc"><i class="iconfont icon-prev-arrow"></i>上一篇：子代理</a></span><span class="NextPage--paginationRight--TgS6P1r"><a href="/zh/lingma/qodercli-cn/user-guide/tools" data-spm-click="gostr=/aliyun;locaid=nextDoc">下一篇：工具<i class="iconfont icon-next-arrow"></i></a></span></div></div></div><div class="RecommendDoc--container--M1qVQax"></div><div class="FeedbackButton--feedbackContainer--njtB22l aliyun-docs-feedback" id="help-doc-feedback"><div class="FeedbackButton--feedbackHelpTip--JxaBwdy">该文章对您有帮助吗？</div><div class="FeedbackButton--feedbackButtonContainer--ujiXFNJ"><div class="FeedbackButton--feedbackButtonBox--GmY1Nor"><button class="FeedbackButton--iconButton--fx4Xcop"><i class="help-iconfont help-icon-tag-empty"></i></button><button class="FeedbackButton--iconButton--fx4Xcop"><i class="help-iconfont help-icon-tag-empty" style="display:inline-block;transform:rotateX(-180deg)"></i></button><button class="FeedbackButton--clickButton--YxH6n96"><i class="help-iconfont help-icon-bianji"></i>反馈</button></div></div></div></section><div class="aliyun-docs-side" id="aliyun-docs-side"><div id="aliyun-docs-side-content" class="aliyun-docs-side-content ProductDetail--rightBox--GGLE5sH"><ul class="Outline--synopsisBox--zm_HamD" id="outline-container"></ul></div><div id="aliyun-docs-side-blank" class="aliyun-docs-side-blank"></div></div></div></main></div></div><div id="aliyun-docs-selection-div"></div></div></div>
+  <footer><div id="d3f70824d5ebd653022a88a05724eff1"><div class="_18a32969382a277c44015217fbc5cb5a_box"><footer class="_49ada0cd752f65901c49f2eed0d6c3d5_container" aria-label="PC 端页尾"><div class="_49ada0cd752f65901c49f2eed0d6c3d5_inner"><div class="_296d5000d6fdcaff9d0bfd209c64fbbc_services"><nav class="_296d5000d6fdcaff9d0bfd209c64fbbc_homepage-footer-main-services" aria-label="页脚导航"><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">为什么选择阿里云</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/about/what-is-cloud-computing" target="_blank">什么是云计算</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://infrastructure.aliyun.com/" target="_blank">全球基础设施</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/why-us/leading-technology" target="_blank">技术领先</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/why-us/reliability" target="_blank">稳定可靠</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/why-us/security-compliance" target="_blank">安全合规</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/analyst-reports" target="_blank">分析师报告</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">大模型</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/product/tongyi" target="_blank">千问大模型</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://bailian.console.aliyun.com/?tab=model#/model-market" target="_blank" rel="nofollow">大模型服务</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://bailian.console.aliyun.com/app-center?tab=app#/app-center" target="_blank" rel="nofollow">AI应用构建</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">产品和定价</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/product/list" target="_blank">全部产品</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://free.aliyun.com/" target="_blank">免费试用</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/product/news/" target="_blank">产品动态</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/price/detail" target="_blank">产品定价</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/price/cpq/list" target="_blank">配置报价器</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/price/cost-management" target="_blank">云上成本管理</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">技术内容</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/solution/tech-solution" target="_blank">技术解决方案</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://help.aliyun.com/" target="_blank">帮助文档</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://developer.aliyun.com/" target="_blank">开发者社区</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://tianchi.aliyun.com/" target="_blank">天池大赛</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://edu.aliyun.com/" target="_blank">阿里云认证</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">权益</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://free.aliyun.com/" target="_blank">免费试用</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/solution/free" target="_blank">解决方案免费试用</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://university.aliyun.com/" target="_blank">高校计划</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://dashi.aliyun.com/?ambRef=shouYeDaoHang2&amp;pageCode=yunparterIndex" target="_blank">推荐返现计划</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">服务</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/service" target="_blank">基础服务</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/service/supportplans" target="_blank">企业增值服务</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/service/devopsimpl/devopsimpl_cloudmigration_public_cn" target="_blank">迁云服务</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/notice/" target="_blank">官网公告</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://status.aliyun.com/" target="_blank">健康看板</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://security.aliyun.com/trust-center" target="_blank">信任中心</a></section></nav><article class="_7b44142961778903dda8af3f769cd06c_focus"><h3 class="_7b44142961778903dda8af3f769cd06c_ali-main-services-title">关注阿里云</h3><p class="_7b44142961778903dda8af3f769cd06c_ali-main-services-desc">关注阿里云公众号或下载阿里云APP，关注云资讯，随时随地运维管控云服务</p><img alt="阿里云APP" src="https://img.alicdn.com/imgextra/i4/O1CN01XLesV31fkf7pYNATb_!!6000000004045-2-tps-400-400.png" class="_7b44142961778903dda8af3f769cd06c_ali-official-code" loading="lazy"/><img alt="阿里云微信" src="https://img.alicdn.com/tfs/TB1AOdINW6qK1RjSZFmXXX0PFXa-258-258.jpg" class="_7b44142961778903dda8af3f769cd06c_ali-official-code" loading="lazy"/><p class="_7b44142961778903dda8af3f769cd06c_consult-text">联系我们：4008013260</p></article></div><div class="_4598709a854bea355ceb6ef9f23f10d4_about-link-wrap"><a href="https://help.aliyun.com/product/67275.html" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">法律声明</a><a href="https://terms.alicdn.com/legal-agreement/terms/platform_service/20220906101446934/20220906101446934.html" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">Cookies 政策</a><a href="https://aliyun.jubao.alibaba.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">廉正举报</a><a href="https://report.aliyun.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">安全举报</a><a href="https://www.aliyun.com/contact" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">联系我们</a><a href="https://careers.aliyun.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">加入我们</a></div><section class="_4598709a854bea355ceb6ef9f23f10d4_friend-link-wrap"><h3 hidden="">友情链接</h3><a href="https://www.alibabagroup.com/cn/global/home" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里巴巴集团</a><a href="https://www.taobao.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">淘宝网</a><a href="https://www.tmall.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">天猫</a><a href="https://www.aliexpress.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">全球速卖通</a><a href="https://www.alibaba.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里巴巴国际交易市场</a><a href="https://www.1688.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">1688</a><a href="https://www.alimama.com/index.htm" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里妈妈</a><a href="https://www.fliggy.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">飞猪</a><a href="https://www.aliyun.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里云计算</a><a href="https://wanwang.aliyun.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">万网</a><a href="https://mobile.amap.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">高德</a><a href="https://www.uc.cn/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">UC</a><a href="https://www.umeng.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">友盟</a><a href="https://www.youku.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">优酷</a><a href="https://www.dingtalk.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">钉钉</a><a href="https://www.alipay.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">支付宝</a><a href="https://damo.alibaba.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">达摩院</a><a href="https://world.taobao.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">淘宝海外</a><a href="https://www.aliyundrive.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里云盘</a><a href="https://www.ele.me/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">淘宝闪购</a></section><p class="_4598709a854bea355ceb6ef9f23f10d4_ali-copyright-text">© 2009-现在 Aliyun.com 版权所有 增值电信业务经营许可证： <a href="http://beian.miit.gov.cn/" target="_blank">浙B2-20080101</a> 域名注册服务机构许可： <a href="https://domain.miit.gov.cn/域名注册服务机构/互联网域名/阿里云计算有限公司 " target="_blank">浙D3-20210002</a></p><p class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-wrap"><a href="https://zzlz.gsxt.gov.cn/businessCheck/verifKey.do?showType=p&amp;serial=91330106673959654P-SAIC_SHOW_10000091330106673959654P1782269316568&amp;signData=MEUCIQDTH78jfQrqhsr99oZZLEZ9bvrSnyF%20tsaiBM1kAscJ1AIgWUzC8x%20mPem4t8XfwhDOOOIaNULiW8MBaKLkRHa0eWw%3D" target="_blank" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link"><img src="//gw.alicdn.com/tfs/TB1GxwdSXXXXXa.aXXXXXXXXXXX-65-70.gif" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-img" alt="" loading="lazy"/></a><a href="http://www.beian.gov.cn/portal/registerSystemInfo" target="_blank" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link"><img src="//img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-img" alt="浙公网安备 33010602009975号" loading="lazy"/><span class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link-text">浙公网安备 33010602009975号</span></a><a href="https://beian.miit.gov.cn/" target="_blank" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link"><span class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link-text _4598709a854bea355ceb6ef9f23f10d4_ali-report-link-text-unique">浙B2-20080101-4</span></a></p></div></footer><footer class="_4b41e3343c851a7a8833c9165b249eb2_container" aria-label="移动端页尾"></footer></div></div></footer>
+
+
+
+<script>
+  var _performance_domEnd = window.performance && window.performance.now();
+</script>
+
+
+  <script>
+    window.ALIYUN_PERF && window.ALIYUN_PERF.getPCP().then(rst => {
+      var data = {
+        product: 'help.aliyun.com',
+        ua: navigator.userAgent,
+        device: 'pc',
+        page: 'index',
+        lang: 'zh',
+        cna: '',
+        url: window.location.href,
+        action: 'pcp',
+        userParams1: rst || 0,
+      };
+      let queryStr = Object.keys(data).map(key => data[key] &&
+        `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`).join('&');
+      fetch('https://help-new.cn-wulanchabu.log.aliyuncs.com/logstores/web-tracking/track?APIVersion=0.6.0&' +
+        queryStr);
+    });
+  </script>
+  
+
+  <script crossorigin="" src="https://g.alicdn.com/code/lib/??react/16.8.6/umd/react.production.min.js,react-dom/16.8.6/umd/react-dom.production.min.js"></script>
+  <script src="https://g.alicdn.com/code/lib/lodash.js/4.17.21/lodash.min.js" crossorigin="anonymous"></script>
+  <script>
+  window.resourceBaseUrl="https://g.alicdn.com/aliyun-help/help-portal-fe/0.12.51/"
+</script>
+<script defer="" src="https://g.alicdn.com/aliyun-help/help-portal-fe/0.12.51/js/index.js"></script>
+<script defer src="https://g.alicdn.com/aliyun-help/help-portal-fe/0.12.51/js/vendor.js"></script>
+  
+  <script async="" src="https://g.alicdn.com/dawn/assets-loader/scripts/fast-login.js?tenantName=help-new-aliyun-com"></script>
+  <script async="" src="https://g.alicdn.com/aliyun/perf/js/index.js"></script>
+  <script src="//cloud-assets.alicdn.com/website.js" crossorigin=""></script>
+  
+
+<script src="https://website.alyasset.com/npm.combo/@ali/biu-loader/0.1.9/~~index.js,plugins/global-react.js,plugins/ace-module.js"></script>
+<script src="https://website.alyasset.com/npm.combo/@ali/~~hmod-preact/0.0.1/index.js,hmod-preact-hooks/0.0.1/index.js,hmod-preact-compat/0.0.1/index.js,hmod-preact-bridge/0.1.4/index.js"></script>
+<script src="https://website.alyasset.com/code.combo/aliyun-com/~~lowcode-env-inject/0.1.0/aliyun.prod.pc.zh-CN.js,lowcode-engine/0.1.125/renderer/build/js/index.js"></script>
+<script src="https://g.alicdn.com/code/npm/@ali/??hmod-ace-2023-box/0.1.0/index.js,hmod-aliyun-com-floating-toolbar/0.2.4/index.js,hmod-aliyun-com-global-nav-search/0.8.5/index.js,hmod-aliyun-com-global-nav-search/0.8.5/locales/zh-CN.js,hmod-aliyun-com-global-nav/0.3.18/index.js,hmod-aliyun-com-global-nav/0.3.18/locales/zh-CN.js"></script>
+<script src="https://website.alyasset.com/lowcode/entry/prod/77597e3303f7f62742f8e02d3f883457.js"></script>
+<script src="https://g.alicdn.com/code/npm/@ali/??hmod-ace-2023-box/0.1.0/index.js,hmod-ace-2024-global-footer/0.2.1/index.js,hmod-ace-2024-global-footer/0.2.1/locales/zh-CN.js,hmod-lowcode-normal-page/0.1.0/index.js"></script>
+<script src="https://website.alyasset.com/lowcode/entry/prod/d3f70824d5ebd653022a88a05724eff1.js"></script>
+</body></html>

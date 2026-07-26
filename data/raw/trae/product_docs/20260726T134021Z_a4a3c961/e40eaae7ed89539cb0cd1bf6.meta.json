@@ -1,0 +1,50 @@
+{
+  "canonical_url": "https://docs.trae.ai/ide/troubleshoot-programming-language-specific-issues?_lang=en",
+  "competitor": "trae",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T14:05:50.587044Z",
+  "final_url": "https://docs.trae.ai/ide/troubleshoot-programming-language-specific-issues?_lang=en",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "b921fcc75486b0258f5dbb7be8c73157fb23a1fb2563d13d3c922f7542cc16c4",
+  "payload_path": "trae/product_docs/20260726T134021Z_a4a3c961/e40eaae7ed89539cb0cd1bf6.html",
+  "published_at": null,
+  "raw_record_id": "e40eaae7ed89539cb0cd1bf6",
+  "requested_url": "https://docs.trae.ai/ide/troubleshoot-programming-language-specific-issues?_lang=en",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://docs.trae.ai/ide/troubleshoot-programming-language-specific-issues?_lang=en",
+    "competitor_aliases": [
+      "TRAE",
+      "TRAE IDE"
+    ],
+    "competitor_name": "Trae",
+    "discovery": {
+      "depth": 1,
+      "max_depth": 1,
+      "method": "same_origin_links"
+    },
+    "embedded_content": "trae_router_document",
+    "embedded_content_supported": true,
+    "evidence_level": "A",
+    "format": "html",
+    "link_discovery": {
+      "allowed_path_prefixes": [
+        "/ide/"
+      ],
+      "enabled": true,
+      "max_depth": 1,
+      "max_urls": 120,
+      "query_params": {
+        "_lang": "en"
+      }
+    },
+    "visible_text_length": 59
+  },
+  "source_type": "product_docs"
+}

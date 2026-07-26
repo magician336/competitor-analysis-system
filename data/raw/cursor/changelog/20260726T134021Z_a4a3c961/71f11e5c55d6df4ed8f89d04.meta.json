@@ -1,0 +1,34 @@
+{
+  "canonical_url": "https://cursor.com/changelog/1-3",
+  "competitor": "cursor",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:41:39.546229Z",
+  "final_url": "https://cursor.com/changelog/1-3",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "c4571a14f5556d6ee0bbece7d7599d80f50db8eb2690b32c4183a413aabbffdb",
+  "payload_path": "cursor/changelog/20260726T134021Z_a4a3c961/71f11e5c55d6df4ed8f89d04.html",
+  "published_at": "2025-07-29T19:38:00Z",
+  "raw_record_id": "71f11e5c55d6df4ed8f89d04",
+  "requested_url": "https://cursor.com/changelog/1-3",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://cursor.com/changelog/page/12",
+    "changelog_page_number": 12,
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2025-07-29T19:38:00Z",
+    "listing_title": "1.3 Jul 29, 2025",
+    "record_role": "changelog_entry",
+    "visible_text_length": 4654
+  },
+  "source_type": "changelog"
+}

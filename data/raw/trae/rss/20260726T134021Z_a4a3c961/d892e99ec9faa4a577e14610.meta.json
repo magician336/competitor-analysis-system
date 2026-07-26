@@ -1,0 +1,36 @@
+{
+  "canonical_url": "https://trae.ai/blog/vercel_in_trae",
+  "competitor": "trae",
+  "content_type": "application/json",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T14:04:09.830221Z",
+  "final_url": "https://www.trae.ai/rss.xml",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "d4489b51ac56986ba70fc63d7702e8a3a50aed2097ffa3245c127bab2068a2e1",
+  "payload_path": "trae/rss/20260726T134021Z_a4a3c961/d892e99ec9faa4a577e14610.json",
+  "published_at": "2026-01-14T16:00:00Z",
+  "raw_record_id": "d892e99ec9faa4a577e14610",
+  "requested_url": "https://www.trae.ai/rss.xml",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "allowed_item_origins": [
+      "https://www.trae.ai",
+      "https://trae.ai"
+    ],
+    "competitor_aliases": [
+      "TRAE",
+      "TRAE IDE"
+    ],
+    "competitor_name": "Trae",
+    "entry_id": "vercel_in_trae",
+    "evidence_level": "A",
+    "format": "feed_entry",
+    "original_content_type": "application/xml",
+    "record_role": "rss_entry"
+  },
+  "source_type": "rss"
+}

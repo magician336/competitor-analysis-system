@@ -1,0 +1,32 @@
+{
+  "canonical_url": "https://status.cursor.com/history.rss",
+  "competitor": "cursor",
+  "content_type": "application/rss+xml; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": "W/\"c743ec78a185bfee1d9864adcbea8b60\"",
+  "fetched_at": "2026-07-26T13:45:21.012300Z",
+  "final_url": "https://status.cursor.com/history.rss",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "c743ec78a185bfee1d9864adcbea8b60210e4c6094203baeb00a492efee2cae8",
+  "payload_path": "cursor/status_page/20260726T134021Z_a4a3c961/4f0a5d26bb09a3b12c68d4ff.xml",
+  "published_at": null,
+  "raw_record_id": "4f0a5d26bb09a3b12c68d4ff",
+  "requested_url": "https://status.cursor.com/history.rss",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://status.cursor.com/history.rss",
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": null
+  },
+  "source_type": "status_page"
+}

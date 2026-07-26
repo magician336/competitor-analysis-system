@@ -1,0 +1,36 @@
+{
+  "canonical_url": "https://trae.ai/blog/product_thought_0416",
+  "competitor": "trae",
+  "content_type": "application/json",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T14:04:09.869740Z",
+  "final_url": "https://www.trae.ai/rss.xml",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "c419eaf52957c43f35c2b36cd3edea9bf58d4c005094160ae264e449ef2f99e3",
+  "payload_path": "trae/rss/20260726T134021Z_a4a3c961/cab69dc64fb449259f1acdb3.json",
+  "published_at": "2025-04-15T16:00:00Z",
+  "raw_record_id": "cab69dc64fb449259f1acdb3",
+  "requested_url": "https://www.trae.ai/rss.xml",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "allowed_item_origins": [
+      "https://www.trae.ai",
+      "https://trae.ai"
+    ],
+    "competitor_aliases": [
+      "TRAE",
+      "TRAE IDE"
+    ],
+    "competitor_name": "Trae",
+    "entry_id": "product_thought_0416",
+    "evidence_level": "A",
+    "format": "feed_entry",
+    "original_content_type": "application/xml",
+    "record_role": "rss_entry"
+  },
+  "source_type": "rss"
+}

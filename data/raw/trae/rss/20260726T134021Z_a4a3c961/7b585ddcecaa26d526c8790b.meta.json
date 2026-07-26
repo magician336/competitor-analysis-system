@@ -1,0 +1,36 @@
+{
+  "canonical_url": "https://trae.ai/blog/case_study_0905",
+  "competitor": "trae",
+  "content_type": "application/json",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T14:04:09.848389Z",
+  "final_url": "https://www.trae.ai/rss.xml",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "3d0a93460c953a57f4ed0ae1d40a8540b7cae0846bf6a202a160f5608548de6e",
+  "payload_path": "trae/rss/20260726T134021Z_a4a3c961/7b585ddcecaa26d526c8790b.json",
+  "published_at": "2025-09-04T16:00:00Z",
+  "raw_record_id": "7b585ddcecaa26d526c8790b",
+  "requested_url": "https://www.trae.ai/rss.xml",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "allowed_item_origins": [
+      "https://www.trae.ai",
+      "https://trae.ai"
+    ],
+    "competitor_aliases": [
+      "TRAE",
+      "TRAE IDE"
+    ],
+    "competitor_name": "Trae",
+    "entry_id": "case_study_0905",
+    "evidence_level": "A",
+    "format": "feed_entry",
+    "original_content_type": "application/xml",
+    "record_role": "rss_entry"
+  },
+  "source_type": "rss"
+}

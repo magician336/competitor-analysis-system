@@ -1,0 +1,33 @@
+{
+  "canonical_url": "https://aitoolgrade.com/review/cursor.html",
+  "competitor": "cursor",
+  "content_type": "text/html",
+  "crawl_run_id": "20260726T095839Z_b5521c77",
+  "error": null,
+  "etag": "\"9e33-6a5776ba-78e1e03ca6b28e3;gz\"",
+  "fetched_at": "2026-07-26T09:58:43.200439Z",
+  "final_url": "https://aitoolgrade.com/review/cursor.html",
+  "http_status": 200,
+  "last_modified": "Wed, 15 Jul 2026 12:02:02 GMT",
+  "needs_browser": false,
+  "payload_hash": "7eed2d5523df38bb28027ce6ec93ac3b76295f6d506d625f9cf3352c3bc7ee17",
+  "payload_path": "cursor/review/20260726T095839Z_b5521c77/48f1429d0336b9df9aa2d3d6.html",
+  "published_at": null,
+  "raw_record_id": "48f1429d0336b9df9aa2d3d6",
+  "requested_url": "https://aitoolgrade.com/review/cursor.html",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://aitoolgrade.com/review/cursor.html",
+    "competitor_aliases": [
+      "Cursor AI"
+    ],
+    "competitor_name": "Cursor",
+    "embedded_content_supported": false,
+    "evidence_level": "C",
+    "format": "html",
+    "note": "URLs form the curated public review allowlist for Cursor.",
+    "visible_text_length": 12359
+  },
+  "source_type": "review"
+}

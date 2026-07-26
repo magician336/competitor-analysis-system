@@ -1,0 +1,33 @@
+{
+  "canonical_url": "https://github.com/trust-center",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=utf-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": "W/\"90082727560c3290a183cfca9532841e\"",
+  "fetched_at": "2026-07-26T14:03:44.918510Z",
+  "final_url": "https://github.com/trust-center",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "6b48109ecff4bec49d04b63531dab49db3aebe394e1d404db70b023441a80c86",
+  "payload_path": "github_copilot/security_privacy/20260726T134021Z_a4a3c961/c7fd894a6e9b96cda4bfb90a.html",
+  "published_at": null,
+  "raw_record_id": "c7fd894a6e9b96cda4bfb90a",
+  "requested_url": "https://github.com/trust-center",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "acquisition_method": "GET",
+    "acquisition_url": "https://github.com/trust-center",
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "embedded_content_supported": false,
+    "evidence_level": "A",
+    "format": "html",
+    "visible_text_length": 10606
+  },
+  "source_type": "security_privacy"
+}

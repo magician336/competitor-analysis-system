@@ -1,0 +1,35 @@
+{
+  "canonical_url": "https://github.blog/changelog/2025-12-19-copilot-memory-early-access-for-pro-and-pro/",
+  "competitor": "github_copilot",
+  "content_type": "text/html; charset=UTF-8",
+  "crawl_run_id": "20260726T134021Z_a4a3c961",
+  "error": null,
+  "etag": null,
+  "fetched_at": "2026-07-26T13:46:45.406982Z",
+  "final_url": "https://github.blog/changelog/2025-12-19-copilot-memory-early-access-for-pro-and-pro/",
+  "http_status": 200,
+  "last_modified": null,
+  "needs_browser": false,
+  "payload_hash": "59f14bc2dd504f13cca5444cf5939ceada0805cf6e650ddd1a7d595c57b5838f",
+  "payload_path": "github_copilot/changelog/20260726T134021Z_a4a3c961/0b15c463e259c3f5680cb231.html",
+  "published_at": "2025-12-19T00:00:00Z",
+  "raw_record_id": "0b15c463e259c3f5680cb231",
+  "requested_url": "https://github.blog/changelog/2025-12-19-copilot-memory-early-access-for-pro-and-pro",
+  "schema_version": "1.0",
+  "source_metadata": {
+    "changelog_index_url": "https://github.blog/changelog/2025/?label=copilot",
+    "changelog_page_number": 2,
+    "competitor_aliases": [
+      "Copilot",
+      "GitHub Copilot Chat"
+    ],
+    "competitor_name": "GitHub Copilot",
+    "evidence_level": "A",
+    "format": "html",
+    "listing_published_at": "2025-12-19T00:00:00Z",
+    "listing_title": "Copilot memory early access for Pro and Pro+",
+    "record_role": "changelog_entry",
+    "visible_text_length": 3096
+  },
+  "source_type": "changelog"
+}
