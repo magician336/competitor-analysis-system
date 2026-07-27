@@ -8,6 +8,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 from mini_rag.config import MiniRAGSettings, load_settings
+from sqlalchemy.engine import make_url
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -15,12 +16,27 @@ DEFAULT_DATABASE_URL = "sqlite:///data/runtime/coderadar.db"
 
 
 def database_url() -> str:
-    """Return the configured database URL with a stable project-relative default."""
+    """Return a database URL independent of the process working directory."""
 
+    load_dotenv(PROJECT_ROOT / ".env", override=False)
     configured = os.getenv("CODERADAR_DATABASE_URL", "").strip()
-    if configured:
-        return configured
-    return DEFAULT_DATABASE_URL
+    url = configured or DEFAULT_DATABASE_URL
+    parsed = make_url(url)
+    database = parsed.database
+    if (
+        not parsed.drivername.startswith("sqlite")
+        or not database
+        or database == ":memory:"
+        or database.startswith("file:")
+    ):
+        return url
+    path = Path(os.path.expandvars(database)).expanduser()
+    if path.is_absolute():
+        return url
+    resolved = (PROJECT_ROOT / path).resolve()
+    return parsed.set(database=resolved.as_posix()).render_as_string(
+        hide_password=False
+    )
 
 
 def _bool_env(name: str, default: bool) -> bool:

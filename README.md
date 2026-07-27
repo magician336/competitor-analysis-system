@@ -115,7 +115,7 @@ competitor-analysis-system/
 ├── scripts/                # 数据/索引/评测，以及标签、基线、矩阵和交付验收入口
 ├── tests/                  # 离线单元、集成和显式网络测试
 ├── rag_query.py            # Mini-RAG 命令行查询入口
-└── requirement.txt         # Python 3.11 依赖清单
+└── requirements.txt        # Python 3.11 依赖清单
 ```
 
 ## 使用 Conda 环境 `CodeRadar`
@@ -125,7 +125,7 @@ competitor-analysis-system/
 ```powershell
 conda activate CodeRadar
 python --version
-python -m pip install -r requirement.txt
+python -m pip install -r requirements.txt
 python -m pip check
 python -m scripts.data_pipeline doctor
 ```
@@ -148,7 +148,7 @@ conda activate CodeRadar
 ```powershell
 conda create -n CodeRadar python=3.11.9 -y
 conda activate CodeRadar
-python -m pip install -r requirement.txt
+python -m pip install -r requirements.txt
 ```
 
 `doctor` 只读取本地配置，不发送网络请求。它检查 Python/Conda 环境、依赖清单、LangChain 组件、五个竞品配置、D1—D7 标签配置、数据目录和 GitHub Token 状态。

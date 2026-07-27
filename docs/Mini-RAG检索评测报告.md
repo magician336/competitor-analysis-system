@@ -307,8 +307,6 @@ F 组有 28 个问题达到 Recall@10=1，22 个问题低于 1。未完全召回
 ### 6.1 重爬、处理与全量预审核
 
 ```powershell
-Set-Location D:\26Spring\project\CodeRadar
-
 .\.venv\Scripts\python.exe -m scripts.data_pipeline doctor
 
 .\.venv\Scripts\python.exe -m scripts.data_pipeline crawl `

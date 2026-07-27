@@ -39,7 +39,7 @@ def test_doctor_passes_in_project_venv_and_never_prints_token(
     assert "[OK] Python: 3.11.9" in output.out
     assert "[OK] 运行环境: 项目 .venv" in output.out
     assert "[OK] 运行依赖: 可导入" in output.out
-    assert f"[OK] 依赖清单: {PROJECT_ROOT / 'requirement.txt'}" in output.out
+    assert f"[OK] 依赖清单: {PROJECT_ROOT / 'requirements.txt'}" in output.out
     assert "[OK] 竞品配置" in output.out
     assert "[OK] 标签配置" in output.out
     assert "GitHub Token: 已配置（值未显示）" in output.out
@@ -117,8 +117,8 @@ def test_doctor_requirement_path_prefers_current_and_accepts_legacy(
     project_root.mkdir()
     monkeypatch.setattr(data_pipeline, "PROJECT_ROOT", project_root)
 
-    current = project_root / "requirement.txt"
-    legacy_root = project_root / "requirements.txt"
+    current = project_root / "requirements.txt"
+    legacy_root = project_root / "requirement.txt"
     legacy_docs = tmp_path / "docs" / "requirement.txt"
     current.touch()
     legacy_root.touch()

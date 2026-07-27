@@ -33,6 +33,7 @@ def test_production_chatdeepseek_chains_construct_without_network(monkeypatch) -
 
     assert client is not None
     assert client.model_name == "deepseek-chat"
+    assert client.supports_react is True
     assert isinstance(client._card_chain, Runnable)
     assert isinstance(client._tagging_chain, Runnable)
 

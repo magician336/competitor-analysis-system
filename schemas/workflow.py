@@ -119,6 +119,9 @@ class WorkflowBranchResponse(BaseModel):
     rag_query_id: str | None = None
     card_ids: list[str] = Field(default_factory=list)
     trace_id: str | None = None
+    react_used: bool = False
+    react_iterations: int = Field(default=0, ge=0)
+    tool_call_count: int = Field(default=0, ge=0)
     error: dict[str, object] | None = None
 
 

@@ -311,8 +311,8 @@ def _doctor_requirement_path() -> Path | None:
     """Return the current dependency manifest, accepting legacy locations."""
 
     candidates = (
-        PROJECT_ROOT / "requirement.txt",
         PROJECT_ROOT / "requirements.txt",
+        PROJECT_ROOT / "requirement.txt",
         PROJECT_ROOT.parent / "docs" / "requirement.txt",
     )
     return next((path for path in candidates if path.is_file()), None)
@@ -376,7 +376,7 @@ def run_doctor() -> int:
     except Exception:
         warnings.append(
             "未安装 Playwright；动态官网会保留 needs_browser。"
-            "请从 docs/requirement.txt 重建环境"
+            "请从 requirements.txt 重建环境"
         )
 
     requirement_path = _doctor_requirement_path()
@@ -384,8 +384,8 @@ def run_doctor() -> int:
         checks.append(("OK", "依赖清单", str(requirement_path)))
     else:
         errors.append(
-            "缺少依赖清单：项目根目录 requirement.txt "
-            "（兼容旧 requirements.txt 或 ../docs/requirement.txt）"
+            "缺少依赖清单：项目根目录 requirements.txt "
+            "（兼容旧 requirement.txt 或 ../docs/requirement.txt）"
         )
 
     try:

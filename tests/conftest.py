@@ -19,6 +19,10 @@ def pytest_configure(config) -> None:
         "markers",
         "network: opt-in smoke test that may access public official sources",
     )
+    config.addinivalue_line(
+        "markers",
+        "es_integration: opt-in tests that require a live Elasticsearch service",
+    )
 
 
 @pytest.fixture(autouse=True)

@@ -30,16 +30,25 @@ class AgentTraceCallback(BaseCallbackHandler):
         self._lock = threading.RLock()
         self.llm_used = False
         self.llm_call_count = 0
+        self.tool_call_count = 0
+        self.react_used = False
+        self.react_iterations = 0
         self.input_tokens = 0
         self.output_tokens = 0
         self.total_tokens = 0
         self._llm_run_ids: set[UUID] = set()
+        self._tool_run_ids: set[UUID] = set()
 
     def _mark_llm_call(self, run_id: UUID) -> None:
         with self._lock:
             if run_id not in self._llm_run_ids:
                 self._llm_run_ids.add(run_id)
                 self.llm_call_count += 1
+
+    def mark_react(self, iterations: int) -> None:
+        with self._lock:
+            self.react_used = iterations > 0
+            self.react_iterations = max(self.react_iterations, iterations)
 
     @staticmethod
     def _name(serialized: dict[str, Any] | None, kwargs: dict[str, Any]) -> str:
@@ -69,6 +78,10 @@ class AgentTraceCallback(BaseCallbackHandler):
         run_id: UUID,
         **kwargs: Any,
     ) -> None:
+        with self._lock:
+            if run_id not in self._tool_run_ids:
+                self._tool_run_ids.add(run_id)
+                self.tool_call_count += 1
         self._append(self._name(serialized, kwargs), "start")
 
     def on_chain_end(self, outputs: Any, *, run_id: UUID, **kwargs: Any) -> None:
@@ -183,6 +196,9 @@ class AgentTraceCallback(BaseCallbackHandler):
             fallback_used=fallback_used,
             model_name=model_name,
             llm_call_count=self.llm_call_count,
+            tool_call_count=self.tool_call_count,
+            react_used=self.react_used,
+            react_iterations=self.react_iterations,
             input_tokens=self.input_tokens,
             output_tokens=self.output_tokens,
             total_tokens=self.total_tokens,

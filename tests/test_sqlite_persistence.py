@@ -7,9 +7,10 @@ import pytest
 from alembic import command
 from alembic.config import Config
 from sqlalchemy import func, inspect, select, text
+from sqlalchemy.engine import make_url
 
 from backend.artifact_import import initialize_database, load_artifact_bundle
-from backend.config import PROJECT_ROOT
+from backend.config import PROJECT_ROOT, database_url
 from backend.database import ALEMBIC_HEAD_REVISION, Database
 from backend.models import (
     AgentTraceRecord,
@@ -45,6 +46,31 @@ def _counts(repository: AnalysisRepository) -> dict[str, int]:
             name: session.scalar(select(func.count()).select_from(model)) or 0
             for name, model in models.items()
         }
+
+
+def test_relative_sqlite_url_is_rooted_at_project(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setenv(
+        "CODERADAR_DATABASE_URL",
+        "sqlite:///data/runtime/coderadar.db",
+    )
+
+    parsed = make_url(database_url())
+
+    assert parsed.database is not None
+    assert Path(parsed.database) == (
+        PROJECT_ROOT / "data" / "runtime" / "coderadar.db"
+    ).resolve()
+
+
+def test_non_sqlite_database_url_is_unchanged(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    configured = "postgresql+psycopg://coderadar@example.test/coderadar"
+    monkeypatch.setenv("CODERADAR_DATABASE_URL", configured)
+
+    assert database_url() == configured
 
 
 def test_alembic_upgrade_downgrade_upgrade(tmp_path: Path, monkeypatch) -> None:
@@ -87,6 +113,7 @@ def test_manifest_import_roundtrip_and_idempotency(
         artifact_root=artifact_root,
     )
     first_counts = _counts(analysis_repository)
+    bundle = load_artifact_bundle(artifact_root)
     second = initialize_database(
         analysis_repository,
         competitor_config=config_path,
@@ -97,14 +124,13 @@ def test_manifest_import_roundtrip_and_idempotency(
     assert second.artifact_status == "already_imported"
     assert first_counts == _counts(analysis_repository)
     assert first_counts["competitors"] == 5
-    assert first_counts["cards"] == 35
-    assert first_counts["snapshots"] == 5
+    assert first_counts["cards"] == len(bundle.cards)
+    assert first_counts["snapshots"] == len(bundle.snapshots)
     assert first_counts["workflows"] == 5
     assert first_counts["traces"] == 15
     assert first_counts["briefings"] == 5
     assert first_counts["imports"] == 1
 
-    bundle = load_artifact_bundle(artifact_root)
     assert {
         item.card_id: item for item in analysis_repository.list_cards()
     } == {item.card_id: item for item in bundle.cards}

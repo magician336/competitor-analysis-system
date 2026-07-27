@@ -575,7 +575,7 @@ conda activate CodeRadar
 python --version                    # 应为 3.11.9
 
 # 2. 安装依赖
-python -m pip install -r requirement.txt
+python -m pip install -r requirements.txt
 python -m pip check
 
 # 3. 确保 Week2 ES 索引已就绪

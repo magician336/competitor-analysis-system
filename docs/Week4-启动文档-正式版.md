@@ -41,7 +41,7 @@
 conda activate CodeRadar
 
 # 全量依赖（含 torch + sentence-transformers，需数分钟）
-python -m pip install -r requirement.txt
+python -m pip install -r requirements.txt
 
 # 验证 torch 安装成功
 python -c "import torch; print(torch.__version__)"
@@ -72,13 +72,9 @@ copy .env.example .env
 ```ini
 # ─── Mini-RAG：BGE-M3 正式检索 ───
 MINIRAG_ELASTICSEARCH_URL=http://localhost:9200
-MINIRAG_CONFIG_PATH=config/mini_rag.formal.yaml   # ← 使用正式配置
-MINIRAG_EMBEDDING_PROVIDER=sentence_transformers
-MINIRAG_EMBEDDING_MODEL=BAAI/bge-m3
-MINIRAG_EMBEDDING_DIMENSION=1024
-MINIRAG_RERANKER_PROVIDER=cross_encoder
-MINIRAG_RERANKER_MODEL=cross-encoder/mmarco-mMiniLMv2-L12-H384-v1
-MINIRAG_RERANKER_STRICT=true
+MINIRAG_PROFILE=formal                       # ← 一次选择整套正式配置
+MINIRAG_CONFIG_PATH=                        # ← 留空，避免覆盖 profile
+MINIRAG_INSTALL_ML=true
 MINIRAG_MODEL_CACHE_DIR=.cache/models
 
 # ─── Agent：DeepSeek 在线严格模式 ───
@@ -96,6 +92,13 @@ CODERADAR_API_KEY=coderadar-phase3-local-demo
 CODERADAR_READ_RATE_PER_MINUTE=120
 CODERADAR_WRITE_RATE_PER_MINUTE=30
 ```
+
+路径配置规则：
+
+- `.env` 和 YAML 中的相对文件路径统一以项目根目录为基准，不受终端当前目录、IDE 或任务调度器影响；
+- 本地与 Docker Compose 共用 `data/...`、`config/...`、`.cache/...` 形式，不要写 `/app/CodeRadar`、Windows 盘符或用户目录；
+- `MINIRAG_PROFILE=formal` 已选择 `config/mini_rag.formal.yaml`。只有临时使用自定义 YAML 时才设置 `MINIRAG_CONFIG_PATH`，且它的优先级高于 profile；
+- `CODERADAR_DATABASE_URL=sqlite:///data/runtime/coderadar.db` 会稳定解析到项目的 `data/runtime/`。
 
 > **重要**：`CODERADAR_AGENT_MODE=llm` 是**严格模式**，DeepSeek API 不可用时任务直接失败，不回退到规则。如果希望在线分析但允许失败时回退，可以用 `hybrid` 模式。
 
@@ -226,10 +229,8 @@ CODERADAR_LLM_PROVIDER=deepseek
 DEEPSEEK_API_KEY=sk-你的真实Key
 DEEPSEEK_MODEL=deepseek-chat
 
-MINIRAG_CONFIG_PATH=config/mini_rag.formal.yaml
-MINIRAG_EMBEDDING_PROVIDER=sentence_transformers
-MINIRAG_RERANKER_PROVIDER=cross_encoder
-MINIRAG_RERANKER_STRICT=true
+MINIRAG_PROFILE=formal
+MINIRAG_CONFIG_PATH=
 MINIRAG_INSTALL_ML=true          # ← 容器内安装 torch + sentence-transformers
 ```
 

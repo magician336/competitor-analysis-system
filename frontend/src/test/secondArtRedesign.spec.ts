@@ -21,9 +21,21 @@ const completedWorkflow: WorkflowDetail = {
   partial_failure: false,
   cancel_requested: false,
   branches: [
-    { branch: "product", status: "success", progress: 100, last_attempt: 1, card_ids: [], trace_id: "trace_product" },
-    { branch: "price", status: "success", progress: 100, last_attempt: 1, card_ids: [], trace_id: "trace_price" },
-    { branch: "risk", status: "success", progress: 100, last_attempt: 1, card_ids: [], trace_id: "trace_risk" },
+    {
+      branch: "product", status: "success", progress: 100, last_attempt: 1,
+      card_ids: [], trace_id: "trace_product", react_used: true,
+      react_iterations: 1, tool_call_count: 1,
+    },
+    {
+      branch: "price", status: "success", progress: 100, last_attempt: 1,
+      card_ids: [], trace_id: "trace_price", react_used: true,
+      react_iterations: 1, tool_call_count: 1,
+    },
+    {
+      branch: "risk", status: "success", progress: 100, last_attempt: 1,
+      card_ids: [], trace_id: "trace_risk", react_used: true,
+      react_iterations: 1, tool_call_count: 1,
+    },
   ],
   card_ids: [],
   snapshot_id: null,

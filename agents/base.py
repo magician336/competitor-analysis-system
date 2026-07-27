@@ -76,7 +76,7 @@ def _risk_from_priority(score: int, *, has_evidence: bool) -> RiskLevel:
 
 
 class EvidenceBackedAgent:
-    """LCEL chain: typed request -> RAG Tool -> guarded intelligence card."""
+    """LCEL chain with optional ReAct retrieval and guarded card generation."""
 
     config: AgentConfig
 
@@ -197,11 +197,43 @@ class EvidenceBackedAgent:
     def _retrieve_evidence(self, payload: dict[str, Any]) -> dict[str, Any]:
         query: RAGQuery = payload["query"]
         callback: AgentTraceCallback = payload["trace_callback"]
-        response: RAGResponse = self._rag_tool.invoke(
+        retrieval_warnings: list[str] = []
+        if self.llm_client is not None and self.llm_client.supports_react:
+            try:
+                react_result = self.llm_client.retrieve_with_react(
+                    base_query=query,
+                    specialist_prompt=self.prompt_text,
+                    agent_kind=self.config.kind.value,
+                    search=self.rag_service.query,
+                    callbacks=[callback],
+                )
+                response = react_result.response
+                callback.mark_react(react_result.tool_call_count)
+            except Exception as exc:
+                if self.llm_client.strict:
+                    raise
+                retrieval_warnings.append(
+                    "ReAct retrieval fallback to deterministic RAG query: "
+                    f"{type(exc).__name__}: {exc}"
+                )
+                response = self._invoke_rag_tool(query, callback)
+        else:
+            response = self._invoke_rag_tool(query, callback)
+        return {
+            **payload,
+            "rag_response": response,
+            "retrieval_warnings": retrieval_warnings,
+        }
+
+    def _invoke_rag_tool(
+        self,
+        query: RAGQuery,
+        callback: AgentTraceCallback,
+    ) -> RAGResponse:
+        return self._rag_tool.invoke(
             query.model_dump(mode="python"),
             config={"callbacks": [callback]},
         )
-        return {**payload, "rag_response": response}
 
     def _compose_result(self, payload: dict[str, Any]) -> AgentRunResult:
         request: AgentAnalysisRequest = payload["request"]
@@ -220,7 +252,11 @@ class EvidenceBackedAgent:
                 + "; ".join(validation.errors)
             )
 
-        warnings = [*response.retrieval_trace.warnings, *validation.warnings]
+        warnings = [
+            *payload.get("retrieval_warnings", []),
+            *response.retrieval_trace.warnings,
+            *validation.warnings,
+        ]
         warnings.extend(self._conflict_messages(validation.conflicts))
         clusters = self._event_clusters(references)
         if len(clusters) > request.max_cards:

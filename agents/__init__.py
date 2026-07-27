@@ -7,6 +7,7 @@ from .dimension_tagging_agent import DimensionTaggingAgent
 from .orchestrator import MultiAgentOrchestrator
 from .price_agent import PriceAgent
 from .product_agent import ProductAgent
+from .react_agent import ReActEvidenceAgent
 from .risk_agent import RiskAgent
 
 __all__ = [
@@ -17,5 +18,6 @@ __all__ = [
     "MultiAgentOrchestrator",
     "PriceAgent",
     "ProductAgent",
+    "ReActEvidenceAgent",
     "RiskAgent",
 ]
