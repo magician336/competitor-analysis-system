@@ -34,17 +34,18 @@ const referenceOrder = computed(() => [...radarSeries.value]
 const coverageAverage = computed(() => snapshots.value.length
   ? Math.round(snapshots.value.reduce((sum, item) => sum + item.coverage_ratio, 0) / snapshots.value.length * 100)
   : 0);
-const fixedRadarSnapshots = [
-  { competitor: "Cursor", snapshotId: "snap_5ca0ec5c4426473b1f9f", color: "#a34d3c" },
-  { competitor: "GitHub Copilot", snapshotId: "snap_0196828b31425fbfe5cc", color: "#356ca3" },
-  { competitor: "Trae", snapshotId: "snap_4bda8d293a79cfb96daf", color: "#9a753d" },
-  { competitor: "通义灵码", snapshotId: "snap_bbcf612fe84b28ee33d9", color: "#3d93b8" },
-  { competitor: "CodeGeeX", snapshotId: "snap_cafabf21d1d8ab23c09e", color: "#7c71a1" }
-] as const;
-const radarSeries = computed(() => fixedRadarSnapshots.flatMap((item) => {
-  const detail = radarSnapshots.value.find((snapshot) => snapshot.snapshot.snapshot_id === item.snapshotId);
-  return detail ? [{ competitor: item.competitor, snapshot: detail.snapshot, color: item.color }] : [];
-}));
+const competitorColors: Record<string, string> = {
+  Cursor: "#a34d3c",
+  "GitHub Copilot": "#356ca3",
+  Trae: "#9a753d",
+  "通义灵码": "#3d93b8",
+  CodeGeeX: "#7c71a1"
+};
+const radarSeries = computed(() => radarSnapshots.value.map((item) => ({
+  competitor: item.snapshot.competitor,
+  snapshot: item.snapshot,
+  color: competitorColors[item.snapshot.competitor] || "#888"
+})));
 const displayedRadarSeries = computed(() => !selectedRadarTargets.value.length
   ? radarSeries.value
   : radarSeries.value.filter((item) => selectedRadarTargets.value.includes(item.competitor)));
@@ -143,13 +144,23 @@ async function load() {
   error.value = "";
   try {
     await Promise.all([store.refreshStatus(), store.loadCompetitors()]);
-    const [cardPage, snapshotPage, radarDetails] = await Promise.all([
+    const [cardPage, snapshotPage] = await Promise.all([
       cardApi.list({ page: 1, page_size: 100, sort_by: "created_at", order: "desc" }),
       snapshotApi.list({ page: 1, page_size: 100 }),
-      Promise.all(fixedRadarSnapshots.map((item) => snapshotApi.detail(item.snapshotId)))
     ]);
     cards.value = cardPage.items;
     snapshots.value = snapshotPage.items;
+    // 从列表动态获取每个竞品的最新快照（列表已按 snapshot_date+created_at 降序排列）
+    const latestByCompetitor = new Map<string, string>();
+    for (const s of snapshotPage.items) {
+      if (!latestByCompetitor.has(s.competitor)) {
+        latestByCompetitor.set(s.competitor, s.snapshot_id);
+      }
+    }
+    const latestIds = Array.from(latestByCompetitor.values());
+    const radarDetails = await Promise.all(
+      latestIds.map((id) => snapshotApi.detail(id))
+    );
     radarSnapshots.value = radarDetails;
   } catch (reason) {
     error.value = errorMessage(reason);
