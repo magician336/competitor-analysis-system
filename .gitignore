@@ -1,6 +1,7 @@
 # Local environment and secrets
 .venv/
 .env
+*.swp
 
 # Python caches and test artifacts
 __pycache__/

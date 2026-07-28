@@ -8,6 +8,7 @@ from collections.abc import Iterable, Mapping
 from dataclasses import asdict, dataclass, field
 from datetime import date, datetime, timezone
 from enum import Enum
+from itertools import islice
 from typing import Any
 
 from mini_rag.embedding import EmbeddingService
@@ -93,10 +94,13 @@ class IndexBuilder:
         backend: SearchBackend,
         embedding_service: EmbeddingService,
         index_name: str = "coderadar_chunks_v1",
+        *,
+        bulk_batch_size: int = 200,
     ) -> None:
         self.backend = backend
         self.embedding_service = embedding_service
         self.index_name = index_name
+        self.bulk_batch_size = bulk_batch_size
 
     def _ensure_index(self, recreate: bool) -> bool:
         exists = self.backend.index_exists(self.index_name)
@@ -223,15 +227,20 @@ class IndexBuilder:
                 document["embedding_dimension"] = self.embedding_service.dimension
             for document in pending:
                 document["indexed_at"] = indexed_at
-            bulk = self.backend.bulk_index(
-                self.index_name,
-                pending,
-                id_field="chunk_id",
-                refresh=False,
-            )
-            report.indexed_count += bulk.indexed
-            report.failed_count += bulk.failed
-            report.errors.extend(bulk.errors)
+            # 分批写入，避免 Elasticsearch HTTP 413 (Request Entity Too Large)
+            offset = 0
+            while offset < len(pending):
+                batch = pending[offset : offset + self.bulk_batch_size]
+                bulk = self.backend.bulk_index(
+                    self.index_name,
+                    batch,
+                    id_field="chunk_id",
+                    refresh=False,
+                )
+                report.indexed_count += bulk.indexed
+                report.failed_count += bulk.failed
+                report.errors.extend(bulk.errors)
+                offset += self.bulk_batch_size
 
         if delete_missing and report.failed_count == 0:
             desired = set(identifiers)
