@@ -83,7 +83,9 @@ export const adminApi = {
 
 export const askApi = {
   ask: async (payload: AskRequest) =>
-    (await http.post<AskResponse>("/api/ask", payload)).data,
+    (await http.post<AskResponse>("/api/ask", payload, {
+      timeout: 120_000
+    })).data,
   history: async (params: Query = {}) =>
     (await http.get<Page<AskHistorySummary>>("/api/ask/history", { params: cleanQuery(params) })).data,
   detail: async (id: string) => (await http.get<AskHistoryDetail>(`/api/ask/history/${id}`)).data

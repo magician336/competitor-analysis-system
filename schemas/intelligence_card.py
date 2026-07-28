@@ -423,6 +423,9 @@ class AgentExecutionTrace(BaseModel):
     fallback_used: bool = False
     model_name: str | None = None
     llm_call_count: int = Field(default=0, ge=0)
+    tool_call_count: int = Field(default=0, ge=0)
+    react_used: bool = False
+    react_iterations: int = Field(default=0, ge=0)
     input_tokens: int = Field(default=0, ge=0)
     output_tokens: int = Field(default=0, ge=0)
     total_tokens: int = Field(default=0, ge=0)

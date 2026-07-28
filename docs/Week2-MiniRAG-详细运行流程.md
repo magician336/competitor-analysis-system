@@ -80,7 +80,7 @@ conda activate CodeRadar
 python --version    # 应为 3.11.9
 
 # 安装依赖（注意：sentence-transformers 只在正式评测时需要）
-python -m pip install -r requirement.txt
+python -m pip install -r requirements.txt
 python -m pip check
 ```
 

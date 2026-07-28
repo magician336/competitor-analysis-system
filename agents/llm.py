@@ -21,6 +21,8 @@ from schemas.intelligence_card import (
 )
 from schemas.tagging import DimensionTaggingDraft, DimensionTaggingRequest
 
+from .react_agent import ReActEvidenceAgent, ReActRetrievalResult
+
 
 class LLMFindingDraft(BaseModel):
     """Model-authored claim; citations are checked before it reaches a card."""
@@ -155,6 +157,7 @@ class LangChainLLMClient:
                 DimensionTaggingDraft,
                 method="json_mode",
             )
+        self._chat_model = model
         self._card_chain = (
             _CARD_PROMPT | structured_card_runnable
         ).with_retry(
@@ -171,6 +174,12 @@ class LangChainLLMClient:
             if structured_tagging_runnable is not None
             else None
         )
+
+    @property
+    def supports_react(self) -> bool:
+        """Whether this client has a tool-calling chat model for ReAct."""
+
+        return self._chat_model is not None
 
     @staticmethod
     def _build_deepseek_model(settings: LLMSettings) -> Any:
@@ -250,6 +259,27 @@ class LangChainLLMClient:
         )
         return result if isinstance(result, LLMCardDraft) else LLMCardDraft.model_validate(result)
 
+    def retrieve_with_react(
+        self,
+        *,
+        base_query: Any,
+        specialist_prompt: str,
+        agent_kind: str,
+        search: Any,
+        callbacks: list[Any] | None = None,
+    ) -> ReActRetrievalResult:
+        """Run a bounded reason/action/observation loop over the RAG tool."""
+
+        if self._chat_model is None:
+            raise RuntimeError("this LangChain client has no tool-calling chat model")
+        return ReActEvidenceAgent(self._chat_model).run(
+            base_query=base_query,
+            specialist_prompt=specialist_prompt,
+            agent_kind=agent_kind,
+            search=search,
+            callbacks=callbacks,
+        )
+
     def tag_dimensions(
         self,
         *,
@@ -287,4 +317,5 @@ __all__ = [
     "LLMFindingDraft",
     "LLMSettings",
     "LangChainLLMClient",
+    "ReActRetrievalResult",
 ]

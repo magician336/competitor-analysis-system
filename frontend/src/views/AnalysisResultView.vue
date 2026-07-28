@@ -117,6 +117,15 @@ onBeforeUnmount(() => { if (timer !== null) window.clearTimeout(timer); });
                 <el-table-column prop="branch" label="分支" width="100" />
                 <el-table-column label="状态" width="110"><template #default="scope"><StatusTag :status="scope.row.status" /></template></el-table-column>
                 <el-table-column prop="duration_ms" label="耗时(ms)" width="120" />
+                <el-table-column label="ReAct" width="130">
+                  <template #default="scope">
+                    <el-tag v-if="scope.row.react_used" type="success" size="small">
+                      已执行 · {{ scope.row.react_iterations }} 轮
+                    </el-tag>
+                    <span v-else>—</span>
+                  </template>
+                </el-table-column>
+                <el-table-column prop="tool_call_count" label="工具调用" width="100" />
                 <el-table-column prop="trace_id" label="Trace" min-width="180" show-overflow-tooltip />
                 <el-table-column label="Cards" width="80"><template #default="scope">{{ scope.row.card_ids.length }}</template></el-table-column>
               </el-table>

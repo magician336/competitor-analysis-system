@@ -253,11 +253,18 @@ class AsyncWorkflowRepository:
     @staticmethod
     def _branch_response(record: WorkflowBranchRecord) -> WorkflowBranchResponse:
         card_ids: list[str] = []
+        react_used = False
+        react_iterations = 0
+        tool_call_count = 0
         if record.payload:
             try:
                 outcome = BranchOutcome.model_validate(record.payload)
                 if outcome.result is not None:
                     card_ids = [card.card_id for card in outcome.result.cards]
+                    if outcome.result.trace is not None:
+                        react_used = outcome.result.trace.react_used
+                        react_iterations = outcome.result.trace.react_iterations
+                        tool_call_count = outcome.result.trace.tool_call_count
             except (TypeError, ValueError):
                 pass
         return WorkflowBranchResponse(
@@ -271,6 +278,9 @@ class AsyncWorkflowRepository:
             rag_query_id=record.rag_query_id,
             card_ids=card_ids,
             trace_id=record.trace_id,
+            react_used=react_used,
+            react_iterations=react_iterations,
+            tool_call_count=tool_call_count,
             error=record.error,
         )
 

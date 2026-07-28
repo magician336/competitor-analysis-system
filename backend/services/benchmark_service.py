@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from agents.benchmark_agent import BenchmarkAgent
+from backend.config import PROJECT_ROOT
 from schemas.benchmark import (
     BenchmarkComparisonRow,
     BenchmarkImportSummary,
@@ -39,7 +40,7 @@ class BenchmarkService:
         candidate = (
             requested.resolve()
             if requested.is_absolute()
-            else (Path.cwd() / requested).resolve()
+            else (PROJECT_ROOT / requested).resolve()
         )
         allowed_root = self.agent.results_path.parent.resolve()
         if not candidate.is_relative_to(allowed_root):

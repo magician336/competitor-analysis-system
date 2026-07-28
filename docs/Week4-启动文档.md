@@ -40,7 +40,7 @@
 
 ```powershell
 conda activate CodeRadar
-python -m pip install -r requirement.txt
+python -m pip install -r requirements.txt
 python -m pip check
 ```
 

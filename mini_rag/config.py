@@ -11,6 +11,15 @@ from dotenv import load_dotenv
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 
+DEFAULT_PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
+
+def _expanded_path(value: str | Path) -> Path:
+    """Expand user/environment markers without depending on the process cwd."""
+
+    return Path(os.path.expandvars(str(value))).expanduser()
+
+
 class DataSettings(BaseModel):
     documents_path: str = "data/cleaned/documents.jsonl"
     evaluation_path: str = "data/samples/测试数据集.csv"
@@ -101,7 +110,7 @@ class MiniRAGSettings(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     version: int = 1
-    project_root: Path = Field(default_factory=lambda: Path.cwd())
+    project_root: Path = Field(default_factory=lambda: DEFAULT_PROJECT_ROOT)
     data: DataSettings = Field(default_factory=DataSettings)
     chunking: ChunkingSettings = Field(default_factory=ChunkingSettings)
     embedding: EmbeddingSettings = Field(default_factory=EmbeddingSettings)
@@ -112,8 +121,12 @@ class MiniRAGSettings(BaseModel):
     service: ServiceSettings = Field(default_factory=ServiceSettings)
 
     def resolve_path(self, value: str | Path) -> Path:
-        path = Path(value)
-        return path.resolve() if path.is_absolute() else (self.project_root / path).resolve()
+        path = _expanded_path(value)
+        return (
+            path.resolve()
+            if path.is_absolute()
+            else (self.project_root / path).resolve()
+        )
 
     @property
     def documents_path(self) -> Path:
@@ -170,12 +183,25 @@ def load_settings(
     reranker, …) still override the loaded YAML values regardless of profile.
     """
 
-    root = Path(project_root or Path.cwd()).resolve()
+    root = (
+        _expanded_path(project_root).resolve()
+        if project_root is not None
+        else DEFAULT_PROJECT_ROOT
+    )
     load_dotenv(root / ".env", override=False)
 
     # ── Profile shortcut ────────────────────────────────────────────────
     # Only applies when neither caller arg nor MINIRAG_CONFIG_PATH is set.
-    configured = config_path or os.getenv("MINIRAG_CONFIG_PATH")
+    configured_value = (
+        config_path if config_path is not None else os.getenv("MINIRAG_CONFIG_PATH")
+    )
+    configured = (
+        str(configured_value).strip()
+        if configured_value is not None and str(configured_value).strip()
+        else None
+    )
+    explicitly_configured = configured is not None
+    profile = ""
     if configured is None:
         profile = os.getenv("MINIRAG_PROFILE", "").strip().lower()
         if profile == "formal":
@@ -183,15 +209,24 @@ def load_settings(
         else:
             configured = "config/mini_rag.yaml"
     # (if configured was set explicitly, use it as-is)
-    path = Path(configured)
+    path = _expanded_path(configured)
     if not path.is_absolute():
         path = root / path
-    payload: dict[str, Any] = {}
+    path = path.resolve()
+    if not path.is_file():
+        if explicitly_configured or (
+            profile == "formal" and root == DEFAULT_PROJECT_ROOT
+        ):
+            raise FileNotFoundError(f"Mini-RAG config file does not exist: {path}")
+        fallback_path = (root / "config" / "mini_rag.yaml").resolve()
+        path = fallback_path if fallback_path.is_file() else path
     if path.is_file():
-        loaded = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
-        if not isinstance(loaded, dict):
-            raise ValueError(f"Mini-RAG config root must be an object: {path}")
-        payload.update(loaded)
+        loaded: Any = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    else:
+        loaded = {}
+    if not isinstance(loaded, dict):
+        raise ValueError(f"Mini-RAG config root must be an object: {path}")
+    payload: dict[str, Any] = dict(loaded)
     payload["project_root"] = root
     for variable, target in _ENV_OVERRIDES.items():
         value = os.getenv(variable)

@@ -44,10 +44,15 @@ class _Card(_Dumpable):
 
 class _Snapshot(_Dumpable):
     snapshot_id = "snapshot-fixture"
+    competitor = "Cursor"
     scoring_version = "week3-evidence-v2"
     total_score = 64.5
     coverage_ratio = 0.5
-    payload = {"snapshot_id": snapshot_id, "scoring_version": scoring_version}
+    payload = {
+        "snapshot_id": snapshot_id,
+        "competitor": competitor,
+        "scoring_version": scoring_version,
+    }
 
 
 class _BenchmarkAgent:

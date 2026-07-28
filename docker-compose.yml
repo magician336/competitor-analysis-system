@@ -25,7 +25,7 @@ services:
       args:
         INSTALL_ML: ${MINIRAG_INSTALL_ML:-false}
     environment:
-      CODERADAR_DATABASE_URL: ${CODERADAR_DATABASE_URL:-sqlite:////app/CodeRadar/data/runtime/coderadar.db}
+      CODERADAR_DATABASE_URL: ${CODERADAR_DATABASE_URL:-sqlite:///data/runtime/coderadar.db}
       CODERADAR_AUTH_ENABLED: ${CODERADAR_AUTH_ENABLED:-true}
       CODERADAR_API_KEY: ${CODERADAR_API_KEY:-}
       CODERADAR_READ_RATE_PER_MINUTE: ${CODERADAR_READ_RATE_PER_MINUTE:-120}
@@ -39,12 +39,12 @@ services:
       CODERADAR_LLM_TIMEOUT_SECONDS: ${CODERADAR_LLM_TIMEOUT_SECONDS:-45}
       CODERADAR_LLM_MAX_TOKENS: ${CODERADAR_LLM_MAX_TOKENS:-}
       CODERADAR_LLM_MAX_RETRIES: ${CODERADAR_LLM_MAX_RETRIES:-2}
-      # ── Mini-RAG 路径（容器内覆盖） ──────────────────────────
-      MINIRAG_DOCUMENTS_PATH: ${MINIRAG_DOCUMENTS_PATH:-/app/CodeRadar/data/cleaned/documents.jsonl}
+      # ── Mini-RAG 路径（相对于容器内项目根目录） ──────────────
+      MINIRAG_DOCUMENTS_PATH: ${MINIRAG_DOCUMENTS_PATH:-data/cleaned/documents.jsonl}
       MINIRAG_ELASTICSEARCH_URL: http://elasticsearch:9200
-      MINIRAG_CONFIG_PATH: ${MINIRAG_CONFIG_PATH:-/app/CodeRadar/config/mini_rag.yaml}
-      MINIRAG_TRACE_PATH: ${MINIRAG_TRACE_PATH:-/app/CodeRadar/data/runtime/retrieval_traces.jsonl}
-      MINIRAG_MODEL_CACHE_DIR: ${MINIRAG_MODEL_CACHE_DIR:-/root/.cache/huggingface}
+      MINIRAG_CONFIG_PATH: ${MINIRAG_CONFIG_PATH:-}
+      MINIRAG_TRACE_PATH: ${MINIRAG_TRACE_PATH:-data/runtime/retrieval_traces.jsonl}
+      MINIRAG_MODEL_CACHE_DIR: ${MINIRAG_MODEL_CACHE_DIR:-.cache/models}
       # ── Mini-RAG Profile（一键切换配置集） ──────────────────
       # default → config/mini_rag.yaml（hash + lexical）
       # formal  → config/mini_rag.formal.yaml（BGE-M3 + Cross-Encoder）
@@ -56,7 +56,7 @@ services:
     volumes:
       - ./data:/app/CodeRadar/data
       - coderadar_runtime_data:/app/CodeRadar/data/runtime
-      - coderadar_model_cache:/root/.cache/huggingface
+      - coderadar_model_cache:/app/CodeRadar/.cache/models
     dns:
       - 223.5.5.5
       - 1.1.1.1
@@ -85,13 +85,13 @@ services:
         INSTALL_ML: ${MINIRAG_INSTALL_ML:-false}
     command: ["python", "-m", "scripts.run_workflow_worker"]
     environment:
-      CODERADAR_DATABASE_URL: ${CODERADAR_DATABASE_URL:-sqlite:////app/CodeRadar/data/runtime/coderadar.db}
-      # ── Mini-RAG 路径（容器内覆盖） ──────────────────────────
-      MINIRAG_DOCUMENTS_PATH: ${MINIRAG_DOCUMENTS_PATH:-/app/CodeRadar/data/cleaned/documents.jsonl}
+      CODERADAR_DATABASE_URL: ${CODERADAR_DATABASE_URL:-sqlite:///data/runtime/coderadar.db}
+      # ── Mini-RAG 路径（相对于容器内项目根目录） ──────────────
+      MINIRAG_DOCUMENTS_PATH: ${MINIRAG_DOCUMENTS_PATH:-data/cleaned/documents.jsonl}
       MINIRAG_ELASTICSEARCH_URL: http://elasticsearch:9200
-      MINIRAG_CONFIG_PATH: ${MINIRAG_CONFIG_PATH:-/app/CodeRadar/config/mini_rag.yaml}
-      MINIRAG_TRACE_PATH: ${MINIRAG_TRACE_PATH:-/app/CodeRadar/data/runtime/retrieval_traces.jsonl}
-      MINIRAG_MODEL_CACHE_DIR: ${MINIRAG_MODEL_CACHE_DIR:-/root/.cache/huggingface}
+      MINIRAG_CONFIG_PATH: ${MINIRAG_CONFIG_PATH:-}
+      MINIRAG_TRACE_PATH: ${MINIRAG_TRACE_PATH:-data/runtime/retrieval_traces.jsonl}
+      MINIRAG_MODEL_CACHE_DIR: ${MINIRAG_MODEL_CACHE_DIR:-.cache/models}
       # ── Mini-RAG Profile ────────────────────────────────────
       MINIRAG_PROFILE: ${MINIRAG_PROFILE:-default}
       # ── Worker 工作流参数 ───────────────────────────────────
@@ -112,7 +112,7 @@ services:
     volumes:
       - ./data:/app/CodeRadar/data
       - coderadar_runtime_data:/app/CodeRadar/data/runtime
-      - coderadar_model_cache:/root/.cache/huggingface
+      - coderadar_model_cache:/app/CodeRadar/.cache/models
     dns:
       - 223.5.5.5
       - 1.1.1.1

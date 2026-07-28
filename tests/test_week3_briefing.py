@@ -102,7 +102,7 @@ def test_briefing_has_required_sections_priority_order_and_deduplicated_evidence
     output = BriefingAgent().generate("Cursor", [low, high])
 
     for heading in (
-        "## 核心摘要",
+        "## 执行摘要",
         "## 最新变化",
         "## 能力观察",
         "## 风险信号",

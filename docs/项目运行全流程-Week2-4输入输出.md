@@ -256,7 +256,7 @@ crawler RawRecord
 
 ```powershell
 conda activate CodeRadar
-python -m pip install -r requirement.txt
+python -m pip install -r requirements.txt
 docker compose up -d elasticsearch
 python -m scripts.data_pipeline doctor                 # 只读体检
 python -m scripts.data_pipeline all --competitors all --since-days 90   # 可选：重新采集+处理

@@ -1,5 +1,6 @@
 version: 1
 
+# 文件路径统一相对于项目根目录解析，不依赖启动命令所在目录。
 data:
   documents_path: data/cleaned/documents.jsonl
   evaluation_path: data/samples/测试数据集.csv

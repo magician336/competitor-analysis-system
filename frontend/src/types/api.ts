@@ -391,6 +391,9 @@ export interface WorkflowBranch {
   rag_query_id?: string | null;
   card_ids: string[];
   trace_id?: string | null;
+  react_used: boolean;
+  react_iterations: number;
+  tool_call_count: number;
   error?: Record<string, unknown> | null;
 }
 

@@ -4,6 +4,8 @@ from datetime import datetime, timezone
 from typing import Any
 
 import pytest
+from langchain_core.language_models.fake_chat_models import FakeMessagesListChatModel
+from langchain_core.messages import AIMessage
 from langchain_core.runnables import Runnable, RunnableLambda
 
 from agents import PriceAgent, ProductAgent, RiskAgent
@@ -49,6 +51,13 @@ class StaticRAGService:
                 latency_ms=0.1,
             ),
         )
+
+
+class ToolCallingFakeModel(FakeMessagesListChatModel):
+    """Fake chat model that accepts LangChain tool binding."""
+
+    def bind_tools(self, tools, **kwargs):
+        return self
 
 
 def _price_evidence(
@@ -116,6 +125,8 @@ def _offline_llm_client(
     runnable: Runnable,
     *,
     max_retries: int = 0,
+    chat_model=None,
+    strict: bool = False,
 ) -> LangChainLLMClient:
     return LangChainLLMClient(
         settings=LLMSettings(
@@ -123,7 +134,9 @@ def _offline_llm_client(
             model="offline-runnable-test",
             max_retries=max_retries,
         ),
+        chat_model=chat_model,
         structured_card_runnable=runnable,
+        strict=strict,
     )
 
 
@@ -281,3 +294,88 @@ def test_trace_contains_chain_and_tool_lifecycle_events() -> None:
     assert "retrieve_price_evidence" in start_stages
     assert "price_guard_and_structure" in start_stages
     assert any(event.event == "end" for event in result.trace.events)
+
+
+def test_online_agent_uses_react_tool_loop_before_structured_card() -> None:
+    service = StaticRAGService([_price_evidence()])
+    model = ToolCallingFakeModel(
+        responses=[
+            AIMessage(
+                content="",
+                tool_calls=[
+                    {
+                        "name": "retrieve_price_evidence",
+                        "args": {
+                            "search_focus": "Cursor student plan price and request quota"
+                        },
+                        "id": "react_search_1",
+                        "type": "tool_call",
+                    }
+                ],
+            ),
+            AIMessage(content="The retrieved official evidence is sufficient."),
+        ]
+    )
+    client = _offline_llm_client(
+        RunnableLambda(lambda _prompt: _valid_draft()),
+        chat_model=model,
+    )
+
+    result = PriceAgent(
+        service,
+        llm_client=client,
+        auto_configure_llm=False,
+    ).run(AgentAnalysisRequest(competitor="Cursor"))
+
+    assert service.queries[0].question == (
+        "Cursor student plan price and request quota"
+    )
+    assert service.queries[0].competitor == "Cursor"
+    assert service.queries[0].event_types == [EventType.PRICING_CHANGE]
+    assert result.cards[0].analysis_mode == "hybrid"
+    assert result.trace is not None
+    assert result.trace.react_used is True
+    assert result.trace.react_iterations == 1
+    assert result.trace.tool_call_count >= 1
+    assert result.trace.llm_call_count == 2
+
+
+def test_hybrid_mode_falls_back_when_react_skips_required_tool() -> None:
+    service = StaticRAGService([_price_evidence()])
+    model = ToolCallingFakeModel(
+        responses=[AIMessage(content="I will answer without searching.")]
+    )
+    client = _offline_llm_client(
+        RunnableLambda(lambda _prompt: _valid_draft()),
+        chat_model=model,
+    )
+
+    result = PriceAgent(
+        service,
+        llm_client=client,
+        auto_configure_llm=False,
+    ).run(AgentAnalysisRequest(competitor="Cursor"))
+
+    assert service.queries[0].question != "I will answer without searching."
+    assert result.trace is not None
+    assert result.trace.react_used is False
+    assert result.trace.fallback_used is True
+    assert any("ReAct retrieval fallback" in item for item in result.warnings)
+
+
+def test_strict_mode_rejects_react_run_without_tool_observation() -> None:
+    model = ToolCallingFakeModel(
+        responses=[AIMessage(content="I will answer without searching.")]
+    )
+    client = _offline_llm_client(
+        RunnableLambda(lambda _prompt: _valid_draft()),
+        chat_model=model,
+        strict=True,
+    )
+
+    with pytest.raises(RuntimeError, match="without calling required tool"):
+        PriceAgent(
+            StaticRAGService([_price_evidence()]),
+            llm_client=client,
+            auto_configure_llm=False,
+        ).run(AgentAnalysisRequest(competitor="Cursor"))
